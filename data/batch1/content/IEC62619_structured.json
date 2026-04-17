@@ -1,0 +1,183 @@
+{
+  "standard_id": "IEC62619",
+  "filename": "IEC62619-2022.md",
+  "li_applicable": true,
+  "test_count": 9,
+  "tests": [
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "外部短路",
+      "test_name_en": "External Short Circuit",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {
+        "soc": "fully charged"
+      },
+      "criteria": {
+        "pass_conditions": [
+          "no_fire",
+          "no_explosion"
+        ],
+        "description": "No fire, no explosion"
+      },
+      "original_text_snippet": "sides will\nbe subjected to the impact. Each sample is to be subjected to only a single impact with separate samples to be used for each impact  (see Figure  1).\nIn the case of a metal floor, external short circuit of  the cell or cell block  with the floor should\nbe avoided by appropriate measures .\nPouch cells are tested as prismatic cells.\nc) Acceptance criteria\nNo fire, no explosion.\n\n## Page 4\n\n– 16 – IEC 62619:2022 © IEC 2022\na) C ylindrical cell  b) Direction 1 of\nprismatic  cell c) Direct..."
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過度充電",
+      "test_name_en": "Overcharge / Abnormal Charge",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {
+        "duration": "1 h"
+      },
+      "criteria": {
+        "pass_conditions": [
+          "no_fire",
+          "no_explosion"
+        ],
+        "description": "No fire , no\nexplosion "
+      },
+      "original_text_snippet": "equipment side\nc) Combination of equipment with\nBMS and module (s) d) Equipment includes all  BMS functions\nand cell (s)\nFigure  6 – Examples of BMS locations and battery system configurations\n8.2.2  Overcharge control of voltage (battery system)\na) Requirement\nThe BM S shall control t he cell voltage during charging below the upper limit charging voltage\nof the cells.\nb) Test\nThe test shall be carried out in an ambient temperature of 25 °C ± 5 °C and under normal\noperating conditions with the c..."
+    },
+    {
+      "test_id": "ELEC-03",
+      "test_name_zh": "強制放電",
+      "test_name_en": "Forced Discharge",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {
+        "duration": "90 min"
+      },
+      "criteria": {
+        "pass_conditions": [
+          "no_fire",
+          "no_explosion"
+        ],
+        "description": "No fire, no explosion"
+      },
+      "original_text_snippet": "temperature of the cell surface reaches steady state\nconditions (less than 10  °C change in a 30- min period) or returns to ambient  temperature .\nc) Acceptance criteria\nNo fire, no explosion.\n7.2.6  Forced discharge test (cell or c ell block)\na) Requirements\nA cell in  a battery system  shall withstand  a forced dischar ge without causing fire or\nexplosion.\nb) Test\nThe test shall be carried out in an ambient temperature of 25 °C ± 5 °C. Each test cell shall\nbe discharged at a constant current o..."
+    },
+    {
+      "test_id": "MECH-01",
+      "test_name_zh": "撞擊",
+      "test_name_en": "Impact",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {
+        "duration": "6  h"
+      },
+      "criteria": {
+        "pass_conditions": [
+          "no_fire",
+          "no_explosion"
+        ],
+        "description": "No fire, no explosion "
+      },
+      "original_text_snippet": "e cells are to remain on test for 6  h or unti l the case temperature declines by 80 % of the\nmaximum temperature rise, whichever is the sooner .\nc) Acceptance criteria\nNo fire, no explosion .\n7.2.2  Impact test (cell or cell block)\na) Requirements\nAn impact to the cell  as mentioned in 7.2.2  b) shall not cause fire or explosion.\nb) Test\nThe cell or cell block shall be discharged at a constant current of 0 ,2 It A, to 50 % capacity\nof the rated capacity.\nThe cell or cell block is place d on a f..."
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "衝擊",
+      "test_name_en": "Shock",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {},
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "cation or level can also be according to the applied functional safety standard such as Class (e.g.\nclass B or C) according to IEC 60730 -1.\nExamples of hazards or risks are as follows: EMC, electric shock , hot spots at electrical\ninterfaces,  moving parts , water immersion, external short -circuit , internal short -circuit ,\nover charge, over heating, drop, crush, over discharge, discharge with overcurrent, charg ing after\nan overdischarge, electrolyte leakage, ignition of emission gas, fire, ..."
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "擠壓",
+      "test_name_en": "Crush",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {},
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "r risks are as follows: EMC, electric shock , hot spots at electrical\ninterfaces,  moving parts , water immersion, external short -circuit , internal short -circuit ,\nover charge, over heating, drop, crush, over discharge, discharge with overcurrent, charg ing after\nan overdischarge, electrolyte leakage, ignition of emission gas, fire, earthquake, seismic sea\nwave, etc .\n8.2 Battery management system  (or battery manag ement unit)\n8.2.1  Requirements for the BM S\nThe BM S evaluates the condition..."
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "落下",
+      "test_name_en": "Drop / Free Fall",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {},
+      "criteria": {
+        "pass_conditions": [
+          "no_fire",
+          "no_explosion"
+        ],
+        "description": "No fire, no explosion"
+      },
+      "original_text_snippet": "ter of 15,8 mm ± 0,1 mm and at least 60 m m in length or the longest\ndimension of the cell, whichever is greater , is placed across the centre of the cell or cell\nblock . A 9,1 kg rigid mass is t hen dropped from a height of  610 mm ± 25 mm onto the bar\nplaced on the sample.\nA cylindrical or prismatic cell is to be impacted with its longitudinal axis parallel to the flat\nconcrete or metal floor  and perpendicular to the longitudinal axis of the 15,8 mm diameter\ncurved surface lying across the ce..."
+    },
+    {
+      "test_id": "ENV-02",
+      "test_name_zh": "低氣壓",
+      "test_name_en": "Low Pressure / Altitude",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {
+        "duration": "10  min"
+      },
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "ng core from the sealed package and attach the terminals for voltage measurement and the thermocouple(s) for temperature measurement on the surface of the winding core. Set the winding core under the pressure equipment making sure  to locate the point of placement of the nickel particle\nunder the pressing jig.\nTo prevent evaporation of electrolyte, finish the work within 10  min from removing\nthe winding core from the chamber for temperature conditioning to  closing t he\nchamber door where  the ..."
+    },
+    {
+      "test_id": "THERM-01",
+      "test_name_zh": "熱濫用",
+      "test_name_en": "Thermal Abuse / Heating",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {
+        "soc": "fully charged",
+        "duration": "3 h"
+      },
+      "criteria": {
+        "pass_conditions": [
+          "no_fire",
+          "no_explosion"
+        ],
+        "description": "No fire, no explosion"
+      },
+      "original_text_snippet": "om a hand- held position. If a lifting -release device is used, it should not, on release,\nimpart rotational or sideward forces to the unit.\nFigure  4 – C onfiguration for the corner drop test\n7.2.4  Thermal abuse test (cell or cell block)\na) Requirements\nAn elevated temperature exposure shall not cause fire or explosion.\nb) Test\nEach fully charged cell, stabilized in an ambient temperature of 25 °C ± 5 °C, is placed in a\ngravity or  circulating  air-convection oven.\nThe oven temperature is rais..."
+    }
+  ],
+  "exemptions_summary": [
+    "Unless otherwise specified, no part of this publication may be reproduced or utilized in any form\nor by any means, electronic or mechanical, including photocopying and microfilm, without permission in writing from\neither IEC or IEC's member National Committee in the country of the requester"
+  ]
+}

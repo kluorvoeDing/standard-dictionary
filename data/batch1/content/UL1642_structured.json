@@ -1,0 +1,149 @@
+{
+  "standard_id": "UL1642",
+  "filename": "UL 1642-2020.md",
+  "li_applicable": true,
+  "test_count": 9,
+  "tests": [
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過度充電",
+      "test_name_en": "Overcharge / Abnormal Charge",
+      "test_objects": [
+        "CELL",
+        "PACK"
+      ],
+      "conditions": {},
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "rofBatteriestobeUsedinEachTestforPrimaryBatteries\nTestConditioning ofbatteries\nFullycharged OnehalfdischargedaComplete\ndischarged\nElectrical Tests\nShort-Circuitb\natroomtemp. 5 5 –\nat55°C(131°F) 5 5 –\nAbnormal Charge 5 5 5\nForced-Dischargec5 5 –\nMechanical Tests\nCrush 5 5 –\nImpact 5 5 –\nShock 5 5 5\nVibration 5 5 5\nEnvironmental Tests\nHeating 5 5 –\nTemperature Cycling 5 5 5\nLowPressure (Altitude Simulation) 5 5 5\nFireExposure Testd\nProjectile 5(10) – –\naOnlycellswithaliquidcathode, suchasthionylch..."
+    },
+    {
+      "test_id": "MECH-01",
+      "test_name_zh": "撞擊",
+      "test_name_en": "Impact",
+      "test_objects": [
+        "CELL",
+        "PACK"
+      ],
+      "conditions": {
+        "duration": "17H"
+      },
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": ".............................................................15\n13CrushTest........................................................................................................................15\n14ImpactTest.......................................................................................................................16\n15ShockTest........................................................................................................................17\n16VibrationTest......................"
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "衝擊",
+      "test_name_en": "Shock",
+      "test_objects": [
+        "CELL",
+        "PACK"
+      ],
+      "conditions": {
+        "duration": "17H"
+      },
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": ".............................................................15\n14ImpactTest.......................................................................................................................16\n15ShockTest........................................................................................................................17\n16VibrationTest....................................................................................................................17\nENVIRONMENT ALTESTS.................."
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "擠壓",
+      "test_name_en": "Crush",
+      "test_objects": [
+        "CELL",
+        "PACK"
+      ],
+      "conditions": {
+        "duration": "17H"
+      },
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "..........................................................15\nMECHANICAL TESTS......................................................................................................................15\n13CrushTest........................................................................................................................15\n14ImpactTest.......................................................................................................................16\n15ShockTest.........................."
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動",
+      "test_name_en": "Vibration",
+      "test_objects": [
+        "CELL",
+        "PACK"
+      ],
+      "conditions": {
+        "duration": "17H"
+      },
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": ".............................................................16\n15ShockTest........................................................................................................................17\n16VibrationTest....................................................................................................................17\nENVIRONMENT ALTESTS...............................................................................................................17\n17HeatingTest........................."
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "落下",
+      "test_name_en": "Drop / Free Fall",
+      "test_objects": [
+        "CELL",
+        "PACK"
+      ],
+      "conditions": {
+        "temperature": "23±2°C"
+      },
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "anufacturer\nandalthough itisamaximum limit,itmaybelowerthanthemaximum charging voltageparameter\nspecified fortheabnormal charging test.\n3.24VENTING –Whenthebatteryorcellelectrolyte isemittedasaliquid,droplets, orvaporfroma\ndesigned ventorthroughaseal.\nCONSTRUCTION\n4General\n4.1Casing\n4.1.1Thecasingofalithiumbatteryshallhavethestrength andrigiditynecessary toresisttheabusesto\nwhichitmaybesubjected, withoutresulting inariskoffire.Thecasingofauser-replaceable lithium\nbatteryshallhavethestrength andr..."
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "溫度循環",
+      "test_name_en": "Temperature Cycling",
+      "test_objects": [
+        "CELL",
+        "PACK"
+      ],
+      "conditions": {
+        "duration": "17H"
+      },
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": ".............................................................17\n17HeatingTest......................................................................................................................17\n18Temperature CyclingTest...................................................................................................17\n19LowPressure (Altitude Simulation) Test..............................................................................18\n\n## Page 8\n\nULCOPYRIGHTED MATERIAL –NOT AUTHORIZED FOR..."
+    },
+    {
+      "test_id": "ENV-02",
+      "test_name_zh": "低氣壓",
+      "test_name_en": "Low Pressure / Altitude",
+      "test_objects": [
+        "CELL",
+        "PACK"
+      ],
+      "conditions": {},
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": ".................................................................17\n18Temperature CyclingTest...................................................................................................17\n19LowPressure (Altitude Simulation) Test..............................................................................18\n\n## Page 8\n\nULCOPYRIGHTED MATERIAL –NOT AUTHORIZED FOR FURTHER\nREPRODUCTION ORDISTRIBUTION WITHOUT PERMISSION FROM ULINC.4 UL1642 SEPTEMBER 29,2020\nFIREEXPOSURE TEST......................"
+    },
+    {
+      "test_id": "THERM-01",
+      "test_name_zh": "熱濫用",
+      "test_name_en": "Thermal Abuse / Heating",
+      "test_objects": [
+        "CELL",
+        "PACK"
+      ],
+      "conditions": {
+        "soc": "100%"
+      },
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "ecified bythemanufacturer ,isstoredinthebattery.\n3.12COMPONENT ,CURRENT -LIMITING –Anycomponent employed tolimitcurrentduringabnormal\nconditions. Current-limiting components includeresistors, fuses,orthermalcutoffs.\n3.13CURRENT ,ABNORMAL CHARGING –Charging currenttoaprimarycellorbatteryunderfault\ncondition.\n3.14DISCHARGED, COMPLETEL Y–Aprimarycellorbatteryisconsidered completely discharged if\ntheclosedcircuitvoltageislessthan0.2V,whenconnected toa100-Ωresistive loadandtheshort-circuit\ncurrenthas..."
+    }
+  ],
+  "exemptions_summary": []
+}

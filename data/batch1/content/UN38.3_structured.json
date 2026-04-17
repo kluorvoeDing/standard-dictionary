@@ -1,0 +1,192 @@
+{
+  "standard_id": "UN38.3",
+  "filename": "UN38.3 sub section.md",
+  "li_applicable": true,
+  "test_count": 10,
+  "tests": [
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "外部短路",
+      "test_name_en": "External Short Circuit",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {
+        "soc": "fully charged"
+      },
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": ".\nRupture means the mechanical failure of a cell container or battery case induced by an internal or\nexternal cause, resulting in exposure or spillage but not ejection of solid materials.\n\n## Page 5\n\nShort circuit means a direct connection between positive and negative terminals of a cell or\nbattery that provides a virtual zero resistance path for current flow.\nSingle cell battery means a cell externally fitted with devices necessary for use in equipment or\nanother battery which it is designed t..."
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過度充電",
+      "test_name_en": "Overcharge / Abnormal Charge",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {},
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "s T.l\nto T.S. All rechargeable battery types, including those composed of previously tested cells, shall\nbe subjected to tests T.l to T.S and T.7. In addition, rechargeable single cell batteries with\novercharge protection shall be subjected to test T.7. A component cell that is not transported\nseparately from the battery it is part of needs only to be tested according to tests T.6 and T.8. A\ncomponent cell that is transported separately from the battery shall be subjected to tests T.1 to\nT.6 and..."
+    },
+    {
+      "test_id": "ELEC-03",
+      "test_name_zh": "強制放電",
+      "test_name_en": "Forced Discharge",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {
+        "temperature": "75 ± 2 °C",
+        "duration": "24 hour"
+      },
+      "criteria": {
+        "pass_conditions": [
+          "no_fire"
+        ],
+        "description": "no\nfire during the test and within seven days after the test"
+      },
+      "original_text_snippet": "t shall be 24 hours.\n38.3.4.7.3 Requirement\nRechargeable batteries meet this requirement if there is no disassembly and no\nfire during the test and within seven days after the test.\n38.3.4.8 Test T8: Forced discharge\n38.3.4.8.1 Purpose\nThis test evaluates the ability of a primary or a rechargeable cell to withstand a\nforced discharge condition.\n38.3.4.8.2 Test procedure\nEach cell shall be forced discharged at ambient temperature by connecting it in\nseries with a 12 V D.C. power supply at an init..."
+    },
+    {
+      "test_id": "MECH-01",
+      "test_name_zh": "撞擊",
+      "test_name_en": "Impact",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {},
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "(e) A change in connecting mode of component cells; and\n(f) For batteries which are to be tested according to T 4 with a peak\nacceleration less than /50 gn, a change in the mass which could adversely\nimpact the result of the T 4 test and lead to a failure.\nIn the event that a cell or battery type does not meet one or more of the test requirements, steps\nshall be taken to correct the deficiency or deficiencies that caused the failure before such cell or\nbattery type is retested.\n38.3.2.3 For the ..."
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "衝擊",
+      "test_name_en": "Shock",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {},
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "not less than 90% of its voltage immediately prior to this procedure. The requirement\nrelating to voltage is not applicable to test cells and batteries at fully discharged states.\n38.3.4.4 Test T. 4: Shock\n38.3.4.4.1 Purpose\nThis test assesses the robustness of cells and batteries against cumulative shocks.\n38.3.4.4.2 Test procedure\nTest cells and batteries shall be secured to the testing machine by means of a rigid\nmount which will support all mounting surfaces of each test battery.\nEach cell s..."
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "擠壓",
+      "test_name_en": "Crush",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {},
+      "criteria": {
+        "pass_conditions": [
+          "no_fire"
+        ],
+        "description": "no rupture and no fire during the test and within six\nhours after the test"
+      },
+      "original_text_snippet": "is requirement if their external temperature does not\nexceed 170 DC and there is no disassembly, no rupture and no fire during the test and within six\nhours after the test.\n38.3.4.6 Test T. 6: Impact/Crush\n38.3.4.6.1 Purpose\nThese tests simulate mechanical abuse from an impact or crush that may result in an internal\n. short circuit.\n38.3.4.6.2\ndiameter) Test procedure - Impact (applicable to cylindrical cells not less than 18.0 mm in\nNOTE: Diameter here refers to the design parameter (for exampl..."
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動",
+      "test_name_en": "Vibration",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {
+        "duration": "7 H"
+      },
+      "criteria": {
+        "pass_conditions": [
+          "no_fire",
+          "no_leakage",
+          "no_venting"
+        ],
+        "description": "no leakage, no venting, no\ndisassembly, no rupture and no fire during the test and after the test and if the open circuit\nvoltage of each test cell or battery directly after testing in its third perpendicular mounting\nposition is not less than 90% of its voltage immediately prior to this procedure"
+      },
+      "original_text_snippet": " not less than 90% of its voltage immediately prior to this procedure. The\nrequirement relating to voltage is not applicable to test cells and batteries at fully discharged\nstates.\n38.3.4.3 Test T.3: Vibration\n38.3.4.3. 1 Purpose\nThis test simulates vibration during transport.\n38.3.4.3.2 Test procedure\nCells and batteries are firmly secured to the platform of the vibration machine\nwithout distorting the cells in such a manner as to faithfully transmit the vibration. The vibration\nshall be a sinu..."
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "落下",
+      "test_name_en": "Drop / Free Fall",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {},
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "diameter, at least 6 cm long, or the longest dimension of the cell, whichever\nis greater, Type 316 stainless steel bar is to be placed across the centre of the sample. A 9.1 kg ±\n0.1 kg mass is to be dropped from a height of61 ± 2.5 em at the intersection of the bar and\nsample in a controlled manner using a near frictionless, vertical sliding track or channel with\nminimal drag on the falling mass. The vertical track or channel used to guide the falling mass\nshall be oriented 90 degrees from the ..."
+    },
+    {
+      "test_id": "ENV-02",
+      "test_name_zh": "低氣壓",
+      "test_name_en": "Low Pressure / Altitude",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {
+        "soc": "fully charged"
+      },
+      "criteria": {
+        "pass_conditions": []
+      },
+      "original_text_snippet": "ochemical system and physical design of cells or batteries.\nUndischarged means a primary cell or battery that has not been wholly or partly discharged.\nVenting means the release of excessive internal pressure from a cell or battery in a manner\nintended by design to preclude rupture or disassembly.\nWatt-hour rating, see Nominal energy.\n38.3.3 When a cell or battery type is to be tested under this sub-section, the number and\ncondition of cells and batteries of each type to be tested are as follows..."
+    },
+    {
+      "test_id": "THERM-01",
+      "test_name_zh": "熱濫用",
+      "test_name_en": "Thermal Abuse / Heating",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK"
+      ],
+      "conditions": {
+        "temperature": "72 ± 2\n°C",
+        "duration": "24 hour"
+      },
+      "criteria": {
+        "pass_conditions": [
+          "no_fire",
+          "no_leakage",
+          "no_venting"
+        ],
+        "description": "no leakage, no venting, no\ndisassembly"
+      },
+      "original_text_snippet": "s not less than 90% of its voltage immediately prior to this procedure. The\nrequirement relating to voltage is not applicable to test cells and batteries at fully discharged\nstates.\n38.3.4.2 Test T2: Thermal rest\n38.3.4.2.1 Purpose\nThis test assesses cell and battery seal integrity and internal electrical\nconnections. The test is conducted using rapid and extreme temperature changes.\n38.3.4.2.2 Test procedure\nTest cells and batteries are to be stored for at least six hours at a test temperature ..."
+    }
+  ],
+  "exemptions_summary": [
+    "unless detonation of an acceptor is observed earlier",
+    "not applicable to test cells and batteries at fully discharged states",
+    "except battery casing, handling devices or labels) from a cell or battery such that\nthe loss of mass exceeds the values in Table 38",
+    "not applicable to test cells and batteries at fully discharged\nstates"
+  ]
+}
