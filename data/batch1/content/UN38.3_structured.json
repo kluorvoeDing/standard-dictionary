@@ -1,192 +1,245 @@
 {
   "standard_id": "UN38.3",
   "filename": "UN38.3 sub section.md",
+  "full_name": "UN Manual of Tests and Criteria, Sixth Revised Edition, Sub-Section 38.3: Lithium metal and lithium ion batteries",
+  "publication_date": "Sixth Revised Edition (2015), with February 2016 Corrigendum",
   "li_applicable": true,
-  "test_count": 10,
+  "test_count": 8,
   "tests": [
     {
-      "test_id": "ELEC-01",
-      "test_name_zh": "外部短路",
-      "test_name_en": "External Short Circuit",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
+      "test_id": "ENV-02",
+      "test_name_zh": "高度模擬（低氣壓）測試",
+      "test_name_en": "Test T.1: Altitude Simulation",
+      "section": "38.3.4.1",
+      "test_objects": ["CELL", "PACK"],
       "conditions": {
-        "soc": "fully charged"
+        "pressure": "11.6 kPa or less",
+        "temperature": "Ambient temperature (20 ± 5°C)",
+        "duration": "At least 6 hours",
+        "sample_condition": "Undischarged (primary), Fully charged (secondary)",
+        "sample_size": "10 cells (undischarged/fully charged), 4 small batteries, 4 large batteries (per 38.3.3)"
       },
       "criteria": {
-        "pass_conditions": []
+        "pass_conditions": ["no_leakage", "no_venting", "no_disassembly", "no_rupture", "no_fire", "voltage_retention"],
+        "description": "No leakage, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
+        "voltage_exemption": "Voltage requirement not applicable to cells/batteries at fully discharged states (38.3.4.1.3)"
       },
-      "original_text_snippet": ".\nRupture means the mechanical failure of a cell container or battery case induced by an internal or\nexternal cause, resulting in exposure or spillage but not ejection of solid materials.\n\n## Page 5\n\nShort circuit means a direct connection between positive and negative terminals of a cell or\nbattery that provides a virtual zero resistance path for current flow.\nSingle cell battery means a cell externally fitted with devices necessary for use in equipment or\nanother battery which it is designed t..."
+      "exemptions": [],
+      "original_text_snippet": "Section 38.3.4.1.2: Test cells and batteries shall be stored at a pressure of 11.6 kPa or less for at least six hours at ambient temperature (20 ± 5°C). Section 38.3.4.1.3: Cells and batteries meet this requirement if there is no leakage, no venting, no disassembly, no rupture and no fire and if the open circuit voltage of each test cell or battery after testing is not less than 90% of its voltage immediately prior to this procedure."
     },
     {
-      "test_id": "ELEC-02",
-      "test_name_zh": "過度充電",
-      "test_name_en": "Overcharge / Abnormal Charge",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
-      "conditions": {},
-      "criteria": {
-        "pass_conditions": []
-      },
-      "original_text_snippet": "s T.l\nto T.S. All rechargeable battery types, including those composed of previously tested cells, shall\nbe subjected to tests T.l to T.S and T.7. In addition, rechargeable single cell batteries with\novercharge protection shall be subjected to test T.7. A component cell that is not transported\nseparately from the battery it is part of needs only to be tested according to tests T.6 and T.8. A\ncomponent cell that is transported separately from the battery shall be subjected to tests T.1 to\nT.6 and..."
-    },
-    {
-      "test_id": "ELEC-03",
-      "test_name_zh": "強制放電",
-      "test_name_en": "Forced Discharge",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
+      "test_id": "ENV-01",
+      "test_name_zh": "溫度循環測試",
+      "test_name_en": "Test T.2: Thermal Test",
+      "section": "38.3.4.2",
+      "test_objects": ["CELL", "PACK"],
       "conditions": {
-        "temperature": "75 ± 2 °C",
-        "duration": "24 hour"
+        "high_temp": "72 ± 2°C for at least 6 hours (12 hours for large cells/batteries)",
+        "low_temp": "-40 ± 2°C for at least 6 hours (12 hours for large cells/batteries)",
+        "transition_time": "Maximum 30 minutes between temperature extremes",
+        "cycle_count": "10 total cycles",
+        "post_test_storage": "24 hours at ambient temperature (20 ± 5°C)",
+        "sample_size": "10 cells (undischarged/fully charged), 4 small batteries, 4 large batteries (per 38.3.3)"
       },
       "criteria": {
-        "pass_conditions": [
-          "no_fire"
-        ],
-        "description": "no\nfire during the test and within seven days after the test"
+        "pass_conditions": ["no_leakage", "no_venting", "no_disassembly", "no_rupture", "no_fire", "voltage_retention"],
+        "description": "No leakage, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
+        "voltage_exemption": "Voltage requirement not applicable to cells/batteries at fully discharged states (38.3.4.2.3)"
       },
-      "original_text_snippet": "t shall be 24 hours.\n38.3.4.7.3 Requirement\nRechargeable batteries meet this requirement if there is no disassembly and no\nfire during the test and within seven days after the test.\n38.3.4.8 Test T8: Forced discharge\n38.3.4.8.1 Purpose\nThis test evaluates the ability of a primary or a rechargeable cell to withstand a\nforced discharge condition.\n38.3.4.8.2 Test procedure\nEach cell shall be forced discharged at ambient temperature by connecting it in\nseries with a 12 V D.C. power supply at an init..."
-    },
-    {
-      "test_id": "MECH-01",
-      "test_name_zh": "撞擊",
-      "test_name_en": "Impact",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
-      "conditions": {},
-      "criteria": {
-        "pass_conditions": []
-      },
-      "original_text_snippet": "(e) A change in connecting mode of component cells; and\n(f) For batteries which are to be tested according to T 4 with a peak\nacceleration less than /50 gn, a change in the mass which could adversely\nimpact the result of the T 4 test and lead to a failure.\nIn the event that a cell or battery type does not meet one or more of the test requirements, steps\nshall be taken to correct the deficiency or deficiencies that caused the failure before such cell or\nbattery type is retested.\n38.3.2.3 For the ..."
-    },
-    {
-      "test_id": "MECH-02",
-      "test_name_zh": "衝擊",
-      "test_name_en": "Shock",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
-      "conditions": {},
-      "criteria": {
-        "pass_conditions": []
-      },
-      "original_text_snippet": "not less than 90% of its voltage immediately prior to this procedure. The requirement\nrelating to voltage is not applicable to test cells and batteries at fully discharged states.\n38.3.4.4 Test T. 4: Shock\n38.3.4.4.1 Purpose\nThis test assesses the robustness of cells and batteries against cumulative shocks.\n38.3.4.4.2 Test procedure\nTest cells and batteries shall be secured to the testing machine by means of a rigid\nmount which will support all mounting surfaces of each test battery.\nEach cell s..."
-    },
-    {
-      "test_id": "MECH-03",
-      "test_name_zh": "擠壓",
-      "test_name_en": "Crush",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
-      "conditions": {},
-      "criteria": {
-        "pass_conditions": [
-          "no_fire"
-        ],
-        "description": "no rupture and no fire during the test and within six\nhours after the test"
-      },
-      "original_text_snippet": "is requirement if their external temperature does not\nexceed 170 DC and there is no disassembly, no rupture and no fire during the test and within six\nhours after the test.\n38.3.4.6 Test T. 6: Impact/Crush\n38.3.4.6.1 Purpose\nThese tests simulate mechanical abuse from an impact or crush that may result in an internal\n. short circuit.\n38.3.4.6.2\ndiameter) Test procedure - Impact (applicable to cylindrical cells not less than 18.0 mm in\nNOTE: Diameter here refers to the design parameter (for exampl..."
+      "exemptions": [],
+      "original_text_snippet": "Section 38.3.4.2.2: Test cells and batteries are to be stored for at least six hours at a test temperature equal to 72 ± 2 °C, followed by storage for at least six hours at a test temperature equal to - 40 ± 2 °C. The maximum time interval between test temperature extremes is 30 minutes. This procedure is to be repeated until 10 total cycles are complete. Section 38.3.4.2.3: Cells and batteries meet this requirement if there is no leakage, no venting, no disassembly, no rupture and no fire and if the open circuit voltage of each test cell or battery after testing is not less than 90% of its voltage immediately prior to this procedure."
     },
     {
       "test_id": "MECH-05",
-      "test_name_zh": "振動",
-      "test_name_en": "Vibration",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
+      "test_name_zh": "振動測試",
+      "test_name_en": "Test T.3: Vibration",
+      "section": "38.3.4.3",
+      "test_objects": ["CELL", "PACK"],
       "conditions": {
-        "duration": "7 H"
+        "waveform": "Sinusoidal waveform with logarithmic sweep",
+        "frequency_range": "7 Hz to 200 Hz and back to 7 Hz",
+        "cycle_duration": "15 minutes per cycle",
+        "cycle_count": "12 cycles (total 3 hours) for each of 3 mutually perpendicular mounting positions",
+        "orientation": "One direction must be perpendicular to terminal face",
+        "small_batteries_acceleration": "1 gn to 18 Hz, then 0.8 mm amplitude (1.6 mm total excursion) to 50 Hz (8 gn), then 8 gn to 200 Hz",
+        "large_batteries_acceleration": "1 gn to 18 Hz, then 0.8 mm amplitude to 25 Hz (2 gn), then 2 gn to 200 Hz",
+        "sample_size": "Per 38.3.3(a)(i-vi) or (b)(i-v)"
       },
       "criteria": {
-        "pass_conditions": [
-          "no_fire",
-          "no_leakage",
-          "no_venting"
-        ],
-        "description": "no leakage, no venting, no\ndisassembly, no rupture and no fire during the test and after the test and if the open circuit\nvoltage of each test cell or battery directly after testing in its third perpendicular mounting\nposition is not less than 90% of its voltage immediately prior to this procedure"
+        "pass_conditions": ["no_leakage", "no_venting", "no_disassembly", "no_rupture", "no_fire", "voltage_retention"],
+        "description": "No leakage, no venting, no disassembly, no rupture and no fire during and after test. Open circuit voltage after testing in third perpendicular mounting position shall not be less than 90% of voltage prior to procedure.",
+        "voltage_exemption": "Voltage requirement not applicable to cells/batteries at fully discharged states (38.3.4.3.3)"
       },
-      "original_text_snippet": " not less than 90% of its voltage immediately prior to this procedure. The\nrequirement relating to voltage is not applicable to test cells and batteries at fully discharged\nstates.\n38.3.4.3 Test T.3: Vibration\n38.3.4.3. 1 Purpose\nThis test simulates vibration during transport.\n38.3.4.3.2 Test procedure\nCells and batteries are firmly secured to the platform of the vibration machine\nwithout distorting the cells in such a manner as to faithfully transmit the vibration. The vibration\nshall be a sinu..."
+      "exemptions": [],
+      "original_text_snippet": "Section 38.3.4.3.2: The vibration shall be a sinusoidal waveform with a logarithmic sweep between 7 Hz and 200 Hz and back to 7 Hz traversed in 15 minutes. This cycle shall be repeated 12 times for a total of 3 hours for each of three mutually perpendicular mounting positions of the cell. Section 38.3.4.3.3: Cells and batteries meet this requirement if there is no leakage, no venting, no disassembly, no rupture and no fire during the test and after the test and if the open circuit voltage of each test cell or battery directly after testing in its third perpendicular mounting position is not less than 90% of its voltage immediately prior to this procedure."
     },
     {
-      "test_id": "MECH-06",
-      "test_name_zh": "落下",
-      "test_name_en": "Drop / Free Fall",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
-      "conditions": {},
-      "criteria": {
-        "pass_conditions": []
+      "test_id": "MECH-02",
+      "test_name_zh": "衝擊測試",
+      "test_name_en": "Test T.4: Shock",
+      "section": "38.3.4.4",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "waveform": "Half-sine shock",
+        "cell_acceleration": "150 gn peak acceleration, 6 ms pulse duration (large cells: 50 gn, 11 ms alternative)",
+        "small_battery_acceleration": "Minimum 50 gn or result of formula: Acceleration = sqrt(30000/mass), whichever is smaller, 6 ms pulse",
+        "large_battery_acceleration": "Minimum based on formula: Acceleration = sqrt(30000/mass), whichever is smaller, 11 ms pulse",
+        "shock_count": "3 shocks positive + 3 shocks negative in each of 3 mutually perpendicular positions (total 18 shocks)",
+        "sample_size": "Per 38.3.3"
       },
-      "original_text_snippet": "diameter, at least 6 cm long, or the longest dimension of the cell, whichever\nis greater, Type 316 stainless steel bar is to be placed across the centre of the sample. A 9.1 kg ±\n0.1 kg mass is to be dropped from a height of61 ± 2.5 em at the intersection of the bar and\nsample in a controlled manner using a near frictionless, vertical sliding track or channel with\nminimal drag on the falling mass. The vertical track or channel used to guide the falling mass\nshall be oriented 90 degrees from the ..."
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_venting", "no_disassembly", "no_rupture", "no_fire", "voltage_retention"],
+        "description": "No leakage, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
+        "voltage_exemption": "Voltage requirement not applicable to cells/batteries at fully discharged states (38.3.4.4.3)"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 38.3.4.4.2: Each cell shall be subjected to a half-sine shock of peak acceleration of 150 gn and pulse duration of 6 milliseconds. Each cell or battery shall be subjected to three shocks in the positive direction and to three shocks in the negative direction in each of three mutually perpendicular mounting positions for a total of 18 shocks. Section 38.3.4.4.3: Cells and batteries meet this requirement if there is no leakage, no venting, no disassembly, no rupture and no fire and if the open circuit voltage of each test cell or battery after testing is not less than 90% of its voltage immediately prior to this procedure."
     },
     {
-      "test_id": "ENV-02",
-      "test_name_zh": "低氣壓",
-      "test_name_en": "Low Pressure / Altitude",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
+      "test_id": "ELEC-01",
+      "test_name_zh": "外部短路測試",
+      "test_name_en": "Test T.5: External Short Circuit",
+      "section": "38.3.4.5",
+      "test_objects": ["CELL", "PACK"],
       "conditions": {
-        "soc": "fully charged"
+        "preconditioning": "Heated to homogeneous stabilized temperature of 57 ± 4°C (minimum 6 hours for small cells/batteries, 12 hours for large)",
+        "resistance": "Total external resistance less than 0.1 ohm",
+        "temperature_during_test": "Cell/battery at 57 ± 4°C",
+        "duration": "At least 1 hour after case temperature returns to 57 ± 4°C, or for large batteries, decreased by half of maximum temperature increase and remains below that value",
+        "ambient_temp": "Short circuit and cooling conducted at least at ambient temperature",
+        "sample_size": "Per 38.3.3"
       },
       "criteria": {
-        "pass_conditions": []
+        "pass_conditions": ["no_disassembly", "no_rupture", "no_fire", "temperature_limit"],
+        "description": "External temperature shall not exceed 170°C. No disassembly, no rupture and no fire during test and within 6 hours after test.",
+        "temperature_limit": "170°C maximum external temperature"
       },
-      "original_text_snippet": "ochemical system and physical design of cells or batteries.\nUndischarged means a primary cell or battery that has not been wholly or partly discharged.\nVenting means the release of excessive internal pressure from a cell or battery in a manner\nintended by design to preclude rupture or disassembly.\nWatt-hour rating, see Nominal energy.\n38.3.3 When a cell or battery type is to be tested under this sub-section, the number and\ncondition of cells and batteries of each type to be tested are as follows..."
+      "exemptions": [],
+      "original_text_snippet": "Section 38.3.4.5.2: The cell or battery at 57 ± 4 °C shall be subjected to one short circuit condition with a total external resistance of less than 0.1 ohm. This short circuit condition is continued for at least one hour after the cell or battery external case temperature has returned to 57 ± 4 °C. Section 38.3.4.5.3: Cells and batteries meet this requirement if their external temperature does not exceed 170 °C and there is no disassembly, no rupture and no fire during the test and within six hours after the test."
     },
     {
-      "test_id": "THERM-01",
-      "test_name_zh": "熱濫用",
-      "test_name_en": "Thermal Abuse / Heating",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
-      "conditions": {
-        "temperature": "72 ± 2\n°C",
-        "duration": "24 hour"
+      "test_id": "MECH-01",
+      "test_name_zh": "撞擊/擠壓測試",
+      "test_name_en": "Test T.6: Impact/Crush",
+      "section": "38.3.4.6",
+      "test_objects": ["CELL", "COMPONENT_CELL"],
+      "applicability": "Impact: cylindrical cells ≥18.0 mm diameter. Crush: prismatic, pouch, coin/button, cylindrical <18.0 mm",
+      "conditions_impact": {
+        "apparatus": "15.8 ± 0.1 mm diameter Type 316 stainless steel bar (at least 6 cm long)",
+        "mass": "9.1 ± 0.1 kg dropped from 61 ± 2.5 cm height",
+        "orientation": "Longitudinal axis parallel to flat surface, perpendicular to bar",
+        "impacts_per_sample": "Single impact only",
+        "sample_requirement": "Test cells/component cells not previously subjected to other tests"
+      },
+      "conditions_crush": {
+        "apparatus": "Two flat surfaces",
+        "speed": "Approximately 1.5 cm/s at first point of contact",
+        "termination_criteria": ["Applied force reaches 13 kN ± 0.78 kN", "Voltage drops by at least 100 mV", "Cell deformed by 50% or more of original thickness"],
+        "orientation_prismatic": "Force applied to widest side",
+        "orientation_coin": "Force applied on flat surfaces",
+        "orientation_cylindrical": "Force applied perpendicular to longitudinal axis",
+        "crush_per_sample": "One crush only",
+        "observation_time": "6 hours after test"
       },
       "criteria": {
-        "pass_conditions": [
-          "no_fire",
-          "no_leakage",
-          "no_venting"
-        ],
-        "description": "no leakage, no venting, no\ndisassembly"
+        "pass_conditions": ["no_disassembly", "no_fire", "temperature_limit"],
+        "description": "External temperature shall not exceed 170°C. No disassembly and no fire during test and within 6 hours after test.",
+        "temperature_limit": "170°C maximum external temperature"
       },
-      "original_text_snippet": "s not less than 90% of its voltage immediately prior to this procedure. The\nrequirement relating to voltage is not applicable to test cells and batteries at fully discharged\nstates.\n38.3.4.2 Test T2: Thermal rest\n38.3.4.2.1 Purpose\nThis test assesses cell and battery seal integrity and internal electrical\nconnections. The test is conducted using rapid and extreme temperature changes.\n38.3.4.2.2 Test procedure\nTest cells and batteries are to be stored for at least six hours at a test temperature ..."
+      "exemptions": [],
+      "original_text_snippet": "Section 38.3.4.6.2: A 9.1 kg ± 0.1 kg mass is to be dropped from a height of 61 ± 2.5 cm at the intersection of the bar and sample. Each sample is to be subjected to only a single impact. Section 38.3.4.6.3: A cell or component cell is to be crushed between two flat surfaces. The crushing is to be continued until the first of three options is reached: (a) 13 kN ± 0.78 kN, (b) voltage drops by 100 mV, or (c) cell deformed by 50% or more. Section 38.3.4.6.4: Cells meet this requirement if external temperature does not exceed 170°C and there is no disassembly and no fire during test and within 6 hours after test."
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過充電測試",
+      "test_name_en": "Test T.7: Overcharge",
+      "section": "38.3.4.7",
+      "test_objects": ["PACK", "SINGLE_CELL_BATTERY"],
+      "applicability": "Rechargeable batteries or single cell rechargeable batteries with overcharge protection",
+      "conditions": {
+        "charge_current": "Twice the manufacturer's recommended maximum continuous charge current",
+        "min_voltage_low": "For recommended charge voltage ≤18V: lesser of (2 × max charge voltage) or 22V",
+        "min_voltage_high": "For recommended charge voltage >18V: 1.2 × max charge voltage",
+        "temperature": "Ambient temperature",
+        "duration": "24 hours",
+        "sample_size": "4 small batteries (first cycle, fully charged), 4 small batteries (after 50 cycles), 2 large batteries (first cycle), 2 large batteries (after 25 cycles) - per 38.3.3(d)"
+      },
+      "criteria": {
+        "pass_conditions": ["no_disassembly", "no_fire"],
+        "description": "No disassembly and no fire during test and within 7 days after test.",
+        "observation_period": "7 days after test"
+      },
+      "exemptions": [
+        "Batteries not equipped with overcharge protection that are designed for use only as component in another battery or equipment that affords such protection (38.3.3(d))",
+        "Component cells that are not transported separately from the battery need only be tested to T.6 and T.8 (38.3.2.1)"
+      ],
+      "original_text_snippet": "Section 38.3.4.7.2: The charge current shall be twice the manufacturer's recommended maximum continuous charge current. The duration of the test shall be 24 hours. Section 38.3.4.7.3: Rechargeable batteries meet this requirement if there is no disassembly and no fire during the test and within seven days after the test."
+    },
+    {
+      "test_id": "ELEC-03",
+      "test_name_zh": "強制放電測試",
+      "test_name_en": "Test T.8: Forced Discharge",
+      "section": "38.3.4.8",
+      "test_objects": ["CELL", "COMPONENT_CELL"],
+      "applicability": "Primary or rechargeable cells",
+      "conditions": {
+        "power_supply": "12 V D.C. power supply in series",
+        "initial_current": "Equal to maximum discharge current specified by manufacturer",
+        "apparatus": "Resistive load of appropriate size and rating in series with test cell",
+        "temperature": "Ambient temperature",
+        "duration": "Time interval (hours) = Rated capacity (Ah) / Initial test current (A)",
+        "sample_size": "10 primary cells (fully discharged), 10 primary component cells, 10 rechargeable cells (first cycle, fully discharged), 10 rechargeable cells (after 50 cycles) - per 38.3.3(e)"
+      },
+      "criteria": {
+        "pass_conditions": ["no_disassembly", "no_fire"],
+        "description": "No disassembly and no fire during test and within 7 days after test.",
+        "observation_period": "7 days after test"
+      },
+      "exemptions": [
+        "Component cells that are not transported separately from the battery need only be tested to T.6 and T.8 (38.3.2.1)"
+      ],
+      "original_text_snippet": "Section 38.3.4.8.2: Each cell shall be forced discharged at ambient temperature by connecting it in series with a 12 V D.C. power supply at an initial current equal to the maximum discharge current specified by the manufacturer. Each cell shall be forced discharged for a time interval (in hours) equal to its rated capacity divided by the initial test current (in ampere). Section 38.3.4.8.3: Primary or rechargeable cells meet this requirement if there is no disassembly and no fire during the test and within seven days after the test."
     }
   ],
   "exemptions_summary": [
-    "unless detonation of an acceptor is observed earlier",
-    "not applicable to test cells and batteries at fully discharged states",
-    "except battery casing, handling devices or labels) from a cell or battery such that\nthe loss of mass exceeds the values in Table 38",
-    "not applicable to test cells and batteries at fully discharged\nstates"
-  ]
+    {
+      "test_id": "T.1-T.5",
+      "exemption": "Component cells not transported separately from battery need only be tested to T.6 and T.8 (38.3.2.1)"
+    },
+    {
+      "test_id": "T.1-T.5",
+      "exemption": "Rechargeable single cell batteries with overcharge protection shall be subjected to T.7; those without protection designed for use in equipment that affords protection are exempt (38.3.2.1, 38.3.3(d))"
+    },
+    {
+      "test_id": "T.6",
+      "exemption": "Test cells/component cells must not have been previously subjected to other tests (38.3.4.6.3)"
+    },
+    {
+      "test_id": "T.7",
+      "exemption": "Batteries not equipped with overcharge protection designed for use as component in another battery/equipment that affords protection (38.3.3(d))"
+    },
+    {
+      "test_id": "T.1-T.8",
+      "exemption": "Battery assemblies with aggregate lithium content ≤500g (or Li-ion ≤6200 Wh) assembled from tested batteries need only be tested to T.3, T.4, T.5 (and T.7 if rechargeable) (38.3.3(f))"
+    },
+    {
+      "test_id": "T.1-T.8",
+      "exemption": "Large battery assemblies (>500g lithium or >6200 Wh) do not need testing if verified as preventing overcharge, short circuits, and over discharge between batteries (38.3.3(g))"
+    },
+    {
+      "test_id": "T.1, T.2",
+      "exemption": "Voltage retention requirement (90%) not applicable to cells/batteries at fully discharged states (38.3.4.1.3, 38.3.4.2.3, 38.3.4.3.3, 38.3.4.4.3)"
+    }
+  ],
+  "test_sequence_requirements": {
+    "T.1_to_T.5": "Shall be conducted in sequence on the same cell or battery (38.3.4)",
+    "T.6_and_T.8": "Shall be conducted using not otherwise tested cells or batteries (38.3.4)",
+    "T.7": "May be conducted using undamaged batteries previously used in T.1 to T.5 for cycled battery testing (38.3.4)"
+  },
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-17 18:50",
+    "extraction_method": "Manual reading and analysis of complete .md file",
+    "notes": "UN38.3 is a transport testing standard. Tests T.1-T.5 are sequential on same sample; T.6 and T.8 require fresh samples; T.7 may use cycled samples from T.1-T.5. Multiple exemptions apply based on battery type, configuration, and intended use."
+  }
 }
