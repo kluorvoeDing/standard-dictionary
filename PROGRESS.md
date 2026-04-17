@@ -1,6 +1,6 @@
 # 專案進度追蹤 | standard-dictionary
 
-**最後更新：** 2026-04-17 17:15
+**最後更新：** 2026-04-17 17:45
 **版本：** v0.1.0
 **負責人：** Beta
 
@@ -28,6 +28,7 @@
 - [x] 初步 .md 檔案品質檢查（22 檔全部有效）
 - [x] 推送初始版本到 GitHub（v0.1.0）
 - [x] 建立分類規則草案 v0.1（含 impact/shock 區分、thermal abuse 新增）
+- [x] 更新解析策略：加入豁免條件/特例追蹤（如 UN38.3 過充電豁免）
 
 ---
 
@@ -97,7 +98,7 @@
 
 ---
 
-## 🏷️ 分類規則（草案 v0.1）
+## 🏷️ 分類規則（草案 v0.2）
 
 ### 測試對象（5 類）
 | 代號 | 名稱 | 英文關鍵字 | 中文關鍵字 |
@@ -108,21 +109,23 @@
 | ESS | 儲能系統 | ESS, energy storage system | 儲能系統 |
 | SYSTEM | 整套裝置 | system, complete device | 整套裝置，系統 |
 
-### 測試項目（初步，待擴展）
-| 代號 | 名稱 | 英文關鍵字 | 中文關鍵字 |
-|------|------|------------|------------|
-| ELEC-01 | 外部短路 | external short, short circuit | 外部短路，短路 |
-| ELEC-02 | 過度充電 | overcharge, abnormal charge | 過度充電，異常充電 |
-| ELEC-03 | 強制放電 | forced discharge | 強制放電 |
-| MECH-01 | 撞擊 | impact | 撞擊 |
-| MECH-02 | 衝擊 | shock | 衝擊 |
-| MECH-03 | 擠壓 | crush | 擠壓 |
-| MECH-04 | 穿刺 | nail penetration, internal short | 穿刺，內部短路 |
-| MECH-05 | 振動 | vibration | 振動 |
-| MECH-06 | 落下 | drop, free fall | 落下，落摔，自由落下 |
-| ENV-01 | 溫度循環 | temperature cycling, thermal cycling | 溫度循環 |
-| ENV-02 | 低氣壓 | low pressure, altitude | 低氣壓，海拔 |
-| THERM-01 | 熱濫用/加熱 | thermal abuse, heating, heat | 熱濫用，加熱，高溫 |
+### 測試項目（v0.2，含豁免追蹤）
+| 代號 | 名稱 | 英文關鍵字 | 中文關鍵字 | 已知豁免 |
+|------|------|------------|------------|------------|
+| ELEC-01 | 外部短路 | external short, short circuit | 外部短路，短路 | - |
+| ELEC-02 | 過度充電 | overcharge, abnormal charge | 過度充電，異常充電 | UN38.3（某些 cell 豁免） |
+| ELEC-03 | 強制放電 | forced discharge | 強制放電 | - |
+| MECH-01 | 撞擊 | impact | 撞擊 | - |
+| MECH-02 | 衝擊 | shock | 衝擊 | - |
+| MECH-03 | 擠壓 | crush | 擠壓 | - |
+| MECH-04 | 穿刺 | nail penetration, internal short | 穿刺，內部短路 | - |
+| MECH-05 | 振動 | vibration | 振動 | - |
+| MECH-06 | 落下 | drop, free fall | 落下，落摔，自由落下 | - |
+| ENV-01 | 溫度循環 | temperature cycling, thermal cycling | 溫度循環 | - |
+| ENV-02 | 低氣壓 | low pressure, altitude | 低氣壓，海拔 | - |
+| THERM-01 | 熱濫用/加熱 | thermal abuse, heating, heat | 熱濫用，加熱，高溫 | - |
+
+**註：** impact 與 shock 為不同測試，需分開。
 
 **註：** impact 與 shock 為不同測試，需分開。
 
