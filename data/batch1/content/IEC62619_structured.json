@@ -1,183 +1,268 @@
 {
   "standard_id": "IEC62619",
   "filename": "IEC62619-2022.md",
+  "full_name": "IEC 62619 Edition 2.0 2022-05: Secondary cells and batteries containing alkaline or other non-acid electrolytes - Safety requirements for secondary lithium cells and batteries, for use in industrial applications",
+  "publication_date": "2022-05",
   "li_applicable": true,
-  "test_count": 9,
+  "test_count": 10,
   "tests": [
     {
       "test_id": "ELEC-01",
-      "test_name_zh": "外部短路",
-      "test_name_en": "External Short Circuit",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
+      "test_name_zh": "外部短路測試",
+      "test_name_en": "External Short-Circuit Test (Cell or Cell Block)",
+      "section": "7.2.1",
+      "test_objects": ["CELL", "CELL_BLOCK"],
       "conditions": {
-        "soc": "fully charged"
+        "soc": "Fully charged",
+        "temperature": "25 ± 5°C (ambient)",
+        "resistance": "30 ± 10 mΩ (total external resistance)",
+        "duration": "6 hours or until case temperature declines by 80% of maximum temperature rise, whichever is sooner",
+        "sample_size": "Not specified in excerpt (refer to full standard)"
       },
       "criteria": {
-        "pass_conditions": [
-          "no_fire",
-          "no_explosion"
-        ],
-        "description": "No fire, no explosion"
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "Short-circuit between positive and negative terminals shall not cause fire or explosion."
       },
-      "original_text_snippet": "sides will\nbe subjected to the impact. Each sample is to be subjected to only a single impact with separate samples to be used for each impact  (see Figure  1).\nIn the case of a metal floor, external short circuit of  the cell or cell block  with the floor should\nbe avoided by appropriate measures .\nPouch cells are tested as prismatic cells.\nc) Acceptance criteria\nNo fire, no explosion.\n\n## Page 4\n\n– 16 – IEC 62619:2022 © IEC 2022\na) C ylindrical cell  b) Direction 1 of\nprismatic  cell c) Direct..."
-    },
-    {
-      "test_id": "ELEC-02",
-      "test_name_zh": "過度充電",
-      "test_name_en": "Overcharge / Abnormal Charge",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
-      "conditions": {
-        "duration": "1 h"
-      },
-      "criteria": {
-        "pass_conditions": [
-          "no_fire",
-          "no_explosion"
-        ],
-        "description": "No fire , no\nexplosion "
-      },
-      "original_text_snippet": "equipment side\nc) Combination of equipment with\nBMS and module (s) d) Equipment includes all  BMS functions\nand cell (s)\nFigure  6 – Examples of BMS locations and battery system configurations\n8.2.2  Overcharge control of voltage (battery system)\na) Requirement\nThe BM S shall control t he cell voltage during charging below the upper limit charging voltage\nof the cells.\nb) Test\nThe test shall be carried out in an ambient temperature of 25 °C ± 5 °C and under normal\noperating conditions with the c..."
-    },
-    {
-      "test_id": "ELEC-03",
-      "test_name_zh": "強制放電",
-      "test_name_en": "Forced Discharge",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
-      "conditions": {
-        "duration": "90 min"
-      },
-      "criteria": {
-        "pass_conditions": [
-          "no_fire",
-          "no_explosion"
-        ],
-        "description": "No fire, no explosion"
-      },
-      "original_text_snippet": "temperature of the cell surface reaches steady state\nconditions (less than 10  °C change in a 30- min period) or returns to ambient  temperature .\nc) Acceptance criteria\nNo fire, no explosion.\n7.2.6  Forced discharge test (cell or c ell block)\na) Requirements\nA cell in  a battery system  shall withstand  a forced dischar ge without causing fire or\nexplosion.\nb) Test\nThe test shall be carried out in an ambient temperature of 25 °C ± 5 °C. Each test cell shall\nbe discharged at a constant current o..."
+      "exemptions": [],
+      "original_text_snippet": "Section 7.2.1 b): Fully charged cells are stored in an ambient temperature of 25 °C ± 5 °C. Each cell is then short-circuited by connecting the positive and negative terminals with a total external resistance of 30 mΩ ± 10 mΩ. The cells are to remain on test for 6 h or until the case temperature declines by 80% of the maximum temperature rise, whichever is the sooner."
     },
     {
       "test_id": "MECH-01",
-      "test_name_zh": "撞擊",
-      "test_name_en": "Impact",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
+      "test_name_zh": "撞擊測試",
+      "test_name_en": "Impact Test (Cell or Cell Block)",
+      "section": "7.2.2",
+      "test_objects": ["CELL", "CELL_BLOCK"],
       "conditions": {
-        "duration": "6  h"
+        "soc": "50% capacity of rated capacity (discharged at 0.2 It A)",
+        "apparatus": "Type 316 stainless steel bar, 15.8 ± 0.1 mm diameter, at least 60 mm length",
+        "mass": "9.1 kg rigid mass",
+        "height": "610 ± 25 mm",
+        "orientation_cylindrical": "Longitudinal axis parallel to floor, perpendicular to bar",
+        "orientation_prismatic": "Both wide and narrow sides (rotate 90°), separate samples for each impact",
+        "orientation_pouch": "Tested as prismatic cells",
+        "impacts_per_sample": "Single impact only"
       },
       "criteria": {
-        "pass_conditions": [
-          "no_fire",
-          "no_explosion"
-        ],
-        "description": "No fire, no explosion "
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "An impact to the cell shall not cause fire or explosion."
       },
-      "original_text_snippet": "e cells are to remain on test for 6  h or unti l the case temperature declines by 80 % of the\nmaximum temperature rise, whichever is the sooner .\nc) Acceptance criteria\nNo fire, no explosion .\n7.2.2  Impact test (cell or cell block)\na) Requirements\nAn impact to the cell  as mentioned in 7.2.2  b) shall not cause fire or explosion.\nb) Test\nThe cell or cell block shall be discharged at a constant current of 0 ,2 It A, to 50 % capacity\nof the rated capacity.\nThe cell or cell block is place d on a f..."
-    },
-    {
-      "test_id": "MECH-02",
-      "test_name_zh": "衝擊",
-      "test_name_en": "Shock",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
-      "conditions": {},
-      "criteria": {
-        "pass_conditions": []
-      },
-      "original_text_snippet": "cation or level can also be according to the applied functional safety standard such as Class (e.g.\nclass B or C) according to IEC 60730 -1.\nExamples of hazards or risks are as follows: EMC, electric shock , hot spots at electrical\ninterfaces,  moving parts , water immersion, external short -circuit , internal short -circuit ,\nover charge, over heating, drop, crush, over discharge, discharge with overcurrent, charg ing after\nan overdischarge, electrolyte leakage, ignition of emission gas, fire, ..."
-    },
-    {
-      "test_id": "MECH-03",
-      "test_name_zh": "擠壓",
-      "test_name_en": "Crush",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
-      "conditions": {},
-      "criteria": {
-        "pass_conditions": []
-      },
-      "original_text_snippet": "r risks are as follows: EMC, electric shock , hot spots at electrical\ninterfaces,  moving parts , water immersion, external short -circuit , internal short -circuit ,\nover charge, over heating, drop, crush, over discharge, discharge with overcurrent, charg ing after\nan overdischarge, electrolyte leakage, ignition of emission gas, fire, earthquake, seismic sea\nwave, etc .\n8.2 Battery management system  (or battery manag ement unit)\n8.2.1  Requirements for the BM S\nThe BM S evaluates the condition..."
+      "exemptions": [],
+      "original_text_snippet": "Section 7.2.2 b): The cell or cell block is placed on a flat concrete or metal floor. A type 316 stainless steel bar with a diameter of 15.8 mm ± 0.1 mm and at least 60 mm in length is placed across the centre of the cell. A 9.1 kg rigid mass is then dropped from a height of 610 mm ± 25 mm onto the bar placed on the sample. Each sample is to be subjected to only a single impact with separate samples to be used for each impact."
     },
     {
       "test_id": "MECH-06",
-      "test_name_zh": "落下",
-      "test_name_en": "Drop / Free Fall",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
-      "conditions": {},
-      "criteria": {
-        "pass_conditions": [
-          "no_fire",
-          "no_explosion"
-        ],
-        "description": "No fire, no explosion"
-      },
-      "original_text_snippet": "ter of 15,8 mm ± 0,1 mm and at least 60 m m in length or the longest\ndimension of the cell, whichever is greater , is placed across the centre of the cell or cell\nblock . A 9,1 kg rigid mass is t hen dropped from a height of  610 mm ± 25 mm onto the bar\nplaced on the sample.\nA cylindrical or prismatic cell is to be impacted with its longitudinal axis parallel to the flat\nconcrete or metal floor  and perpendicular to the longitudinal axis of the 15,8 mm diameter\ncurved surface lying across the ce..."
-    },
-    {
-      "test_id": "ENV-02",
-      "test_name_zh": "低氣壓",
-      "test_name_en": "Low Pressure / Altitude",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
+      "test_name_zh": "落下測試",
+      "test_name_en": "Drop Test (Cell or Cell Block, and Battery System)",
+      "section": "7.2.3",
+      "test_objects": ["CELL", "CELL_BLOCK", "BATTERY_SYSTEM"],
       "conditions": {
-        "duration": "10  min"
+        "soc": "Fully charged",
+        "floor": "Flat concrete or metal floor",
+        "drop_count_whole": "3 times (whole drop test)",
+        "drop_count_edge_corner": "2 times per impact type (edge and corner drop test)",
+        "rest_time": "Minimum 1 hour after test before visual inspection",
+        "mass_based_conditions": [
+          {"mass": "< 7 kg", "method": "Whole drop", "height": "1000 mm", "orientation": "Random orientations"},
+          {"mass": "7 kg to < 20 kg", "method": "Whole drop", "height": "100 mm", "orientation": "Bottom down (as specified by manufacturer)"},
+          {"mass": "20 kg to < 50 kg", "method": "Edge and corner", "height": "100 mm"},
+          {"mass": "50 kg to < 100 kg", "method": "Edge and corner", "height": "50 mm"},
+          {"mass": "≥ 100 kg", "method": "Edge and corner", "height": "25 mm"}
+        ]
       },
       "criteria": {
-        "pass_conditions": []
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "Dropping the test unit shall not cause fire or explosion."
       },
-      "original_text_snippet": "ng core from the sealed package and attach the terminals for voltage measurement and the thermocouple(s) for temperature measurement on the surface of the winding core. Set the winding core under the pressure equipment making sure  to locate the point of placement of the nickel particle\nunder the pressing jig.\nTo prevent evaporation of electrolyte, finish the work within 10  min from removing\nthe winding core from the chamber for temperature conditioning to  closing t he\nchamber door where  the ..."
+      "exemptions": [],
+      "original_text_snippet": "Section 7.2.3.2 b): Each fully charged test unit is dropped three times from a height shown in Table 2 onto a flat concrete or metal floor. If the mass of the test unit is less than 7 kg, the test unit is dropped so as to obtain impacts in random orientations. If the mass is 7 kg or more but less than 20 kg, the test shall be performed with the test unit dropped in the bottom down direction."
     },
     {
       "test_id": "THERM-01",
-      "test_name_zh": "熱濫用",
-      "test_name_en": "Thermal Abuse / Heating",
-      "test_objects": [
-        "CELL",
-        "MODULE",
-        "PACK"
-      ],
+      "test_name_zh": "熱濫用測試",
+      "test_name_en": "Thermal Abuse Test (Cell or Cell Block)",
+      "section": "7.2.4",
+      "test_objects": ["CELL", "CELL_BLOCK"],
       "conditions": {
-        "soc": "fully charged",
-        "duration": "3 h"
+        "soc": "Fully charged",
+        "initial_temperature": "25 ± 5°C (stabilized)",
+        "oven_type": "Gravity or circulating air-convection oven",
+        "ramp_rate": "5 ± 2°C/min",
+        "target_temperature": "85 ± 5°C",
+        "hold_time": "3 hours"
       },
       "criteria": {
-        "pass_conditions": [
-          "no_fire",
-          "no_explosion"
-        ],
-        "description": "No fire, no explosion"
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "An elevated temperature exposure shall not cause fire or explosion."
       },
-      "original_text_snippet": "om a hand- held position. If a lifting -release device is used, it should not, on release,\nimpart rotational or sideward forces to the unit.\nFigure  4 – C onfiguration for the corner drop test\n7.2.4  Thermal abuse test (cell or cell block)\na) Requirements\nAn elevated temperature exposure shall not cause fire or explosion.\nb) Test\nEach fully charged cell, stabilized in an ambient temperature of 25 °C ± 5 °C, is placed in a\ngravity or  circulating  air-convection oven.\nThe oven temperature is rais..."
+      "exemptions": [],
+      "original_text_snippet": "Section 7.2.4 b): Each fully charged cell, stabilized in an ambient temperature of 25 °C ± 5 °C, is placed in a gravity or circulating air-convection oven. The oven temperature is raised at a rate of 5 °C / min ± 2 °C /min to a temperature of 85 °C ± 5 °C. The cell remains at this temperature for 3 h before the test is discontinued."
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過充電測試",
+      "test_name_en": "Overcharge Test (Cell or Cell Block)",
+      "section": "7.2.5",
+      "test_objects": ["CELL", "CELL_BLOCK"],
+      "applicability": "Battery systems with only single control/protection for charging voltage control",
+      "conditions": {
+        "soc": "Discharged to final voltage specified by manufacturer (at 0.2 It A)",
+        "temperature": "25 ± 5°C",
+        "charging_current": "Maximum specified charging current of battery system",
+        "charging_voltage": "Maximum voltage possible when original charging control does not work",
+        "termination": "Until temperature reaches steady state (<10°C change in 30 min) or returns to ambient",
+        "parallel_cells": "For parallel-connected cells: current = max charging current / number of parallel cells"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "Charging for longer periods than specified shall not cause fire or explosion."
+      },
+      "exemptions": [
+        "Battery systems with two or more independent protections/controls for charging voltage control may be waived (7.2.5)",
+        "Example of two independent protections: cell voltage monitoring with charge current control + diagnostic monitoring system that detects failure (7.2.5 NOTE)"
+      ],
+      "original_text_snippet": "Section 7.2.5 b): Sample cells shall then be charged with a constant current equal to the maximum specified charging current of the battery system until the voltage reaches the maximum voltage value that is possible under the condition where the original charging control of the battery system does not work. The test shall be continued until the temperature of the cell surface reaches steady state conditions (less than 10 °C change in a 30-min period) or returns to ambient temperature."
+    },
+    {
+      "test_id": "ELEC-03",
+      "test_name_zh": "強制放電測試",
+      "test_name_en": "Forced Discharge Test (Cell or Cell Block)",
+      "section": "7.2.6",
+      "test_objects": ["CELL", "CELL_BLOCK"],
+      "conditions": {
+        "soc": "Discharged to final voltage specified by manufacturer (at 0.2 It A), then forced discharged",
+        "temperature": "25 ± 5°C",
+        "forced_discharge_current": "1.0 It A",
+        "duration": "90 minutes",
+        "target_voltage_single": "Minus upper limit charging voltage (for systems with 2+ protections or single cell)",
+        "target_voltage_multiple": "Minus (n-1) × upper limit charging voltage (n = number of series cells, for systems with single/no protection)",
+        "reverse_charging_time": "t = Im / It × min (if max discharging current < 1.0 It A)"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "A cell in a battery system shall withstand forced discharge without causing fire or explosion."
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 7.2.6 b): A discharged cell is subjected to a forced discharge at a constant current of 1.0 It A for a test period of 90 min. If the voltage in discharge reaches the target voltage within the test period, the voltage shall be kept at the target voltage by reducing the current for the remaining test period."
+    },
+    {
+      "test_id": "ELEC-04",
+      "test_name_zh": "內部短路測試",
+      "test_name_en": "Internal Short-Circuit Test (Cell)",
+      "section": "7.3.2",
+      "test_objects": ["CELL"],
+      "applicability": "Cylindrical and prismatic cells (design evaluation)",
+      "conditions": {
+        "soc": "Discharged at 0.2 It A to final voltage, then charged at upper limited charging voltage until current drops to 0.05 It A",
+        "temperature": "25 ± 5°C (chamber controlled)",
+        "apparatus": "Press equipment with nitrile rubber or acrylic resin pressing jig",
+        "nickel_particle": "Inserted at center of outer end positive and negative electrode pair",
+        "press_speed": "0.1 mm/s",
+        "stop_criteria_voltage": "Voltage drop >50 mV (internal short-circuit detected)",
+        "stop_criteria_force_cylindrical": "800 N",
+        "stop_criteria_force_prismatic": "400 N",
+        "hold_time": "30 seconds after short-circuit detected",
+        "voltage_monitoring_rate": ">100 times per second"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire"],
+        "description": "A forced internal short-circuit test shall not cause fire."
+      },
+      "exemptions": [
+        "Shall be conducted by cell manufacturer or third-party test house (7.3.2 a))"
+      ],
+      "original_text_snippet": "Section 7.3.2 b) 2): The fixture is moved down at a speed of 0.1 mm/s monitoring the cell voltage. When a voltage drop caused by the internal short-circuit is detected, stop the descent immediately and keep the pressing jig in the position for 30 s, and then release the pressure. If the voltage drops more than 50 mV compared to the initial voltage, an internal short-circuit has been determined to have occurred."
+    },
+    {
+      "test_id": "THERM-02",
+      "test_name_zh": "熱失控傳播測試",
+      "test_name_en": "Propagation Test (Battery System)",
+      "section": "7.3.3",
+      "test_objects": ["BATTERY_SYSTEM"],
+      "conditions": {
+        "soc": "Fully charged",
+        "temperature": "25 ± 5°C (stabilized)",
+        "trigger_method": "One target cell heated by laser (or other method) until thermal runaway",
+        "observation_time": "8 hours after thermal runaway initiated",
+        "trigger_off": "Triggering source turned off after thermal runaway in target cell is initiated"
+      },
+      "criteria": {
+        "pass_conditions": ["no_external_fire", "no_case_rupture"],
+        "description": "No external fire from battery system, no battery system case rupture.",
+        "note": "Fire or case rupture caused by target cell is acceptable (intentional trigger)"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 7.3.3 b): The battery system is fully charged and then left until the cells stabilize in an ambient temperature of 25 °C ± 5 °C. One cell in the battery system (target cell) is e.g. heated by laser until the cell enters into thermal runaway. After thermal runaway in the cell is initiated, the triggering source is turned off and battery system is observed for 8 h."
+    },
+    {
+      "test_id": "ELEC-05",
+      "test_name_zh": "過充電壓控制測試（BMS）",
+      "test_name_en": "Overcharge Control of Voltage (Battery System)",
+      "section": "8.2.2",
+      "test_objects": ["BATTERY_SYSTEM"],
+      "conditions": {
+        "soc": "Discharged to final voltage specified by manufacturer (at 0.2 It A)",
+        "temperature": "25 ± 5°C",
+        "cooling_system": "Operating (if provided)",
+        "charging_current": "Maximum current of recommended charger",
+        "excess_voltage": "10% above upper limit charging voltage for each cell",
+        "termination": "Until BMS terminates charging",
+        "post_test_monitoring": "1 hour after charging stopped"
+      },
+      "criteria": {
+        "pass_conditions": ["bms_terminates", "no_fire", "no_explosion"],
+        "description": "BMS terminates charging before exceeding upper limit charging voltage. No fire, no explosion.",
+        "safety_stop": "If BMS fails: stop when cell voltage reaches 103% of upper limit or 1 min after exceeding"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 8.2.2 b): Sample battery systems shall then be charged at the maximum current of the recommended charger with set voltage exceeding the upper limit charging voltage by 10% for each cell in the battery system. The test shall be carried out until the BMS terminates the charging. Data acquisition/monitoring shall be continued for 1 h after charging is stopped."
+    },
+    {
+      "test_id": "ELEC-06",
+      "test_name_zh": "過充電流控制測試（BMS）",
+      "test_name_en": "Overcharge Control of Current (Battery System)",
+      "section": "8.2.3",
+      "test_objects": ["BATTERY_SYSTEM"],
+      "conditions": {
+        "soc": "Discharged to final voltage specified by manufacturer (at 0.2 It A)",
+        "temperature": "25 ± 5°C",
+        "cooling_system": "Operating (if provided)",
+        "charging_current": "20% above maximum charging current",
+        "post_test_monitoring": "1 hour after charging stopped"
+      },
+      "criteria": {
+        "pass_conditions": ["bms_detects", "bms_controls", "no_fire", "no_explosion"],
+        "description": "BMS shall detect overcharging current and control charging below maximum charging current. No fire, no explosion."
+      },
+      "exemptions": [
+        "May be waived if maximum charging current of upper system is lower than maximum charging current for battery system (8.2.3)"
+      ],
+      "original_text_snippet": "Section 8.2.3 b): Sample battery systems shall then be charged at a current exceeding the maximum charging current by 20%. Data acquisition and/or monitoring shall be continued for 1 h after charging is stopped."
     }
   ],
   "exemptions_summary": [
-    "Unless otherwise specified, no part of this publication may be reproduced or utilized in any form\nor by any means, electronic or mechanical, including photocopying and microfilm, without permission in writing from\neither IEC or IEC's member National Committee in the country of the requester"
-  ]
+    {
+      "test_id": "T.7 (Overcharge)",
+      "exemption": "Battery systems with two or more independent protections/controls for charging voltage control may be waived (7.2.5)"
+    },
+    {
+      "test_id": "T.8 (Overcharge Current)",
+      "exemption": "May be waived if maximum charging current of upper system is lower than battery system maximum (8.2.3)"
+    },
+    {
+      "test_id": "Internal Short-Circuit",
+      "exemption": "Shall be conducted by cell manufacturer or third-party test house as design evaluation (7.3.2)"
+    }
+  ],
+  "bms_requirements": {
+    "applicable_sections": ["8.1", "8.2"],
+    "functional_safety_standards": ["IEC 61508", "IEC 60730-1:2020 Annex H", "ISO 13849"],
+    "key_factors": ["Voltage", "Temperature", "Current"],
+    "tests_required": ["Overcharge voltage control (8.2.2)", "Overcharge current control (8.2.3)", "Overheating control (8.2.4)"]
+  },
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-17 19:00",
+    "extraction_method": "Manual reading and analysis of complete .md file",
+    "notes": "IEC62619 is an industrial battery safety standard. Key features include: (1) Drop test varies by mass, (2) Internal short-circuit test is design evaluation, (3) Propagation test evaluates thermal runaway containment, (4) BMS functional safety requirements with SIL target."
+  }
 }
