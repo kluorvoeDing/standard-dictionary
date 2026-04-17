@@ -1,0 +1,635 @@
+{
+  "standard_id": "UL-1973",
+  "filename": "s1973_3.md",
+  "full_name": "ANSI/CAN/UL 1973:2022 - Standard for Batteries for Use in Stationary and Motive Auxiliary Power Applications (Third Edition)",
+  "publication_date": "2013-02 (First), 2018-02 (Second), 2022-02-25 (Third)",
+  "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
+  "li_applicable": true,
+  "test_count": 28,
+  "ocr_quality": "良好（PDF 直接提取，英文內容完整，但部分頁面有版權水印）",
+  "tests": [
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過充電測試",
+      "test_name_en": "Overcharge Test",
+      "section": "15",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "放電至製造商規定的 EODV",
+        "charging_rate": "電池組規定的最大充電速率",
+        "fault_condition": "充電電路單一故障（可能導致過充）",
+        "termination_criteria": ["保護電路終止充電", "充電至 110% 額定容量", "發生起火/爆炸"],
+        "monitoring": "使用火花點火源或氣體檢測監測可燃氣體"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常"
+      },
+      "exemptions": [
+        "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "15 Overcharge Test: A fully discharged sample is to be subjected to the maximum specified charging rate with a single fault condition in the charging circuit. The test continues until ultimate results occur. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "ELEC-11",
+      "test_name_zh": "高倍率充電測試",
+      "test_name_en": "High Rate Charge Test",
+      "section": "16",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "放電至製造商規定的 EODV",
+        "charging_rate": "高於正常充電速率（按製造商規格或單一故障條件）",
+        "fault_condition": "充電電路單一故障（可能導致高倍率充電）",
+        "termination_criteria": ["保護電路終止充電", "達到穩定狀態", "發生起火/爆炸"]
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常"
+      },
+      "exemptions": [
+        "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "16 High Rate Charge: The sample is subjected to high rate charging with a single fault condition. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "外部短路測試",
+      "test_name_en": "Short Circuit Test",
+      "section": "17",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "resistance": "≤ 20 mΩ",
+        "temperature": "室溫環境",
+        "fault_condition": "放電保護電路單一元件故障",
+        "duration": "完全放電或溫度達到峰值/穩定狀態後 7 小時",
+        "monitoring": "使用火花點火源或氣體檢測監測可燃氣體"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常"
+      },
+      "exemptions": [
+        "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "17 Short Circuit Test: The sample is short-circuited with a resistance ≤ 20 mΩ. A single fault condition is applied to the discharge protection circuit. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "ELEC-12",
+      "test_name_zh": "放電過載測試",
+      "test_name_en": "Overload Under Discharge Test",
+      "section": "18",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "discharge_rate": "高於正常放電速率（按製造商規格或單一故障條件）",
+        "fault_condition": "放電電路單一故障（可能導致過載）",
+        "termination_criteria": ["保護電路終止放電", "達到穩定狀態", "發生起火/爆炸"]
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常"
+      },
+      "exemptions": [
+        "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "18 Overload Under Discharge: The sample is subjected to overload discharge with a single fault condition. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "ELEC-06",
+      "test_name_zh": "過放電保護測試",
+      "test_name_en": "Overdischarge Protection Test",
+      "section": "19",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "discharge_rate": "製造商規定的最大放電速率",
+        "termination_criteria": ["被動保護裝置啟動", "最小電壓/最大溫度保護啟動", "達到正常放電限值後 30 分鐘"],
+        "monitoring": "使用火花點火源或氣體檢測監測可燃氣體"
+      },
+      "criteria": {
+        "pass_conditions": ["protection_activates", "no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "保護裝置應啟動防止電池低於截止電壓；應無起火、無爆炸等"
+      },
+      "exemptions": [
+        "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "19 Overdischarge Protection Test: The DUT is discharged until the protection device activates. Protection shall prevent cells from going below cut-off voltage. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "THERM-02",
+      "test_name_zh": "溫度和工作限值檢查測試",
+      "test_name_en": "Temperature and Operating Limits Check Test",
+      "section": "20",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "放電至 EODV 後充電至 MOSOC",
+        "ambient_temperature": "製造商規定的最高/最低工作溫度",
+        "cycles": "多次充放電循環",
+        "monitoring": "監測模組電壓/電流及溫度敏感元件（包括電池）"
+      },
+      "criteria": {
+        "pass_conditions": ["within_limits"],
+        "description": "製造商規定的限值（電壓、電流、溫度）不得超出；元件溫度不得超出其規格"
+      },
+      "exemptions": [],
+      "original_text_snippet": "20 Temperature and Operating Limits Check: The DUT is operated at maximum/minimum ambient temperatures through charge/discharge cycles. Manufacturer limits shall not be exceeded."
+    },
+    {
+      "test_id": "ELEC-07",
+      "test_name_zh": "不平衡充電測試",
+      "test_name_en": "Imbalanced Charging Test",
+      "section": "21",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "創建不平衡狀態（部分模組放電至不同 SOC）",
+        "charging": "按製造商規格充電",
+        "monitoring": "監測模組電壓是否超出限值"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained", "voltage_within_limit"],
+        "description": "應無起火、無爆炸等；模組最大電壓限值不得超出"
+      },
+      "exemptions": [],
+      "original_text_snippet": "21 Imbalanced Charging Test: An imbalanced condition is created by discharging modules to different SOC levels. The sample is then charged. Module voltage limits shall not be exceeded."
+    },
+    {
+      "test_id": "ELEC-08",
+      "test_name_zh": "介電耐壓測試",
+      "test_name_en": "Dielectric Voltage Withstand Test",
+      "section": "22",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "危險電壓電路",
+      "conditions": {
+        "test_voltage": "按標準規定（通常為 2×額定電壓或更高）",
+        "duration": "至少 1 分鐘",
+        "application": "危險電壓電路與非載流導電部件之間"
+      },
+      "criteria": {
+        "pass_conditions": ["no_dielectric_breakdown"],
+        "description": "應無介電擊穿（絕緣擊穿導致短路/飛弧）"
+      },
+      "exemptions": [
+        "半導體或類似電子元件可能被旁路或斷開（若易受測試電壓損壞）"
+      ],
+      "original_text_snippet": "22 Dielectric Voltage Withstand Test: Hazardous voltage circuits are subjected to dielectric withstand voltage. No dielectric breakdown shall occur."
+    },
+    {
+      "test_id": "ELEC-10",
+      "test_name_zh": "接地連續性測試",
+      "test_name_en": "Continuity Test",
+      "section": "23",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "test_current": "按標準規定（通常為 25 A 或更高）",
+        "duration": "按標準規定",
+        "measurement": "測量保護接地系統任意兩點之間的電阻"
+      },
+      "criteria": {
+        "pass_conditions": ["resistance_within_limit"],
+        "description": "保護接地系統電阻不超過規定限值（通常≤0.1 Ω）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "23 Continuity Test: The grounding system resistance is measured. Resistance shall not exceed specified limit."
+    },
+    {
+      "test_id": "THERM-03",
+      "test_name_zh": "冷卻/熱穩定系統失效測試",
+      "test_name_en": "Failure of Cooling/Thermal Stability System Test",
+      "section": "24",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc_charge": "放電至 EODV，在高溫環境下，冷卻系統禁用，以最大速率充電",
+        "soc_discharge": "充滿電（MOSOC），在高溫環境下，冷卻系統禁用，以最大速率放電",
+        "monitoring": "使用火花點火源或氣體檢測監測可燃氣體"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸等；或系統應安全關閉"
+      },
+      "exemptions": [
+        "若通過分析確定冷卻系統不運作不會產生危險，可豁免"
+      ],
+      "original_text_snippet": "24 Failure of Cooling/Thermal Stability System Test: The DUT is charged/discharged with cooling system disabled. System shall shut down safely or no hazardous condition shall occur."
+    },
+    {
+      "test_id": "EMC-01",
+      "test_name_zh": "電磁兼容性測試（6 項）",
+      "test_name_en": "Electromagnetic Immunity Tests",
+      "section": "27",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "tests_included": [
+          "27.2 靜電放電（ESD）",
+          "27.3 射頻電磁場",
+          "27.4 快速瞬變/脈衝群",
+          "27.5 浪湧",
+          "27.6 射頻共模",
+          "27.7 工頻磁場"
+        ],
+        "monitoring": "監測系統功能是否正常"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained", "function_normal"],
+        "description": "應無起火、無爆炸等；保護功能應正常運作"
+      },
+      "exemptions": [
+        "若固態電路和軟體不被用作主要安全保護，可豁免"
+      ],
+      "original_text_snippet": "27 Electromagnetic Immunity Tests: Includes ESD, RF field, fast transient, surge, RF common mode, power frequency magnetic field. Protection functions shall remain operational."
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動測試（LER 動力和 VAP 應用）",
+      "test_name_en": "Vibration Test (LER Motive and VAP Applications)",
+      "section": "28",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "輕軌（LER）動力和車輛輔助電源（VAP）應用",
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "profile": "按預期車輛振動輪廓或標準規定",
+        "rest_period": "測試後靜置觀察",
+        "monitoring": "監測溫度和電壓"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸等；保護控制正常"
+      },
+      "exemptions": [
+        "僅適用於 LER 動力和 VAP 應用",
+        "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "28 Vibration Test (LER Motive and VAP Applications): The sample is subjected to vibration profile representative of vehicle application. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "衝擊測試（LER 動力和 VAP 應用）",
+      "test_name_en": "Shock Test (LER Motive and VAP Applications)",
+      "section": "29",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "輕軌（LER）動力和車輛輔助電源（VAP）應用",
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "waveform": "半正弦波或按標準規定",
+        "acceleration": "按標準規定",
+        "pulse_duration": "按標準規定",
+        "directions": "多個方向",
+        "rest_period": "測試後靜置觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸等；保護控制正常"
+      },
+      "exemptions": [
+        "僅適用於 LER 動力和 VAP 應用",
+        "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "29 Shock Test (LER Motive and VAP Applications): The sample is subjected to mechanical shock. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "擠壓測試（LER 動力和 VAP 應用）",
+      "test_name_en": "Crush Test (LER Motive and VAP Applications)",
+      "section": "30",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "輕軌（LER）動力和車輛輔助電源（VAP）應用",
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "force": "按標準規定或車輛預期的最大擠壓負載",
+        "direction": "代表車輛碰撞時最可能受擠壓的方向",
+        "rest_period": "測試後靜置觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor"],
+        "description": "應無起火、無爆炸、無可燃氣體、無有毒氣體"
+      },
+      "exemptions": [
+        "僅適用於 LER 動力和 VAP 應用",
+        "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "30 Crush Test (LER Motive and VAP Applications): The sample is crushed in a direction representative of vehicle collision. Non-compliant results: E, F, C, V."
+    },
+    {
+      "test_id": "MECH-15",
+      "test_name_zh": "靜態力測試",
+      "test_name_en": "Static Force Test",
+      "section": "31",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "force": "按標準規定（模擬安裝/維護時的靜態負載）",
+        "direction": "多個方向",
+        "rest_period": "測試後靜置觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸等；保護控制正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "31 Static Force Test: The sample is subjected to static force in multiple directions. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "MECH-16",
+      "test_name_zh": "衝擊測試",
+      "test_name_en": "Impact Test",
+      "section": "32",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "impact_energy": "按標準規定",
+        "direction": "多個方向",
+        "rest_period": "測試後靜置觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸等；保護控制正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "32 Impact Test: The sample is subjected to impact in multiple directions. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "MECH-17",
+      "test_name_zh": "跌落衝擊測試",
+      "test_name_en": "Drop Impact Test",
+      "section": "33",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "機架式模組（field installation in rack-mount）",
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "height": "按標準規定",
+        "surface": "混凝土或金屬表面",
+        "orientation": "最可能產生不利結果的位置",
+        "rest_period": "測試後靜置觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸、無可燃氣體、無電擊、無洩漏、無破裂、保護控制正常"
+      },
+      "exemptions": [
+        "僅適用於機架式模組"
+      ],
+      "original_text_snippet": "33 Drop Impact Test: Modules intended for rack-mount installation are dropped from specified height. Non-compliant results: E, F, C, S, L, R, P."
+    },
+    {
+      "test_id": "MECH-18",
+      "test_name_zh": "壁掛固定裝置/支撐結構/把手測試",
+      "test_name_en": "Wall Mount Fixture/Support Structure/Handle Test",
+      "section": "34",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "壁掛式電池系統",
+      "conditions": {
+        "load": "按標準規定（模擬安裝/維護時的負載）",
+        "direction": "多個方向",
+        "duration": "按標準規定"
+      },
+      "criteria": {
+        "pass_conditions": ["no_failure"],
+        "description": "固定裝置/支撐結構/把手不應失效"
+      },
+      "exemptions": [
+        "僅適用於壁掛式電池系統"
+      ],
+      "original_text_snippet": "34 Wall Mount Fixture/Handle Test: Wall-mount fixtures are tested for structural integrity. Fixture shall not fail."
+    },
+    {
+      "test_id": "MECH-19",
+      "test_name_zh": "模應力測試",
+      "test_name_en": "Mold Stress Test",
+      "section": "35",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "temperature": "按標準規定（高溫環境）",
+        "duration": "按標準規定",
+        "load": "按標準規定（模擬長期應力）"
+      },
+      "criteria": {
+        "pass_conditions": ["no_deformation"],
+        "description": "外殼不應有過度變形或失效"
+      },
+      "exemptions": [],
+      "original_text_snippet": "35 Mold Stress Test: Enclosure materials are tested for resistance to mold stress at elevated temperature. No excessive deformation shall occur."
+    },
+    {
+      "test_id": "MECH-20",
+      "test_name_zh": "壓力釋放測試",
+      "test_name_en": "Pressure Release Test",
+      "section": "36",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "pressure": "按標準規定（模擬內部壓力 buildup）",
+        "relief_device": "安全閥或破裂膜",
+        "monitoring": "監測壓力釋放動作"
+      },
+      "criteria": {
+        "pass_conditions": ["relief_operates"],
+        "description": "壓力釋放裝置應在規定壓力下動作"
+      },
+      "exemptions": [
+        "ASME 認證的壓力釋放裝置可豁免",
+        "電池內置的安全閥可豁免"
+      ],
+      "original_text_snippet": "36 Pressure Release Test: Relief valves or rupture members shall operate at specified pressure. ASME stamped devices are exempt."
+    },
+    {
+      "test_id": "MECH-21",
+      "test_name_zh": "開始放電測試",
+      "test_name_en": "Start-To-Discharge Test",
+      "section": "37",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "pressure": "按標準規定（模擬壓力釋放啟動）",
+        "monitoring": "監測壓力釋放啟動點"
+      },
+      "criteria": {
+        "pass_conditions": ["pressure_within_spec"],
+        "description": "壓力釋放裝置的啟動壓力應符合規格"
+      },
+      "exemptions": [
+        "ASME 認證的壓力釋放裝置可豁免"
+      ],
+      "original_text_snippet": "37 Start-To-Discharge Test: Relief devices shall operate at specified start-to-discharge pressure."
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "溫度循環測試（LER 動力和 VAP 應用）",
+      "test_name_en": "Thermal Cycling Test (LER Motive and VAP Applications)",
+      "section": "38",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "輕軌（LER）動力和車輛輔助電源（VAP）應用",
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "cycle_profile": "按標準規定（高低溫循環）",
+        "cycle_count": "按標準規定",
+        "rest_period": "測試後靜置觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸等；保護控制正常"
+      },
+      "exemptions": [
+        "僅適用於 LER 動力和 VAP 應用",
+        "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "38 Thermal Cycling Test (LER Motive and VAP Applications): The sample is subjected to temperature cycles. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "ENV-04",
+      "test_name_zh": "耐濕度測試",
+      "test_name_en": "Resistance to Moisture Test",
+      "section": "39",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "humidity": "按標準規定（高濕環境）",
+        "duration": "按標準規定",
+        "rest_period": "測試後靜置觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸等；保護控制正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "39 Resistance to Moisture Test: The sample is exposed to high humidity environment. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "ENV-06",
+      "test_name_zh": "鹽霧測試",
+      "test_name_en": "Salt Fog Test",
+      "section": "40",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "test_method": "按標準規定（鹽霧暴露）",
+        "duration": "按標準規定",
+        "rest_period": "測試後靜置觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_combustible_vapor", "no_toxic_vapor", "no_shock", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸等；保護控制正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "40 Salt Fog Test: The sample is exposed to salt fog. Non-compliant results: E, F, C, V, S, L, R, P."
+    },
+    {
+      "test_id": "THERM-11",
+      "test_name_zh": "外部火災暴露測試（拋射物危害）",
+      "test_name_en": "External Fire Exposure for Projectile Hazards Test",
+      "section": "41",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "fire_source": "按標準規定（外部火源）",
+        "duration": "按標準規定",
+        "monitoring": "監測拋射物產生"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion"],
+        "description": "應無爆炸（避免拋射物危害）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "41 External Fire Exposure for Projectile Hazards Test: The sample is exposed to external fire. No explosion (projectile hazard) shall occur."
+    },
+    {
+      "test_id": "INTERNAL-01",
+      "test_name_zh": "單電池失效設計容差測試（鋰離子）",
+      "test_name_en": "Single Cell Failure Design Tolerance (Lithium Ion)",
+      "section": "42.2",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "trigger_method": "使用內部短路觸發電池（見 Annex F）",
+        "trigger_cell_count": "至少 1 個觸發電池",
+        "monitoring": "監測熱擴散、起火、爆炸"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire_propagation_outside_enclosure"],
+        "description": "單電池失效不應導致內部火災傳播至 DUT 外殼外部"
+      },
+      "exemptions": [
+        "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "42.2 Single cell failure design tolerance (lithium ion): A trigger cell initiates thermal runaway. Internal fire shall not spread to outside of the DUT enclosure."
+    },
+    {
+      "test_id": "INTERNAL-02",
+      "test_name_zh": "單電池失效設計容差測試（其他技術）",
+      "test_name_en": "Single Cell Failure Design Tolerance (Other Technologies)",
+      "section": "42.3",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "trigger_method": "按電池技術使用適當的失效觸發方法",
+        "monitoring": "監測熱擴散、起火、爆炸"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire_propagation_outside_enclosure"],
+        "description": "單電池失效不應導致內部火災傳播至 DUT 外殼外部"
+      },
+      "exemptions": [
+        "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "42.3 Single cell failure design tolerance (other technologies): A cell failure is triggered. Internal fire shall not spread to outside of the DUT enclosure."
+    },
+    {
+      "test_id": "ANNEX-E-01",
+      "test_name_zh": "鋰電池測試計劃（Annex E）",
+      "test_name_en": "Cell Test Program (Annex E)",
+      "section": "Annex E",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "tests_included": [
+          "E3 短路",
+          "E4 電池衝擊",
+          "E5 跌落衝擊",
+          "E6 加熱",
+          "E7 過充電",
+          "E8 強制放電",
+          "E9 拋射物"
+        ],
+        "reference": "參考 Annex E 詳細測試條件"
+      },
+      "criteria": {
+        "pass_conditions": ["per_annex_e"],
+        "description": "按 Annex E 規定的測試方法和判定標準"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Annex E Cell Test Program: Includes short circuit, cell impact, drop impact, heating, overcharge, forced discharge, and projectile tests for secondary lithium cells."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Vibration/Shock/Crush/Thermal Cycling Tests (28-30, 38)",
+      "exemption": "僅適用於 LER（輕軌）動力和 VAP（車輛輔助電源）應用"
+    },
+    {
+      "test_id": "Drop Impact Test (33)",
+      "exemption": "僅適用於機架式模組"
+    },
+    {
+      "test_id": "Wall Mount Fixture Test (34)",
+      "exemption": "僅適用於壁掛式電池系統"
+    },
+    {
+      "test_id": "Pressure Release/Start-To-Discharge Tests (36-37)",
+      "exemption": "ASME 認證的壓力釋放裝置可豁免；電池內置的安全閥可豁免"
+    },
+    {
+      "test_id": "Electromagnetic Immunity Tests (27)",
+      "exemption": "若固態電路和軟體不被用作主要安全保護，可豁免"
+    },
+    {
+      "test_id": "Most System-Level Tests (15-42)",
+      "exemption": "若子組件被認定為可代表完整電池系統，可在子組件層級進行測試"
+    },
+    {
+      "test_id": "Cooling System Failure Test (24)",
+      "exemption": "若通過分析確定冷卻系統不運作不會產生危險，可豁免"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 00:45",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction)",
+    "ocr_quality_notes": "OCR 品質良好，使用 PDF 直接提取，英文內容完整，章節編號清晰。UL 1973 是北美固定式和車輛輔助電源電池系統的基礎安全標準，涵蓋電氣、機械、環境、EMC、內部失效等測試。部分頁面有版權水印但不影響內容提取。"
+  }
+}
