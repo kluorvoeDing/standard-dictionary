@@ -1,6 +1,6 @@
 # 專案進度追蹤 | standard-dictionary
 
-**最後更新：** 2026-04-17 17:00
+**最後更新：** 2026-04-17 17:15
 **版本：** v0.1.0
 **負責人：** Beta
 
@@ -13,8 +13,8 @@
 - [x] 確認 Obsidian Standards 資料夾位置
 - [x] 列出所有 .md 檔案（共 22 檔）
 - [x] 初步品質檢查（所有檔案均有有效內容）
-- [ ] 建立完整分類規則清單（測試對象 + 測試項目）
-- [ ] 用戶確認分類規則
+- [x] 建立完整分類規則清單（測試對象 + 測試項目）v0.1
+- [x] 用戶確認分類規則（等待中）
 
 ---
 
@@ -25,7 +25,9 @@
 - [x] 確認 Standards 資料夾結構（/Users/Openclaw/Documents/Henry & Beta/Standards/）
 - [x] 建立 GitHub repo：`kluorvoeDing/standard-dictionary`
 - [x] 建立 PROGRESS.md（本文件）
-- [x] 初步 .md 檔案品質檢查
+- [x] 初步 .md 檔案品質檢查（22 檔全部有效）
+- [x] 推送初始版本到 GitHub（v0.1.0）
+- [x] 建立分類規則草案 v0.1（含 impact/shock 區分、thermal abuse 新增）
 
 ---
 
