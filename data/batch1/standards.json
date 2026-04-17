@@ -1,0 +1,63 @@
+[
+  {
+    "filename": "UL 1642-2020.md",
+    "total_lines": 775,
+    "chapter_count": 28,
+    "test_count": 9,
+    "li_applicable": true,
+    "li_note": "鋰系適用",
+    "exemption_count": 2,
+    "tests_identified": [
+      "ELEC-02",
+      "MECH-01",
+      "MECH-02",
+      "MECH-03",
+      "MECH-05",
+      "MECH-06",
+      "ENV-01",
+      "ENV-02",
+      "THERM-01"
+    ]
+  },
+  {
+    "filename": "UN38.3 sub section.md",
+    "total_lines": 632,
+    "chapter_count": 20,
+    "test_count": 10,
+    "li_applicable": false,
+    "li_note": "包含非鋰系統關鍵字：alkaline",
+    "exemption_count": 3,
+    "tests_identified": [
+      "ELEC-01",
+      "ELEC-02",
+      "ELEC-03",
+      "MECH-01",
+      "MECH-02",
+      "MECH-03",
+      "MECH-05",
+      "MECH-06",
+      "ENV-02",
+      "THERM-01"
+    ]
+  },
+  {
+    "filename": "IEC62619-2022.md",
+    "total_lines": 550,
+    "chapter_count": 15,
+    "test_count": 9,
+    "li_applicable": false,
+    "li_note": "包含非鋰系統關鍵字：alkaline",
+    "exemption_count": 2,
+    "tests_identified": [
+      "ELEC-01",
+      "ELEC-02",
+      "ELEC-03",
+      "MECH-01",
+      "MECH-02",
+      "MECH-03",
+      "MECH-04",
+      "MECH-06",
+      "THERM-01"
+    ]
+  }
+]

@@ -1,0 +1,302 @@
+[
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "ELEC-02",
+    "matched_keywords": [
+      {
+        "keyword": "abnormal charge",
+        "position": 21799
+      }
+    ]
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "MECH-01",
+    "matched_keywords": [
+      {
+        "keyword": "impact",
+        "position": 7388
+      }
+    ]
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "MECH-02",
+    "matched_keywords": [
+      {
+        "keyword": "shock",
+        "position": 7522
+      }
+    ]
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "MECH-03",
+    "matched_keywords": [
+      {
+        "keyword": "crush",
+        "position": 7254
+      }
+    ]
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "MECH-05",
+    "matched_keywords": [
+      {
+        "keyword": "vibration",
+        "position": 7656
+      }
+    ]
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "MECH-06",
+    "matched_keywords": [
+      {
+        "keyword": "drop",
+        "position": 16386
+      }
+    ]
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "ENV-01",
+    "matched_keywords": [
+      {
+        "keyword": "temperature cycling",
+        "position": 8057
+      }
+    ]
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "ENV-02",
+    "matched_keywords": [
+      {
+        "keyword": "altitude",
+        "position": 8197
+      }
+    ]
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "THERM-01",
+    "matched_keywords": [
+      {
+        "keyword": "heating",
+        "position": 7923
+      },
+      {
+        "keyword": "heat",
+        "position": 7923
+      }
+    ]
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "ELEC-01",
+    "matched_keywords": [
+      {
+        "keyword": "external short",
+        "position": 21318
+      },
+      {
+        "keyword": "short circuit",
+        "position": 9156
+      }
+    ]
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "ELEC-02",
+    "matched_keywords": [
+      {
+        "keyword": "overcharge",
+        "position": 989
+      }
+    ]
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "ELEC-03",
+    "matched_keywords": [
+      {
+        "keyword": "forced discharge",
+        "position": 26667
+      }
+    ]
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "MECH-01",
+    "matched_keywords": [
+      {
+        "keyword": "impact",
+        "position": 2714
+      }
+    ]
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "MECH-02",
+    "matched_keywords": [
+      {
+        "keyword": "shock",
+        "position": 18389
+      }
+    ]
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "MECH-03",
+    "matched_keywords": [
+      {
+        "keyword": "crush",
+        "position": 22679
+      }
+    ]
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "MECH-05",
+    "matched_keywords": [
+      {
+        "keyword": "vibration",
+        "position": 16325
+      }
+    ]
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "MECH-06",
+    "matched_keywords": [
+      {
+        "keyword": "drop",
+        "position": 23325
+      }
+    ]
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "ENV-02",
+    "matched_keywords": [
+      {
+        "keyword": "altitude",
+        "position": 14441
+      }
+    ]
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "THERM-01",
+    "matched_keywords": [
+      {
+        "keyword": "heat",
+        "position": 21488
+      }
+    ]
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "ELEC-01",
+    "matched_keywords": [
+      {
+        "keyword": "external short",
+        "position": 5289
+      },
+      {
+        "keyword": "short circuit",
+        "position": 7084
+      }
+    ]
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "ELEC-02",
+    "matched_keywords": [
+      {
+        "keyword": "overcharge",
+        "position": 26729
+      }
+    ]
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "ELEC-03",
+    "matched_keywords": [
+      {
+        "keyword": "forced discharge",
+        "position": 14212
+      }
+    ]
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "MECH-01",
+    "matched_keywords": [
+      {
+        "keyword": "impact",
+        "position": 5874
+      }
+    ]
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "MECH-02",
+    "matched_keywords": [
+      {
+        "keyword": "shock",
+        "position": 24959
+      }
+    ]
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "MECH-03",
+    "matched_keywords": [
+      {
+        "keyword": "crush",
+        "position": 25121
+      }
+    ]
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "MECH-04",
+    "matched_keywords": [
+      {
+        "keyword": "internal short",
+        "position": 16620
+      }
+    ]
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "MECH-06",
+    "matched_keywords": [
+      {
+        "keyword": "drop",
+        "position": 6447
+      }
+    ]
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "THERM-01",
+    "matched_keywords": [
+      {
+        "keyword": "thermal abuse",
+        "position": 11326
+      },
+      {
+        "keyword": "heating",
+        "position": 25106
+      },
+      {
+        "keyword": "heat",
+        "position": 22132
+      }
+    ]
+  }
+]
