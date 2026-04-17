@@ -1,0 +1,591 @@
+[
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "ELEC-02",
+    "matched_keywords": [
+      {
+        "keyword": "abnormal charge",
+        "position": 21799
+      }
+    ],
+    "conditions": {
+      "voltage": [
+        "5"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "MECH-01",
+    "matched_keywords": [
+      {
+        "keyword": "impact",
+        "position": 7388
+      }
+    ],
+    "conditions": {
+      "duration": [
+        "17 H"
+      ],
+      "voltage": [
+        "16"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "MECH-02",
+    "matched_keywords": [
+      {
+        "keyword": "shock",
+        "position": 7522
+      }
+    ],
+    "conditions": {
+      "duration": [
+        "17 H"
+      ],
+      "voltage": [
+        "16"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "MECH-03",
+    "matched_keywords": [
+      {
+        "keyword": "crush",
+        "position": 7254
+      }
+    ],
+    "conditions": {
+      "duration": [
+        "17 H"
+      ],
+      "voltage": [
+        "16"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "MECH-05",
+    "matched_keywords": [
+      {
+        "keyword": "vibration",
+        "position": 7656
+      }
+    ],
+    "conditions": {
+      "duration": [
+        "17 H"
+      ],
+      "voltage": [
+        "16"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "MECH-06",
+    "matched_keywords": [
+      {
+        "keyword": "drop",
+        "position": 16386
+      }
+    ],
+    "conditions": {
+      "temperature": [
+        "23±2"
+      ],
+      "voltage": [
+        "3.24"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "ENV-01",
+    "matched_keywords": [
+      {
+        "keyword": "temperature cycling",
+        "position": 8057
+      }
+    ],
+    "conditions": {
+      "duration": [
+        "17 H"
+      ],
+      "voltage": [
+        "16"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "ENV-02",
+    "matched_keywords": [
+      {
+        "keyword": "altitude",
+        "position": 8197
+      }
+    ],
+    "conditions": {
+      "duration": [
+        "17 H"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "UL 1642-2020.md",
+    "test_id": "THERM-01",
+    "matched_keywords": [
+      {
+        "keyword": "heating",
+        "position": 7923
+      },
+      {
+        "keyword": "heat",
+        "position": 7923
+      }
+    ],
+    "conditions": {
+      "voltage": [
+        "0.2",
+        "3.24",
+        "2"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "ELEC-01",
+    "matched_keywords": [
+      {
+        "keyword": "external short",
+        "position": 21318
+      },
+      {
+        "keyword": "short circuit",
+        "position": 9156
+      }
+    ],
+    "conditions": {
+      "soc": [
+        "fully charged"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "ELEC-02",
+    "matched_keywords": [
+      {
+        "keyword": "overcharge",
+        "position": 989
+      }
+    ],
+    "conditions": {},
+    "criteria": {}
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "ELEC-03",
+    "matched_keywords": [
+      {
+        "keyword": "forced discharge",
+        "position": 26667
+      }
+    ],
+    "conditions": {
+      "temperature": [
+        "75 ± 2",
+        "ambient temperature",
+        "72 ± 2"
+      ],
+      "duration": [
+        "24 h",
+        "24 hour"
+      ],
+      "voltage": [
+        "15.",
+        "12",
+        "22",
+        "18"
+      ]
+    },
+    "criteria": {
+      "no_fire": [
+        "no\nfire",
+        "no fire"
+      ]
+    }
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "MECH-01",
+    "matched_keywords": [
+      {
+        "keyword": "impact",
+        "position": 2714
+      }
+    ],
+    "conditions": {},
+    "criteria": {}
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "MECH-02",
+    "matched_keywords": [
+      {
+        "keyword": "shock",
+        "position": 18389
+      }
+    ],
+    "conditions": {},
+    "criteria": {
+      "no_fire": [
+        "no fire"
+      ],
+      "no_leakage": [
+        "no leakage"
+      ]
+    }
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "MECH-03",
+    "matched_keywords": [
+      {
+        "keyword": "crush",
+        "position": 22679
+      }
+    ],
+    "conditions": {
+      "temperature": [
+        "ambient temperature"
+      ]
+    },
+    "criteria": {
+      "no_fire": [
+        "no fire"
+      ]
+    }
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "MECH-05",
+    "matched_keywords": [
+      {
+        "keyword": "vibration",
+        "position": 16325
+      }
+    ],
+    "conditions": {
+      "duration": [
+        "200 H",
+        "15 minute",
+        "50 H",
+        "7 H",
+        "18 H"
+      ]
+    },
+    "criteria": {
+      "no_fire": [
+        "no fire"
+      ],
+      "no_leakage": [
+        "no leakage"
+      ]
+    }
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "MECH-06",
+    "matched_keywords": [
+      {
+        "keyword": "drop",
+        "position": 23325
+      }
+    ],
+    "conditions": {},
+    "criteria": {}
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "ENV-02",
+    "matched_keywords": [
+      {
+        "keyword": "altitude",
+        "position": 14441
+      }
+    ],
+    "conditions": {
+      "soc": [
+        "fully charged"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "UN38.3 sub section.md",
+    "test_id": "THERM-01",
+    "matched_keywords": [
+      {
+        "keyword": "heat",
+        "position": 21488
+      }
+    ],
+    "conditions": {
+      "temperature": [
+        "ambient temperature",
+        "72 ± 2",
+        "20 ± 5",
+        "40 ± 2"
+      ],
+      "duration": [
+        "30 minute",
+        "200 H",
+        "15 minute",
+        "24 h",
+        "7 H"
+      ]
+    },
+    "criteria": {
+      "no_fire": [
+        "no fire"
+      ],
+      "no_leakage": [
+        "no leakage"
+      ]
+    }
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "ELEC-01",
+    "matched_keywords": [
+      {
+        "keyword": "external short",
+        "position": 5289
+      },
+      {
+        "keyword": "short circuit",
+        "position": 7084
+      }
+    ],
+    "conditions": {
+      "soc": [
+        "Fully charged"
+      ],
+      "temperature": [
+        "ambient temperature"
+      ],
+      "resistance": [
+        "10 mΩ"
+      ],
+      "duration": [
+        "6 h"
+      ]
+    },
+    "criteria": {
+      "no_fire": [
+        "No fire"
+      ],
+      "no_explosion": [
+        "no explosion"
+      ]
+    }
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "ELEC-02",
+    "matched_keywords": [
+      {
+        "keyword": "overcharge",
+        "position": 26729
+      }
+    ],
+    "conditions": {
+      "temperature": [
+        "ambient temperature"
+      ],
+      "duration": [
+        "1 h",
+        "1 min"
+      ]
+    },
+    "criteria": {
+      "no_fire": [
+        "No fire"
+      ],
+      "no_explosion": [
+        "no\nexplosion"
+      ]
+    }
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "ELEC-03",
+    "matched_keywords": [
+      {
+        "keyword": "forced discharge",
+        "position": 14212
+      }
+    ],
+    "conditions": {
+      "temperature": [
+        "ambient temperature"
+      ],
+      "duration": [
+        "90 min"
+      ]
+    },
+    "criteria": {
+      "no_fire": [
+        "No fire"
+      ],
+      "no_explosion": [
+        "no explosion"
+      ]
+    }
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "MECH-01",
+    "matched_keywords": [
+      {
+        "keyword": "impact",
+        "position": 5874
+      }
+    ],
+    "conditions": {
+      "soc": [
+        "Fully charged"
+      ],
+      "temperature": [
+        "ambient temperature"
+      ],
+      "resistance": [
+        "10 mΩ"
+      ],
+      "duration": [
+        "6 h"
+      ]
+    },
+    "criteria": {
+      "no_fire": [
+        "No fire"
+      ],
+      "no_explosion": [
+        "no explosion"
+      ]
+    }
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "MECH-02",
+    "matched_keywords": [
+      {
+        "keyword": "shock",
+        "position": 24959
+      }
+    ],
+    "conditions": {},
+    "criteria": {}
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "MECH-03",
+    "matched_keywords": [
+      {
+        "keyword": "crush",
+        "position": 25121
+      }
+    ],
+    "conditions": {
+      "temperature": [
+        "ambient temperature"
+      ]
+    },
+    "criteria": {}
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "MECH-04",
+    "matched_keywords": [
+      {
+        "keyword": "internal short",
+        "position": 16620
+      }
+    ],
+    "conditions": {},
+    "criteria": {}
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "MECH-06",
+    "matched_keywords": [
+      {
+        "keyword": "drop",
+        "position": 6447
+      }
+    ],
+    "conditions": {},
+    "criteria": {
+      "no_fire": [
+        "No fire"
+      ],
+      "no_explosion": [
+        "no explosion"
+      ]
+    }
+  },
+  {
+    "standard": "IEC62619-2022.md",
+    "test_id": "THERM-01",
+    "matched_keywords": [
+      {
+        "keyword": "thermal abuse",
+        "position": 11326
+      },
+      {
+        "keyword": "heating",
+        "position": 25106
+      },
+      {
+        "keyword": "heat",
+        "position": 22132
+      }
+    ],
+    "conditions": {
+      "soc": [
+        "fully charged"
+      ],
+      "temperature": [
+        "ambient temperature"
+      ],
+      "duration": [
+        "3 h"
+      ]
+    },
+    "criteria": {
+      "no_fire": [
+        "No fire"
+      ],
+      "no_explosion": [
+        "no explosion"
+      ]
+    }
+  }
+]
