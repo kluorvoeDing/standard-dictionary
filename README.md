@@ -44,14 +44,14 @@ standard-dictionary/
 ├── PROGRESS.md         # 專案進度
 ├── index.html          # 網頁主體
 ├── data/
-│   ├── standards.json  # 標準元數據
-│   ├── tests.json      # 測試項目分類
-│   └── content/        # 各標準詳細內容
-│       ├── UN38.3.json
-│       ├── UL1642.json
-│       └── ...
+│   ├── batch*/content/*.json   # 各標準/Guidance 原始結構化資料
+│   ├── catalog.json            # 給前端 checkbox / 文件清單使用
+│   └── comparison_rows.json    # 給前端直接載入的平坦比對列
 ├── docs/
-│   └── guidance-comparison-schema.md  # Guidance / research 文件相容方案
+│   ├── guidance-comparison-schema.md  # Guidance / research 文件相容方案
+│   └── web-comparison-loader-spec.md  # 前端混合讀取規格
+├── scripts/
+│   └── build_web_catalog.py    # 自動產生 catalog + comparison rows
 └── assets/
     ├── style.css
     └── app.js
@@ -87,6 +87,20 @@ standard-dictionary/
 - **THERM-**：熱測試（熱濫用、加熱）
 
 完整規則參見 `PROGRESS.md`。
+
+---
+
+## 🧩 Web 資料輸出（目前可直接接前端）
+
+- `data/catalog.json`
+  - 文件層級索引
+  - 適合用來產生勾選清單、badge、文件摘要
+- `data/comparison_rows.json`
+  - 已正規化的 comparison rows
+  - 標準 / test method / guidance 可混合載入
+- `scripts/build_web_catalog.py`
+  - 每次新增或修改 `batch*/content/*.json` 後重新執行
+  - 指令：`python3 scripts/build_web_catalog.py`
 
 ---
 

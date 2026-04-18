@@ -1,27 +1,24 @@
 # 專案進度追蹤 | standard-dictionary
 
-**最後更新：** 2026-04-18 09:25
-**版本：** v0.7.0
+**最後更新：** 2026-04-18 09:28
+**版本：** v0.8.0
 **負責人：** Beta
 
 ---
 
 ## 📌 當前階段
 
-**階段 2.5：標準 + Guidance 相容整理（正確性優先）**
+**階段 3 前置：Web 載入資料層完成（可開始接前端）**
 
-- [x] 確認 Obsidian Standards 資料夾位置
-- [x] 列出所有 .md 檔案（共 22 檔）
-- [x] 初步品質檢查（所有檔案均有有效內容）
-- [x] 建立完整分類規則清單（測試對象 + 測試項目）v0.3
-- [x] 用戶確認分類規則 ✅
-- [x] Batch 1 第一階段解析完成（結構識別）
-- [x] Batch 1 深度解析完成（28 項測試，含條件與判定標準）
-- [x] 完成 Batch 1-5 標準解析（18 標準 / 315 測試）
+- [x] 完成 Batch 1-6 結構化資料整理（20 文件 / 351 comparison rows）
+- [x] 完成 AIS-156 結構化 JSON
 - [x] 確認 SAND2017 屬於 guidance，而非正式測試標準
-- [x] 建立 guidance comparison schema（可被未來網頁勾選比較）
-- [x] 輸出 `SAND2017_guidance.json`
-- [ ] 待處理：AIS-156.full.md
+- [x] 建立 guidance comparison schema
+- [x] 建立前端混合讀取規格（loader spec）
+- [x] 產出 `data/catalog.json`（文件索引）
+- [x] 產出 `data/comparison_rows.json`（平坦比對列）
+- [x] 建立 `scripts/build_web_catalog.py` 供後續重建
+- [ ] 下一步：做前端勾選清單與 comparison grid MVP
 
 ---
 
@@ -32,7 +29,11 @@
 - [x] 新增 `docs/guidance-comparison-schema.md`
 - [x] 為 SAND2017 建立 guidance + comparison adapter 雙層資料格式
 - [x] 輸出 `data/batch6/content/SAND2017_guidance.json`
-- [ ] 待處理 AIS-156.full.md
+- [x] 完成 `data/batch6/content/AIS-156_structured.json`
+- [x] 新增 `docs/web-comparison-loader-spec.md`
+- [x] 新增 `scripts/build_web_catalog.py`
+- [x] 輸出 `data/catalog.json`（20 文件）
+- [x] 輸出 `data/comparison_rows.json`（351 rows）
 
 ### 2026-04-17
 - [x] 確認用戶需求（Q1-Q5）
@@ -52,35 +53,32 @@
 
 ## 🔄 進行中事項
 
-1. **分類規則定義**
-   - 測試對象：CELL, MODULE, PACK, ESS, SYSTEM ✅
-   - 測試項目：v0.3 已完成（含鋰系適用性標記）
-   - 熱濫用/加熱測試：已新增 ✅
+1. **Web data layer**
+   - 文件清單索引 `catalog.json` ✅
+   - 平坦 comparison rows `comparison_rows.json` ✅
+   - 標準 / test method / guidance 混合相容 ✅
 
-2. **解析策略定義**
-   - 分批次解析（每批 3-5 檔）✅
-   - 鋰系適用性檢查 ✅
-   - 人工覆核流程 ✅
+2. **資料重建流程**
+   - `scripts/build_web_catalog.py` 已建立 ✅
+   - 後續新增標準後可一鍵重建 ✅
 
-3. **GitHub Repo 初始化**
-   - 已推送 v0.2.0 ✅
-   - 待建立 data/ 目錄結構（Batch 1 解析後）
+3. **前端銜接準備**
+   - Loader spec 已完成 ✅
+   - 待做勾選 UI / comparison grid ⏳
 
 ---
 
 ## 📋 待處理事項
 
 ### 高優先
-- [ ] Batch 1 解析：UL1642, UN38.3, IEC62619（3 檔）
-- [ ] 建立測試項目同義詞對照表（如：drop = free fall = 落下 = 落摔）
-- [ ] 區分 impact vs shock（用英文定義）
-- [ ] 新增 thermal abuse / heating 類別
+- [ ] 建立前端勾選清單（讀 `data/catalog.json`）
+- [ ] 建立 comparison grid（讀 `data/comparison_rows.json`）
+- [ ] 設計 guidance / standard / test method badge 與提示文案
 
 ### 中優先
-- [ ] Batch 2-4 解析（剩餘 17 檔）
-- [ ] 建立 standards.json 架構
-- [ ] 建立 tests.json 架構
-- [ ] 推送 Batch 1 結果到 GitHub
+- [ ] 建立測試項目同義詞對照表（如：drop = free fall = 落下 = 落摔）
+- [ ] 補齊更多文件 metadata 正規化欄位
+- [ ] 加入搜尋 / 篩選 / object scope facet
 
 ### 低優先
 - [ ] 設計網頁 UI 原型
@@ -164,6 +162,7 @@
 | 2026-04-17 18:00 | v0.3.0 | 新增鋰系適用性註記，改為分批次解析（正確性優先） |
 | 2026-04-17 18:05 | v0.4.0 | Batch 1 第一階段完成，等待用戶確認 3 事項 |
 | 2026-04-17 18:15 | v0.5.0 | Batch 1 深度解析完成，28 項測試含條件與判定標準 |
+| 2026-04-18 09:28 | v0.8.0 | 完成 AIS-156、catalog.json、comparison_rows.json 與 web loader data layer |
 | 2026-04-17 18:25 | v0.6.0 | `content/*.json` 重新設計為結構化測試數據 |
 | 2026-04-17 17:45 | v0.2.0 | 加入豁免條件/特例追蹤，更新解析策略 |
 | 2026-04-17 18:00 | v0.3.0 | 新增鋰系適用性註記，改為分批次解析（正確性優先） |
