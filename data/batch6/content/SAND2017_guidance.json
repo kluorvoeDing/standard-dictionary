@@ -1,0 +1,451 @@
+{
+  "standard_id": "SAND2017-6925",
+  "filename": "SAND2017-6925.md",
+  "full_name": "SAND2017-6925 - Recommended Practices for Abuse Testing Rechargeable Energy Storage Systems (RESSs)",
+  "publication_date": "2017-07",
+  "publisher": "Sandia National Laboratories",
+  "document_type": "guidance",
+  "normativity": "recommended_practice",
+  "comparison_ready": true,
+  "li_applicable": true,
+  "recommendation_count": 15,
+  "comparison_items_count": 15,
+  "scope": "Rechargeable energy storage systems (RESSs) for EV, PHEV, and HEV applications.",
+  "important_note": "This document explicitly does NOT define pass/fail criteria. It recommends abuse test procedures, measurements, and hazard severity reporting for design evaluation.",
+  "methodology_notes": {
+    "general_test_conditions": {
+      "assembly_level": "Test at the lowest meaningful level of assembly first.",
+      "system_age": "Prefer BOL test articles; slightly used articles are acceptable in early design stages.",
+      "state_of_charge": "100% SOC unless otherwise noted.",
+      "ambient_temperature": "10-30°C unless otherwise specified.",
+      "data_collection": "~1 Hz generally; kHz recommended for short circuit initial seconds and impact/crush force signals."
+    },
+    "evaluation_basis": {
+      "hazard_severity_levels": "Use modified HSL 0-7 scale instead of mandatory pass/fail.",
+      "flammability_analysis": "Use ignition sources and vent-gas analysis to determine flammability where relevant.",
+      "hazardous_substance_monitoring": "Reference AIHA ERPG-2 or comparable short-term exposure guidance where practical."
+    }
+  },
+  "recommendations": [
+    {
+      "recommendation_id": "MECH-03-A",
+      "item_name_zh": "受控擠壓建議",
+      "item_name_en": "Controlled Crush",
+      "section": "3.1.1",
+      "target_assembly_level": ["CELL", "MODULE", "PACK"],
+      "purpose": "Determine abuse response to mechanical crush under controlled low-speed conditions and report hazard severity at defined force/displacement levels.",
+      "suggested_conditions": {
+        "cell_cylindrical": "Crush at 1 mm/min with scaled cylindrical impactor. Stop at 25 kN, HSL ≥5, or 100% practical displacement.",
+        "cell_prismatic_pouch": "Crush in constrained fixture at 1 mm/min using semicylindrical steel impactor. Stop at 25 kN, HSL ≥5, or 100% practical displacement.",
+        "module_pack": "Crush at 1 mm/min between flat and textured platen with 75 mm radius semicylinder. Report displacement and HSL at 100 kN."
+      },
+      "suggested_measurements": ["force", "displacement", "voltage", "temperature", "gas analysis", "flammability", "mass loss", "photos/video"],
+      "evaluation_basis": "No fixed pass/fail. Report HSL at key force/displacement points, especially 100 kN for module/pack tests.",
+      "rationale": "Useful for identifying onset and severity of crush-induced failure rather than simple compliance."
+    },
+    {
+      "recommendation_id": "MECH-04-A",
+      "item_name_zh": "穿刺建議",
+      "item_name_en": "Penetration",
+      "section": "3.1.2",
+      "target_assembly_level": ["CELL"],
+      "purpose": "Characterize response to conductive rod penetration and internal shorting under varied SOC and temperature conditions.",
+      "suggested_conditions": {
+        "rod": "3 ± 0.2 mm conductive rod, rounded tip radius 1.5 ± 0.1 mm.",
+        "speed": "0.1 mm/s.",
+        "starting_point": "Start at 100% SOC and 55°C, then proceed through lower temperature/SOC matrix if more articles are available.",
+        "end_conditions": ["complete penetration", "voltage drop ≥100 ± 10 mV", "HSL ≥5"]
+      },
+      "suggested_measurements": ["force", "displacement", "voltage at ≥10 Hz", "temperature", "gas analysis", "flammability", "mass loss"],
+      "evaluation_basis": "No fixed pass/fail. Report HSL before penetration, at penetration, and after penetration.",
+      "rationale": "Designed to map severity across a test matrix rather than certify compliance."
+    },
+    {
+      "recommendation_id": "THERM-01-A",
+      "item_name_zh": "熱斜坡建議",
+      "item_name_en": "Thermal Ramp",
+      "section": "3.2.1",
+      "target_assembly_level": ["CELL"],
+      "purpose": "Heat a DUT to failure and quantify consequence magnitude as a function of DUT temperature.",
+      "suggested_conditions": {
+        "soc": "100% SOC",
+        "heating_rate": "2-5°C/min (±0.5°C/min)",
+        "end_conditions": ["DUT reaches 250°C and holds 15 min without self-heating", "HSL ≥5"]
+      },
+      "suggested_measurements": ["voltage", "DUT external temperature", "heater temperature", "gas analysis", "flammability", "mass loss", "video/audio"],
+      "evaluation_basis": "No fixed pass/fail. Report HSL as a function of DUT temperature.",
+      "rationale": "Useful for identifying thermal failure onset and consequence severity."
+    },
+    {
+      "recommendation_id": "THERM-02-A",
+      "item_name_zh": "加速量熱法建議",
+      "item_name_en": "Accelerating Rate Calorimetry (ARC)",
+      "section": "3.2.2",
+      "target_assembly_level": ["CELL"],
+      "purpose": "Measure total heat generation and heating rate under quasi-adiabatic conditions.",
+      "suggested_conditions": {
+        "setup": "Suspend DUT in ARC without direct heater contact; instrument with thermocouple on cell skin/tab.",
+        "heating_steps": "5°C steps with 30-minute wait step.",
+        "example_threshold": "Exotherm threshold 0.02°C/min; max temperature 405°C for a 2.0 Ah cylindrical Li-ion cell."
+      },
+      "suggested_measurements": ["voltage", "external temperature", "heating rate", "vent gas pressure (if applicable)"],
+      "evaluation_basis": "Report maximum temperature, heating rate versus time/temperature, and vent gas pressure when applicable.",
+      "rationale": "Useful for thermal kinetics, not direct pass/fail compliance."
+    },
+    {
+      "recommendation_id": "ELEC-02-A",
+      "item_name_zh": "過充電建議",
+      "item_name_en": "Overcharge",
+      "section": "3.3.1",
+      "target_assembly_level": ["CELL", "MODULE", "PACK"],
+      "purpose": "Evaluate response to constant-current overcharge using realistic but not excessively aggressive currents.",
+      "suggested_conditions": {
+        "soc": "100% SOC",
+        "charge_current": "Tiered by capacity per Table 8: generally 1C / 2C, or 32 A / 80 A where appropriate.",
+        "limits": "Cell limit 20 V; module limit 20 V per cell/parallel group; pack limit 1.5× pack voltage.",
+        "end_conditions": ["HSL ≥5", "250% SOC"]
+      },
+      "suggested_measurements": ["voltage", "temperature", "charge current", "gas analysis", "mass loss"],
+      "evaluation_basis": "Report HSL at key SOC values, including 200% SOC and failure point.",
+      "rationale": "Document emphasizes realistic design-learning over worst-case destruction."
+    },
+    {
+      "recommendation_id": "ELEC-18-A",
+      "item_name_zh": "過電壓建議（電化學電容）",
+      "item_name_en": "Overvoltage (Electrochemical Capacitors)",
+      "section": "3.3.2",
+      "target_assembly_level": ["CELL"],
+      "purpose": "Evaluate electrochemical capacitor response to high-rate charge and voltage excursion.",
+      "suggested_conditions": {
+        "soc": "100% SOC",
+        "charge_rate": "≥10C and sufficient for ≥2 V/min increase",
+        "end_conditions": ["2× rated voltage + 15 min hold without self-heating", "HSL ≥5"]
+      },
+      "suggested_measurements": ["voltage", "temperature", "charge current", "gas analysis", "mass loss"],
+      "evaluation_basis": "Report HSL at end of test.",
+      "rationale": "Only intended for electrochemical capacitors, not lithium batteries."
+    },
+    {
+      "recommendation_id": "ELEC-06-A",
+      "item_name_zh": "過放電建議",
+      "item_name_en": "Overdischarge",
+      "section": "3.3.3",
+      "target_assembly_level": ["CELL", "MODULE", "PACK"],
+      "purpose": "Evaluate response to deep discharge and possible voltage reversal.",
+      "suggested_conditions": {
+        "cell": "1C to -20 V compliance or until 1.5 h / HSL ≥5.",
+        "module_pack": "1C until 1.5 h, all subassemblies reversed for 15 min, or HSL ≥5."
+      },
+      "suggested_measurements": ["voltage", "temperature", "discharge current", "gas analysis", "mass loss"],
+      "evaluation_basis": "Report HSL at end of test.",
+      "rationale": "Focus is design vulnerability, not compliance acceptance."
+    },
+    {
+      "recommendation_id": "ELEC-19-A",
+      "item_name_zh": "電壓反轉建議（電化學電容）",
+      "item_name_en": "Voltage Reversal (Electrochemical Capacitors)",
+      "section": "3.3.4",
+      "target_assembly_level": ["CELL"],
+      "purpose": "Evaluate capacitor response to reversal beyond zero volts.",
+      "suggested_conditions": {
+        "sequence": "Charge at 5C to rated voltage, then discharge at 5C to negative rated voltage.",
+        "end_conditions": ["hold negative rated voltage for 15 min", "HSL ≥5"]
+      },
+      "suggested_measurements": ["voltage", "temperature", "charge/discharge current", "gas analysis", "mass loss"],
+      "evaluation_basis": "Report HSL at end of test.",
+      "rationale": "Only intended for electrochemical capacitors."
+    },
+    {
+      "recommendation_id": "ELEC-01-A",
+      "item_name_zh": "外部短路建議",
+      "item_name_en": "External Short Circuit",
+      "section": "3.3.5",
+      "target_assembly_level": ["CELL", "MODULE", "PACK"],
+      "purpose": "Determine DUT response to hard, medium, and optionally soft external short loads relative to DUT DC resistance.",
+      "suggested_conditions": {
+        "short_matrix": {
+          "hard_short": "≈ 1/10-1× DUT DC resistance",
+          "medium_short": "≈ 5-10× DUT DC resistance",
+          "soft_short": "≥100× DUT DC resistance"
+        },
+        "practical_floor": "For DUT resistance <5 mΩ, use 1-5 mΩ practical load and document it.",
+        "application_time": "Apply load in <1 s for minimum 60 min; longer duration may be needed for module/pack."
+      },
+      "suggested_measurements": ["voltage (1 kHz for first 5 s)", "current (1 kHz for first 5 s)", "temperature", "gas analysis", "mass loss"],
+      "evaluation_basis": "Report HSL at end of test.",
+      "rationale": "Relative short severity is more informative than a single fixed resistor."
+    },
+    {
+      "recommendation_id": "THERM-08-A",
+      "item_name_zh": "失效傳播建議",
+      "item_name_en": "Failure Propagation Test",
+      "section": "3.4",
+      "target_assembly_level": ["MODULE", "PACK"],
+      "purpose": "Trigger a single-cell thermal runaway under otherwise normal conditions and evaluate cell-to-cell propagation.",
+      "suggested_conditions": {
+        "precondition": "First determine a reproducible single-cell trigger at cell level.",
+        "soc": "At minimum 100% SOC and 25°C.",
+        "control_modes": "Test with active controls enabled and disabled; keep passive controls in place.",
+        "monitoring_period": "If no propagation (HSL ≤4), monitor ≥60 min. If propagation occurs, monitor an additional 60 min from last failure event."
+      },
+      "suggested_measurements": ["cell/module/pack voltages", "internal/external temperatures", "gas analysis", "flammability", "duration of propagation events"],
+      "evaluation_basis": "Report extent of propagation, failure modes of affected cells, HSL at subunit and highest assembly levels, and propagation duration.",
+      "rationale": "Core design-level recommendation for understanding propagation vulnerability."
+    },
+    {
+      "recommendation_id": "FIRE-03-A",
+      "item_name_zh": "電池排氣可燃性建議",
+      "item_name_en": "Cell Vent Flammability Test",
+      "section": "4.1",
+      "target_assembly_level": ["CELL"],
+      "purpose": "Determine whether vent gas ignites and how long it burns.",
+      "suggested_conditions": {
+        "base_method": "Variant of Thermal Ramp with ignition source(s) placed near known or expected vent path.",
+        "heating_rate": "5°C/min.",
+        "end_conditions": ["If sustained ignition occurs, stop heating and wait for self-extinguishment", "Otherwise continue to 250°C and hold 15 min"]
+      },
+      "suggested_measurements": ["voltage", "external temperature", "vent temperature", "delay from venting to ignition", "burn time", "mass loss"],
+      "evaluation_basis": "Report presence/absence of sustained ignition, ignition delay, ignition temperature, and total burn time.",
+      "rationale": "Supports comparison of vent gas ignition risk separate from mandatory compliance tests."
+    },
+    {
+      "recommendation_id": "THERM-16-A",
+      "item_name_zh": "關斷隔膜完整性建議",
+      "item_name_en": "Shutdown Separator Integrity",
+      "section": "4.2",
+      "target_assembly_level": ["CELL"],
+      "purpose": "Evaluate voltage stability after separator shutdown and elevated thermal exposure.",
+      "suggested_conditions": {
+        "soc": "100% SOC",
+        "heating_rate": "2-5°C/min until shutdown temperature + 5°C, then step higher in 5°C increments if needed.",
+        "post_shutdown_stress": "Apply 20 Vdc at max 1 A for 30 min after shutdown is confirmed."
+      },
+      "suggested_measurements": ["cell voltage", "temperature", "heater temperature", "power-supply voltage/current", "gas analysis", "flammability"],
+      "evaluation_basis": "Report HSL, peak leakage current, and duration of applied voltage.",
+      "rationale": "Only applicable where shutdown separator technology exists."
+    },
+    {
+      "recommendation_id": "ENV-08-A",
+      "item_name_zh": "鹽水浸沒建議",
+      "item_name_en": "Water Immersion",
+      "section": "4.4",
+      "target_assembly_level": ["CELL", "MODULE", "PACK"],
+      "purpose": "Evaluate RESS behavior during seawater-like immersion and monitor hydrogen generation or thermal response.",
+      "suggested_conditions": {
+        "fluid": "3.5% NaCl (approximate seawater)",
+        "soc": "100% SOC",
+        "temperature": "normal operating temperature",
+        "methods": ["fully immerse DUT in vessel", "fill vessel with salt water in <5 min after DUT placement"],
+        "duration": "minimum 2 h or until HSL ≥5"
+      },
+      "suggested_measurements": ["cell/module/pack voltage", "case-to-ground resistance", "temperature (1 kHz first 5 s, then 1 Hz)", "hydrogen/steam/gas analysis", "video/audio"],
+      "evaluation_basis": "Report HSL at end of test.",
+      "rationale": "Important for field failure scenarios such as flooding or marine exposure."
+    },
+    {
+      "recommendation_id": "FIRE-04-A",
+      "item_name_zh": "燃油火災建議",
+      "item_name_en": "Fuel Fire",
+      "section": "4.5",
+      "target_assembly_level": ["MODULE"],
+      "purpose": "Understand RESS response to direct fire exposure.",
+      "suggested_conditions": {
+        "reference": "ECE R100 Annex 8E",
+        "note": "Direct fuel fire is destructive and may limit monitoring instrumentation survival."
+      },
+      "suggested_measurements": ["temperature", "visual flame behavior", "post-test condition"],
+      "evaluation_basis": "No fixed pass/fail defined in the report; treat as characterization guidance.",
+      "rationale": "Useful for direct-fire vulnerability assessment."
+    },
+    {
+      "recommendation_id": "FIRE-05-A",
+      "item_name_zh": "模擬燃油火災建議",
+      "item_name_en": "Simulated Fuel Fire",
+      "section": "4.6",
+      "target_assembly_level": ["MODULE"],
+      "purpose": "Use radiant heat as a more instrument-friendly surrogate for direct fuel fire exposure.",
+      "suggested_conditions": {
+        "reference": ["SAND2005-3123", "SAE J2464 Section 4.4.1"],
+        "heat_source": "Radiant heat source simulating fuel fire conditions."
+      },
+      "suggested_measurements": ["temperature", "heat exposure response", "visual observations"],
+      "evaluation_basis": "No fixed pass/fail defined; intended for comparative understanding of response under fire-like thermal load.",
+      "rationale": "Useful when direct fuel fire would destroy instrumentation needed for data capture."
+    }
+  ],
+  "comparison_items": [
+    {
+      "item_id": "MECH-03",
+      "item_name_zh": "受控擠壓建議",
+      "item_name_en": "Controlled Crush",
+      "section": "3.1.1",
+      "test_objects": ["CELL", "MODULE", "PACK"],
+      "conditions_summary": "1 mm/min controlled crush; scaled impactor; report force/displacement, especially 100 kN for module/pack.",
+      "evaluation_summary": "No pass/fail. Compare by HSL at defined force/displacement milestones.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "MECH-04",
+      "item_name_zh": "穿刺建議",
+      "item_name_en": "Penetration",
+      "section": "3.1.2",
+      "test_objects": ["CELL"],
+      "conditions_summary": "3 mm conductive rod, 0.1 mm/s, start at 100% SOC and 55°C, then expand through SOC/temperature matrix.",
+      "evaluation_summary": "No pass/fail. Compare by HSL before/at/after penetration and by voltage/temperature response.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "THERM-01",
+      "item_name_zh": "熱斜坡建議",
+      "item_name_en": "Thermal Ramp",
+      "section": "3.2.1",
+      "test_objects": ["CELL"],
+      "conditions_summary": "Heat at 2-5°C/min from normal temperature at 100% SOC until 250°C hold or failure.",
+      "evaluation_summary": "No pass/fail. Compare by HSL versus DUT temperature.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "THERM-14",
+      "item_name_zh": "ARC 建議",
+      "item_name_en": "Accelerating Rate Calorimetry",
+      "section": "3.2.2",
+      "test_objects": ["CELL"],
+      "conditions_summary": "5°C heat steps with 30-minute waits; characterize heating rate and exotherm onset in ARC.",
+      "evaluation_summary": "No pass/fail. Compare by max temperature, self-heating rate, and pressure if available.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "ELEC-02",
+      "item_name_zh": "過充電建議",
+      "item_name_en": "Overcharge",
+      "section": "3.3.1",
+      "test_objects": ["CELL", "MODULE", "PACK"],
+      "conditions_summary": "Realistic tiered current matrix by DUT capacity; stop at 250% SOC or failure.",
+      "evaluation_summary": "No pass/fail. Compare by HSL at 200% SOC and failure point.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "ELEC-18",
+      "item_name_zh": "過電壓建議",
+      "item_name_en": "Overvoltage",
+      "section": "3.3.2",
+      "test_objects": ["CELL"],
+      "conditions_summary": "Electrochemical capacitors only; ≥10C to 2× rated voltage with 15-minute hold.",
+      "evaluation_summary": "No pass/fail. Compare by end-of-test HSL.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "ELEC-06",
+      "item_name_zh": "過放電建議",
+      "item_name_en": "Overdischarge",
+      "section": "3.3.3",
+      "test_objects": ["CELL", "MODULE", "PACK"],
+      "conditions_summary": "1C discharge; cell to -20 V, module/pack until reversal criteria or 1.5 h.",
+      "evaluation_summary": "No pass/fail. Compare by end-of-test HSL.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "ELEC-19",
+      "item_name_zh": "電壓反轉建議",
+      "item_name_en": "Voltage Reversal",
+      "section": "3.3.4",
+      "test_objects": ["CELL"],
+      "conditions_summary": "Electrochemical capacitors only; 5C charge to rated voltage then 5C discharge to negative rated voltage.",
+      "evaluation_summary": "No pass/fail. Compare by end-of-test HSL.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "ELEC-01",
+      "item_name_zh": "外部短路建議",
+      "item_name_en": "External Short Circuit",
+      "section": "3.3.5",
+      "test_objects": ["CELL", "MODULE", "PACK"],
+      "conditions_summary": "Hard/medium/soft short based on DUT DC resistance; minimum 60-minute application.",
+      "evaluation_summary": "No pass/fail. Compare by HSL and current/temperature response under relative short severity.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "THERM-08",
+      "item_name_zh": "失效傳播建議",
+      "item_name_en": "Failure Propagation",
+      "section": "3.4",
+      "test_objects": ["MODULE", "PACK"],
+      "conditions_summary": "Trigger single-cell thermal runaway at 100% SOC/25°C; test with active controls enabled and disabled.",
+      "evaluation_summary": "No pass/fail. Compare by extent of propagation, duration, and HSL at subunit/highest assembly levels.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "FIRE-03",
+      "item_name_zh": "電池排氣可燃性建議",
+      "item_name_en": "Cell Vent Flammability",
+      "section": "4.1",
+      "test_objects": ["CELL"],
+      "conditions_summary": "Thermal ramp with ignition source(s) near vent path; monitor ignition delay and burn duration.",
+      "evaluation_summary": "No pass/fail. Compare by sustained ignition yes/no, ignition temperature, delay, and burn time.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "THERM-16",
+      "item_name_zh": "關斷隔膜完整性建議",
+      "item_name_en": "Shutdown Separator Integrity",
+      "section": "4.2",
+      "test_objects": ["CELL"],
+      "conditions_summary": "Heat to separator shutdown, then apply 20 Vdc / 1 A for 30 min.",
+      "evaluation_summary": "No pass/fail. Compare by leakage current, shutdown behavior, and HSL.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "ENV-08",
+      "item_name_zh": "鹽水浸沒建議",
+      "item_name_en": "Water Immersion",
+      "section": "4.4",
+      "test_objects": ["CELL", "MODULE", "PACK"],
+      "conditions_summary": "3.5% NaCl immersion at 100% SOC for minimum 2 h or until severe failure.",
+      "evaluation_summary": "No pass/fail. Compare by HSL and gas/isolation response, including hydrogen generation.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "FIRE-04",
+      "item_name_zh": "燃油火災建議",
+      "item_name_en": "Fuel Fire",
+      "section": "4.5",
+      "test_objects": ["MODULE"],
+      "conditions_summary": "Direct fuel-fire exposure, referencing ECE R100 Annex 8E.",
+      "evaluation_summary": "Characterization only; no fixed pass/fail in this report.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    },
+    {
+      "item_id": "FIRE-05",
+      "item_name_zh": "模擬燃油火災建議",
+      "item_name_en": "Simulated Fuel Fire",
+      "section": "4.6",
+      "test_objects": ["MODULE"],
+      "conditions_summary": "Radiant heat source used as a fire surrogate to preserve instrumentation capability.",
+      "evaluation_summary": "Characterization only; no fixed pass/fail in this report.",
+      "document_strength": "guidance",
+      "comparison_ready": true
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 09:25",
+    "extraction_method": "Manual reading and restructuring of complete .md file into guidance + comparison-adapter schema",
+    "schema_version": "guidance-v1",
+    "web_intent": "Selectable in future standard comparison UI through comparison_items[] while preserving native guidance semantics in recommendations[].",
+    "notes": "This file intentionally avoids fake pass/fail criteria. It preserves SAND2017 as a recommended-practice document while still supporting cross-document comparison in the future web UI."
+  }
+}

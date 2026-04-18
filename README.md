@@ -18,6 +18,7 @@
    - 測試項目：自動歸類同義詞（如 drop = free fall = 落下 = 落摔）
 3. **動態篩選**：依標準、測試對象、測試項目快速篩選
 4. **可編輯內容**：用戶可編輯測試條件，並展開查看原文
+5. **Guidance 相容**：研究報告/建議性文件可用 `comparison_items[]` 加入跨標準比對，但會保留 `guidance` 標記，避免誤判為正式法規要求
 
 ---
 
@@ -49,6 +50,8 @@ standard-dictionary/
 │       ├── UN38.3.json
 │       ├── UL1642.json
 │       └── ...
+├── docs/
+│   └── guidance-comparison-schema.md  # Guidance / research 文件相容方案
 └── assets/
     ├── style.css
     └── app.js

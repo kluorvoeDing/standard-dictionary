@@ -1,14 +1,14 @@
 # 專案進度追蹤 | standard-dictionary
 
-**最後更新：** 2026-04-17 18:25
-**版本：** v0.1.0
+**最後更新：** 2026-04-18 09:25
+**版本：** v0.7.0
 **負責人：** Beta
 
 ---
 
 ## 📌 當前階段
 
-**階段 2：分批次解析（正確性優先）**
+**階段 2.5：標準 + Guidance 相容整理（正確性優先）**
 
 - [x] 確認 Obsidian Standards 資料夾位置
 - [x] 列出所有 .md 檔案（共 22 檔）
@@ -17,11 +17,22 @@
 - [x] 用戶確認分類規則 ✅
 - [x] Batch 1 第一階段解析完成（結構識別）
 - [x] Batch 1 深度解析完成（28 項測試，含條件與判定標準）
-- [ ] 等待用戶指示：繼續 Batch 2 / 改進解析器 / 先驗證 Batch 1
+- [x] 完成 Batch 1-5 標準解析（18 標準 / 315 測試）
+- [x] 確認 SAND2017 屬於 guidance，而非正式測試標準
+- [x] 建立 guidance comparison schema（可被未來網頁勾選比較）
+- [x] 輸出 `SAND2017_guidance.json`
+- [ ] 待處理：AIS-156.full.md
 
 ---
 
 ## ✅ 已完成事項
+
+### 2026-04-18
+- [x] 完成 Batch 1-5 總整理（18 標準 / 315 測試）
+- [x] 新增 `docs/guidance-comparison-schema.md`
+- [x] 為 SAND2017 建立 guidance + comparison adapter 雙層資料格式
+- [x] 輸出 `data/batch6/content/SAND2017_guidance.json`
+- [ ] 待處理 AIS-156.full.md
 
 ### 2026-04-17
 - [x] 確認用戶需求（Q1-Q5）
