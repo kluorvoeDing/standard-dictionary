@@ -1,0 +1,410 @@
+{
+  "standard_id": "AIS-156",
+  "filename": "AIS-156.full.md",
+  "full_name": "AIS-156 - Specific Requirements for L Category Electric Power Train Vehicles, Part I: Electrical Safety, Part II: REESS Safety",
+  "publication_date": "2020-07-16 (finalized draft)",
+  "publisher": "Automotive Industry Standards Committee (AISC), India / ARAI",
+  "based_on": "UN ECE R136",
+  "li_applicable": true,
+  "test_count": 17,
+  "ocr_quality": "良好（PDF 直接提取，英文內容完整）",
+  "tests": [
+    {
+      "test_id": "PROT-01",
+      "test_name_zh": "直接接觸防護要求",
+      "test_name_en": "Protection Against Direct Contact",
+      "section": "5.1.1.1-5.1.1.2, Annex 4",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "passenger_compartment": "Live parts inside passenger or luggage compartment shall meet IPXXD.",
+        "other_areas_with_passenger_compartment": "Live parts in other accessible areas shall meet IPXXB.",
+        "vehicles_without_passenger_compartment": "Live parts shall meet IPXXD.",
+        "test_probes": ["test finger (IPXXB)", "test wire (IPXXD)"]
+      },
+      "criteria": {
+        "pass_conditions": ["ipxxb_or_ipxxd_compliant"],
+        "description": "Protection degree against direct contact shall satisfy the required IP probe condition for the installation zone."
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.1.1.1 For protection of live parts inside the passenger compartment or luggage compartment, the protection degree IPXXD shall be provided. 5.1.1.2.1 For vehicles with a passenger compartment, the protection degree IPXXB shall be satisfied."
+    },
+    {
+      "test_id": "ELEC-10",
+      "test_name_zh": "等電位/接地連續性要求",
+      "test_name_en": "Equipotential Bonding / Ground Continuity",
+      "section": "5.1.2.2",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "measurement": "Resistance between all exposed conductive parts and the electrical chassis",
+        "current": "at least 0.2 A"
+      },
+      "criteria": {
+        "pass_conditions": ["resistance_lt_0_1_ohm"],
+        "description": "Resistance between all exposed conductive parts and the electrical chassis shall be lower than 0.1 Ω."
+      },
+      "exemptions": [
+        "Requirement is satisfied if galvanic connection has been established by welding."
+      ],
+      "original_text_snippet": "5.1.2.2 The resistance between all exposed conductive parts and the electrical chassis shall be lower than 0.1 Ω when there is current flow of at least 0.2 A."
+    },
+    {
+      "test_id": "ELEC-09",
+      "test_name_zh": "車輛絕緣電阻要求",
+      "test_name_en": "Vehicle Isolation Resistance",
+      "section": "5.1.3.1-5.1.3.2, Annex 5A",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "dc_bus_requirement": "100 Ω/V of working voltage for DC buses",
+        "ac_bus_requirement": "500 Ω/V of working voltage for AC buses",
+        "combined_ac_dc_requirement": "500 Ω/V unless all AC buses are protected by double insulation or mechanically robust protections, then 100 Ω/V",
+        "method": "Vehicle-based isolation resistance measurement per Annex 5A"
+      },
+      "criteria": {
+        "pass_conditions": ["isolation_resistance_100_or_500_ohm_per_v"],
+        "description": "Isolation resistance shall meet the bus-specific minimum requirement in Ω/V."
+      },
+      "exemptions": [
+        "For combined AC/DC buses, minimum may reduce to 100 Ω/V if all AC buses are protected by specified robust measures."
+      ],
+      "original_text_snippet": "5.1.3.1 If AC buses and DC buses are galvanically isolated from each other, the isolation resistance shall have a minimum value of 100 Ω/V for DC buses and 500 Ω/V for AC buses."
+    },
+    {
+      "test_id": "ELEC-20",
+      "test_name_zh": "車載絕緣監測系統確認",
+      "test_name_en": "On-board Isolation Resistance Monitoring System Confirmation",
+      "section": "5.1.3.3(b), Annex 6",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "method": "Insert a resistor that does not reduce isolation below the minimum required value between monitored terminal and electrical chassis."
+      },
+      "criteria": {
+        "pass_conditions": ["warning_activated"],
+        "description": "The warning shall be activated when the fault resistor is inserted."
+      },
+      "exemptions": [],
+      "original_text_snippet": "Annex 6: Insert a resistor that does not cause the isolation resistance to drop below the minimum required value. The warning shall be activated."
+    },
+    {
+      "test_id": "ENV-13",
+      "test_name_zh": "氫氣排放測試（正常充電）",
+      "test_name_en": "Hydrogen Emission Test During Normal Charge",
+      "section": "5.4.2-5.4.3, Annex 7",
+      "test_objects": ["SYSTEM"],
+      "applicability": "Open type traction batteries / REESS with hydrogen emission concern",
+      "conditions": {
+        "vehicle_based": "Vehicle soaked at 293 ± 2 K for 12-36 h after discharge, then charged in sealed chamber.",
+        "component_based": "REESS conditioned with minimum 5 standard cycles, soaked at 293 ± 2 K for 12-36 h, then charged in sealed chamber.",
+        "normal_charge": "Charge at constant power during t1, then overcharge at constant current during t2.",
+        "ambient_temperature": "291-295 K during test"
+      },
+      "criteria": {
+        "pass_conditions": ["hydrogen_emission_below_125g_5h_or_25xt2g"],
+        "description": "During a normal charge procedure, hydrogen emissions shall be below 125 g during 5 h, or below 25 × t2 g during t2."
+      },
+      "exemptions": [
+        "Closed chemical process systems, e.g. lithium-ion battery systems, are considered emission-free under normal operation if properly documented."
+      ],
+      "original_text_snippet": "5.4.3 During a normal charge procedure in the conditions given in Annex 7, hydrogen emissions shall be below 125 g during 5 h, or below 25 x t2 g during t2."
+    },
+    {
+      "test_id": "ENV-14",
+      "test_name_zh": "氫氣排放測試（充電器故障）",
+      "test_name_en": "Hydrogen Emission Test During Charger Failure",
+      "section": "5.4.4, Annex 7",
+      "test_objects": ["SYSTEM"],
+      "applicability": "Open type traction batteries / REESS with hydrogen emission concern",
+      "conditions": {
+        "charge_failure_procedure": "Charging at constant power during t'1, then charging at maximum current recommended by the manufacturer during 30 minutes.",
+        "ambient_temperature": "291-295 K during test",
+        "sealed_chamber": "Hydrogen concentration, temperature, and pressure measured in sealed chamber"
+      },
+      "criteria": {
+        "pass_conditions": ["hydrogen_emission_below_42g_30min"],
+        "description": "During a charge carried out with charger failure, hydrogen emissions shall be below 42 g during 30 minutes."
+      },
+      "exemptions": [
+        "Closed chemical process systems, e.g. lithium-ion battery systems, are considered emission-free under normal operation if properly documented."
+      ],
+      "original_text_snippet": "5.4.4 During a charge carried out by a charger presenting a failure (conditions given in Annex 7), hydrogen emissions shall be below 42 g during 30 minutes."
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動測試",
+      "test_name_en": "Vibration Test",
+      "section": "6.2.1, Annex 8A",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "ambient_temperature": "20 ± 10°C",
+        "soc": "Upper 50 per cent of the normal operating SOC range",
+        "waveform": "Sinusoidal logarithmic sweep between 7 Hz and 200 Hz and back to 7 Hz in 15 minutes",
+        "duration": "12 cycles for a total of 3 h in the vertical mounting direction",
+        "acceleration_lt_12kg": "7-18 Hz: 10 m/s²; 18-~50 Hz ramp to 80 m/s²; 50-200 Hz: 80 m/s²",
+        "acceleration_ge_12kg": "7-18 Hz: 10 m/s²; 18-~25 Hz ramp to 20 m/s²; 25-200 Hz: 20 m/s²",
+        "post_test": "Standard cycle followed by 1 h observation"
+      },
+      "criteria": {
+        "pass_conditions": ["no_electrolyte_leakage", "no_rupture_hv", "no_fire", "no_explosion", "isolation_ge_100_ohm_per_v_hv"],
+        "description": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V."
+      },
+      "exemptions": [
+        "A manufacturer-specific vibration profile may be used if verified and agreed, but approval is then limited to a specific vehicle type."
+      ],
+      "original_text_snippet": "Annex 8A: The tested-device shall be subjected to a vibration having a sinusoidal waveform with a logarithmic sweep between 7 Hz and 200 Hz... total of 3 hours... Acceptance criteria in 6.2.2."
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "熱衝擊與循環測試",
+      "test_name_en": "Thermal Shock and Cycling Test",
+      "section": "6.3.1, Annex 8B",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "Upper 50 per cent of the normal operating SOC range",
+        "temperature_high": "60 ± 2°C or higher if requested by the manufacturer",
+        "temperature_low": "-40 ± 2°C or lower if requested by the manufacturer",
+        "dwell_time": "At least 6 h at each extreme",
+        "transition_time": "Maximum 30 minutes between extremes",
+        "cycle_count": "Minimum 5 total cycles",
+        "post_storage": "24 h at 20 ± 10°C",
+        "post_test": "Standard cycle followed by 1 h observation"
+      },
+      "criteria": {
+        "pass_conditions": ["no_electrolyte_leakage", "no_rupture_hv", "no_fire", "no_explosion", "isolation_ge_100_ohm_per_v_hv"],
+        "description": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V."
+      },
+      "exemptions": [],
+      "original_text_snippet": "Annex 8B: The tested-device shall be stored for at least six hours at 60°C ±2°C followed by at least six hours at -40°C ±2°C... minimum 5 total cycles."
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "可拆卸 REESS 跌落測試",
+      "test_name_en": "Mechanical Drop Test for Removable REESS",
+      "section": "6.4.1.1, Annex 8C",
+      "test_objects": ["PACK"],
+      "applicability": "Removable REESS only",
+      "conditions": {
+        "soc": "At least 90 per cent of rated capacity",
+        "ambient_temperature": "20 ± 10°C",
+        "height": "1.0 m",
+        "surface": "Smooth horizontal concrete pad or equivalent hardness",
+        "drop_count": "6 drops from different orientations",
+        "post_test": "Standard cycle followed by 1 h observation"
+      },
+      "criteria": {
+        "pass_conditions": ["no_electrolyte_leakage", "no_rupture_hv", "no_fire", "no_explosion", "isolation_ge_100_ohm_per_v_hv"],
+        "description": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V."
+      },
+      "exemptions": [
+        "Only applies to removable REESS."
+      ],
+      "original_text_snippet": "Annex 8C: Free fall of the removed REESS from a height of 1.0 m... dropped six times from different orientations... Acceptance criteria in 6.4.1.2."
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "機械衝擊測試",
+      "test_name_en": "Mechanical Shock",
+      "section": "6.4.2.1, Annex 8D",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "Vehicles with a centre and/or side stand",
+      "conditions": {
+        "ambient_temperature": "20 ± 10°C",
+        "soc": "Upper 50 per cent of the normal operating SOC range",
+        "shock_lt_12kg": "Half-sine shock, 1500 m/s² peak acceleration, 6 ms pulse duration",
+        "shock_ge_12kg": "Half-sine shock, 500 m/s² peak acceleration, 11 ms pulse duration",
+        "directions": "3 positive and 3 negative shocks in each of three mutually perpendicular mounting positions, total 18 shocks",
+        "post_test": "Standard cycle followed by 1 h observation"
+      },
+      "criteria": {
+        "pass_conditions": ["no_electrolyte_leakage", "no_rupture_hv", "no_fire", "no_explosion", "isolation_ge_100_ohm_per_v_hv"],
+        "description": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V."
+      },
+      "exemptions": [
+        "Applies only to vehicles with a centre and/or side stand."
+      ],
+      "original_text_snippet": "Annex 8D: The tested-device shall be subjected to a half-sine shock... 18 shocks total. Acceptance criteria in 6.4.2.2."
+    },
+    {
+      "test_id": "FIRE-01",
+      "test_name_zh": "耐火測試",
+      "test_name_en": "Fire Resistance",
+      "section": "6.5, Annex 8E",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "REESS containing flammable electrolyte",
+      "conditions": {
+        "soc": "Upper 50 per cent of the normal operating SOC range",
+        "vehicle_or_component": "Vehicle-based or component-based at manufacturer’s choice",
+        "fuel_pan": "Fuel pan extending 20-50 cm beyond DUT horizontal projection",
+        "phase_A": "Pre-heating for 60 seconds",
+        "phase_B": "Direct flame exposure for 70 seconds",
+        "phase_C": "Indirect flame exposure for 60 seconds using screen, or optional continuation of phase B for 60 seconds",
+        "phase_D": "Observe until DUT cools to ambient or has been decreasing for at least 3 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion"],
+        "description": "During the test, the tested-device shall exhibit no evidence of explosion."
+      },
+      "exemptions": [
+        "Test required only for REESS containing flammable electrolyte.",
+        "Manufacturer may choose vehicle-based or component-based execution."
+      ],
+      "original_text_snippet": "6.5.3.1 During the test, the tested-device shall exhibit no evidence of explosion."
+    },
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "外部短路保護測試",
+      "test_name_en": "External Short Circuit Protection",
+      "section": "6.6.1, Annex 8F",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "ambient_temperature": "20 ± 10°C or higher if requested by manufacturer",
+        "soc": "Upper 50 per cent of the normal operating SOC range",
+        "contactors": "All relevant main contactors for charging and discharging closed",
+        "resistance": "Connection resistance not exceeding 5 mΩ",
+        "duration": "Until protection interrupts/limits current, or at least 1 h after casing temperature stabilises (gradient <4°C through 1 h)",
+        "post_test": "Standard cycle followed by 1 h observation"
+      },
+      "criteria": {
+        "pass_conditions": ["no_electrolyte_leakage", "no_rupture_hv", "no_fire", "no_explosion", "isolation_ge_100_ohm_per_v_hv"],
+        "description": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V."
+      },
+      "exemptions": [],
+      "original_text_snippet": "Annex 8F: The positive and negative terminals shall be connected to produce a short circuit... resistance not exceeding 5 mΩ. Acceptance criteria in 6.6.2."
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過充電保護測試",
+      "test_name_en": "Overcharge Protection",
+      "section": "6.7.1, Annex 8G",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "ambient_temperature": "20 ± 10°C or higher if requested by manufacturer",
+        "charge_current": "At least 1/3 C rate but not exceeding the maximum current within the normal operating range specified by the manufacturer",
+        "charge_control_limits": "Disabled",
+        "contactors": "All relevant main contactors for charging closed",
+        "end_condition": "Until automatic interrupt/limit occurs, or until twice rated charge capacity if interrupt fails",
+        "post_test": "Standard cycle followed by 1 h observation"
+      },
+      "criteria": {
+        "pass_conditions": ["no_electrolyte_leakage", "no_rupture_hv", "no_fire", "no_explosion", "isolation_ge_100_ohm_per_v_hv"],
+        "description": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V."
+      },
+      "exemptions": [],
+      "original_text_snippet": "Annex 8G: The tested-device shall be charged with at least 1/3 C rate... charging continued until the tested-device interrupts or limits charging, or to twice rated charge capacity."
+    },
+    {
+      "test_id": "ELEC-06",
+      "test_name_zh": "過放電保護測試",
+      "test_name_en": "Over-discharge Protection",
+      "section": "6.8.1, Annex 8H",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "ambient_temperature": "20 ± 10°C or higher if requested by manufacturer",
+        "discharge_current": "At least 1/3 C rate but not exceeding the maximum current within the normal operating range specified by the manufacturer",
+        "contactors": "All relevant main contactors closed",
+        "end_condition": "Until tested-device interrupts/limits discharge, or until 25 per cent of nominal voltage level if interrupt fails",
+        "post_test": "Standard charge followed by 1 h observation"
+      },
+      "criteria": {
+        "pass_conditions": ["no_electrolyte_leakage", "no_rupture_hv", "no_fire", "no_explosion", "isolation_ge_100_ohm_per_v_hv"],
+        "description": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V."
+      },
+      "exemptions": [],
+      "original_text_snippet": "Annex 8H: A discharge shall be performed with at least 1/3 C rate... continued until the tested-device interrupts or limits the discharging, or until 25 per cent of nominal voltage level."
+    },
+    {
+      "test_id": "THERM-03",
+      "test_name_zh": "過溫保護測試",
+      "test_name_en": "Over-temperature Protection",
+      "section": "6.9.1, Annex 8I",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "cooling_system": "Deactivate cooling system if REESS remains functional without cooling",
+        "temperature_measurement": "Continuous measurement inside casing near cells",
+        "operation": "Continuously charge and discharge with a steady current that increases cell temperature as rapidly as possible within normal operation range",
+        "chamber": "Convective oven or climatic chamber",
+        "chamber_temp": "Increase to the protective threshold temperature or maximum operational temperature, then maintain",
+        "end_conditions": ["REESS inhibits and/or limits charge/discharge", "temperature stabilised with gradient <4°C through 2 h", "acceptance criteria failure"]
+      },
+      "criteria": {
+        "pass_conditions": ["no_electrolyte_leakage", "no_rupture_hv", "no_fire", "no_explosion", "isolation_ge_100_ohm_per_v_hv"],
+        "description": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V."
+      },
+      "exemptions": [
+        "If no specific protection measures are necessary, safe operation under these conditions must be demonstrated instead."
+      ],
+      "original_text_snippet": "Annex 8I: The tested-device shall be continuously charged and discharged... chamber temperature gradually increased... Acceptance criteria in 6.9.2."
+    },
+    {
+      "test_id": "ELEC-08",
+      "test_name_zh": "耐壓測試",
+      "test_name_en": "Withstand Voltage Test",
+      "section": "5.1.2.4.1.1, Annex 9A",
+      "test_objects": ["VEHICLE"],
+      "applicability": "Vehicles with on-board charger",
+      "conditions": {
+        "test_voltage_ac": "2 × (Un + 1200) V rms at 50/60 Hz for 1 minute",
+        "test_voltage_dc_alternative": "Equivalent peak-value DC voltage for 1 minute",
+        "measurement_after": "After test, apply 500 V DC between all charger inputs and exposed conductive parts / electrical chassis"
+      },
+      "criteria": {
+        "pass_conditions": ["insulation_resistance_ge_7_Mohm"],
+        "description": "Insulation resistance shall be equal to or greater than 7 MΩ when applying 500 V DC."
+      },
+      "exemptions": [
+        "Applies to vehicles with on-board (built-in) charger."
+      ],
+      "original_text_snippet": "5.1.2.4.1.2 Acceptance criteria: The insulation resistance shall be equal to or greater than 7 MΩ when applying 500 V DC between all the inputs connected together and the vehicle’s exposed conductive parts/electrical chassis."
+    },
+    {
+      "test_id": "ENV-09",
+      "test_name_zh": "耐水測試",
+      "test_name_en": "Water Resistance Test",
+      "section": "5.1.2.4.2.1, Annex 9B",
+      "test_objects": ["VEHICLE"],
+      "applicability": "Vehicles with on-board charger",
+      "conditions": {
+        "ip_test": "IPX5 water jet test",
+        "nozzle_diameter": "6.3 mm",
+        "flow_rate": "12.5 l/min ± 5%",
+        "distance": "2.5 m to 3 m from nozzle to enclosure surface",
+        "duration": "1 min per square metre, minimum 3 min",
+        "post_test": "Apply 500 V DC between all high voltage inputs and exposed conductive parts / electrical chassis"
+      },
+      "criteria": {
+        "pass_conditions": ["insulation_resistance_ge_7_Mohm"],
+        "description": "After water resistance test, insulation resistance shall be equal to or greater than 7 MΩ when applying 500 V DC."
+      },
+      "exemptions": [
+        "Applies to vehicles with on-board (built-in) charger."
+      ],
+      "original_text_snippet": "5.1.2.4.2.2 Acceptance Criteria: The insulation resistance shall be equal to or greater than 7 MΩ, when applying 500 V DC."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Hydrogen emission tests (Annex 7)",
+      "exemption": "Closed chemical process systems, e.g. lithium-ion batteries, may be considered emission-free under normal operation if documented by the manufacturer."
+    },
+    {
+      "test_id": "Mechanical drop test (Annex 8C)",
+      "exemption": "Only applies to removable REESS."
+    },
+    {
+      "test_id": "Mechanical shock (Annex 8D)",
+      "exemption": "Applies only to vehicles with a centre and/or side stand."
+    },
+    {
+      "test_id": "Fire resistance (Annex 8E)",
+      "exemption": "Required for REESS containing flammable electrolyte only; manufacturer may choose vehicle-based or component-based execution."
+    },
+    {
+      "test_id": "Withstand voltage / water resistance (Annex 9A / 9B)",
+      "exemption": "Applies to vehicles with on-board charger."
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 09:40",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction)",
+    "ocr_quality_notes": "OCR 品質良好，使用 PDF 直接提取，英文內容完整。AIS-156 is the Indian L-category electric vehicle safety standard based on UN ECE R136. It covers vehicle electrical safety and REESS safety, including hydrogen emissions for open batteries, REESS environmental/mechanical abuse, and on-board charger dielectric/water resistance tests."
+  }
+}
