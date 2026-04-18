@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standard Dictionary | 國際標準對比資料庫</title>
+  <script src="https://unpkg.com/vue@3.4.21/dist/vue.global.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .badge-standard { @apply bg-blue-100 text-blue-800; }
+    .badge-guidance { @apply bg-yellow-100 text-yellow-800; }
+    .badge-test-method { @apply bg-purple-100 text-purple-800; }
+    .checkbox-card { @apply border rounded-lg p-3 cursor-pointer transition-all hover:shadow-md; }
+    .checkbox-card.selected { @apply border-blue-500 bg-blue-50 ring-2 ring-blue-300; }
+    .test-object-tag { @apply text-xs px-2 py-1 rounded-full bg-gray-200 text-gray-700; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div id="app" class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">📚 Standard Dictionary</h1>
+      <p class="text-gray-600">國際標準對比資料庫 - 快速查詢和對比不同電池安全標準之間的測試要求差異</p>
+      <p class="text-sm text-gray-500 mt-2">版本：v0.8.0 | 文件：{{ catalog.length }} | 測試項目：{{ comparisonRows.length }}</p>
+    </header>
+
+    <!-- Controls -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Document Type Filter -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">文件類型</label>
+          <select v-model="filters.documentType" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500">
+            <option value="all">全部</option>
+            <option value="standard">標準 (Standard)</option>
+            <option value="guidance">建議 (Guidance)</option>
+            <option value="test_method">測試方法 (Test Method)</option>
+          </select>
+        </div>
+
+        <!-- Test Object Filter -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">測試對象</label>
+          <select v-model="filters.testObject" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500">
+            <option value="all">全部</option>
+            <option value="CELL">CELL (電芯)</option>
+            <option value="MODULE">MODULE (模組)</option>
+            <option value="PACK">PACK (電池包)</option>
+            <option value="ESS">ESS (儲能系統)</option>
+            <option value="SYSTEM">SYSTEM (整套裝置)</option>
+            <option value="VEHICLE">VEHICLE (車輛)</option>
+          </select>
+        </div>
+
+        <!-- Search -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">搜尋</label>
+          <input v-model="filters.search" type="text" placeholder="搜尋測試項目名稱..." class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <!-- Document Selection Panel -->
+      <aside class="lg:col-span-1">
+        <div class="bg-white rounded-lg shadow p-4 sticky top-4">
+          <h2 class="text-lg font-semibold text-gray-800 mb-4">📋 選擇標準</h2>
+          <p class="text-sm text-gray-500 mb-4">勾選 2-5 個標準進行對比</p>
+          
+          <div class="space-y-2 max-h-[600px] overflow-y-auto">
+            <div v-for="doc in filteredCatalog" :key="doc.document_id"
+                 @click="toggleDocument(doc.document_id)"
+                 :class="['checkbox-card', selectedDocs.includes(doc.document_id) ? 'selected' : '']">
+              <div class="flex items-start justify-between">
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-medium text-gray-800">{{ doc.display_name }}</span>
+                    <span :class="getBadgeClass(doc.document_type)" class="text-xs px-2 py-0.5 rounded">
+                      {{ getBadgeLabel(doc.document_type) }}
+                    </span>
+                  </div>
+                  <p class="text-xs text-gray-500 line-clamp-2">{{ doc.full_name }}</p>
+                  <div class="flex items-center gap-2 mt-2">
+                    <span class="text-xs text-gray-400">{{ doc.item_count }} 項測試</span>
+                    <span class="text-xs text-gray-400">•</span>
+                    <span class="text-xs text-gray-400">{{ doc.publisher }}</span>
+                  </div>
+                </div>
+                <input type="checkbox" :checked="selectedDocs.includes(doc.document_id)" class="mt-1 h-4 w-4 text-blue-600 rounded">
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-4 border-t">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm font-medium text-gray-700">已選：{{ selectedDocs.length }} 個</span>
+              <button @click="selectedDocs = []" v-if="selectedDocs.length > 0" class="text-sm text-red-600 hover:text-red-800">清空</button>
+            </div>
+            <button @click="generateComparison" 
+                    :disabled="selectedDocs.length < 2"
+                    :class="selectedDocs.length >= 2 ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-300 cursor-not-allowed'"
+                    class="w-full py-2 px-4 rounded-lg text-white font-medium transition-colors">
+              開始對比
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Comparison Grid -->
+      <main class="lg:col-span-3">
+        <div v-if="!showComparison" class="bg-white rounded-lg shadow p-8 text-center">
+          <div class="text-6xl mb-4">📊</div>
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">選擇標準開始對比</h2>
+          <p class="text-gray-600">從左側勾選至少 2 個標準，然後點擊「開始對比」</p>
+        </div>
+
+        <div v-else class="bg-white rounded-lg shadow overflow-hidden">
+          <!-- Comparison Header -->
+          <div class="p-4 border-b bg-gray-50">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-gray-800">📊 標準對比結果</h2>
+              <button @click="showComparison = false" class="text-gray-600 hover:text-gray-800">✕ 關閉</button>
+            </div>
+            <p class="text-sm text-gray-500 mt-1">共 {{ filteredComparisonRows.length }} 項測試</p>
+          </div>
+
+          <!-- Comparison Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-4 py-3 text-left text-sm font-medium text-gray-700 sticky left-0 bg-gray-50">測試項目</th>
+                  <th v-for="doc in selectedDocDetails" :key="doc.document_id" class="px-4 py-3 text-left text-sm font-medium text-gray-700 min-w-[200px]">
+                    <div class="flex items-center gap-2">
+                      <span>{{ doc.display_name }}</span>
+                      <span :class="getBadgeClass(doc.document_type)" class="text-xs px-2 py-0.5 rounded whitespace-nowrap">
+                        {{ getBadgeLabel(doc.document_type) }}
+                      </span>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr v-for="group in groupedComparisonRows" :key="group.testId" class="hover:bg-gray-50">
+                  <td class="px-4 py-3 sticky left-0 bg-white">
+                    <div class="font-medium text-gray-800">{{ group.testNameZh }}</div>
+                    <div class="text-xs text-gray-500">{{ group.testNameEn }}</div>
+                    <div class="flex flex-wrap gap-1 mt-1">
+                      <span v-for="obj in group.testObjects" :key="obj" class="test-object-tag">{{ obj }}</span>
+                    </div>
+                  </td>
+                  <td v-for="doc in selectedDocDetails" :key="doc.document_id" class="px-4 py-3 align-top">
+                    <div v-if="group.rows[doc.document_id]" class="text-sm">
+                      <div class="text-gray-600 mb-1">
+                        <span class="text-xs text-gray-400">章節：</span>{{ group.rows[doc.document_id].section }}
+                      </div>
+                      <div class="text-gray-700 mb-2">
+                        <span class="text-xs text-gray-400">條件：</span>
+                        <p class="text-xs">{{ truncate(group.rows[doc.document_id].conditions_summary, 150) }}</p>
+                      </div>
+                      <div class="text-gray-700">
+                        <span class="text-xs text-gray-400">判定：</span>
+                        <p class="text-xs">{{ truncate(group.rows[doc.document_id].evaluation_summary, 150) }}</p>
+                      </div>
+                      <div v-if="group.rows[doc.document_id].document_strength === 'guidance'" class="mt-2 text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded">
+                        ⚠️ 此為建議性文件，非強制要求
+                      </div>
+                    </div>
+                    <div v-else class="text-gray-400 text-sm">—</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const { createApp } = Vue
+
+    createApp({
+      data() {
+        return {
+          catalog: [],
+          comparisonRows: [],
+          selectedDocs: [],
+          showComparison: false,
+          filters: {
+            documentType: 'all',
+            testObject: 'all',
+            search: ''
+          }
+        }
+      },
+      async mounted() {
+        await this.loadData()
+      },
+      computed: {
+        filteredCatalog() {
+          return this.catalog.filter(doc => {
+            if (this.filters.documentType !== 'all' && doc.document_type !== this.filters.documentType) return false
+            return true
+          })
+        },
+        selectedDocDetails() {
+          return this.catalog.filter(doc => this.selectedDocs.includes(doc.document_id))
+        },
+        filteredComparisonRows() {
+          return this.comparisonRows.filter(row => {
+            if (!this.selectedDocs.includes(row.document_id)) return false
+            if (this.filters.testObject !== 'all' && !row.test_objects.includes(this.filters.testObject)) return false
+            if (this.filters.search) {
+              const search = this.filters.search.toLowerCase()
+              if (!row.item_name_zh.toLowerCase().includes(search) && 
+                  !row.item_name_en.toLowerCase().includes(search)) return false
+            }
+            return true
+          })
+        },
+        groupedComparisonRows() {
+          const groups = {}
+          this.filteredComparisonRows.forEach(row => {
+            const key = row.item_id || row.item_name_en
+            if (!groups[key]) {
+              groups[key] = {
+                testId: key,
+                testNameZh: row.item_name_zh,
+                testNameEn: row.item_name_en,
+                testObjects: row.test_objects,
+                rows: {}
+              }
+            }
+            groups[key].rows[row.document_id] = row
+          })
+          return Object.values(groups)
+        }
+      },
+      methods: {
+        async loadData() {
+          try {
+            const [catalogRes, rowsRes] = await Promise.all([
+              fetch('./data/catalog.json'),
+              fetch('./data/comparison_rows.json')
+            ])
+            this.catalog = await catalogRes.json()
+            this.comparisonRows = await rowsRes.json()
+            console.log('Loaded', this.catalog.length, 'documents and', this.comparisonRows.length, 'comparison rows')
+          } catch (error) {
+            console.error('Failed to load data:', error)
+            alert('載入資料失敗，請確認檔案是否存在')
+          }
+        },
+        toggleDocument(docId) {
+          const index = this.selectedDocs.indexOf(docId)
+          if (index > -1) {
+            this.selectedDocs.splice(index, 1)
+          } else {
+            this.selectedDocs.push(docId)
+          }
+        },
+        generateComparison() {
+          this.showComparison = true
+          window.scrollTo({ top: 0, behavior: 'smooth' })
+        },
+        getBadgeClass(type) {
+          const classes = {
+            'standard': 'badge-standard',
+            'guidance': 'badge-guidance',
+            'test_method': 'badge-test-method'
+          }
+          return classes[type] || 'badge-standard'
+        },
+        getBadgeLabel(type) {
+          const labels = {
+            'standard': '標準',
+            'guidance': '建議',
+            'test_method': '測試方法'
+          }
+          return labels[type] || '標準'
+        },
+        truncate(text, length) {
+          if (!text) return ''
+          return text.length > length ? text.substring(0, length) + '...' : text
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>
