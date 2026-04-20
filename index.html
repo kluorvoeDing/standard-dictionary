@@ -532,11 +532,212 @@
           return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')
         },
         formatConditionsShort(row) {
+          const fixedTemplate = this.buildFixedTemplateCondition(row)
+          if (fixedTemplate) {
+            return `<div class="mb-0.5">${this.escapeHtml(fixedTemplate)}</div>`
+          }
+
           if (row.document_id === 'SAND2017-6925') {
             return this.formatSandConditionsShort(row)
           }
           const text = row.conditions_summary_zh || row.conditions_summary
           return this.formatTableShort(text)
+        },
+        buildFixedTemplateCondition(row) {
+          const text = (row.conditions_summary_zh || row.conditions_summary || '').trim()
+          if (!text) return ''
+
+          const type = this.detectTemplateType(row)
+          if (!type) return ''
+
+          if (type === 'external_short') {
+            const resistance = this.extractResistance(text)
+            const temp = this.extractTempToken(text)
+            if (!resistance && !temp) return ''
+            return `${resistance || 'R per spec'}@${temp || 'RT'}`
+          }
+
+          if (type === 'overcharge') {
+            const current = this.extractCurrentC(text)
+            const vlimit = this.extractVoltageLimit(text)
+            const soc = this.extractSocToken(text)
+            const left = current || 'I per spec'
+            const right = vlimit || 'V limit'
+            return `${left} to ${right}${soc ? ` or ${soc}` : ''}`
+          }
+
+          if (type === 'overdischarge') {
+            const soc = this.extractSocToken(text) || (/(放電終止電壓|放完電|終止電壓)/.test(text) ? '0%SOC' : '')
+            const current = this.extractCurrentC(text) || this.extractCurrentA(text)
+            const duration = this.extractDuration(text)
+            const parts = []
+            if (soc) parts.push(soc)
+            if (current) parts.push(current)
+            const head = parts.join(', ') || 'Discharge per spec'
+            return duration ? `${head} for ${duration}` : head
+          }
+
+          if (type === 'crush') {
+            const radius = this.extractRadius(text)
+            const speed = this.extractSpeed(text)
+            const until = this.extractCrushUntil(text)
+            const prefix = radius
+              ? `半徑 ${radius} 的半圓柱擠壓`
+              : '半圓柱擠壓'
+            const speedPart = speed ? `，擠壓速度為${speed}` : ''
+            const untilPart = until ? `直至${until}` : '直至規範終止條件'
+            return `${prefix}${speedPart}${untilPart}`
+          }
+
+          if (type === 'heating') {
+            const start = this.extractStartTemp(text)
+            const target = this.extractTargetTemp(text)
+            const duration = this.extractDuration(text)
+            const rate = this.extractRate(text)
+            if (!start && !target && !duration && !rate) return ''
+            const main = `${start || 'RT'} to ${target || 'Tmax'}${duration ? ` for ${duration}` : ''}`
+            return rate ? `${main}@${rate}` : main
+          }
+
+          if (type === 'penetration') {
+            const needle = this.extractNeedle(text)
+            const speed = this.extractSpeed(text)
+            const temp = this.extractTempToken(text)
+            const left = needle || '針刺'
+            const mid = speed || '速度依規範'
+            const right = temp || 'RT'
+            return `${left}, ${mid}, ${right}`
+          }
+
+          return ''
+        },
+        detectTemplateType(row) {
+          const name = `${row.item_name_zh || ''} ${(row.item_name_en || '')}`.toLowerCase()
+          const norm = (row.normalized_item_id || '').toUpperCase()
+
+          if (/外部短路|external short/.test(name) || norm === 'ELEC-01') return 'external_short'
+          if (/過充|overcharge/.test(name) || norm === 'ELEC-02') return 'overcharge'
+          if (/過放|強制放電|overdischarge|forced discharge|over-discharge/.test(name) || ['ELEC-03', 'ELEC-06'].includes(norm)) return 'overdischarge'
+          if (/穿刺|penetration|nail/.test(name) || norm === 'MECH-04') return 'penetration'
+          if (/擠壓|crush/.test(name) || norm === 'MECH-03') return 'crush'
+          if (/加熱|熱斜坡|thermal ramp|heating/.test(name) || norm === 'THERM-01') return 'heating'
+          return ''
+        },
+        extractResistance(text) {
+          const m = text.match(/(?:≤|<=|<|not\s+exceeding|不高於|小於)?\s*([0-9]+(?:\.[0-9]+)?)\s*(mΩ|mohm|Ω|ohm)/i)
+          if (!m) return ''
+          const symbol = /≤|<=|小於|不高於|not\s+exceeding/i.test(m[0]) ? '<' : (/</.test(m[0]) ? '<' : '')
+          const unit = /m/i.test(m[2]) ? 'mΩ' : 'Ω'
+          return `${symbol ? symbol + ' ' : ''}${m[1]} ${unit}`.trim()
+        },
+        extractTempToken(text) {
+          if (/(room\s*temp|ambient|常溫|室溫|normal\s*temperature)/i.test(text)) return 'RT'
+
+          const plusMinus = text.match(/(-?\d+(?:\.\d+)?)\s*±\s*(\d+(?:\.\d+)?)\s*°C/i)
+          if (plusMinus) {
+            const center = Number(plusMinus[1])
+            const delta = Number(plusMinus[2])
+            const min = Math.round((center - delta) * 10) / 10
+            const max = Math.round((center + delta) * 10) / 10
+            if (min >= 18 && max <= 30) return 'RT'
+            return `${min}~${max}°C`
+          }
+
+          const range = text.match(/(-?\d+(?:\.\d+)?)\s*(?:~|to|-)\s*(-?\d+(?:\.\d+)?)\s*°C/i)
+          if (range) {
+            const min = Number(range[1])
+            const max = Number(range[2])
+            if (min >= 18 && max <= 30) return 'RT'
+            return `${min}~${max}°C`
+          }
+
+          const single = text.match(/(-?\d+(?:\.\d+)?)\s*°C(?!\s*\/?\s*min)/i)
+          if (single) {
+            const t = Number(single[1])
+            if (t >= 20 && t <= 25) return 'RT'
+            return `${t}°C`
+          }
+          return ''
+        },
+        extractCurrentC(text) {
+          const m = text.match(/(?:≥|>=|<=|≤|>|<)?\s*\d+(?:\.\d+)?\s*C\b/i)
+          return m ? m[0].replace(/\s+/g, ' ').trim() : ''
+        },
+        extractCurrentA(text) {
+          const m = text.match(/(?:≥|>=|<=|≤|>|<)?\s*\d+(?:\.\d+)?\s*(?:mA|A|kA)\b/i)
+          return m ? m[0].replace(/\s+/g, ' ').trim() : ''
+        },
+        extractVoltageLimit(text) {
+          if (/1\.1\s*\*?\s*vmax/i.test(text)) return '1.1*Vmax'
+          if (/1\.1\s*倍/.test(text)) return '1.1*Vmax'
+          if (/1\.5\s*倍/.test(text)) return '1.5*Vmax'
+          const v = text.match(/(?:≥|>=|<=|≤|>|<)?\s*\d+(?:\.\d+)?\s*(?:mV|V|kV)\b/i)
+          return v ? v[0].replace(/\s+/g, ' ').trim() : ''
+        },
+        extractSocToken(text) {
+          const p = text.match(/(\d+(?:\.\d+)?)\s*%\s*SOC/i)
+          if (p) return `${p[1]}%SOC`
+          if (/(充滿電|滿電|100%\s*SOC)/i.test(text)) return '100%SOC'
+          if (/(放完電|0\s*%\s*SOC)/i.test(text)) return '0%SOC'
+          return ''
+        },
+        extractDuration(text) {
+          const m = text.match(/(\d+(?:\.\d+)?)\s*(min|分鐘|h|小時|hr|s|秒)/i)
+          if (!m) return ''
+          const val = m[1]
+          const unitRaw = m[2].toLowerCase()
+          const unit = /min|分鐘/.test(unitRaw) ? 'min' : (/h|小時|hr/.test(unitRaw) ? 'h' : 's')
+          return `${val}${unit}`
+        },
+        extractRadius(text) {
+          const m = text.match(/(?:半徑|r\s*=?)\s*([0-9]+(?:\.[0-9]+)?)\s*mm/i)
+          return m ? `${m[1]}mm` : ''
+        },
+        extractSpeed(text) {
+          const m = text.match(/(?:≤|<=|<|>=|≥|>|=)?\s*\d+(?:\.\d+)?\s*mm\/?s/i)
+          if (m) return m[0].replace(/\s+/g, ' ').trim()
+          const m2 = text.match(/(?:≤|<=|<|>=|≥|>|=)?\s*\d+(?:\.\d+)?\s*mm\/?min/i)
+          if (m2) return m2[0].replace(/\s+/g, ' ').trim()
+          return ''
+        },
+        extractCrushUntil(text) {
+          const terms = []
+          if (/100\s*kN/i.test(text)) terms.push('100kN')
+          if (/15\s*%/.test(text)) terms.push('15%變形')
+          if (/1000\s*倍|1000\s*times/i.test(text)) terms.push('1000倍樣品重量')
+          if (!terms.length) {
+            const force = text.match(/(?:\d+(?:\.\d+)?\s*kN)/i)
+            if (force) terms.push(force[0].replace(/\s+/g, ''))
+          }
+          return terms.join(' or ')
+        },
+        extractStartTemp(text) {
+          if (/(room\s*temp|ambient|常溫|室溫|normal\s*temperature)/i.test(text)) return 'RT'
+
+          const start = text.match(/(?:起始|初始|start)\s*(?:溫度|temperature)?\s*[:：]?\s*(-?\d+(?:\.\d+)?)\s*°C/i)
+          if (start) {
+            const t = Number(start[1])
+            if (t >= 20 && t <= 25) return 'RT'
+            return `${t}°C`
+          }
+
+          return 'RT'
+        },
+        extractTargetTemp(text) {
+          const all = [...text.matchAll(/(-?\d+(?:\.\d+)?)\s*°C/gi)].map(m => Number(m[1]))
+          if (!all.length) return ''
+          return `${Math.max(...all)}°C`
+        },
+        extractRate(text) {
+          const m = text.match(/\d+(?:\.\d+)?\s*°C\/?min/gi)
+          if (!m || !m.length) return ''
+          return m[0].replace(/\s+/g, ' ').trim()
+        },
+        extractNeedle(text) {
+          const m = text.match(/([0-9]+(?:\.[0-9]+)?)\s*mm\s*(?:導電\s*)?(?:rod|鋼針|針)/i)
+          if (m) return `${m[1]}mm鋼針`
+          const d = text.match(/(?:φ|Φ)?\s*([0-9]+(?:\.[0-9]+)?)\s*mm/i)
+          return d ? `${d[1]}mm鋼針` : ''
         },
         formatEvaluation(row) {
           // 優先使用翻譯後的繁體中文內容
