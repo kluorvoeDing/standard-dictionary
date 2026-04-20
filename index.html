@@ -422,8 +422,16 @@
           }
         },
         generateComparison() {
+          console.log('generateComparison called, selectedDocs:', this.selectedDocs)
+          if (this.selectedDocs.length < 2) {
+            alert('請至少勾選 2 個標準進行對比')
+            return
+          }
           this.showComparison = true
-          window.scrollTo({ top: 0, behavior: 'smooth' })
+          // Vue 3 需要確保響應式更新
+          this.$nextTick(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          })
         },
         getBadgeClass(type) {
           const classes = {
