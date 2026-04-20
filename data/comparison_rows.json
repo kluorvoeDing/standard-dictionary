@@ -2827,7 +2827,7 @@
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "MECH-11",
     "item_name_zh": "淺刺（模擬內部短路）測試",
-    "item_name_en": "Shallow Penetration (Simulated Internal Short Circuit) Test",
+    "item_name_en": "Shallow Penetration Test",
     "section": "7.7",
     "test_objects": [
       "CELL"
@@ -3632,7 +3632,7 @@
     "source_file": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "item_id": "ELEC-02",
-    "item_name_zh": "過充電測試（電池組）",
+    "item_name_zh": "過充電測試",
     "item_name_en": "Over-Charging of Battery",
     "section": "7.3.6",
     "test_objects": [
@@ -3657,7 +3657,7 @@
     "source_file": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "item_id": "ELEC-03",
-    "item_name_zh": "強制放電測試（電池）",
+    "item_name_zh": "強制放電測試",
     "item_name_en": "Forced Discharge (Cells)",
     "section": "7.3.7",
     "test_objects": [
@@ -3682,7 +3682,7 @@
     "source_file": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "item_id": "MECH-02",
-    "item_name_zh": "機械衝擊測試（電池組）",
+    "item_name_zh": "機械衝擊測試",
     "item_name_en": "Mechanical Shock (Batteries)",
     "section": "7.3.8.2",
     "test_objects": [
@@ -3707,7 +3707,7 @@
     "source_file": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "item_id": "MECH-03",
-    "item_name_zh": "擠壓測試（電池）",
+    "item_name_zh": "擠壓測試",
     "item_name_en": "Crush (Cells)",
     "section": "7.3.5",
     "test_objects": [
@@ -3732,7 +3732,7 @@
     "source_file": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "item_id": "MECH-05",
-    "item_name_zh": "振動測試（電池組）",
+    "item_name_zh": "振動測試",
     "item_name_en": "Vibration (Batteries)",
     "section": "7.3.8.1",
     "test_objects": [
@@ -3783,7 +3783,7 @@
     "source_file": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "item_id": "MECH-12",
-    "item_name_zh": "強制內部短路測試（電池）",
+    "item_name_zh": "強制內部短路測試",
     "item_name_en": "Forced Internal Short-Circuit (Cells)",
     "section": "7.3.9",
     "test_objects": [
@@ -3808,7 +3808,7 @@
     "source_file": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "item_id": "MISUSE-01",
-    "item_name_zh": "外部短路測試（電池）",
+    "item_name_zh": "外部短路測試",
     "item_name_en": "External Short-Circuit (Cell)",
     "section": "7.3.1",
     "test_objects": [
@@ -3833,7 +3833,7 @@
     "source_file": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "item_id": "MISUSE-02",
-    "item_name_zh": "外部短路測試（電池組）",
+    "item_name_zh": "外部短路測試",
     "item_name_en": "External Short-Circuit (Battery)",
     "section": "7.3.2",
     "test_objects": [
@@ -3883,7 +3883,7 @@
     "source_file": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "item_id": "THERM-01",
-    "item_name_zh": "熱濫用測試（電池）",
+    "item_name_zh": "熱濫用測試",
     "item_name_en": "Thermal Abuse (Cells)",
     "section": "7.3.4",
     "test_objects": [
@@ -3908,7 +3908,7 @@
     "source_file": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "item_id": "USE-01",
-    "item_name_zh": "恆壓連續充電測試（電池）",
+    "item_name_zh": "恆壓連續充電測試",
     "item_name_en": "Continuous Charging at Constant Voltage (Cell)",
     "section": "7.2.1",
     "test_objects": [
@@ -3933,7 +3933,7 @@
     "source_file": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "item_id": "USE-02",
-    "item_name_zh": "高溫外殼應力測試（電池組）",
+    "item_name_zh": "高溫外殼應力測試",
     "item_name_en": "Case Stress at High Ambient Temperature (Battery)",
     "section": "7.2.2",
     "test_objects": [
@@ -4061,7 +4061,7 @@
     "source_file": "IEC62619-2022.md",
     "source_json": "data/batch1/content/IEC62619_structured.json",
     "item_id": "ELEC-05",
-    "item_name_zh": "過充電壓控制測試（BMS）",
+    "item_name_zh": "過充電壓控制測試",
     "item_name_en": "Overcharge Control of Voltage (Battery System)",
     "section": "8.2.2",
     "test_objects": [
@@ -4086,7 +4086,7 @@
     "source_file": "IEC62619-2022.md",
     "source_json": "data/batch1/content/IEC62619_structured.json",
     "item_id": "ELEC-06",
-    "item_name_zh": "過充電流控制測試（BMS）",
+    "item_name_zh": "過充電流控制測試",
     "item_name_en": "Overcharge Control of Current (Battery System)",
     "section": "8.2.3",
     "test_objects": [
@@ -4601,7 +4601,7 @@
     "source_file": "s1973_3.md",
     "source_json": "data/batch4/content/UL1973_structured.json",
     "item_id": "ANNEX-E-01",
-    "item_name_zh": "鋰電池測試計劃（Annex E）",
+    "item_name_zh": "鋰電池測試計劃",
     "item_name_en": "Cell Test Program (Annex E)",
     "section": "Annex E",
     "test_objects": [
@@ -4834,7 +4834,7 @@
     "source_file": "s1973_3.md",
     "source_json": "data/batch4/content/UL1973_structured.json",
     "item_id": "EMC-01",
-    "item_name_zh": "電磁兼容性測試（6 項）",
+    "item_name_zh": "電磁兼容性測試",
     "item_name_en": "Electromagnetic Immunity Tests",
     "section": "27",
     "test_objects": [
@@ -4860,7 +4860,7 @@
     "source_file": "s1973_3.md",
     "source_json": "data/batch4/content/UL1973_structured.json",
     "item_id": "ENV-01",
-    "item_name_zh": "溫度循環測試（LER 動力和 VAP 應用）",
+    "item_name_zh": "溫度循環測試",
     "item_name_en": "Thermal Cycling Test (LER Motive and VAP Applications)",
     "section": "38",
     "test_objects": [
@@ -4938,7 +4938,7 @@
     "source_file": "s1973_3.md",
     "source_json": "data/batch4/content/UL1973_structured.json",
     "item_id": "INTERNAL-01",
-    "item_name_zh": "單電池失效設計容差測試（鋰離子）",
+    "item_name_zh": "單電池失效設計容差測試",
     "item_name_en": "Single Cell Failure Design Tolerance (Lithium Ion)",
     "section": "42.2",
     "test_objects": [
@@ -4964,7 +4964,7 @@
     "source_file": "s1973_3.md",
     "source_json": "data/batch4/content/UL1973_structured.json",
     "item_id": "INTERNAL-02",
-    "item_name_zh": "單電池失效設計容差測試（其他技術）",
+    "item_name_zh": "單電池失效設計容差測試",
     "item_name_en": "Single Cell Failure Design Tolerance (Other Technologies)",
     "section": "42.3",
     "test_objects": [
@@ -4990,7 +4990,7 @@
     "source_file": "s1973_3.md",
     "source_json": "data/batch4/content/UL1973_structured.json",
     "item_id": "MECH-02",
-    "item_name_zh": "衝擊測試（LER 動力和 VAP 應用）",
+    "item_name_zh": "衝擊測試",
     "item_name_en": "Shock Test (LER Motive and VAP Applications)",
     "section": "29",
     "test_objects": [
@@ -5016,7 +5016,7 @@
     "source_file": "s1973_3.md",
     "source_json": "data/batch4/content/UL1973_structured.json",
     "item_id": "MECH-03",
-    "item_name_zh": "擠壓測試（LER 動力和 VAP 應用）",
+    "item_name_zh": "擠壓測試",
     "item_name_en": "Crush Test (LER Motive and VAP Applications)",
     "section": "30",
     "test_objects": [
@@ -5042,7 +5042,7 @@
     "source_file": "s1973_3.md",
     "source_json": "data/batch4/content/UL1973_structured.json",
     "item_id": "MECH-05",
-    "item_name_zh": "振動測試（LER 動力和 VAP 應用）",
+    "item_name_zh": "振動測試",
     "item_name_en": "Vibration Test (LER Motive and VAP Applications)",
     "section": "28",
     "test_objects": [
@@ -5302,7 +5302,7 @@
     "source_file": "s1973_3.md",
     "source_json": "data/batch4/content/UL1973_structured.json",
     "item_id": "THERM-11",
-    "item_name_zh": "外部火災暴露測試（拋射物危害）",
+    "item_name_zh": "外部火災暴露測試",
     "item_name_en": "External Fire Exposure for Projectile Hazards Test",
     "section": "41",
     "test_objects": [
@@ -6413,7 +6413,7 @@
     "source_file": "s2271_3_20230914.md",
     "source_json": "data/batch4/content/UL2271_structured.json",
     "item_id": "ENV-09",
-    "item_name_zh": "水暴露測試（IP 等級）",
+    "item_name_zh": "水暴露測試",
     "item_name_en": "Water Exposure Test (IP Code Rating)",
     "section": "42",
     "test_objects": [
@@ -6563,7 +6563,7 @@
     "source_file": "s2271_3_20230914.md",
     "source_json": "data/batch4/content/UL2271_structured.json",
     "item_id": "MECH-06",
-    "item_name_zh": "跌落測試（用戶可拆卸）",
+    "item_name_zh": "跌落測試",
     "item_name_en": "Drop Test (User Removable)",
     "section": "36.1",
     "test_objects": [
@@ -6588,7 +6588,7 @@
     "source_file": "s2271_3_20230914.md",
     "source_json": "data/batch4/content/UL2271_structured.json",
     "item_id": "MECH-07",
-    "item_name_zh": "跌落測試（僅維修處理）",
+    "item_name_zh": "跌落測試",
     "item_name_en": "Drop Test (Service Handling Only)",
     "section": "36.2",
     "test_objects": [
@@ -6688,7 +6688,7 @@
     "source_file": "s2271_3_20230914.md",
     "source_json": "data/batch4/content/UL2271_structured.json",
     "item_id": "MECH-11",
-    "item_name_zh": "應力釋放測試（電線固定）",
+    "item_name_zh": "應力釋放測試",
     "item_name_en": "Strain Relief Tests (Cord Anchorages)",
     "section": "40",
     "test_objects": [
@@ -6738,7 +6738,7 @@
     "source_file": "s3030_1.md",
     "source_json": "data/batch5/content/UL3030_structured.json",
     "item_id": "ABN-01",
-    "item_name_zh": "異常運行測試（9 項子測試）",
+    "item_name_zh": "異常運行測試",
     "item_name_en": "Abnormal Operation Tests",
     "section": "32",
     "test_objects": [
@@ -6963,7 +6963,7 @@
     "source_file": "s3030_1.md",
     "source_json": "data/batch5/content/UL3030_structured.json",
     "item_id": "MECH-05",
-    "item_name_zh": "振動測試（電池組）",
+    "item_name_zh": "振動測試",
     "item_name_en": "Vibration Test (Batteries/Battery Packs)",
     "section": "33.1",
     "test_objects": [
@@ -6988,7 +6988,7 @@
     "source_file": "s3030_1.md",
     "source_json": "data/batch5/content/UL3030_structured.json",
     "item_id": "MECH-06",
-    "item_name_zh": "振動測試（完整 UAS）",
+    "item_name_zh": "振動測試",
     "item_name_en": "Vibration Test (Complete UAS)",
     "section": "33.2",
     "test_objects": [
@@ -7163,7 +7163,7 @@
     "source_file": "s3030_1.md",
     "source_json": "data/batch5/content/UL3030_structured.json",
     "item_id": "THERM-01",
-    "item_name_zh": "溫度測試（充電和飛行）",
+    "item_name_zh": "溫度測試",
     "item_name_en": "Temperature Test (Charging and Flying)",
     "section": "28",
     "test_objects": [
@@ -7288,7 +7288,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "EMC-01",
-    "item_name_zh": "電磁兼容性測試（7 項）",
+    "item_name_zh": "電磁兼容性測試",
     "item_name_en": "Electromagnetic Immunity Tests",
     "section": "36",
     "test_objects": [
@@ -7338,7 +7338,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "ENV-12",
-    "item_name_zh": "特殊環境安裝測試（3 項）",
+    "item_name_zh": "特殊環境安裝測試",
     "item_name_en": "Special Environment Installations Tests",
     "section": "41",
     "test_objects": [
@@ -7363,7 +7363,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "EWCS-01",
-    "item_name_zh": "外部警告通訊系統（EWCS）",
+    "item_name_zh": "外部警告通訊系統",
     "item_name_en": "External Warning Communication System (EWCS)",
     "section": "18.2",
     "test_objects": [
@@ -7413,7 +7413,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "FIRE-02",
-    "item_name_zh": "大型火災測試（UL 9540A）",
+    "item_name_zh": "大型火災測試",
     "item_name_en": "Large Scale Fire Testing (UL 9540A)",
     "section": "26.2",
     "test_objects": [
@@ -7463,7 +7463,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "MECH-22",
-    "item_name_zh": "運動部件容納測試（5 項）",
+    "item_name_zh": "運動部件容納測試",
     "item_name_en": "Containment of Moving Parts Tests",
     "section": "37",
     "test_objects": [
@@ -7488,7 +7488,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "MECH-23",
-    "item_name_zh": "強度測試（2 項）",
+    "item_name_zh": "強度測試",
     "item_name_en": "Strength Tests",
     "section": "39",
     "test_objects": [
@@ -7513,7 +7513,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "MECH-24",
-    "item_name_zh": "外殼和安裝測試（4 項）",
+    "item_name_zh": "外殼和安裝測試",
     "item_name_en": "Enclosure and Mounting Tests",
     "section": "40",
     "test_objects": [
@@ -7538,7 +7538,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "MOVING-01",
-    "item_name_zh": "運動部件容納（機械 ESS）",
+    "item_name_zh": "運動部件容納",
     "item_name_en": "Containment of Moving Parts (Mechanical ESS)",
     "section": "21",
     "test_objects": [
@@ -7638,7 +7638,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "PROD-01",
-    "item_name_zh": "電氣生產測試（3 項）",
+    "item_name_zh": "電氣生產測試",
     "item_name_en": "Electrical Production Tests",
     "section": "42",
     "test_objects": [
@@ -7663,7 +7663,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "PROD-02",
-    "item_name_zh": "機械生產測試（2 項）",
+    "item_name_zh": "機械生產測試",
     "item_name_en": "Mechanical Production Tests",
     "section": "43",
     "test_objects": [
@@ -7688,7 +7688,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "SAFETY-01",
-    "item_name_zh": "安全分析（FMEA）",
+    "item_name_zh": "安全分析",
     "item_name_en": "Safety Analysis (FMEA)",
     "section": "15",
     "test_objects": [
@@ -7738,7 +7738,7 @@
     "source_file": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "item_id": "THERM-12",
-    "item_name_zh": "熱能儲能系統異常運行測試（5 項）",
+    "item_name_zh": "熱能儲能系統異常運行測試",
     "item_name_en": "Abnormal Operation Tests for Thermal Energy Storage Systems",
     "section": "31",
     "test_objects": [
@@ -7991,7 +7991,7 @@
     "source_file": "UL 1642-2020.md",
     "source_json": "data/batch1/content/UL1642_structured.json",
     "item_id": "ENV-02",
-    "item_name_zh": "低氣壓測試（海拔模擬）",
+    "item_name_zh": "低氣壓測試",
     "item_name_en": "Low Pressure (Altitude Simulation) Test",
     "section": "19",
     "test_objects": [
@@ -8017,7 +8017,7 @@
     "source_file": "UL 1642-2020.md",
     "source_json": "data/batch1/content/UL1642_structured.json",
     "item_id": "FIRE-01",
-    "item_name_zh": "彈射測試（火災暴露）",
+    "item_name_zh": "彈射測試",
     "item_name_en": "Projectile Test (Fire Exposure)",
     "section": "20",
     "test_objects": [
@@ -8173,7 +8173,7 @@
     "source_file": "ULC-2580-2022-en.md",
     "source_json": "data/batch3/content/ULC-2580_structured.json",
     "item_id": "ANNEX-B-01",
-    "item_name_zh": "鋰電池測試計劃（Annex B）",
+    "item_name_zh": "鋰電池測試計劃",
     "item_name_en": "Test Program for Secondary Lithium Cells (Annex B)",
     "section": "Annex B",
     "test_objects": [
@@ -8198,7 +8198,7 @@
     "source_file": "ULC-2580-2022-en.md",
     "source_json": "data/batch3/content/ULC-2580_structured.json",
     "item_id": "ANNEX-D-01",
-    "item_name_zh": "替代鋰電池測試計劃（Annex D）",
+    "item_name_zh": "替代鋰電池測試計劃",
     "item_name_en": "Alternative Test Program for Secondary Lithium Cells (Annex D)",
     "section": "Annex D",
     "test_objects": [
@@ -8483,7 +8483,7 @@
     "source_file": "ULC-2580-2022-en.md",
     "source_json": "data/batch3/content/ULC-2580_structured.json",
     "item_id": "INTERNAL-01",
-    "item_name_zh": "單電池失效設計容差測試（鋰離子）",
+    "item_name_zh": "單電池失效設計容差測試",
     "item_name_en": "Single Cell Failure Design Tolerance (Lithium Ion)",
     "section": "43.2",
     "test_objects": [
@@ -8509,7 +8509,7 @@
     "source_file": "ULC-2580-2022-en.md",
     "source_json": "data/batch3/content/ULC-2580_structured.json",
     "item_id": "INTERNAL-02",
-    "item_name_zh": "單電池失效設計容差測試（其他技術）",
+    "item_name_zh": "單電池失效設計容差測試",
     "item_name_en": "Single Cell Failure Design Tolerance (Other Technologies)",
     "section": "43.3",
     "test_objects": [
@@ -8639,7 +8639,7 @@
     "source_file": "ULC-2580-2022-en.md",
     "source_json": "data/batch3/content/ULC-2580_structured.json",
     "item_id": "MECH-13",
-    "item_name_zh": "旋轉測試（翻車模擬）",
+    "item_name_zh": "旋轉測試",
     "item_name_en": "Rotation Test",
     "section": "34",
     "test_objects": [
@@ -8847,7 +8847,7 @@
     "source_file": "UN38.3 sub section.md",
     "source_json": "data/batch1/content/UN38.3_structured.json",
     "item_id": "ENV-02",
-    "item_name_zh": "高度模擬（低氣壓）測試",
+    "item_name_zh": "高度模擬測試",
     "item_name_en": "Test T.1: Altitude Simulation",
     "section": "38.3.4.1",
     "test_objects": [
