@@ -115,8 +115,8 @@
     "source_file": "AIS-038_Rev.2.doc.md",
     "source_json": "data/batch3/content/AIS-038_structured.json",
     "item_id": "ELEC-09",
-    "item_name_zh": "絕緣電阻測試（車輛級）",
-    "item_name_en": "Isolation Resistance Measurement (Vehicle-based)",
+    "item_name_zh": "絕緣電阻測試",
+    "item_name_en": "Isolation Resistance Measurement",
     "section": "Annexure V-A (5.1.3.1)",
     "test_objects": [
       "VEHICLE"
@@ -140,8 +140,8 @@
     "source_file": "AIS-038_Rev.2.doc.md",
     "source_json": "data/batch3/content/AIS-038_structured.json",
     "item_id": "ELEC-09",
-    "item_name_zh": "絕緣電阻測試（元件級 REESS）",
-    "item_name_en": "Isolation Resistance Measurement (Component-based REESS)",
+    "item_name_zh": "絕緣電阻測試",
+    "item_name_en": "Isolation Resistance Measurement",
     "section": "Annexure V-B (6.2.2.2)",
     "test_objects": [
       "PACK",
@@ -192,8 +192,8 @@
     "source_file": "AIS-038_Rev.2.doc.md",
     "source_json": "data/batch3/content/AIS-038_structured.json",
     "item_id": "ENV-09",
-    "item_name_zh": "氫氣排放測試（正常充電）",
-    "item_name_en": "Hydrogen Emissions Test (Normal Charge)",
+    "item_name_zh": "氫氣排放測試",
+    "item_name_en": "Hydrogen Emissions Test",
     "section": "Annexure VIII (5.4)",
     "test_objects": [
       "PACK",
@@ -218,8 +218,8 @@
     "source_file": "AIS-038_Rev.2.doc.md",
     "source_json": "data/batch3/content/AIS-038_structured.json",
     "item_id": "ENV-10",
-    "item_name_zh": "氫氣排放測試（充電失效）",
-    "item_name_en": "Hydrogen Emissions Test (Charging Failure)",
+    "item_name_zh": "氫氣排放測試",
+    "item_name_en": "Hydrogen Emissions Test",
     "section": "Annexure VIII (5.4.5)",
     "test_objects": [
       "PACK",
@@ -322,8 +322,8 @@
     "source_file": "AIS-038_Rev.2.doc.md",
     "source_json": "data/batch3/content/AIS-038_structured.json",
     "item_id": "PROT-01",
-    "item_name_zh": "直接接触防護測試（IPXXB）",
-    "item_name_en": "Protection Against Direct Contact Test (IPXXB)",
+    "item_name_zh": "直接接触防護測試",
+    "item_name_en": "Protection Against Direct Contact Test",
     "section": "Annexure III (2.35)",
     "test_objects": [
       "VEHICLE",
@@ -656,7 +656,7 @@
     "source_file": "AIS-156.full.md",
     "source_json": "data/batch6/content/AIS-156_structured.json",
     "item_id": "ENV-13",
-    "item_name_zh": "氫氣排放測試（正常充電）",
+    "item_name_zh": "氫氣排放測試",
     "item_name_en": "Hydrogen Emission Test During Normal Charge",
     "section": "5.4.2-5.4.3, Annex 7",
     "test_objects": [
@@ -681,7 +681,7 @@
     "source_file": "AIS-156.full.md",
     "source_json": "data/batch6/content/AIS-156_structured.json",
     "item_id": "ENV-14",
-    "item_name_zh": "氫氣排放測試（充電器故障）",
+    "item_name_zh": "氫氣排放測試",
     "item_name_en": "Hydrogen Emission Test During Charger Failure",
     "section": "5.4.4, Annex 7",
     "test_objects": [
@@ -1388,8 +1388,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "ELEC-01",
-    "item_name_zh": "高溫外部短路測試（電池）",
-    "item_name_en": "High Temperature External Short Circuit Test (Cell)",
+    "item_name_zh": "高溫外部短路測試",
+    "item_name_en": "High Temperature External Short Circuit Test",
     "section": "6.1",
     "test_objects": [
       "CELL"
@@ -1413,8 +1413,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "ELEC-02",
-    "item_name_zh": "過充電測試（電池）",
-    "item_name_en": "Overcharge Test (Cell)",
+    "item_name_zh": "過充電測試",
+    "item_name_en": "Overcharge Test",
     "section": "6.2",
     "test_objects": [
       "CELL"
@@ -1438,8 +1438,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "ELEC-03",
-    "item_name_zh": "強制放電測試（電池）",
-    "item_name_en": "Forced Discharge Test (Cell)",
+    "item_name_zh": "強制放電測試",
+    "item_name_en": "Forced Discharge Test",
     "section": "6.3",
     "test_objects": [
       "CELL"
@@ -1463,8 +1463,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "ENV-01",
-    "item_name_zh": "溫度循環測試（電池）",
-    "item_name_en": "Temperature Cycling Test (Cell)",
+    "item_name_zh": "溫度循環測試",
+    "item_name_en": "Temperature Cycling Test",
     "section": "7.2",
     "test_objects": [
       "CELL"
@@ -1488,8 +1488,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "ENV-01",
-    "item_name_zh": "溫度循環測試（電池組）",
-    "item_name_en": "Temperature Cycling Test (Battery)",
+    "item_name_zh": "溫度循環測試",
+    "item_name_en": "Temperature Cycling Test",
     "section": "8.2",
     "test_objects": [
       "PACK"
@@ -1513,8 +1513,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "ENV-02",
-    "item_name_zh": "低氣壓測試（電池）",
-    "item_name_en": "Low Pressure Test (Cell)",
+    "item_name_zh": "低氣壓測試",
+    "item_name_en": "Low Pressure Test",
     "section": "7.1",
     "test_objects": [
       "CELL"
@@ -1538,8 +1538,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "ENV-02",
-    "item_name_zh": "低氣壓測試（電池組）",
-    "item_name_en": "Low Pressure Test (Battery)",
+    "item_name_zh": "低氣壓測試",
+    "item_name_en": "Low Pressure Test",
     "section": "8.1",
     "test_objects": [
       "PACK"
@@ -1563,8 +1563,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "ENV-07",
-    "item_name_zh": "洗滌測試（電池組）",
-    "item_name_en": "Washing Test (Battery)",
+    "item_name_zh": "洗滌測試",
+    "item_name_en": "Washing Test",
     "section": "8.8",
     "test_objects": [
       "PACK"
@@ -1588,8 +1588,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "MECH-02",
-    "item_name_zh": "加速度衝擊測試（電池）",
-    "item_name_en": "Acceleration Shock Test (Cell)",
+    "item_name_zh": "加速度衝擊測試",
+    "item_name_en": "Acceleration Shock Test",
     "section": "7.4",
     "test_objects": [
       "CELL"
@@ -1613,8 +1613,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "MECH-02",
-    "item_name_zh": "加速度衝擊測試（電池組）",
-    "item_name_en": "Acceleration Shock Test (Battery)",
+    "item_name_zh": "加速度衝擊測試",
+    "item_name_en": "Acceleration Shock Test",
     "section": "8.4",
     "test_objects": [
       "PACK"
@@ -1638,8 +1638,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "MECH-03",
-    "item_name_zh": "擠壓測試（電池）",
-    "item_name_en": "Crush Test (Cell)",
+    "item_name_zh": "擠壓測試",
+    "item_name_en": "Crush Test",
     "section": "7.6",
     "test_objects": [
       "CELL"
@@ -1663,8 +1663,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "MECH-05",
-    "item_name_zh": "振動測試（電池）",
-    "item_name_en": "Vibration Test (Cell)",
+    "item_name_zh": "振動測試",
+    "item_name_en": "Vibration Test",
     "section": "7.3",
     "test_objects": [
       "CELL"
@@ -1688,8 +1688,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "MECH-05",
-    "item_name_zh": "振動測試（電池組）",
-    "item_name_en": "Vibration Test (Battery)",
+    "item_name_zh": "振動測試",
+    "item_name_en": "Vibration Test",
     "section": "8.3",
     "test_objects": [
       "PACK"
@@ -1713,8 +1713,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "MECH-06",
-    "item_name_zh": "跌落測試（電池）",
-    "item_name_en": "Drop Test (Cell)",
+    "item_name_zh": "跌落測試",
+    "item_name_en": "Drop Test",
     "section": "7.5",
     "test_objects": [
       "CELL"
@@ -1738,8 +1738,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "MECH-06",
-    "item_name_zh": "跌落測試（電池組）",
-    "item_name_en": "Drop Test (Battery)",
+    "item_name_zh": "跌落測試",
+    "item_name_en": "Drop Test",
     "section": "8.5",
     "test_objects": [
       "PACK"
@@ -1763,8 +1763,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "MECH-09",
-    "item_name_zh": "重物衝擊測試（電池）",
-    "item_name_en": "Heavy Object Impact Test (Cell)",
+    "item_name_zh": "重物衝擊測試",
+    "item_name_en": "Heavy Object Impact Test",
     "section": "7.7",
     "test_objects": [
       "CELL"
@@ -1788,8 +1788,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "MECH-10",
-    "item_name_zh": "應力消除測試（電池組）",
-    "item_name_en": "Stress Relief Test (Battery)",
+    "item_name_zh": "應力消除測試",
+    "item_name_en": "Stress Relief Test",
     "section": "8.6",
     "test_objects": [
       "PACK"
@@ -1813,8 +1813,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "THERM-01",
-    "item_name_zh": "熱濫用測試（電池）",
-    "item_name_en": "Thermal Abuse Test (Cell)",
+    "item_name_zh": "熱濫用測試",
+    "item_name_en": "Thermal Abuse Test",
     "section": "7.8",
     "test_objects": [
       "CELL"
@@ -1838,8 +1838,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "THERM-04",
-    "item_name_zh": "燃燒噴射測試（電池）",
-    "item_name_en": "Combustion Jet Test (Cell)",
+    "item_name_zh": "燃燒噴射測試",
+    "item_name_en": "Combustion Jet Test",
     "section": "7.9",
     "test_objects": [
       "CELL"
@@ -1863,8 +1863,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "THERM-05",
-    "item_name_zh": "高溫使用測試（電池組）",
-    "item_name_en": "High Temperature Use Test (Battery)",
+    "item_name_zh": "高溫使用測試",
+    "item_name_en": "High Temperature Use Test",
     "section": "8.7",
     "test_objects": [
       "PACK"
@@ -1888,8 +1888,8 @@
     "source_file": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "item_id": "THERM-06",
-    "item_name_zh": "阻燃要求（電池組）",
-    "item_name_en": "Flame Retardancy Requirement (Battery)",
+    "item_name_zh": "阻燃要求",
+    "item_name_en": "Flame Retardancy Requirement",
     "section": "8.9",
     "test_objects": [
       "PACK"
@@ -1913,8 +1913,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ELEC-01",
-    "item_name_zh": "外部短路測試（電池單體）",
-    "item_name_en": "External Short Circuit Test (Cell)",
+    "item_name_zh": "外部短路測試",
+    "item_name_en": "External Short Circuit Test",
     "section": "5.1.3, 8.1.4",
     "test_objects": [
       "CELL"
@@ -1938,8 +1938,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ELEC-01",
-    "item_name_zh": "外部短路保護測試（電池系統）",
-    "item_name_en": "External Short Circuit Protection Test (Battery System)",
+    "item_name_zh": "外部短路保護測試",
+    "item_name_en": "External Short Circuit Protection Test",
     "section": "5.2.13, 8.2.13",
     "test_objects": [
       "SYSTEM"
@@ -1963,8 +1963,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ELEC-02",
-    "item_name_zh": "過充電測試（電池單體）",
-    "item_name_en": "Overcharge Test (Cell)",
+    "item_name_zh": "過充電測試",
+    "item_name_en": "Overcharge Test",
     "section": "5.1.2, 8.1.3",
     "test_objects": [
       "CELL"
@@ -1988,8 +1988,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ELEC-02",
-    "item_name_zh": "過充電保護測試（電池系統）",
-    "item_name_en": "Overcharge Protection Test (Battery System)",
+    "item_name_zh": "過充電保護測試",
+    "item_name_en": "Overcharge Protection Test",
     "section": "5.2.14, 8.2.14",
     "test_objects": [
       "SYSTEM"
@@ -2013,8 +2013,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ELEC-03",
-    "item_name_zh": "過放電測試（電池單體）",
-    "item_name_en": "Over-discharge Test (Cell)",
+    "item_name_zh": "過放電測試",
+    "item_name_en": "Over-discharge Test",
     "section": "5.1.1, 8.1.2",
     "test_objects": [
       "CELL"
@@ -2038,8 +2038,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ELEC-03",
-    "item_name_zh": "過放電保護測試（電池系統）",
-    "item_name_en": "Over-discharge Protection Test (Battery System)",
+    "item_name_zh": "過放電保護測試",
+    "item_name_en": "Over-discharge Protection Test",
     "section": "5.2.15, 8.2.15",
     "test_objects": [
       "SYSTEM"
@@ -2063,8 +2063,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ELEC-06",
-    "item_name_zh": "過流保護測試（電池系統）",
-    "item_name_en": "Over-current Protection Test (Battery System)",
+    "item_name_zh": "過流保護測試",
+    "item_name_en": "Over-current Protection Test",
     "section": "5.2.12, 8.2.12",
     "test_objects": [
       "SYSTEM"
@@ -2088,8 +2088,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ELEC-07",
-    "item_name_zh": "快充循環後安全測試（電池單體）",
-    "item_name_en": "Safety After Fast-Charge Cycling Test (Cell)",
+    "item_name_zh": "快充循環後安全測試",
+    "item_name_en": "Safety After Fast-Charge Cycling Test",
     "section": "5.1.7, 8.1.8",
     "test_objects": [
       "CELL"
@@ -2113,8 +2113,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ENV-01",
-    "item_name_zh": "溫度循環測試（電池單體）",
-    "item_name_en": "Temperature Cycling Test (Cell)",
+    "item_name_zh": "溫度循環測試",
+    "item_name_en": "Temperature Cycling Test",
     "section": "5.1.5, 8.1.6",
     "test_objects": [
       "CELL"
@@ -2138,8 +2138,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ENV-02",
-    "item_name_zh": "溫度衝擊測試（電池包或系統）",
-    "item_name_en": "Temperature Shock Test (Battery Pack or System)",
+    "item_name_zh": "溫度衝擊測試",
+    "item_name_en": "Temperature Shock Test",
     "section": "5.2.8, 8.2.8",
     "test_objects": [
       "PACK",
@@ -2164,8 +2164,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ENV-03",
-    "item_name_zh": "濕熱循環測試（電池包或系統）",
-    "item_name_en": "Damp Heat Cycling Test (Battery Pack or System)",
+    "item_name_zh": "濕熱循環測試",
+    "item_name_en": "Damp Heat Cycling Test",
     "section": "5.2.5, 8.2.5",
     "test_objects": [
       "PACK",
@@ -2190,8 +2190,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ENV-04",
-    "item_name_zh": "浸水測試（電池包或系統）",
-    "item_name_en": "Water Immersion Test (Battery Pack or System)",
+    "item_name_zh": "浸水測試",
+    "item_name_en": "Water Immersion Test",
     "section": "5.2.6, 8.2.6",
     "test_objects": [
       "PACK",
@@ -2216,8 +2216,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ENV-05",
-    "item_name_zh": "鹽霧測試（電池包或系統）",
-    "item_name_en": "Salt Spray Test (Battery Pack or System)",
+    "item_name_zh": "鹽霧測試",
+    "item_name_en": "Salt Spray Test",
     "section": "5.2.9, 8.2.9",
     "test_objects": [
       "PACK",
@@ -2242,8 +2242,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "ENV-06",
-    "item_name_zh": "高海拔測試（電池包或系統）",
-    "item_name_en": "High Altitude Test (Battery Pack or System)",
+    "item_name_zh": "高海拔測試",
+    "item_name_en": "High Altitude Test",
     "section": "5.2.10, 8.2.10",
     "test_objects": [
       "PACK",
@@ -2268,8 +2268,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "MECH-02",
-    "item_name_zh": "機械衝擊測試（電池包或系統）",
-    "item_name_en": "Mechanical Shock Test (Battery Pack or System)",
+    "item_name_zh": "機械衝擊測試",
+    "item_name_en": "Mechanical Shock Test",
     "section": "5.2.2, 8.2.2",
     "test_objects": [
       "PACK",
@@ -2294,8 +2294,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "MECH-03",
-    "item_name_zh": "擠壓測試（電池單體）",
-    "item_name_en": "Crush Test (Cell)",
+    "item_name_zh": "擠壓測試",
+    "item_name_en": "Crush Test",
     "section": "5.1.6, 8.1.7",
     "test_objects": [
       "CELL"
@@ -2319,8 +2319,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "MECH-03",
-    "item_name_zh": "擠壓測試（電池包或系統）",
-    "item_name_en": "Crush Test (Battery Pack or System)",
+    "item_name_zh": "擠壓測試",
+    "item_name_en": "Crush Test",
     "section": "5.2.4, 8.2.4",
     "test_objects": [
       "PACK",
@@ -2345,8 +2345,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "MECH-05",
-    "item_name_zh": "振動測試（電池包或系統）",
-    "item_name_en": "Vibration Test (Battery Pack or System)",
+    "item_name_zh": "振動測試",
+    "item_name_en": "Vibration Test",
     "section": "5.2.1, 8.2.1",
     "test_objects": [
       "PACK",
@@ -2371,8 +2371,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "MECH-07",
-    "item_name_zh": "模擬碰撞測試（電池包或系統）",
-    "item_name_en": "Simulated Collision Test (Battery Pack or System)",
+    "item_name_zh": "模擬碰撞測試",
+    "item_name_en": "Simulated Collision Test",
     "section": "5.2.3, 8.2.3",
     "test_objects": [
       "PACK",
@@ -2397,8 +2397,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "MECH-08",
-    "item_name_zh": "底部撞擊測試（電池包或系統或整車）",
-    "item_name_en": "Bottom Impact Test (Battery Pack or System or Vehicle)",
+    "item_name_zh": "底部撞擊測試",
+    "item_name_en": "Bottom Impact Test",
     "section": "5.2.16, 8.2.16",
     "test_objects": [
       "PACK",
@@ -2424,8 +2424,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "THERM-01",
-    "item_name_zh": "加熱測試（電池單體）",
-    "item_name_en": "Heating Test (Cell)",
+    "item_name_zh": "加熱測試",
+    "item_name_en": "Heating Test",
     "section": "5.1.4, 8.1.5",
     "test_objects": [
       "CELL"
@@ -2449,8 +2449,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "THERM-02",
-    "item_name_zh": "熱穩定性測試（電池包或系統）",
-    "item_name_en": "Thermal Stability Test (Battery Pack or System)",
+    "item_name_zh": "熱穩定性測試",
+    "item_name_en": "Thermal Stability Test",
     "section": "5.2.7, 8.2.7",
     "test_objects": [
       "PACK",
@@ -2475,8 +2475,8 @@
     "source_file": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "item_id": "THERM-03",
-    "item_name_zh": "過溫保護測試（電池系統）",
-    "item_name_en": "Over-temperature Protection Test (Battery System)",
+    "item_name_zh": "過溫保護測試",
+    "item_name_en": "Over-temperature Protection Test",
     "section": "5.2.11, 8.2.11",
     "test_objects": [
       "SYSTEM"
@@ -2500,8 +2500,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "ELEC-01",
-    "item_name_zh": "高溫外部短路測試（電池）",
-    "item_name_en": "High Temperature External Short Circuit Test (Cell)",
+    "item_name_zh": "高溫外部短路測試",
+    "item_name_en": "High Temperature External Short Circuit Test",
     "section": "6.1",
     "test_objects": [
       "CELL"
@@ -2525,8 +2525,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "ELEC-02",
-    "item_name_zh": "過充電測試（電池）",
-    "item_name_en": "Overcharge Test (Cell)",
+    "item_name_zh": "過充電測試",
+    "item_name_en": "Overcharge Test",
     "section": "6.2",
     "test_objects": [
       "CELL"
@@ -2550,8 +2550,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "ELEC-03",
-    "item_name_zh": "強制放電測試（電池）",
-    "item_name_en": "Forced Discharge Test (Cell)",
+    "item_name_zh": "強制放電測試",
+    "item_name_en": "Forced Discharge Test",
     "section": "6.3",
     "test_objects": [
       "CELL"
@@ -2575,8 +2575,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "ELEC-04",
-    "item_name_zh": "過壓充電控制測試（電池組系統）",
-    "item_name_en": "Overvoltage Charging Control Test (Battery System)",
+    "item_name_zh": "過壓充電控制測試",
+    "item_name_en": "Overvoltage Charging Control Test",
     "section": "8.3",
     "test_objects": [
       "SYSTEM"
@@ -2600,8 +2600,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "ELEC-05",
-    "item_name_zh": "過流充電控制測試（電池組系統）",
-    "item_name_en": "Overcurrent Charging Control Test (Battery System)",
+    "item_name_zh": "過流充電控制測試",
+    "item_name_en": "Overcurrent Charging Control Test",
     "section": "8.4",
     "test_objects": [
       "SYSTEM"
@@ -2625,8 +2625,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "ELEC-06",
-    "item_name_zh": "欠壓放電控制測試（電池組系統）",
-    "item_name_en": "Undervoltage Discharge Control Test (Battery System)",
+    "item_name_zh": "欠壓放電控制測試",
+    "item_name_en": "Undervoltage Discharge Control Test",
     "section": "8.5",
     "test_objects": [
       "SYSTEM"
@@ -2650,8 +2650,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "ENV-01",
-    "item_name_zh": "溫度循環測試（電池）",
-    "item_name_en": "Temperature Cycling Test (Cell)",
+    "item_name_zh": "溫度循環測試",
+    "item_name_en": "Temperature Cycling Test",
     "section": "7.2",
     "test_objects": [
       "CELL"
@@ -2675,8 +2675,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "ENV-02",
-    "item_name_zh": "低氣壓測試（電池）",
-    "item_name_en": "Low Pressure Test (Cell)",
+    "item_name_zh": "低氣壓測試",
+    "item_name_en": "Low Pressure Test",
     "section": "7.1",
     "test_objects": [
       "CELL"
@@ -2700,8 +2700,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "MECH-02",
-    "item_name_zh": "加速度衝擊測試（電池）",
-    "item_name_en": "Acceleration Shock Test (Cell)",
+    "item_name_zh": "加速度衝擊測試",
+    "item_name_en": "Acceleration Shock Test",
     "section": "7.4",
     "test_objects": [
       "CELL"
@@ -2725,8 +2725,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "MECH-03",
-    "item_name_zh": "擠壓測試（電池）",
-    "item_name_en": "Crush Test (Cell)",
+    "item_name_zh": "擠壓測試",
+    "item_name_en": "Crush Test",
     "section": "7.6",
     "test_objects": [
       "CELL"
@@ -2750,8 +2750,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "MECH-05",
-    "item_name_zh": "振動測試（電池）",
-    "item_name_en": "Vibration Test (Cell)",
+    "item_name_zh": "振動測試",
+    "item_name_en": "Vibration Test",
     "section": "7.3",
     "test_objects": [
       "CELL"
@@ -2775,8 +2775,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "MECH-06",
-    "item_name_zh": "跌落測試（電池或電池組）",
-    "item_name_en": "Drop Test (Cell or Battery)",
+    "item_name_zh": "跌落測試",
+    "item_name_en": "Drop Test",
     "section": "7.9",
     "test_objects": [
       "CELL",
@@ -2801,8 +2801,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "MECH-09",
-    "item_name_zh": "重物衝擊測試（電池）",
-    "item_name_en": "Heavy Object Impact Test (Cell)",
+    "item_name_zh": "重物衝擊測試",
+    "item_name_en": "Heavy Object Impact Test",
     "section": "7.5",
     "test_objects": [
       "CELL"
@@ -2826,8 +2826,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "MECH-11",
-    "item_name_zh": "淺刺（模擬內部短路）測試（電池）",
-    "item_name_en": "Shallow Penetration (Simulated Internal Short Circuit) Test (Cell)",
+    "item_name_zh": "淺刺（模擬內部短路）測試",
+    "item_name_en": "Shallow Penetration (Simulated Internal Short Circuit) Test",
     "section": "7.7",
     "test_objects": [
       "CELL"
@@ -2851,8 +2851,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "THERM-01",
-    "item_name_zh": "熱濫用測試（電池）",
-    "item_name_en": "Thermal Abuse Test (Cell)",
+    "item_name_zh": "熱濫用測試",
+    "item_name_en": "Thermal Abuse Test",
     "section": "7.8",
     "test_objects": [
       "CELL"
@@ -2876,8 +2876,8 @@
     "source_file": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "item_id": "THERM-03",
-    "item_name_zh": "過熱控制測試（電池組系統）",
-    "item_name_en": "Overheat Control Test (Battery System)",
+    "item_name_zh": "過熱控制測試",
+    "item_name_en": "Overheat Control Test",
     "section": "8.6",
     "test_objects": [
       "SYSTEM"
@@ -3241,8 +3241,8 @@
     "source_file": "GBT 36276-2023.md",
     "source_json": "data/batch4/content/GBT36276_structured.json",
     "item_id": "PERF-01",
-    "item_name_zh": "初始充放电性能试验（25°C）",
-    "item_name_en": "Initial Charge/Discharge Performance Test (25°C)",
+    "item_name_zh": "初始充放电性能试验",
+    "item_name_en": "Initial Charge/Discharge Performance Test",
     "section": "6.4.1.1",
     "test_objects": [
       "CELL",
@@ -3268,8 +3268,8 @@
     "source_file": "GBT 36276-2023.md",
     "source_json": "data/batch4/content/GBT36276_structured.json",
     "item_id": "PERF-02",
-    "item_name_zh": "初始充放电性能试验（45°C）",
-    "item_name_en": "Initial Charge/Discharge Performance Test (45°C)",
+    "item_name_zh": "初始充放电性能试验",
+    "item_name_en": "Initial Charge/Discharge Performance Test",
     "section": "6.4.1.2",
     "test_objects": [
       "CELL",
@@ -3294,8 +3294,8 @@
     "source_file": "GBT 36276-2023.md",
     "source_json": "data/batch4/content/GBT36276_structured.json",
     "item_id": "PERF-03",
-    "item_name_zh": "初始充放电性能试验（5°C）",
-    "item_name_en": "Initial Charge/Discharge Performance Test (5°C)",
+    "item_name_zh": "初始充放电性能试验",
+    "item_name_en": "Initial Charge/Discharge Performance Test",
     "section": "6.4.1.3",
     "test_objects": [
       "CELL",
