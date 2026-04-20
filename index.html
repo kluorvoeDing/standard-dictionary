@@ -37,9 +37,10 @@
     .category-fire { background-color: #FFEBEE; }
     .category-other { background-color: #F5F5F5; }
     /* 懸浮視窗樣式 */
-    .popover { position: absolute; z-index: 1000; background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); max-width: 400px; max-height: 300px; overflow-y: auto; }
-    .popover-arrow { position: absolute; width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 8px solid #e5e7eb; top: -8px; left: 50%; transform: translateX(-50%); }
-    .popover-arrow::after { content: ''; position: absolute; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid white; top: 1px; left: -7px; }
+    .popover { position: fixed; z-index: 9999; background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.2); max-width: 450px; max-height: 400px; overflow-y: auto; }
+    .popover-content { line-height: 1.6; }
+    .popover-content .label { color: #6b7280; font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.25rem; }
+    .popover-content .value { color: #374151; font-size: 0.875rem; }
   </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -212,24 +213,27 @@
                           <div class="text-xs" v-html="formatEvaluationShort(group.rows[doc.document_id])"></div>
                         </div>
                         <button @click="showPopover(group.testId, doc.document_id, $event)" class="expand-btn mt-1">展開詳細</button>
-                        <!-- 懸浮視窗 -->
-                        <div v-if="activePopover && activePopover.testId === group.testId && activePopover.docId === doc.document_id" 
-                             class="popover" 
-                             :style="popoverStyle"
-                             @click.stop>
-                          <div class="popover-arrow"></div>
-                          <div class="text-gray-600 mb-2">
-                            <span class="text-xs text-gray-400 font-semibold">章節：</span>{{ group.rows[doc.document_id].section }}
+                      </div>
+                      <!-- 懸浮視窗（全局） -->
+                      <div v-if="activePopover" 
+                           class="popover" 
+                           :style="popoverStyle"
+                           @click.stop>
+                        <div class="popover-content">
+                          <div class="mb-3">
+                            <span class="label">章節：</span>
+                            <span class="value">{{ activePopoverData.section }}</span>
                           </div>
-                          <div class="text-gray-700 mb-2">
-                            <span class="text-xs text-gray-400 font-semibold block mb-1">條件：</span>
-                            <div class="text-xs" v-html="formatConditions(group.rows[doc.document_id])"></div>
+                          <div class="mb-3">
+                            <span class="label">條件：</span>
+                            <div class="value" v-html="activePopoverData.conditions"></div>
                           </div>
-                          <div class="text-gray-700">
-                            <span class="text-xs text-gray-400 font-semibold block mb-1">判定：</span>
-                            <div class="text-xs" v-html="formatEvaluation(group.rows[doc.document_id])"></div>
+                          <div>
+                            <span class="label">判定：</span>
+                            <div class="value" v-html="activePopoverData.evaluation"></div>
                           </div>
                         </div>
+                      </div>
                       </div>
                       <div v-if="group.rows[doc.document_id].document_strength === 'guidance'" class="mt-2 text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded">
                         ⚠️ 此為建議性文件，非強制要求
@@ -265,6 +269,7 @@
           editingCells: {},
           editBackup: {},
           activePopover: null,
+          activePopoverData: {},
           popoverStyle: {}
         }
       },
@@ -561,20 +566,36 @@
           delete this.editBackup[key]
         },
         showPopover(testId, docId, event) {
-          // 如果已經打開，則關閉
+          // 如果已經打開且點擊同一個，則關閉
           if (this.activePopover && this.activePopover.testId === testId && this.activePopover.docId === docId) {
             this.activePopover = null
+            this.activePopoverData = {}
             return
           }
-          // 計算懸浮視窗位置
+          // 獲取數據
+          const group = this.groupedComparisonRows.find(g => g.testId === testId)
+          if (!group || !group.rows[docId]) return
+          
+          const rowData = group.rows[docId]
+          
+          // 設置懸浮視窗數據
+          this.activePopover = { testId, docId }
+          this.activePopoverData = {
+            section: rowData.section,
+            conditions: this.formatConditions(rowData),
+            evaluation: this.formatEvaluation(rowData)
+          }
+          
+          // 計算懸浮視窗位置（使用 fixed 定位）
           const button = event.target
           const rect = button.getBoundingClientRect()
           const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+          const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft
           
-          this.activePopover = { testId, docId }
           this.popoverStyle = {
-            left: `${rect.left + rect.width / 2}px`,
-            top: `${rect.bottom + scrollTop + 10}px`
+            left: `${rect.left + scrollLeft}px`,
+            top: `${rect.bottom + scrollTop + 8}px`,
+            minWidth: `${Math.max(rect.width, 300)}px`
           }
         },
         closePopover() {
