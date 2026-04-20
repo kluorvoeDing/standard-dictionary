@@ -557,6 +557,11 @@
             .replace(/\r/g, '')
             .trim()
 
+          const specialSummary = this.summarizeSpecialPatterns(normalized)
+          if (specialSummary.length) {
+            return specialSummary.map(line => `<div class="mb-0.5">${line}</div>`).join('')
+          }
+
           const rawClauses = normalized
             .split(/\n|[;；]|\|(?!\|)/)
             .map(x => x.trim())
@@ -566,8 +571,7 @@
             .map(x => this.condenseClause(x))
             .filter(Boolean)
 
-          const unique = [...new Set(condensed)]
-          const selected = unique.slice(0, 3)
+          const selected = this.pickKeyClauses(condensed)
 
           if (!selected.length) {
             return `<div class="mb-0.5">${this.condenseClause(normalized)}</div>`
@@ -575,17 +579,88 @@
 
           return selected.map(line => `<div class="mb-0.5">${line}</div>`).join('')
         },
+        summarizeSpecialPatterns(text) {
+          // 溫度循環/溫度曲線等長條件，先輸出可執行的關鍵摘要
+          const isTempProfile = /temperature\s*profile|溫度循環|溫度曲線|temp\s*profile/i.test(text)
+          if (!isTempProfile) return []
+
+          const lines = []
+
+          const soc = text.match(/SOC\s*[:：]\s*([^\n;；]+)/i)
+          if (soc) {
+            lines.push(`SOC: ${soc[1].trim()}`)
+          }
+
+          const cycle = text.match(/循環次數\s*[:：]\s*(\d+)/)
+          const temps = (text.match(/-?\d+(?:\.\d+)?\s*°C/g) || []).map(x => x.replace(/\s+/g, ''))
+          const mins = (text.match(/\d+(?:\.\d+)?\s*min/g) || []).map(x => x.replace(/\s+/g, ''))
+          const ramps = (text.match(/\d+\/\d+\s*°C\/min/g) || []).map(x => x.replace(/\s+/g, ''))
+
+          if (temps.length) {
+            const uniqTemps = [...new Set(temps)]
+            const numeric = uniqTemps.map(t => parseFloat(t.replace('°C', ''))).filter(n => !Number.isNaN(n))
+            const tMin = numeric.length ? Math.min(...numeric) : null
+            const tMax = numeric.length ? Math.max(...numeric) : null
+            const cyclePart = cycle ? `${cycle[1]} cycles, ` : ''
+            const rangePart = (tMin !== null && tMax !== null) ? `${tMin}~${tMax}°C` : uniqTemps.join('/')
+            const holdPart = mins.length ? `, hold ${mins.slice(0, 6).join('/')}` : ''
+            const rampPart = ramps.length ? `, ramp ${[...new Set(ramps)].join(', ')}` : ''
+            lines.push(`Temp profile: ${cyclePart}${rangePart}${holdPart}${rampPart}`)
+          }
+
+          return lines.slice(0, 3)
+        },
+        pickKeyClauses(condensedClauses) {
+          const unique = [...new Set(condensedClauses)]
+          const whitelistPattern = /(C-rate|SOC|Vmax|mΩ|°C|kPa|Hz|mm\/s|NaCl|No pass\/fail|HSL|until|A|V|R|I|t)/i
+
+          const priorityOrder = {
+            'SOC': 1,
+            'Temp': 2,
+            'I': 3,
+            'V': 4,
+            'R': 5,
+            't': 6,
+            '循環次數': 7,
+            'No pass/fail': 8
+          }
+
+          const scored = unique.map((line, idx) => {
+            const label = (line.split(':')[0] || '').trim()
+            const paramHits = (line.match(/(?:<=|>=|<|>|=|±)?\s*\d+(?:\.\d+)?\s*(?:%SOC|SOC|mΩ|Ω|°C|kPa|MPa|Pa|mV|kV|V|mA|kA|A|C\b|mm\/s|mm|min|h|s|Hz|N|kN|kg|g|Wh|mAh|Ah|%)/g) || []).length
+            const whitelistHit = whitelistPattern.test(line) ? 1 : 0
+            const hasLabel = /:/.test(line) ? 1 : 0
+            const key = Object.keys(priorityOrder).find(k => label.includes(k))
+            const order = key ? priorityOrder[key] : 99
+            const score = paramHits * 2 + whitelistHit + hasLabel
+            return { line, idx, order, score }
+          })
+
+          scored.sort((a, b) => {
+            if (a.order !== b.order) return a.order - b.order
+            if (a.score !== b.score) return b.score - a.score
+            return a.idx - b.idx
+          })
+
+          return scored.slice(0, 3).map(x => x.line)
+        },
         condenseClause(clause) {
           if (!clause) return ''
 
           let text = clause
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*minute(s)?/ig, '$1 min')
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*hour(s)?/ig, '$1 h')
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*second(s)?/ig, '$1 s')
+            .replace(/充電終止電壓的\s*1\.1\s*倍/ig, '1.1*Vmax')
+            .replace(/最大(?:允許)?電壓的\s*1\.1\s*倍/ig, '1.1*Vmax')
             .replace(/room\s*temp(?:erature)?/ig, '室溫')
             .replace(/no\s*pass\s*\/\s*fail/ig, 'No pass/fail')
             .replace(/^SOC\s*[:：]/i, 'SOC: ')
             .replace(/^(溫度|温度|Temperature)\s*[:：]/i, 'Temp: ')
             .replace(/^(電阻|Resistance)\s*[:：]/i, 'R: ')
-            .replace(/^(電壓|Voltage)\s*[:：]/i, 'V: ')
-            .replace(/^(電流|充電電流|放電電流|Current)\s*[:：]/i, 'I: ')
+            .replace(/^(電壓|充電\s*電壓|放電\s*電壓|Voltage)\s*[:：]/i, 'V: ')
+            .replace(/^(電流|充電\s*電流|放電\s*電流|Current)\s*[:：]/i, 'I: ')
+            .replace(/^(速度|rate|ramp)\s*[:：]/i, 'Rate: ')
             .replace(/^(時間|持續時間|Duration)\s*[:：]/i, 't: ')
             .replace(/\s{2,}/g, ' ')
             .trim()
