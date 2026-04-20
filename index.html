@@ -211,19 +211,11 @@
                         </div>
                         <div class="text-gray-700 mb-2">
                           <span class="text-xs text-gray-400 block mb-1">條件：</span>
-                          <ul class="conditions-list text-xs">
-                            <li v-for="(item, idx) in parseConditions(group.rows[doc.document_id].conditions_summary)" :key="idx">
-                              <strong>{{ item.label }}：</strong>{{ item.value }}
-                            </li>
-                          </ul>
+                          <div class="text-xs whitespace-pre-wrap" v-html="formatConditions(group.rows[doc.document_id])"></div>
                         </div>
                         <div class="text-gray-700 mb-2">
                           <span class="text-xs text-gray-400 block mb-1">判定：</span>
-                          <ul class="conditions-list text-xs">
-                            <li v-for="(item, idx) in parseEvaluation(group.rows[doc.document_id].evaluation_summary)" :key="idx">
-                              <strong>{{ item.label }}：</strong>{{ item.value }}
-                            </li>
-                          </ul>
+                          <div class="text-xs whitespace-pre-wrap" v-html="formatEvaluation(group.rows[doc.document_id])"></div>
                         </div>
                         <!-- 編輯功能 -->
                         <div class="mt-2">
@@ -456,6 +448,19 @@
             }
           }
           return items.length > 0 ? items : [{ label: '判定', value: text }]
+        },
+        formatConditions(row) {
+          // 使用翻譯後的繁體中文內容
+          const text = row.conditions_summary_zh || row.conditions_summary
+          if (!text) return ''
+          // 將 Markdown 粗體 **xxx** 轉換為 HTML <strong>xxx</strong>
+          return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')
+        },
+        formatEvaluation(row) {
+          // 使用翻譯後的繁體中文內容
+          const text = row.evaluation_summary_zh || row.evaluation_summary
+          if (!text) return ''
+          return text.replace(/\n/g, '<br>')
         },
         truncate(text, length) {
           if (!text) return ''
