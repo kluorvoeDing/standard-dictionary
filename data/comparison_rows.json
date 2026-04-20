@@ -8083,8 +8083,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 10.5)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 100% SOC、50% SOC、0% SOC（見表 6.1）\n溫度： 20±5°C、55±5°C\n電阻： 80±20 mΩ\n持續時間： 直到放電至<0.2V 且外殼溫度恢復至環境溫度±10°C，或直到起火/爆炸",
-    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 10.5)",
+    "conditions_summary_zh": "**SOC：** 完全充電、半放電、完全放電（見表 6.1）\n**溫度：** 20±5°C、55±5°C\n**電阻：** 80±20 mΩ\n**持續時間：** 直到放電至 <0.2V，且外殼溫度回到環境溫度 ±10°C，或直到起火/爆炸",
+    "evaluation_summary_zh": "樣品不得爆炸或起火。（第 10.5 節）",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -8110,8 +8110,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 11.5, 11.10)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 按表 6.1（一次電池）或表 6.2（二次電池）準備\n溫度： 20±5°C\n充電 current primary: 3 × Ic（Ic = 製造商規定的最大充電電流）\n充電 current secondary: 3 × Ic，恆定最大規定輸出電壓",
-    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 11.5, 11.10)",
+    "conditions_summary_zh": "**SOC：** 按表 6.1（一次電池）或表 6.2（二次電池）調整\n**溫度：** 20±5°C\n一次電池充電電流：3 × Ic（Ic = 製造商規定的最大充電電流）\n二次電池充電電流：3 × Ic，恆定最大規定輸出電壓",
+    "evaluation_summary_zh": "樣品不得爆炸或起火。（第 11.5、11.10 節）",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -8136,8 +8136,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 12.6)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** One fully 放電d cell connected in series with 100% SOC cells\n溫度： 室溫\n電阻： 80±20 mΩ\nseries configuration: 充電電池數 = 最大串聯數 - 1",
-    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 12.6)",
+    "conditions_summary_zh": "**SOC：** 完全放電的單體電池與完全充電的電池串聯\n**溫度：** 室溫\n**電阻：** 80±20 mΩ\n串聯配置：充電電池數 = 最大串聯數 - 1",
+    "evaluation_summary_zh": "樣品不得爆炸或起火。（第 12.6 節）",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -8163,8 +8163,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. In addition, the samples shall not vent or leak as described in 5.1.1. (Section 18.2)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "需要測試艙：是\n循環次數：10\n步驟 a：30 分鐘內升溫至 70±3°C，保持 4 小時\n步驟 b：30 分鐘內降溫至 20±3°C，保持 2 小時",
-    "evaluation_summary_zh": "樣品不應爆炸或起火。 In addition, the samples shall not vent or leak as described in 5.1.1. (Section 18.2)",
+    "conditions_summary_zh": "**是否需要測試艙：** 是\n**循環次數：** 10\n步驟 a：30 分鐘內升溫至 70±3°C，保持 4 小時\n步驟 b：30 分鐘內降溫至 20±3°C，保持 2 小時",
+    "evaluation_summary_zh": "樣品不得爆炸或起火。此外，樣品不得如 5.1.1 所述出氣或洩漏。（第 18.2 節）",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -8190,8 +8190,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. In addition, the samples shall not vent or leak as described in 5.1.1. (Section 19.2)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "壓力： 11.6 kPa (1.68 psi) absolute\n溫度： 20±3°C\n持續時間： 6 hours",
-    "evaluation_summary_zh": "樣品不應爆炸或起火。 In addition, the samples shall not vent or leak as described in 5.1.1. (Section 19.2)",
+    "conditions_summary_zh": "**壓力：** 11.6 kPa（1.68 psi）絕對壓力\n**溫度：** 20±3°C\n**持續時間：** 6 小時",
+    "evaluation_summary_zh": "樣品不得爆炸或起火。此外，樣品不得如 5.1.1 所述出氣或洩漏。（第 19.2 節）",
     "normalized_item_id": "ENV-02"
   },
   {
@@ -8217,8 +8217,8 @@
     "evaluation_summary": "No part of an exploding cell or battery shall penetrate the wire screen such that some or all of the cell or battery protrudes through the screen. (Section 20.1)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "設備篩網：鋼絲網，每 25.4mm（1 英寸）20 個開口，線徑 0.43mm，覆蓋 102mm（4 英寸）直徑孔\n設備籠：八面覆蓋鐵絲籠，610mm（2 英尺）寬，305mm（1 英尺）高，0.25mm 鋁線，每 25.4mm 16-18 根線\n燃燒器：Meker 型燃燒器，安裝在篩網下方 38mm（1-1/2 英寸）\n火焰：明亮藍色火焰，使篩網發亮紅色",
-    "evaluation_summary_zh": "No part of an exploding cell or battery shall penetrate the wire screen such that some or all of the cell or battery protrudes through the screen. (Section 20.1)",
+    "conditions_summary_zh": "**設備篩網：** 鋼絲網，每 25.4 mm（1 英寸）20 個開口，線徑 0.43 mm，覆蓋 102 mm（4 英寸）直徑孔\n**設備籠：** 八面覆蓋鐵絲籠，610 mm（2 英尺）寬，305 mm（1 英尺）高，0.25 mm 鋁線，每 25.4 mm 16–18 根線\n**燃燒器：** Meker 型燃燒器，安裝在篩網下方 38 mm（1-1/2 英寸）\n**火焰：** 明亮藍色火焰，使篩網發亮紅色",
+    "evaluation_summary_zh": "爆炸的電芯或電池任何部分均不得穿透鐵絲網而突出。（第 20.1 節）",
     "normalized_item_id": "FIRE-02"
   },
   {
@@ -8244,8 +8244,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 14.4)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "設備：15.8±0.1 mm (5/8±0.004 in) diameter bar placed across center of sample\nweight: 9.1±0.46 kg (20±1 lb)\n高度：610±25 mm (24±1 in)\norientation cylindrical: Longitudinal axis parallel to flat surface, perpendicular to bar",
-    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 14.4)",
+    "conditions_summary_zh": "**設備：** 15.8±0.1 mm（5/8±0.004 英寸）直徑圓棒，置於樣品中心\n**重量：** 9.1±0.46 kg（20±1 磅）\n**高度：** 610±25 mm（24±1 英寸）\n**圓柱形方向：** 縱軸與平面平行，且垂直於圓棒",
+    "evaluation_summary_zh": "樣品不得爆炸或起火。（第 14.4 節）",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -8271,8 +8271,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. In addition, the sample shall not vent or leak as described in 5.1.1. (Section 15.2)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "mounting: Secured to testing machine by rigid mount supporting all mounting surfaces\n衝擊次數：3 shocks of equal magnitude\n**方向：** 3 mutually perpendicular directions (or 2 if only 2 axes of symmetry)\nacceleration initial: Minimum average 75g during initial 3 ms",
-    "evaluation_summary_zh": "樣品不應爆炸或起火。 In addition, the sample shall not vent or leak as described in 5.1.1. (Section 15.2)",
+    "conditions_summary_zh": "**安裝：** 以剛性支架固定於測試機，支撐所有安裝面\n**衝擊次數：** 3 次等幅衝擊\n**方向：** 3 個互相垂直方向（若僅有 2 個對稱軸則為 2 個方向）\n**初始加速度：** 3 ms 期間平均至少 75g",
+    "evaluation_summary_zh": "樣品不得爆炸或起火。此外，樣品不得如 5.1.1 所述出氣或洩漏。（第 15.2 節）",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -8298,8 +8298,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 13.4)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "設備：Hydraulic ram or similar force mechanism with two flat surfaces\n作用力： 13±1 kN (3000±224 lbs)\norientation cylindrical: Longitudinal axis parallel to flat surfaces\norientation prismatic: Both wide and narrow sides (rotate 90°), one direction per sample",
-    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 13.4)",
+    "conditions_summary_zh": "**設備：** 液壓衝頭或類似的力機構，具兩個平面\n**作用力：** 13±1 kN（3000±224 磅）\n**圓柱形方向：** 縱軸與平面平行\n**棱柱形方向：** 寬面與窄面皆需測試（旋轉 90°），每個樣品一個方向",
+    "evaluation_summary_zh": "樣品不得爆炸或起火。（第 13.4 節）",
     "normalized_item_id": "MECH-02"
   },
   {
@@ -8325,8 +8325,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. In addition the sample shall not vent or leak as described in 5.1.1. (Section 16.3)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "motion type: Simple harmonic motion\n**振幅：** 0.8 mm (0.03 in) [1.6 mm (0.06 in) total maximum excursion]\n頻率範圍：10 to 55 Hz\nfrequency rate: 1 Hz/min variation",
-    "evaluation_summary_zh": "樣品不應爆炸或起火。 In addition the sample shall not vent or leak as described in 5.1.1. (Section 16.3)",
+    "conditions_summary_zh": "**運動型態：** 簡諧運動\n**振幅：** 0.8 mm（0.03 英寸）〔總最大位移 1.6 mm（0.06 英寸）〕\n**頻率範圍：** 10 至 55 Hz\n**頻率變化率：** 每分鐘 1 Hz",
+    "evaluation_summary_zh": "樣品不得爆炸或起火。此外，樣品不得如 5.1.1 所述出氣或洩漏。（第 16.3 節）",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -8352,8 +8352,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 17.2)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "oven type: Gravity convection or circulating air oven\ninitial 溫度： 20±5°C\n升溫速率：5±2°C (9±3.6°F) per minute\n目標溫度： 130±2°C (266±3.6°F)",
-    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 17.2)",
+    "conditions_summary_zh": "**烘箱型式：** 重力對流或循環空氣烘箱\n**初始溫度：** 20±5°C\n**升溫速率：** 每分鐘 5±2°C（9±3.6°F）\n**目標溫度：** 130±2°C（266±3.6°F）",
+    "evaluation_summary_zh": "樣品不得爆炸或起火。（第 17.2 節）",
     "normalized_item_id": "THERM-04"
   },
   {
@@ -9096,8 +9096,8 @@
     "evaluation_summary": "External temperature shall not exceed 170°C. No disassembly and no fire during test and within 6 hours after test.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "",
-    "evaluation_summary_zh": "外部溫度不應超過 170°C。 No disassembly and no fire during test and within 6 hours after test.",
+    "conditions_summary_zh": "**設備：** 15.8±0.1 mm（5/8±0.004 英寸）直徑圓棒，置於樣品中心\n**重量：** 9.1±0.46 kg（20±1 磅）\n**高度：** 610±25 mm（24±1 英寸）\n**圓柱形方向：** 縱軸與平面平行，且垂直於圓棒",
+    "evaluation_summary_zh": "樣品不得爆炸或起火。（6 小時內不得分解）",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -9123,8 +9123,8 @@
     "evaluation_summary": "No leakage, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "波形：Half-sine shock\ncell **加速度：** 150 gn peak acceleration, 6 ms pulse duration (large cells: 50 gn, 11 ms alternative)\nsmall battery **加速度：** Minimum 50 gn or result of formula: Acceleration = sqrt(30000/mass), whichever is smaller, 6 ms pulse\nlarge battery **加速度：** Minimum based on formula: Acceleration = sqrt(30000/mass), whichever is smaller, 11 ms pulse",
-    "evaluation_summary_zh": "無洩漏, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
+    "conditions_summary_zh": "**運動型態：** 半正弦衝擊\n**電芯加速度：** 峰值 150 gn，脈衝持續 6 ms（大型電芯替代值：50 gn、11 ms）\n**小型電池加速度：** 至少 50 gn，或依公式計算的結果，以較小者為準，脈衝 6 ms\n**大型電池加速度：** 依公式計算的最低值，以較小者為準，脈衝 11 ms",
+    "evaluation_summary_zh": "樣品不得出現洩漏、出氣、分解、破裂或起火。測試後，開路電壓不得低於程序前電壓的 90%。",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -9150,8 +9150,8 @@
     "evaluation_summary": "No leakage, no venting, no disassembly, no rupture and no fire during and after test. Open circuit voltage after testing in third perpendicular mounting position shall not be less than 90% of voltage prior to procedure.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "波形：Sinusoidal waveform with logarithmic sweep\n頻率範圍：7 Hz to 200 Hz and back to 7 Hz\ncycle 持續時間： 15 minutes per cycle\n循環次數：12 cycles (total 3 hours) for each of 3 mutually perpendicular mounting positions",
-    "evaluation_summary_zh": "無洩漏, no venting, no disassembly, no rupture and no fire during and after test. Open circuit voltage after testing in third perpendicular mounting position shall not be less than 90% of voltage prior to procedure.",
+    "conditions_summary_zh": "**運動型態：** 正弦波對數掃頻\n**頻率範圍：** 7 Hz 至 200 Hz，然後回到 7 Hz\n**循環時間：** 每循環 15 分鐘\n**循環次數：** 12 次循環（每個 3 個互相垂直的安裝方向共 3 小時）",
+    "evaluation_summary_zh": "樣品不得出現洩漏、出氣、分解、破裂或起火。測試後，第三個垂直安裝方向的開路電壓不得低於程序前電壓的 90%。",
     "normalized_item_id": "MECH-04"
   }
 ]
