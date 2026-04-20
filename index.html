@@ -17,6 +17,18 @@
     .expand-btn { background: none; border: none; color: rgb(59, 130, 246); cursor: pointer; font-size: 0.875rem; text-decoration: underline; }
     .detail-row { font-size: 0.75rem; color: rgb(107, 114, 128); margin-top: 0.25rem; }
     .edit-area { width: 100%; border: 1px solid rgb(209, 213, 219); border-radius: 0.25rem; padding: 0.25rem; font-size: 0.75rem; }
+    /* 問題 #5: 淡色測試對象標籤 */
+    .tag-cell { background-color: #E3F2FD; color: #1565C0; }
+    .tag-pack { background-color: #E8F5E9; color: #2E7D32; }
+    .tag-module { background-color: #F3E5F5; color: #6A1B9A; }
+    .tag-ess { background-color: #FFF3E0; color: #E65100; }
+    .tag-system { background-color: #F5F5F5; color: #424242; }
+    .tag-vehicle { background-color: #FFF8E1; color: #FF8F00; }
+    /* 條件條列式樣式 */
+    .conditions-list { list-style: none; padding: 0; margin: 0; }
+    .conditions-list li { padding: 0.25rem 0; border-bottom: 1px solid #f0f0f0; }
+    .conditions-list li:last-child { border-bottom: none; }
+    .conditions-list strong { color: #374151; }
   </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -77,7 +89,15 @@
       <!-- Document Selection Panel -->
       <aside class="lg:col-span-1">
         <div class="bg-white rounded-lg shadow p-4 sticky top-4">
-          <h2 class="text-lg font-semibold text-gray-800 mb-4">📋 選擇標準</h2>
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-lg font-semibold text-gray-800">📋 選擇標準</h2>
+            <button @click="generateComparison" 
+                    :disabled="selectedDocs.length < 2"
+                    :class="selectedDocs.length >= 2 ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-300 cursor-not-allowed'"
+                    class="px-3 py-1.5 text-sm text-white rounded-lg transition-colors">
+              開始比對
+            </button>
+          </div>
           <p class="text-sm text-gray-500 mb-4">勾選 2-5 個標準進行對比</p>
           
           <div class="space-y-2 max-h-[600px] overflow-y-auto">
@@ -109,12 +129,7 @@
               <span class="text-sm font-medium text-gray-700">已選：{{ selectedDocs.length }} 個</span>
               <button @click="selectedDocs = []" v-if="selectedDocs.length > 0" class="text-sm text-red-600 hover:text-red-800">清空</button>
             </div>
-            <button @click="generateComparison" 
-                    :disabled="selectedDocs.length < 2"
-                    :class="selectedDocs.length >= 2 ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-300 cursor-not-allowed'"
-                    class="w-full py-2 px-4 rounded-lg text-white font-medium transition-colors">
-              開始對比
-            </button>
+            <p class="text-xs text-gray-500">💡 按鈕已移至標題旁</p>
           </div>
         </div>
       </aside>
@@ -144,9 +159,8 @@
                 <tr>
                   <th class="px-4 py-3 text-left text-sm font-medium text-gray-700 sticky left-0 bg-gray-50">測試項目</th>
                   <th v-for="doc in selectedDocDetails" :key="doc.document_id" class="px-4 py-3 text-left text-sm font-medium text-gray-700 min-w-[200px]">
-                    <div class="flex flex-col gap-1">
-                      <div class="flex items-center gap-2">
-                        <span class="font-semibold">{{ doc.display_name }}</span>
+                    <div class="flex items-center gap-2">
+                      <span class="font-semibold" :title="doc.full_name">{{ doc.display_name }}</span>
                         <span :class="getBadgeClass(doc.document_type)" class="text-xs px-2 py-0.5 rounded whitespace-nowrap">
                           {{ getBadgeLabel(doc.document_type) }}
                         </span>
@@ -159,11 +173,18 @@
               <tbody class="divide-y divide-gray-200">
                 <tr v-for="(group, index) in groupedComparisonRows" :key="group.testId" class="hover:bg-gray-50">
                   <td class="px-4 py-3 sticky left-0 bg-white">
-                    <div class="font-medium text-gray-800">{{ group.testNameZh }}</div>
-                    <div class="text-xs text-gray-500">{{ group.testNameEn }}</div>
-                    <!-- 只在未選取測試對象篩選時顯示 -->
-                    <div v-if="filters.testObject === 'all'" class="flex flex-wrap gap-1 mt-1">
-                      <span v-for="obj in group.uniqueTestObjects" :key="obj" class="test-object-tag">{{ obj }}</span>
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <div>
+                        <div class="font-medium text-gray-800">{{ group.testNameZh }}</div>
+                        <div class="text-xs text-gray-500">{{ group.testNameEn }}</div>
+                      </div>
+                      <div class="flex gap-1 flex-wrap">
+                        <span v-for="obj in group.uniqueTestObjects" :key="obj" 
+                              :class="getTestObjectClass(obj)" 
+                              class="text-xs px-2 py-0.5 rounded">
+                          {{ obj }}
+                        </span>
+                      </div>
                     </div>
                   </td>
                   <td v-for="doc in selectedDocDetails" :key="doc.document_id" class="px-4 py-3 align-top">
@@ -190,11 +211,19 @@
                         </div>
                         <div class="text-gray-700 mb-2">
                           <span class="text-xs text-gray-400 block mb-1">條件：</span>
-                          <p class="text-xs whitespace-pre-wrap">{{ group.rows[doc.document_id].conditions_summary }}</p>
+                          <ul class="conditions-list text-xs">
+                            <li v-for="(item, idx) in parseConditions(group.rows[doc.document_id].conditions_summary)" :key="idx">
+                              <strong>{{ item.label }}：</strong>{{ item.value }}
+                            </li>
+                          </ul>
                         </div>
                         <div class="text-gray-700 mb-2">
                           <span class="text-xs text-gray-400 block mb-1">判定：</span>
-                          <p class="text-xs whitespace-pre-wrap">{{ group.rows[doc.document_id].evaluation_summary }}</p>
+                          <ul class="conditions-list text-xs">
+                            <li v-for="(item, idx) in parseEvaluation(group.rows[doc.document_id].evaluation_summary)" :key="idx">
+                              <strong>{{ item.label }}：</strong>{{ item.value }}
+                            </li>
+                          </ul>
                         </div>
                         <!-- 編輯功能 -->
                         <div class="mt-2">
@@ -369,40 +398,87 @@
           }
           return labels[type] || '標準'
         },
+        getTestObjectClass(obj) {
+          const classMap = {
+            'CELL': 'tag-cell',
+            'PACK': 'tag-pack',
+            'MODULE': 'tag-module',
+            'ESS': 'tag-ess',
+            'SYSTEM': 'tag-system',
+            'VEHICLE': 'tag-vehicle'
+          }
+          return classMap[obj] || 'tag-system'
+        },
+        parseConditions(text) {
+          // 將條件文字解析成條列式
+          if (!text) return []
+          const items = []
+          // 嘗試按 | 分隔
+          const parts = text.split('|')
+          for (const part of parts) {
+            const trimmed = part.trim()
+            if (!trimmed) continue
+            const colonIdx = trimmed.indexOf(':')
+            if (colonIdx > 0) {
+              items.push({
+                label: trimmed.substring(0, colonIdx).trim(),
+                value: trimmed.substring(colonIdx + 1).trim()
+              })
+            } else {
+              items.push({ label: '條件', value: trimmed })
+            }
+          }
+          return items.length > 0 ? items : [{ label: '條件', value: text }]
+        },
+        parseEvaluation(text) {
+          // 將判定文字解析成條列式
+          if (!text) return []
+          const items = []
+          const parts = text.split(';')
+          for (const part of parts) {
+            const trimmed = part.trim()
+            if (!trimmed) continue
+            const colonIdx = trimmed.indexOf(':')
+            if (colonIdx > 0) {
+              items.push({
+                label: trimmed.substring(0, colonIdx).trim(),
+                value: trimmed.substring(colonIdx + 1).trim()
+              })
+            } else {
+              items.push({ label: '判定', value: trimmed })
+            }
+          }
+          return items.length > 0 ? items : [{ label: '判定', value: text }]
+        },
         truncate(text, length) {
           if (!text) return ''
           return text.length > length ? text.substring(0, length) + '...' : text
         },
         toggleExpand(testId, docId) {
           const key = `${testId}-${docId}`
+          // Vue 3: 直接使用響應式賦值
           if (!this.expandedCells[key]) {
-            this.$set(this.expandedCells, key, true)
+            this.expandedCells[key] = true
           } else {
-            this.$delete(this.expandedCells, key)
+            delete this.expandedCells[key]
           }
-          // 更新所有 group 的 expandedRows 引用
-          this.$forceUpdate()
         },
         toggleEdit(testId, docId) {
           const key = `${testId}-${docId}`
-          // 備份當前內容
           const group = this.groupedComparisonRows.find(g => g.testId === testId)
           if (group && group.rows[docId]) {
             this.editBackup[key] = {
               conditions: group.rows[docId].conditions_summary,
               evaluation: group.rows[docId].evaluation_summary
             }
-            this.$set(this.editingCells, key, true)
-            this.$forceUpdate()
+            this.editingCells[key] = true
           }
         },
         saveEdit(testId, docId) {
           const key = `${testId}-${docId}`
-          this.$delete(this.editingCells, key)
+          delete this.editingCells[key]
           delete this.editBackup[key]
-          // 自動保存到 localStorage
           this.saveToLocalStorage()
-          this.$forceUpdate()
         },
         cancelEdit(testId, docId) {
           const key = `${testId}-${docId}`
@@ -411,9 +487,8 @@
             group.rows[docId].conditions_summary = this.editBackup[key].conditions
             group.rows[docId].evaluation_summary = this.editBackup[key].evaluation
           }
-          this.$delete(this.editingCells, key)
+          delete this.editingCells[key]
           delete this.editBackup[key]
-          this.$forceUpdate()
         },
         downloadJSON() {
           const data = {
