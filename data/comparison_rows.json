@@ -22,8 +22,8 @@
     "evaluation_summary": "保護裝置應啟動；應無起火、無爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 Annexure IX Appendix 2 調整（≥95% 外部充電，≥90% 車載充電）\n**溫度：** 22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）\n**電阻：** ≤ 5 mΩ\n**持續時間：** 直到保護裝置啟動或電流降至初始值的 10% 或至少 1 小時",
-    "evaluation_summary_zh": "保護裝置應啟動；\n應無起火現象、無爆炸",
+    "conditions_summary_zh": "**SOC：** 按 Annexure IX Appendix 2 調整（≥95% 外部充電，≥90% 車載充電）\n溫度： 22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）\n電阻： ≤ 5 mΩ\n持續時間： 直到保護裝置啟動或電流降至初始值的 10% 或≥ 1 小時",
+    "evaluation_summary_zh": "保護啟動；\n無起火、爆炸",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -49,8 +49,8 @@
     "evaluation_summary": "保護裝置應啟動；應無起火、無爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 初始放電至製造商規定的終止電壓\n**溫度：** 22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）\n充電 **電流：** 製造商規定的最大充電電流\n充電 **電壓：** 製造商規定的上限充電電壓的 1.1 倍（或系統最大允許電壓）",
-    "evaluation_summary_zh": "保護裝置應啟動；\n應無起火現象、無爆炸",
+    "conditions_summary_zh": "**SOC：** 初始放電至終止電壓\n溫度： 22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）\n充電 電流： 製造商規定的最大充電電流\n充電 **電壓：** 製造商規定的上限充電電壓的 1.1 倍（或系統最大允許電壓）",
+    "evaluation_summary_zh": "保護啟動；\n無起火、爆炸",
     "normalized_item_id": "ELEC-02-PROT"
   },
   {
@@ -76,8 +76,8 @@
     "evaluation_summary": "保護裝置應啟動防止過電流；應無起火、無爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 Annexure IX Appendix 2 調整（充滿電）\n**溫度：** 22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）\n**電流：** 製造商規定的最大允許電流的 1.1 倍或更高\n**持續時間：** 直到保護裝置啟動或達到穩定狀態",
-    "evaluation_summary_zh": "保護裝置應啟動防止過電流；\n應無起火現象、無爆炸",
+    "conditions_summary_zh": "**SOC：** 按 Annexure IX Appendix 2 調整（充滿電）\n溫度： 22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）\n電流： 製造商規定的最大允許電流的 1.1 倍或更高\n持續時間： 直到保護裝置啟動或達到穩定狀態",
+    "evaluation_summary_zh": "保護啟動防止過電流；\n無起火、爆炸",
     "normalized_item_id": "ELEC-05"
   },
   {
@@ -103,8 +103,8 @@
     "evaluation_summary": "保護裝置應啟動防止電池過放電；應無起火、無爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 Annexure IX Appendix 2 調整（充滿電）\n**溫度：** 22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）\n放電 **電流：** 製造商規定的最大放電電流\n**持續時間：** 直到保護裝置啟動或達到製造商規定的終止電壓後 30 分鐘",
-    "evaluation_summary_zh": "保護裝置應啟動防止電池過放電；\n應無起火現象、無爆炸",
+    "conditions_summary_zh": "**SOC：** 按 Annexure IX Appendix 2 調整（充滿電）\n溫度： 22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）\n放電電流： 製造商規定的最大放電電流\n持續時間： 直到保護裝置啟動或達到製造商規定的終止電壓後 30 分鐘",
+    "evaluation_summary_zh": "保護啟動防止電池過放電；\n無起火、爆炸",
     "normalized_item_id": "ELEC-03-PROT"
   },
   {
@@ -129,7 +129,7 @@
     "evaluation_summary": "最小絕緣電阻：100 Ω/V（一般）或 500 Ω/V（若要求更高）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** 使用外部 DC 電壓源或車輛自身 REESS 作為電壓源\n**電壓：** 至少為高壓母線工作電壓的一半\n**測量點：** 高壓母線正/負極與電氣底盤之間\n**計算公式：** Ri = Ro × Ub × (1/U' - 1/U)",
+    "conditions_summary_zh": "測試方法： 使用外部 DC 電壓源或車輛自身 REESS 作為電壓源\n**電壓：** ≥為高壓母線工作電壓的一半\n**測量點：** 高壓母線正/負極與電氣底盤之間\n**計算公式：** Ri = Ro × Ub × (1/U' - 1/U)",
     "evaluation_summary_zh": "最小絕緣電阻：100 Ω/V（一般）或 500 Ω/V（若要求更高）"
   },
   {
@@ -155,7 +155,7 @@
     "evaluation_summary": "最小絕緣電阻：100 Ω/V（一般）或 500 Ω/V（若要求更高）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** 使用外部 DC 電壓源或 REESS 自身作為電壓源\n**電壓：** 至少為受試裝置額定電壓\n**測量點：** 受試裝置正/負極與接地連接之間\n**計算公式：** Ri = Ro × Ub × (1/U' - 1/U)",
+    "conditions_summary_zh": "測試方法： 使用外部 DC 電壓源或 REESS 自身作為電壓源\n**電壓：** ≥為受試裝置額定電壓\n**測量點：** 受試裝置正/負極與接地連接之間\n**計算公式：** Ri = Ro × Ub × (1/U' - 1/U)",
     "evaluation_summary_zh": "最小絕緣電阻：100 Ω/V（一般）或 500 Ω/V（若要求更高）"
   },
   {
@@ -181,8 +181,8 @@
     "evaluation_summary": "應無起火、無爆炸、無洩漏、無破裂；保護裝置應正常運作",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 Annexure IX Appendix 2 調整\ntemperature profile: temp: 60 ± 2°C（或更高，若製造商請求）; **持續時間：** 至少 6 小時, temp: -40 ± 2°C（或更低，若製造商請求）; **持續時間：** 至少 6 小時\ntransition time: 極端溫度之間不超過 30 分鐘\ncycle count: 至少 5 次循環",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無洩漏、無破裂；\n保護裝置應正常運作",
+    "conditions_summary_zh": "**SOC：** 按 Annexure IX Appendix 2 調整\ntemperature profile: 溫度：60 ± 2°C（或更高，若製造商請求）; 持續時間： ≥ 6 小時, 溫度：-40 ± 2°C（或更低，若製造商請求）; 持續時間： ≥ 6 小時\ntransition time: 極端溫度之間≤ 30 分鐘\n循環次數：≥ 5 次循環",
+    "evaluation_summary_zh": "無起火、爆炸、無洩漏、無破裂；\n保護正常",
     "normalized_item_id": "THERM-04"
   },
   {
@@ -208,7 +208,7 @@
     "evaluation_summary": "氫氣排放質量不得超過規定限值（按 Annexure VIII 第 6 段計算）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 完全放電後開始\n**測試艙：** 密閉測試艙，配備氫氣分析儀\n**充電程序：** 按製造商規定的正常充電程序\n**持續時間：** 整個充電過程",
+    "conditions_summary_zh": "**SOC：** 完全放電後開始\n**測試艙：** 密閉測試艙，配備氫氣分析儀\n**充電程序：** 按製造商規定的正常充電程序\n持續時間： 整個充電過程",
     "evaluation_summary_zh": "氫氣排放質量不得超過規定限值（按 Annexure VIII 第 6 段計算）"
   },
   {
@@ -234,7 +234,7 @@
     "evaluation_summary": "氫氣排放質量不得超過規定限值（按 Annexure VIII 第 6 段計算）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 完全放電後開始\n**測試艙：** 密閉測試艙，配備氫氣分析儀\n**充電程序：** （a）以恆定功率充電 t'1 時間, （b）以製造商規定的最大電流充電 30 分鐘\n**持續時間：** t'1 + 30 分鐘",
+    "conditions_summary_zh": "**SOC：** 完全放電後開始\n**測試艙：** 密閉測試艙，配備氫氣分析儀\n**充電程序：** （a）以恆定功率充電 t'1 時間, （b）以製造商規定的最大電流充電 30 分鐘\n持續時間： t'1 + 30 分鐘",
     "evaluation_summary_zh": "氫氣排放質量不得超過規定限值（按 Annexure VIII 第 6 段計算）"
   },
   {
@@ -260,8 +260,8 @@
     "evaluation_summary": "應無起火、無爆炸、無洩漏、無破裂；保護裝置應正常運作",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 Annexure IX Appendix 2 調整\n**溫度：** 20 ± 10°C\n**脈衝類型：** 半正弦波或後峰鋸齒波\n**方向：** 縱向、橫向、垂直（正負方向由製造商決定）",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無洩漏、無破裂；\n保護裝置應正常運作",
+    "conditions_summary_zh": "**SOC：** 按 Annexure IX Appendix 2 調整\n溫度： 20 ± 10°C\n**脈衝類型：** 半正弦波或後峰鋸齒波\n**方向：** 縱向、橫向、垂直（正負方向由製造商決定）",
+    "evaluation_summary_zh": "無起火、爆炸、無洩漏、無破裂；\n保護正常",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -287,8 +287,8 @@
     "evaluation_summary": "應無起火、無爆炸、無洩漏、無破裂；保護裝置應正常運作",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 Annexure IX Appendix 2 調整\n**溫度：** 22 ± 5°C\nwaveform: 正弦波，對數掃頻\nfrequency range: 7 Hz 至 50 Hz 再回到 7 Hz（15 分鐘）",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無洩漏、無破裂；\n保護裝置應正常運作",
+    "conditions_summary_zh": "**SOC：** 按 Annexure IX Appendix 2 調整\n溫度： 22 ± 5°C\n波形：正弦波，對數掃頻\n頻率範圍：7 Hz 至 50 Hz 再回到 7 Hz（15 分鐘）",
+    "evaluation_summary_zh": "無起火、爆炸、無洩漏、無破裂；\n保護正常",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -314,8 +314,8 @@
     "evaluation_summary": "應無起火、無爆炸、無洩漏、無破裂；保護裝置應正常運作",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 Annexure IX Appendix 2 調整\n**溫度：** 20 ± 10°C\ntest type: 靜態擠壓測試\ndirection: 縱向和橫向（各一次，可使用不同樣品）",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無洩漏、無破裂；\n保護裝置應正常運作"
+    "conditions_summary_zh": "**SOC：** 按 Annexure IX Appendix 2 調整\n溫度： 20 ± 10°C\ntest type: 靜態擠壓測試\n方向：縱向和橫向（各一次，可使用不同樣品）",
+    "evaluation_summary_zh": "無起火、爆炸、無洩漏、無破裂；\n保護正常"
   },
   {
     "document_id": "AIS-038",
@@ -341,7 +341,7 @@
     "evaluation_summary": "測試指不得接觸帶電部件；若使用信號電路，燈泡不應亮起",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test finger: 關節測試指（IPXXB，見 Figure 1）\n**作用力：** 按 Table 1 規定的力\npenetration limit: 測試指可插入 80 mm，但止動面（50 mm 直徑）不得通過開口\n**測試方法：** 測試指接觸任何開口，若部分或完全插入，則在所有可能位置測試",
+    "conditions_summary_zh": "test finger: 關節測試指（IPXXB，見 Figure 1）\n作用力： 按 Table 1 規定的力\npenetration limit: 測試指可插入 80 mm，但止動面（50 mm 直徑）不得通過開口\n測試方法： 測試指接觸任何開口，若部分或完全插入，則在所有可能位置測試",
     "evaluation_summary_zh": "測試指不得接觸帶電部件；\n若使用信號電路，燈泡不應亮起"
   },
   {
@@ -367,8 +367,8 @@
     "evaluation_summary": "保護裝置應啟動防止過溫；應無起火、無爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 Annexure IX Appendix 2 調整（充滿電）\nambient **溫度：** 製造商規定的最高工作溫度或更高\noperation: 以最大電流充放電直到保護裝置啟動\nfault simulation: 若溫度管理系統有單一故障可能，需模擬故障後測試",
-    "evaluation_summary_zh": "保護裝置應啟動防止過溫；\n應無起火現象、無爆炸",
+    "conditions_summary_zh": "**SOC：** 按 Annexure IX Appendix 2 調整（充滿電）\nambient 溫度： 製造商規定的最高工作溫度或更高\noperation: 以最大電流充放電直到保護裝置啟動\nfault simulation: 若溫度管理系統有單一故障可能，需模擬故障後測試",
+    "evaluation_summary_zh": "保護啟動防止過溫；\n無起火、爆炸",
     "normalized_item_id": "THERM-02"
   },
   {
@@ -394,7 +394,7 @@
     "evaluation_summary": "熱失控不應傳播至相鄰電池，或若傳播，應有足夠警告時間（≥5 分鐘）供乘員逃離",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 Annexure IX Appendix 2 調整（充滿電）\ntrigger method: 使用內部加熱器、外部加熱、外部壓痕、釘刺等方法觸發單電池熱失控\ntrigger location: REESS 內部任意位置（由製造商指定或測試機構選擇）\nmonitoring: 監測所有電池溫度、電壓、氣體釋放、起火、爆炸",
+    "conditions_summary_zh": "**SOC：** 按 Annexure IX Appendix 2 調整（充滿電）\n觸發方法：使用內部加熱器、外部加熱、外部壓痕、釘刺等方法觸發單電池熱失控\n觸發位置：REESS 內部任意位置（由製造商指定或測試機構選擇）\n監測：監測所有電池溫度、電壓、氣體釋放、起火、爆炸",
     "evaluation_summary_zh": "熱失控不應傳播至相鄰電池，或若傳播，應有足夠警告時間（≥5 分鐘）供乘員逃離",
     "normalized_item_id": "THERM-03"
   },
@@ -421,8 +421,8 @@
     "evaluation_summary": "應無爆炸（起火可能發生但不應爆炸）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 Annexure IX Appendix 2 調整\ntest setup: REESS 放置在耐火磚上，周圍環繞耐火磚（見附錄 E Appendix 1）\nfire source: 丙烷火焰，溫度 700-750°C\n**持續時間：** 直接火焰暴露 70 秒，然後移除火焰觀察",
-    "evaluation_summary_zh": "應無爆炸現象（起火可能發生但不應爆炸）",
+    "conditions_summary_zh": "**SOC：** 按 Annexure IX Appendix 2 調整\ntest 設置：REESS 放置在耐火磚上，周圍環繞耐火磚（見附錄 E Appendix 1）\n火源：丙烷火焰，溫度 700-750°C\n持續時間： 直接火焰暴露 70 秒，然後移除火焰觀察",
+    "evaluation_summary_zh": "無爆炸（起火可能發生但不應爆炸）",
     "normalized_item_id": "FIRE-01"
   },
   {
@@ -448,8 +448,8 @@
     "evaluation_summary": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "ambient **溫度：** 20 ± 10°C or higher if requested by manufacturer\n**SOC（充電狀態）：** Upper 50 per cent of the normal operating SOC range\ncontactors: All relevant main contactors for 充電 and dis充電 closed\n**電阻：** Connection resistance not exceeding 5 mΩ",
-    "evaluation_summary_zh": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
+    "conditions_summary_zh": "ambient 溫度： 20 ± 10°C or higher if requested by manufacturer\n**SOC：** Upper 50 per cent of the normal operating SOC range\ncontactors: All relevant main contactors for 充電 and dis充電 closed\n電阻： 連接電阻 not exceeding 5 mΩ",
+    "evaluation_summary_zh": "無電解液洩漏, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -475,8 +475,8 @@
     "evaluation_summary": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "ambient **溫度：** 20 ± 10°C or higher if requested by manufacturer\ncharge **電流：** At least 1/3 C rate but not exceeding the maximum current within the normal operating range specified by the manufacturer\ncharge control limits: Disabled\ncontactors: All relevant main contactors for 充電 closed",
-    "evaluation_summary_zh": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
+    "conditions_summary_zh": "ambient 溫度： 20 ± 10°C or higher if requested by manufacturer\ncharge 電流： At least 1/3 C rate but not exceeding the maximum current within the normal operating range specified by the manufacturer\ncharge control limits: Disabled\ncontactors: All relevant main contactors for 充電 closed",
+    "evaluation_summary_zh": "無電解液洩漏, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "normalized_item_id": "ELEC-02-PROT"
   },
   {
@@ -502,8 +502,8 @@
     "evaluation_summary": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "ambient **溫度：** 20 ± 10°C or higher if requested by manufacturer\n放電 **電流：** At least 1/3 C rate but not exceeding the maximum current within the normal operating range specified by the manufacturer\ncontactors: All relevant main contactors closed\nend condition: Until tested-device interrupts/limits 放電, or until 25 per cent of nominal voltage level if interrupt fails",
-    "evaluation_summary_zh": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
+    "conditions_summary_zh": "ambient 溫度： 20 ± 10°C or higher if requested by manufacturer\n放電電流： At least 1/3 C rate but not exceeding the maximum current within the normal operating range specified by the manufacturer\ncontactors: All relevant main contactors closed\nend condition: Until tested-device interrupts/limits 放電, or until 25 per cent of nominal voltage level if interrupt fails",
+    "evaluation_summary_zh": "無電解液洩漏, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "normalized_item_id": "ELEC-03-PROT"
   },
   {
@@ -578,7 +578,7 @@
     "evaluation_summary": "Resistance between all exposed conductive parts and the electrical chassis shall be lower than 0.1 Ω.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "measurement: Resistance between all exposed conductive parts and the electrical chassis\n**電流：** at least 0.2 A",
+    "conditions_summary_zh": "測量：Resistance between all exposed conductive parts and the electrical chassis\n電流： at least 0.2 A",
     "evaluation_summary_zh": "Resistance between all exposed conductive parts and the electrical chassis shall be lower than 0.1 Ω."
   },
   {
@@ -629,8 +629,8 @@
     "evaluation_summary": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Upper 50 per cent of the normal operating SOC range\ntemperature high: 60 ± 2°C or higher if requested by the manufacturer\ntemperature low: -40 ± 2°C or lower if requested by the manufacturer\ndwell time: At least 6 h at each extreme",
-    "evaluation_summary_zh": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
+    "conditions_summary_zh": "**SOC：** Upper 50 per cent of the normal operating SOC range\ntemperature high: 60 ± 2°C or higher if requested by the manufacturer\ntemperature low: -40 ± 2°C or lower if requested by the manufacturer\ndwell time: At least 6 h at each extreme",
+    "evaluation_summary_zh": "無電解液洩漏, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "normalized_item_id": "THERM-04"
   },
   {
@@ -681,8 +681,8 @@
     "evaluation_summary": "During a normal charge procedure, hydrogen emissions shall be below 125 g during 5 h, or below 25 × t2 g during t2.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "vehicle based: Vehicle soaked at 293 ± 2 K for 12-36 h after 放電, then charged in sealed chamber.\ncomponent based: REESS conditioned with minimum 5 standard cycles, soaked at 293 ± 2 K for 12-36 h, then charged in sealed chamber.\nnormal charge: Charge at constant power during t1, then overcharge at constant current during t2.\nambient **溫度：** 291-295 K during test",
-    "evaluation_summary_zh": "During a normal charge procedure, hydrogen emissions shall be below 125 g during 5 h, or below 25 × t2 g during t2."
+    "conditions_summary_zh": "車輛級：Vehicle soaked at 293 ± 2 K for 12-36 h after 放電, then charged in sealed chamber.\n元件級：REESS 經過≥ 5 次標準循環處理，在 293±2K 環境中浸漬 12-36 小時，然後在密閉測試艙中充電。\n正常充電：在 t1 期間恆功率充電，然後在 t2 期間恆流過充電。\nambient 溫度： 291-295 K during test",
+    "evaluation_summary_zh": "正常充電過程中，氫氣排放量在 5 小時內應低於 125g，或在 t2 時間內低於 25×t2 g。"
   },
   {
     "document_id": "AIS-156",
@@ -706,8 +706,8 @@
     "evaluation_summary": "During a charge carried out with charger failure, hydrogen emissions shall be below 42 g during 30 minutes.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "charge failure procedure: Charging at constant power during t'1, then 充電 at maximum current recommended by the manufacturer during 30 minutes.\nambient **溫度：** 291-295 K during test\nsealed **測試艙：** Hydrogen concentration, temperature, and pressure measured in sealed chamber",
-    "evaluation_summary_zh": "During a charge carried out with charger failure, hydrogen emissions shall be below 42 g during 30 minutes."
+    "conditions_summary_zh": "充電失效程序：Charging at constant power during t'1, then 充電 at maximum current recommended by the manufacturer during 30 minutes.\nambient 溫度： 291-295 K during test\nsealed **測試艙：** 在密閉測試艙中測量氫氣濃度、溫度和壓力",
+    "evaluation_summary_zh": "充電器故障充電過程中，氫氣排放量在 30 分鐘內應低於 42g。"
   },
   {
     "document_id": "AIS-156",
@@ -732,7 +732,7 @@
     "evaluation_summary": "During the test, the tested-device shall exhibit no evidence of explosion.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Upper 50 per cent of the normal operating SOC range\nvehicle or component: Vehicle-based or component-based at manufacturer’s choice\nfuel pan: Fuel pan extending 20-50 cm beyond DUT horizontal projection\nphase A: Pre-heating for 60 seconds",
+    "conditions_summary_zh": "**SOC：** Upper 50 per cent of the normal operating SOC range\nvehicle or component: Vehicle-based or component-based at manufacturer’s choice\nfuel pan: Fuel pan extending 20-50 cm beyond DUT horizontal projection\nphase A: Pre-heating for 60 seconds",
     "evaluation_summary_zh": "During the test, the tested-device shall exhibit no evidence of explosion.",
     "normalized_item_id": "FIRE-01"
   },
@@ -759,8 +759,8 @@
     "evaluation_summary": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "ambient **溫度：** 20 ± 10°C\n**SOC（充電狀態）：** Upper 50 per cent of the normal operating SOC range\nshock lt 12kg: Half-sine shock, 1500 m/s² peak acceleration, 6 ms pulse duration\nshock ge 12kg: Half-sine shock, 500 m/s² peak acceleration, 11 ms pulse duration",
-    "evaluation_summary_zh": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
+    "conditions_summary_zh": "ambient 溫度： 20 ± 10°C\n**SOC：** Upper 50 per cent of the normal operating SOC range\nshock lt 12kg: Half-sine shock, 1500 m/s² peak acceleration, 6 ms pulse duration\nshock ge 12kg: Half-sine shock, 500 m/s² peak acceleration, 11 ms pulse duration",
+    "evaluation_summary_zh": "無電解液洩漏, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -786,8 +786,8 @@
     "evaluation_summary": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "ambient **溫度：** 20 ± 10°C\n**SOC（充電狀態）：** Upper 50 per cent of the normal operating SOC range\nwaveform: Sinusoidal logarithmic sweep between 7 Hz and 200 Hz and back to 7 Hz in 15 minutes\n**持續時間：** 12 cycles for a total of 3 h in the vertical mounting direction",
-    "evaluation_summary_zh": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
+    "conditions_summary_zh": "ambient 溫度： 20 ± 10°C\n**SOC：** Upper 50 per cent of the normal operating SOC range\n波形：Sinusoidal logarithmic sweep between 7 Hz and 200 Hz and back to 7 Hz in 15 minutes\n持續時間： 12 cycles for a total of 3 h in the vertical mounting direction",
+    "evaluation_summary_zh": "無電解液洩漏, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -812,8 +812,8 @@
     "evaluation_summary": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** At least 90 per cent of rated capacity\nambient **溫度：** 20 ± 10°C\nheight: 1.0 m\nsurface: Smooth horizontal concrete pad or equivalent hardness",
-    "evaluation_summary_zh": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
+    "conditions_summary_zh": "**SOC：** At least 90 per cent of rated capacity\nambient 溫度： 20 ± 10°C\n高度：1.0 m\nsurface: Smooth horizontal concrete pad or equivalent hardness",
+    "evaluation_summary_zh": "無電解液洩漏, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "normalized_item_id": "MECH-05"
   },
   {
@@ -864,8 +864,8 @@
     "evaluation_summary": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "cooling system: Deactivate cooling system if REESS remains functional without cooling\ntemperature measurement: Continuous measurement inside casing near cells\noperation: Continuously charge and 放電 with a steady current that increases cell temperature as rapidly as possible within normal operation range\n**測試艙：** Convective oven or climatic chamber",
-    "evaluation_summary_zh": "No electrolyte leakage, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
+    "conditions_summary_zh": "冷卻系統：Deactivate cooling system if REESS remains functional without cooling\ntemperature 測量：Continuous measurement inside casing near cells\noperation: Continuously charge and 放電 with a steady current that increases cell temperature as rapidly as possible within normal operation range\n**測試艙：** Convective oven or climatic chamber",
+    "evaluation_summary_zh": "無電解液洩漏, rupture (HV REESS only), fire, or explosion. For high voltage REESS, post-test isolation resistance shall be at least 100 Ω/V.",
     "normalized_item_id": "THERM-02"
   },
   {
@@ -890,7 +890,7 @@
     "evaluation_summary": "过充电保护、短路保护功能应正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\ntest standard: GB/T 17626.2\ncontact 放電: ±4 kV 各 10 次（每个端子）\nair 放電: ±8 kV 各 10 次（每个端子）",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\ntest standard: GB/T 17626.2\ncontact 放電: ±4 kV 各 10 次（每个端子）\nair 放電: ±8 kV 各 10 次（每个端子）",
     "evaluation_summary_zh": "过充电保护、短路保护功能应正常"
   },
   {
@@ -916,7 +916,7 @@
     "evaluation_summary": "应不泄漏、不破裂、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.1.1/6.2.2.1 标准充电\n**電阻：** (20±5) mΩ\n**持續時間：** 1 h 或电压低于 0.2 V\nfault condition: 正常工作条件和放电保护元器件单一故障条件分别进行",
+    "conditions_summary_zh": "**SOC：** 按 6.2.1.1/6.2.2.1 标准充电\n電阻： (20±5) mΩ\n持續時間： 1 h 或电压低于 0.2 V\n故障條件：正常工作条件和放电保护元器件单一故障条件分别进行",
     "evaluation_summary_zh": "应不泄漏、不破裂、不起火、不爆炸",
     "normalized_item_id": "ELEC-01"
   },
@@ -943,7 +943,7 @@
     "evaluation_summary": "应不泄漏、不破裂、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）** cell: 按 6.2.1.1 标准充电\n**SOC（充電狀態）** pack: 按 6.2.2.1 标准充电\n充電 current cell: I2(A)\n充電 voltage cell: 1.5 倍充电限制电压或 1.5 h",
+    "conditions_summary_zh": "**SOC** cell: 按 6.2.1.1 标准充电\n**SOC** pack: 按 6.2.2.1 标准充电\n充電 current cell: I2(A)\n充電 voltage cell: 1.5 倍充电限制电压或 1.5 h",
     "evaluation_summary_zh": "应不泄漏、不破裂、不起火、不爆炸",
     "normalized_item_id": "ELEC-02"
   },
@@ -969,7 +969,7 @@
     "evaluation_summary": "应不泄漏、不破裂、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\n放電 **電流：** 1.5 倍制造商规定的最大放电电流\n**持續時間：** 2 h\nfault condition: 正常工作条件和放电保护元器件单一故障条件分别进行",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\n放電電流： 1.5 倍制造商规定的最大放电电流\n持續時間： 2 h\n故障條件：正常工作条件和放电保护元器件单一故障条件分别进行",
     "evaluation_summary_zh": "应不泄漏、不破裂、不起火、不爆炸",
     "normalized_item_id": "ELEC-03"
   },
@@ -996,7 +996,7 @@
     "evaluation_summary": "应不泄漏、不破裂、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.1.1/6.2.2.1 标准充电\n放電 current cell: 2×I2(A)\n放電 current pack: 2×I2(A)\n**持續時間：** 90 min",
+    "conditions_summary_zh": "**SOC：** 按 6.2.1.1/6.2.2.1 标准充电\n放電 current cell: 2×I2(A)\n放電 current pack: 2×I2(A)\n持續時間： 90 min",
     "evaluation_summary_zh": "应不泄漏、不破裂、不起火、不爆炸",
     "normalized_item_id": "ELEC-03"
   },
@@ -1022,7 +1022,7 @@
     "evaluation_summary": "绝缘阻值 ≥ 20 MΩ",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\ntest **電壓：** 500 Vdc\nmeasurement: 正极与外壳、负极与外壳之间\nnote: 外壳易触及部分为绝缘材料的，用金属条覆盖",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\ntest **電壓：** 500 Vdc\n測量：正极与外壳、负极与外壳之间\nnote: 外壳易触及部分为绝缘材料的，用金属条覆盖",
     "evaluation_summary_zh": "绝缘阻值 ≥ 20 MΩ"
   },
   {
@@ -1047,7 +1047,7 @@
     "evaluation_summary": "应不泄漏、不破裂、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\ncycle profile: temp: 72 ± 2°C; **持續時間：** 6 h, temp: -40 ± 2°C; **持續時間：** 6 h\ntransition time: ≤30 min\ncycle count: 10 次",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\ncycle profile: 溫度：72 ± 2°C; 持續時間： 6 h, 溫度：-40 ± 2°C; 持續時間： 6 h\ntransition time: ≤30 min\n循環次數：10 次",
     "evaluation_summary_zh": "应不泄漏、不破裂、不起火、不爆炸",
     "normalized_item_id": "ENV-01"
   },
@@ -1073,7 +1073,7 @@
     "evaluation_summary": "应不泄漏、不破裂、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\n**壓力：** ≤11.6 kPa\n**持續時間：** 6 h",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\n壓力： ≤11.6 kPa\n持續時間： 6 h",
     "evaluation_summary_zh": "应不泄漏、不破裂、不起火、不爆炸",
     "normalized_item_id": "ENV-02"
   },
@@ -1099,7 +1099,7 @@
     "evaluation_summary": "应不泄漏、不破裂、不起火、不爆炸；绝缘阻值 ≥ 1 MΩ",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\ntest standard: GB/T 2423.4-2008 试验方法 2\nmax temp: 65°C\ncycle count: 5 次",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\ntest standard: GB/T 2423.4-2008 试验方法 2\nmax 溫度：65°C\n循環次數：5 次",
     "evaluation_summary_zh": "应不泄漏、不破裂、不起火、不爆炸；\n绝缘阻值 ≥ 1 MΩ",
     "normalized_item_id": "ENV-01"
   },
@@ -1125,7 +1125,7 @@
     "evaluation_summary": "应不泄漏、不破裂、不起火、不爆炸；绝缘阻值 ≥ 1 MΩ",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\ntest standard: GB/T 2423.18-2021 试验方法 3\npost test: 观察 2 h，进行 1 次标准放电和标准充电\ninsulation test: 500 Vdc 测量正负极与外壳之间的绝缘电阻",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\ntest standard: GB/T 2423.18-2021 试验方法 3\npost test: 观察 2 h，进行 1 次标准放电和标准充电\ninsulation test: 500 Vdc 测量正负极与外壳之间的绝缘电阻",
     "evaluation_summary_zh": "应不泄漏、不破裂、不起火、不爆炸；\n绝缘阻值 ≥ 1 MΩ",
     "normalized_item_id": "ENV-04"
   },
@@ -1151,7 +1151,7 @@
     "evaluation_summary": "应不泄漏、不破裂、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\nwater temp: 20 ± 5°C\ndepth: 以水淹没电池组最上端为准\n**持續時間：** 48 h",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\nwater 溫度：20 ± 5°C\n深度：以水淹没电池组最上端为准\n持續時間： 48 h",
     "evaluation_summary_zh": "应不泄漏、不破裂、不起火、不爆炸",
     "normalized_item_id": "ENV-03"
   },
@@ -1227,7 +1227,7 @@
     "evaluation_summary": "应不泄漏、不破裂、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\nwaveform: 半正弦波\n**加速度：** 150 gn\npulse **持續時間：** 6 ms",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\n波形：半正弦波\n**加速度：** 150 gn\n脈衝持續時間： 6 ms",
     "evaluation_summary_zh": "应不泄漏、不破裂、不起火、不爆炸",
     "normalized_item_id": "MECH-01"
   },
@@ -1253,7 +1253,7 @@
     "evaluation_summary": "应不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\napparatus: 钢制平板 + 钢制异形板（R=75 mm 半圆柱形挤压头）\n**方向：** X 轴和 Y 轴方向（各 1 次）\nspeed: (5±1) mm/s",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\n設備：钢制平板 + 钢制异形板（R=75 mm 半圆柱形挤压头）\n**方向：** X 轴和 Y 轴方向（各 1 次）\n速度：(5±1) mm/s",
     "evaluation_summary_zh": "应不起火、不爆炸",
     "normalized_item_id": "MECH-02"
   },
@@ -1279,7 +1279,7 @@
     "evaluation_summary": "应不泄漏、不破裂、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\ntest type: 随机振动（按表 1 振动谱）\naxes: X/Y/Z 方向各 12 h（顺序 Z-Y-X）\npsd: X_rms: 1.09 gn; Y_rms: 0.68 gn; Z_rms: 1.25 gn",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\ntest type: 随机振动（按表 1 振动谱）\naxes: X/Y/Z 方向各 12 h（顺序 Z-Y-X）\npsd: X_rms: 1.09 gn; Y_rms: 0.68 gn; Z_rms: 1.25 gn",
     "evaluation_summary_zh": "应不泄漏、不破裂、不起火、不爆炸",
     "normalized_item_id": "MECH-04"
   },
@@ -1305,7 +1305,7 @@
     "evaluation_summary": "应不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\nheight: 1.0 m\norientation: 3 个互相垂直方向各 1 次\nsurface: 混凝土地面",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\n高度：1.0 m\n方向：3 个互相垂直方向各 1 次\nsurface: 混凝土地面",
     "evaluation_summary_zh": "应不起火、不爆炸",
     "normalized_item_id": "MECH-05"
   },
@@ -1331,7 +1331,7 @@
     "evaluation_summary": "提把应不断裂，提把与外壳连接处应不开裂、不脱落",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**作用力：** 按表 4（根据电池组重量）\n**持續時間：** 1 min\nnote: 若提把长度<25 mm，以其最大长度施加力",
+    "conditions_summary_zh": "作用力： 按表 4（根据电池组重量）\n持續時間： 1 min\nnote: 若提把长度<25 mm，以其最大长度施加力",
     "evaluation_summary_zh": "提把应不断裂，提把与外壳连接处应不开裂、不脱落"
   },
   {
@@ -1356,7 +1356,7 @@
     "evaluation_summary": "应不能充电、不泄漏、不破裂、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "high temp test: **SOC（充電狀態）：** 按 6.2.2.2 放完电; **溫度：** 制造商规定的最高充电温度或 55°C（取较高者）+5°C; **持續時間：** 8 h; charge: 制造商规定的最大充电电流充电 10 min; rest: 静置 6 h\nlow temp test: **SOC（充電狀態）：** 按 6.2.2.2 放完电; **溫度：** 制造商规定的最低充电温度或 0°C（取较低者）-5°C; **持續時間：** 16 h; charge: 制造商规定的最大充电电流充电 10 min; rest: 静置 6 h",
+    "conditions_summary_zh": "high temp test: **SOC：** 按 6.2.2.2 放完电; 溫度： 制造商规定的最高充电温度或 55°C（取较高者）+5°C; 持續時間： 8 h; charge: 制造商规定的最大充电电流充电 10 min; rest: 静置 6 h\nlow temp test: **SOC：** 按 6.2.2.2 放完电; 溫度： 制造商规定的最低充电温度或 0°C（取较低者）-5°C; 持續時間： 16 h; charge: 制造商规定的最大充电电流充电 10 min; rest: 静置 6 h",
     "evaluation_summary_zh": "应不能充电、不泄漏、不破裂、不起火、不爆炸",
     "normalized_item_id": "THERM-02"
   },
@@ -1382,7 +1382,7 @@
     "evaluation_summary": "记录热失控报警至起火或爆炸的时间；如未发生起火爆炸，认为通过",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 6.2.2.1 标准充电\ntrigger methods: 加热触发, 过充触发（可选其一）\ntrigger object: 靠近中心位置或被其他单体电池包围的单体电池\nheating power: 按表 2（<80 Wh: 30-200 W; ≥80 Wh: 100-300 W）",
+    "conditions_summary_zh": "**SOC：** 按 6.2.2.1 标准充电\ntrigger methods: 加热触发, 过充触发（可选其一）\ntrigger object: 靠近中心位置或被其他单体电池包围的单体电池\nheating power: 按表 2（<80 Wh: 30-200 W; ≥80 Wh: 100-300 W）",
     "evaluation_summary_zh": "记录热失控报警至起火或爆炸的时间；\n如未发生起火爆炸，认为通过",
     "normalized_item_id": "THERM-03"
   },
@@ -1434,8 +1434,8 @@
     "evaluation_summary": "應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\n**溫度：** 57 ± 4°C（恆溫箱）\n**電阻：** 小於 0.1 Ω\n**持續時間：** 至少 1 小時（外殼溫度回到 57 ± 4°C 後）",
-    "evaluation_summary_zh": "應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n溫度： 57 ± 4°C（恆溫箱）\n電阻： 小於 0.1 Ω\n持續時間： ≥ 1 小時（外殼溫度回到 57 ± 4°C 後）",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -1460,8 +1460,8 @@
     "evaluation_summary": "應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\n充電 **電流：** 製造商規定的最大充電電流\n充電 **電壓：** 充電限制電壓的 1.1 倍\n**持續時間：** 直到電流降至 0.05 I1 或達到穩定狀態",
-    "evaluation_summary_zh": "應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n充電 電流： 製造商規定的最大充電電流\n充電 **電壓：** 充電限制電壓的 1.1 倍\n持續時間： 直到電流降至 0.05 I1 或達到穩定狀態",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -1486,8 +1486,8 @@
     "evaluation_summary": "應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.2 規定放電至放電終止電壓\n**電流：** 1.0 I1 A\n**持續時間：** 90 分鐘\nobservation: 試驗後觀察 6 小時",
-    "evaluation_summary_zh": "應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.2 規定放電至放電終止電壓\n電流： 1.0 I1 A\n持續時間： 90 分鐘\n觀察：試驗後觀察 6 小時",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -1512,8 +1512,8 @@
     "evaluation_summary": "應無洩漏、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\ncycle count: 10 次\ntemperature profile: temp: 70 ± 3°C; **持續時間：** 4 h, temp: 20 ± 3°C; **持續時間：** 2 h, temp: -40 ± 3°C; **持續時間：** 4 h, temp: 20 ± 3°C; **持續時間：** 2 h\npost test storage: 24 小時（20 ± 5°C）",
-    "evaluation_summary_zh": "應無洩漏現象、不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n循環次數：10 次\ntemperature profile: 溫度：70 ± 3°C; 持續時間： 4 h, 溫度：20 ± 3°C; 持續時間： 2 h, 溫度：-40 ± 3°C; 持續時間： 4 h, 溫度：20 ± 3°C; 持續時間： 2 h\npost test storage: 24 小時（20 ± 5°C）",
+    "evaluation_summary_zh": "無洩漏、不起火、不爆炸",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -1538,8 +1538,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\ncycle count: 10 次\ntemperature profile: temp: 70 ± 3°C; **持續時間：** 4 h, temp: 20 ± 3°C; **持續時間：** 2 h, temp: -40 ± 3°C; **持續時間：** 4 h, temp: 20 ± 3°C; **持續時間：** 2 h\npost test storage: 24 小時（20 ± 5°C）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n循環次數：10 次\ntemperature profile: 溫度：70 ± 3°C; 持續時間： 4 h, 溫度：20 ± 3°C; 持續時間： 2 h, 溫度：-40 ± 3°C; 持續時間： 4 h, 溫度：20 ± 3°C; 持續時間： 2 h\npost test storage: 24 小時（20 ± 5°C）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -1564,8 +1564,8 @@
     "evaluation_summary": "應無洩漏、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\n**壓力：** 11.6 kPa 或更低\n**溫度：** 20 ± 5°C\n**持續時間：** 至少 6 小時",
-    "evaluation_summary_zh": "應無洩漏現象、不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n壓力： 11.6 kPa 或更低\n溫度： 20 ± 5°C\n持續時間： ≥ 6 小時",
+    "evaluation_summary_zh": "無洩漏、不起火、不爆炸",
     "normalized_item_id": "ENV-02"
   },
   {
@@ -1590,8 +1590,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\n**壓力：** 11.6 kPa 或更低\n**溫度：** 20 ± 5°C\n**持續時間：** 至少 6 小時",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n壓力： 11.6 kPa 或更低\n溫度： 20 ± 5°C\n持續時間： ≥ 6 小時",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸",
     "normalized_item_id": "ENV-02"
   },
   {
@@ -1616,8 +1616,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\n**測試方法：** 參見附錄 E（洗滌試驗）\nobservation: 試驗後觀察 6 小時",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n測試方法： 參見附錄 E（洗滌試驗）\n觀察：試驗後觀察 6 小時",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸",
     "normalized_item_id": "ENV-03"
   },
   {
@@ -1642,8 +1642,8 @@
     "evaluation_summary": "應無洩漏、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\n**加速度：** 100 gn（峰值）\npulse **持續時間：** 6 ms（半正弦波）\nshock count: 每個方向 3 次，共 3 個方向（18 次）",
-    "evaluation_summary_zh": "應無洩漏現象、不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n**加速度：** 100 gn（峰值）\n脈衝持續時間： 6 ms（半正弦波）\n衝擊次數：每個方向 3 次，共 3 個方向（18 次）",
+    "evaluation_summary_zh": "無洩漏、不起火、不爆炸",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -1668,8 +1668,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\n**加速度：** 100 gn（峰值）\npulse **持續時間：** 6 ms（半正弦波）\nshock count: 每個方向 3 次，共 3 個方向（18 次）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n**加速度：** 100 gn（峰值）\n脈衝持續時間： 6 ms（半正弦波）\n衝擊次數：每個方向 3 次，共 3 個方向（18 次）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -1694,8 +1694,8 @@
     "evaluation_summary": "應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\napparatus: 半徑 75 mm 的半圓柱體\nspeed: 不大於 2 mm/s\ntermination criteria: 電壓達到 0 V, 變形量達到 15%, 擠壓力達到 100 kN",
-    "evaluation_summary_zh": "應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n設備：半徑 75 mm 的半圓柱體\n速度：≤ 2 mm/s\n終止條件：電壓達到 0 V, 變形量達到 15%, 擠壓力達到 100 kN",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "MECH-02"
   },
   {
@@ -1720,8 +1720,8 @@
     "evaluation_summary": "應無洩漏、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\nwaveform: 正弦波\nfrequency range: 7 Hz 至 200 Hz\ncycle count: 12 次循環（每方向 3 小時）",
-    "evaluation_summary_zh": "應無洩漏現象、不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n波形：正弦波\n頻率範圍：7 Hz 至 200 Hz\n循環次數：12 次循環（每方向 3 小時）",
+    "evaluation_summary_zh": "無洩漏、不起火、不爆炸",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -1746,8 +1746,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\nwaveform: 正弦波\nfrequency range: 7 Hz 至 200 Hz\ncycle count: 12 次循環（每方向 3 小時）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n波形：正弦波\n頻率範圍：7 Hz 至 200 Hz\n循環次數：12 次循環（每方向 3 小時）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -1772,8 +1772,8 @@
     "evaluation_summary": "應無洩漏、不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\nheight: 1.0 m（混凝土或金屬地板）\ndrop count: 每個樣品跌落 1 次\norientation: 隨機方向",
-    "evaluation_summary_zh": "應無洩漏現象、不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n高度：1.0 m（混凝土或金屬地板）\n跌落次數：每個樣品跌落 1 次\n方向：隨機方向",
+    "evaluation_summary_zh": "無洩漏、不起火、不爆炸",
     "normalized_item_id": "MECH-05"
   },
   {
@@ -1798,8 +1798,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\nheight: 1.0 m（混凝土或金屬地板）\ndrop count: 每個樣品跌落 1 次\norientation: 隨機方向",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n高度：1.0 m（混凝土或金屬地板）\n跌落次數：每個樣品跌落 1 次\n方向：隨機方向",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸",
     "normalized_item_id": "MECH-05"
   },
   {
@@ -1824,8 +1824,8 @@
     "evaluation_summary": "應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\napparatus: 15.8 ± 0.1 mm 直徑不鏽鋼棒\nmass: 9.1 ± 0.1 kg\nheight: 610 ± 25 mm",
-    "evaluation_summary_zh": "應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n設備：15.8 ± 0.1 mm 直徑不鏽鋼棒\n質量：9.1 ± 0.1 kg\n高度：610 ± 25 mm",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -1850,8 +1850,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\n**測試方法：** 待補充（OCR 部分內容缺失）\nobservation: 試驗後觀察 6 小時",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象"
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n測試方法： 待補充（OCR 部分內容缺失）\n觀察：試驗後觀察 6 小時",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸"
   },
   {
     "document_id": "GB31241",
@@ -1875,8 +1875,8 @@
     "evaluation_summary": "應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\nramp rate: 5 ± 2°C/min\ntarget **溫度：** 130 ± 2°C\nhold time: 30 分鐘",
-    "evaluation_summary_zh": "應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n升溫速率：5 ± 2°C/min\n目標溫度： 130 ± 2°C\n保持時間：30 分鐘",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "THERM-01"
   },
   {
@@ -1901,8 +1901,8 @@
     "evaluation_summary": "應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\n**測試方法：** 待補充（OCR 部分內容缺失）\nobservation: 試驗後觀察 6 小時",
-    "evaluation_summary_zh": "應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n測試方法： 待補充（OCR 部分內容缺失）\n觀察：試驗後觀察 6 小時",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "FIRE-03"
   },
   {
@@ -1927,8 +1927,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充電\n**溫度：** 待補充（OCR 部分內容缺失）\n**持續時間：** 待補充\nobservation: 試驗後觀察 6 小時",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象"
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n溫度： 待補充（OCR 部分內容缺失）\n持續時間： 待補充\n觀察：試驗後觀察 6 小時",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸"
   },
   {
     "document_id": "GB31241",
@@ -1952,8 +1952,8 @@
     "evaluation_summary": "應滿足阻燃要求",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** 參見附錄 F（可燃性試驗方法）\nobservation: 試驗後觀察 6 小時",
-    "evaluation_summary_zh": "應滿足阻燃要求",
+    "conditions_summary_zh": "測試方法： 參見附錄 F（可燃性試驗方法）\n觀察：試驗後觀察 6 小時",
+    "evaluation_summary_zh": "符合阻燃要求",
     "normalized_item_id": "FIRE-03"
   },
   {
@@ -1978,8 +1978,8 @@
     "evaluation_summary": "應不起火、不爆炸（5.1.3）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 方法進行標準充電\n**電阻：** 外部線路電阻小於 5 mΩ\n**持續時間：** 外部短路 10 min\nobservation: 試驗環境溫度下觀察 1h",
-    "evaluation_summary_zh": "應不起火、不爆炸（5.1.3）",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 充電\n電阻： 外部電阻小於 5 mΩ\n持續時間： 外部短路 10 min\n觀察： 1h",
+    "evaluation_summary_zh": "無起火、爆炸（5.1.3）",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -2004,8 +2004,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.13 進行外部短路保護試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.13 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -2030,8 +2030,8 @@
     "evaluation_summary": "應不起火、不爆炸（5.1.2）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 方法進行標準充電\n充電 **電流：** 製造商規定且不小於 I1 的電流\n充電 **電壓：** 充電終止電壓的 1.1 倍或 115% SOC\ntermination: 停止充電",
-    "evaluation_summary_zh": "應不起火、不爆炸（5.1.2）",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 充電\n充電 電流： 製造商規定且≥ I1 的電流\n充電 **電壓：** 充電終止電壓的 1.1 倍或 115% SOC\ntermination: 停止充電",
+    "evaluation_summary_zh": "無起火、爆炸（5.1.2）",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -2056,8 +2056,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.14 進行過充電保護試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.14 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "ELEC-02-PROT"
   },
   {
@@ -2082,8 +2082,8 @@
     "evaluation_summary": "應不起火、不爆炸（5.1.1）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 調整至放電終止電壓狀態\n**電流：** I1 電流（1 率放電電流，數值等於額定容量值）\n**持續時間：** 30 min\nobservation: 試驗環境溫度下觀察 1h",
-    "evaluation_summary_zh": "應不起火、不爆炸（5.1.1）",
+    "conditions_summary_zh": "**SOC：** 調整至放電終止電壓狀態\n電流： I1 電流（1 率放電電流，數值等於額定容量值）\n持續時間： 30 min\n觀察： 1h",
+    "evaluation_summary_zh": "無起火、爆炸（5.1.1）",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -2108,8 +2108,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.15 進行過放電保護試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.15 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "ELEC-03-PROT"
   },
   {
@@ -2134,8 +2134,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.12 進行過流保護試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.12 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "ELEC-05"
   },
   {
@@ -2160,8 +2160,8 @@
     "evaluation_summary": "應不起火、不爆炸（5.1.7）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "fast charge definition: 20% SOC → 80% SOC ≤ 15 min\npreparation: 按 7.1.1 方法進行標準充電\n**測試方法：** 待補充（文件截斷，需參考完整標準）",
-    "evaluation_summary_zh": "應不起火、不爆炸（5.1.7）"
+    "conditions_summary_zh": "fast charge definition: 20% SOC → 80% SOC ≤ 15 min\npreparation: 按 7.1.1 充電\n測試方法： 待補充（文件截斷，需參考完整標準）",
+    "evaluation_summary_zh": "無起火、爆炸（5.1.7）"
   },
   {
     "document_id": "GB38031",
@@ -2185,8 +2185,8 @@
     "evaluation_summary": "應不起火、不爆炸（5.1.5）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 方法充電\ncycle count: 5 次\ntemperature profile: temp: 25°C; **持續時間：** 0 min, temp: -40°C; **持續時間：** 60 min; ramp: 13/12 °C/min, temp: -40°C; **持續時間：** 90 min, temp: 25°C; **持續時間：** 60 min; ramp: 13/12 °C/min, temp: 85°C; **持續時間：** 90 min; ramp: 2/3 °C/min, temp: 85°C; **持續時間：** 110 min, temp: 25°C; **持續時間：** 70 min; ramp: 6/7 °C/min\nobservation: 試驗環境溫度下觀察 1h",
-    "evaluation_summary_zh": "應不起火、不爆炸（5.1.5）",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 方法充電\n循環次數：5 次\ntemperature profile: 溫度：25°C; 持續時間： 0 min, 溫度：-40°C; 持續時間： 60 min; ramp: 13/12 °C/min, 溫度：-40°C; 持續時間： 90 min, 溫度：25°C; 持續時間： 60 min; ramp: 13/12 °C/min, 溫度：85°C; 持續時間： 90 min; ramp: 2/3 °C/min, 溫度：85°C; 持續時間： 110 min, 溫度：25°C; 持續時間： 70 min; ramp: 6/7 °C/min\n觀察： 1h",
+    "evaluation_summary_zh": "無起火、爆炸（5.1.5）",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -2212,8 +2212,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.8 進行溫度衝擊試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.8 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -2239,8 +2239,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後 30 min 內的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.5 進行濕熱循環試驗\npost test insulation time: 30 min 內\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後 30 min 內的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.5 測試\npost test insulation time: 30 min 內\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後 30min 內絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -2266,8 +2266,8 @@
     "evaluation_summary": "應滿足如下要求之一：a) 按方式一進行，不起火、不爆炸；b) 按方式二進行，試驗後滿足 GB/T 4208-2017 IPX7 要求，且無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻不小于 100 Ω/V",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.6 進行浸水試驗\noption a: 按方式一進行：不起火、不爆炸\noption b: 按方式二進行：試驗後滿足 GB/T 4208-2017 IPX7 要求，且無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應滿足如下要求之一：a) 按方式一進行，不起火、不爆炸；\nb) 按方式二進行，試驗後滿足 GB/T 4208-2017 IPX7 要求，且無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻不小于 100 Ω/V",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.6 測試\noption a: 方式一：不起火、不爆炸\noption b: 方式二：試驗後符合 GB/T 4208-2017 IPX7 要求，且無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "滿足以下之一：a) 方式一，不起火、不爆炸；\nb) 方式二，試驗後符合 GB/T 4208-2017 IPX7 要求，且無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻≥ 100 Ω/V",
     "normalized_item_id": "ENV-03"
   },
   {
@@ -2293,8 +2293,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.9 進行鹽霧試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.9 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "ENV-04"
   },
   {
@@ -2320,8 +2320,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.10 進行高海拔試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.10 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "ENV-02"
   },
   {
@@ -2347,8 +2347,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.2 進行機械衝擊試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.2 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -2373,8 +2373,8 @@
     "evaluation_summary": "應不起火、不爆炸（5.1.6）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 方法充電\ndirection: 垂直於電池單體極板方向，或與整車佈局上最容易受到擠壓的方向相同\napparatus: 半徑 75mm 的半圓柱體，長度 L 大於被擠壓電池單體的尺寸\nspeed: 不大於 2 mm/s",
-    "evaluation_summary_zh": "應不起火、不爆炸（5.1.6）",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 方法充電\n方向：垂直於電池單體極板方向，或與整車佈局上最容易受到擠壓的方向相同\n設備：半徑 75mm 的半圓柱體，長度 L 大於被擠壓電池單體的尺寸\n速度：≤ 2 mm/s",
+    "evaluation_summary_zh": "無起火、爆炸（5.1.6）",
     "normalized_item_id": "MECH-02"
   },
   {
@@ -2400,8 +2400,8 @@
     "evaluation_summary": "應不起火、不爆炸，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.4 進行擠壓試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應不起火、不爆炸，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.4 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "MECH-02"
   },
   {
@@ -2427,8 +2427,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.1 進行振動試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.1 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -2454,8 +2454,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.3 進行模擬碰撞試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.3 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -2482,8 +2482,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.16 進行底部撞擊試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.16 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -2508,8 +2508,8 @@
     "evaluation_summary": "應不起火、不爆炸（5.1.4）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 方法進行標準充電\nramp rate: 5°C/min\ntarget temperature lithium: 130°C，保持 30 min\ntarget temperature nimh: 85°C，保持 2h",
-    "evaluation_summary_zh": "應不起火、不爆炸（5.1.4）",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 充電\n升溫速率：5°C/min\ntarget temperature lithium: 130°C，保持 30 min\ntarget temperature nimh: 85°C，保持 2h",
+    "evaluation_summary_zh": "無起火、爆炸（5.1.4）",
     "normalized_item_id": "THERM-04"
   },
   {
@@ -2535,8 +2535,8 @@
     "evaluation_summary": "a) 電池包或系統按照 8.2.7.1 進行外部火燒試驗，應不爆炸；b) 電池包或系統或整車按照 8.2.7.2 進行熱擴散分析和驗證，應：1) 不起火、不爆炸；2) 提供熱事件報警信號，且報警信號的發出不晚於觸發電池單體發生熱失控之後的 5 min；3) 提供在發出熱事件報警信號之前，以及發出熱事件報警信號之後的 5 min 內，煙氣不導致乘員艙發生危險的技術說明文件",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test a: 外部火燒試驗（8.2.7.1）\ntest b: 熱擴散分析和驗證（8.2.7.2，附錄 C）",
-    "evaluation_summary_zh": "a) 電池包或系統按照 8.2.7.1 進行外部火燒試驗，應不爆炸；\nb) 電池包或系統或整車按照 8.2.7.2 進行熱擴散分析和驗證，應：1) 不起火、不爆炸；\n2) 提供熱事件報警信號，且報警信號的發出不晚於觸發電池單體發生熱失控之後的 5 min；\n3) 提供在發出熱事件報警信號之前，以及發出熱事件報警信號之後的 5 min 內，煙氣不導致乘員艙發生危險的技術說明文件",
+    "conditions_summary_zh": "測試 A：外部火燒試驗（8.2.7.1）\n測試 B：熱擴散分析和驗證（8.2.7.2，附錄 C）",
+    "evaluation_summary_zh": "a) 電池包或系統按照 8.2.7.1 進行外部火燒試驗，無爆炸；\nb) 電池包或系統或整車按照 8.2.7.2 進行熱擴散分析和驗證，應：1) 不起火、不爆炸；\n2) 提供熱事件報警信號，且報警信號的發出不晚於觸發電池單體發生熱失控之後的 5 min；\n3) 提供在發出熱事件報警信號之前，以及發出熱事件報警信號之後的 5 min 內，煙氣不導致乘員艙發生危險的技術說明文件",
     "normalized_item_id": "THERM-04"
   },
   {
@@ -2561,8 +2561,8 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.2 方法準備\n**測試方法：** 按 8.2.11 進行過溫保護試驗\npost test insulation: 絕緣電阻不小于 100 Ω/V（若有交流電路，絕緣電阻不小于 500 Ω/V）",
-    "evaluation_summary_zh": "應無洩漏現象、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.11 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "THERM-02"
   },
   {
@@ -2587,8 +2587,8 @@
     "evaluation_summary": "電池應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充滿電\n**溫度：** 57 ± 4°C\npreconditioning: 在 57 ± 4°C 環境中放置 30 min\n**電阻：** 外部電阻不高於 5 mΩ",
-    "evaluation_summary_zh": "電池應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n溫度： 57 ± 4°C\n預處理：在 57 ± 4°C 環境中放置 30 min\n電阻： 外部電阻不高於 5 mΩ",
+    "evaluation_summary_zh": "電池無起火、爆炸",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -2613,8 +2613,8 @@
     "evaluation_summary": "電池應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充滿電\n充電 **電流：** 製造商規定的最大充電電流\ntermination criteria: 充電至 1.5 倍的充電限制電壓後持續恆壓充電 1 h, 總充電時間達到 1.5 h\nobservation: 試驗後觀察",
-    "evaluation_summary_zh": "電池應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n充電 電流： 製造商規定的最大充電電流\n終止條件：充電至 1.5 倍的充電限制電壓後持續恆壓充電 1 h, 總充電時間達到 1.5 h\n觀察：試驗後觀察",
+    "evaluation_summary_zh": "電池無起火、爆炸",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -2639,8 +2639,8 @@
     "evaluation_summary": "電池應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.2 規定放完電\n**電流：** 1 It 反向充電\ntarget **電壓：** 負的充電上限電壓（-Uup）\n**持續時間：** 90 min",
-    "evaluation_summary_zh": "電池應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.2 規定放完電\n電流： 1 It 反向充電\n目標電壓： 負的充電上限電壓（-Uup）\n持續時間： 90 min",
+    "evaluation_summary_zh": "電池無起火、爆炸",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -2665,8 +2665,8 @@
     "evaluation_summary": "BMS 應控制充電電壓，系統應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** 按照 8.3 進行過壓充電控制試驗\nbms requirement: BMS 應控制充電電壓不超過充電上限電壓",
-    "evaluation_summary_zh": "BMS 應控制充電電壓，系統應不起火、不爆炸",
+    "conditions_summary_zh": "測試方法： 按 8.3 測試\nbms requirement: BMS 控制充電電壓≤充電上限電壓",
+    "evaluation_summary_zh": "BMS 控制充電電壓，系統無起火、爆炸",
     "normalized_item_id": "ELEC-02-PROT"
   },
   {
@@ -2691,8 +2691,8 @@
     "evaluation_summary": "BMS 應控制充電電流，系統應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** 按照 8.4 進行過流充電控制試驗\nbms requirement: BMS 應控制充電電流不超過最大充電電流",
-    "evaluation_summary_zh": "BMS 應控制充電電流，系統應不起火、不爆炸",
+    "conditions_summary_zh": "測試方法： 按 8.4 測試\nbms requirement: BMS 控制充電電流≤最大充電電流",
+    "evaluation_summary_zh": "BMS 控制充電電流，系統無起火、爆炸",
     "normalized_item_id": "ELEC-05"
   },
   {
@@ -2717,8 +2717,8 @@
     "evaluation_summary": "BMS 應控制放電電壓，系統應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** 按照 8.5 進行欠壓放電控制試驗\nbms requirement: BMS 應控制放電電壓不低於放電截止電壓",
-    "evaluation_summary_zh": "BMS 應控制放電電壓，系統應不起火、不爆炸",
+    "conditions_summary_zh": "測試方法： 按 8.5 測試\nbms requirement: BMS 控制放電電壓≥放電截止電壓",
+    "evaluation_summary_zh": "BMS 控制放電電壓，系統無起火、爆炸",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -2743,8 +2743,8 @@
     "evaluation_summary": "電池應不起火、不爆炸、不漏液",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充滿電\ncycle count: 10 次\ntemperature profile: temp: 72 ± 2°C; **持續時間：** 6 h, temp: -40 ± 2°C; **持續時間：** 6 h\ntransition time: 不大於 30 min",
-    "evaluation_summary_zh": "電池應不起火、不爆炸、不漏液",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n循環次數：10 次\ntemperature profile: 溫度：72 ± 2°C; 持續時間： 6 h, 溫度：-40 ± 2°C; 持續時間： 6 h\ntransition time: ≤ 30 min",
+    "evaluation_summary_zh": "電池無起火、爆炸、不漏液",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -2769,8 +2769,8 @@
     "evaluation_summary": "電池應不起火、不爆炸、不漏液",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充滿電\n**壓力：** 11.6 kPa\n**溫度：** 20 ± 5°C\n**持續時間：** 6 h",
-    "evaluation_summary_zh": "電池應不起火、不爆炸、不漏液",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n壓力： 11.6 kPa\n溫度： 20 ± 5°C\n持續時間： 6 h",
+    "evaluation_summary_zh": "電池無起火、爆炸、不漏液",
     "normalized_item_id": "ENV-02"
   },
   {
@@ -2795,8 +2795,8 @@
     "evaluation_summary": "電池應不起火、不爆炸、不漏液",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充滿電\nwaveform: 半正弦脈衝\n**加速度：** 150 gn ± 25 gn，脈衝持續時間 6 ms ± 1 ms\nlarge cell **加速度：** 50 gn ± 8 gn，脈衝持續時間 11 ms ± 2 ms（大型電池）",
-    "evaluation_summary_zh": "電池應不起火、不爆炸、不漏液",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n波形：半正弦脈衝\n**加速度：** 150 gn ± 25 gn，脈衝持續時間 6 ms ± 1 ms\nlarge cell **加速度：** 50 gn ± 8 gn，脈衝持續時間 11 ms ± 2 ms（大型電池）",
+    "evaluation_summary_zh": "電池無起火、爆炸、不漏液",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -2821,8 +2821,8 @@
     "evaluation_summary": "電池應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充滿電\napparatus: 半徑 75 mm 的鋼質半圓柱體\n**作用力：** 50 ± 1 kN\nspeed: 0.1 mm/s",
-    "evaluation_summary_zh": "電池應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n設備：半徑 75 mm 的鋼質半圓柱體\n作用力： 50 ± 1 kN\n速度：0.1 mm/s",
+    "evaluation_summary_zh": "電池無起火、爆炸",
     "normalized_item_id": "MECH-02"
   },
   {
@@ -2847,8 +2847,8 @@
     "evaluation_summary": "電池應不起火、不爆炸、不漏液",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充滿電\nwaveform: 正弦波\nfrequency range: 7 Hz 至 200 Hz\ncycle count: 12 次循環（每方向 3 h）",
-    "evaluation_summary_zh": "電池應不起火、不爆炸、不漏液",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n波形：正弦波\n頻率範圍：7 Hz 至 200 Hz\n循環次數：12 次循環（每方向 3 h）",
+    "evaluation_summary_zh": "電池無起火、爆炸、不漏液",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -2874,8 +2874,8 @@
     "evaluation_summary": "樣品應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充滿電\nfloor: 混凝土板或金屬板\ndrop height by mass: mass: < 7 kg; height: 100 cm; orientation: 自由跌落, mass: 7-20 kg; height: 100 cm; orientation: 底面向下, mass: 20-50 kg; height: 100-5×(m-20)/3 cm; orientation: 底面向下, mass: 50-100 kg; height: 5 cm; orientation: 邊和角, mass: ≥ 100 kg; height: 2.5 cm; orientation: 邊和角\nobservation: 觀察 1 h",
-    "evaluation_summary_zh": "樣品應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n地板：混凝土板或金屬板\ndrop height by 質量：質量：< 7 kg; 高度：100 cm; 方向：自由跌落, 質量：7-20 kg; 高度：100 cm; 方向：底面向下, 質量：20-50 kg; 高度：100-5×(m-20)/3 cm; 方向：底面向下, 質量：50-100 kg; 高度：5 cm; 方向：邊和角, 質量：≥ 100 kg; 高度：2.5 cm; 方向：邊和角\n觀察： 1 h",
+    "evaluation_summary_zh": "樣品無起火、爆炸",
     "normalized_item_id": "MECH-05"
   },
   {
@@ -2900,8 +2900,8 @@
     "evaluation_summary": "電池應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充滿電，靜置 10 min，再按 4.5.2 放出額定容量的 50%\napparatus: 直徑 15.8 ± 0.1 mm 金屬棒\nmass: 9.1 ± 0.1 kg\nheight: 610 ± 25 mm",
-    "evaluation_summary_zh": "電池應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電，靜置 10 min，再按 4.5.2 放出額定容量的 50%\n設備：直徑 15.8 ± 0.1 mm 金屬棒\n質量：9.1 ± 0.1 kg\n高度：610 ± 25 mm",
+    "evaluation_summary_zh": "電池無起火、爆炸",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -2926,8 +2926,8 @@
     "evaluation_summary": "電池應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充滿電\napparatus: Φ 5 mm 耐高溫鋼針（如鎢鋼），針尖圓錐角 45°\nspeed: 0.1 mm/s\ndepth: 10 mm 深度或電池厚的 30%（取較大值）",
-    "evaluation_summary_zh": "電池應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n設備：Φ 5 mm 耐高溫鋼針（如鎢鋼），針尖圓錐角 45°\n速度：0.1 mm/s\n深度：10 mm 深度或電池厚的 30%（取較大值）",
+    "evaluation_summary_zh": "電池無起火、爆炸",
     "normalized_item_id": "MECH-03"
   },
   {
@@ -2952,8 +2952,8 @@
     "evaluation_summary": "電池應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 4.5.1 規定充滿電\nramp rate: 5 ± 2°C/min\ntarget **溫度：** 130 ± 2°C\nhold time: 1 h",
-    "evaluation_summary_zh": "電池應不起火、不爆炸",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n升溫速率：5 ± 2°C/min\n目標溫度： 130 ± 2°C\n保持時間：1 h",
+    "evaluation_summary_zh": "電池無起火、爆炸",
     "normalized_item_id": "THERM-01"
   },
   {
@@ -2978,8 +2978,8 @@
     "evaluation_summary": "BMS 應控制溫度，系統應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** 按照 8.6 進行過熱控制試驗\nbms requirement: BMS 應控制溫度不超過上限充電/放電溫度",
-    "evaluation_summary_zh": "BMS 應控制溫度，系統應不起火、不爆炸",
+    "conditions_summary_zh": "測試方法： 按 8.6 測試\nbms requirement: BMS 控制溫度≤上限充電/放電溫度",
+    "evaluation_summary_zh": "BMS 控制溫度，系統無起火、爆炸",
     "normalized_item_id": "THERM-02"
   },
   {
@@ -3004,7 +3004,7 @@
     "evaluation_summary": "評估電池熱失控特性",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** 按照附錄 B 進行電池熱失控試驗\ntrigger method: 激光照射或其他方法啟動熱失控",
+    "conditions_summary_zh": "測試方法： 按照附錄 B 進行電池熱失控試驗\n觸發方法：激光照射或其他方法啟動熱失控",
     "evaluation_summary_zh": "評估電池熱失控特性",
     "normalized_item_id": "THERM-04"
   },
@@ -3030,7 +3030,7 @@
     "evaluation_summary": "評估電池組系統熱擴散特性，防止熱失控傳播",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** 按照附錄 B、C、D 進行熱擴散試驗\ntrigger method: 激光照射（附錄 C）或其他方法（附錄 D）啟動單體熱失控",
+    "conditions_summary_zh": "測試方法： 按照附錄 B、C、D 進行熱擴散試驗\n觸發方法：激光照射（附錄 C）或其他方法（附錄 D）啟動單體熱失控",
     "evaluation_summary_zh": "評估電池組系統熱擴散特性，防止熱失控傳播",
     "normalized_item_id": "THERM-03"
   },
@@ -3057,7 +3057,7 @@
     "evaluation_summary": "评估长期贮存后的容量恢复能力",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 50% SOC（或制造商规定）\n**溫度：** 25 ± 2°C 或 45 ± 2°C\n**持續時間：** 28 天\npost storage: 充放电循环后测量容量",
+    "conditions_summary_zh": "**SOC：** 50% SOC（或制造商规定）\n溫度： 25 ± 2°C 或 45 ± 2°C\n持續時間： 28 天\npost storage: 充放电循环后测量容量",
     "evaluation_summary_zh": "评估长期贮存后的容量恢复能力"
   },
   {
@@ -3111,7 +3111,7 @@
     "evaluation_summary": "评估高温环境下的性能",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**溫度：** 按制造商规定的高温（如 45°C 或更高）\nprocedure: 高温下充放电循环\nmonitoring: 监测性能衰减",
+    "conditions_summary_zh": "溫度： 按制造商规定的高温（如 45°C 或更高）\nprocedure: 高温下充放电循环\n監測：监测性能衰减",
     "evaluation_summary_zh": "评估高温环境下的性能",
     "normalized_item_id": "ENV-01"
   },
@@ -3139,7 +3139,7 @@
     "evaluation_summary": "评估低温环境下的性能",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**溫度：** 按制造商规定的低温（如 -20°C 或更低）\nprocedure: 低温下充放电\nmonitoring: 监测性能衰减",
+    "conditions_summary_zh": "溫度： 按制造商规定的低温（如 -20°C 或更低）\nprocedure: 低温下充放电\n監測：监测性能衰减",
     "evaluation_summary_zh": "评估低温环境下的性能",
     "normalized_item_id": "ENV-01"
   },
@@ -3167,7 +3167,7 @@
     "evaluation_summary": "评估高海拔环境下的初始性能",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**壓力：** 模拟高海拔气压（如 60 kPa 或更低）\nprocedure: 低气压下初始充放电\nrecording: 记录能量、效率",
+    "conditions_summary_zh": "壓力： 模拟高海拔气压（如 60 kPa 或更低）\nprocedure: 低气压下初始充放电\nrecording: 记录能量、效率",
     "evaluation_summary_zh": "评估高海拔环境下的初始性能",
     "normalized_item_id": "ENV-02"
   },
@@ -3194,7 +3194,7 @@
     "evaluation_summary": "评估耐盐雾腐蚀能力",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** 按 GB/T 2423.17 或等效标准\n**持續時間：** 按标准规定（如 48 h）\npost test: 外观检查、绝缘测试",
+    "conditions_summary_zh": "測試方法： 按 GB/T 2423.17 或等效标准\n持續時間： 按标准规定（如 48 h）\npost test: 外观检查、绝缘测试",
     "evaluation_summary_zh": "评估耐盐雾腐蚀能力",
     "normalized_item_id": "ENV-04"
   },
@@ -3221,7 +3221,7 @@
     "evaluation_summary": "评估耐湿热能力",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** 按 GB/T 2423.4 或等效标准\ncycle count: 按标准规定（如 6 循环）\npost test: 外观检查、绝缘测试、功能测试",
+    "conditions_summary_zh": "測試方法： 按 GB/T 2423.4 或等效标准\n循環次數：按标准规定（如 6 循环）\npost test: 外观检查、绝缘测试、功能测试",
     "evaluation_summary_zh": "评估耐湿热能力",
     "normalized_item_id": "ENV-01"
   },
@@ -3248,7 +3248,7 @@
     "evaluation_summary": "评估耐振动能力",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test type: 随机振动\naxes: X、Y、Z 三方向各 1 h\nfrequency range: 5-36 Hz（按表 18 参数）\npost test: 绝缘性能试验、耐压性能试验",
+    "conditions_summary_zh": "test type: 随机振动\naxes: X、Y、Z 三方向各 1 h\n頻率範圍：5-36 Hz（按表 18 参数）\npost test: 绝缘性能试验、耐压性能试验",
     "evaluation_summary_zh": "评估耐振动能力"
   },
   {
@@ -3274,7 +3274,7 @@
     "evaluation_summary": "评估液冷管路耐压能力",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**壓力：** 1.5 倍最大工作压力\n**持續時間：** 按标准规定\nmonitoring: 监测泄漏",
+    "conditions_summary_zh": "壓力： 1.5 倍最大工作压力\n持續時間： 按标准规定\n監測：监测泄漏",
     "evaluation_summary_zh": "评估液冷管路耐压能力"
   },
   {
@@ -3300,7 +3300,7 @@
     "evaluation_summary": "评估高海拔环境下的绝缘性能",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**壓力：** 模拟高海拔气压（如 60 kPa 或更低）\ntest **電壓：** 按表 16 规定\n**持續時間：** 1 min\nmeasurement: 测量绝缘电阻",
+    "conditions_summary_zh": "壓力： 模拟高海拔气压（如 60 kPa 或更低）\ntest **電壓：** 按表 16 规定\n持續時間： 1 min\n測量：测量绝缘电阻",
     "evaluation_summary_zh": "评估高海拔环境下的绝缘性能",
     "normalized_item_id": "ENV-02"
   },
@@ -3327,7 +3327,7 @@
     "evaluation_summary": "评估高海拔环境下的耐压性能",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**壓力：** 模拟高海拔气压（如 60 kPa 或更低）\ntest voltage dc: 按表 17 规定（直流）\ntest voltage ac: 按表 17 规定（交流 45-62 Hz）\n**持續時間：** 60 s",
+    "conditions_summary_zh": "壓力： 模拟高海拔气压（如 60 kPa 或更低）\ntest voltage dc: 按表 17 规定（直流）\ntest voltage ac: 按表 17 规定（交流 45-62 Hz）\n持續時間： 60 s",
     "evaluation_summary_zh": "评估高海拔环境下的耐压性能",
     "normalized_item_id": "ENV-02"
   },
@@ -3355,7 +3355,7 @@
     "evaluation_summary": "计算初始充放电能量效率、平均值、极差及百分比",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 初始化放电后\n**溫度：** 25 ± 2°C\nrest: 静置 5 h\ncharge: 以 P_rc 恒功率充电至截止条件，静置 10 min",
+    "conditions_summary_zh": "**SOC：** 初始化放电后\n溫度： 25 ± 2°C\nrest: 静置 5 h\ncharge: 以 P_rc 恒功率充电至截止条件，静置 10 min",
     "evaluation_summary_zh": "计算初始充放电能量效率、平均值、极差及百分比"
   },
   {
@@ -3381,7 +3381,7 @@
     "evaluation_summary": "计算能量效率",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 初始化放电后\n**溫度：** 45 ± 2°C\nrest: 静置 16 h\ncharge: 以 P_rc 恒功率充电至截止条件，静置 10 min",
+    "conditions_summary_zh": "**SOC：** 初始化放电后\n溫度： 45 ± 2°C\nrest: 静置 16 h\ncharge: 以 P_rc 恒功率充电至截止条件，静置 10 min",
     "evaluation_summary_zh": "计算能量效率"
   },
   {
@@ -3407,7 +3407,7 @@
     "evaluation_summary": "计算能量效率",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 初始化放电后\n**溫度：** 5 ± 2°C\nrest: 静置 20 h\ncharge: 以 P_rc 恒功率充电至截止条件，静置 10 min",
+    "conditions_summary_zh": "**SOC：** 初始化放电后\n溫度： 5 ± 2°C\nrest: 静置 20 h\ncharge: 以 P_rc 恒功率充电至截止条件，静置 10 min",
     "evaluation_summary_zh": "计算能量效率"
   },
   {
@@ -3433,7 +3433,7 @@
     "evaluation_summary": "绘制功率特性曲线图（功率百分比 vs 能量效率/能量百分比）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 100% P_rd 放电后\n**溫度：** 25 ± 2°C\nrest: 静置 5 h\nprocedure: 以 5% 额定功率为步长，从 100% 递减至 5%，逐次进行充放电",
+    "conditions_summary_zh": "**SOC：** 100% P_rd 放电后\n溫度： 25 ± 2°C\nrest: 静置 5 h\nprocedure: 以 5% 额定功率为步长，从 100% 递减至 5%，逐次进行充放电",
     "evaluation_summary_zh": "绘制功率特性曲线图（功率百分比 vs 能量效率/能量百分比）"
   },
   {
@@ -3511,7 +3511,7 @@
     "evaluation_summary": "应无起火、无爆炸、无漏液",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 初始化充电后\n充電 **電流：** I = P_rc / U_nom\ntermination criteria: 电压达到充电截止电压的 1.5 倍, 时间达到 1 h\nobservation: 观察 1 h，记录电流、时间、电压、温度",
+    "conditions_summary_zh": "**SOC：** 初始化充电后\n充電 電流： I = P_rc / U_nom\n終止條件：电压达到充电截止电压的 1.5 倍, 时间达到 1 h\n觀察：观察 1 h，记录电流、时间、电压、温度",
     "evaluation_summary_zh": "应无起火、无爆炸、无漏液",
     "normalized_item_id": "ELEC-02"
   },
@@ -3538,7 +3538,7 @@
     "evaluation_summary": "应无起火、无爆炸、无漏液",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 初始化放电后\n放電 **電流：** I = P_rd / U_nom\ntermination criteria: 电压达到 0 V, 时间达到 1 h\nobservation: 观察 1 h，记录电流、时间、电压、温度",
+    "conditions_summary_zh": "**SOC：** 初始化放电后\n放電電流： I = P_rd / U_nom\n終止條件：电压达到 0 V, 时间达到 1 h\n觀察：观察 1 h，记录电流、时间、电压、温度",
     "evaluation_summary_zh": "应无起火、无爆炸、无漏液",
     "normalized_item_id": "ELEC-03"
   },
@@ -3565,7 +3565,7 @@
     "evaluation_summary": "应无起火、无爆炸、无漏液",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "charge power: 4 × P_rc\ncharge **持續時間：** 静置 10 min\n放電 power: 4 × P_rd\n放電 **持續時間：** 观察 1 h",
+    "conditions_summary_zh": "charge power: 4 × P_rc\ncharge 持續時間： 静置 10 min\n放電 power: 4 × P_rd\n放電 持續時間： 观察 1 h",
     "evaluation_summary_zh": "应无起火、无爆炸、无漏液"
   },
   {
@@ -3591,7 +3591,7 @@
     "evaluation_summary": "应无起火、无爆炸、无漏液",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 初始化充电后\nexternal resistance cell: [0.8, 1.0] mΩ（电池单体）\nexternal resistance module: [0.8, 1.0] mΩ 和 [27.0, 32.8] mΩ（电池模块，两种条件）\ncontact **電阻：** ≤ 0.1 mΩ",
+    "conditions_summary_zh": "**SOC：** 初始化充电后\nexternal resistance cell: [0.8, 1.0] mΩ（电池单体）\nexternal resistance module: [0.8, 1.0] mΩ 和 [27.0, 32.8] mΩ（电池模块，两种条件）\ncontact 電阻： ≤ 0.1 mΩ",
     "evaluation_summary_zh": "应无起火、无爆炸、无漏液",
     "normalized_item_id": "ELEC-01"
   },
@@ -3618,7 +3618,7 @@
     "evaluation_summary": "绝缘电阻应符合规定限值",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test **電壓：** 按表 16（500 V / 1000 V / 2500 V，取决于充电截止电压）\n**持續時間：** 1 min\nmeasurement: 测量正极/负极与外部裸露可导电部分之间的绝缘电阻\n**計算公式：** 计算绝缘电阻与标称电压的比值",
+    "conditions_summary_zh": "test **電壓：** 按表 16（500 V / 1000 V / 2500 V，取决于充电截止电压）\n持續時間： 1 min\n測量：测量正极/负极与外部裸露可导电部分之间的绝缘电阻\n**計算公式：** 计算绝缘电阻与标称电压的比值",
     "evaluation_summary_zh": "绝缘电阻应符合规定限值"
   },
   {
@@ -3644,7 +3644,7 @@
     "evaluation_summary": "应无击穿、无闪络",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test voltage dc: 按表 17（直流，1530-5370 V）\ntest voltage ac: 按表 17（交流 45-62 Hz，1080-3800 V）\nramp: 10 s 内从≤50% 增加至试验电压\n**持續時間：** 保持 60 s",
+    "conditions_summary_zh": "test voltage dc: 按表 17（直流，1530-5370 V）\ntest voltage ac: 按表 17（交流 45-62 Hz，1080-3800 V）\nramp: 10 s 内从≤50% 增加至试验电压\n持續時間： 保持 60 s",
     "evaluation_summary_zh": "应无击穿、无闪络"
   },
   {
@@ -3670,7 +3670,7 @@
     "evaluation_summary": "应无起火、无爆炸、无漏液",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 初始化充电后\napparatus: 半径 R=75 mm 的半圆柱体挤压头\n**作用力：** 50 kN，保持 10 min\nobservation: 观察 1 h，记录电压、温度、挤压力",
+    "conditions_summary_zh": "**SOC：** 初始化充电后\n設備：半径 R=75 mm 的半圆柱体挤压头\n作用力： 50 kN，保持 10 min\n觀察：观察 1 h，记录电压、温度、挤压力",
     "evaluation_summary_zh": "应无起火、无爆炸、无漏液"
   },
   {
@@ -3696,7 +3696,7 @@
     "evaluation_summary": "应无起火、无爆炸、无漏液",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 初始化充电后\nheight cell: 1.5 m（电池单体）\nheight module: 2.0 m（电池模块）\norientation: 正极或负极朝下",
+    "conditions_summary_zh": "**SOC：** 初始化充电后\nheight cell: 1.5 m（电池单体）\nheight module: 2.0 m（电池模块）\n方向：正极或负极朝下",
     "evaluation_summary_zh": "应无起火、无爆炸、无漏液",
     "normalized_item_id": "MECH-05"
   },
@@ -3723,7 +3723,7 @@
     "evaluation_summary": "报警和保护功能应正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "procedure: 模拟过充、过放、过流、过温、短路等故障条件\nmonitoring: 监测报警和保护动作",
+    "conditions_summary_zh": "procedure: 模拟过充、过放、过流、过温、短路等故障条件\n監測：监测报警和保护动作",
     "evaluation_summary_zh": "报警和保护功能应正常"
   },
   {
@@ -3748,8 +3748,8 @@
     "evaluation_summary": "應無起火、無爆炸；過充保護電路（如有）應能保護電池",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 規定放電至終止電壓\n充電 **電流：** 2.0 It A\nsupply voltage single: 1.4 倍上限充電電壓（不超過 6.0 V）\nsupply voltage series: 1.2 倍上限充電電壓/串聯電池數",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n過充保護電路（如有）應能保護電池",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 規定放電至終止電壓\n充電 電流： 2.0 It A\nsupply voltage single: 1.4 倍上限充電電壓（≤ 6.0 V）\nsupply voltage series: 1.2 倍上限充電電壓/串聯電池數",
+    "evaluation_summary_zh": "無起火、爆炸；\n過充保護電路（如有）應能保護電池",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -3774,8 +3774,8 @@
     "evaluation_summary": "應無起火、無爆炸；可採用電池或系統中的保護裝置",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 放電至製造商規定的下限放電電壓\n**電流：** 1 It A\ntarget **電壓：** 負的上限充電電壓\n**持續時間：** 90 分鐘",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n可採用電池或系統中的保護裝置",
+    "conditions_summary_zh": "**SOC：** 放電至製造商規定的下限放電電壓\n電流： 1 It A\n目標電壓： 負的上限充電電壓\n持續時間： 90 分鐘",
+    "evaluation_summary_zh": "無起火、爆炸；\n可採用電池或系統中的保護裝置",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -3800,8 +3800,8 @@
     "evaluation_summary": "應無起火、無爆炸、無破裂、無洩漏、無排氣",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 規定充滿電\nwaveform: 半正弦波\n**加速度：** 150 gn\npulse **持續時間：** 6 ms",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無破裂、無洩漏、無排氣",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 充電\n波形：半正弦波\n**加速度：** 150 gn\n脈衝持續時間： 6 ms",
+    "evaluation_summary_zh": "無起火、爆炸、無破裂、無洩漏、無排氣",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -3826,8 +3826,8 @@
     "evaluation_summary": "應無起火、無爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.2 規定充滿電（在上限充電溫度下）\n**作用力：** 13 ± 0.78 kN\ntermination criteria: 達到最大壓力, 電壓突降三分之一\norientation: 圓柱型/方型：縱軸平行於擠壓面；\n鈕扣型：平面施壓",
-    "evaluation_summary_zh": "應無起火現象、無爆炸",
+    "conditions_summary_zh": "**SOC：** 按 7.1.2 規定充滿電（在上限充電溫度下）\n作用力： 13 ± 0.78 kN\n終止條件：達到最大壓力, 電壓突降三分之一\n方向：圓柱型/方型：縱軸平行於擠壓面；\n鈕扣型：平面施壓",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "MECH-02"
   },
   {
@@ -3852,8 +3852,8 @@
     "evaluation_summary": "應無起火、無爆炸、無破裂、無洩漏、無排氣",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 規定充滿電\nwaveform: 正弦波\nfrequency range: 7 Hz 至 200 Hz\ncycle count: 12 次循環（每方向約 3 小時）",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無破裂、無洩漏、無排氣",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 充電\n波形：正弦波\n頻率範圍：7 Hz 至 200 Hz\n循環次數：12 次循環（每方向約 3 小時）",
+    "evaluation_summary_zh": "無起火、爆炸、無破裂、無洩漏、無排氣",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -3879,8 +3879,8 @@
     "evaluation_summary": "應無起火、無爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 規定充滿電\nheight: 1.0 m\nfloor: 混凝土或金屬地板\ndrop count: 每個樣品 3 次",
-    "evaluation_summary_zh": "應無起火現象、無爆炸",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 充電\n高度：1.0 m\n地板：混凝土或金屬地板\n跌落次數：每個樣品 3 次",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "MECH-05"
   },
   {
@@ -3905,8 +3905,8 @@
     "evaluation_summary": "應無起火；記錄發生內部短路時的壓力",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按製造商建議充電，然後以 0.2 It A 放電至終止電壓\nsample count: 每個測試溫度 5 個樣品\ntest temperatures: condition: 最低測試溫度; temp: 下限充電溫度 ± 2°C, condition: 最高測試溫度; temp: 上限充電溫度 ± 2°C\nmethod: 使用鎳顆粒刺入捲芯模擬內部短路",
-    "evaluation_summary_zh": "應無起火現象；\n記錄發生內部短路時的壓力",
+    "conditions_summary_zh": "**SOC：** 按製造商建議充電，然後以 0.2 It A 放電至終止電壓\nsample count: 每個測試溫度 5 個樣品\ntest temperatures: condition: 最低測試溫度; 溫度：下限充電溫度 ± 2°C, condition: 最高測試溫度; 溫度：上限充電溫度 ± 2°C\nmethod: 使用鎳顆粒刺入捲芯模擬內部短路",
+    "evaluation_summary_zh": "無起火；\n記錄發生內部短路時的壓力",
     "normalized_item_id": "ELEC-04"
   },
   {
@@ -3931,8 +3931,8 @@
     "evaluation_summary": "應無起火、無爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.2 規定充滿電\n**溫度：** 55 ± 5°C\nstabilization: 1-4 小時\n**電阻：** 80 ± 20 mΩ",
-    "evaluation_summary_zh": "應無起火現象、無爆炸",
+    "conditions_summary_zh": "**SOC：** 按 7.1.2 規定充滿電\n溫度： 55 ± 5°C\n穩定時間：1-4 小時\n電阻： 80 ± 20 mΩ",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -3957,8 +3957,8 @@
     "evaluation_summary": "應無起火、無爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 規定充滿電\n**溫度：** 20 ± 5°C\n**電阻：** 80 ± 20 mΩ\n**持續時間：** 24 小時或外殼溫度下降 20%（取較早者）",
-    "evaluation_summary_zh": "應無起火現象、無爆炸",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 充電\n溫度： 20 ± 5°C\n電阻： 80 ± 20 mΩ\n持續時間： 24 小時或外殼溫度下降 20%（取較早者）",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -4008,8 +4008,8 @@
     "evaluation_summary": "應無起火、無爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.2 規定充滿電\nramp rate: 5 ± 2°C/min\ntarget **溫度：** 130 ± 2°C\nhold time: 30 分鐘",
-    "evaluation_summary_zh": "應無起火現象、無爆炸",
+    "conditions_summary_zh": "**SOC：** 按 7.1.2 規定充滿電\n升溫速率：5 ± 2°C/min\n目標溫度： 130 ± 2°C\n保持時間：30 分鐘",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "THERM-01"
   },
   {
@@ -4034,8 +4034,8 @@
     "evaluation_summary": "應無起火、無爆炸、無洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 規定充滿電\n充電 method: 製造商規定的電流和標準電壓方法\n**持續時間：** 7 天\n**溫度：** 20 ± 5°C",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無洩漏"
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 充電\n充電方法：製造商規定的電流和標準電壓方法\n持續時間： 7 天\n溫度： 20 ± 5°C",
+    "evaluation_summary_zh": "無起火、爆炸、無洩漏"
   },
   {
     "document_id": "IEC62133-2",
@@ -4059,7 +4059,7 @@
     "evaluation_summary": "電池外殼無物理變形導致內部保護元件和電池暴露",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按 7.1.1 規定充滿電\n**溫度：** 70 ± 2°C（空氣循環烤箱）\n**持續時間：** 7 小時\npost test: 取出後恢復至室溫",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 充電\n溫度： 70 ± 2°C（空氣循環烤箱）\n持續時間： 7 小時\npost test: 取出後恢復至室溫",
     "evaluation_summary_zh": "電池外殼無物理變形導致內部保護元件和電池暴露"
   },
   {
@@ -4085,8 +4085,8 @@
     "evaluation_summary": "Short-circuit between positive and negative terminals shall not cause fire or explosion.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Fully charged\n**溫度：** 25 ± 5°C (ambient)\n**電阻：** 30 ± 10 mΩ (total external resistance)\n**持續時間：** 6 hours or until case temperature declines by 80% of maximum temperature rise, whichever is sooner",
-    "evaluation_summary_zh": "Short-circuit between positive and negative terminals shall not cause fire or explosion.",
+    "conditions_summary_zh": "**SOC：** 100% SOC\n溫度： 25 ± 5°C (ambient)\n電阻： 30 ± 10 mΩ (總外部電阻)\n持續時間： 6 hours or until case temperature declines by 80% of maximum temperature rise, whichever is sooner",
+    "evaluation_summary_zh": "正負極短路不應引起起火或爆炸。",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -4112,8 +4112,8 @@
     "evaluation_summary": "Charging for longer periods than specified shall not cause fire or explosion.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Discharged to final voltage specified by manufacturer (at 0.2 It A)\n**溫度：** 25 ± 5°C\n充電 **電流：** Maximum specified 充電 current of battery system\n充電 **電壓：** Maximum voltage possible when original 充電 control does not work",
-    "evaluation_summary_zh": "Charging for longer periods than specified shall not cause fire or explosion.",
+    "conditions_summary_zh": "**SOC：** Discharged to final voltage specified by manufacturer (at 0.2 It A)\n溫度： 25 ± 5°C\n充電 電流： Maximum specified 充電 current of battery system\n充電 **電壓：** Maximum voltage possible when original 充電 control does not work",
+    "evaluation_summary_zh": "超過規定時間充電不應引起起火或爆炸。",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -4139,7 +4139,7 @@
     "evaluation_summary": "A cell in a battery system shall withstand forced discharge without causing fire or explosion.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Discharged to final voltage specified by manufacturer (at 0.2 It A), then forced 放電d\n**溫度：** 25 ± 5°C\nforced 放電 **電流：** 1.0 It A\n**持續時間：** 90 minutes",
+    "conditions_summary_zh": "**SOC：** Discharged to final voltage specified by manufacturer (at 0.2 It A), then forced 放電d\n溫度： 25 ± 5°C\nforced 放電電流： 1.0 It A\n持續時間： 90 minutes",
     "evaluation_summary_zh": "A cell in a battery system shall withstand forced discharge without causing fire or explosion.",
     "normalized_item_id": "ELEC-03"
   },
@@ -4165,7 +4165,7 @@
     "evaluation_summary": "A forced internal short-circuit test shall not cause fire.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Discharged at 0.2 It A to final voltage, then charged at upper limited 充電 voltage until current drops to 0.05 It A\n**溫度：** 25 ± 5°C (chamber controlled)\napparatus: Press equipment with nitrile rubber or acrylic resin pressing jig\nnickel particle: Inserted at center of outer end positive and negative electrode pair",
+    "conditions_summary_zh": "**SOC：** Discharged at 0.2 It A to final voltage, then charged at upper limited 充電 voltage until current drops to 0.05 It A\n溫度： 25 ± 5°C (chamber controlled)\n設備：Press equipment with nitrile rubber or acrylic resin pressing jig\nnickel particle: Inserted at center of outer end positive and negative electrode pair",
     "evaluation_summary_zh": "A forced internal short-circuit test shall not cause fire.",
     "normalized_item_id": "ELEC-04"
   },
@@ -4191,8 +4191,8 @@
     "evaluation_summary": "BMS terminates charging before exceeding upper limit charging voltage. No fire, no explosion.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Discharged to final voltage specified by manufacturer (at 0.2 It A)\n**溫度：** 25 ± 5°C\ncooling system: Operating (if provided)\n充電 **電流：** Maximum current of recommended charger",
-    "evaluation_summary_zh": "BMS terminates charging before exceeding upper limit charging voltage. No fire, no explosion.",
+    "conditions_summary_zh": "**SOC：** Discharged to final voltage specified by manufacturer (at 0.2 It A)\n溫度： 25 ± 5°C\n冷卻系統：Operating (if provided)\n充電 電流： Maximum current of recommended charger",
+    "evaluation_summary_zh": "BMS 終止 charging before exceeding upper limit charging voltage. 無起火、無爆炸。",
     "normalized_item_id": "ELEC-02-PROT"
   },
   {
@@ -4217,8 +4217,8 @@
     "evaluation_summary": "BMS shall detect overcharging current and control charging below maximum charging current. No fire, no explosion.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Discharged to final voltage specified by manufacturer (at 0.2 It A)\n**溫度：** 25 ± 5°C\ncooling system: Operating (if provided)\n充電 **電流：** 20% above maximum 充電 current",
-    "evaluation_summary_zh": "BMS shall detect overcharging current and control charging below maximum charging current. No fire, no explosion.",
+    "conditions_summary_zh": "**SOC：** Discharged to final voltage specified by manufacturer (at 0.2 It A)\n溫度： 25 ± 5°C\n冷卻系統：Operating (if provided)\n充電 電流： 20% above maximum 充電 current",
+    "evaluation_summary_zh": "BMS 應檢測過充電電流並控制充電低於最大充電電流. 無起火、無爆炸。",
     "normalized_item_id": "ELEC-02-PROT"
   },
   {
@@ -4244,7 +4244,7 @@
     "evaluation_summary": "An impact to the cell shall not cause fire or explosion.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 50% capacity of rated capacity (放電d at 0.2 It A)\napparatus: Type 316 stainless steel bar, 15.8 ± 0.1 mm diameter, at least 60 mm length\nmass: 9.1 kg rigid mass\nheight: 610 ± 25 mm",
+    "conditions_summary_zh": "**SOC：** 50% capacity of rated capacity (放電d at 0.2 It A)\n設備：Type 316 stainless steel bar, 15.8 ± 0.1 mm diameter, at least 60 mm length\n質量：9.1 kg rigid mass\n高度：610 ± 25 mm",
     "evaluation_summary_zh": "An impact to the cell shall not cause fire or explosion.",
     "normalized_item_id": "MECH-01"
   },
@@ -4272,7 +4272,7 @@
     "evaluation_summary": "Dropping the test unit shall not cause fire or explosion.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Fully charged\nfloor: Flat concrete or metal floor\ndrop count whole: 3 times (whole drop test)\ndrop count edge corner: 2 times per impact type (edge and corner drop test)",
+    "conditions_summary_zh": "**SOC：** 100% SOC\n地板：Flat concrete or metal floor\ndrop count whole: 3 times (whole drop test)\ndrop count edge corner: 2 times per impact type (edge and corner drop test)",
     "evaluation_summary_zh": "Dropping the test unit shall not cause fire or explosion.",
     "normalized_item_id": "MECH-05"
   },
@@ -4299,7 +4299,7 @@
     "evaluation_summary": "An elevated temperature exposure shall not cause fire or explosion.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Fully charged\ninitial **溫度：** 25 ± 5°C (stabilized)\noven type: Gravity or circulating air-convection oven\nramp rate: 5 ± 2°C/min",
+    "conditions_summary_zh": "**SOC：** 100% SOC\ninitial 溫度： 25 ± 5°C (stabilized)\noven type: Gravity or circulating air-convection oven\n升溫速率：5 ± 2°C/min",
     "evaluation_summary_zh": "An elevated temperature exposure shall not cause fire or explosion.",
     "normalized_item_id": "THERM-01"
   },
@@ -4325,7 +4325,7 @@
     "evaluation_summary": "No external fire from battery system, no battery system case rupture.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Fully charged\n**溫度：** 25 ± 5°C (stabilized)\ntrigger method: One target cell heated by laser (or other method) until thermal runaway\nobservation time: 8 hours after thermal runaway initiated",
+    "conditions_summary_zh": "**SOC：** 100% SOC\n溫度： 25 ± 5°C (stabilized)\n觸發方法：One target cell heated by laser (or other method) until thermal runaway\nobservation time: 8 hours after thermal runaway initiated",
     "evaluation_summary_zh": "No external fire from battery system, no battery system case rupture.",
     "normalized_item_id": "THERM-04"
   },
@@ -4744,7 +4744,7 @@
     "evaluation_summary": "按 Annex E 規定的測試方法和判定標準",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: E3 短路, E4 電池衝擊, E5 跌落衝擊, E6 加熱, E7 過充電, E8 強制放電, E9 拋射物\nreference: 參考 Annex E 詳細測試條件",
+    "conditions_summary_zh": "測試包含：E3 短路, E4 電池衝擊, E5 跌落衝擊, E6 加熱, E7 過充電, E8 強制放電, E9 拋射物\n參考：參考 Annex E 詳細測試條件",
     "evaluation_summary_zh": "按 Annex E 規定的測試方法和判定標準"
   },
   {
@@ -4770,8 +4770,8 @@
     "evaluation_summary": "應無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n**電阻：** ≤ 20 mΩ\n**溫度：** 室溫環境\nfault condition: 放電保護電路單一元件故障",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n電阻： ≤ 20 mΩ\n溫度： 室溫環境\n故障條件：放電保護電路單一元件故障",
+    "evaluation_summary_zh": "無起火、爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護正常",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -4797,8 +4797,8 @@
     "evaluation_summary": "應無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 放電至製造商規定的 EODV\n充電 rate: 電池組規定的最大充電速率\nfault condition: 充電電路單一故障（可能導致過充）\ntermination criteria: 保護電路終止充電, 充電至 110% 額定容量, 發生起火/爆炸",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常",
+    "conditions_summary_zh": "**SOC：** 放電至 EODV\n充電 rate: 電池組規定的最大充電速率\n故障條件：充電電路單一故障（可能導致過充）\n終止條件：保護電路終止充電, 充電至 110% 額定容量, 發生起火/爆炸",
+    "evaluation_summary_zh": "無起火、爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護正常",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -4824,8 +4824,8 @@
     "evaluation_summary": "保護裝置應啟動防止電池低於截止電壓；應無起火、無爆炸等",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n放電 rate: 製造商規定的最大放電速率\ntermination criteria: 被動保護裝置啟動, 最小電壓/最大溫度保護啟動, 達到正常放電限值後 30 分鐘\nmonitoring: 使用火花點火源或氣體檢測監測可燃氣體",
-    "evaluation_summary_zh": "保護裝置應啟動防止電池低於截止電壓；\n應無起火現象、無爆炸等",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n放電 rate: 製造商規定的最大放電速率\n終止條件：被動保護裝置啟動, 最小電壓/最大溫度保護啟動, 達到正常放電限值後 30 分鐘\n監測：使用火花點火源或氣體檢測監測可燃氣體",
+    "evaluation_summary_zh": "保護啟動防止電池低於截止電壓；\n無起火、爆炸等",
     "normalized_item_id": "ELEC-03-PROT"
   },
   {
@@ -4851,8 +4851,8 @@
     "evaluation_summary": "應無起火、無爆炸等；模組最大電壓限值不得超出",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 創建不平衡狀態（部分模組放電至不同 SOC）\n充電: 按製造商規格充電\nmonitoring: 監測模組電壓是否超出限值",
-    "evaluation_summary_zh": "應無起火現象、無爆炸等；\n模組最大電壓限值不得超出"
+    "conditions_summary_zh": "**SOC：** 創建不平衡狀態（部分模組放電至不同 SOC）\n充電: 按製造商規格充電\n監測：監測模組電壓是否超出限值",
+    "evaluation_summary_zh": "無起火、爆炸等；\n模組最大電壓限值不得超出"
   },
   {
     "document_id": "UL-1973",
@@ -4877,7 +4877,7 @@
     "evaluation_summary": "應無介電擊穿（絕緣擊穿導致短路/飛弧）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test **電壓：** 按標準規定（通常為 2×額定電壓或更高）\n**持續時間：** 至少 1 分鐘\napplication: 危險電壓電路與非載流導電部件之間",
+    "conditions_summary_zh": "test **電壓：** 按標準（通常為 2×額定電壓或更高）\n持續時間： ≥ 1 分鐘\napplication: 危險電壓電路與非載流導電部件之間",
     "evaluation_summary_zh": "應無介電擊穿（絕緣擊穿導致短路/飛弧）"
   },
   {
@@ -4903,8 +4903,8 @@
     "evaluation_summary": "保護接地系統電阻不超過規定限值（通常≤0.1 Ω）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test **電流：** 按標準規定（通常為 25 A 或更高）\n**持續時間：** 按標準規定\nmeasurement: 測量保護接地系統任意兩點之間的電阻",
-    "evaluation_summary_zh": "保護接地系統電阻不超過規定限值（通常≤0.1 Ω）"
+    "conditions_summary_zh": "test 電流： 按標準（通常為 25 A 或更高）\n持續時間： 按標準\n測量：測量保護接地系統任意兩點之間的電阻",
+    "evaluation_summary_zh": "保護接地系統電阻≤規定限值（通常≤0.1 Ω）"
   },
   {
     "document_id": "UL-1973",
@@ -4929,8 +4929,8 @@
     "evaluation_summary": "應無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 放電至製造商規定的 EODV\n充電 rate: 高於正常充電速率（按製造商規格或單一故障條件）\nfault condition: 充電電路單一故障（可能導致高倍率充電）\ntermination criteria: 保護電路終止充電, 達到穩定狀態, 發生起火/爆炸",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常"
+    "conditions_summary_zh": "**SOC：** 放電至 EODV\n充電 rate: 高於正常充電速率（按製造商規格或單一故障條件）\n故障條件：充電電路單一故障（可能導致高倍率充電）\n終止條件：保護電路終止充電, 達到穩定狀態, 發生起火/爆炸",
+    "evaluation_summary_zh": "無起火、爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護正常"
   },
   {
     "document_id": "UL-1973",
@@ -4955,8 +4955,8 @@
     "evaluation_summary": "應無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n放電 rate: 高於正常放電速率（按製造商規格或單一故障條件）\nfault condition: 放電電路單一故障（可能導致過載）\ntermination criteria: 保護電路終止放電, 達到穩定狀態, 發生起火/爆炸",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n放電 rate: 高於正常放電速率（按製造商規格或單一故障條件）\n故障條件：放電電路單一故障（可能導致過載）\n終止條件：保護電路終止放電, 達到穩定狀態, 發生起火/爆炸",
+    "evaluation_summary_zh": "無起火、爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂、保護正常",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -4982,8 +4982,8 @@
     "evaluation_summary": "應無起火、無爆炸等；保護功能應正常運作",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: 27.2 靜電放電（ESD）, 27.3 射頻電磁場, 27.4 快速瞬變/脈衝群, 27.5 浪湧, 27.6 射頻共模, 27.7 工頻磁場\nmonitoring: 監測系統功能是否正常",
-    "evaluation_summary_zh": "應無起火現象、無爆炸等；\n保護功能應正常運作"
+    "conditions_summary_zh": "測試包含：27.2 靜電放電（ESD）, 27.3 射頻電磁場, 27.4 快速瞬變/脈衝群, 27.5 浪湧, 27.6 射頻共模, 27.7 工頻磁場\n監測：監測系統功能是否正常",
+    "evaluation_summary_zh": "無起火、爆炸等；\n保護正常"
   },
   {
     "document_id": "UL-1973",
@@ -5008,8 +5008,8 @@
     "evaluation_summary": "應無起火、無爆炸等；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\ncycle profile: 按標準規定（高低溫循環）\ncycle count: 按標準規定\nrest period: 測試後靜置觀察",
-    "evaluation_summary_zh": "應無起火現象、無爆炸等；\n保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\ncycle profile: 按標準（高低溫循環）\n循環次數：按標準\n試驗後觀察",
+    "evaluation_summary_zh": "無起火、爆炸等；\n保護正常",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -5035,8 +5035,8 @@
     "evaluation_summary": "應無起火、無爆炸等；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\nhumidity: 按標準規定（高濕環境）\n**持續時間：** 按標準規定\nrest period: 測試後靜置觀察",
-    "evaluation_summary_zh": "應無起火現象、無爆炸等；\n保護控制正常"
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n濕度：按標準（高濕環境）\n持續時間： 按標準\n試驗後觀察",
+    "evaluation_summary_zh": "無起火、爆炸等；\n保護正常"
   },
   {
     "document_id": "UL-1973",
@@ -5061,8 +5061,8 @@
     "evaluation_summary": "應無起火、無爆炸等；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n**測試方法：** 按標準規定（鹽霧暴露）\n**持續時間：** 按標準規定\nrest period: 測試後靜置觀察",
-    "evaluation_summary_zh": "應無起火現象、無爆炸等；\n保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n測試方法： 按標準（鹽霧暴露）\n持續時間： 按標準\n試驗後觀察",
+    "evaluation_summary_zh": "無起火、爆炸等；\n保護正常",
     "normalized_item_id": "ENV-04"
   },
   {
@@ -5088,7 +5088,7 @@
     "evaluation_summary": "單電池失效不應導致內部火災傳播至 DUT 外殼外部",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\ntrigger method: 使用內部短路觸發電池（見 Annex F）\ntrigger cell count: 至少 1 個觸發電池\nmonitoring: 監測熱擴散、起火、爆炸",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n觸發方法：使用內部短路觸發電池（見 Annex F）\n觸發電池數：≥ 1 個觸發電池\n監測：監測熱擴散、起火、爆炸",
     "evaluation_summary_zh": "單電池失效不應導致內部火災傳播至 DUT 外殼外部"
   },
   {
@@ -5114,7 +5114,7 @@
     "evaluation_summary": "單電池失效不應導致內部火災傳播至 DUT 外殼外部",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\ntrigger method: 按電池技術使用適當的失效觸發方法\nmonitoring: 監測熱擴散、起火、爆炸",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n觸發方法：按電池技術使用適當的失效觸發方法\n監測：監測熱擴散、起火、爆炸",
     "evaluation_summary_zh": "單電池失效不應導致內部火災傳播至 DUT 外殼外部"
   },
   {
@@ -5140,8 +5140,8 @@
     "evaluation_summary": "應無起火、無爆炸等；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\nwaveform: 半正弦波或按標準規定\n**加速度：** 按標準規定\npulse **持續時間：** 按標準規定",
-    "evaluation_summary_zh": "應無起火現象、無爆炸等；\n保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n波形：半正弦波或按標準\n**加速度：** 按標準\n脈衝持續時間： 按標準",
+    "evaluation_summary_zh": "無起火、爆炸等；\n保護正常",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -5167,8 +5167,8 @@
     "evaluation_summary": "應無起火、無爆炸、無可燃氣體、無有毒氣體",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n**作用力：** 按標準規定或車輛預期的最大擠壓負載\ndirection: 代表車輛碰撞時最可能受擠壓的方向\nrest period: 測試後靜置觀察",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無可燃氣體、無有毒氣體",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n作用力： 按標準或車輛預期的最大擠壓負載\n方向：代表車輛碰撞時最可能受擠壓的方向\n試驗後觀察",
+    "evaluation_summary_zh": "無起火、爆炸、無可燃氣體、無有毒氣體",
     "normalized_item_id": "MECH-02"
   },
   {
@@ -5194,8 +5194,8 @@
     "evaluation_summary": "應無起火、無爆炸等；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\nprofile: 按預期車輛振動輪廓或標準規定\nrest period: 測試後靜置觀察\nmonitoring: 監測溫度和電壓",
-    "evaluation_summary_zh": "應無起火現象、無爆炸等；\n保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\nprofile: 按預期車輛振動輪廓或標準規定\n試驗後觀察\n監測：監測溫度和電壓",
+    "evaluation_summary_zh": "無起火、爆炸等；\n保護正常",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -5221,8 +5221,8 @@
     "evaluation_summary": "應無起火、無爆炸等；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n**作用力：** 按標準規定（模擬安裝/維護時的靜態負載）\ndirection: 多個方向\nrest period: 測試後靜置觀察",
-    "evaluation_summary_zh": "應無起火現象、無爆炸等；\n保護控制正常"
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n作用力： 按標準（模擬安裝/維護時的靜態負載）\n方向：多個方向\n試驗後觀察",
+    "evaluation_summary_zh": "無起火、爆炸等；\n保護正常"
   },
   {
     "document_id": "UL-1973",
@@ -5247,8 +5247,8 @@
     "evaluation_summary": "應無起火、無爆炸等；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n**衝擊能量：** 按標準規定\ndirection: 多個方向\nrest period: 測試後靜置觀察",
-    "evaluation_summary_zh": "應無起火現象、無爆炸等；\n保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n**衝擊能量：** 按標準\n方向：多個方向\n試驗後觀察",
+    "evaluation_summary_zh": "無起火、爆炸等；\n保護正常",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -5274,8 +5274,8 @@
     "evaluation_summary": "應無起火、無爆炸、無可燃氣體、無電擊、無洩漏、無破裂、保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\nheight: 按標準規定\nsurface: 混凝土或金屬表面\norientation: 最可能產生不利結果的位置",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無可燃氣體、無電擊、無洩漏、無破裂、保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n高度：按標準\nsurface: 混凝土或金屬表面\n方向：最可能產生不利結果的位置",
+    "evaluation_summary_zh": "無起火、爆炸、無可燃氣體、無電擊、無洩漏、無破裂、保護正常",
     "normalized_item_id": "MECH-05"
   },
   {
@@ -5301,7 +5301,7 @@
     "evaluation_summary": "固定裝置/支撐結構/把手不應失效",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "load: 按標準規定（模擬安裝/維護時的負載）\ndirection: 多個方向\n**持續時間：** 按標準規定",
+    "conditions_summary_zh": "load: 按標準（模擬安裝/維護時的負載）\n方向：多個方向\n持續時間： 按標準",
     "evaluation_summary_zh": "固定裝置/支撐結構/把手不應失效"
   },
   {
@@ -5327,7 +5327,7 @@
     "evaluation_summary": "外殼不應有過度變形或失效",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**溫度：** 按標準規定（高溫環境）\n**持續時間：** 按標準規定\nload: 按標準規定（模擬長期應力）",
+    "conditions_summary_zh": "溫度： 按標準（高溫環境）\n持續時間： 按標準\nload: 按標準（模擬長期應力）",
     "evaluation_summary_zh": "外殼不應有過度變形或失效"
   },
   {
@@ -5353,7 +5353,7 @@
     "evaluation_summary": "壓力釋放裝置應在規定壓力下動作",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**壓力：** 按標準規定（模擬內部壓力 buildup）\nrelief device: 安全閥或破裂膜\nmonitoring: 監測壓力釋放動作",
+    "conditions_summary_zh": "壓力： 按標準（模擬內部壓力 buildup）\nrelief device: 安全閥或破裂膜\n監測：監測壓力釋放動作",
     "evaluation_summary_zh": "壓力釋放裝置應在規定壓力下動作"
   },
   {
@@ -5379,8 +5379,8 @@
     "evaluation_summary": "壓力釋放裝置的啟動壓力應符合規格",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**壓力：** 按標準規定（模擬壓力釋放啟動）\nmonitoring: 監測壓力釋放啟動點",
-    "evaluation_summary_zh": "壓力釋放裝置的啟動壓力應符合規格"
+    "conditions_summary_zh": "壓力： 按標準（模擬壓力釋放啟動）\n監測：監測壓力釋放啟動點",
+    "evaluation_summary_zh": "壓力釋放裝置的啟動壓力符合規格"
   },
   {
     "document_id": "UL-1973",
@@ -5405,7 +5405,7 @@
     "evaluation_summary": "製造商規定的限值（電壓、電流、溫度）不得超出；元件溫度不得超出其規格",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 放電至 EODV 後充電至 MOSOC\nambient **溫度：** 製造商規定的最高/最低工作溫度\n**循環次數：** 多次充放電循環\nmonitoring: 監測模組電壓/電流及溫度敏感元件（包括電池）",
+    "conditions_summary_zh": "**SOC：** 放電至 EODV 後充電至 MOSOC\nambient 溫度： 製造商規定的最高/最低工作溫度\n**循環次數：** 多次充放電循環\n監測：監測模組電壓/電流及溫度敏感元件（包括電池）",
     "evaluation_summary_zh": "製造商規定的限值（電壓、電流、溫度）不得超出；\n元件溫度不得超出其規格"
   },
   {
@@ -5431,8 +5431,8 @@
     "evaluation_summary": "應無起火、無爆炸等；或系統應安全關閉",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）** charge: 放電至 EODV，在高溫環境下，冷卻系統禁用，以最大速率充電\n**SOC（充電狀態）** 放電: 充滿電（MOSOC），在高溫環境下，冷卻系統禁用，以最大速率放電\nmonitoring: 使用火花點火源或氣體檢測監測可燃氣體",
-    "evaluation_summary_zh": "應無起火現象、無爆炸等；\n或系統應安全關閉"
+    "conditions_summary_zh": "**SOC** charge: 放電至 EODV，在高溫環境下，冷卻系統禁用，以最大速率充電\n**SOC** 放電: 充滿電（MOSOC），在高溫環境下，冷卻系統禁用，以最大速率放電\n監測：使用火花點火源或氣體檢測監測可燃氣體",
+    "evaluation_summary_zh": "無起火、爆炸等；\n或系統應安全關閉"
   },
   {
     "document_id": "UL-1973",
@@ -5457,8 +5457,8 @@
     "evaluation_summary": "應無爆炸（避免拋射物危害）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\nfire source: 按標準規定（外部火源）\n**持續時間：** 按標準規定\nmonitoring: 監測拋射物產生",
-    "evaluation_summary_zh": "應無爆炸現象（避免拋射物危害）",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n火源：按標準（外部火源）\n持續時間： 按標準\n監測：監測拋射物產生",
+    "evaluation_summary_zh": "無爆炸（避免拋射物危害）",
     "normalized_item_id": "FIRE-01"
   },
   {
@@ -5484,8 +5484,8 @@
     "evaluation_summary": "應無爆炸、無起火、無化學洩漏；鋰電池內部電芯溫度≤150°C；薄紙和粗棉布不應起火",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\n**電阻：** 80 ± 20 mΩ\ntemperatures: 20 ± 5°C, 55 ± 2°C\n**持續時間：** 直到起火/爆炸、完全放電 (<0.2 V)、或溫度恢復至環境±10°C",
-    "evaluation_summary_zh": "應無爆炸現象、無起火、無化學洩漏；\n鋰電池內部電芯溫度≤150°C；\n薄紙和粗棉布不應起火",
+    "conditions_summary_zh": "**SOC：** 充滿電\n電阻： 80 ± 20 mΩ\ntemperatures: 20 ± 5°C, 55 ± 2°C\n持續時間： 直到起火/爆炸、完全放電 (<0.2 V)、或溫度恢復至環境±10°C",
+    "evaluation_summary_zh": "無爆炸、起火、無化學洩漏；\n鋰電池內部電芯溫度≤150°C；\n薄紙和粗棉布不應起火",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -5511,8 +5511,8 @@
     "evaluation_summary": "應無爆炸、無起火、無化學洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "primary **SOC（充電狀態）：** 放電至製造商規定容量\nsecondary **SOC（充電狀態）：** 以 0.2C/1h 放電至終止電壓\n充電 **電流：** 3×Ic（製造商規定的最大充電電流）\nprimary **持續時間：** t = 2.5 × (Cc / 3Ic)，最少 7 h",
-    "evaluation_summary_zh": "應無爆炸現象、無起火、無化學洩漏",
+    "conditions_summary_zh": "primary **SOC：** 放電至規定容量\nsecondary **SOC：** 以 0.2C/1h 放電至終止電壓\n充電 電流： 3×Ic（製造商規定的最大充電電流）\nprimary 持續時間： t = 2.5 × (Cc / 3Ic)，最少 7 h",
+    "evaluation_summary_zh": "無爆炸、起火、無化學洩漏",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -5537,8 +5537,8 @@
     "evaluation_summary": "應無爆炸、無起火",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "充電 **電流：** 10×C5 安培率\n**電壓：** 足以維持 10×C5 安培率的供電電壓\n**持續時間：** 直到爆炸、排氣、保護裝置啟動且溫度穩定\nfault condition: 充電電路中單一故障",
-    "evaluation_summary_zh": "應無爆炸現象、無起火",
+    "conditions_summary_zh": "充電 電流： 10×C5 安培率\n**電壓：** 足以維持 10×C5 安培率的供電電壓\n持續時間： 直到爆炸、排氣、保護裝置啟動且溫度穩定\n故障條件：充電電路中單一故障",
+    "evaluation_summary_zh": "無爆炸、起火",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -5563,8 +5563,8 @@
     "evaluation_summary": "應無爆炸、無起火",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "setup: 完全放電的電池與完全充電的同類型電池串聯\nseries cells: 串聯電池數量 = 電池組總電池數 - 1\nparallel strings: 串聯電池數量 = 電池組總電池數 - 放電並聯串電池數\n**電阻：** 80 ± 20 mΩ 銅線",
-    "evaluation_summary_zh": "應無爆炸現象、無起火",
+    "conditions_summary_zh": "設置：完全放電的電池與完全充電的同類型電池串聯\n串聯電池數：串聯電池數量 = 電池組總電池數 - 1\n並聯串數：串聯電池數量 = 電池組總電池數 - 放電並聯串電池數\n電阻： 80 ± 20 mΩ 銅線",
+    "evaluation_summary_zh": "無爆炸、起火",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -5590,8 +5590,8 @@
     "evaluation_summary": "輸出應符合表 15.1 或 15.2 的限制；符合要求的電池可標記為 'LPS'",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\nmeasurement: Uoc（開路電壓）、Isc（短路電流）、S（視在功率）\nlimits table 15 1: Uoc_le_30V: Isc ≤ 8.0 A, S ≤ 100 VA; 30V_Uoc_le_60V: Isc ≤ 150/Uoc A, S ≤ 100 VA\nlimits table 15 2: 使用過流保護裝置時的限制",
-    "evaluation_summary_zh": "輸出應符合表 15.1 或 15.2 的限制；\n符合要求的電池可標記為 'LPS'"
+    "conditions_summary_zh": "**SOC：** 充滿電\n測量：Uoc（開路電壓）、Isc（短路電流）、S（視在功率）\n限制见表 15 1: Uoc_le_30V: Isc ≤ 8.0 A, S ≤ 100 VA; 30V_Uoc_le_60V: Isc ≤ 150/Uoc A, S ≤ 100 VA\n限制见表 15 2: 使用過流保護裝置時的限制",
+    "evaluation_summary_zh": "輸出符合表 15.1 或 15.2 的限制；\n符合要求的電池可標記為 'LPS'"
   },
   {
     "document_id": "UL-2054",
@@ -5616,8 +5616,8 @@
     "evaluation_summary": "應無爆炸、無起火",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "start temp: 20 ± 5°C\nramp rate: 5 ± 2°C/min\ntarget temp: 130 ± 2°C (266 ± 4°F)\nhold time: 10 分鐘",
-    "evaluation_summary_zh": "應無爆炸現象、無起火",
+    "conditions_summary_zh": "start 溫度：20 ± 5°C\n升溫速率：5 ± 2°C/min\ntarget 溫度：130 ± 2°C (266 ± 4°F)\n保持時間：10 分鐘",
+    "evaluation_summary_zh": "無爆炸、起火",
     "normalized_item_id": "THERM-04"
   },
   {
@@ -5643,8 +5643,8 @@
     "evaluation_summary": "應無爆炸、無起火、無排氣、無洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "cycle profile: temp: 70 ± 3°C; **持續時間：** 4 h; ramp: ≤30 min, temp: 20 ± 3°C; **持續時間：** 2 h; ramp: ≤30 min, temp: -40 ± 3°C; **持續時間：** 4 h; ramp: ≤30 min, temp: 20 ± 3°C; **持續時間：** immediate; ramp: ≤30 min\ncycle count: 10 次循環\npost storage: 20 ± 5°C 下儲存至少 24 h",
-    "evaluation_summary_zh": "應無爆炸現象、無起火、無排氣、無洩漏",
+    "conditions_summary_zh": "cycle profile: 溫度：70 ± 3°C; 持續時間： 4 h; ramp: ≤30 min, 溫度：20 ± 3°C; 持續時間： 2 h; ramp: ≤30 min, 溫度：-40 ± 3°C; 持續時間： 4 h; ramp: ≤30 min, 溫度：20 ± 3°C; 持續時間： immediate; ramp: ≤30 min\n循環次數：10 次循環\npost storage: 20 ± 5°C 下儲存≥ 24 h",
+    "evaluation_summary_zh": "無爆炸、起火、無排氣、無洩漏",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -5670,7 +5670,7 @@
     "evaluation_summary": "爆炸時不應有部件穿透或穿出金屬絲網籠",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "setup: 電池放置在 102 mm (4 英寸) 直徑孔上的鋼絲網（20 孔/英寸，0.43 mm 線徑）\nheat source: 本生燈，燃料和空氣流量設定使鋼絲網發亮紅色\ncage: 八面體金屬絲網籠（610 mm × 305 mm，0.25 mm 鋁線，16-18 線/英寸）\n**持續時間：** 直到爆炸或電池燃燒殆盡",
+    "conditions_summary_zh": "設置：電池放置在 102 mm (4 英寸) 直徑孔上的鋼絲網（20 孔/英寸，0.43 mm 線徑）\nheat source: 本生燈，燃料和空氣流量設定使鋼絲網發亮紅色\ncage: 八面體金屬絲網籠（610 mm × 305 mm，0.25 mm 鋁線，16-18 線/英寸）\n持續時間： 直到爆炸或電池燃燒殆盡",
     "evaluation_summary_zh": "爆炸時不應有部件穿透或穿出金屬絲網籠",
     "normalized_item_id": "FIRE-02"
   },
@@ -5723,7 +5723,7 @@
     "comparison_ready": true,
     "normativity": "normative",
     "conditions_summary_zh": "**加速度：** 初始 3 ms 內最小平均加速度 75 gn，峰值加速度 125-175 gn\n**方向：** 3 個互相垂直方向各 3 次衝擊（若只有 2 個對稱軸則測試 2 個方向）\npost test: 測試後 6 小時檢查",
-    "evaluation_summary_zh": "應無爆炸現象、無起火、無排氣、無洩漏",
+    "evaluation_summary_zh": "無爆炸、起火、無排氣、無洩漏",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -5749,8 +5749,8 @@
     "evaluation_summary": "應無爆炸、無起火",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "apparatus: 兩個平面之間擠壓\n**作用力：** 13 ± 1.0 kN (3000 ± 224 lbf)\norientation: 圓柱/方型：縱軸平行於平面；\n方型需旋轉 90°測試寬窄兩面；\n鈕扣型：平面平行\nrelease: 達到最大力後釋放",
-    "evaluation_summary_zh": "應無爆炸現象、無起火",
+    "conditions_summary_zh": "設備：兩個平面之間擠壓\n作用力： 13 ± 1.0 kN (3000 ± 224 lbf)\n方向：圓柱/方型：縱軸平行於平面；\n方型需旋轉 90°測試寬窄兩面；\n鈕扣型：平面平行\nrelease: 達到最大力後釋放",
+    "evaluation_summary_zh": "無爆炸、起火",
     "normalized_item_id": "MECH-02"
   },
   {
@@ -5777,7 +5777,7 @@
     "comparison_ready": true,
     "normativity": "normative",
     "conditions_summary_zh": "**振幅：** 0.8 mm (0.03 英寸) [1.6 mm (0.06 英寸) 總最大行程]\n**頻率：** 10-55 Hz，1 Hz/min 速率，90-100 min/循環\n**方向：** 3 個互相垂直方向（若只有 2 個對稱軸則測試 2 個方向）\npost test: 測試後 6 小時檢查",
-    "evaluation_summary_zh": "應無爆炸現象、無起火、無排氣、無洩漏",
+    "evaluation_summary_zh": "無爆炸、起火、無排氣、無洩漏",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -5802,8 +5802,8 @@
     "evaluation_summary": "應無爆炸、無起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏、保護裝置完整性維持",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "height: 1 m (3.28 英尺)\ndrop count: 每個樣品 3 次\nsamples: 3 個樣品\nsurface: 混凝土表面",
-    "evaluation_summary_zh": "應無爆炸現象、無起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏、保護裝置完整性維持",
+    "conditions_summary_zh": "高度：1 m (3.28 英尺)\n跌落次數：每個樣品 3 次\nsamples: 3 個樣品\nsurface: 混凝土表面",
+    "evaluation_summary_zh": "無爆炸、起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏、保護裝置完整性維持",
     "normalized_item_id": "MECH-05"
   },
   {
@@ -5829,8 +5829,8 @@
     "evaluation_summary": "應無爆炸、無起火",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "apparatus: 15.8 ± 0.1 mm (5/8 英寸) 直徑棒橫置於電池中心\nweight: 9.10 ± 0.46 kg (20 ± 1 lb)\nheight: 610 ± 25 mm (24 ± 1 英寸)\norientation: 圓柱/方型：縱軸平行於平面且垂直於棒；\n方型需旋轉 90°測試寬窄兩面；\n鈕扣型：平面平行",
-    "evaluation_summary_zh": "應無爆炸現象、無起火",
+    "conditions_summary_zh": "設備：15.8 ± 0.1 mm (5/8 英寸) 直徑棒橫置於電池中心\nweight: 9.10 ± 0.46 kg (20 ± 1 lb)\n高度：610 ± 25 mm (24 ± 1 英寸)\n方向：圓柱/方型：縱軸平行於平面且垂直於棒；\n方型需旋轉 90°測試寬窄兩面；\n鈕扣型：平面平行",
+    "evaluation_summary_zh": "無爆炸、起火",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -5855,8 +5855,8 @@
     "evaluation_summary": "應無爆炸、無起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**作用力：** 250 ± 10 N (56 ± 2 lbf)\n**持續時間：** 5 秒\ntool: 直徑 30 mm (1.2 英寸) 圓形平面\nsurfaces: 頂部、底部、側面",
-    "evaluation_summary_zh": "應無爆炸現象、無起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏"
+    "conditions_summary_zh": "作用力： 250 ± 10 N (56 ± 2 lbf)\n持續時間： 5 秒\ntool: 直徑 30 mm (1.2 英寸) 圓形平面\nsurfaces: 頂部、底部、側面",
+    "evaluation_summary_zh": "無爆炸、起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏"
   },
   {
     "document_id": "UL-2054",
@@ -5880,7 +5880,7 @@
     "evaluation_summary": "外殼不應破裂、翹曲、熔化至電芯或保護裝置暴露",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**溫度：** 70°C (158°F) 或 T_max + 10°C（若 T_max > 60°C）\n**持續時間：** 7 小時（循環空氣烤箱）\npreparation: 完全放電或使用假電池防止過熱\npost test: 冷卻至室溫後檢查",
+    "conditions_summary_zh": "溫度： 70°C (158°F) 或 T_max + 10°C（若 T_max > 60°C）\n持續時間： 7 小時（循環空氣烤箱）\npreparation: 完全放電或使用假電池防止過熱\npost test: 冷卻至室溫後檢查",
     "evaluation_summary_zh": "外殼不應破裂、翹曲、熔化至電芯或保護裝置暴露"
   },
   {
@@ -5905,7 +5905,7 @@
     "evaluation_summary": "溫度敏感元件的溫度不應超過表 16.1 規定的限值",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "output test: 充滿電的電池組以恆定電阻負載放電，電流設為略低於放電保護電路工作限值\ninput test: 完全放電的電池組以 CCCV 方法充電，電流不超過 3×最大充電電流或充電保護限值\nstabilization: 連續 3 次讀數（間隔≥15 min）無進一步增加\nprotective devices: 測試期間保護裝置不應啟動",
+    "conditions_summary_zh": "output test: 充滿電的電池組以恆定電阻負載放電，電流設為略低於放電保護電路工作限值\ninput test: 完全放電的電池組以 CCCV 方法充電，電流≤ 3×最大充電電流或充電保護限值\n穩定時間：連續 3 次讀數（間隔≥15 min）無進一步增加\nprotective devices: 測試期間保護裝置不應啟動",
     "evaluation_summary_zh": "溫度敏感元件的溫度不應超過表 16.1 規定的限值"
   },
   {
@@ -5930,7 +5930,7 @@
     "evaluation_summary": "外部可接觸表面的溫度不應超過表 17.1 規定的限值",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "output test: 充滿電的電池組以恆定電阻負載放電\ninput test: 完全放電的電池組以 CCCV 方法充電\nstabilization: 連續 3 次讀數（間隔≥15 min）無進一步增加\nprotective devices: 測試期間保護裝置不應啟動",
+    "conditions_summary_zh": "output test: 充滿電的電池組以恆定電阻負載放電\ninput test: 完全放電的電池組以 CCCV 方法充電\n穩定時間：連續 3 次讀數（間隔≥15 min）無進一步增加\nprotective devices: 測試期間保護裝置不應啟動",
     "evaluation_summary_zh": "外部可接觸表面的溫度不應超過表 17.1 規定的限值"
   },
   {
@@ -5955,8 +5955,8 @@
     "evaluation_summary": "應無排氣、無爆炸、無起火、無化學洩漏；鋰電池溫度≤75°C；薄紙和粗棉布不應燒焦；放電電流不應超過最大連續放電電流",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\n**電阻：** 80 ± 20 mΩ\ntemperatures: 20 ± 5°C, 55 ± 5°C\n**持續時間：** 直到起火/爆炸、完全放電、或溫度恢復至環境±5°C",
-    "evaluation_summary_zh": "應無排氣、無爆炸、無起火、無化學洩漏；\n鋰電池溫度≤75°C；\n薄紙和粗棉布不應燒焦；\n放電電流不應超過最大連續放電電流",
+    "conditions_summary_zh": "**SOC：** 充滿電\n電阻： 80 ± 20 mΩ\ntemperatures: 20 ± 5°C, 55 ± 5°C\n持續時間： 直到起火/爆炸、完全放電、或溫度恢復至環境±5°C",
+    "evaluation_summary_zh": "無排氣、無爆炸、無起火、無化學洩漏；\n鋰電池溫度≤75°C；\n薄紙和粗棉布不應燒焦；\n放電電流不應超過最大連續放電電流",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -5981,8 +5981,8 @@
     "evaluation_summary": "應無排氣、無爆炸、無起火、無化學洩漏；鋰電池溫度≤90°C；電壓/電流不應超出運行區域限值",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 以 0.2C/1h 放電至終止電壓\n充電 **電流：** 3×電池最大電流（非行動電源最大電流）\n充電 **電壓：** 製造商規定的最大異常充電電壓\n**持續時間：** 達到充電結束條件後再加 7 h",
-    "evaluation_summary_zh": "應無排氣、無爆炸、無起火、無化學洩漏；\n鋰電池溫度≤90°C；\n電壓/電流不應超出運行區域限值",
+    "conditions_summary_zh": "**SOC：** 以 0.2C/1h 放電至終止電壓\n充電 電流： 3×電池最大電流（非行動電源最大電流）\n充電 **電壓：** 製造商規定的最大異常充電電壓\n持續時間： 達到充電結束條件後再加 7 h",
+    "evaluation_summary_zh": "無排氣、無爆炸、無起火、無化學洩漏；\n鋰電池溫度≤90°C；\n電壓/電流不應超出運行區域限值",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -6007,8 +6007,8 @@
     "evaluation_summary": "應無爆炸、無起火；鋰電池溫度≤90°C；電壓不應超出上限充電電壓",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "充電 **電流：** 10×C5 安培率\n**電壓：** 足以維持 10×C5 安培率的供電電壓\n**持續時間：** 直到爆炸、排氣、保護裝置啟動且溫度穩定\nfault condition: 電池保護電路中單一故障",
-    "evaluation_summary_zh": "應無爆炸現象、無起火；\n鋰電池溫度≤90°C；\n電壓不應超出上限充電電壓",
+    "conditions_summary_zh": "充電 電流： 10×C5 安培率\n**電壓：** 足以維持 10×C5 安培率的供電電壓\n持續時間： 直到爆炸、排氣、保護裝置啟動且溫度穩定\n故障條件：電池保護電路中單一故障",
+    "evaluation_summary_zh": "無爆炸、起火；\n鋰電池溫度≤90°C；\n電壓不應超出上限充電電壓",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -6033,8 +6033,8 @@
     "evaluation_summary": "應無爆炸、無起火",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "setup: 完全放電的電池與完全充電的同類型電池串聯\nseries cells: 串聯電池數量 = 電池組總電池數 - 1\nparallel strings: 串聯電池數量 = 電池組總電池數 - 放電並聯串電池數\n**電阻：** 80 ± 20 mΩ 銅線",
-    "evaluation_summary_zh": "應無爆炸現象、無起火",
+    "conditions_summary_zh": "設置：完全放電的電池與完全充電的同類型電池串聯\n串聯電池數：串聯電池數量 = 電池組總電池數 - 1\n並聯串數：串聯電池數量 = 電池組總電池數 - 放電並聯串電池數\n電阻： 80 ± 20 mΩ 銅線",
+    "evaluation_summary_zh": "無爆炸、起火",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -6059,7 +6059,7 @@
     "evaluation_summary": "輸入電流不應超過行動電源標稱輸入電流額定值的 110%",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "load: 最大正常負載（包括所有可能模式：電池不同 SOC 狀態、輸出端口空載/滿載、輔助功能如手電筒/揚聲器等）\nmeasurement: 測量輸入電流",
+    "conditions_summary_zh": "load: 最大正常負載（包括所有可能模式：電池不同 SOC 狀態、輸出端口空載/滿載、輔助功能如手電筒/揚聲器等）\n測量：測量輸入電流",
     "evaluation_summary_zh": "輸入電流不應超過行動電源標稱輸入電流額定值的 110%"
   },
   {
@@ -6084,8 +6084,8 @@
     "evaluation_summary": "應無排氣、無爆炸、無起火；粗棉布和薄紙應保持完好（無變色或輕微燒焦）；電池溫度不應超過製造商規定的最高溫度",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按製造商規格充滿電\nsetup: 覆蓋單層粗棉布，放置在覆蓋單層薄紙的軟木板上\nload: 每個輸出引腳負載至最大功率\n**持續時間：** 1 小時或電池組允許的最大運行時間（取較短者）",
-    "evaluation_summary_zh": "應無排氣、無爆炸、無起火；\n粗棉布和薄紙應保持完好（無變色或輕微燒焦）；\n電池溫度不應超過製造商規定的最高溫度"
+    "conditions_summary_zh": "**SOC：** 按製造商規格充滿電\n設置：覆蓋單層粗棉布，放置在覆蓋單層薄紙的軟木板上\nload: 每個輸出引腳負載至最大功率\n持續時間： 1 小時或電池組允許的最大運行時間（取較短者）",
+    "evaluation_summary_zh": "無排氣、無爆炸、無起火；\n粗棉布和薄紙應保持完好（無變色或輕微燒焦）；\n電池溫度不應超過製造商規定的最高溫度"
   },
   {
     "document_id": "UL-2056",
@@ -6109,8 +6109,8 @@
     "evaluation_summary": "電池應無排氣、無爆炸、無起火；粗棉布和薄紙應保持完好",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按製造商規格充滿電\nsetup: 覆蓋單層粗棉布，放置在覆蓋單層薄紙的軟木板上\nfault condition: 單一故障可能導致光伏電池可燃性問題（如電池反向饋電）\n**持續時間：** 1 小時",
-    "evaluation_summary_zh": "電池應無排氣、無爆炸、無起火；\n粗棉布和薄紙應保持完好",
+    "conditions_summary_zh": "**SOC：** 按製造商規格充滿電\n設置：覆蓋單層粗棉布，放置在覆蓋單層薄紙的軟木板上\n故障條件：單一故障可能導致光伏電池可燃性問題（如電池反向饋電）\n持續時間： 1 小時",
+    "evaluation_summary_zh": "電池無排氣、無爆炸、無起火；\n粗棉布和薄紙應保持完好",
     "normalized_item_id": "FIRE-03"
   },
   {
@@ -6160,8 +6160,8 @@
     "evaluation_summary": "應無排氣、無爆炸、無起火、無洩漏、保護裝置完整性維持、外殼不應破裂、蓋子不應分離",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\nheight: 1 m (3.28 英尺)\ndrop count: 每個樣品 3 次（獨特方向）\nsamples: 3 個樣品",
-    "evaluation_summary_zh": "應無排氣、無爆炸、無起火、無洩漏、保護裝置完整性維持、外殼不應破裂、蓋子不應分離",
+    "conditions_summary_zh": "**SOC：** 充滿電\n高度：1 m (3.28 英尺)\n跌落次數：每個樣品 3 次（獨特方向）\nsamples: 3 個樣品",
+    "evaluation_summary_zh": "無排氣、無爆炸、無起火、無洩漏、保護裝置完整性維持、外殼不應破裂、蓋子不應分離",
     "normalized_item_id": "MECH-05"
   },
   {
@@ -6186,8 +6186,8 @@
     "evaluation_summary": "應無爆炸、無起火、外殼不應破裂至電芯或保護裝置暴露、外殼不應分離、無排氣、無洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\n**作用力：** 250 ± 10 N (56 ± 2 lbf)\nrate: 10 ± 2.5 N/s 速率施加\n**持續時間：** 保持 30 秒",
-    "evaluation_summary_zh": "應無爆炸現象、無起火、外殼不應破裂至電芯或保護裝置暴露、外殼不應分離、無排氣、無洩漏"
+    "conditions_summary_zh": "**SOC：** 充滿電\n作用力： 250 ± 10 N (56 ± 2 lbf)\nrate: 10 ± 2.5 N/s 速率施加\n持續時間： 保持 30 秒",
+    "evaluation_summary_zh": "無爆炸、起火、外殼不應破裂至電芯或保護裝置暴露、外殼不應分離、無排氣、無洩漏"
   },
   {
     "document_id": "UL-2056",
@@ -6211,7 +6211,7 @@
     "evaluation_summary": "外殼不應破裂、翹曲、熔化至電芯或保護裝置暴露",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "samples: 3 個樣品\n**溫度：** 70 ± 1°C (158 ± 2°F) 或 T_max + 10°C（若 T_max > 60°C）\n**持續時間：** 7 小時（循環空氣烤箱）\npreparation: 完全放電或使用假電池防止過熱",
+    "conditions_summary_zh": "samples: 3 個樣品\n溫度： 70 ± 1°C (158 ± 2°F) 或 T_max + 10°C（若 T_max > 60°C）\n持續時間： 7 小時（循環空氣烤箱）\npreparation: 完全放電或使用假電池防止過熱",
     "evaluation_summary_zh": "外殼不應破裂、翹曲、熔化至電芯或保護裝置暴露"
   },
   {
@@ -6236,8 +6236,8 @@
     "evaluation_summary": "應無爆炸、無起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\nsamples: 2 個樣品（第二個旋轉 180°）\nsetup: 行動電源放置在兩端 3.175 mm (1/8 英寸) 金屬棒上，中心放置 12.7 mm (1/2 英寸) 金屬棒\n**作用力：** 250 ± 10 N (56 ± 2 lbf)",
-    "evaluation_summary_zh": "應無爆炸現象、無起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏"
+    "conditions_summary_zh": "**SOC：** 充滿電\nsamples: 2 個樣品（第二個旋轉 180°）\n設置：行動電源放置在兩端 3.175 mm (1/8 英寸) 金屬棒上，中心放置 12.7 mm (1/2 英寸) 金屬棒\n作用力： 250 ± 10 N (56 ± 2 lbf)",
+    "evaluation_summary_zh": "無爆炸、起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏"
   },
   {
     "document_id": "UL-2056",
@@ -6261,8 +6261,8 @@
     "evaluation_summary": "標稱電容量應符合 IEC 標準規定",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test standard: 鋰電池：IEC 61960-3 Clause 7.3.1；\n鎳電池：IEC 61951-2 Clause 7.3.2.3\n放電 **電流：** 輸出端口額定電流\ntermination: 放電至輸出端口終止電壓",
-    "evaluation_summary_zh": "標稱電容量應符合 IEC 標準規定"
+    "conditions_summary_zh": "test standard: 鋰電池：IEC 61960-3 Clause 7.3.1；\n鎳電池：IEC 61951-2 Clause 7.3.2.3\n放電電流： 輸出端口額定電流\ntermination: 放電至輸出端口終止電壓",
+    "evaluation_summary_zh": "標稱電容量符合 IEC 標準規定"
   },
   {
     "document_id": "UL-2056",
@@ -6286,7 +6286,7 @@
     "evaluation_summary": "溫度敏感元件的溫度不應超過表 16.1/16.2 規定的限值；電池電壓不應低於終止電壓（放電）或高於上限充電電壓（充電）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "output test: 充滿電的行動電源以輸出端口最大額定電流恆定電阻負載放電\ninput test: 完全放電的行動電源以製造商規定的最大電流充電\nstabilization: 連續 3 次讀數（間隔≥15 min）無進一步增加\nprotective devices: 測試期間保護裝置不應啟動",
+    "conditions_summary_zh": "output test: 充滿電的行動電源以輸出端口最大額定電流恆定電阻負載放電\ninput test: 完全放電的行動電源以製造商規定的最大電流充電\n穩定時間：連續 3 次讀數（間隔≥15 min）無進一步增加\nprotective devices: 測試期間保護裝置不應啟動",
     "evaluation_summary_zh": "溫度敏感元件的溫度不應超過表 16.1/16.2 規定的限值；\n電池電壓不應低於終止電壓（放電）或高於上限充電電壓（充電）"
   },
   {
@@ -6311,8 +6311,8 @@
     "evaluation_summary": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n**電阻：** ≤ 20 mΩ（或按標準規定）\n**溫度：** 室溫環境\nfault condition: 放電保護電路單一元件故障",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無排氣、無洩漏、無破裂；\n保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n電阻： ≤ 20 mΩ（或按標準）\n溫度： 室溫環境\n故障條件：放電保護電路單一元件故障",
+    "evaluation_summary_zh": "無起火、爆炸、無排氣、無洩漏、無破裂；\n保護正常",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -6337,8 +6337,8 @@
     "evaluation_summary": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常；電壓不超出正常運行範圍",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\n充電 **電流：** 製造商規定的最大充電電流\nfault condition: 充電電路單一故障\ntermination criteria: 保護電路終止充電, 達到正常運行限值, 發生起火/爆炸",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無排氣、無洩漏、無破裂；\n保護控制正常；\n電壓不超出正常運行範圍",
+    "conditions_summary_zh": "**SOC：** 充滿電\n充電 電流： 製造商規定的最大充電電流\n故障條件：充電電路單一故障\n終止條件：保護電路終止充電, 達到正常運行限值, 發生起火/爆炸",
+    "evaluation_summary_zh": "無起火、爆炸、無排氣、無洩漏、無破裂；\n保護正常；\n電壓不超出正常運行範圍",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -6363,8 +6363,8 @@
     "evaluation_summary": "保護裝置應啟動防止電池過放電；應無起火、無爆炸、無排氣、無洩漏、無破裂；電壓不超出正常放電範圍",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n放電 **電流：** 製造商規定的最大放電電流\nfault condition: 放電電路單一故障（可能導致過放電）\ntermination criteria: 被動保護裝置啟動, 電壓接近 0 V, 發生起火/爆炸",
-    "evaluation_summary_zh": "保護裝置應啟動防止電池過放電；\n應無起火現象、無爆炸、無排氣、無洩漏、無破裂；\n電壓不超出正常放電範圍",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n放電電流： 製造商規定的最大放電電流\n故障條件：放電電路單一故障（可能導致過放電）\n終止條件：被動保護裝置啟動, 電壓接近 0 V, 發生起火/爆炸",
+    "evaluation_summary_zh": "保護啟動防止電池過放電；\n無起火、爆炸、無排氣、無洩漏、無破裂；\n電壓不超出正常放電範圍",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -6389,8 +6389,8 @@
     "evaluation_summary": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常；電池最大電壓限值不得超出",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 除一個電池/電池組外全部放電至完全放電狀態，未放電電池放電至約 50% SOC（創建不平衡狀態）\n充電: 按製造商規格充電\nmonitoring: 監測部分充電電池的電壓是否超出限值",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無排氣、無洩漏、無破裂；\n保護控制正常；\n電池最大電壓限值不得超出"
+    "conditions_summary_zh": "**SOC：** 除一個電池/電池組外全部放電至完全放電狀態，未放電電池放電至約 50% SOC（創建不平衡狀態）\n充電: 按製造商規格充電\n監測：監測部分充電電池的電壓是否超出限值",
+    "evaluation_summary_zh": "無起火、爆炸、無排氣、無洩漏、無破裂；\n保護正常；\n電池最大電壓限值不得超出"
   },
   {
     "document_id": "UL-2271",
@@ -6414,7 +6414,7 @@
     "evaluation_summary": "應無介電擊穿（絕緣擊穿導致短路/飛弧）；電暈放電或單次瞬時放電不視為介電擊穿",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test voltage dc: 2 × 額定電壓 × 1.414（DC）\ntest voltage ac: 2 × 額定電壓（60 Hz 正弦波 AC，可選）\nmains connected: 1000 V + 2×額定電壓（AC）\n**持續時間：** 至少 1 分鐘（電池/模組斷開）",
+    "conditions_summary_zh": "test voltage dc: 2 × 額定電壓 × 1.414（DC）\ntest voltage ac: 2 × 額定電壓（60 Hz 正弦波 AC，可選）\nmains connected: 1000 V + 2×額定電壓（AC）\n持續時間： ≥ 1 分鐘（電池/模組斷開）",
     "evaluation_summary_zh": "應無介電擊穿（絕緣擊穿導致短路/飛弧）；\n電暈放電或單次瞬時放電不視為介電擊穿"
   },
   {
@@ -6439,7 +6439,7 @@
     "evaluation_summary": "絕緣電阻/最大工作電壓 ≥ 100 Ω/V（DC）或 500 Ω/V（AC）；<120 V 系統絕緣電阻 ≥ 50,000 Ω",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test method 120V plus: ISO 6469-1 Clause 6.1.3（系統≥120 V）\ntest method below 120V: 500 Vdc 施加 60 秒，測量絕緣電阻（系統<120 V）\nconditioning: （a）接收狀態（無濕度調節）, （b）IEC 60068-2-30 調節：55 ± 2°C，6 次循環（僅≥120 V 系統）\n**SOC（充電狀態）：** 充滿電狀態",
+    "conditions_summary_zh": "test method 120V plus: ISO 6469-1 Clause 6.1.3（系統≥120 V）\ntest method below 120V: 500 Vdc 施加 60 秒，測量絕緣電阻（系統<120 V）\nconditioning: （a）接收狀態（無濕度調節）, （b）IEC 60068-2-30 調節：55 ± 2°C，6 次循環（僅≥120 V 系統）\n**SOC：** 充滿電狀態",
     "evaluation_summary_zh": "絕緣電阻/最大工作電壓 ≥ 100 Ω/V（DC）或 500 Ω/V（AC）；\n<120 V 系統絕緣電阻 ≥ 50,000 Ω"
   },
   {
@@ -6464,8 +6464,8 @@
     "evaluation_summary": "保護接地系統電阻不超過 0.1 Ω",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test **電流：** 150% 最大充電電流或 25 A（取較大者）\n**持續時間：** 5 秒\nvoltage limit: 無負載電壓不超過 60 Vdc\nmeasurement: 測量任意兩個外露導電部件之間的電壓降",
-    "evaluation_summary_zh": "保護接地系統電阻不超過 0.1 Ω"
+    "conditions_summary_zh": "test 電流： 150% 最大充電電流或 25 A（取較大者）\n持續時間： 5 秒\nvoltage limit: 無負載電壓≤ 60 Vdc\n測量：測量任意兩個外露導電部件之間的電壓降",
+    "evaluation_summary_zh": "保護接地系統電阻≤ 0.1 Ω"
   },
   {
     "document_id": "UL-2271",
@@ -6489,8 +6489,8 @@
     "evaluation_summary": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常；電壓不超出正常運行範圍",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 放電至 EODV\n充電 rate: 高於規定的最大充電速率（按製造商規格或單一故障條件）\nfault condition: 充電電路單一故障\ntermination criteria: 保護電路終止充電, 達到正常運行限值, 發生起火/爆炸",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無排氣、無洩漏、無破裂；\n保護控制正常；\n電壓不超出正常運行範圍"
+    "conditions_summary_zh": "**SOC：** 放電至 EODV\n充電 rate: 高於規定的最大充電速率（按製造商規格或單一故障條件）\n故障條件：充電電路單一故障\n終止條件：保護電路終止充電, 達到正常運行限值, 發生起火/爆炸",
+    "evaluation_summary_zh": "無起火、爆炸、無排氣、無洩漏、無破裂；\n保護正常；\n電壓不超出正常運行範圍"
   },
   {
     "document_id": "UL-2271",
@@ -6514,8 +6514,8 @@
     "evaluation_summary": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常；電壓不超出正常運行範圍",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n放電 rate: 高於正常放電速率（按製造商規格或單一故障條件）\nfault condition: 放電電路單一故障（可能導致過載）\ntermination criteria: 保護電路終止放電, 達到正常運行限值, 發生起火/爆炸",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無排氣、無洩漏、無破裂；\n保護控制正常；\n電壓不超出正常運行範圍",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n放電 rate: 高於正常放電速率（按製造商規格或單一故障條件）\n故障條件：放電電路單一故障（可能導致過載）\n終止條件：保護電路終止放電, 達到正常運行限值, 發生起火/爆炸",
+    "evaluation_summary_zh": "無起火、爆炸、無排氣、無洩漏、無破裂；\n保護正常；\n電壓不超出正常運行範圍",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -6540,8 +6540,8 @@
     "evaluation_summary": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\ntest standard: SAE J2464 熱衝擊測試\ntemperature range: 85 ± 2°C 至 -40 ± 2°C\nrest period: 測試後恢復至室溫，進行充放電循環和觀察",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無排氣、無洩漏、無破裂；\n保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\ntest standard: SAE J2464 熱衝擊測試\ntemperature range: 85 ± 2°C 至 -40 ± 2°C\n試驗後觀察測試後恢復至室溫，進行充放電循環和觀察",
+    "evaluation_summary_zh": "無起火、爆炸、無排氣、無洩漏、無破裂；\n保護正常",
     "normalized_item_id": "THERM-04"
   },
   {
@@ -6566,8 +6566,8 @@
     "evaluation_summary": "應無起火、無爆炸、無破裂、無電擊危險",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\nwater type: 鹽水（5% NaCl）\n**溫度：** 室溫\n**持續時間：** 至少 2 小時或直到可見反應停止",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無破裂、無電擊危險",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\nwater type: 鹽水（5% NaCl）\n溫度： 室溫\n持續時間： ≥ 2 小時或直到可見反應停止",
+    "evaluation_summary_zh": "無起火、爆炸、無破裂、無電擊危險",
     "normalized_item_id": "ENV-03"
   },
   {
@@ -6592,8 +6592,8 @@
     "evaluation_summary": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\ntest standard: IEC 60529 IPX3（或更高 IP 等級按製造商規定）\nmonitoring: 監測電壓、溫度",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無排氣、無洩漏、無破裂；\n保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\ntest standard: IEC 60529 IPX3（或更高 IP 等級按製造商規定）\n監測：監測電壓、溫度",
+    "evaluation_summary_zh": "無起火、爆炸、無排氣、無洩漏、無破裂；\n保護正常",
     "normalized_item_id": "ENV-03"
   },
   {
@@ -6618,7 +6618,7 @@
     "evaluation_summary": "單電池失效不應導致火災傳播至 DUT 外部或爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test reference: UL/ULC 2580 單電池失效設計容差測試\ntrigger method: 觸發單電池失效\nmonitoring: 監測火災傳播、爆炸",
+    "conditions_summary_zh": "test 參考：UL/ULC 2580 單電池失效設計容差測試\n觸發方法：觸發單電池失效\n監測：監測火災傳播、爆炸",
     "evaluation_summary_zh": "單電池失效不應導致火災傳播至 DUT 外部或爆炸"
   },
   {
@@ -6668,8 +6668,8 @@
     "evaluation_summary": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\nwaveform: 半正弦波\nacceleration by weight: weight: ≤12 kg; **加速度：** 50 gn; **持續時間：** 11 ms, weight: >12-100 kg; **加速度：** 25 gn; **持續時間：** 15 ms, weight: >100 kg; **加速度：** 10 gn; **持續時間：** 20 ms\n**方向：** 稜柱形 6 方向，圓柱形 3 方向",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無排氣、無洩漏、無破裂；\n保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n波形：半正弦波\nacceleration by weight: weight: ≤12 kg; **加速度：** 50 gn; 持續時間： 11 ms, weight: >12-100 kg; **加速度：** 25 gn; 持續時間： 15 ms, weight: >100 kg; **加速度：** 10 gn; 持續時間： 20 ms\n**方向：** 稜柱形 6 方向，圓柱形 3 方向",
+    "evaluation_summary_zh": "無起火、爆炸、無排氣、無洩漏、無破裂；\n保護正常",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -6694,8 +6694,8 @@
     "evaluation_summary": "應無起火、無爆炸、無洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\napparatus: 帶肋條的擠壓板（半圓柱體半徑 75 mm，間距 30 mm）\ndeformation: 50% 變形或 1000×DUT 重量或 100 kN（取較早者）\n**方向：** 3 個互相垂直方向",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無洩漏",
+    "conditions_summary_zh": "**SOC：** 充滿電\n設備：帶肋條的擠壓板（半圓柱體半徑 75 mm，間距 30 mm）\ndeformation: 50% 變形或 1000×DUT 重量或 100 kN（取較早者）\n**方向：** 3 個互相垂直方向",
+    "evaluation_summary_zh": "無起火、爆炸、無洩漏",
     "normalized_item_id": "MECH-02"
   },
   {
@@ -6720,8 +6720,8 @@
     "evaluation_summary": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\ntest standard: ISO 6469-1 或製造商規定的測試輪廓\naxes: X、Y、Z 三方向各 12 小時\nvibration type: 隨機振動（5-200 Hz，PSD 按表 33.1）",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無排氣、無洩漏、無破裂；\n保護控制正常",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\ntest standard: ISO 6469-1 或製造商規定的測試輪廓\naxes: X、Y、Z 三方向各 12 小時\nvibration type: 隨機振動（5-200 Hz，PSD 按表 33.1）",
+    "evaluation_summary_zh": "無起火、爆炸、無排氣、無洩漏、無破裂；\n保護正常",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -6746,8 +6746,8 @@
     "evaluation_summary": "應無起火、無爆炸、無洩漏、無破裂；保護控制正常；外殼無損壞導致危險部件可接觸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\nheight: 1.0 ± 0.01 m\ndrop count: 3 次\nsurface: 平坦混凝土表面（至少 76 mm 厚）",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無洩漏、無破裂；\n保護控制正常；\n外殼無損壞導致危險部件可接觸",
+    "conditions_summary_zh": "**SOC：** 充滿電\n高度：1.0 ± 0.01 m\n跌落次數：3 次\nsurface: 平坦混凝土表面（≥ 76 mm 厚）",
+    "evaluation_summary_zh": "無起火、爆炸、無洩漏、無破裂；\n保護正常；\n外殼無損壞導致危險部件可接觸",
     "normalized_item_id": "MECH-05"
   },
   {
@@ -6772,8 +6772,8 @@
     "evaluation_summary": "應無起火、無爆炸、無洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\nheight: ≥1.0 m\ndrop count: 至少 1 次（若一次是平面跌落，則至少另一次非平面跌落）\nsurface: 平坦混凝土表面（至少 76 mm 厚）",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無洩漏",
+    "conditions_summary_zh": "**SOC：** 充滿電\n高度：≥1.0 m\n跌落次數：≥ 1 次（若一次是平面跌落，則≥另一次非平面跌落）\nsurface: 平坦混凝土表面（≥ 76 mm 厚）",
+    "evaluation_summary_zh": "無起火、爆炸、無洩漏",
     "normalized_item_id": "MECH-05"
   },
   {
@@ -6798,7 +6798,7 @@
     "evaluation_summary": "應無絕緣擊穿；外殼無損壞導致危險部件可接觸（使用關節測試指和測試針檢查）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 完全放電（防止過熱）\n**溫度：** 70°C 或 T_max + 10°C（若 T_max > 60°C）\n**持續時間：** 7 小時（循環空氣烤箱）\npost test: 冷卻至室溫後檢查，進行介電耐壓或絕緣電阻測試",
+    "conditions_summary_zh": "**SOC：** 完全放電（防止過熱）\n溫度： 70°C 或 T_max + 10°C（若 T_max > 60°C）\n持續時間： 7 小時（循環空氣烤箱）\npost test: 冷卻至室溫後檢查，進行介電耐壓或絕緣電阻測試",
     "evaluation_summary_zh": "應無絕緣擊穿；\n外殼無損壞導致危險部件可接觸（使用關節測試指和測試針檢查）"
   },
   {
@@ -6823,8 +6823,8 @@
     "evaluation_summary": "把手、固定裝置或 DUT 連接部位應無破裂",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**作用力：** 4 倍 DUT 重量（若多把手則按重量分配）\napplication: 均勻施加於把手中心 75 mm 長度上\nramp: 5-10 秒內從 0 增加至目標力\nhold: 保持 1 分鐘",
-    "evaluation_summary_zh": "把手、固定裝置或 DUT 連接部位應無破裂現象"
+    "conditions_summary_zh": "作用力： 4 倍 DUT 重量（若多把手則按重量分配）\napplication: 均勻施加於把手中心 75 mm 長度上\nramp: 5-10 秒內從 0 增加至目標力\nhold: 保持 1 分鐘",
+    "evaluation_summary_zh": "把手、固定裝置或 DUT 連接部位無破裂現象"
   },
   {
     "document_id": "UL-2271",
@@ -6848,8 +6848,8 @@
     "evaluation_summary": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\nrotation rate: 90°/15 秒\n**方向：** 3 個互相垂直方向各 360°旋轉（圓柱型設計 2 個方向）\nrest period: 測試後靜置觀察",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無排氣、無洩漏、無破裂；\n保護控制正常"
+    "conditions_summary_zh": "**SOC：** 充滿電\nrotation rate: 90°/15 秒\n**方向：** 3 個互相垂直方向各 360°旋轉（圓柱型設計 2 個方向）\n試驗後觀察",
+    "evaluation_summary_zh": "無起火、爆炸、無排氣、無洩漏、無破裂；\n保護正常"
   },
   {
     "document_id": "UL-2271",
@@ -6874,7 +6874,7 @@
     "comparison_ready": true,
     "normativity": "normative",
     "conditions_summary_zh": "pull test: 2 倍 DUT 重量（最大 156 N）施加 1 分鐘\npush back test: 電線推回 25.4 mm 增量，直到彎曲或力超過 26.7 N\npost mold stress: 若把手安裝在聚合物外殼上，需在模應力測試後進行",
-    "evaluation_summary_zh": "電線或導體應無損壞；\n內部連接器應無位移；\n導體伸長不超過 2 mm"
+    "evaluation_summary_zh": "電線或導體應無損壞；\n內部連接器應無位移；\n導體伸長≤ 2 mm"
   },
   {
     "document_id": "UL-2271",
@@ -6898,7 +6898,7 @@
     "evaluation_summary": "製造商規定的限值（電壓、電流、溫度）不得超出；熱保護和過流保護裝置不應啟動；表面溫度符合表 28.2 限值",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 放電至 EODV 後充電至充滿\nambient **溫度：** 上限充電溫度\n**循環次數：** 至少 2 次完整充放電循環，直到連續循環電池溫度不超過 2°C 增加\nmonitoring: 監測電池/模組電壓/電流/溫度，用戶可接觸表面溫度",
+    "conditions_summary_zh": "**SOC：** 放電至 EODV 後充電至充滿\nambient 溫度： 上限充電溫度\n**循環次數：** ≥ 2 次完整充放電循環，直到連續循環電池溫度≤ 2°C 增加\n監測：監測電池/模組電壓/電流/溫度，用戶可接觸表面溫度",
     "evaluation_summary_zh": "製造商規定的限值（電壓、電流、溫度）不得超出；\n熱保護和過流保護裝置不應啟動；\n表面溫度符合表 28.2 限值",
     "normalized_item_id": "ENV-01"
   },
@@ -6924,8 +6924,8 @@
     "evaluation_summary": "應無起火、無爆炸、無電擊危險",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: 32.2 元件故障（單一故障）, 32.3 繼電器和線圈燒毀, 32.4 風扇斷開/通風口阻塞, 32.5 內部電池反向極性, 32.6 過充電, 32.7 短路（≤20 mΩ）, 32.8 不平衡充電, 32.9 衝擊測試, 32.10 熱循環\nmonitoring: 監測溫度、電壓、電流、火災、爆炸",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無電擊危險"
+    "conditions_summary_zh": "測試包含：32.2 元件故障（單一故障）, 32.3 繼電器和線圈燒毀, 32.4 風扇斷開/通風口阻塞, 32.5 內部電池反向極性, 32.6 過充電, 32.7 短路（≤20 mΩ）, 32.8 不平衡充電, 32.9 衝擊測試, 32.10 熱循環\n監測：監測溫度、電壓、電流、火災、爆炸",
+    "evaluation_summary_zh": "無起火、爆炸、無電擊危險"
   },
   {
     "document_id": "UL-3030",
@@ -6949,7 +6949,7 @@
     "evaluation_summary": "輸入電壓/頻率應在規定範圍內",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "voltage range: 按製造商規定的電壓範圍\n**頻率：** 按製造商規定的頻率\nmonitoring: 監測電壓、電流、功率",
+    "conditions_summary_zh": "voltage range: 按製造商規定的電壓範圍\n**頻率：** 按製造商規定的頻率\n監測：監測電壓、電流、功率",
     "evaluation_summary_zh": "輸入電壓/頻率應在規定範圍內"
   },
   {
@@ -6974,7 +6974,7 @@
     "evaluation_summary": "應無介電擊穿（絕緣擊穿導致短路/飛弧）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test voltage dc: 2 × 額定電壓 × 1.414（DC）\ntest voltage ac: 2 × 額定電壓（60 Hz 正弦波 AC，可選）\n**持續時間：** 至少 1 分鐘\napplication: 危險電壓電路與非載流可接觸導電部件之間",
+    "conditions_summary_zh": "test voltage dc: 2 × 額定電壓 × 1.414（DC）\ntest voltage ac: 2 × 額定電壓（60 Hz 正弦波 AC，可選）\n持續時間： ≥ 1 分鐘\napplication: 危險電壓電路與非載流可接觸導電部件之間",
     "evaluation_summary_zh": "應無介電擊穿（絕緣擊穿導致短路/飛弧）"
   },
   {
@@ -6999,7 +6999,7 @@
     "evaluation_summary": "絕緣電阻 ≥ 50,000 Ω",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test **電壓：** 500 Vdc\n**持續時間：** 60 秒\nmeasurement: 測量危險電壓電路與可接觸導電部件之間的絕緣電阻",
+    "conditions_summary_zh": "test **電壓：** 500 Vdc\n持續時間： 60 秒\n測量：測量危險電壓電路與可接觸導電部件之間的絕緣電阻",
     "evaluation_summary_zh": "絕緣電阻 ≥ 50,000 Ω"
   },
   {
@@ -7049,8 +7049,8 @@
     "evaluation_summary": "應無起火、無爆炸；功能正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\ntest standard: IEC 60529 IPX4（或更高 IP 等級按製造商規定）\npost test: 充放電循環和觀察",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n功能正常",
+    "conditions_summary_zh": "**SOC：** 充滿電\ntest standard: IEC 60529 IPX4（或更高 IP 等級按製造商規定）\npost test: 充放電循環和觀察",
+    "evaluation_summary_zh": "無起火、爆炸；\n功能正常",
     "normalized_item_id": "ENV-03"
   },
   {
@@ -7075,8 +7075,8 @@
     "evaluation_summary": "應無起火、無爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "depth: 76 mm (3 英寸) 水覆蓋 UAS 最高點\n**持續時間：** 5 分鐘\npost test: 充放電循環和觀察（若可運行）或連接充電器確認無危險（若不可運行）",
-    "evaluation_summary_zh": "應無起火現象、無爆炸",
+    "conditions_summary_zh": "深度：76 mm (3 英寸) 水覆蓋 UAS 最高點\n持續時間： 5 分鐘\npost test: 充放電循環和觀察（若可運行）或連接充電器確認無危險（若不可運行）",
+    "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "ENV-03"
   },
   {
@@ -7127,7 +7127,7 @@
     "comparison_ready": true,
     "normativity": "normative",
     "conditions_summary_zh": "materials: 氯丁橡膠/橡膠化合物, 聚氯乙烯材料, 發泡氯丁橡膠/發泡橡膠\naging conditions: 按表 37.2（溫度升高 35-80°C，70-240 小時）\nmeasurements: 拉伸強度, 伸長率, 密封性能",
-    "evaluation_summary_zh": "物理性能應符合表 37.1；\n密封性能應維持"
+    "evaluation_summary_zh": "物理性能符合表 37.1；\n密封性能應維持"
   },
   {
     "document_id": "UL-3030",
@@ -7151,8 +7151,8 @@
     "evaluation_summary": "應無起火、無爆炸、無洩漏；功能正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test standard: IEC 60068-2-64（隨機振動）\naxes: Z（垂直）、X（縱向）、Y（橫向）\n**持續時間：** 每軸 21 小時（共 63 小時）\nfrequency range: 5-200 Hz",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無洩漏；\n功能正常",
+    "conditions_summary_zh": "test standard: IEC 60068-2-64（隨機振動）\naxes: Z（垂直）、X（縱向）、Y（橫向）\n持續時間： 每軸 21 小時（共 63 小時）\n頻率範圍：5-200 Hz",
+    "evaluation_summary_zh": "無起火、爆炸、無洩漏；\n功能正常",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -7177,7 +7177,7 @@
     "evaluation_summary": "應無火焰、無熔融金屬、無部件鬆動；功能正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "frequency range: 10-55 Hz 再回到 10 Hz\nsweep time: 2 分鐘/循環\n**振幅：** 1.0 +0.1/-0 mm (0.040 +0.004/-0 inch) p-p\n**持續時間：** 1 小時",
+    "conditions_summary_zh": "頻率範圍：10-55 Hz 再回到 10 Hz\nsweep time: 2 分鐘/循環\n**振幅：** 1.0 +0.1/-0 mm (0.040 +0.004/-0 inch) p-p\n持續時間： 1 小時",
     "evaluation_summary_zh": "應無火焰、無熔融金屬、無部件鬆動；\n功能正常",
     "normalized_item_id": "MECH-04"
   },
@@ -7203,7 +7203,7 @@
     "evaluation_summary": "外殼應無損壞導致危險部件可接觸（使用 2.5 mm 直徑測試桿檢查）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "samples: 2 個樣品（1 個常溫，1 個低溫調節 4 小時）\n**衝擊能量：** 6.78 N-m (5 ft-lb)\napparatus: 直徑 50.8 mm (2 英寸)、重 0.535 kg (1.18 lb) 鋼球\nheight: 1.30 m (51 英寸)",
+    "conditions_summary_zh": "samples: 2 個樣品（1 個常溫，1 個低溫調節 4 小時）\n**衝擊能量：** 6.78 N-m (5 ft-lb)\n設備：直徑 50.8 mm (2 英寸)、重 0.535 kg (1.18 lb) 鋼球\n高度：1.30 m (51 英寸)",
     "evaluation_summary_zh": "外殼應無損壞導致危險部件可接觸（使用 2.5 mm 直徑測試桿檢查）"
   },
   {
@@ -7228,7 +7228,7 @@
     "evaluation_summary": "外殼應無損壞導致危險部件可接觸（使用 2.5 mm 直徑測試桿檢查）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電\nheight: 1.0 ± 0.01 m (40 ± 0.4 英寸)\ndrop count: 3 次\nsurface: 混凝土表面（至少 76 mm 厚）",
+    "conditions_summary_zh": "**SOC：** 充滿電\n高度：1.0 ± 0.01 m (40 ± 0.4 英寸)\n跌落次數：3 次\nsurface: 混凝土表面（≥ 76 mm 厚）",
     "evaluation_summary_zh": "外殼應無損壞導致危險部件可接觸（使用 2.5 mm 直徑測試桿檢查）"
   },
   {
@@ -7253,7 +7253,7 @@
     "evaluation_summary": "外殼應無損壞導致危險部件可接觸；無絕緣擊穿",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 完全放電（防止過熱）\n**溫度：** T_max + 10°C 或 80°C（取較高者）\n**持續時間：** 7 小時（循環空氣烤箱）\npost test: 冷卻至室溫後檢查，進行介電耐壓或絕緣電阻測試",
+    "conditions_summary_zh": "**SOC：** 完全放電（防止過熱）\n溫度： T_max + 10°C 或 80°C（取較高者）\n持續時間： 7 小時（循環空氣烤箱）\npost test: 冷卻至室溫後檢查，進行介電耐壓或絕緣電阻測試",
     "evaluation_summary_zh": "外殼應無損壞導致危險部件可接觸；\n無絕緣擊穿"
   },
   {
@@ -7278,7 +7278,7 @@
     "evaluation_summary": "薄紙和粗棉布應無點燃",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "setup: 馬達放置在覆蓋單層薄紙的木質表面上，馬達上覆蓋單層粗棉布\nprocedure: 在最大正常負載下運行，逐步增加負載直到過載保護裝置啟動或馬達繞組開路\nmonitoring: 監測馬達表面溫度",
+    "conditions_summary_zh": "設置：馬達放置在覆蓋單層薄紙的木質表面上，馬達上覆蓋單層粗棉布\nprocedure: 在最大正常負載下運行，逐步增加負載直到過載保護裝置啟動或馬達繞組開路\n監測：監測馬達表面溫度",
     "evaluation_summary_zh": "薄紙和粗棉布應無點燃"
   },
   {
@@ -7353,7 +7353,7 @@
     "evaluation_summary": "溫度不應超過元件和材料的額定溫度",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "充電: 按製造商規定的充電程序充電\nflying: 按製造商規定的飛行程序運行\nmonitoring: 監測電池/模組、馬達、電子元件的溫度",
+    "conditions_summary_zh": "充電: 按製造商規定的充電程序充電\nflying: 按製造商規定的飛行程序運行\n監測：監測電池/模組、馬達、電子元件的溫度",
     "evaluation_summary_zh": "溫度不應超過元件和材料的額定溫度",
     "normalized_item_id": "ENV-01"
   },
@@ -7379,7 +7379,7 @@
     "evaluation_summary": "應無介電擊穿（絕緣擊穿導致短路/飛弧）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test **電壓：** 按標準規定（通常為 2×額定電壓或更高）\n**持續時間：** 至少 1 分鐘（生產測試可減至 1 秒）\napplication: 危險電壓電路與非載流導電部件之間",
+    "conditions_summary_zh": "test **電壓：** 按標準（通常為 2×額定電壓或更高）\n持續時間： ≥ 1 分鐘（生產測試可減至 1 秒）\napplication: 危險電壓電路與非載流導電部件之間",
     "evaluation_summary_zh": "應無介電擊穿（絕緣擊穿導致短路/飛弧）"
   },
   {
@@ -7404,8 +7404,8 @@
     "evaluation_summary": "絕緣電阻應符合規定限值",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test **電壓：** 按標準規定（DC 電壓）\nmeasurement: 測量危險電壓電路與可接觸導電部件之間的絕緣電阻",
-    "evaluation_summary_zh": "絕緣電阻應符合規定限值"
+    "conditions_summary_zh": "test **電壓：** 按標準（DC 電壓）\n測量：測量危險電壓電路與可接觸導電部件之間的絕緣電阻",
+    "evaluation_summary_zh": "絕緣電阻符合規定限值"
   },
   {
     "document_id": "UL-9540",
@@ -7429,8 +7429,8 @@
     "evaluation_summary": "接地和接合系統電阻不超過 0.1 Ω",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test **電流：** 按標準規定\nmeasurement: 測量接地和接合系統任意兩點之間的電阻",
-    "evaluation_summary_zh": "接地和接合系統電阻不超過 0.1 Ω"
+    "conditions_summary_zh": "test 電流： 按標準\n測量：測量接地和接合系統任意兩點之間的電阻",
+    "evaluation_summary_zh": "接地和接合系統電阻≤ 0.1 Ω"
   },
   {
     "document_id": "UL-9540",
@@ -7454,7 +7454,7 @@
     "evaluation_summary": "系統應無損壞；功能應正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "im**脈衝類型：** 按標準規定（模擬浪湧）\ncount: 按標準規定\nmonitoring: 監測系統功能",
+    "conditions_summary_zh": "im**脈衝類型：** 按標準（模擬浪湧）\ncount: 按標準\n監測：監測系統功能",
     "evaluation_summary_zh": "系統應無損壞；\n功能應正常"
   },
   {
@@ -7479,8 +7479,8 @@
     "evaluation_summary": "應無起火、無爆炸；保護功能應正常運作；軟體更新後安全功能應維持",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: 36.2 靜電放電（ESD）, 36.3 射頻電磁場, 36.4 快速瞬變/脈衝群, 36.5 浪湧, 36.6 射頻共模, 36.7 工頻磁場, 36.8 操作驗證, 36.9 遠端軟體更新能力驗證\nmonitoring: 監測系統功能是否正常",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n保護功能應正常運作；\n軟體更新後安全功能應維持"
+    "conditions_summary_zh": "測試包含：36.2 靜電放電（ESD）, 36.3 射頻電磁場, 36.4 快速瞬變/脈衝群, 36.5 浪湧, 36.6 射頻共模, 36.7 工頻磁場, 36.8 操作驗證, 36.9 遠端軟體更新能力驗證\n監測：監測系統功能是否正常",
+    "evaluation_summary_zh": "無起火、爆炸；\n保護正常；\n軟體更新後安全功能應維持"
   },
   {
     "document_id": "UL-9540",
@@ -7504,8 +7504,8 @@
     "evaluation_summary": "含流體部件及其連接處應無洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test pressure liquid: 1.5 倍最大工作壓力（液體測試）\ntest pressure air: 1.1 倍最大工作壓力（氣動測試）\n**持續時間：** 按標準規定\nmonitoring: 監測洩漏",
-    "evaluation_summary_zh": "含流體部件及其連接處應無洩漏現象"
+    "conditions_summary_zh": "test pressure liquid: 1.5 倍最大工作壓力（液體測試）\ntest pressure air: 1.1 倍最大工作壓力（氣動測試）\n持續時間： 按標準\n監測：監測洩漏",
+    "evaluation_summary_zh": "含流體部件及其連接處無洩漏"
   },
   {
     "document_id": "UL-9540",
@@ -7529,7 +7529,7 @@
     "evaluation_summary": "應無水進入導致危險、無腐蝕導致危險、無絕緣損壞",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: 41.2 戶外潮濕環境安裝（按 IEC 60529/UL 50E）, 41.3 戶外海洋環境安裝（鹽霧，IEC 60068-2-52，Severity 1 或 2）, 41.4 地震環境安裝（按 IEEE 693/IEC 60980/ICC IBC 等）\npost test: 絕緣測試（32 和 35 節）\nmonitoring: 監測水進入、腐蝕、絕緣損壞",
+    "conditions_summary_zh": "測試包含：41.2 戶外潮濕環境安裝（按 IEC 60529/UL 50E）, 41.3 戶外海洋環境安裝（鹽霧，IEC 60068-2-52，Severity 1 或 2）, 41.4 地震環境安裝（按 IEEE 693/IEC 60980/ICC IBC 等）\npost test: 絕緣測試（32 和 35 節）\n監測：監測水進入、腐蝕、絕緣損壞",
     "evaluation_summary_zh": "應無水進入導致危險、無腐蝕導致危險、無絕緣損壞"
   },
   {
@@ -7554,7 +7554,7 @@
     "evaluation_summary": "警告系統應功能正常；備用電源應運作",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "inputs: 來自 BMS/ESMS 的潛在問題信號\noutputs: 外部操作站通訊, 本地音視覺警告\nbackup power: 獨立備用電源（至少 5 小時數據輸入和操作通訊，5 分鐘警報）\nmonitoring: 監測警告信號",
+    "conditions_summary_zh": "inputs: 來自 BMS/ESMS 的潛在問題信號\noutputs: 外部操作站通訊, 本地音視覺警告\nbackup power: 獨立備用電源（≥ 5 小時數據輸入和操作通訊，5 分鐘警報）\n監測：監測警告信號",
     "evaluation_summary_zh": "警告系統應功能正常；\n備用電源應運作"
   },
   {
@@ -7579,8 +7579,8 @@
     "evaluation_summary": "消防設備應符合標準；說明應完整",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "requirements: 火災探測和抑制設備應符合適用的產品安全標準, 應提供安裝、調試、維護和測試說明, 若為可選，系統在有和無消防系統情況下都應符合要求",
-    "evaluation_summary_zh": "消防設備應符合標準；\n說明應完整"
+    "conditions_summary_zh": "requirements: 火災探測和抑制設備符合適用的產品安全標準, 提供安裝、調試、維護和測試說明, 若為可選，系統在有和無消防系統情況下都符合要求",
+    "evaluation_summary_zh": "消防設備符合標準；\n說明應完整"
   },
   {
     "document_id": "UL-9540",
@@ -7604,7 +7604,7 @@
     "evaluation_summary": "按 UL 9540A 測試要求",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "triggers: 能量容量增加（按規範要求）, 與相鄰 ESS 單元/門窗/暴露物的距離減少, 室內系統, 住宅單元安裝系統\nresidential requirement: 住宅可居住空間使用的系統應符合 UL 9540A 單元級測試要求\ntest standard: UL 9540A",
+    "conditions_summary_zh": "triggers: 能量容量增加（按規範要求）, 與相鄰 ESS 單元/門窗/暴露物的距離減少, 室內系統, 住宅單元安裝系統\nresidential requirement: 住宅可居住空間使用的系統符合 UL 9540A 單元級測試要求\ntest standard: UL 9540A",
     "evaluation_summary_zh": "按 UL 9540A 測試要求",
     "normalized_item_id": "FIRE-01"
   },
@@ -7630,7 +7630,7 @@
     "evaluation_summary": "容納應足夠；洩漏檢測應功能正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "secondary containment: 單容器>208 L 或總量>3785 L 應提供二次容納\nleak detection: 應提供自動洩漏檢測\nneutralization: 若有必要應提供洩漏中和（無需人工干預）\nshort circuit prevention: 含有導電流體的系統應設計防止洩漏導致短路",
+    "conditions_summary_zh": "secondary containment: 單容器>208 L 或總量>3785 L 提供二次容納\nleak detection: 提供自動洩漏檢測\nneutralization: 若有必要提供洩漏中和（無需人工干預）\nshort circuit prevention: 含有導電流體的系統應設計防止洩漏導致短路",
     "evaluation_summary_zh": "容納應足夠；\n洩漏檢測應功能正常"
   },
   {
@@ -7655,7 +7655,7 @@
     "evaluation_summary": "運動部件不應脫落導致危險；容器應有效容納",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: 37.1 控制系統故障超速測試, 37.2 故障固定測試, 37.3 軸阻塞測試, 37.4 機械完整性測試（超速 139% 或 120%）, 37.5 軸承失效測試\nmonitoring: 監測運動部件是否脫落、容器是否有效",
+    "conditions_summary_zh": "測試包含：37.1 控制系統故障超速測試, 37.2 故障固定測試, 37.3 軸阻塞測試, 37.4 機械完整性測試（超速 139% 或 120%）, 37.5 軸承失效測試\n監測：監測運動部件是否脫落、容器是否有效",
     "evaluation_summary_zh": "運動部件不應脫落導致危險；\n容器應有效容納"
   },
   {
@@ -7680,8 +7680,8 @@
     "evaluation_summary": "含流體部件應無破裂、變形、破裂或其他損壞",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: 39.2 液壓強度測試（1.5 倍設計壓力，1 分鐘）, 39.3 氣壓強度測試（1.3 倍設計壓力，1 分鐘，可選）\nmonitoring: 監測破裂、變形",
-    "evaluation_summary_zh": "含流體部件應無破裂現象、變形、破裂或其他損壞"
+    "conditions_summary_zh": "測試包含：39.2 液壓強度測試（1.5 倍設計壓力，1 分鐘）, 39.3 氣壓強度測試（1.3 倍設計壓力，1 分鐘，可選）\n監測：監測破裂、變形",
+    "evaluation_summary_zh": "含流體部件無破裂現象、變形、破裂或其他損壞"
   },
   {
     "document_id": "UL-9540",
@@ -7705,7 +7705,7 @@
     "evaluation_summary": "外殼應無損壞導致危險（如危險部件暴露或介電擊穿）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: 40.1 壁掛固定裝置測試（3 倍重量，1 分鐘）, 40.2 外殼衝擊測試（6.8 J，3 次衝擊）, 40.3 外殼穩態力測試（250 N，5 秒）, 40.4 模應力測試（70°C 或更高，7 小時）\npost test: 介電耐壓測試\nmonitoring: 監測外殼損壞、危險部件暴露",
+    "conditions_summary_zh": "測試包含：40.1 壁掛固定裝置測試（3 倍重量，1 分鐘）, 40.2 外殼衝擊測試（6.8 J，3 次衝擊）, 40.3 外殼穩態力測試（250 N，5 秒）, 40.4 模應力測試（70°C 或更高，7 小時）\npost test: 介電耐壓測試\n監測：監測外殼損壞、危險部件暴露",
     "evaluation_summary_zh": "外殼應無損壞導致危險（如危險部件暴露或介電擊穿）"
   },
   {
@@ -7730,7 +7730,7 @@
     "evaluation_summary": "容器應有效容納運動部件",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "requirement: 應提供容納運動部件的方法（防止脫落導致危險）\ntest reference: 見 37 節測試",
+    "conditions_summary_zh": "requirement: 提供容納運動部件的方法（防止脫落導致危險）\ntest 參考：見 37 節測試",
     "evaluation_summary_zh": "容器應有效容納運動部件"
   },
   {
@@ -7755,7 +7755,7 @@
     "evaluation_summary": "噪音應低於限值或提供警告",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "limit: 8 小時時間加權平均 85 dBA（按 29 CFR 1910.95）\nmeasurement: 按 29 CFR 1910.95 或等效方法\nwarning required: 若超過限值應提供警告標籤和說明",
+    "conditions_summary_zh": "limit: 8 小時時間加權平均 85 dBA（按 29 CFR 1910.95）\n測量：按 29 CFR 1910.95 或等效方法\nwarning required: 若超過限值提供警告標籤和說明",
     "evaluation_summary_zh": "噪音應低於限值或提供警告"
   },
   {
@@ -7780,7 +7780,7 @@
     "evaluation_summary": "系統應在規定限值內正常運行；保護功能應正常",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按製造商規格運行\noperation: 正常充放電循環\nmonitoring: 監測溫度、電壓、電流、保護功能",
+    "conditions_summary_zh": "**SOC：** 按製造商規格運行\noperation: 正常充放電循環\n監測：監測溫度、電壓、電流、保護功能",
     "evaluation_summary_zh": "系統應在規定限值內正常運行；\n保護功能應正常"
   },
   {
@@ -7806,7 +7806,7 @@
     "comparison_ready": true,
     "normativity": "normative",
     "conditions_summary_zh": "requirements: 並網互動（27.2）, 並網逆變器（27.3）, 獨立和多模式功率調節系統（27.4）\ncompliance: 符合適用的 PCS 標準",
-    "evaluation_summary_zh": "PCS 應符合適用標準"
+    "evaluation_summary_zh": "PCS 符合適用標準"
   },
   {
     "document_id": "UL-9540",
@@ -7830,7 +7830,7 @@
     "evaluation_summary": "按生產規格測試",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: 42.1 介電耐壓測試（100% 生產，>60 Vdc 或>30 Vrms）, 42.2 接地和接合系統檢查（電阻≤0.1 Ω）, 42.3 安全控制檢查（100% 生產篩選）\n**頻率：** 100% 生產",
+    "conditions_summary_zh": "測試包含：42.1 介電耐壓測試（100% 生產，>60 Vdc 或>30 Vrms）, 42.2 接地和接合系統檢查（電阻≤0.1 Ω）, 42.3 安全控制檢查（100% 生產篩選）\n**頻率：** 100% 生產",
     "evaluation_summary_zh": "按生產規格測試"
   },
   {
@@ -7855,7 +7855,7 @@
     "evaluation_summary": "按生產規格測試",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: 43.1 最大異常運行速度完整性測試, 43.2 轉子生產篩選（無損檢測）, 43.3 危險流體系統洩漏檢查\n**頻率：** 100% 生產",
+    "conditions_summary_zh": "測試包含：43.1 最大異常運行速度完整性測試, 43.2 轉子生產篩選（無損檢測）, 43.3 危險流體系統洩漏檢查\n**頻率：** 100% 生產",
     "evaluation_summary_zh": "按生產規格測試"
   },
   {
@@ -7930,7 +7930,7 @@
     "evaluation_summary": "系統應安全關閉或無危險情況發生",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: 31.2 熱控制失效, 31.3 超出規格溫度條件暴露, 31.4 壓力控制失效, 31.5 流體控制失效\nmonitoring: 監測溫度、壓力、流體水平",
+    "conditions_summary_zh": "測試包含：31.2 熱控制失效, 31.3 超出規格溫度條件暴露, 31.4 壓力控制失效, 31.5 流體控制失效\n監測：監測溫度、壓力、流體水平",
     "evaluation_summary_zh": "系統應安全關閉或無危險情況發生"
   },
   {
@@ -7980,7 +7980,7 @@
     "evaluation_summary": "判定電池熱失控溫度和排氣特性；若無電池觸發熱失控且無可燃氣體排放，可豁免模組級和單元級測試",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按製造商規格充電至最大運行狀態 (MOSOC)\nrest time: 室溫靜置至少 1 小時\ntrigger methods: 外部加熱（熱失控判定）, 過充電（鉛酸/鎳鎘電池）, 內部短路（高溫電池）\nmeasurements: 排氣溫度 (T_vent), 熱失控溫度, 排氣成分（FTIR 可選，氫氣測量）, 排氣體積和壓力",
+    "conditions_summary_zh": "**SOC：** 按製造商規格充電至最大運行狀態 (MOSOC)\nrest time: 室溫靜置≥ 1 小時\ntrigger methods: 外部加熱（熱失控判定）, 過充電（鉛酸/鎳鎘電池）, 內部短路（高溫電池）\nmeasurements: 排氣溫度 (T_vent), 熱失控溫度, 排氣成分（FTIR 可選，氫氣測量）, 排氣體積和壓力",
     "evaluation_summary_zh": "判定電池熱失控溫度和排氣特性；\n若無電池觸發熱失控且無可燃氣體排放，可豁免模組級和單元級測試"
   },
   {
@@ -8030,7 +8030,7 @@
     "evaluation_summary": "評估模組內熱傳播特性；若模組設計控制熱失控且電池排氣不可燃，可豁免單元級測試",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按製造商規格充電至 MOSOC\nrest time: 調節後靜置至少 1 小時\ntrigger method: 使用電池級測試確定的應力方法觸發單或多電池熱失控\npropagation requirement: 建立電池到電池熱傳播（8.2.4）",
+    "conditions_summary_zh": "**SOC：** 按製造商規格充電至 MOSOC\nrest time: 調節後靜置≥ 1 小時\n觸發方法：使用電池級測試確定的應力方法觸發單或多電池熱失控\npropagation requirement: 建立電池到電池熱傳播（8.2.4）",
     "evaluation_summary_zh": "評估模組內熱傳播特性；\n若模組設計控制熱失控且電池排氣不可燃，可豁免單元級測試",
     "normalized_item_id": "THERM-03"
   },
@@ -8056,7 +8056,7 @@
     "evaluation_summary": "評估單元級火災傳播特性；若符合表 9.1 性能標準，可豁免安裝級測試",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 按製造商規格充電至 MOSOC，靜置至少 1 小時\ninitiating unit: 1 個啟動 BESS 單元（觸發模組內電池到電池熱傳播）\ntarget units: 相鄰目標 BESS 單元（代表安裝）\nwall sections: 儀器化牆段（石膏牆板，塗平黑漆）",
+    "conditions_summary_zh": "**SOC：** 按製造商規格充電至 MOSOC，靜置≥ 1 小時\ninitiating unit: 1 個啟動 BESS 單元（觸發模組內電池到電池熱傳播）\ntarget units: 相鄰目標 BESS 單元（代表安裝）\nwall sections: 儀器化牆段（石膏牆板，塗平黑漆）",
     "evaluation_summary_zh": "評估單元級火災傳播特性；\n若符合表 9.1 性能標準，可豁免安裝級測試",
     "normalized_item_id": "THERM-03"
   },
@@ -8083,8 +8083,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 10.5)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Fully charged, One-half 放電d, Completely 放電d (see Table 6.1)\n**溫度：** 20±5°C (68±9°F), 55±5°C (131±9°F)\n**電阻：** 80±20 mΩ\n**持續時間：** Until 放電 to <0.2V and case temperature returns to ±10°C of ambient, or until fire/explosion",
-    "evaluation_summary_zh": "The samples shall not explode or catch fire. (Section 10.5)",
+    "conditions_summary_zh": "**SOC：** 100% SOC, One-half 放電d, Completely 放電d (see Table 6.1)\n溫度： 20±5°C (68±9°F), 55±5°C (131±9°F)\n電阻： 80±20 mΩ\n持續時間： Until 放電 to <0.2V and case temperature returns to ±10°C of ambient, or until fire/explosion",
+    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 10.5)",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -8110,8 +8110,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 11.5, 11.10)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** Conditioned per Table 6.1 (Primary) or Table 6.2 (Secondary)\n**溫度：** 20±5°C (68±9°F)\n充電 current primary: 3 × Ic (Ic = maximum 充電 current specified by manufacturer)\n充電 current secondary: 3 × Ic with constant maximum specified output voltage",
-    "evaluation_summary_zh": "The samples shall not explode or catch fire. (Section 11.5, 11.10)",
+    "conditions_summary_zh": "**SOC：** Conditioned per Table 6.1 (Primary) or Table 6.2 (Secondary)\n溫度： 20±5°C (68±9°F)\n充電 current primary: 3 × Ic (Ic = maximum 充電 current specified by manufacturer)\n充電 current secondary: 3 × Ic with constant maximum specified output voltage",
+    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 11.5, 11.10)",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -8136,8 +8136,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 12.6)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** One fully 放電d cell connected in series with fully charged cells\n**溫度：** Room temperature\n**電阻：** 80±20 mΩ\nseries configuration: Number of charged cells = maximum series count - 1",
-    "evaluation_summary_zh": "The samples shall not explode or catch fire. (Section 12.6)",
+    "conditions_summary_zh": "**SOC：** One fully 放電d cell connected in series with 100% SOC cells\n溫度： Room temperature\n電阻： 80±20 mΩ\nseries configuration: Number of charged cells = maximum series count - 1",
+    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 12.6)",
     "normalized_item_id": "ELEC-03"
   },
   {
@@ -8163,8 +8163,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. In addition, the samples shall not vent or leak as described in 5.1.1. (Section 18.2)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "chamber required: True\ncycle count: 10\nstep a: Raise to 70±3°C (158±5°F) within 30 min, maintain 4 hours\nstep b: Reduce to 20±3°C (68±5°F) within 30 min, maintain 2 hours",
-    "evaluation_summary_zh": "The samples shall not explode or catch fire. In addition, the samples shall not vent or leak as described in 5.1.1. (Section 18.2)",
+    "conditions_summary_zh": "chamber required: True\n循環次數：10\nstep a: Raise to 70±3°C (158±5°F) within 30 min, maintain 4 hours\nstep b: Reduce to 20±3°C (68±5°F) within 30 min, maintain 2 hours",
+    "evaluation_summary_zh": "樣品不應爆炸或起火。 In addition, the samples shall not vent or leak as described in 5.1.1. (Section 18.2)",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -8190,8 +8190,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. In addition, the samples shall not vent or leak as described in 5.1.1. (Section 19.2)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**壓力：** 11.6 kPa (1.68 psi) absolute\n**溫度：** 20±3°C (68±5°F)\n**持續時間：** 6 hours",
-    "evaluation_summary_zh": "The samples shall not explode or catch fire. In addition, the samples shall not vent or leak as described in 5.1.1. (Section 19.2)",
+    "conditions_summary_zh": "壓力： 11.6 kPa (1.68 psi) absolute\n溫度： 20±3°C (68±5°F)\n持續時間： 6 hours",
+    "evaluation_summary_zh": "樣品不應爆炸或起火。 In addition, the samples shall not vent or leak as described in 5.1.1. (Section 19.2)",
     "normalized_item_id": "ENV-02"
   },
   {
@@ -8244,8 +8244,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 14.4)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "apparatus: 15.8±0.1 mm (5/8±0.004 in) diameter bar placed across center of sample\nweight: 9.1±0.46 kg (20±1 lb)\nheight: 610±25 mm (24±1 in)\norientation cylindrical: Longitudinal axis parallel to flat surface, perpendicular to bar",
-    "evaluation_summary_zh": "The samples shall not explode or catch fire. (Section 14.4)",
+    "conditions_summary_zh": "設備：15.8±0.1 mm (5/8±0.004 in) diameter bar placed across center of sample\nweight: 9.1±0.46 kg (20±1 lb)\n高度：610±25 mm (24±1 in)\norientation cylindrical: Longitudinal axis parallel to flat surface, perpendicular to bar",
+    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 14.4)",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -8271,8 +8271,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. In addition, the sample shall not vent or leak as described in 5.1.1. (Section 15.2)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "mounting: Secured to testing machine by rigid mount supporting all mounting surfaces\nshock count: 3 shocks of equal magnitude\n**方向：** 3 mutually perpendicular directions (or 2 if only 2 axes of symmetry)\nacceleration initial: Minimum average 75g during initial 3 ms",
-    "evaluation_summary_zh": "The samples shall not explode or catch fire. In addition, the sample shall not vent or leak as described in 5.1.1. (Section 15.2)",
+    "conditions_summary_zh": "mounting: Secured to testing machine by rigid mount supporting all mounting surfaces\n衝擊次數：3 shocks of equal magnitude\n**方向：** 3 mutually perpendicular directions (or 2 if only 2 axes of symmetry)\nacceleration initial: Minimum average 75g during initial 3 ms",
+    "evaluation_summary_zh": "樣品不應爆炸或起火。 In addition, the sample shall not vent or leak as described in 5.1.1. (Section 15.2)",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -8298,8 +8298,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 13.4)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "apparatus: Hydraulic ram or similar force mechanism with two flat surfaces\n**作用力：** 13±1 kN (3000±224 lbs)\norientation cylindrical: Longitudinal axis parallel to flat surfaces\norientation prismatic: Both wide and narrow sides (rotate 90°), one direction per sample",
-    "evaluation_summary_zh": "The samples shall not explode or catch fire. (Section 13.4)",
+    "conditions_summary_zh": "設備：Hydraulic ram or similar force mechanism with two flat surfaces\n作用力： 13±1 kN (3000±224 lbs)\norientation cylindrical: Longitudinal axis parallel to flat surfaces\norientation prismatic: Both wide and narrow sides (rotate 90°), one direction per sample",
+    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 13.4)",
     "normalized_item_id": "MECH-02"
   },
   {
@@ -8325,8 +8325,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. In addition the sample shall not vent or leak as described in 5.1.1. (Section 16.3)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "motion type: Simple harmonic motion\n**振幅：** 0.8 mm (0.03 in) [1.6 mm (0.06 in) total maximum excursion]\nfrequency range: 10 to 55 Hz\nfrequency rate: 1 Hz/min variation",
-    "evaluation_summary_zh": "The samples shall not explode or catch fire. In addition the sample shall not vent or leak as described in 5.1.1. (Section 16.3)",
+    "conditions_summary_zh": "motion type: Simple harmonic motion\n**振幅：** 0.8 mm (0.03 in) [1.6 mm (0.06 in) total maximum excursion]\n頻率範圍：10 to 55 Hz\nfrequency rate: 1 Hz/min variation",
+    "evaluation_summary_zh": "樣品不應爆炸或起火。 In addition the sample shall not vent or leak as described in 5.1.1. (Section 16.3)",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -8352,8 +8352,8 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 17.2)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "oven type: Gravity convection or circulating air oven\ninitial **溫度：** 20±5°C (68±9°F)\nramp rate: 5±2°C (9±3.6°F) per minute\ntarget **溫度：** 130±2°C (266±3.6°F)",
-    "evaluation_summary_zh": "The samples shall not explode or catch fire. (Section 17.2)",
+    "conditions_summary_zh": "oven type: Gravity convection or circulating air oven\ninitial 溫度： 20±5°C (68±9°F)\n升溫速率：5±2°C (9±3.6°F) per minute\n目標溫度： 130±2°C (266±3.6°F)",
+    "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 17.2)",
     "normalized_item_id": "THERM-04"
   },
   {
@@ -8378,7 +8378,7 @@
     "evaluation_summary": "按 Annex B 規定的測試方法和判定標準",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: B2.1 振動, B2.2 衝擊, B2.3 跌落, B2.4 擠壓, B2.5 加熱, B2.6 溫度循環, B2.7 外部短路, B2.8 過充電, B2.9 強制放電, B2.10 拋射物\nreference: 參考 Annex B 詳細測試條件",
+    "conditions_summary_zh": "測試包含：B2.1 振動, B2.2 衝擊, B2.3 跌落, B2.4 擠壓, B2.5 加熱, B2.6 溫度循環, B2.7 外部短路, B2.8 過充電, B2.9 強制放電, B2.10 拋射物\n參考：參考 Annex B 詳細測試條件",
     "evaluation_summary_zh": "按 Annex B 規定的測試方法和判定標準"
   },
   {
@@ -8403,7 +8403,7 @@
     "evaluation_summary": "按 Annex D 規定的測試方法和判定標準",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "tests included: D3.1 短路, D3.2 過充電, D3.3 擠壓, D3.4 衝擊, D3.5 衝擊, D3.6 振動, D3.7 加熱, D3.8 溫度循環, D3.9 低壓（高度模擬）, D3.10 拋射物\nreference: 參考 Annex D 詳細測試條件",
+    "conditions_summary_zh": "測試包含：D3.1 短路, D3.2 過充電, D3.3 擠壓, D3.4 衝擊, D3.5 衝擊, D3.6 振動, D3.7 加熱, D3.8 溫度循環, D3.9 低壓（高度模擬）, D3.10 拋射物\n參考：參考 Annex D 詳細測試條件",
     "evaluation_summary_zh": "按 Annex D 規定的測試方法和判定標準"
   },
   {
@@ -8429,8 +8429,8 @@
     "evaluation_summary": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n**電阻：** ≤ 20 mΩ\n**溫度：** 室溫環境\nfault condition: 放電保護電路單一元件故障",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n電阻： ≤ 20 mΩ\n溫度： 室溫環境\n故障條件：放電保護電路單一元件故障",
+    "evaluation_summary_zh": "無起火、爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -8456,8 +8456,8 @@
     "evaluation_summary": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 放電至製造商規定的 EODV\n充電 rate: 電池組規定的最大充電速率\nfault condition: 充電電路單一故障（可能導致過充）\ntermination criteria: 保護電路終止充電, 充電至 110% 額定容量, 發生起火/爆炸",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
+    "conditions_summary_zh": "**SOC：** 放電至 EODV\n充電 rate: 電池組規定的最大充電速率\n故障條件：充電電路單一故障（可能導致過充）\n終止條件：保護電路終止充電, 充電至 110% 額定容量, 發生起火/爆炸",
+    "evaluation_summary_zh": "無起火、爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
     "normalized_item_id": "ELEC-02"
   },
   {
@@ -8483,8 +8483,8 @@
     "evaluation_summary": "保護裝置應啟動防止電池低於截止電壓；應無起火、無爆炸；最小絕緣電阻 100 Ω/V",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n放電 rate: 製造商規定的最大放電速率\ntermination criteria: 被動保護裝置啟動, 最小電壓/最高溫度保護啟動, 達到正常放電限值後 30 分鐘\nmonitoring: 使用火花點火源檢測可燃氣體",
-    "evaluation_summary_zh": "保護裝置應啟動防止電池低於截止電壓；\n應無起火現象、無爆炸；\n最小絕緣電阻 100 Ω/V",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n放電 rate: 製造商規定的最大放電速率\n終止條件：被動保護裝置啟動, 最小電壓/最高溫度保護啟動, 達到正常放電限值後 30 分鐘\n監測：使用火花點火源檢測可燃氣體",
+    "evaluation_summary_zh": "保護啟動防止電池低於截止電壓；\n無起火、爆炸；\n最小絕緣電阻 100 Ω/V",
     "normalized_item_id": "ELEC-03-PROT"
   },
   {
@@ -8510,8 +8510,8 @@
     "evaluation_summary": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；模組最大電壓限值不得超出",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 除一個模組外全部放電至完全放電狀態，未放電模組放電至 50% SOC（創建不平衡狀態）\n充電: 按製造商規格充電\nmonitoring: 監測部分充電模組的電壓是否超出限值",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n最小絕緣電阻 100 Ω/V；\n模組最大電壓限值不得超出"
+    "conditions_summary_zh": "**SOC：** 除一個模組外全部放電至完全放電狀態，未放電模組放電至 50% SOC（創建不平衡狀態）\n充電: 按製造商規格充電\n監測：監測部分充電模組的電壓是否超出限值",
+    "evaluation_summary_zh": "無起火、爆炸；\n最小絕緣電阻 100 Ω/V；\n模組最大電壓限值不得超出"
   },
   {
     "document_id": "ULC-2580",
@@ -8536,7 +8536,7 @@
     "evaluation_summary": "應無介電擊穿（絕緣擊穿導致短路/飛弧）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test voltage dc: 1.414 × 2 × 額定電壓（DC）\ntest voltage ac: 2 × 額定電壓（60 Hz 正弦波 AC，可選）\n**持續時間：** 至少 1 分鐘\napplication: 危險電壓電路與非載流導電部件之間",
+    "conditions_summary_zh": "test voltage dc: 1.414 × 2 × 額定電壓（DC）\ntest voltage ac: 2 × 額定電壓（60 Hz 正弦波 AC，可選）\n持續時間： ≥ 1 分鐘\napplication: 危險電壓電路與非載流導電部件之間",
     "evaluation_summary_zh": "應無介電擊穿（絕緣擊穿導致短路/飛弧）"
   },
   {
@@ -8562,7 +8562,7 @@
     "evaluation_summary": "絕緣電阻/最大工作電壓 ≥ 100 Ω/V（DC）或 500 Ω/V（AC）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**測試方法：** ISO 6469-1 Clause 6.1.3\nconditioning: （a）接收狀態（無濕度調節）, （b）IEC 60068-2-30 調節：55 ± 2°C，6 次循環\n**SOC（充電狀態）：** 充滿電狀態\nmeasurement: 使用兆歐表施加 DC 電壓 1 分鐘後測量",
+    "conditions_summary_zh": "測試方法： ISO 6469-1 Clause 6.1.3\nconditioning: （a）接收狀態（無濕度調節）, （b）IEC 60068-2-30 調節：55 ± 2°C，6 次循環\n**SOC：** 充滿電狀態\n測量：使用兆歐表施加 DC 電壓 1 分鐘後測量",
     "evaluation_summary_zh": "絕緣電阻/最大工作電壓 ≥ 100 Ω/V（DC）或 500 Ω/V（AC）"
   },
   {
@@ -8588,8 +8588,8 @@
     "evaluation_summary": "保護接地系統電阻不超過 0.1 Ω",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "test **電流：** 150% 最大電路電流或 25 A（取較大者）\n**持續時間：** 5 秒\nvoltage limit: 無負載電壓不超過 60 Vdc\nmeasurement: 測量任意兩個外露導電部件之間的電壓降",
-    "evaluation_summary_zh": "保護接地系統電阻不超過 0.1 Ω"
+    "conditions_summary_zh": "test 電流： 150% 最大電路電流或 25 A（取較大者）\n持續時間： 5 秒\nvoltage limit: 無負載電壓≤ 60 Vdc\n測量：測量任意兩個外露導電部件之間的電壓降",
+    "evaluation_summary_zh": "保護接地系統電阻≤ 0.1 Ω"
   },
   {
     "document_id": "ULC-2580",
@@ -8614,8 +8614,8 @@
     "evaluation_summary": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\ncycle profile: 按製造商規定的溫度循環輪廓；\n若無，使用 SAE J2380 或 IEC 60068-2-30\nrest period: 測試後靜置 6-24 小時",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\ncycle profile: 按製造商規定的溫度循環輪廓；\n若無，使用 SAE J2380 或 IEC 60068-2-30\n試驗後觀察測試後靜置 6-24 小時",
+    "evaluation_summary_zh": "無起火、爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -8641,8 +8641,8 @@
     "evaluation_summary": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n**測試方法：** IEC 60068-2-52 或等效標準\nrest period: 測試後靜置 6-24 小時",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n測試方法： IEC 60068-2-52 或等效標準\n試驗後觀察測試後靜置 6-24 小時",
+    "evaluation_summary_zh": "無起火、爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
     "normalized_item_id": "ENV-04"
   },
   {
@@ -8668,8 +8668,8 @@
     "evaluation_summary": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n**測試方法：** 按 NEMA 60529 IP 等級要求或 UL 50E\nrest period: 測試後靜置 6-24 小時",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n測試方法： 按 NEMA 60529 IP 等級要求或 UL 50E\n試驗後觀察測試後靜置 6-24 小時",
+    "evaluation_summary_zh": "無起火、爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
     "normalized_item_id": "ENV-03"
   },
   {
@@ -8695,8 +8695,8 @@
     "evaluation_summary": "單電池失效不應導致相鄰電池熱失控傳播；系統應無起火/爆炸傳播",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\ntrigger method: 使用內部短路觸發電池（見 Annex C）\ntrigger cell count: 至少 1 個觸發電池\nmonitoring: 監測熱擴散、起火、爆炸",
-    "evaluation_summary_zh": "單電池失效不應導致相鄰電池熱失控傳播；\n系統應無起火現象/爆炸傳播"
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n觸發方法：使用內部短路觸發電池（見 Annex C）\n觸發電池數：≥ 1 個觸發電池\n監測：監測熱擴散、起火、爆炸",
+    "evaluation_summary_zh": "單電池失效不應導致相鄰電池熱失控傳播；\n系統無起火/爆炸傳播"
   },
   {
     "document_id": "ULC-2580",
@@ -8721,8 +8721,8 @@
     "evaluation_summary": "單電池失效不應導致相鄰電池熱失控傳播；系統應無起火/爆炸傳播",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\ntrigger method: 按電池技術使用適當的失效觸發方法\nmonitoring: 監測熱擴散、起火、爆炸",
-    "evaluation_summary_zh": "單電池失效不應導致相鄰電池熱失控傳播；\n系統應無起火現象/爆炸傳播"
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n觸發方法：按電池技術使用適當的失效觸發方法\n監測：監測熱擴散、起火、爆炸",
+    "evaluation_summary_zh": "單電池失效不應導致相鄰電池熱失控傳播；\n系統無起火/爆炸傳播"
   },
   {
     "document_id": "ULC-2580",
@@ -8747,8 +8747,8 @@
     "evaluation_summary": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\nwaveform: 半正弦波\n**加速度：** 25 gn\npulse **持續時間：** 15 ms",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n波形：半正弦波\n**加速度：** 25 gn\n脈衝持續時間： 15 ms",
+    "evaluation_summary_zh": "無起火、爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -8774,8 +8774,8 @@
     "evaluation_summary": "應無起火、無爆炸、無有毒氣體釋放；最小絕緣電阻 100 Ω/V",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n**作用力：** 車輛預期的最大擠壓負載（由製造商定義）\ndirection: 代表車輛碰撞時最可能受擠壓的方向\nrest period: 測試後靜置 6-24 小時",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無有毒氣體釋放；\n最小絕緣電阻 100 Ω/V",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n作用力： 車輛預期的最大擠壓負載（由製造商定義）\n方向：代表車輛碰撞時最可能受擠壓的方向\n試驗後觀察測試後靜置 6-24 小時",
+    "evaluation_summary_zh": "無起火、爆炸、無有毒氣體釋放；\n最小絕緣電阻 100 Ω/V",
     "normalized_item_id": "MECH-02"
   },
   {
@@ -8801,8 +8801,8 @@
     "evaluation_summary": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\nprofile: 按預期車輛振動輪廓；\n若無，使用 SAE J2380\nrest period: 測試後靜置 8-24 小時\nmonitoring: 監測 OCV 和中心模組溫度",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\nprofile: 按預期車輛振動輪廓；\n若無，使用 SAE J2380\n試驗後觀察測試後靜置 8-24 小時\n監測：監測 OCV 和中心模組溫度",
+    "evaluation_summary_zh": "無起火、爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏",
     "normalized_item_id": "MECH-04"
   },
   {
@@ -8828,8 +8828,8 @@
     "evaluation_summary": "應無起火、無爆炸、無有毒氣體釋放；最小絕緣電阻 100 Ω/V",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\nheight: 1.0 m（3.3 ft）\nsurface: 平坦混凝土表面（至少 76 mm 厚）\norientation: 最可能產生不利結果的位置，代表維護/拆卸時的實際情況",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無有毒氣體釋放；\n最小絕緣電阻 100 Ω/V",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n高度：1.0 m（3.3 ft）\nsurface: 平坦混凝土表面（≥ 76 mm 厚）\n方向：最可能產生不利結果的位置，代表維護/拆卸時的實際情況",
+    "evaluation_summary_zh": "無起火、爆炸、無有毒氣體釋放；\n最小絕緣電阻 100 Ω/V",
     "normalized_item_id": "MECH-05"
   },
   {
@@ -8855,8 +8855,8 @@
     "evaluation_summary": "應無起火、無爆炸、無有毒氣體釋放；最小絕緣電阻 100 Ω/V",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\nrotation rate: 90°/15 秒\n**方向：** 3 個互相垂直方向各 360°旋轉（圓柱型設計 2 個方向）\nmonitoring: 使用火花點火源檢測可燃氣體",
-    "evaluation_summary_zh": "應無起火現象、無爆炸、無有毒氣體釋放；\n最小絕緣電阻 100 Ω/V"
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\nrotation rate: 90°/15 秒\n**方向：** 3 個互相垂直方向各 360°旋轉（圓柱型設計 2 個方向）\n監測：使用火花點火源檢測可燃氣體",
+    "evaluation_summary_zh": "無起火、爆炸、無有毒氣體釋放；\n最小絕緣電阻 100 Ω/V"
   },
   {
     "document_id": "ULC-2580",
@@ -8881,7 +8881,7 @@
     "evaluation_summary": "製造商規定的限值（電壓、電流、溫度）不得超出；元件溫度不得超出其規格",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 放電至 EODV 後充電至 MOSOC\nambient **溫度：** 上限充電溫度\n**循環次數：** 5 次完整充放電循環\nmonitoring: 監測模組電壓/電流及溫度敏感元件（包括電池）",
+    "conditions_summary_zh": "**SOC：** 放電至 EODV 後充電至 MOSOC\nambient 溫度： 上限充電溫度\n**循環次數：** 5 次完整充放電循環\n監測：監測模組電壓/電流及溫度敏感元件（包括電池）",
     "evaluation_summary_zh": "製造商規定的限值（電壓、電流、溫度）不得超出；\n元件溫度不得超出其規格",
     "normalized_item_id": "ENV-01"
   },
@@ -8908,8 +8908,8 @@
     "evaluation_summary": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）** charge: 放電至 EODV，在最高工作環境溫度下調節 7 小時，冷卻系統禁用，以最大速率充電\n**SOC（充電狀態）** 放電: 充滿電（MOSOC），在最高工作環境溫度下調節 7 小時，冷卻系統禁用，以最大速率放電\nrepeat at min: 在最低工作環境溫度下重複測試（可通過分析豁免）\nmonitoring: 使用火花點火源檢測可燃氣體",
-    "evaluation_summary_zh": "應無起火現象、無爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏"
+    "conditions_summary_zh": "**SOC** charge: 放電至 EODV，在最高工作環境溫度下調節 7 小時，冷卻系統禁用，以最大速率充電\n**SOC** 放電: 充滿電（MOSOC），在最高工作環境溫度下調節 7 小時，冷卻系統禁用，以最大速率放電\nrepeat at min: 在最低工作環境溫度下重複測試（可通過分析豁免）\n監測：使用火花點火源檢測可燃氣體",
+    "evaluation_summary_zh": "無起火、爆炸；\n最小絕緣電阻 100 Ω/V；\n無外部排氣、無破裂、無外部洩漏"
   },
   {
     "document_id": "ULC-2580",
@@ -8934,8 +8934,8 @@
     "evaluation_summary": "應無爆炸、無有毒氣體釋放（起火可能發生但不得爆炸）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC（充電狀態）：** 充滿電（MOSOC）\n**測試方法：** 按車輛預期的火災暴露條件\nmonitoring: 監測溫度、氣體釋放",
-    "evaluation_summary_zh": "應無爆炸現象、無有毒氣體釋放（起火可能發生但不得爆炸）",
+    "conditions_summary_zh": "**SOC：** 充滿電（MOSOC）\n測試方法： 按車輛預期的火災暴露條件\n監測：監測溫度、氣體釋放",
+    "evaluation_summary_zh": "無爆炸、無有毒氣體釋放（起火可能發生但不得爆炸）",
     "normalized_item_id": "FIRE-01"
   },
   {
@@ -8961,8 +8961,8 @@
     "evaluation_summary": "External temperature shall not exceed 170°C. No disassembly, no rupture and no fire during test and within 6 hours after test.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "preconditioning: Heated to homogeneous stabilized temperature of 57 ± 4°C (minimum 6 hours for small cells/batteries, 12 hours for large)\n**電阻：** Total external resistance less than 0.1 ohm\ntemperature during test: Cell/battery at 57 ± 4°C\n**持續時間：** At least 1 hour after case temperature returns to 57 ± 4°C, or for large batteries, decreased by half of maximum temperature increase and remains below that value",
-    "evaluation_summary_zh": "External temperature shall not exceed 170°C. No disassembly, no rupture and no fire during test and within 6 hours after test.",
+    "conditions_summary_zh": "預處理：Heated to homogeneous stabilized temperature of 57 ± 4°C (minimum 6 hours for small cells/batteries, 12 hours for large)\n電阻： Total external resistance less than 0.1 ohm\ntemperature during test: Cell/battery at 57 ± 4°C\n持續時間： At least 1 hour after case temperature returns to 57 ± 4°C, or for large batteries, decreased by half of maximum temperature increase and remains below that value",
+    "evaluation_summary_zh": "外部溫度不應超過 170°C。 試驗中及試驗後 6 小時內無分解、無破裂、無起火。",
     "normalized_item_id": "ELEC-01"
   },
   {
@@ -8988,7 +8988,7 @@
     "evaluation_summary": "No disassembly and no fire during test and within 7 days after test.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "charge **電流：** Twice the manufacturer's recommended maximum continuous charge current\nmin voltage low: For recommended charge voltage ≤18V: lesser of (2 × max charge voltage) or 22V\nmin voltage high: For recommended charge voltage >18V: 1.2 × max charge voltage\n**溫度：** Ambient temperature",
+    "conditions_summary_zh": "charge 電流： Twice the manufacturer's recommended maximum continuous charge current\nmin voltage low: For recommended charge voltage ≤18V: lesser of (2 × max charge voltage) or 22V\nmin voltage high: For recommended charge voltage >18V: 1.2 × max charge voltage\n溫度： Ambient temperature",
     "evaluation_summary_zh": "No disassembly and no fire during test and within 7 days after test.",
     "normalized_item_id": "ELEC-02"
   },
@@ -9015,7 +9015,7 @@
     "evaluation_summary": "No disassembly and no fire during test and within 7 days after test.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "power supply: 12 V D.C. power supply in series\ninitial **電流：** Equal to maximum 放電 current specified by manufacturer\napparatus: Resistive load of appropriate size and rating in series with test cell\n**溫度：** Ambient temperature",
+    "conditions_summary_zh": "power supply: 12 V D.C. power supply in series\ninitial 電流： Equal to maximum 放電 current specified by manufacturer\n設備：Resistive load of appropriate size and rating in series with test cell\n溫度： Ambient temperature",
     "evaluation_summary_zh": "No disassembly and no fire during test and within 7 days after test.",
     "normalized_item_id": "ELEC-03"
   },
@@ -9042,8 +9042,8 @@
     "evaluation_summary": "No leakage, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "high temp: 72 ± 2°C for at least 6 hours (12 hours for large cells/batteries)\nlow temp: -40 ± 2°C for at least 6 hours (12 hours for large cells/batteries)\ntransition time: Maximum 30 minutes between temperature extremes\ncycle count: 10 total cycles",
-    "evaluation_summary_zh": "No leakage, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
+    "conditions_summary_zh": "high 溫度：72 ± 2°C for at least 6 hours (12 hours for large cells/batteries)\nlow 溫度：-40 ± 2°C for at least 6 hours (12 hours for large cells/batteries)\ntransition time: Maximum 30 minutes between temperature extremes\n循環次數：10 total cycles",
+    "evaluation_summary_zh": "無洩漏, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
     "normalized_item_id": "ENV-01"
   },
   {
@@ -9069,8 +9069,8 @@
     "evaluation_summary": "No leakage, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**壓力：** 11.6 kPa or less\n**溫度：** Ambient temperature (20 ± 5°C)\n**持續時間：** At least 6 hours\nsample condition: Un放電d (primary), Fully charged (secondary)",
-    "evaluation_summary_zh": "No leakage, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
+    "conditions_summary_zh": "壓力： 11.6 kPa or less\n溫度： Ambient temperature (20 ± 5°C)\n持續時間： At least 6 hours\nsample condition: Un放電d (primary), 100% SOC (secondary)",
+    "evaluation_summary_zh": "無洩漏, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
     "normalized_item_id": "ENV-02"
   },
   {
@@ -9097,7 +9097,7 @@
     "comparison_ready": true,
     "normativity": "normative",
     "conditions_summary_zh": "",
-    "evaluation_summary_zh": "External temperature shall not exceed 170°C. No disassembly and no fire during test and within 6 hours after test.",
+    "evaluation_summary_zh": "外部溫度不應超過 170°C。 No disassembly and no fire during test and within 6 hours after test.",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -9123,8 +9123,8 @@
     "evaluation_summary": "No leakage, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "waveform: Half-sine shock\ncell **加速度：** 150 gn peak acceleration, 6 ms pulse duration (large cells: 50 gn, 11 ms alternative)\nsmall battery **加速度：** Minimum 50 gn or result of formula: Acceleration = sqrt(30000/mass), whichever is smaller, 6 ms pulse\nlarge battery **加速度：** Minimum based on formula: Acceleration = sqrt(30000/mass), whichever is smaller, 11 ms pulse",
-    "evaluation_summary_zh": "No leakage, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
+    "conditions_summary_zh": "波形：Half-sine shock\ncell **加速度：** 150 gn peak acceleration, 6 ms pulse duration (large cells: 50 gn, 11 ms alternative)\nsmall battery **加速度：** Minimum 50 gn or result of formula: Acceleration = sqrt(30000/mass), whichever is smaller, 6 ms pulse\nlarge battery **加速度：** Minimum based on formula: Acceleration = sqrt(30000/mass), whichever is smaller, 11 ms pulse",
+    "evaluation_summary_zh": "無洩漏, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
     "normalized_item_id": "MECH-01"
   },
   {
@@ -9150,8 +9150,8 @@
     "evaluation_summary": "No leakage, no venting, no disassembly, no rupture and no fire during and after test. Open circuit voltage after testing in third perpendicular mounting position shall not be less than 90% of voltage prior to procedure.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "waveform: Sinusoidal waveform with logarithmic sweep\nfrequency range: 7 Hz to 200 Hz and back to 7 Hz\ncycle **持續時間：** 15 minutes per cycle\ncycle count: 12 cycles (total 3 hours) for each of 3 mutually perpendicular mounting positions",
-    "evaluation_summary_zh": "No leakage, no venting, no disassembly, no rupture and no fire during and after test. Open circuit voltage after testing in third perpendicular mounting position shall not be less than 90% of voltage prior to procedure.",
+    "conditions_summary_zh": "波形：Sinusoidal waveform with logarithmic sweep\n頻率範圍：7 Hz to 200 Hz and back to 7 Hz\ncycle 持續時間： 15 minutes per cycle\n循環次數：12 cycles (total 3 hours) for each of 3 mutually perpendicular mounting positions",
+    "evaluation_summary_zh": "無洩漏, no venting, no disassembly, no rupture and no fire during and after test. Open circuit voltage after testing in third perpendicular mounting position shall not be less than 90% of voltage prior to procedure.",
     "normalized_item_id": "MECH-04"
   }
 ]
