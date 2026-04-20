@@ -212,7 +212,7 @@
                           <span class="text-xs text-gray-400 block mb-1">判定：</span>
                           <div class="text-xs" v-html="formatEvaluationShort(group.rows[doc.document_id])"></div>
                         </div>
-                        <button @click="showPopover(group.testId, doc.document_id, $event)" class="expand-btn mt-1">展開詳細</button>
+                        <button @click.stop="showPopover(group.testId, doc.document_id, $event)" class="expand-btn mt-1">展開詳細</button>
                       </div>
                       <!-- 懸浮視窗（全局） -->
                       <div v-if="activePopover" 
