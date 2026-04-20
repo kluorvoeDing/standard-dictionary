@@ -235,7 +235,7 @@
                         </div>
                       </div>
                       </div>
-                      <div v-if="group.rows[doc.document_id].document_strength === 'guidance'" class="mt-2 text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded">
+                      <div v-if="group.rows[doc.document_id] && group.rows[doc.document_id].document_strength === 'guidance'" class="mt-2 text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded">
                         ⚠️ 此為建議性文件，非強制要求
                       </div>
                     </div>
