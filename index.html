@@ -195,22 +195,22 @@
                   <td v-for="doc in selectedDocDetails" :key="doc.document_id" class="px-4 py-3 align-top">
                     <div v-if="group.rows[doc.document_id]" class="text-sm">
                       <!-- 簡短版（預設） -->
-                      <div v-if="!group.expandedRows || !group.expandedRows[doc.document_id]">
+                      <div v-if="!expandedCells[`${group.testId}-${doc.document_id}`]">
                         <div class="text-gray-600 mb-1">
                           <span class="text-xs text-gray-400">章節：</span>{{ group.rows[doc.document_id].section }}
                         </div>
                         <div class="text-gray-700 mb-2">
-                          <span class="text-xs text-gray-400">條件：</span>
-                          <p class="text-xs">{{ truncate(group.rows[doc.document_id].conditions_summary_zh || group.rows[doc.document_id].conditions_summary, 80) }}</p>
+                          <span class="text-xs text-gray-400 block mb-1">條件：</span>
+                          <div class="text-xs" v-html="formatConditionsShort(group.rows[doc.document_id])"></div>
                         </div>
                         <div class="text-gray-700">
-                          <span class="text-xs text-gray-400">判定：</span>
-                          <p class="text-xs">{{ truncate(group.rows[doc.document_id].evaluation_summary_zh || group.rows[doc.document_id].evaluation_summary, 80) }}</p>
+                          <span class="text-xs text-gray-400 block mb-1">判定：</span>
+                          <div class="text-xs" v-html="formatEvaluationShort(group.rows[doc.document_id])"></div>
                         </div>
                         <button @click="toggleExpand(group.testId, doc.document_id)" class="expand-btn mt-1">展開詳細</button>
                       </div>
                       <!-- 詳細版（展開後） -->
-                      <div v-else>
+                      <div v-if="expandedCells[`${group.testId}-${doc.document_id}`]">
                         <div class="text-gray-600 mb-2">
                           <span class="text-xs text-gray-400">章節：</span>{{ group.rows[doc.document_id].section }}
                         </div>
@@ -338,8 +338,6 @@
                 testObjects: row.test_objects,
                 uniqueTestObjects: [],
                 rows: {},
-                expandedRows: this.expandedCells,
-                editingRows: this.editingCells,
                 category: category,
                 categoryOrder: categoryOrder[category]
               }
@@ -497,17 +495,30 @@
           return items.length > 0 ? items : [{ label: '判定', value: text }]
         },
         formatConditions(row) {
-          // 使用翻譯後的繁體中文內容
+          // 優先使用翻譯後的繁體中文內容
           const text = row.conditions_summary_zh || row.conditions_summary
           if (!text) return ''
           // 將 Markdown 粗體 **xxx** 轉換為 HTML <strong>xxx</strong>
           return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')
         },
+        formatConditionsShort(row) {
+          // 優先使用翻譯後的繁體中文內容
+          const text = row.conditions_summary_zh || row.conditions_summary
+          if (!text) return ''
+          // 將 Markdown 粗體 **xxx** 轉換為 HTML <strong>xxx</strong>，換行轉換為段落
+          return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').split('\n').map(line => `<div class="mb-0.5">${line}</div>`).join('')
+        },
         formatEvaluation(row) {
-          // 使用翻譯後的繁體中文內容
+          // 優先使用翻譯後的繁體中文內容
           const text = row.evaluation_summary_zh || row.evaluation_summary
           if (!text) return ''
           return text.replace(/\n/g, '<br>')
+        },
+        formatEvaluationShort(row) {
+          // 優先使用翻譯後的繁體中文內容
+          const text = row.evaluation_summary_zh || row.evaluation_summary
+          if (!text) return ''
+          return text.split('\n').map(line => `<div class="mb-0.5">${line}</div>`).join('')
         },
         truncate(text, length) {
           if (!text) return ''
@@ -515,12 +526,8 @@
         },
         toggleExpand(testId, docId) {
           const key = `${testId}-${docId}`
-          // Vue 3: 直接使用響應式賦值
-          if (!this.expandedCells[key]) {
-            this.expandedCells[key] = true
-          } else {
-            delete this.expandedCells[key]
-          }
+          // Vue 3: 確保響應式更新
+          this.$set(this.expandedCells, key, !this.expandedCells[key])
         },
         toggleEdit(testId, docId) {
           const key = `${testId}-${docId}`
