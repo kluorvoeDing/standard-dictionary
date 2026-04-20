@@ -614,13 +614,28 @@
         detectTemplateType(row) {
           const name = `${row.item_name_zh || ''} ${(row.item_name_en || '')}`.toLowerCase()
           const norm = (row.normalized_item_id || '').toUpperCase()
+          const hasName = name.trim().length > 0
 
-          if (/外部短路|external short/.test(name) || norm === 'ELEC-01') return 'external_short'
-          if (/過充|overcharge/.test(name) || norm === 'ELEC-02') return 'overcharge'
-          if (/過放|強制放電|overdischarge|forced discharge|over-discharge/.test(name) || ['ELEC-03', 'ELEC-06'].includes(norm)) return 'overdischarge'
-          if (/穿刺|penetration|nail/.test(name) || norm === 'MECH-04') return 'penetration'
-          if (/擠壓|crush/.test(name) || norm === 'MECH-03') return 'crush'
-          if (/加熱|熱斜坡|thermal ramp|heating/.test(name) || norm === 'THERM-01') return 'heating'
+          // 先排除非六大模板項（避免 normalized_item_id 錯映射誤套模板）
+          if (/振動|vibration|絕緣|insulation/.test(name)) return ''
+
+          if (/外部短路|external short/.test(name)) return 'external_short'
+          if (/過充|overcharge|abnormal charging/.test(name)) return 'overcharge'
+          if (/過放|強制放電|overdischarge|forced discharge|over-discharge/.test(name)) return 'overdischarge'
+          if (/穿刺|penetration|nail/.test(name)) return 'penetration'
+          if (/擠壓|crush/.test(name)) return 'crush'
+          if (/加熱|熱斜坡|thermal ramp|heating/.test(name)) return 'heating'
+
+          // 只有在名稱缺失時，才回退使用 normalized_item_id
+          if (!hasName) {
+            if (norm === 'ELEC-01') return 'external_short'
+            if (norm === 'ELEC-02') return 'overcharge'
+            if (['ELEC-03', 'ELEC-06'].includes(norm)) return 'overdischarge'
+            if (norm === 'MECH-04') return 'penetration'
+            if (norm === 'MECH-03') return 'crush'
+            if (norm === 'THERM-01') return 'heating'
+          }
+
           return ''
         },
         extractResistance(text) {
