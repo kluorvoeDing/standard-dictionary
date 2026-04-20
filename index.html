@@ -161,11 +161,9 @@
                   <th v-for="doc in selectedDocDetails" :key="doc.document_id" class="px-4 py-3 text-left text-sm font-medium text-gray-700 min-w-[200px]">
                     <div class="flex items-center gap-2">
                       <span class="font-semibold" :title="doc.full_name">{{ doc.display_name }}</span>
-                        <span :class="getBadgeClass(doc.document_type)" class="text-xs px-2 py-0.5 rounded whitespace-nowrap">
-                          {{ getBadgeLabel(doc.document_type) }}
-                        </span>
-                      </div>
-                      <span class="text-xs text-gray-500 line-clamp-2">{{ doc.full_name }}</span>
+                      <span :class="getBadgeClass(doc.document_type)" class="text-xs px-2 py-0.5 rounded whitespace-nowrap">
+                        {{ getBadgeLabel(doc.document_type) }}
+                      </span>
                     </div>
                   </th>
                 </tr>
@@ -308,10 +306,16 @@
             }
             
             if (!groups[key]) {
+              // 去除測試名稱中的括號（測試對象）
+              let testNameZh = row.normalized_item_name_zh || row.item_name_zh || ''
+              let testNameEn = row.normalized_item_name_en || row.item_name_en || ''
+              testNameZh = testNameZh.replace(/\s*\([^)]*\)/g, '').trim()
+              testNameEn = testNameEn.replace(/\s*\([^)]*\)/g, '').trim()
+              
               groups[key] = {
                 testId: key,
-                testNameZh: row.normalized_item_name_zh || row.item_name_zh,
-                testNameEn: row.normalized_item_name_en || row.item_name_en,
+                testNameZh: testNameZh,
+                testNameEn: testNameEn,
                 testObjects: row.test_objects,
                 uniqueTestObjects: [],
                 rows: {},
