@@ -29,6 +29,13 @@
     .conditions-list li { padding: 0.25rem 0; border-bottom: 1px solid #f0f0f0; }
     .conditions-list li:last-child { border-bottom: none; }
     .conditions-list strong { color: #374151; }
+    /* 測試項目分類底色 */
+    .category-elec { background-color: #E3F2FD; }
+    .category-mech { background-color: #F3E5F5; }
+    .category-env { background-color: #E8F5E9; }
+    .category-therm { background-color: #FFF3E0; }
+    .category-fire { background-color: #FFEBEE; }
+    .category-other { background-color: #F5F5F5; }
   </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -169,8 +176,9 @@
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200">
-                <tr v-for="(group, index) in groupedComparisonRows" :key="group.testId" class="hover:bg-gray-50">
-                  <td class="px-4 py-3 sticky left-0 bg-white">
+                <tr v-for="(group, index) in groupedComparisonRows" :key="group.testId" 
+                    :class="['hover:bg-gray-50', getCategoryClass(group.category)]">
+                  <td class="px-4 py-3 sticky left-0 bg-transparent">
                     <div class="flex items-center gap-2 flex-wrap">
                       <div>
                         <div class="font-medium text-gray-800">{{ group.testNameZh }}</div>
@@ -290,6 +298,9 @@
         },
         groupedComparisonRows() {
           const groups = {}
+          // 分類排序優先級
+          const categoryOrder = { 'ELEC': 1, 'MECH': 2, 'ENV': 3, 'THERM': 4, 'FIRE': 5, 'OTHER': 6 }
+          
           this.filteredComparisonRows.forEach(row => {
             // 分組邏輯：
             // 1. 優先使用 normalized_item_id（如果有）
@@ -312,6 +323,15 @@
               testNameZh = testNameZh.replace(/\s*\([^)]*\)/g, '').trim()
               testNameEn = testNameEn.replace(/\s*\([^)]*\)/g, '').trim()
               
+              // 提取分類（從 normalized_item_id 或 key）
+              const categoryId = row.normalized_item_id || key || ''
+              let category = 'OTHER'
+              if (categoryId.startsWith('ELEC')) category = 'ELEC'
+              else if (categoryId.startsWith('MECH')) category = 'MECH'
+              else if (categoryId.startsWith('ENV')) category = 'ENV'
+              else if (categoryId.startsWith('THERM')) category = 'THERM'
+              else if (categoryId.startsWith('FIRE')) category = 'FIRE'
+              
               groups[key] = {
                 testId: key,
                 testNameZh: testNameZh,
@@ -320,7 +340,9 @@
                 uniqueTestObjects: [],
                 rows: {},
                 expandedRows: this.expandedCells,
-                editingRows: this.editingCells
+                editingRows: this.editingCells,
+                category: category,
+                categoryOrder: categoryOrder[category]
               }
             }
             groups[key].rows[row.document_id] = row
@@ -337,7 +359,13 @@
             })
             group.uniqueTestObjects = [...new Set(allObjects)]
           })
-          return Object.values(groups)
+          // 排序：按分類優先級，然後按測試名稱
+          return Object.values(groups).sort((a, b) => {
+            if (a.categoryOrder !== b.categoryOrder) {
+              return a.categoryOrder - b.categoryOrder
+            }
+            return a.testNameZh.localeCompare(b.testNameZh, 'zh-Hant')
+          })
         }
       },
       methods: {
@@ -417,6 +445,16 @@
             'VEHICLE': 'tag-vehicle'
           }
           return classMap[obj] || 'tag-system'
+        },
+        getCategoryClass(category) {
+          const classMap = {
+            'ELEC': 'category-elec',
+            'MECH': 'category-mech',
+            'ENV': 'category-env',
+            'THERM': 'category-therm',
+            'FIRE': 'category-fire'
+          }
+          return classMap[category] || 'category-other'
         },
         parseConditions(text) {
           // 將條件文字解析成條列式
