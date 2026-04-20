@@ -176,9 +176,8 @@
                 </tr>
               </thead>
               <tbody class="divide-y divide-gray-200">
-                <tr v-for="(group, index) in groupedComparisonRows" :key="group.testId" 
-                    :class="['hover:bg-gray-50', getCategoryClass(group.category)]">
-                  <td class="px-4 py-3 sticky left-0 bg-transparent">
+                <tr v-for="(group, index) in groupedComparisonRows" :key="group.testId" class="hover:bg-gray-50">
+                  <td class="px-4 py-3 sticky left-0 bg-white" :class="getCategoryClass(group.category)">
                     <div class="flex items-center gap-2 flex-wrap">
                       <div>
                         <div class="font-medium text-gray-800">{{ group.testNameZh }}</div>
