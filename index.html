@@ -554,26 +554,26 @@
             const resistance = this.extractResistance(text)
             const temp = this.extractTempToken(text)
             if (!resistance && !temp) return ''
-            return `${resistance || 'R per spec'}@${temp || 'RT'}`
+            return `${resistance || 'R(spec)'}@${temp || 'RT'}`
           }
 
           if (type === 'overcharge') {
-            const current = this.extractCurrentC(text)
+            const current = this.extractCurrentC(text) || this.extractCurrentA(text)
             const vlimit = this.extractVoltageLimit(text)
             const soc = this.extractSocToken(text)
-            const left = current || 'I per spec'
-            const right = vlimit || 'V limit'
+            const left = current || (/(最大充電電流|製造商規定.*充電電流|charge\s*current)/i.test(text) ? 'Imax(spec)' : 'I(spec)')
+            const right = vlimit || (/(限制電壓|終止電壓|保護電壓|charge\s*voltage|voltage)/i.test(text) ? 'Vmax(spec)' : 'V(spec)')
             return `${left} to ${right}${soc ? ` or ${soc}` : ''}`
           }
 
           if (type === 'overdischarge') {
-            const soc = this.extractSocToken(text) || (/(放電終止電壓|放完電|終止電壓)/.test(text) ? '0%SOC' : '')
-            const current = this.extractCurrentC(text) || this.extractCurrentA(text)
+            const soc = this.extractSocToken(text) || (/(放電終止電壓|放完電|終止電壓|0\s*V)/.test(text) ? '0%SOC' : '')
+            const current = this.extractCurrentC(text) || this.extractCurrentA(text) || (/(最大放電電流|discharge\s*current)/i.test(text) ? 'Imax(spec)' : 'I(spec)')
             const duration = this.extractDuration(text)
             const parts = []
             if (soc) parts.push(soc)
             if (current) parts.push(current)
-            const head = parts.join(', ') || 'Discharge per spec'
+            const head = parts.join(', ') || '0%SOC, I(spec)'
             return duration ? `${head} for ${duration}` : head
           }
 
@@ -639,6 +639,16 @@
           return ''
         },
         extractResistance(text) {
+          const pm = text.match(/([0-9]+(?:\.[0-9]+)?)\s*±\s*([0-9]+(?:\.[0-9]+)?)\s*(mΩ|mohm|Ω|ohm)/i)
+          if (pm) {
+            const center = Number(pm[1])
+            const delta = Number(pm[2])
+            const min = Math.round((center - delta) * 1000) / 1000
+            const max = Math.round((center + delta) * 1000) / 1000
+            const unit = /m/i.test(pm[3]) ? 'mΩ' : 'Ω'
+            return `${min}~${max} ${unit}`
+          }
+
           const m = text.match(/(?:≤|<=|<|not\s+exceeding|不高於|小於)?\s*([0-9]+(?:\.[0-9]+)?)\s*(mΩ|mohm|Ω|ohm)/i)
           if (!m) return ''
           const symbol = /≤|<=|小於|不高於|not\s+exceeding/i.test(m[0]) ? '<' : (/</.test(m[0]) ? '<' : '')
@@ -675,10 +685,19 @@
           return ''
         },
         extractCurrentC(text) {
+          const frac = text.match(/(?:at\s+least\s+)?(\d+\s*\/\s*\d+)\s*C\b/i)
+          if (frac) return `${frac[1].replace(/\s+/g, '')}C`
+
           const m = text.match(/(?:≥|>=|<=|≤|>|<)?\s*\d+(?:\.\d+)?\s*C\b/i)
           return m ? m[0].replace(/\s+/g, ' ').trim() : ''
         },
         extractCurrentA(text) {
+          const formula = text.match(/\d+\s*[×x]\s*I\d*\s*\(\s*A\s*\)/i)
+          if (formula) return formula[0].replace(/\s+/g, '').replace('x', '×')
+
+          const eq = text.match(/I\s*=\s*[^,，;；\n]+/i)
+          if (eq) return eq[0].replace(/\s+/g, ' ').trim()
+
           const m = text.match(/(?:≥|>=|<=|≤|>|<)?\s*\d+(?:\.\d+)?\s*(?:mA|A|kA)\b/i)
           return m ? m[0].replace(/\s+/g, ' ').trim() : ''
         },
@@ -686,6 +705,7 @@
           if (/1\.1\s*\*?\s*vmax/i.test(text)) return '1.1*Vmax'
           if (/1\.1\s*倍/.test(text)) return '1.1*Vmax'
           if (/1\.5\s*倍/.test(text)) return '1.5*Vmax'
+          if (/(限制電壓|終止電壓|過充保護電壓|voltage\s*limit|charge\s*voltage)/i.test(text)) return 'Vmax(spec)'
           const v = text.match(/(?:≥|>=|<=|≤|>|<)?\s*\d+(?:\.\d+)?\s*(?:mV|V|kV)\b/i)
           return v ? v[0].replace(/\s+/g, ' ').trim() : ''
         },
@@ -717,9 +737,11 @@
         },
         extractCrushUntil(text) {
           const terms = []
+          if (/0\s*V/i.test(text)) terms.push('0V')
           if (/100\s*kN/i.test(text)) terms.push('100kN')
           if (/15\s*%/.test(text)) terms.push('15%變形')
           if (/1000\s*倍|1000\s*times/i.test(text)) terms.push('1000倍樣品重量')
+          if (/達到最大力後釋放|最大壓力|最大力/.test(text)) terms.push('最大力')
           if (!terms.length) {
             const force = text.match(/(?:\d+(?:\.\d+)?\s*kN)/i)
             if (force) terms.push(force[0].replace(/\s+/g, ''))
