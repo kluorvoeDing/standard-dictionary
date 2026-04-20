@@ -532,6 +532,9 @@
           return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')
         },
         formatConditionsShort(row) {
+          if (row.document_id === 'SAND2017-6925') {
+            return this.formatSandConditionsShort(row)
+          }
           const text = row.conditions_summary_zh || row.conditions_summary
           return this.formatTableShort(text)
         },
@@ -542,11 +545,110 @@
           return text.replace(/\n/g, '<br>')
         },
         formatEvaluationShort(row) {
-          const text = row.evaluation_summary_zh || row.evaluation_summary
-          if (row.document_id === 'SAND2017-6925' && !text) {
-            return '<div class="mb-0.5">No pass/fail; HSL trend</div>'
+          if (row.document_id === 'SAND2017-6925') {
+            return this.formatSandEvaluationShort(row)
           }
+          const text = row.evaluation_summary_zh || row.evaluation_summary
           return this.formatTableShort(text)
+        },
+        formatSandConditionsShort(row) {
+          const rec = this.sandDetailMap[row.item_id]
+          const chunks = []
+
+          if (rec && rec.suggested_conditions) {
+            this.flattenToStrings(rec.suggested_conditions, chunks)
+          }
+
+          if (!chunks.length) {
+            chunks.push(row.conditions_summary_zh || row.conditions_summary || '')
+          }
+
+          const merged = chunks.join(' ; ')
+          const params = this.extractKeyParams(merged)
+          const topic = (row.item_name_zh || '').replace(/建議|測試/g, '').trim() || '測試條件'
+          const method = this.detectMethodZh(merged, topic)
+
+          const lines = []
+          lines.push(`條件: ${topic}`)
+          if (method) {
+            lines.push(`方法: ${method}`)
+          }
+          if (params.length) {
+            lines.push(`關鍵參數: ${params.slice(0, 5).join(', ')}`)
+          } else {
+            const translated = this.translateTableEnglish(merged)
+            lines.push(`關鍵條件: ${this.condenseClause(translated)}`)
+          }
+
+          return lines.map(line => `<div class="mb-0.5">${this.escapeHtml(line)}</div>`).join('')
+        },
+        formatSandEvaluationShort(row) {
+          const text = row.evaluation_summary_zh || row.evaluation_summary
+          if (!text) {
+            return '<div class="mb-0.5">No pass/fail; HSL 趨勢比較</div>'
+          }
+          const translated = this.translateTableEnglish(text)
+          const short = this.condenseClause(translated)
+          return `<div class="mb-0.5">${this.escapeHtml(short)}</div>`
+        },
+        translateTableEnglish(text) {
+          if (!text) return ''
+          return text
+            .replace(/No\s*pass\s*\/\s*fail/ig, 'No pass/fail')
+            .replace(/compare\s+by/ig, '以')
+            .replace(/trend/ig, '趨勢')
+            .replace(/short\s*circuit|short/ig, '短路')
+            .replace(/overcharge/ig, '過充')
+            .replace(/overdischarge|over-discharge/ig, '過放')
+            .replace(/crush/ig, '擠壓')
+            .replace(/penetration/ig, '穿刺')
+            .replace(/thermal\s*ramp|heat/ig, '升溫')
+            .replace(/temperature/ig, '溫度')
+            .replace(/current/ig, '電流')
+            .replace(/voltage/ig, '電壓')
+            .replace(/resistance/ig, '電阻')
+            .replace(/duration|hold/ig, '保持')
+            .replace(/failure/ig, '失效')
+            .replace(/until/ig, 'until')
+            .replace(/\s{2,}/g, ' ')
+            .trim()
+        },
+        extractKeyParams(text) {
+          if (!text) return []
+          const normalized = text
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*minute(s)?/ig, '$1 min')
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*hour(s)?/ig, '$1 h')
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*second(s)?/ig, '$1 s')
+          const paramPattern = /(?:<=|>=|<|>|≈|=|±)?\s*\d+(?:\.\d+)?\s*(?:%SOC|SOC|mΩ|Ω|°C|kPa|MPa|Pa|mV|kV|V|mA|kA|A|C\b|C-rate|mm\/s|mm|min|h|s|Hz|N|kN|kg|g|Wh|mAh|Ah|%)|(?:\d+(?:\.\d+)?\s*\*\s*[A-Za-z][A-Za-z0-9_]*)|(?:[A-Za-z][A-Za-z0-9_]*\s*[/*+-]\s*\d+(?:\.\d+)?)/g
+          return [...new Set((normalized.match(paramPattern) || []).map(x => x.replace(/\s+/g, ' ').trim()).filter(Boolean))]
+        },
+        flattenToStrings(value, out = []) {
+          if (value == null) return out
+          if (Array.isArray(value)) {
+            value.forEach(v => this.flattenToStrings(v, out))
+            return out
+          }
+          if (typeof value === 'object') {
+            Object.values(value).forEach(v => this.flattenToStrings(v, out))
+            return out
+          }
+          out.push(String(value))
+          return out
+        },
+        detectMethodZh(text, fallback = '') {
+          if (!text) return fallback
+          const s = text.toLowerCase()
+          if ((/dc\s*resistance|mω|mΩ|ohm|resistance/.test(s)) && /短路/.test(fallback)) return '依阻值分級短路測試'
+          if (/hard|medium|soft|short/.test(s)) return '依阻值分級短路測試'
+          if (/overcharge/.test(s)) return '分級過充測試'
+          if (/overdischarge|over-discharge/.test(s)) return '過放測試'
+          if (/crush/.test(s)) return '低速擠壓測試'
+          if (/penetration/.test(s)) return '導電針穿刺測試'
+          if (/thermal\s*ramp|heat/.test(s)) return '升溫至失效條件測試'
+          if (/arc/.test(s)) return 'ARC 量熱測試'
+          if (/salt|nacl/.test(s)) return '鹽水浸沒測試'
+          if (/fuel\s*fire/.test(s)) return '燃油火災暴露測試'
+          return fallback
         },
         formatTableShort(text) {
           // 表格欄位：精簡但保留關鍵參數（公式/單位/C-rate）
@@ -563,7 +665,7 @@
           }
 
           const rawClauses = normalized
-            .split(/\n|[;；]|\|(?!\|)/)
+            .split(/\n|\|(?!\|)/)
             .map(x => x.trim())
             .filter(Boolean)
 
@@ -574,10 +676,18 @@
           const selected = this.pickKeyClauses(condensed)
 
           if (!selected.length) {
-            return `<div class="mb-0.5">${this.condenseClause(normalized)}</div>`
+            return `<div class="mb-0.5">${this.escapeHtml(this.condenseClause(normalized))}</div>`
           }
 
-          return selected.map(line => `<div class="mb-0.5">${line}</div>`).join('')
+          return selected.map(line => `<div class="mb-0.5">${this.escapeHtml(line)}</div>`).join('')
+        },
+        escapeHtml(value) {
+          return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
         },
         summarizeSpecialPatterns(text) {
           // 溫度循環/溫度曲線等長條件，先輸出可執行的關鍵摘要
@@ -665,14 +775,14 @@
             .replace(/\s{2,}/g, ' ')
             .trim()
 
-          const paramPattern = /(?:<=|>=|<|>|≈|=|±)?\s*\d+(?:\.\d+)?\s*(?:%SOC|SOC|mΩ|Ω|°C|kPa|MPa|Pa|mV|kV|V|mA|kA|A|C\b|C-rate|mm\/s|mm|min|h|s|Hz|N|kN|kg|g|Wh|mAh|Ah|%)|(?:\d+(?:\.\d+)?\s*\*\s*[A-Za-z][A-Za-z0-9_]*)|(?:[A-Za-z][A-Za-z0-9_]*\s*[/*+-]\s*\d+(?:\.\d+)?)/g
-          const params = (text.match(paramPattern) || []).map(x => x.replace(/\s+/g, ' ').trim())
+          const params = this.extractKeyParams(text)
           const hasLabel = /[:：]/.test(text)
+          const coreLabels = ['SOC', 'Temp', 'I', 'V', 'R', 'Rate', 't']
 
           const untilMatch = text.match(/(?:until|直到|直至)\s*([^,，;；|]+)/i)
           let untilPart = ''
           if (untilMatch) {
-            const untilTokens = (untilMatch[1].match(paramPattern) || []).slice(0, 2)
+            const untilTokens = this.extractKeyParams(untilMatch[1]).slice(0, 2)
             untilPart = untilTokens.length ? `; until ${untilTokens.join(' ')}` : '; until end'
           }
 
@@ -680,6 +790,12 @@
             const dedup = [...new Set(params)].slice(0, 4)
             if (hasLabel) {
               const [label] = text.split(/[:：]/)
+              const labelTrim = label.trim()
+              if (!coreLabels.includes(labelTrim)) {
+                const value = text.split(/[:：]/).slice(1).join(':').trim()
+                const shortened = value.length > 44 ? value.slice(0, 44) + '…' : value
+                return `${labelTrim}: ${shortened}`
+              }
               return `${label.trim()}: ${dedup.join(', ')}${untilPart}`
             }
             return `${dedup.join(', ')}${untilPart}`
