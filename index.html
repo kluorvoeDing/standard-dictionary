@@ -546,52 +546,67 @@
           return this.formatTableShort(text)
         },
         formatTableShort(text) {
-          // 表格欄位使用精簡中文版：移除英文敘述，完整內容保留在懸浮視窗
-          if (!text) return ''
+          // 表格欄位：精簡但保留關鍵參數（公式/單位/C-rate）
+          if (!text) return '<div class="mb-0.5 text-gray-500">—</div>'
 
-          const preservedTokens = []
-          const tokenPattern = /(\d+(?:\.\d+)?C\b|°C|\b(?:kPa|MPa|Pa|Hz|mAh|Ah|mA|kA|A|kV|V|kW|W|Wh|mΩ|Ω|mm|cm|kg|g|min|h|s|%|NaCl|gn)\b)/g
-
-          const lines = text
+          const normalized = text
             .replace(/\*\*(.+?)\*\*/g, '$1')
-            .replace(tokenPattern, (m) => {
-              const idx = preservedTokens.push(m) - 1
-              return `§${idx}§`
-            })
-            .split('\n')
-            .map(line => line.trim())
+            .replace(/\r/g, '')
+            .trim()
+
+          const rawClauses = normalized
+            .split(/\n|[;；]|\|(?!\|)/)
+            .map(x => x.trim())
             .filter(Boolean)
-            .map(line => {
-              let cleaned = line
-                .replace(/^SOC\s*[:：]/i, '荷電狀態：')
-                .replace(/（[^）]*[A-Za-z][^）]*）/g, '')
-                .replace(/\([^)]*[A-Za-z][^)]*\)/g, '')
-                .replace(/[A-Za-z]+/g, '')
-                .replace(/\s{2,}/g, ' ')
-                .replace(/[;；]{2,}/g, '；')
-                .replace(/[，,]{2,}/g, '，')
-                .replace(/[：:]{2,}/g, '：')
-                .replace(/[（）()]+$/g, '')
-                .trim()
 
-              cleaned = cleaned.replace(/^[：:，,；;\-\s]+/, '').trim()
+          const condensed = rawClauses
+            .map(x => this.condenseClause(x))
+            .filter(Boolean)
 
-              cleaned = cleaned.replace(/§(\d+)§/g, (_, i) => preservedTokens[Number(i)] || '')
+          const unique = [...new Set(condensed)]
+          const selected = unique.slice(0, 3)
 
-              if (cleaned.length > 36) {
-                cleaned = cleaned.slice(0, 36) + '…'
-              }
-
-              return cleaned
-            })
-            .filter(line => /[\u4e00-\u9fff]/.test(line))
-            .slice(0, 2)
-
-          if (!lines.length) {
-            return '<div class="mb-0.5 text-gray-500">詳見展開詳細</div>'
+          if (!selected.length) {
+            return `<div class="mb-0.5">${this.condenseClause(normalized)}</div>`
           }
 
-          return lines.map(line => `<div class="mb-0.5">${line}</div>`).join('')
+          return selected.map(line => `<div class="mb-0.5">${line}</div>`).join('')
+        },
+        condenseClause(clause) {
+          if (!clause) return ''
+
+          let text = clause
+            .replace(/^SOC\s*[:：]/i, 'SOC: ')
+            .replace(/^(溫度|温度|Temperature)\s*[:：]/i, 'Temp: ')
+            .replace(/^(電阻|Resistance)\s*[:：]/i, 'R: ')
+            .replace(/^(電壓|Voltage)\s*[:：]/i, 'V: ')
+            .replace(/^(電流|充電電流|放電電流|Current)\s*[:：]/i, 'I: ')
+            .replace(/^(時間|持續時間|Duration)\s*[:：]/i, 't: ')
+            .replace(/\s{2,}/g, ' ')
+            .trim()
+
+          const paramPattern = /(?:<=|>=|<|>|≈|=|±)?\s*\d+(?:\.\d+)?\s*(?:%SOC|SOC|mΩ|Ω|°C|kPa|MPa|Pa|mV|kV|V|mA|kA|A|C\b|C-rate|mm\/s|mm|min|h|s|Hz|N|kN|kg|g|Wh|mAh|Ah|%)|(?:\d+(?:\.\d+)?\s*\*\s*[A-Za-z][A-Za-z0-9_]*)|(?:[A-Za-z][A-Za-z0-9_]*\s*[/*+-]\s*\d+(?:\.\d+)?)/g
+          const params = (text.match(paramPattern) || []).map(x => x.replace(/\s+/g, ' ').trim())
+          const hasLabel = /[:：]/.test(text)
+
+          if (params.length) {
+            const dedup = [...new Set(params)].slice(0, 4)
+            if (hasLabel) {
+              const [label] = text.split(/[:：]/)
+              return `${label.trim()}: ${dedup.join(', ')}`
+            }
+            return dedup.join(', ')
+          }
+
+          if (hasLabel) {
+            const [label, ...rest] = text.split(/[:：]/)
+            const value = rest.join(':').trim()
+            if (value) {
+              return `${label.trim()}: ${value.length > 56 ? value.slice(0, 56) + '…' : value}`
+            }
+          }
+
+          return text.length > 56 ? text.slice(0, 56) + '…' : text
         },
         formatSandPopover(rowData) {
           const rec = this.sandDetailMap[rowData.item_id]
