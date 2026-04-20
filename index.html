@@ -272,7 +272,8 @@
           editingCells: {},
           editBackup: {},
           activePopover: null,
-          activePopoverData: {}
+          activePopoverData: {},
+          sandDetailMap: {}
         }
       },
       async mounted() {
@@ -382,15 +383,30 @@
             
             console.log('Running in', isFileProtocol ? 'GitHub mode (file://)' : 'Local mode (http://)', '| Base URL:', baseUrl)
             
-            const [catalogRes, rowsRes] = await Promise.all([
+            const sandPromise = fetch(baseUrl + 'batch6/content/SAND2017_guidance.json')
+              .then(res => res.ok ? res.json() : null)
+              .catch(() => null)
+
+            const [catalogRes, rowsRes, sandData] = await Promise.all([
               fetch(baseUrl + 'data/catalog.json'),
-              fetch(baseUrl + 'data/comparison_rows.json')
+              fetch(baseUrl + 'data/comparison_rows.json'),
+              sandPromise
             ])
             if (!catalogRes.ok || !rowsRes.ok) {
               throw new Error('HTTP ' + catalogRes.status)
             }
             this.catalog = await catalogRes.json()
             this.comparisonRows = await rowsRes.json()
+
+            if (sandData && sandData.recommendations) {
+              const map = {}
+              sandData.recommendations.forEach(rec => {
+                const id = (rec.recommendation_id || '').replace(/-A$/, '')
+                if (id) map[id] = rec
+              })
+              this.sandDetailMap = map
+            }
+
             console.log('Loaded', this.catalog.length, 'documents and', this.comparisonRows.length, 'comparison rows')
           } catch (error) {
             console.error('Failed to load data:', error)
@@ -533,8 +549,15 @@
           // 表格欄位使用精簡中文版：移除英文敘述，完整內容保留在懸浮視窗
           if (!text) return ''
 
+          const preservedTokens = []
+          const tokenPattern = /(\d+(?:\.\d+)?C\b|°C|\b(?:kPa|MPa|Pa|Hz|mAh|Ah|mA|kA|A|kV|V|kW|W|Wh|mΩ|Ω|mm|cm|kg|g|min|h|s|%|NaCl|gn)\b)/g
+
           const lines = text
             .replace(/\*\*(.+?)\*\*/g, '$1')
+            .replace(tokenPattern, (m) => {
+              const idx = preservedTokens.push(m) - 1
+              return `§${idx}§`
+            })
             .split('\n')
             .map(line => line.trim())
             .filter(Boolean)
@@ -543,12 +566,6 @@
                 .replace(/^SOC\s*[:：]/i, '荷電狀態：')
                 .replace(/（[^）]*[A-Za-z][^）]*）/g, '')
                 .replace(/\([^)]*[A-Za-z][^)]*\)/g, '')
-                .replace(/kPa/gi, '千帕')
-                .replace(/Hz/gi, '赫茲')
-                .replace(/mm/gi, '毫米')
-                .replace(/cm/gi, '公分')
-                .replace(/mΩ/gi, '毫歐')
-                .replace(/°C/gi, '°C')
                 .replace(/[A-Za-z]+/g, '')
                 .replace(/\s{2,}/g, ' ')
                 .replace(/[;；]{2,}/g, '；')
@@ -558,15 +575,62 @@
                 .trim()
 
               cleaned = cleaned.replace(/^[：:，,；;\-\s]+/, '').trim()
+
+              cleaned = cleaned.replace(/§(\d+)§/g, (_, i) => preservedTokens[Number(i)] || '')
+
+              if (cleaned.length > 36) {
+                cleaned = cleaned.slice(0, 36) + '…'
+              }
+
               return cleaned
             })
             .filter(line => /[\u4e00-\u9fff]/.test(line))
+            .slice(0, 2)
 
           if (!lines.length) {
             return '<div class="mb-0.5 text-gray-500">詳見展開詳細</div>'
           }
 
           return lines.map(line => `<div class="mb-0.5">${line}</div>`).join('')
+        },
+        formatSandPopover(rowData) {
+          const rec = this.sandDetailMap[rowData.item_id]
+          if (!rec) {
+            return {
+              conditions: this.formatConditions(rowData),
+              evaluation: this.formatEvaluation(rowData)
+            }
+          }
+
+          const suggested = rec.suggested_conditions
+          let conditionsDetail = ''
+          if (suggested && typeof suggested === 'object' && !Array.isArray(suggested)) {
+            conditionsDetail = Object.entries(suggested)
+              .map(([k, v]) => `<div class="mb-1">• <strong>${k}</strong>：${Array.isArray(v) ? v.join('；') : v}</div>`)
+              .join('')
+          } else if (Array.isArray(suggested)) {
+            conditionsDetail = suggested.map(v => `<div class="mb-1">• ${v}</div>`).join('')
+          } else {
+            conditionsDetail = suggested ? `<div class="mb-1">${suggested}</div>` : ''
+          }
+
+          const measurements = Array.isArray(rec.suggested_measurements)
+            ? rec.suggested_measurements.join('、')
+            : (rec.suggested_measurements || '')
+
+          const conditions = `
+            <div class="mb-2"><strong>目的：</strong>${rec.purpose || '—'}</div>
+            <div class="mb-2"><strong>建議條件：</strong></div>
+            <div class="mb-2">${conditionsDetail || '—'}</div>
+            <div><strong>建議量測：</strong>${measurements || '—'}</div>
+          `
+
+          const evaluation = `
+            <div class="mb-2"><strong>評估依據：</strong>${rec.evaluation_basis || '—'}</div>
+            <div><strong>補充理由：</strong>${rec.rationale || '—'}</div>
+          `
+
+          return { conditions, evaluation }
         },
         truncate(text, length) {
           if (!text) return ''
@@ -618,11 +682,15 @@
           const rowData = group.rows[docId]
           
           // 設置懸浮視窗數據
+          const sandDetails = rowData.document_id === 'SAND2017-6925'
+            ? this.formatSandPopover(rowData)
+            : null
+
           this.activePopover = { testId, docId }
           this.activePopoverData = {
             section: rowData.section,
-            conditions: this.formatConditions(rowData),
-            evaluation: this.formatEvaluation(rowData)
+            conditions: sandDetails ? sandDetails.conditions : this.formatConditions(rowData),
+            evaluation: sandDetails ? sandDetails.evaluation : this.formatEvaluation(rowData)
           }
         },
         closePopover() {
