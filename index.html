@@ -301,7 +301,14 @@
         groupedComparisonRows() {
           const groups = {}
           this.filteredComparisonRows.forEach(row => {
-            const key = row.normalized_item_id || row.item_id || row.item_name_en
+            // 優先使用 normalized_item_id，如果沒有則使用 item_id
+            // 如果都沒有，則按測試項目名稱分組（去除測試對象括號）
+            let key = row.normalized_item_id || row.item_id
+            if (!key) {
+              // 從名稱中提取測試項目（去除括號中的測試對象）
+              const name = row.item_name_zh || row.item_name_en || ''
+              key = name.replace(/\s*\([^)]*\)/g, '').trim() // 移除（xxx）部分
+            }
             if (!groups[key]) {
               groups[key] = {
                 testId: key,
