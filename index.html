@@ -196,11 +196,11 @@
                         </div>
                         <div class="text-gray-700 mb-2">
                           <span class="text-xs text-gray-400">條件：</span>
-                          <p class="text-xs">{{ truncate(group.rows[doc.document_id].conditions_summary, 80) }}</p>
+                          <p class="text-xs">{{ truncate(group.rows[doc.document_id].conditions_summary_zh || group.rows[doc.document_id].conditions_summary, 80) }}</p>
                         </div>
                         <div class="text-gray-700">
                           <span class="text-xs text-gray-400">判定：</span>
-                          <p class="text-xs">{{ truncate(group.rows[doc.document_id].evaluation_summary, 80) }}</p>
+                          <p class="text-xs">{{ truncate(group.rows[doc.document_id].evaluation_summary_zh || group.rows[doc.document_id].evaluation_summary, 80) }}</p>
                         </div>
                         <button @click="toggleExpand(group.testId, doc.document_id)" class="expand-btn mt-1">展開詳細</button>
                       </div>
@@ -293,14 +293,20 @@
         groupedComparisonRows() {
           const groups = {}
           this.filteredComparisonRows.forEach(row => {
-            // 優先使用 normalized_item_id，如果沒有則使用 item_id
-            // 如果都沒有，則按測試項目名稱分組（去除測試對象括號）
-            let key = row.normalized_item_id || row.item_id
+            // 分組邏輯：
+            // 1. 優先使用 normalized_item_id（如果有）
+            // 2. 否則使用 item_id（如果有）
+            // 3. 如果都沒有，從名稱提取（去除測試對象括號）
+            let key = row.normalized_item_id
+            if (!key) {
+              key = row.item_id
+            }
             if (!key) {
               // 從名稱中提取測試項目（去除括號中的測試對象）
               const name = row.item_name_zh || row.item_name_en || ''
-              key = name.replace(/\s*\([^)]*\)/g, '').trim() // 移除（xxx）部分
+              key = name.replace(/\s*\([^)]*\)/g, '').trim()
             }
+            
             if (!groups[key]) {
               groups[key] = {
                 testId: key,
