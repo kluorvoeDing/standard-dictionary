@@ -516,11 +516,8 @@
           return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')
         },
         formatConditionsShort(row) {
-          // 優先使用翻譯後的繁體中文內容
           const text = row.conditions_summary_zh || row.conditions_summary
-          if (!text) return ''
-          // 將 Markdown 粗體 **xxx** 轉換為 HTML <strong>xxx</strong>，換行轉換為段落
-          return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').split('\n').map(line => `<div class="mb-0.5">${line}</div>`).join('')
+          return this.formatTableShort(text)
         },
         formatEvaluation(row) {
           // 優先使用翻譯後的繁體中文內容
@@ -529,10 +526,47 @@
           return text.replace(/\n/g, '<br>')
         },
         formatEvaluationShort(row) {
-          // 優先使用翻譯後的繁體中文內容
           const text = row.evaluation_summary_zh || row.evaluation_summary
+          return this.formatTableShort(text)
+        },
+        formatTableShort(text) {
+          // 表格欄位使用精簡中文版：移除英文敘述，完整內容保留在懸浮視窗
           if (!text) return ''
-          return text.split('\n').map(line => `<div class="mb-0.5">${line}</div>`).join('')
+
+          const lines = text
+            .replace(/\*\*(.+?)\*\*/g, '$1')
+            .split('\n')
+            .map(line => line.trim())
+            .filter(Boolean)
+            .map(line => {
+              let cleaned = line
+                .replace(/^SOC\s*[:：]/i, '荷電狀態：')
+                .replace(/（[^）]*[A-Za-z][^）]*）/g, '')
+                .replace(/\([^)]*[A-Za-z][^)]*\)/g, '')
+                .replace(/kPa/gi, '千帕')
+                .replace(/Hz/gi, '赫茲')
+                .replace(/mm/gi, '毫米')
+                .replace(/cm/gi, '公分')
+                .replace(/mΩ/gi, '毫歐')
+                .replace(/°C/gi, '°C')
+                .replace(/[A-Za-z]+/g, '')
+                .replace(/\s{2,}/g, ' ')
+                .replace(/[;；]{2,}/g, '；')
+                .replace(/[，,]{2,}/g, '，')
+                .replace(/[：:]{2,}/g, '：')
+                .replace(/[（）()]+$/g, '')
+                .trim()
+
+              cleaned = cleaned.replace(/^[：:，,；;\-\s]+/, '').trim()
+              return cleaned
+            })
+            .filter(line => /[\u4e00-\u9fff]/.test(line))
+
+          if (!lines.length) {
+            return '<div class="mb-0.5 text-gray-500">詳見展開詳細</div>'
+          }
+
+          return lines.map(line => `<div class="mb-0.5">${line}</div>`).join('')
         },
         truncate(text, length) {
           if (!text) return ''
