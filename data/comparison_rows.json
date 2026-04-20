@@ -2373,7 +2373,7 @@
     "evaluation_summary": "應不起火、不爆炸（5.1.6）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 按 7.1.1 方法充電\n方向：垂直於電池單體極板方向，或與整車佈局上最容易受到擠壓的方向相同\n設備：半徑 75mm 的半圓柱體，長度 L 大於被擠壓電池單體的尺寸\n速度：≤ 2 mm/s",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 方法充電\n方向：垂直於電池單體極板方向，或與整車佈局上最容易受到擠壓的方向相同\n設備：半徑 75mm 的半圓柱體，長度 L 大於被擠壓電池單體的尺寸\n速度：≤ 2 mm/s\n終止條件：電壓達到 0V；變形量達到 15%；擠壓力達到 100 kN；擠壓力達到 1000 倍試驗對象質量",
     "evaluation_summary_zh": "無起火、爆炸（5.1.6）",
     "normalized_item_id": "MECH-02"
   },
@@ -2400,7 +2400,7 @@
     "evaluation_summary": "應不起火、不爆炸，試驗後的絕緣電阻應不小于 100 Ω/V（若有交流電路，絕緣電阻應不小于 500 Ω/V）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.4 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
+    "conditions_summary_zh": "**SOC：** 按 7.2 準備\n測試方法： 按 8.2.4 測試\npost test insulation: 絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）\n終止條件：電壓達到 0V；變形量達到 15%；擠壓力達到 100 kN；擠壓力達到 1000 倍試驗對象質量",
     "evaluation_summary_zh": "無起火、爆炸，試驗後絕緣電阻≥ 100 Ω/V（交流電路，絕緣電阻≥ 500 Ω/V）",
     "normalized_item_id": "MECH-02"
   },
@@ -2821,7 +2821,7 @@
     "evaluation_summary": "電池應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n設備：半徑 75 mm 的鋼質半圓柱體\n作用力： 50 ± 1 kN\n速度：0.1 mm/s",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n設備：半徑 75 mm 的鋼質半圓柱體\n作用力： 50 ± 1 kN\n速度：0.1 mm/s\n終止條件：壓力達到最大值",
     "evaluation_summary_zh": "電池無起火、爆炸",
     "normalized_item_id": "MECH-02"
   },
