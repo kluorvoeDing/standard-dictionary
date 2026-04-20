@@ -36,6 +36,10 @@
     .category-therm { background-color: #FFF3E0; }
     .category-fire { background-color: #FFEBEE; }
     .category-other { background-color: #F5F5F5; }
+    /* 懸浮視窗樣式 */
+    .popover { position: absolute; z-index: 1000; background: white; border: 1px solid #e5e7eb; border-radius: 0.5rem; padding: 1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.15); max-width: 400px; max-height: 300px; overflow-y: auto; }
+    .popover-arrow { position: absolute; width: 0; height: 0; border-left: 8px solid transparent; border-right: 8px solid transparent; border-bottom: 8px solid #e5e7eb; top: -8px; left: 50%; transform: translateX(-50%); }
+    .popover-arrow::after { content: ''; position: absolute; width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-bottom: 7px solid white; top: 1px; left: -7px; }
   </style>
 </head>
 <body class="bg-gray-50 min-h-screen">
@@ -194,8 +198,8 @@
                   </td>
                   <td v-for="doc in selectedDocDetails" :key="doc.document_id" class="px-4 py-3 align-top">
                     <div v-if="group.rows[doc.document_id]" class="text-sm">
-                      <!-- 簡短版（預設） -->
-                      <div v-if="!expandedCells[`${group.testId}-${doc.document_id}`]">
+                      <!-- 簡短版 -->
+                      <div>
                         <div class="text-gray-600 mb-1">
                           <span class="text-xs text-gray-400">章節：</span>{{ group.rows[doc.document_id].section }}
                         </div>
@@ -207,32 +211,25 @@
                           <span class="text-xs text-gray-400 block mb-1">判定：</span>
                           <div class="text-xs" v-html="formatEvaluationShort(group.rows[doc.document_id])"></div>
                         </div>
-                        <button @click="toggleExpand(group.testId, doc.document_id)" class="expand-btn mt-1">展開詳細</button>
-                      </div>
-                      <!-- 詳細版（展開後） -->
-                      <div v-if="expandedCells[`${group.testId}-${doc.document_id}`]">
-                        <div class="text-gray-600 mb-2">
-                          <span class="text-xs text-gray-400">章節：</span>{{ group.rows[doc.document_id].section }}
-                        </div>
-                        <div class="text-gray-700 mb-2">
-                          <span class="text-xs text-gray-400 block mb-1">條件：</span>
-                          <div class="text-xs whitespace-pre-wrap" v-html="formatConditions(group.rows[doc.document_id])"></div>
-                        </div>
-                        <div class="text-gray-700 mb-2">
-                          <span class="text-xs text-gray-400 block mb-1">判定：</span>
-                          <div class="text-xs whitespace-pre-wrap" v-html="formatEvaluation(group.rows[doc.document_id])"></div>
-                        </div>
-                        <!-- 編輯功能 -->
-                        <div class="mt-2">
-                          <button @click="toggleEdit(group.testId, doc.document_id)" class="expand-btn">✏️ 編輯</button>
-                          <div v-if="group.editingRows && group.editingRows[doc.document_id]" class="mt-1">
-                            <textarea v-model="group.rows[doc.document_id].conditions_summary" class="edit-area mb-1" rows="3" placeholder="測試條件"></textarea>
-                            <textarea v-model="group.rows[doc.document_id].evaluation_summary" class="edit-area mb-1" rows="2" placeholder="判定標準"></textarea>
-                            <button @click="saveEdit(group.testId, doc.document_id)" class="px-2 py-1 bg-green-600 text-white rounded text-xs">保存</button>
-                            <button @click="cancelEdit(group.testId, doc.document_id)" class="px-2 py-1 bg-gray-400 text-white rounded text-xs ml-1">取消</button>
+                        <button @click="showPopover(group.testId, doc.document_id, $event)" class="expand-btn mt-1">展開詳細</button>
+                        <!-- 懸浮視窗 -->
+                        <div v-if="activePopover && activePopover.testId === group.testId && activePopover.docId === doc.document_id" 
+                             class="popover" 
+                             :style="popoverStyle"
+                             @click.stop>
+                          <div class="popover-arrow"></div>
+                          <div class="text-gray-600 mb-2">
+                            <span class="text-xs text-gray-400 font-semibold">章節：</span>{{ group.rows[doc.document_id].section }}
+                          </div>
+                          <div class="text-gray-700 mb-2">
+                            <span class="text-xs text-gray-400 font-semibold block mb-1">條件：</span>
+                            <div class="text-xs" v-html="formatConditions(group.rows[doc.document_id])"></div>
+                          </div>
+                          <div class="text-gray-700">
+                            <span class="text-xs text-gray-400 font-semibold block mb-1">判定：</span>
+                            <div class="text-xs" v-html="formatEvaluation(group.rows[doc.document_id])"></div>
                           </div>
                         </div>
-                        <button @click="toggleExpand(group.testId, doc.document_id)" class="expand-btn mt-1">收合</button>
                       </div>
                       <div v-if="group.rows[doc.document_id].document_strength === 'guidance'" class="mt-2 text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded">
                         ⚠️ 此為建議性文件，非強制要求
@@ -266,12 +263,19 @@
           },
           expandedCells: {},
           editingCells: {},
-          editBackup: {}
+          editBackup: {},
+          activePopover: null,
+          popoverStyle: {}
         }
       },
       async mounted() {
         this.loadFromLocalStorage()
         await this.loadData()
+        // 點擊外部關閉懸浮視窗
+        document.addEventListener('click', this.closePopover)
+      },
+      beforeUnmount() {
+        document.removeEventListener('click', this.closePopover)
       },
       computed: {
         filteredCatalog() {
@@ -555,6 +559,26 @@
           }
           delete this.editingCells[key]
           delete this.editBackup[key]
+        },
+        showPopover(testId, docId, event) {
+          // 如果已經打開，則關閉
+          if (this.activePopover && this.activePopover.testId === testId && this.activePopover.docId === docId) {
+            this.activePopover = null
+            return
+          }
+          // 計算懸浮視窗位置
+          const button = event.target
+          const rect = button.getBoundingClientRect()
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+          
+          this.activePopover = { testId, docId }
+          this.popoverStyle = {
+            left: `${rect.left + rect.width / 2}px`,
+            top: `${rect.bottom + scrollTop + 10}px`
+          }
+        },
+        closePopover() {
+          this.activePopover = null
         },
         downloadJSON() {
           const data = {
