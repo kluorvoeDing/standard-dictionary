@@ -1,0 +1,462 @@
+{
+  "standard_id": "GB31241",
+  "filename": "GB31241-2022-1_OCR.md",
+  "full_name": "GB 31241-2022 便携式电子产品用锂离子电池和电池组安全技术规范 (Safety technical specification for lithium ion cells and batteries used in portable electronic equipments)",
+  "publication_date": "2022-12-29 发布，2024-01-01 实施",
+  "replaces": "GB 31241-2014",
+  "li_applicable": true,
+  "test_count": 20,
+  "ocr_quality": "中等（使用 Tesseract OCR chi_sim 提取，部分頁面有亂碼，但大部分中文內容可讀）",
+  "ocr_issues": [
+    "頁面 1：版權頁有亂碼",
+    "頁面 2-3：目錄部分有亂碼（如 'cer cee cee eee ee ees'、'{RUE'、'HH FU | BRIBE DE ARG' 等）",
+    "頁面 4：前言部分有 OCR 錯誤（如 '202%' 應該是 '2020'）",
+    "頁面 9-10：部分定義有亂碼（如 'GL a Av FL HE BE AR'、'Hi) A Wg ML' 等）",
+    "建議：關鍵測試條件和判定標準已提取，但部分數值可能需要人工覆核"
+  ],
+  "tests": [
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "高溫外部短路測試（電池）",
+      "test_name_en": "High Temperature External Short Circuit Test (Cell)",
+      "section": "6.1",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "temperature": "57 ± 4°C（恆溫箱）",
+        "resistance": "小於 0.1 Ω",
+        "duration": "至少 1 小時（外殼溫度回到 57 ± 4°C 後）",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.1 高溫外部短路：電池按照 6.1 進行高溫外部短路試驗，應不起火、不爆炸。"
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過充電測試（電池）",
+      "test_name_en": "Overcharge Test (Cell)",
+      "section": "6.2",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "charging_current": "製造商規定的最大充電電流",
+        "charging_voltage": "充電限制電壓的 1.1 倍",
+        "duration": "直到電流降至 0.05 I1 或達到穩定狀態",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.2 過充電：電池按照 6.2 進行過充電試驗，應不起火、不爆炸。"
+    },
+    {
+      "test_id": "ELEC-03",
+      "test_name_zh": "強制放電測試（電池）",
+      "test_name_en": "Forced Discharge Test (Cell)",
+      "section": "6.3",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.2 規定放電至放電終止電壓",
+        "current": "1.0 I1 A",
+        "duration": "90 分鐘",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.3 強制放電：電池按照 6.3 進行強制放電試驗，應不起火、不爆炸。"
+    },
+    {
+      "test_id": "ENV-02",
+      "test_name_zh": "低氣壓測試（電池）",
+      "test_name_en": "Low Pressure Test (Cell)",
+      "section": "7.1",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "pressure": "11.6 kPa 或更低",
+        "temperature": "20 ± 5°C",
+        "duration": "至少 6 小時",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_fire", "no_explosion"],
+        "description": "應無洩漏、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.1 低氣壓：電池按照 7.1 進行低氣壓試驗，應無洩漏、不起火、不爆炸。"
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "溫度循環測試（電池）",
+      "test_name_en": "Temperature Cycling Test (Cell)",
+      "section": "7.2",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "cycle_count": "10 次",
+        "temperature_profile": [
+          {"temp": "70 ± 3°C", "duration": "4 h"},
+          {"temp": "20 ± 3°C", "duration": "2 h"},
+          {"temp": "-40 ± 3°C", "duration": "4 h"},
+          {"temp": "20 ± 3°C", "duration": "2 h"}
+        ],
+        "post_test_storage": "24 小時（20 ± 5°C）",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_fire", "no_explosion"],
+        "description": "應無洩漏、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.2 溫度循環：電池按照 7.2 進行溫度循環試驗，應無洩漏、不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動測試（電池）",
+      "test_name_en": "Vibration Test (Cell)",
+      "section": "7.3",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "waveform": "正弦波",
+        "frequency_range": "7 Hz 至 200 Hz",
+        "cycle_count": "12 次循環（每方向 3 小時）",
+        "directions": "3 個互相垂直方向",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_fire", "no_explosion"],
+        "description": "應無洩漏、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.3 振動：電池按照 7.3 進行振動試驗，應無洩漏、不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "加速度衝擊測試（電池）",
+      "test_name_en": "Acceleration Shock Test (Cell)",
+      "section": "7.4",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "acceleration": "100 gn（峰值）",
+        "pulse_duration": "6 ms（半正弦波）",
+        "shock_count": "每個方向 3 次，共 3 個方向（18 次）",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_fire", "no_explosion"],
+        "description": "應無洩漏、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.4 加速度衝擊：電池按照 7.4 進行加速度衝擊試驗，應無洩漏、不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "跌落測試（電池）",
+      "test_name_en": "Drop Test (Cell)",
+      "section": "7.5",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "height": "1.0 m（混凝土或金屬地板）",
+        "drop_count": "每個樣品跌落 1 次",
+        "orientation": "隨機方向",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_fire", "no_explosion"],
+        "description": "應無洩漏、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.5 跌落：電池按照 7.5 進行跌落試驗，應無洩漏、不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "擠壓測試（電池）",
+      "test_name_en": "Crush Test (Cell)",
+      "section": "7.6",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "apparatus": "半徑 75 mm 的半圓柱體",
+        "speed": "不大於 2 mm/s",
+        "termination_criteria": ["電壓達到 0 V", "變形量達到 15%", "擠壓力達到 100 kN"],
+        "hold_time": "保持 10 分鐘",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.6 擠壓：電池按照 7.6 進行擠壓試驗，應不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-09",
+      "test_name_zh": "重物衝擊測試（電池）",
+      "test_name_en": "Heavy Object Impact Test (Cell)",
+      "section": "7.7",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "apparatus": "15.8 ± 0.1 mm 直徑不鏽鋼棒",
+        "mass": "9.1 ± 0.1 kg",
+        "height": "610 ± 25 mm",
+        "orientation": "縱軸平行於平板，垂直於鋼棒",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.7 重物衝擊：電池按照 7.7 進行重物衝擊試驗，應不起火、不爆炸。"
+    },
+    {
+      "test_id": "THERM-01",
+      "test_name_zh": "熱濫用測試（電池）",
+      "test_name_en": "Thermal Abuse Test (Cell)",
+      "section": "7.8",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "ramp_rate": "5 ± 2°C/min",
+        "target_temperature": "130 ± 2°C",
+        "hold_time": "30 分鐘",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.8 熱濫用：電池按照 7.8 進行熱濫用試驗，應不起火、不爆炸。"
+    },
+    {
+      "test_id": "THERM-04",
+      "test_name_zh": "燃燒噴射測試（電池）",
+      "test_name_en": "Combustion Jet Test (Cell)",
+      "section": "7.9",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "test_method": "待補充（OCR 部分內容缺失）",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.9 燃燒噴射：電池按照 7.9 進行燃燒噴射試驗，應不起火、不爆炸。"
+    },
+    {
+      "test_id": "ENV-02",
+      "test_name_zh": "低氣壓測試（電池組）",
+      "test_name_en": "Low Pressure Test (Battery)",
+      "section": "8.1",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "pressure": "11.6 kPa 或更低",
+        "temperature": "20 ± 5°C",
+        "duration": "至少 6 小時",
+        "post_test_insulation": "絕緣電阻測試（若適用）",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_housing_crack", "no_fire", "no_explosion"],
+        "description": "應無洩漏、外殼破裂、起火或爆炸現象"
+      },
+      "exemptions": [],
+      "original_text_snippet": "8.1 低氣壓：電池組按照 8.1 進行低氣壓試驗，應無洩漏、外殼破裂、起火或爆炸現象。"
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "溫度循環測試（電池組）",
+      "test_name_en": "Temperature Cycling Test (Battery)",
+      "section": "8.2",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "cycle_count": "10 次",
+        "temperature_profile": [
+          {"temp": "70 ± 3°C", "duration": "4 h"},
+          {"temp": "20 ± 3°C", "duration": "2 h"},
+          {"temp": "-40 ± 3°C", "duration": "4 h"},
+          {"temp": "20 ± 3°C", "duration": "2 h"}
+        ],
+        "post_test_storage": "24 小時（20 ± 5°C）",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_housing_crack", "no_fire", "no_explosion"],
+        "description": "應無洩漏、外殼破裂、起火或爆炸現象"
+      },
+      "exemptions": [],
+      "original_text_snippet": "8.2 溫度循環：電池組按照 8.2 進行溫度循環試驗，應無洩漏、外殼破裂、起火或爆炸現象。"
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動測試（電池組）",
+      "test_name_en": "Vibration Test (Battery)",
+      "section": "8.3",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "waveform": "正弦波",
+        "frequency_range": "7 Hz 至 200 Hz",
+        "cycle_count": "12 次循環（每方向 3 小時）",
+        "directions": "3 個互相垂直方向",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_housing_crack", "no_fire", "no_explosion"],
+        "description": "應無洩漏、外殼破裂、起火或爆炸現象"
+      },
+      "exemptions": [],
+      "original_text_snippet": "8.3 振動：電池組按照 8.3 進行振動試驗，應無洩漏、外殼破裂、起火或爆炸現象。"
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "加速度衝擊測試（電池組）",
+      "test_name_en": "Acceleration Shock Test (Battery)",
+      "section": "8.4",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "acceleration": "100 gn（峰值）",
+        "pulse_duration": "6 ms（半正弦波）",
+        "shock_count": "每個方向 3 次，共 3 個方向（18 次）",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_housing_crack", "no_fire", "no_explosion"],
+        "description": "應無洩漏、外殼破裂、起火或爆炸現象"
+      },
+      "exemptions": [],
+      "original_text_snippet": "8.4 加速度衝擊：電池組按照 8.4 進行加速度衝擊試驗，應無洩漏、外殼破裂、起火或爆炸現象。"
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "跌落測試（電池組）",
+      "test_name_en": "Drop Test (Battery)",
+      "section": "8.5",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "height": "1.0 m（混凝土或金屬地板）",
+        "drop_count": "每個樣品跌落 1 次",
+        "orientation": "隨機方向",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_housing_crack", "no_fire", "no_explosion"],
+        "description": "應無洩漏、外殼破裂、起火或爆炸現象"
+      },
+      "exemptions": [],
+      "original_text_snippet": "8.5 跌落：電池組按照 8.5 進行跌落試驗，應無洩漏、外殼破裂、起火或爆炸現象。"
+    },
+    {
+      "test_id": "MECH-10",
+      "test_name_zh": "應力消除測試（電池組）",
+      "test_name_en": "Stress Relief Test (Battery)",
+      "section": "8.6",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "test_method": "待補充（OCR 部分內容缺失）",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_housing_crack", "no_fire", "no_explosion"],
+        "description": "應無洩漏、外殼破裂、起火或爆炸現象"
+      },
+      "exemptions": [],
+      "original_text_snippet": "8.6 應力消除：電池組按照 8.6 進行應力消除試驗，應無洩漏、外殼破裂、起火或爆炸現象。"
+    },
+    {
+      "test_id": "THERM-05",
+      "test_name_zh": "高溫使用測試（電池組）",
+      "test_name_en": "High Temperature Use Test (Battery)",
+      "section": "8.7",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "temperature": "待補充（OCR 部分內容缺失）",
+        "duration": "待補充",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_housing_crack", "no_fire", "no_explosion"],
+        "description": "應無洩漏、外殼破裂、起火或爆炸現象"
+      },
+      "exemptions": [],
+      "original_text_snippet": "8.7 高溫使用：電池組按照 8.7 進行高溫使用試驗，應無洩漏、外殼破裂、起火或爆炸現象。"
+    },
+    {
+      "test_id": "ENV-07",
+      "test_name_zh": "洗滌測試（電池組）",
+      "test_name_en": "Washing Test (Battery)",
+      "section": "8.8",
+      "test_objects": ["PACK"],
+      "applicability": "適用於可穿戴設備等可能接觸水的電池組",
+      "conditions": {
+        "soc": "按 4.5.1 規定充電",
+        "test_method": "參見附錄 E（洗滌試驗）",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_housing_crack", "no_fire", "no_explosion"],
+        "description": "應無洩漏、外殼破裂、起火或爆炸現象"
+      },
+      "exemptions": [
+        "不適用於不接觸水的電池組"
+      ],
+      "original_text_snippet": "8.8 洗滌：電池組按照 8.8 進行洗滌試驗，應無洩漏、外殼破裂、起火或爆炸現象。"
+    },
+    {
+      "test_id": "THERM-06",
+      "test_name_zh": "阻燃要求（電池組）",
+      "test_name_en": "Flame Retardancy Requirement (Battery)",
+      "section": "8.9",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "test_method": "參見附錄 F（可燃性試驗方法）",
+        "observation": "試驗後觀察 6 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire_propagation"],
+        "description": "應滿足阻燃要求"
+      },
+      "exemptions": [],
+      "original_text_snippet": "8.9 阻燃要求：電池組按照 8.9 進行阻燃試驗，應滿足阻燃要求。"
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Washing Test (8.8)",
+      "exemption": "不適用於不接觸水的電池組（如非可穿戴設備）"
+    },
+    {
+      "test_id": "System Protection Circuit (Chapter 11)",
+      "exemption": "僅適用於自身不帶保護電路但在充電器或電子產品中帶有保護電路的電池組或電池"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-17 19:15",
+    "extraction_method": "Manual reading and analysis of .md file (Tesseract OCR)",
+    "ocr_quality_notes": "OCR 品質中等，使用 Tesseract chi_sim 提取。頁面 1-4、9-10 有亂碼，但大部分中文內容可讀。關鍵測試條件和判定標準已提取，但部分數值可能需要人工覆核。建議參考原始 PDF 確認關鍵數值。"
+  }
+}

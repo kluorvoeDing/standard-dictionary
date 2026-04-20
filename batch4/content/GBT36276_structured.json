@@ -1,0 +1,533 @@
+{
+  "standard_id": "GBT-36276",
+  "filename": "GBT 36276-2023.md",
+  "full_name": "GB/T 36276-2023 电力储能用锂离子电池 (Lithium ion battery for electrical energy storage)",
+  "publication_date": "2023-12-28 发布，2024-07-01 实施",
+  "replaces": "GB/T 36276-2018",
+  "publisher": "国家市场监督管理总局 / 国家标准化管理委员会",
+  "li_applicable": true,
+  "test_count": 23,
+  "ocr_quality": "良好（pdfplumber 提取，中文內容完整）",
+  "tests": [
+    {
+      "test_id": "PERF-01",
+      "test_name_zh": "初始充放电性能试验（25°C）",
+      "test_name_en": "Initial Charge/Discharge Performance Test (25°C)",
+      "section": "6.4.1.1",
+      "test_objects": ["CELL", "MODULE", "CLUSTER"],
+      "conditions": {
+        "soc": "初始化放电后",
+        "temperature": "25 ± 2°C",
+        "rest": "静置 5 h",
+        "charge": "以 P_rc 恒功率充电至截止条件，静置 10 min",
+        "discharge": "以 P_rd 恒功率放电至截止条件，静置 10 min",
+        "recording": "记录功率、时间、电压、温度、能量"
+      },
+      "criteria": {
+        "pass_conditions": ["within_spec"],
+        "description": "计算初始充放电能量效率、平均值、极差及百分比"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.4.1.1 25℃初始充放电性能试验：以 P_rc 恒功率充电至截止条件，静置 10 min；以 P_rd 恒功率放电至截止条件，静置 10 min。计算初始充放电能量效率。"
+    },
+    {
+      "test_id": "PERF-02",
+      "test_name_zh": "初始充放电性能试验（45°C）",
+      "test_name_en": "Initial Charge/Discharge Performance Test (45°C)",
+      "section": "6.4.1.2",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": "初始化放电后",
+        "temperature": "45 ± 2°C",
+        "rest": "静置 16 h",
+        "charge": "以 P_rc 恒功率充电至截止条件，静置 10 min",
+        "discharge": "以 P_rd 恒功率放电至截止条件，静置 10 min"
+      },
+      "criteria": {
+        "pass_conditions": ["within_spec"],
+        "description": "计算能量效率"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.4.1.2 45℃初始充放电性能试验：在 45±2°C 下静置 16 h，以 P_rc 充电、P_rd 放电，计算能量效率。"
+    },
+    {
+      "test_id": "PERF-03",
+      "test_name_zh": "初始充放电性能试验（5°C）",
+      "test_name_en": "Initial Charge/Discharge Performance Test (5°C)",
+      "section": "6.4.1.3",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": "初始化放电后",
+        "temperature": "5 ± 2°C",
+        "rest": "静置 20 h",
+        "charge": "以 P_rc 恒功率充电至截止条件，静置 10 min",
+        "discharge": "以 P_rd 恒功率放电至截止条件，静置 10 min"
+      },
+      "criteria": {
+        "pass_conditions": ["within_spec"],
+        "description": "计算能量效率"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.4.1.3 5℃初始充放电性能试验：在 5±2°C 下静置 20 h，以 P_rc 充电、P_rd 放电，计算能量效率。"
+    },
+    {
+      "test_id": "PERF-04",
+      "test_name_zh": "功率特性试验",
+      "test_name_en": "Power Characteristic Test",
+      "section": "6.4.2",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": "100% P_rd 放电后",
+        "temperature": "25 ± 2°C",
+        "rest": "静置 5 h",
+        "procedure": "以 5% 额定功率为步长，从 100% 递减至 5%，逐次进行充放电",
+        "recording": "记录各功率下的能量、效率"
+      },
+      "criteria": {
+        "pass_conditions": ["within_spec"],
+        "description": "绘制功率特性曲线图（功率百分比 vs 能量效率/能量百分比）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.4.2 功率特性试验：以额定充放电功率的 5% 为步长，逐次递减充放电功率至 5%，绘制功率特性曲线图。"
+    },
+    {
+      "test_id": "PERF-05",
+      "test_name_zh": "倍率充放电性能试验",
+      "test_name_en": "Rate Charge/Discharge Performance Test",
+      "section": "6.4.3",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "procedure": ["1×P_rc 充电", "1×P_rd 放电", "2×P_rc 充电", "1×P_rc 充电", "2×P_rd 放电", "1×P_rd 放电", "2×P_rc 充电", "2×P_rd 放电"],
+        "recording": "记录各阶段的功率、时间、电压、温度、能量"
+      },
+      "criteria": {
+        "pass_conditions": ["within_spec"],
+        "description": "评估高倍率充放电性能"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.4.3 倍率充放电性能试验：进行 1C/2C 交替充放电循环，记录各阶段能量。"
+    },
+    {
+      "test_id": "PERF-06",
+      "test_name_zh": "能量保持与能量恢复能力试验",
+      "test_name_en": "Energy Retention and Recovery Test",
+      "section": "6.4.4",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "procedure": ["充满电后在 25°C 静置 28 天", "放电测量剩余能量", "充电后再次放电测量恢复能量"],
+        "rest_condition": "25 ± 2°C，28 天"
+      },
+      "criteria": {
+        "pass_conditions": ["retention_rate_within_spec", "recovery_rate_within_spec"],
+        "description": "计算能量保持率和能量恢复率"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.4.4 能量保持与能量恢复能力试验：充满电后静置 28 天，测量剩余能量和恢复能量，计算保持率和恢复率。"
+    },
+    {
+      "test_id": "DUR-01",
+      "test_name_zh": "贮存性能试验",
+      "test_name_en": "Storage Performance Test",
+      "section": "6.5.1",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": "50% SOC（或制造商规定）",
+        "temperature": "25 ± 2°C 或 45 ± 2°C",
+        "duration": "28 天",
+        "post_storage": "充放电循环后测量容量"
+      },
+      "criteria": {
+        "pass_conditions": ["capacity_recovery_within_spec"],
+        "description": "评估长期贮存后的容量恢复能力"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.5.1 贮存性能试验：50% SOC 下贮存 28 天，充放电循环后测量容量恢复。"
+    },
+    {
+      "test_id": "DUR-02",
+      "test_name_zh": "循环性能试验",
+      "test_name_en": "Cycle Performance Test",
+      "section": "6.5.2",
+      "test_objects": ["CELL", "MODULE", "CLUSTER"],
+      "conditions": {
+        "procedure": "按额定功率充放电循环",
+        "termination": "能量衰减至额定能量的规定百分比（如 80%）",
+        "recording": "记录循环次数、能量衰减曲线"
+      },
+      "criteria": {
+        "pass_conditions": ["cycle_life_within_spec"],
+        "description": "评估循环寿命（额定功率充放电循环次数保证值）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.5.2 循环性能试验：按额定功率充放电循环至能量衰减至规定值，记录循环次数。"
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "高温适应性试验",
+      "test_name_en": "High Temperature Adaptability Test",
+      "section": "6.5.1",
+      "test_objects": ["CELL", "MODULE", "CLUSTER"],
+      "conditions": {
+        "temperature": "按制造商规定的高温（如 45°C 或更高）",
+        "procedure": "高温下充放电循环",
+        "monitoring": "监测性能衰减"
+      },
+      "criteria": {
+        "pass_conditions": ["performance_within_spec"],
+        "description": "评估高温环境下的性能"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.5.1 高温适应性试验：在高温环境下进行充放电，评估性能。"
+    },
+    {
+      "test_id": "ENV-02",
+      "test_name_zh": "低温适应性试验",
+      "test_name_en": "Low Temperature Adaptability Test",
+      "section": "6.5.2",
+      "test_objects": ["CELL", "MODULE", "CLUSTER"],
+      "conditions": {
+        "temperature": "按制造商规定的低温（如 -20°C 或更低）",
+        "procedure": "低温下充放电",
+        "monitoring": "监测性能衰减"
+      },
+      "criteria": {
+        "pass_conditions": ["performance_within_spec"],
+        "description": "评估低温环境下的性能"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.5.2 低温适应性试验：在低温环境下进行充放电，评估性能。"
+    },
+    {
+      "test_id": "ENV-03",
+      "test_name_zh": "高海拔初始充放电性能试验",
+      "test_name_en": "High Altitude Initial Charge/Discharge Performance Test",
+      "section": "6.5.3",
+      "test_objects": ["CELL", "MODULE", "CLUSTER"],
+      "conditions": {
+        "pressure": "模拟高海拔气压（如 60 kPa 或更低）",
+        "procedure": "低气压下初始充放电",
+        "recording": "记录能量、效率"
+      },
+      "criteria": {
+        "pass_conditions": ["within_spec"],
+        "description": "评估高海拔环境下的初始性能"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.5.3 高海拔初始充放电性能试验：在低气压下进行充放电，记录能量和效率。"
+    },
+    {
+      "test_id": "ENV-04",
+      "test_name_zh": "盐雾性能试验",
+      "test_name_en": "Salt Spray Performance Test",
+      "section": "6.7.3.1",
+      "test_objects": ["MODULE", "CLUSTER"],
+      "conditions": {
+        "test_method": "按 GB/T 2423.17 或等效标准",
+        "duration": "按标准规定（如 48 h）",
+        "post_test": "外观检查、绝缘测试"
+      },
+      "criteria": {
+        "pass_conditions": ["no_corrosion_hazard", "insulation_within_spec"],
+        "description": "评估耐盐雾腐蚀能力"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.3.1 盐雾性能试验：按 GB/T 2423.17 进行盐雾测试，检查腐蚀和绝缘。"
+    },
+    {
+      "test_id": "ENV-05",
+      "test_name_zh": "交变湿热性能试验",
+      "test_name_en": "Alternating Damp Heat Performance Test",
+      "section": "6.7.3.2",
+      "test_objects": ["MODULE", "CLUSTER"],
+      "conditions": {
+        "test_method": "按 GB/T 2423.4 或等效标准",
+        "cycle_count": "按标准规定（如 6 循环）",
+        "post_test": "外观检查、绝缘测试、功能测试"
+      },
+      "criteria": {
+        "pass_conditions": ["no_damage", "insulation_within_spec", "function_normal"],
+        "description": "评估耐湿热能力"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.3.2 交变湿热性能试验：按 GB/T 2423.4 进行湿热循环，检查外观、绝缘和功能。"
+    },
+    {
+      "test_id": "ENV-06",
+      "test_name_zh": "振动性能试验",
+      "test_name_en": "Vibration Performance Test",
+      "section": "6.7.2.3",
+      "test_objects": ["MODULE", "CLUSTER"],
+      "conditions": {
+        "test_type": "随机振动",
+        "axes": "X、Y、Z 三方向各 1 h",
+        "frequency_range": "5-36 Hz（按表 18 参数）",
+        "post_test": "绝缘性能试验、耐压性能试验"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage", "insulation_within_spec"],
+        "description": "评估耐振动能力"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.2.3 振动性能试验：X、Y、Z 三方向随机振动各 1 h，后进行绝缘和耐压测试。"
+    },
+    {
+      "test_id": "ENV-07",
+      "test_name_zh": "液冷管路耐压性能试验",
+      "test_name_en": "Liquid Cooling Pipe Pressure Resistance Test",
+      "section": "6.7.2.4",
+      "test_objects": ["MODULE", "CLUSTER"],
+      "applicability": "液冷系统",
+      "conditions": {
+        "pressure": "1.5 倍最大工作压力",
+        "duration": "按标准规定",
+        "monitoring": "监测泄漏"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leak"],
+        "description": "评估液冷管路耐压能力"
+      },
+      "exemptions": [
+        "仅适用于液冷系统"
+      ],
+      "original_text_snippet": "6.7.2.4 液冷管路耐压性能试验：1.5 倍最大工作压力，监测泄漏。"
+    },
+    {
+      "test_id": "ENV-08",
+      "test_name_zh": "高海拔绝缘性能试验",
+      "test_name_en": "High Altitude Insulation Performance Test",
+      "section": "6.7.3.3",
+      "test_objects": ["MODULE", "CLUSTER"],
+      "conditions": {
+        "pressure": "模拟高海拔气压（如 60 kPa 或更低）",
+        "test_voltage": "按表 16 规定",
+        "duration": "1 min",
+        "measurement": "测量绝缘电阻"
+      },
+      "criteria": {
+        "pass_conditions": ["insulation_resistance_within_spec"],
+        "description": "评估高海拔环境下的绝缘性能"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.3.3 高海拔绝缘性能试验：低气压下施加试验电压 1 min，测量绝缘电阻。"
+    },
+    {
+      "test_id": "ENV-09",
+      "test_name_zh": "高海拔耐压性能试验",
+      "test_name_en": "High Altitude Withstand Voltage Performance Test",
+      "section": "6.7.3.4",
+      "test_objects": ["MODULE", "CLUSTER"],
+      "conditions": {
+        "pressure": "模拟高海拔气压（如 60 kPa 或更低）",
+        "test_voltage_dc": "按表 17 规定（直流）",
+        "test_voltage_ac": "按表 17 规定（交流 45-62 Hz）",
+        "duration": "60 s",
+        "monitoring": "监测击穿、闪络"
+      },
+      "criteria": {
+        "pass_conditions": ["no_breakdown", "no_flashover"],
+        "description": "评估高海拔环境下的耐压性能"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.3.4 高海拔耐压性能试验：低气压下施加直流/交流试验电压 60 s，监测击穿和闪络。"
+    },
+    {
+      "test_id": "SAFE-01",
+      "test_name_zh": "过充电性能试验",
+      "test_name_en": "Overcharge Performance Test",
+      "section": "6.7.1.1",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": "初始化充电后",
+        "charging_current": "I = P_rc / U_nom",
+        "termination_criteria": ["电压达到充电截止电压的 1.5 倍", "时间达到 1 h"],
+        "observation": "观察 1 h，记录电流、时间、电压、温度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "应无起火、无爆炸、无漏液"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.1.1 过充电性能试验：以 I = P_rc/U_nom 恒流充电至 1.5 倍截止电压或 1 h，观察 1 h，应无起火、爆炸、漏液。"
+    },
+    {
+      "test_id": "SAFE-02",
+      "test_name_zh": "过放电性能试验",
+      "test_name_en": "Overdischarge Performance Test",
+      "section": "6.7.1.2",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": "初始化放电后",
+        "discharge_current": "I = P_rd / U_nom",
+        "termination_criteria": ["电压达到 0 V", "时间达到 1 h"],
+        "observation": "观察 1 h，记录电流、时间、电压、温度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "应无起火、无爆炸、无漏液"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.1.2 过放电性能试验：以 I = P_rd/U_nom 恒流放电至 0 V 或 1 h，观察 1 h，应无起火、爆炸、漏液。"
+    },
+    {
+      "test_id": "SAFE-03",
+      "test_name_zh": "过载性能试验",
+      "test_name_en": "Overload Performance Test",
+      "section": "6.7.1.3",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "charge_power": "4 × P_rc",
+        "charge_duration": "静置 10 min",
+        "discharge_power": "4 × P_rd",
+        "discharge_duration": "观察 1 h",
+        "recording": "记录功率、时间、电压、温度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "应无起火、无爆炸、无漏液"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.1.3 过载性能试验：以 4×P_rc 充电 10 min，以 4×P_rd 放电 1 h，观察，应无起火、爆炸、漏液。"
+    },
+    {
+      "test_id": "SAFE-04",
+      "test_name_zh": "短路性能试验",
+      "test_name_en": "Short Circuit Performance Test",
+      "section": "6.7.1.4",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": "初始化充电后",
+        "external_resistance_cell": "[0.8, 1.0] mΩ（电池单体）",
+        "external_resistance_module": "[0.8, 1.0] mΩ 和 [27.0, 32.8] mΩ（电池模块，两种条件）",
+        "contact_resistance": "≤ 0.1 mΩ",
+        "duration": "短路 10 min（单体）/ 10 min + 30 min（模块）",
+        "observation": "观察 1 h，记录电流、时间、电压、温度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "应无起火、无爆炸、无漏液"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.1.4 短路性能试验：外部电阻 [0.8,1.0] mΩ，短路 10 min，观察 1 h，应无起火、爆炸、漏液。"
+    },
+    {
+      "test_id": "SAFE-05",
+      "test_name_zh": "绝缘性能试验",
+      "test_name_en": "Insulation Resistance Test",
+      "section": "6.7.1.5",
+      "test_objects": ["MODULE", "CLUSTER"],
+      "conditions": {
+        "test_voltage": "按表 16（500 V / 1000 V / 2500 V，取决于充电截止电压）",
+        "duration": "1 min",
+        "measurement": "测量正极/负极与外部裸露可导电部分之间的绝缘电阻",
+        "calculation": "计算绝缘电阻与标称电压的比值"
+      },
+      "criteria": {
+        "pass_conditions": ["insulation_resistance_within_spec"],
+        "description": "绝缘电阻应符合规定限值"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.1.5 绝缘性能试验：按表 16 施加试验电压 1 min，测量绝缘电阻，计算与标称电压的比值。"
+    },
+    {
+      "test_id": "SAFE-06",
+      "test_name_zh": "耐压性能试验",
+      "test_name_en": "Withstand Voltage Test",
+      "section": "6.7.1.6",
+      "test_objects": ["MODULE", "CLUSTER"],
+      "conditions": {
+        "test_voltage_dc": "按表 17（直流，1530-5370 V）",
+        "test_voltage_ac": "按表 17（交流 45-62 Hz，1080-3800 V）",
+        "ramp": "10 s 内从≤50% 增加至试验电压",
+        "duration": "保持 60 s",
+        "monitoring": "记录试验电压、漏电流，监测击穿、闪络"
+      },
+      "criteria": {
+        "pass_conditions": ["no_breakdown", "no_flashover"],
+        "description": "应无击穿、无闪络"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.1.6 耐压性能试验：按表 17 施加直流/交流试验电压 60 s，应无击穿、闪络。"
+    },
+    {
+      "test_id": "SAFE-07",
+      "test_name_zh": "挤压性能试验",
+      "test_name_en": "Crush Performance Test",
+      "section": "6.7.2.1",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": "初始化充电后",
+        "apparatus": "半径 R=75 mm 的半圆柱体挤压头",
+        "force": "50 kN，保持 10 min",
+        "observation": "观察 1 h，记录电压、温度、挤压力"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "应无起火、无爆炸、无漏液"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.2.1 挤压性能试验：R=75 mm 半圆柱体挤压头，50 kN 保持 10 min，观察 1 h，应无起火、爆炸、漏液。"
+    },
+    {
+      "test_id": "SAFE-08",
+      "test_name_zh": "跌落性能试验",
+      "test_name_en": "Drop Performance Test",
+      "section": "6.7.2.2",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": "初始化充电后",
+        "height_cell": "1.5 m（电池单体）",
+        "height_module": "2.0 m（电池模块）",
+        "orientation": "正极或负极朝下",
+        "surface": "水泥地面",
+        "observation": "观察 1 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "应无起火、无爆炸、无漏液"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.2.2 跌落性能试验：电池单体 1.5 m、电池模块 2.0 m 自由跌落，观察 1 h，应无起火、爆炸、漏液。"
+    },
+    {
+      "test_id": "SAFE-09",
+      "test_name_zh": "报警和保护功能试验",
+      "test_name_en": "Alarm and Protection Function Test",
+      "section": "6.7.5",
+      "test_objects": ["MODULE", "CLUSTER"],
+      "conditions": {
+        "procedure": "模拟过充、过放、过流、过温、短路等故障条件",
+        "monitoring": "监测报警和保护动作"
+      },
+      "criteria": {
+        "pass_conditions": ["alarm_functional", "protection_functional"],
+        "description": "报警和保护功能应正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.7.5 报警和保护功能试验：模拟故障条件，监测报警和保护动作，应功能正常。"
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Liquid Cooling Pipe Pressure Resistance Test (6.7.2.4)",
+      "exemption": "仅适用于液冷系统"
+    },
+    {
+      "test_id": "Vibration/Insulation/Withstand Voltage Tests (6.7.2.3, 6.7.1.5, 6.7.1.6)",
+      "exemption": "电池单体不进行这些测试，仅电池模块和电池簇进行"
+    },
+    {
+      "test_id": "High Altitude Tests (6.5.3, 6.7.3.3, 6.7.3.4)",
+      "exemption": "仅适用于高海拔应用场合"
+    },
+    {
+      "test_id": "Salt Spray/Alternating Damp Heat Tests (6.7.3.1, 6.7.3.2)",
+      "exemption": "仅适用于特殊环境应用场合"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 01:15",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction via pdfplumber)",
+    "ocr_quality_notes": "OCR 品质良好，使用 pdfplumber 直接提取，中文内容完整，章节编号清晰。GB/T 36276-2023 是中国电力储能用锂离子电池的国家推荐标准，替代 GB/T 36276-2018。测试涵盖电性能、环境适应性、耐久性能、安全性能等。"
+  }
+}

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standard Dictionary | 國際標準對比資料庫</title>
+  <script src="https://unpkg.com/vue@3.4.21/dist/vue.global.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .badge-standard { background-color: rgb(219, 234, 254); color: rgb(30, 64, 175); }
+    .badge-guidance { background-color: rgb(254, 249, 195); color: rgb(161, 98, 7); }
+    .badge-test-method { background-color: rgb(243, 232, 255); color: rgb(107, 33, 168); }
+    .checkbox-card { border: 1px solid rgb(229, 231, 235); border-radius: 0.5rem; padding: 0.75rem; cursor: pointer; transition: all 0.2s; }
+    .checkbox-card:hover { box-shadow: 0 4px 6px -1px rgb(0, 0, 0, 0.1); }
+    .checkbox-card.selected { border-color: rgb(59, 130, 246); background-color: rgb(239, 246, 255); ring: 2px solid rgb(147, 197, 253); }
+    .test-object-tag { font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: 9999px; background-color: rgb(229, 231, 235); color: rgb(55, 65, 81); }
+    .expand-btn { background: none; border: none; color: rgb(59, 130, 246); cursor: pointer; font-size: 0.875rem; text-decoration: underline; }
+    .detail-row { font-size: 0.75rem; color: rgb(107, 114, 128); margin-top: 0.25rem; }
+    .edit-area { width: 100%; border: 1px solid rgb(209, 213, 219); border-radius: 0.25rem; padding: 0.25rem; font-size: 0.75rem; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div id="app" class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">📚 Standard Dictionary</h1>
+      <p class="text-gray-600">國際標準對比資料庫 - 快速查詢和對比不同電池安全標準之間的測試要求差異</p>
+      <p class="text-sm text-gray-500 mt-2">版本：v0.9.0 | 文件：{{ catalog.length }} | 測試項目：{{ comparisonRows.length }}</p>
+      <div class="flex gap-2 mt-4">
+        <button @click="downloadJSON" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm">📥 下載 JSON</button>
+        <label class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm cursor-pointer">
+          📤 上傳 JSON
+          <input type="file" @change="uploadJSON" accept=".json" class="hidden">
+        </label>
+        <button @click="saveToLocalStorage" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 text-sm">💾 儲存狀態</button>
+        <button @click="clearLocalStorage" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 text-sm">🗑️ 清除狀態</button>
+      </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Document Type Filter -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">文件類型</label>
+          <select v-model="filters.documentType" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500">
+            <option value="all">全部</option>
+            <option value="standard">標準 (Standard)</option>
+            <option value="guidance">建議 (Guidance)</option>
+            <option value="test_method">測試方法 (Test Method)</option>
+          </select>
+        </div>
+
+        <!-- Test Object Filter -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">測試對象</label>
+          <select v-model="filters.testObject" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500">
+            <option value="all">全部</option>
+            <option value="CELL">CELL (電芯)</option>
+            <option value="MODULE">MODULE (模組)</option>
+            <option value="PACK">PACK (電池包)</option>
+            <option value="ESS">ESS (儲能系統)</option>
+            <option value="SYSTEM">SYSTEM (整套裝置)</option>
+            <option value="VEHICLE">VEHICLE (車輛)</option>
+          </select>
+        </div>
+
+        <!-- Search -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">搜尋</label>
+          <input v-model="filters.search" type="text" placeholder="搜尋測試項目名稱..." class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <!-- Document Selection Panel -->
+      <aside class="lg:col-span-1">
+        <div class="bg-white rounded-lg shadow p-4 sticky top-4">
+          <h2 class="text-lg font-semibold text-gray-800 mb-4">📋 選擇標準</h2>
+          <p class="text-sm text-gray-500 mb-4">勾選 2-5 個標準進行對比</p>
+          
+          <div class="space-y-2 max-h-[600px] overflow-y-auto">
+            <div v-for="doc in filteredCatalog" :key="doc.document_id"
+                 @click="toggleDocument(doc.document_id)"
+                 :class="['checkbox-card', selectedDocs.includes(doc.document_id) ? 'selected' : '']">
+              <div class="flex items-start justify-between">
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-medium text-gray-800">{{ doc.display_name }}</span>
+                    <span :class="getBadgeClass(doc.document_type)" class="text-xs px-2 py-0.5 rounded">
+                      {{ getBadgeLabel(doc.document_type) }}
+                    </span>
+                  </div>
+                  <p class="text-xs text-gray-500 line-clamp-2">{{ doc.full_name }}</p>
+                  <div class="flex items-center gap-2 mt-2">
+                    <span class="text-xs text-gray-400">{{ doc.item_count }} 項測試</span>
+                    <span class="text-xs text-gray-400">•</span>
+                    <span class="text-xs text-gray-400">{{ doc.publisher }}</span>
+                  </div>
+                </div>
+                <input type="checkbox" :checked="selectedDocs.includes(doc.document_id)" class="mt-1 h-4 w-4 text-blue-600 rounded">
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-4 border-t">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm font-medium text-gray-700">已選：{{ selectedDocs.length }} 個</span>
+              <button @click="selectedDocs = []" v-if="selectedDocs.length > 0" class="text-sm text-red-600 hover:text-red-800">清空</button>
+            </div>
+            <button @click="generateComparison" 
+                    :disabled="selectedDocs.length < 2"
+                    :class="selectedDocs.length >= 2 ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-300 cursor-not-allowed'"
+                    class="w-full py-2 px-4 rounded-lg text-white font-medium transition-colors">
+              開始對比
+            </button>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Comparison Grid -->
+      <main class="lg:col-span-3">
+        <div v-if="!showComparison" class="bg-white rounded-lg shadow p-8 text-center">
+          <div class="text-6xl mb-4">📊</div>
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">選擇標準開始對比</h2>
+          <p class="text-gray-600">從左側勾選至少 2 個標準，然後點擊「開始對比」</p>
+        </div>
+
+        <div v-else class="bg-white rounded-lg shadow overflow-hidden">
+          <!-- Comparison Header -->
+          <div class="p-4 border-b bg-gray-50">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-gray-800">📊 標準對比結果</h2>
+              <button @click="showComparison = false" class="text-gray-600 hover:text-gray-800">✕ 關閉</button>
+            </div>
+            <p class="text-sm text-gray-500 mt-1">共 {{ filteredComparisonRows.length }} 項測試</p>
+          </div>
+
+          <!-- Comparison Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-4 py-3 text-left text-sm font-medium text-gray-700 sticky left-0 bg-gray-50">測試項目</th>
+                  <th v-for="doc in selectedDocDetails" :key="doc.document_id" class="px-4 py-3 text-left text-sm font-medium text-gray-700 min-w-[200px]">
+                    <div class="flex flex-col gap-1">
+                      <div class="flex items-center gap-2">
+                        <span class="font-semibold">{{ doc.display_name }}</span>
+                        <span :class="getBadgeClass(doc.document_type)" class="text-xs px-2 py-0.5 rounded whitespace-nowrap">
+                          {{ getBadgeLabel(doc.document_type) }}
+                        </span>
+                      </div>
+                      <span class="text-xs text-gray-500 line-clamp-2">{{ doc.full_name }}</span>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr v-for="(group, index) in groupedComparisonRows" :key="group.testId" class="hover:bg-gray-50">
+                  <td class="px-4 py-3 sticky left-0 bg-white">
+                    <div class="font-medium text-gray-800">{{ group.testNameZh }}</div>
+                    <div class="text-xs text-gray-500">{{ group.testNameEn }}</div>
+                    <!-- 只在未選取測試對象篩選時顯示 -->
+                    <div v-if="filters.testObject === 'all'" class="flex flex-wrap gap-1 mt-1">
+                      <span v-for="obj in group.uniqueTestObjects" :key="obj" class="test-object-tag">{{ obj }}</span>
+                    </div>
+                  </td>
+                  <td v-for="doc in selectedDocDetails" :key="doc.document_id" class="px-4 py-3 align-top">
+                    <div v-if="group.rows[doc.document_id]" class="text-sm">
+                      <!-- 簡短版（預設） -->
+                      <div v-if="!group.expandedRows || !group.expandedRows[doc.document_id]">
+                        <div class="text-gray-600 mb-1">
+                          <span class="text-xs text-gray-400">章節：</span>{{ group.rows[doc.document_id].section }}
+                        </div>
+                        <div class="text-gray-700 mb-2">
+                          <span class="text-xs text-gray-400">條件：</span>
+                          <p class="text-xs">{{ truncate(group.rows[doc.document_id].conditions_summary, 80) }}</p>
+                        </div>
+                        <div class="text-gray-700">
+                          <span class="text-xs text-gray-400">判定：</span>
+                          <p class="text-xs">{{ truncate(group.rows[doc.document_id].evaluation_summary, 80) }}</p>
+                        </div>
+                        <button @click="toggleExpand(group.testId, doc.document_id)" class="expand-btn mt-1">展開詳細</button>
+                      </div>
+                      <!-- 詳細版（展開後） -->
+                      <div v-else>
+                        <div class="text-gray-600 mb-2">
+                          <span class="text-xs text-gray-400">章節：</span>{{ group.rows[doc.document_id].section }}
+                        </div>
+                        <div class="text-gray-700 mb-2">
+                          <span class="text-xs text-gray-400 block mb-1">條件：</span>
+                          <p class="text-xs whitespace-pre-wrap">{{ group.rows[doc.document_id].conditions_summary }}</p>
+                        </div>
+                        <div class="text-gray-700 mb-2">
+                          <span class="text-xs text-gray-400 block mb-1">判定：</span>
+                          <p class="text-xs whitespace-pre-wrap">{{ group.rows[doc.document_id].evaluation_summary }}</p>
+                        </div>
+                        <!-- 編輯功能 -->
+                        <div class="mt-2">
+                          <button @click="toggleEdit(group.testId, doc.document_id)" class="expand-btn">✏️ 編輯</button>
+                          <div v-if="group.editingRows && group.editingRows[doc.document_id]" class="mt-1">
+                            <textarea v-model="group.rows[doc.document_id].conditions_summary" class="edit-area mb-1" rows="3" placeholder="測試條件"></textarea>
+                            <textarea v-model="group.rows[doc.document_id].evaluation_summary" class="edit-area mb-1" rows="2" placeholder="判定標準"></textarea>
+                            <button @click="saveEdit(group.testId, doc.document_id)" class="px-2 py-1 bg-green-600 text-white rounded text-xs">保存</button>
+                            <button @click="cancelEdit(group.testId, doc.document_id)" class="px-2 py-1 bg-gray-400 text-white rounded text-xs ml-1">取消</button>
+                          </div>
+                        </div>
+                        <button @click="toggleExpand(group.testId, doc.document_id)" class="expand-btn mt-1">收合</button>
+                      </div>
+                      <div v-if="group.rows[doc.document_id].document_strength === 'guidance'" class="mt-2 text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded">
+                        ⚠️ 此為建議性文件，非強制要求
+                      </div>
+                    </div>
+                    <div v-else class="text-gray-400 text-sm">—</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const { createApp } = Vue
+
+    createApp({
+      data() {
+        return {
+          catalog: [],
+          comparisonRows: [],
+          selectedDocs: [],
+          showComparison: false,
+          filters: {
+            documentType: 'all',
+            testObject: 'all',
+            search: ''
+          },
+          expandedCells: {},
+          editingCells: {},
+          editBackup: {}
+        }
+      },
+      async mounted() {
+        this.loadFromLocalStorage()
+        await this.loadData()
+      },
+      computed: {
+        filteredCatalog() {
+          return this.catalog.filter(doc => {
+            if (this.filters.documentType !== 'all' && doc.document_type !== this.filters.documentType) return false
+            return true
+          })
+        },
+        selectedDocDetails() {
+          return this.catalog.filter(doc => this.selectedDocs.includes(doc.document_id))
+        },
+        filteredComparisonRows() {
+          return this.comparisonRows.filter(row => {
+            if (!this.selectedDocs.includes(row.document_id)) return false
+            if (this.filters.testObject !== 'all' && !row.test_objects.includes(this.filters.testObject)) return false
+            if (this.filters.search) {
+              const search = this.filters.search.toLowerCase()
+              if (!row.item_name_zh.toLowerCase().includes(search) && 
+                  !row.item_name_en.toLowerCase().includes(search)) return false
+            }
+            return true
+          })
+        },
+        groupedComparisonRows() {
+          const groups = {}
+          this.filteredComparisonRows.forEach(row => {
+            const key = row.normalized_item_id || row.item_id || row.item_name_en
+            if (!groups[key]) {
+              groups[key] = {
+                testId: key,
+                testNameZh: row.normalized_item_name_zh || row.item_name_zh,
+                testNameEn: row.normalized_item_name_en || row.item_name_en,
+                testObjects: row.test_objects,
+                uniqueTestObjects: [],
+                rows: {},
+                expandedRows: this.expandedCells,
+                editingRows: this.editingCells
+              }
+            }
+            groups[key].rows[row.document_id] = row
+          })
+          // 計算唯一測試對象（移除重複）
+          Object.values(groups).forEach(group => {
+            const allObjects = []
+            Object.values(group.rows).forEach(row => {
+              if (row.normalized_test_objects) {
+                allObjects.push(...row.normalized_test_objects)
+              } else if (row.test_objects) {
+                allObjects.push(...row.test_objects)
+              }
+            })
+            group.uniqueTestObjects = [...new Set(allObjects)]
+          })
+          return Object.values(groups)
+        }
+      },
+      methods: {
+        async loadData() {
+          try {
+            // 自動偵測運行環境：file:// 或 http://
+            const isFileProtocol = window.location.protocol === 'file:'
+            const baseUrl = isFileProtocol 
+              ? 'https://raw.githubusercontent.com/kluorvoeDing/standard-dictionary/main/'
+              : './'
+            
+            console.log('Running in', isFileProtocol ? 'GitHub mode (file://)' : 'Local mode (http://)', '| Base URL:', baseUrl)
+            
+            const [catalogRes, rowsRes] = await Promise.all([
+              fetch(baseUrl + 'data/catalog.json'),
+              fetch(baseUrl + 'data/comparison_rows.json')
+            ])
+            if (!catalogRes.ok || !rowsRes.ok) {
+              throw new Error('HTTP ' + catalogRes.status)
+            }
+            this.catalog = await catalogRes.json()
+            this.comparisonRows = await rowsRes.json()
+            console.log('Loaded', this.catalog.length, 'documents and', this.comparisonRows.length, 'comparison rows')
+          } catch (error) {
+            console.error('Failed to load data:', error)
+            const isFileProtocol = window.location.protocol === 'file:'
+            let msg = '載入資料失敗。\n\n'
+            if (isFileProtocol) {
+              msg += '可能原因：\n'
+              msg += '1. 無法訪問 GitHub（公司防火牆限制）\n'
+              msg += '2. GitHub raw content 網址錯誤\n\n'
+              msg += '解決方法：\n'
+              msg += '1. 確認能訪問 https://github.com\n'
+              msg += '2. 改用 HTTP server：python3 -m http.server 8080\n'
+              msg += '3. 用 VS Code Live Server 擴充功能'
+            } else {
+              msg += '請確認 data/catalog.json 和 data/comparison_rows.json 是否存在'
+            }
+            alert(msg)
+          }
+        },
+        toggleDocument(docId) {
+          const index = this.selectedDocs.indexOf(docId)
+          if (index > -1) {
+            this.selectedDocs.splice(index, 1)
+          } else {
+            this.selectedDocs.push(docId)
+          }
+        },
+        generateComparison() {
+          this.showComparison = true
+          window.scrollTo({ top: 0, behavior: 'smooth' })
+        },
+        getBadgeClass(type) {
+          const classes = {
+            'standard': 'badge-standard',
+            'guidance': 'badge-guidance',
+            'test_method': 'badge-test-method'
+          }
+          return classes[type] || 'badge-standard'
+        },
+        getBadgeLabel(type) {
+          const labels = {
+            'standard': '標準',
+            'guidance': '建議',
+            'test_method': '測試方法'
+          }
+          return labels[type] || '標準'
+        },
+        truncate(text, length) {
+          if (!text) return ''
+          return text.length > length ? text.substring(0, length) + '...' : text
+        },
+        toggleExpand(testId, docId) {
+          const key = `${testId}-${docId}`
+          if (!this.expandedCells[key]) {
+            this.$set(this.expandedCells, key, true)
+          } else {
+            this.$delete(this.expandedCells, key)
+          }
+          // 更新所有 group 的 expandedRows 引用
+          this.$forceUpdate()
+        },
+        toggleEdit(testId, docId) {
+          const key = `${testId}-${docId}`
+          // 備份當前內容
+          const group = this.groupedComparisonRows.find(g => g.testId === testId)
+          if (group && group.rows[docId]) {
+            this.editBackup[key] = {
+              conditions: group.rows[docId].conditions_summary,
+              evaluation: group.rows[docId].evaluation_summary
+            }
+            this.$set(this.editingCells, key, true)
+            this.$forceUpdate()
+          }
+        },
+        saveEdit(testId, docId) {
+          const key = `${testId}-${docId}`
+          this.$delete(this.editingCells, key)
+          delete this.editBackup[key]
+          // 自動保存到 localStorage
+          this.saveToLocalStorage()
+          this.$forceUpdate()
+        },
+        cancelEdit(testId, docId) {
+          const key = `${testId}-${docId}`
+          const group = this.groupedComparisonRows.find(g => g.testId === testId)
+          if (group && group.rows[docId] && this.editBackup[key]) {
+            group.rows[docId].conditions_summary = this.editBackup[key].conditions
+            group.rows[docId].evaluation_summary = this.editBackup[key].evaluation
+          }
+          this.$delete(this.editingCells, key)
+          delete this.editBackup[key]
+          this.$forceUpdate()
+        },
+        downloadJSON() {
+          const data = {
+            catalog: this.catalog,
+            comparisonRows: this.comparisonRows,
+            exportedAt: new Date().toISOString()
+          }
+          const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+          const url = URL.createObjectURL(blob)
+          const a = document.createElement('a')
+          a.href = url
+          a.download = `standard-dictionary-${new Date().toISOString().split('T')[0]}.json`
+          a.click()
+          URL.revokeObjectURL(url)
+        },
+        uploadJSON(event) {
+          const file = event.target.files[0]
+          if (!file) return
+          const reader = new FileReader()
+          reader.onload = (e) => {
+            try {
+              const data = JSON.parse(e.target.result)
+              if (data.catalog && data.comparisonRows) {
+                this.catalog = data.catalog
+                this.comparisonRows = data.comparisonRows
+                this.saveToLocalStorage()
+                alert('JSON 上傳成功！')
+              } else {
+                alert('無效的 JSON 格式')
+              }
+            } catch (error) {
+              alert('讀取 JSON 失敗：' + error.message)
+            }
+          }
+          reader.readAsText(file)
+          event.target.value = ''
+        },
+        saveToLocalStorage() {
+          const state = {
+            catalog: this.catalog,
+            comparisonRows: this.comparisonRows,
+            selectedDocs: this.selectedDocs,
+            filters: this.filters,
+            savedAt: new Date().toISOString()
+          }
+          localStorage.setItem('standardDictionaryState', JSON.stringify(state))
+          console.log('狀態已保存到 localStorage')
+        },
+        loadFromLocalStorage() {
+          const saved = localStorage.getItem('standardDictionaryState')
+          if (saved) {
+            try {
+              const state = JSON.parse(saved)
+              if (state.catalog) this.catalog = state.catalog
+              if (state.comparisonRows) this.comparisonRows = state.comparisonRows
+              if (state.selectedDocs) this.selectedDocs = state.selectedDocs
+              if (state.filters) this.filters = state.filters
+              console.log('已從 localStorage 還原狀態')
+            } catch (error) {
+              console.error('讀取 localStorage 失敗:', error)
+            }
+          }
+        },
+        clearLocalStorage() {
+          if (confirm('確定要清除儲存的狀態嗎？')) {
+            localStorage.removeItem('standardDictionaryState')
+            alert('狀態已清除')
+            location.reload()
+          }
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>

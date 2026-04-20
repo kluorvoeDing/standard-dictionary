@@ -1,0 +1,569 @@
+{
+  "standard_id": "UL-9540",
+  "filename": "s9540_3.md",
+  "full_name": "ANSI/CAN/UL 9540:2025 - Standard for Energy Storage Systems and Equipment (Third Edition)",
+  "publication_date": "2016-11 (First), 2020-02 (Second), 2023-06-28 (Third), 2025-03-07 (Latest Revision)",
+  "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
+  "li_applicable": true,
+  "test_count": 24,
+  "ocr_quality": "良好（PDF 直接提取，英文內容完整，但部分頁面有版權水印）",
+  "tests": [
+    {
+      "test_id": "OPER-01",
+      "test_name_zh": "正常運行測試",
+      "test_name_en": "Normal Operations Test",
+      "section": "30",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "soc": "按製造商規格運行",
+        "operation": "正常充放電循環",
+        "monitoring": "監測溫度、電壓、電流、保護功能"
+      },
+      "criteria": {
+        "pass_conditions": ["within_limits", "protection_functional"],
+        "description": "系統應在規定限值內正常運行；保護功能應正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "30 Normal Operations Test: The ESS is operated under normal conditions. System shall operate within specified limits."
+    },
+    {
+      "test_id": "THERM-12",
+      "test_name_zh": "熱能儲能系統異常運行測試（5 項）",
+      "test_name_en": "Abnormal Operation Tests for Thermal Energy Storage Systems",
+      "section": "31",
+      "test_objects": ["SYSTEM"],
+      "applicability": "熱能儲能系統",
+      "conditions": {
+        "tests_included": [
+          "31.2 熱控制失效",
+          "31.3 超出規格溫度條件暴露",
+          "31.4 壓力控制失效",
+          "31.5 流體控制失效"
+        ],
+        "monitoring": "監測溫度、壓力、流體水平"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "safe_shutdown"],
+        "description": "系統應安全關閉或無危險情況發生"
+      },
+      "exemptions": [
+        "僅適用於熱能儲能系統"
+      ],
+      "original_text_snippet": "31 Abnormal Operation Tests for Thermal Energy Storage Systems: Includes failure of thermal controls, exposure to out of specification thermal conditions, failure of pressure controls, failure of fluid controls."
+    },
+    {
+      "test_id": "ELEC-08",
+      "test_name_zh": "介電耐壓測試",
+      "test_name_en": "Dielectric Voltage Withstand Test",
+      "section": "32",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "test_voltage": "按標準規定（通常為 2×額定電壓或更高）",
+        "duration": "至少 1 分鐘（生產測試可減至 1 秒）",
+        "application": "危險電壓電路與非載流導電部件之間"
+      },
+      "criteria": {
+        "pass_conditions": ["no_dielectric_breakdown"],
+        "description": "應無介電擊穿（絕緣擊穿導致短路/飛弧）"
+      },
+      "exemptions": [
+        "生產測試時間可減至 1 秒",
+        "可在子組件層級測試",
+        "若已按特定技術標準測試可豁免"
+      ],
+      "original_text_snippet": "32 Dielectric Voltage Withstand Test: Hazardous voltage circuits are subjected to dielectric withstand voltage. No dielectric breakdown shall occur."
+    },
+    {
+      "test_id": "ELEC-13",
+      "test_name_zh": "脈衝測試",
+      "test_name_en": "Impulse Test",
+      "section": "33",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "impulse_type": "按標準規定（模擬浪湧）",
+        "count": "按標準規定",
+        "monitoring": "監測系統功能"
+      },
+      "criteria": {
+        "pass_conditions": ["no_damage", "function_normal"],
+        "description": "系統應無損壞；功能應正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "33 Impulse Test: The system is subjected to impulse voltages. No damage shall occur."
+    },
+    {
+      "test_id": "ELEC-10",
+      "test_name_zh": "設備接地和接合測試",
+      "test_name_en": "Equipment Grounding and Bonding Test",
+      "section": "34",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "test_current": "按標準規定",
+        "measurement": "測量接地和接合系統任意兩點之間的電阻"
+      },
+      "criteria": {
+        "pass_conditions": ["resistance_le_0_1_ohm"],
+        "description": "接地和接合系統電阻不超過 0.1 Ω"
+      },
+      "exemptions": [
+        "若通過生產實踐審查確定良好接地可豁免（但單紧固件接地點仍需測試）"
+      ],
+      "original_text_snippet": "34 Equipment Grounding and Bonding Test: Grounding and bonding system resistance shall not exceed 0.1 Ω."
+    },
+    {
+      "test_id": "ELEC-09",
+      "test_name_zh": "絕緣電阻測試",
+      "test_name_en": "Insulation Resistance Test",
+      "section": "35",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "test_voltage": "按標準規定（DC 電壓）",
+        "measurement": "測量危險電壓電路與可接觸導電部件之間的絕緣電阻"
+      },
+      "criteria": {
+        "pass_conditions": ["isolation_resistance_within_limit"],
+        "description": "絕緣電阻應符合規定限值"
+      },
+      "exemptions": [],
+      "original_text_snippet": "35 Insulation Resistance Test: Insulation resistance between hazardous voltage circuits and accessible conductive parts shall meet specified limits."
+    },
+    {
+      "test_id": "EMC-01",
+      "test_name_zh": "電磁兼容性測試（7 項）",
+      "test_name_en": "Electromagnetic Immunity Tests",
+      "section": "36",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "tests_included": [
+          "36.2 靜電放電（ESD）",
+          "36.3 射頻電磁場",
+          "36.4 快速瞬變/脈衝群",
+          "36.5 浪湧",
+          "36.6 射頻共模",
+          "36.7 工頻磁場",
+          "36.8 操作驗證",
+          "36.9 遠端軟體更新能力驗證"
+        ],
+        "monitoring": "監測系統功能是否正常"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "function_normal", "safety_maintained"],
+        "description": "應無起火、無爆炸；保護功能應正常運作；軟體更新後安全功能應維持"
+      },
+      "exemptions": [],
+      "original_text_snippet": "36 Electromagnetic Immunity Tests: Includes ESD, RF field, fast transient, surge, RF common mode, power frequency magnetic field, operational verification, remote software update verification."
+    },
+    {
+      "test_id": "MECH-22",
+      "test_name_zh": "運動部件容納測試（5 項）",
+      "test_name_en": "Containment of Moving Parts Tests",
+      "section": "37",
+      "test_objects": ["SYSTEM"],
+      "applicability": "機械儲能系統（如飛輪）",
+      "conditions": {
+        "tests_included": [
+          "37.1 控制系統故障超速測試",
+          "37.2 故障固定測試",
+          "37.3 軸阻塞測試",
+          "37.4 機械完整性測試（超速 139% 或 120%）",
+          "37.5 軸承失效測試"
+        ],
+        "monitoring": "監測運動部件是否脫落、容器是否有效"
+      },
+      "criteria": {
+        "pass_conditions": ["no_hazardous_release", "containment_effective"],
+        "description": "運動部件不應脫落導致危險；容器應有效容納"
+      },
+      "exemptions": [
+        "僅適用於機械儲能系統（飛輪等）",
+        "若有測試或現場數據支持安全分析可豁免部分測試"
+      ],
+      "original_text_snippet": "37 Containment of Moving Parts: Includes overspeed test, faulted securement test, blocked shaft test, mechanical integrity test, bearing failure test. Moving parts shall not become loosened to result in hazardous condition."
+    },
+    {
+      "test_id": "ENV-11",
+      "test_name_zh": "洩漏測試",
+      "test_name_en": "Leakage Tests",
+      "section": "38",
+      "test_objects": ["SYSTEM"],
+      "applicability": "使用液體冷卻劑或含有危險流體的系統",
+      "conditions": {
+        "test_pressure_liquid": "1.5 倍最大工作壓力（液體測試）",
+        "test_pressure_air": "1.1 倍最大工作壓力（氣動測試）",
+        "duration": "按標準規定",
+        "monitoring": "監測洩漏"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leak"],
+        "description": "含流體部件及其連接處應無洩漏"
+      },
+      "exemptions": [
+        "若部件已按元件標準（如 UL 1973 附錄 C）評估外部洩漏可豁免"
+      ],
+      "original_text_snippet": "38 Leakage Tests: Fluid-containing parts and connections are subjected to 1.5x max operating pressure (liquid) or 1.1x (air). No leaks shall occur."
+    },
+    {
+      "test_id": "MECH-23",
+      "test_name_zh": "強度測試（2 項）",
+      "test_name_en": "Strength Tests",
+      "section": "39",
+      "test_objects": ["SYSTEM"],
+      "applicability": "含有危險流體（包括液體冷卻劑）的系統",
+      "conditions": {
+        "tests_included": [
+          "39.2 液壓強度測試（1.5 倍設計壓力，1 分鐘）",
+          "39.3 氣壓強度測試（1.3 倍設計壓力，1 分鐘，可選）"
+        ],
+        "monitoring": "監測破裂、變形"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fracture", "no_distortion", "no_rupture"],
+        "description": "含流體部件應無破裂、變形、破裂或其他損壞"
+      },
+      "exemptions": [],
+      "original_text_snippet": "39 Strength Tests: Includes hydrostatic strength test (1.5x design pressure) and pneumatic strength test (1.3x design pressure). No fracture, distortion, or rupture shall occur."
+    },
+    {
+      "test_id": "MECH-24",
+      "test_name_zh": "外殼和安裝測試（4 項）",
+      "test_name_en": "Enclosure and Mounting Tests",
+      "section": "40",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "tests_included": [
+          "40.1 壁掛固定裝置測試（3 倍重量，1 分鐘）",
+          "40.2 外殼衝擊測試（6.8 J，3 次衝擊）",
+          "40.3 外殼穩態力測試（250 N，5 秒）",
+          "40.4 模應力測試（70°C 或更高，7 小時）"
+        ],
+        "post_test": "介電耐壓測試",
+        "monitoring": "監測外殼損壞、危險部件暴露"
+      },
+      "criteria": {
+        "pass_conditions": ["no_damage", "no_hazardous_exposure", "no_dielectric_breakdown"],
+        "description": "外殼應無損壞導致危險（如危險部件暴露或介電擊穿）"
+      },
+      "exemptions": [
+        "衝擊測試和穩態力測試僅適用於住宅應用或≤50 kWh 的非住宅應用",
+        "若元件已單獨測試可豁免壁掛測試"
+      ],
+      "original_text_snippet": "40 Enclosure and Mounting Tests: Includes wall mount fixture test (3x weight), enclosure impact (6.8 J), enclosure steady force (250 N), mold stress (70°C for 7 h). No damage leading to hazard shall occur."
+    },
+    {
+      "test_id": "ENV-12",
+      "test_name_zh": "特殊環境安裝測試（3 項）",
+      "test_name_en": "Special Environment Installations Tests",
+      "section": "41",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "tests_included": [
+          "41.2 戶外潮濕環境安裝（按 IEC 60529/UL 50E）",
+          "41.3 戶外海洋環境安裝（鹽霧，IEC 60068-2-52，Severity 1 或 2）",
+          "41.4 地震環境安裝（按 IEEE 693/IEC 60980/ICC IBC 等）"
+        ],
+        "post_test": "絕緣測試（32 和 35 節）",
+        "monitoring": "監測水進入、腐蝕、絕緣損壞"
+      },
+      "criteria": {
+        "pass_conditions": ["no_water_hazard", "no_corrosion_hazard", "no_insulation_damage"],
+        "description": "應無水進入導致危險、無腐蝕導致危險、無絕緣損壞"
+      },
+      "exemptions": [
+        "若已按特定技術安全標準涵蓋可豁免",
+        "可在子組件層級測試（若通過分析確定可代表完整系統）"
+      ],
+      "original_text_snippet": "41 Special Environment Installations: Includes outdoor moisture exposure, marine environment (salt fog), seismic environment. No water hazard, corrosion hazard, or insulation damage shall occur."
+    },
+    {
+      "test_id": "PROD-01",
+      "test_name_zh": "電氣生產測試（3 項）",
+      "test_name_en": "Electrical Production Tests",
+      "section": "42",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "tests_included": [
+          "42.1 介電耐壓測試（100% 生產，>60 Vdc 或>30 Vrms）",
+          "42.2 接地和接合系統檢查（電阻≤0.1 Ω）",
+          "42.3 安全控制檢查（100% 生產篩選）"
+        ],
+        "frequency": "100% 生產"
+      },
+      "criteria": {
+        "pass_conditions": ["per_production_spec"],
+        "description": "按生產規格測試"
+      },
+      "exemptions": [
+        "介電耐壓測試時間可減至 1 秒",
+        "可在子組件層級測試",
+        "若已按特定技術標準測試可豁免"
+      ],
+      "original_text_snippet": "42 Electrical Production Tests: Includes dielectric withstand (100% production), grounding check, safety controls check (100% screening)."
+    },
+    {
+      "test_id": "PROD-02",
+      "test_name_zh": "機械生產測試（2 項）",
+      "test_name_en": "Mechanical Production Tests",
+      "section": "43",
+      "test_objects": ["SYSTEM"],
+      "applicability": "機械儲能系統",
+      "conditions": {
+        "tests_included": [
+          "43.1 最大異常運行速度完整性測試",
+          "43.2 轉子生產篩選（無損檢測）",
+          "43.3 危險流體系統洩漏檢查"
+        ],
+        "frequency": "100% 生產"
+      },
+      "criteria": {
+        "pass_conditions": ["per_production_spec"],
+        "description": "按生產規格測試"
+      },
+      "exemptions": [
+        "僅適用於機械儲能系統"
+      ],
+      "original_text_snippet": "43 Mechanical Production Tests: Includes integrity at max abnormal speed, production screening of rotors, leak check of hazardous fluid systems."
+    },
+    {
+      "test_id": "SAFETY-01",
+      "test_name_zh": "安全分析（FMEA）",
+      "test_name_en": "Safety Analysis (FMEA)",
+      "section": "15",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "analysis_type": "危險識別、風險分析、風險評估（如 FMEA）",
+        "scope": "系統和元件的臨界安全部件和電路",
+        "standards": ["IEC 60812", "IEC 61025", "MIL-STD-882E"],
+        "considerations": ["機械危險", "熱危險", "電氣危險", "通訊延遲", "浪湧"]
+      },
+      "criteria": {
+        "pass_conditions": ["hazards_identified", "mitigation_defined"],
+        "description": "危險應被識別；緩解措施應定義"
+      },
+      "exemptions": [],
+      "original_text_snippet": "15 Safety Analysis and Control Systems: A safety analysis (e.g., FMEA) shall be conducted identifying critical safety components and circuits. Guidance: IEC 60812, IEC 61025, MIL-STD-882E."
+    },
+    {
+      "test_id": "SOFTWARE-01",
+      "test_name_zh": "遠端軟體更新測試",
+      "test_name_en": "Remote Software Update Test",
+      "section": "16",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "software_class": ["UL 1998（臨界/監督軟體）", "UL 60730-1/CSA E60730-1（Class B 軟體）"],
+        "requirements": ["用戶授權", "風險解決狀態下更新", "更新後安全功能維持", "功能測試驗證"],
+        "standard": "UL 5500"
+      },
+      "criteria": {
+        "pass_conditions": ["update_successful", "safety_maintained"],
+        "description": "軟體更新應成功；更新後安全功能應維持"
+      },
+      "exemptions": [],
+      "original_text_snippet": "16 Remote Software Update Enabled ESS: Critical/supervisory software (UL 1998) or Class B software (UL 60730-1) shall be updated with user authorization, in risk-addressed state, with safety functions maintained."
+    },
+    {
+      "test_id": "EWCS-01",
+      "test_name_zh": "外部警告通訊系統（EWCS）",
+      "test_name_en": "External Warning Communication System (EWCS)",
+      "section": "18.2",
+      "test_objects": ["SYSTEM"],
+      "applicability": "≥500 kWh 的鋰離子電池電化學儲能系統",
+      "conditions": {
+        "inputs": "來自 BMS/ESMS 的潛在問題信號",
+        "outputs": ["外部操作站通訊", "本地音視覺警告"],
+        "backup_power": "獨立備用電源（至少 5 小時數據輸入和操作通訊，5 分鐘警報）",
+        "monitoring": "監測警告信號"
+      },
+      "criteria": {
+        "pass_conditions": ["warning_functional", "backup_power_operational"],
+        "description": "警告系統應功能正常；備用電源應運作"
+      },
+      "exemptions": [
+        "僅適用於≥500 kWh 的鋰離子電池電化學儲能系統"
+      ],
+      "original_text_snippet": "18.2 External Warning Communication System (EWCS): Electrochemical ESS ≥500 kWh shall have EWCS with inputs from BMS/ESMS, outputs to operator station and local alarms, and backup power for 5 h."
+    },
+    {
+      "test_id": "FIRE-01",
+      "test_name_zh": "火災探測和抑制",
+      "test_name_en": "Fire Detection and Suppression",
+      "section": "26",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "requirements": ["火災探測和抑制設備應符合適用的產品安全標準", "應提供安裝、調試、維護和測試說明", "若為可選，系統在有和無消防系統情況下都應符合要求"]
+      },
+      "criteria": {
+        "pass_conditions": ["compliant_with_standards"],
+        "description": "消防設備應符合標準；說明應完整"
+      },
+      "exemptions": [],
+      "original_text_snippet": "26 Fire Detection, Suppression and Propagation: Fire detection and suppression equipment shall comply with applicable standards. Instructions shall be provided."
+    },
+    {
+      "test_id": "FIRE-02",
+      "test_name_zh": "大型火災測試（UL 9540A）",
+      "test_name_en": "Large Scale Fire Testing (UL 9540A)",
+      "section": "26.2",
+      "test_objects": ["SYSTEM"],
+      "applicability": "電化學儲能系統（電容器和電池）",
+      "conditions": {
+        "triggers": ["能量容量增加（按規範要求）", "與相鄰 ESS 單元/門窗/暴露物的距離減少", "室內系統", "住宅單元安裝系統"],
+        "residential_requirement": "住宅可居住空間使用的系統應符合 UL 9540A 單元級測試要求",
+        "test_standard": "UL 9540A"
+      },
+      "criteria": {
+        "pass_conditions": ["per_ul9540a"],
+        "description": "按 UL 9540A 測試要求"
+      },
+      "exemptions": [
+        "僅適用於電化學儲能系統"
+      ],
+      "original_text_snippet": "26.2 Large Scale Fire Testing: Electrochemical ESS shall be subjected to UL 9540A testing for increased capacity, decreased separation, indoor systems, or residential installations."
+    },
+    {
+      "test_id": "VAPOR-01",
+      "test_name_zh": "可燃氣體濃度控制",
+      "test_name_en": "Combustible Vapor Concentrations Control",
+      "section": "24",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "ventilation_requirement": "含有易燃流體系統或排放氫氣的電池的 ESS 外殼應通風",
+        "limit": "非危險區域的可燃氣體濃度應限制在 LFL 的 25% 以下",
+        "interlock": "機械通風應聯鎖，通風失效時系統關閉",
+        "deflagration_protection": "有熱失控和傳播潛力的系統應按 NFPA 68/69 提供爆燃或爆炸保護"
+      },
+      "criteria": {
+        "pass_conditions": ["concentration_below_25pct_LFL", "ventilation_functional"],
+        "description": "可燃氣體濃度應低於 25% LFL；通風應功能正常"
+      },
+      "exemptions": [
+        "若 UL 9540A 測試證明濃度低於 25% LFL 且無部分體積爆燃潛力可豁免爆燃保護",
+        "水性電解質排放電池（如鉛酸/鎳鎘）若有通風開口可豁免部分要求"
+      ],
+      "original_text_snippet": "24 Combustible Vapor Concentrations: ESS enclosures shall be ventilated to prevent hazardous vapor concentrations. Concentrations shall be limited to 25% LFL. Deflagration protection per NFPA 68/69 required for thermal runaway potential."
+    },
+    {
+      "test_id": "FLUID-01",
+      "test_name_zh": "危險流體控制",
+      "test_name_en": "Hazardous Fluid Control",
+      "section": "23",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "secondary_containment": "單容器>208 L 或總量>3785 L 應提供二次容納",
+        "leak_detection": "應提供自動洩漏檢測",
+        "neutralization": "若有必要應提供洩漏中和（無需人工干預）",
+        "short_circuit_prevention": "含有導電流體的系統應設計防止洩漏導致短路"
+      },
+      "criteria": {
+        "pass_conditions": ["containment_adequate", "leak_detection_functional"],
+        "description": "容納應足夠；洩漏檢測應功能正常"
+      },
+      "exemptions": [
+        "若容納/中和未作為產品提供，說明手冊應包含相關指導"
+      ],
+      "original_text_snippet": "23 Hazardous Fluid Control: Secondary containment required for >208 L single vessel or >3785 L aggregate. Automatic leak detection required. Neutralization if necessary."
+    },
+    {
+      "test_id": "NOISE-01",
+      "test_name_zh": "噪音水平測試",
+      "test_name_en": "Noise Levels Test",
+      "section": "22",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "limit": "8 小時時間加權平均 85 dBA（按 29 CFR 1910.95）",
+        "measurement": "按 29 CFR 1910.95 或等效方法",
+        "warning_required": "若超過限值應提供警告標籤和說明"
+      },
+      "criteria": {
+        "pass_conditions": ["below_limit_or_warning_provided"],
+        "description": "噪音應低於限值或提供警告"
+      },
+      "exemptions": [],
+      "original_text_snippet": "22 Noise Levels: Noise level shall be limited to 85 dBA 8-hr TWA. Systems exceeding limit shall have warning labels and instructions."
+    },
+    {
+      "test_id": "MOVING-01",
+      "test_name_zh": "運動部件容納（機械 ESS）",
+      "test_name_en": "Containment of Moving Parts (Mechanical ESS)",
+      "section": "21",
+      "test_objects": ["SYSTEM"],
+      "applicability": "機械儲能系統（飛輪等）",
+      "conditions": {
+        "requirement": "應提供容納運動部件的方法（防止脫落導致危險）",
+        "test_reference": "見 37 節測試"
+      },
+      "criteria": {
+        "pass_conditions": ["containment_effective"],
+        "description": "容器應有效容納運動部件"
+      },
+      "exemptions": [
+        "僅適用於機械儲能系統"
+      ],
+      "original_text_snippet": "21 Containment of Moving Parts in Mechanical ESS: Mechanical ESS with moving parts shall have means to contain parts in event they become loosened."
+    },
+    {
+      "test_id": "PCS-01",
+      "test_name_zh": "功率轉換設備",
+      "test_name_en": "Power Conversion Equipment",
+      "section": "27",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "requirements": ["並網互動（27.2）", "並網逆變器（27.3）", "獨立和多模式功率調節系統（27.4）"],
+        "compliance": "符合適用的 PCS 標準"
+      },
+      "criteria": {
+        "pass_conditions": ["compliant_with_pcs_standards"],
+        "description": "PCS 應符合適用標準"
+      },
+      "exemptions": [],
+      "original_text_snippet": "27 Power Conversion Equipment: Includes utility grid interaction, grid-interactive inverter, standalone and multi-mode PCS."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Abnormal Operation Tests for Thermal ESS (31)",
+      "exemption": "僅適用於熱能儲能系統"
+    },
+    {
+      "test_id": "Containment of Moving Parts Tests (37)",
+      "exemption": "僅適用於機械儲能系統（飛輪等）"
+    },
+    {
+      "test_id": "Enclosure Impact/Steady Force Tests (40.2-40.3)",
+      "exemption": "僅適用於住宅應用或≤50 kWh 的非住宅應用"
+    },
+    {
+      "test_id": "Large Scale Fire Testing (26.2)",
+      "exemption": "僅適用於電化學儲能系統（電容器和電池）"
+    },
+    {
+      "test_id": "External Warning Communication System (18.2)",
+      "exemption": "僅適用於≥500 kWh 的鋰離子電池電化學儲能系統"
+    },
+    {
+      "test_id": "Leakage Tests (38)",
+      "exemption": "若部件已按元件標準（如 UL 1973 附錄 C）評估可豁免"
+    },
+    {
+      "test_id": "Special Environment Tests (41)",
+      "exemption": "若已按特定技術安全標準涵蓋可豁免；可在子組件層級測試"
+    },
+    {
+      "test_id": "Production Tests (42-43)",
+      "exemption": "可在子組件層級測試；若已按特定技術標準測試可豁免"
+    },
+    {
+      "test_id": "Dielectric Withstand Test Production (42.1)",
+      "exemption": "生產測試時間可減至 1 秒"
+    },
+    {
+      "test_id": "Grounding Check Production (42.2)",
+      "exemption": "若通過生產實踐審查確定良好接地可豁免（但單紧固件接地點仍需測試）"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 01:00",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction)",
+    "ocr_quality_notes": "OCR 品質良好，使用 PDF 直接提取，英文內容完整，章節編號清晰。UL 9540 是北美儲能系統和設備的系統級標準，涵蓋電化學、化學、機械、熱能等多種儲能技術。測試包括電氣、機械、環境、EMC、火災安全、生產測試等。部分頁面有版權水印但不影響內容提取。"
+  }
+}

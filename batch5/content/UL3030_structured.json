@@ -1,0 +1,387 @@
+{
+  "standard_id": "UL-3030",
+  "filename": "s3030_1.md",
+  "full_name": "ANSI/CAN/UL 3030:2018 (R2024) - Standard for Safety for Unmanned Aircraft Systems (First Edition, Reaffirmed 2024)",
+  "publication_date": "2018-09-18 (First Edition), 2024-08-30 (Reaffirmed)",
+  "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
+  "li_applicable": true,
+  "test_count": 18,
+  "ocr_quality": "良好（PDF 直接提取，英文內容完整，但部分頁面有版權水印）",
+  "tests": [
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "輸入驗證測試",
+      "test_name_en": "Input Verification Test",
+      "section": "27",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "voltage_range": "按製造商規定的電壓範圍",
+        "frequency": "按製造商規定的頻率",
+        "monitoring": "監測電壓、電流、功率"
+      },
+      "criteria": {
+        "pass_conditions": ["within_spec"],
+        "description": "輸入電壓/頻率應在規定範圍內"
+      },
+      "exemptions": [],
+      "original_text_snippet": "27 Input Verification: Input voltage and frequency shall be within specified ranges."
+    },
+    {
+      "test_id": "THERM-01",
+      "test_name_zh": "溫度測試（充電和飛行）",
+      "test_name_en": "Temperature Test (Charging and Flying)",
+      "section": "28",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "charging": "按製造商規定的充電程序充電",
+        "flying": "按製造商規定的飛行程序運行",
+        "monitoring": "監測電池/模組、馬達、電子元件的溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["within_limits"],
+        "description": "溫度不應超過元件和材料的額定溫度"
+      },
+      "exemptions": [],
+      "original_text_snippet": "28 Temperature Test (Charging and Flying): Temperatures measured during charging and flying shall not exceed ratings of components and materials."
+    },
+    {
+      "test_id": "ELEC-08",
+      "test_name_zh": "介電耐壓測試",
+      "test_name_en": "Dielectric Voltage Withstand Test",
+      "section": "29",
+      "test_objects": ["UAS"],
+      "applicability": "≥60 Vdc 的電路",
+      "conditions": {
+        "test_voltage_dc": "2 × 額定電壓 × 1.414（DC）",
+        "test_voltage_ac": "2 × 額定電壓（60 Hz 正弦波 AC，可選）",
+        "duration": "至少 1 分鐘",
+        "application": "危險電壓電路與非載流可接觸導電部件之間"
+      },
+      "criteria": {
+        "pass_conditions": ["no_dielectric_breakdown"],
+        "description": "應無介電擊穿（絕緣擊穿導致短路/飛弧）"
+      },
+      "exemptions": [
+        "半導體或類似電子元件可能被旁路或斷開（若易受測試電壓損壞）"
+      ],
+      "original_text_snippet": "29 Dielectric Voltage Withstand Test: Circuits at 60 Vdc or higher subjected to 2×rated×1.414 (DC) or 2×rated (AC) for 1 min. No dielectric breakdown shall occur."
+    },
+    {
+      "test_id": "ELEC-09",
+      "test_name_zh": "絕緣電阻測試",
+      "test_name_en": "Isolation Resistance Test",
+      "section": "30",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "test_voltage": "500 Vdc",
+        "duration": "60 秒",
+        "measurement": "測量危險電壓電路與可接觸導電部件之間的絕緣電阻"
+      },
+      "criteria": {
+        "pass_conditions": ["insulation_resistance_ge_50000_ohm"],
+        "description": "絕緣電阻 ≥ 50,000 Ω"
+      },
+      "exemptions": [],
+      "original_text_snippet": "30 Isolation Resistance Test: 500 Vdc applied for 60 s. Insulation resistance shall be ≥50,000 Ω."
+    },
+    {
+      "test_id": "ELEC-14",
+      "test_name_zh": "電容放電測試",
+      "test_name_en": "Capacitor Discharge Test",
+      "section": "31",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "procedure": "斷開電源後測量電容放電時間",
+        "limit": "危險電壓應在規定時間內放電至安全水平"
+      },
+      "criteria": {
+        "pass_conditions": ["discharge_within_limit"],
+        "description": "電容應在規定時間內放電至安全電壓"
+      },
+      "exemptions": [],
+      "original_text_snippet": "31 Capacitor Discharge Test: Capacitors shall discharge to safe voltage within specified time after power disconnection."
+    },
+    {
+      "test_id": "ABN-01",
+      "test_name_zh": "異常運行測試（9 項子測試）",
+      "test_name_en": "Abnormal Operation Tests",
+      "section": "32",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "tests_included": [
+          "32.2 元件故障（單一故障）",
+          "32.3 繼電器和線圈燒毀",
+          "32.4 風扇斷開/通風口阻塞",
+          "32.5 內部電池反向極性",
+          "32.6 過充電",
+          "32.7 短路（≤20 mΩ）",
+          "32.8 不平衡充電",
+          "32.9 衝擊測試",
+          "32.10 熱循環"
+        ],
+        "monitoring": "監測溫度、電壓、電流、火災、爆炸"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_shock_hazard"],
+        "description": "應無起火、無爆炸、無電擊危險"
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 的電池組可豁免部分測試（短路、不平衡充電、衝擊、熱循環）"
+      ],
+      "original_text_snippet": "32 Abnormal Operation: Includes component faults, relay/solenoid burnout, disconnected fans/blocked vents, reverse polarity, overcharge, short circuit, imbalanced charging, shock, thermal cycling. Non-compliant: fire, explosion, shock hazard."
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動測試（電池組）",
+      "test_name_en": "Vibration Test (Batteries/Battery Packs)",
+      "section": "33.1",
+      "test_objects": ["BATTERY_PACK"],
+      "conditions": {
+        "test_standard": "IEC 60068-2-64（隨機振動）",
+        "axes": "Z（垂直）、X（縱向）、Y（橫向）",
+        "duration": "每軸 21 小時（共 63 小時）",
+        "frequency_range": "5-200 Hz",
+        "psd": "按 ISO 12405-1 規定"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage", "function_normal"],
+        "description": "應無起火、無爆炸、無洩漏；功能正常"
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 的電池組可豁免"
+      ],
+      "original_text_snippet": "33.1 Vibration Test (Batteries/Battery Packs): Random vibration per IEC 60068-2-64 for 21 h per axis (Z, X, Y), 5-200 Hz, PSD per ISO 12405-1. Non-compliant: fire, explosion, leakage, malfunction."
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "振動測試（完整 UAS）",
+      "test_name_en": "Vibration Test (Complete UAS)",
+      "section": "33.2",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "frequency_range": "10-55 Hz 再回到 10 Hz",
+        "sweep_time": "2 分鐘/循環",
+        "amplitude": "1.0 +0.1/-0 mm (0.040 +0.004/-0 inch) p-p",
+        "duration": "1 小時",
+        "plane": "垂直平面"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_molten_metal", "no_parts_loosening", "function_normal"],
+        "description": "應無火焰、無熔融金屬、無部件鬆動；功能正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "33.2 Vibration Test (Complete UAS): 1 h at 10-55-10 Hz, 2 min sweep, 1.0 mm p-p amplitude in vertical plane. No flame, molten metal, parts loosening; normal operation."
+    },
+    {
+      "test_id": "MECH-07",
+      "test_name_zh": "外殼強度測試 - 衝擊",
+      "test_name_en": "Strength of Enclosures Tests - Impact",
+      "section": "34.1",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "samples": "2 個樣品（1 個常溫，1 個低溫調節 4 小時）",
+        "impact_energy": "6.78 N-m (5 ft-lb)",
+        "apparatus": "直徑 50.8 mm (2 英寸)、重 0.535 kg (1.18 lb) 鋼球",
+        "height": "1.30 m (51 英寸)",
+        "surfaces": "所有可能受衝擊的表面"
+      },
+      "criteria": {
+        "pass_conditions": ["no_hazardous_part_access"],
+        "description": "外殼應無損壞導致危險部件可接觸（使用 2.5 mm 直徑測試桿檢查）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "34.1 Impact: Two samples (one cold conditioned at lowest temp for 4 h). 6.78 N-m impact using 50.8 mm steel sphere (0.535 kg) dropped from 1.30 m. No hazardous part access."
+    },
+    {
+      "test_id": "MECH-08",
+      "test_name_zh": "外殼強度測試 - 跌落",
+      "test_name_en": "Strength of Enclosures Tests - Drop",
+      "section": "34.2",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "soc": "充滿電",
+        "height": "1.0 ± 0.01 m (40 ± 0.4 英寸)",
+        "drop_count": "3 次",
+        "surface": "混凝土表面（至少 76 mm 厚）",
+        "orientation": "代表用戶提攜/處理時最可能發生的位置",
+        "cold_conditioning": "非金屬外殼需先在最低溫度調節 4 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_hazardous_part_access"],
+        "description": "外殼應無損壞導致危險部件可接觸（使用 2.5 mm 直徑測試桿檢查）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "34.2 Drop: Fully charged UAS dropped 3 times from 1.0 m onto concrete. Non-metallic enclosures cold conditioned at lowest temp for 4 h. No hazardous part access."
+    },
+    {
+      "test_id": "MECH-09",
+      "test_name_zh": "模應力測試",
+      "test_name_en": "Mold Stress Test",
+      "section": "35",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "soc": "完全放電（防止過熱）",
+        "temperature": "T_max + 10°C 或 80°C（取較高者）",
+        "duration": "7 小時（循環空氣烤箱）",
+        "post_test": "冷卻至室溫後檢查，進行介電耐壓或絕緣電阻測試"
+      },
+      "criteria": {
+        "pass_conditions": ["no_hazardous_part_access", "no_insulation_breakdown"],
+        "description": "外殼應無損壞導致危險部件可接觸；無絕緣擊穿"
+      },
+      "exemptions": [
+        "無危險運行電壓的 UAS 可豁免"
+      ],
+      "original_text_snippet": "35 Mold Stress: Fully discharged sample placed in oven at T_max+10°C or 80°C (whichever higher) for 7 h. No hazardous part access, no insulation breakdown."
+    },
+    {
+      "test_id": "ENV-10",
+      "test_name_zh": "水暴露測試 - IPX4",
+      "test_name_en": "Water Exposure Test - IPX4",
+      "section": "36.1",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "soc": "充滿電",
+        "test_standard": "IEC 60529 IPX4（或更高 IP 等級按製造商規定）",
+        "post_test": "充放電循環和觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "function_normal"],
+        "description": "應無起火、無爆炸；功能正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "36.1 IPX4 Code Rating: Fully charged UAS subjected to water exposure per IEC 60529 IPX4 (or higher if rated). Non-compliant: fire, explosion, malfunction."
+    },
+    {
+      "test_id": "ENV-11",
+      "test_name_zh": "水暴露測試 - 臨時浸水",
+      "test_name_en": "Water Exposure Test - Temporary Immersion",
+      "section": "36.2",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "depth": "76 mm (3 英寸) 水覆蓋 UAS 最高點",
+        "duration": "5 分鐘",
+        "post_test": "充放電循環和觀察（若可運行）或連接充電器確認無危險（若不可運行）"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應無起火、無爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "36.2 Temporary Immersion: UAS immersed to depth covering highest point with 76 mm water for 5 min. Non-compliant: fire, explosion."
+    },
+    {
+      "test_id": "MAT-01",
+      "test_name_zh": "墊圈加速老化測試",
+      "test_name_en": "Accelerated Aging of Gaskets",
+      "section": "37",
+      "test_objects": ["GASKET_MATERIAL"],
+      "conditions": {
+        "materials": ["氯丁橡膠/橡膠化合物", "聚氯乙烯材料", "發泡氯丁橡膠/發泡橡膠"],
+        "aging_conditions": "按表 37.2（溫度升高 35-80°C，70-240 小時）",
+        "measurements": ["拉伸強度", "伸長率", "密封性能"]
+      },
+      "criteria": {
+        "pass_conditions": ["within_spec", "sealing_maintained"],
+        "description": "物理性能應符合表 37.1；密封性能應維持"
+      },
+      "exemptions": [],
+      "original_text_snippet": "37 Accelerated Aging of Gaskets: Gasket materials subjected to accelerated aging per Table 37.2 (35-80°C temp rise, 70-240 h). Physical properties per Table 37.1, sealing maintained."
+    },
+    {
+      "test_id": "LABEL-01",
+      "test_name_zh": "標籤耐久性測試",
+      "test_name_en": "Permanence of Marking",
+      "section": "38",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "procedure": ["用浸水的布手擦 15 秒", "用浸異丙醇 (75% IPA) 的布手擦 15 秒"],
+        "alternative": "可使用試劑級己烷（≥85% 正己烷）替代"
+      },
+      "criteria": {
+        "pass_conditions": ["legible", "no_damage", "not_easily_removable"],
+        "description": "標籤應保持清晰、無損壞、不易手動移除"
+      },
+      "exemptions": [
+        "已按先前評估計劃評估的粘合劑標籤可豁免"
+      ],
+      "original_text_snippet": "38 Permanence of Marking: Label rubbed 15 s with water-soaked cloth, then 15 s with 75% IPA-soaked cloth. Label shall remain legible, no damage, not easily removable."
+    },
+    {
+      "test_id": "MOTOR-01",
+      "test_name_zh": "馬達過載測試",
+      "test_name_en": "Motor Overload",
+      "section": "39",
+      "test_objects": ["MOTOR"],
+      "conditions": {
+        "setup": "馬達放置在覆蓋單層薄紙的木質表面上，馬達上覆蓋單層粗棉布",
+        "procedure": "在最大正常負載下運行，逐步增加負載直到過載保護裝置啟動或馬達繞組開路",
+        "monitoring": "監測馬達表面溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_ignition"],
+        "description": "薄紙和粗棉布應無點燃"
+      },
+      "exemptions": [
+        "若馬達和過載保護已作為馬達和馬達保護器組合評估的一部分進行評估，或可證明過載不可能發生，可豁免"
+      ],
+      "original_text_snippet": "39 Motor Overload: Motor operated at max normal load, load progressively increased until overload protection operates or winding opens. No ignition of tissue or cheesecloth."
+    },
+    {
+      "test_id": "SHARP-01",
+      "test_name_zh": "銳邊測試",
+      "test_name_en": "Sharp Edges",
+      "section": "22",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "inspection": "目視和觸覺檢查所有可接觸邊緣"
+      },
+      "criteria": {
+        "pass_conditions": ["no_sharp_edges"],
+        "description": "不應有銳邊導致傷害風險"
+      },
+      "exemptions": [],
+      "original_text_snippet": "22 Sharp Edges: No sharp edges that could cause injury."
+    },
+    {
+      "test_id": "STRENGTH-01",
+      "test_name_zh": "外殼強度測試",
+      "test_name_en": "Strength of Enclosures",
+      "section": "23",
+      "test_objects": ["UAS"],
+      "conditions": {
+        "inspection": "檢查外殼、護罩、蓋子的結構完整性"
+      },
+      "criteria": {
+        "pass_conditions": ["structurally_sound"],
+        "description": "外殼應具有足夠的結構強度"
+      },
+      "exemptions": [],
+      "original_text_snippet": "23 Strength of Enclosures: Enclosures, guards, covers shall be structurally sound."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Abnormal Operation Tests (32.7-32.10)",
+      "exemption": "符合 17.3.2(a) 或 17.3.2(b) 的電池組可豁免短路、不平衡充電、衝擊、熱循環測試"
+    },
+    {
+      "test_id": "Mold Stress Test (35)",
+      "exemption": "無危險運行電壓的 UAS 可豁免"
+    },
+    {
+      "test_id": "Motor Overload (39)",
+      "exemption": "若馬達和過載保護已作為馬達和馬達保護器組合評估的一部分進行評估，或可證明過載不可能發生，可豁免"
+    },
+    {
+      "test_id": "Permanence of Marking (38)",
+      "exemption": "已按先前評估計劃評估的粘合劑標籤可豁免"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 02:00",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction)",
+    "ocr_quality_notes": "OCR 品質良好，使用 PDF 直接提取，英文內容完整，章節編號清晰。UL 3030 是無人機系統 (UAS) 的安全標準，適用於商業應用或業務附帶飛行的 UAS（<25 kg，≤100 Vdc，戶外運行）。涵蓋電氣、機械、環境、標籤、馬達等測試。2024 年重新確認，無要求變更。"
+  }
+}

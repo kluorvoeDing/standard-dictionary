@@ -1,0 +1,503 @@
+{
+  "standard_id": "ULC-2580",
+  "filename": "ULC-2580-2022-en.md",
+  "full_name": "ANSI/CAN/UL/ULC 2580:2022 - Standard for Batteries for Use In Electric Vehicles (Third Edition)",
+  "publication_date": "2011-10 (First), 2013-12 (Second), 2020-03 (Third), 2022-06-28 (Latest Revision)",
+  "publisher": "UL (Underwriters Laboratories) / ULC Standards / ANSI / SCC",
+  "li_applicable": true,
+  "test_count": 22,
+  "ocr_quality": "良好（PDF 直接提取，英文內容完整，但部分頁面有版權水印）",
+  "tests": [
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過充電測試",
+      "test_name_en": "Overcharge Test",
+      "section": "25",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "放電至製造商規定的 EODV",
+        "charging_rate": "電池組規定的最大充電速率",
+        "fault_condition": "充電電路單一故障（可能導致過充）",
+        "termination_criteria": ["保護電路終止充電", "充電至 110% 額定容量", "發生起火/爆炸"],
+        "monitoring": "使用火花點火源檢測可燃氣體"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "isolation_resistance_100_ohm_per_V", "no_external_venting", "no_rupture", "no_external_leakage"],
+        "description": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏"
+      },
+      "exemptions": [
+        "若子組件被認定為可代表完整 EESA，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "25 Overcharge Test: A fully discharged sample is to be subjected to the maximum specified charging rate with a single fault condition in the charging circuit. The test is to continue until ultimate results occur. There shall be no evidence of fire or explosion. The minimum isolation resistance shall be 100 Ω/V."
+    },
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "外部短路測試",
+      "test_name_en": "Short Circuit Test",
+      "section": "26",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "resistance": "≤ 20 mΩ",
+        "temperature": "室溫環境",
+        "fault_condition": "放電保護電路單一元件故障",
+        "duration": "完全放電或溫度達到峰值/穩定狀態後 7 小時",
+        "monitoring": "使用火花點火源檢測可燃氣體"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "isolation_resistance_100_ohm_per_V", "no_external_venting", "no_rupture", "no_external_leakage"],
+        "description": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏"
+      },
+      "exemptions": [
+        "若子組件被認定為可代表完整 EESA，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "26 Short Circuit Test: The sample is to be short-circuited by connecting the positive and negative terminals with a circuit load having a total circuit resistance less than or equal to 20 mΩ. Tests are to be conducted at room ambient. There shall be no evidence of fire or explosion."
+    },
+    {
+      "test_id": "ELEC-06",
+      "test_name_zh": "過放電保護測試",
+      "test_name_en": "Overdischarge Protection Test",
+      "section": "27",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "discharge_rate": "製造商規定的最大放電速率",
+        "termination_criteria": ["被動保護裝置啟動", "最小電壓/最高溫度保護啟動", "達到正常放電限值後 30 分鐘"],
+        "monitoring": "使用火花點火源檢測可燃氣體"
+      },
+      "criteria": {
+        "pass_conditions": ["protection_activates", "no_fire", "no_explosion", "isolation_resistance_100_ohm_per_V", "no_external_venting", "no_rupture", "no_external_leakage"],
+        "description": "保護裝置應啟動防止電池低於截止電壓；應無起火、無爆炸；最小絕緣電阻 100 Ω/V"
+      },
+      "exemptions": [
+        "若子組件被認定為可代表完整 EESA，可在子組件層級進行測試"
+      ],
+      "original_text_snippet": "27 Overdischarge Protection Test: The DUT is to be subjected to a constant discharging current at the manufacturer's specified maximum discharge rate. The protection device(s) shall activate to prevent cells from going below their cut-off voltage limit."
+    },
+    {
+      "test_id": "THERM-02",
+      "test_name_zh": "溫度測試",
+      "test_name_en": "Temperature Test",
+      "section": "28",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "放電至 EODV 後充電至 MOSOC",
+        "ambient_temperature": "上限充電溫度",
+        "cycles": "5 次完整充放電循環",
+        "monitoring": "監測模組電壓/電流及溫度敏感元件（包括電池）"
+      },
+      "criteria": {
+        "pass_conditions": ["within_limits"],
+        "description": "製造商規定的限值（電壓、電流、溫度）不得超出；元件溫度不得超出其規格"
+      },
+      "exemptions": [],
+      "original_text_snippet": "28 Temperature Test: This test is conducted to determine whether or not the modules and their cells are being maintained within their specified operating limits during maximum charge and discharge conditions. The charge and discharge cycles are then repeated for a total of 5 complete cycles."
+    },
+    {
+      "test_id": "ELEC-07",
+      "test_name_zh": "不平衡充電測試",
+      "test_name_en": "Imbalanced Charging Test",
+      "section": "29",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "除一個模組外全部放電至完全放電狀態，未放電模組放電至 50% SOC（創建不平衡狀態）",
+        "charging": "按製造商規格充電",
+        "monitoring": "監測部分充電模組的電壓是否超出限值"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "isolation_resistance_100_ohm_per_V", "no_external_venting", "no_rupture", "no_external_leakage", "voltage_within_limit"],
+        "description": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；模組最大電壓限值不得超出"
+      },
+      "exemptions": [],
+      "original_text_snippet": "29 Imbalanced Charging Test: A fully charged EESA shall have all of its modules with the exception of one discharged to its specified fully discharged condition. The undischarged module shall be discharged to approximately 50% of its specified state of charge to create an imbalanced condition."
+    },
+    {
+      "test_id": "ELEC-08",
+      "test_name_zh": "介電耐壓測試",
+      "test_name_en": "Dielectric Voltage Withstand Test",
+      "section": "30",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "60 Vdc 或以上的電路",
+      "conditions": {
+        "test_voltage_dc": "1.414 × 2 × 額定電壓（DC）",
+        "test_voltage_ac": "2 × 額定電壓（60 Hz 正弦波 AC，可選）",
+        "duration": "至少 1 分鐘",
+        "application": "危險電壓電路與非載流導電部件之間"
+      },
+      "criteria": {
+        "pass_conditions": ["no_dielectric_breakdown"],
+        "description": "應無介電擊穿（絕緣擊穿導致短路/飛弧）"
+      },
+      "exemptions": [
+        "半導體或類似電子元件可能被旁路或斷開（若易受測試電壓損壞）"
+      ],
+      "original_text_snippet": "30 Dielectric Voltage Withstand Test: Circuits at 60 Vdc or higher shall be subjected to a dielectric withstand voltage consisting of a dc potential of 1.414 times two rated voltage. The test voltages shall be applied for a minimum of 1 min."
+    },
+    {
+      "test_id": "ELEC-09",
+      "test_name_zh": "絕緣電阻測試",
+      "test_name_en": "Isolation Resistance Test",
+      "section": "31",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "test_method": "ISO 6469-1 Clause 6.1.3",
+        "conditioning": [
+          "（a）接收狀態（無濕度調節）",
+          "（b）IEC 60068-2-30 調節：55 ± 2°C，6 次循環"
+        ],
+        "soc": "充滿電狀態",
+        "measurement": "使用兆歐表施加 DC 電壓 1 分鐘後測量"
+      },
+      "criteria": {
+        "pass_conditions": ["isolation_resistance_100_ohm_per_V_dc", "isolation_resistance_500_ohm_per_V_ac"],
+        "description": "絕緣電阻/最大工作電壓 ≥ 100 Ω/V（DC）或 500 Ω/V（AC）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "31 Isolation Resistance Test: The electric energy storage assembly shall be subjected to Isolation resistance test of Clause 6.1.3 of ISO 6469-1. The isolation resistance divided by the maximum working voltage shall be at least 100 Ω/V for dc and 500 Ω/V for ac."
+    },
+    {
+      "test_id": "ELEC-10",
+      "test_name_zh": "接地連續性測試",
+      "test_name_en": "Continuity Test",
+      "section": "32",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "test_current": "150% 最大電路電流或 25 A（取較大者）",
+        "duration": "5 秒",
+        "voltage_limit": "無負載電壓不超過 60 Vdc",
+        "measurement": "測量任意兩個外露導電部件之間的電壓降"
+      },
+      "criteria": {
+        "pass_conditions": ["resistance_le_0_1_ohm"],
+        "description": "保護接地系統電阻不超過 0.1 Ω"
+      },
+      "exemptions": [],
+      "original_text_snippet": "32 Continuity Test: The grounding system of an electric energy storage assembly shall have no more than 0.1-Ω resistance between any two parts of the system."
+    },
+    {
+      "test_id": "THERM-03",
+      "test_name_zh": "冷卻/熱管理系統失效測試",
+      "test_name_en": "Failure of Cooling/Thermal Stability System Test",
+      "section": "33",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc_charge": "放電至 EODV，在最高工作環境溫度下調節 7 小時，冷卻系統禁用，以最大速率充電",
+        "soc_discharge": "充滿電（MOSOC），在最高工作環境溫度下調節 7 小時，冷卻系統禁用，以最大速率放電",
+        "repeat_at_min": "在最低工作環境溫度下重複測試（可通過分析豁免）",
+        "monitoring": "使用火花點火源檢測可燃氣體"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "isolation_resistance_100_ohm_per_V", "no_external_venting", "no_rupture", "no_external_leakage"],
+        "description": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏"
+      },
+      "exemptions": [
+        "若通過分析確定在最低環境溫度下冷卻系統不運作不會產生危險，可豁免最低溫度測試"
+      ],
+      "original_text_snippet": "33 Failure of Cooling/Thermal Stability System Test: The DUT, with its cooling/thermal stability system disabled is to then be charged at its maximum specified charge rate until completely charged or until operation of a protective device."
+    },
+    {
+      "test_id": "MECH-13",
+      "test_name_zh": "旋轉測試（翻車模擬）",
+      "test_name_en": "Rotation Test",
+      "section": "34",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "rotation_rate": "90°/15 秒",
+        "directions": "3 個互相垂直方向各 360°旋轉（圓柱型設計 2 個方向）",
+        "monitoring": "使用火花點火源檢測可燃氣體"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_toxic_gas_release", "isolation_resistance_100_ohm_per_V"],
+        "description": "應無起火、無爆炸、無有毒氣體釋放；最小絕緣電阻 100 Ω/V"
+      },
+      "exemptions": [
+        "已按 CMVSS 305 / FMVSS 305 進行翻滾測試的公路車輛用電池可豁免",
+        "富液式鉛酸電池豁免"
+      ],
+      "original_text_snippet": "34 Rotation Test: A sample shall be subjected to a 360° rotation to simulate an overturned vehicle. The sample shall be rotated at a continuous rate of 90°/15 s in 3 mutually perpendicular different directions."
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動耐久性測試",
+      "test_name_en": "Vibration Endurance Test",
+      "section": "35",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "profile": "按預期車輛振動輪廓；若無，使用 SAE J2380",
+        "rest_period": "測試後靜置 8-24 小時",
+        "monitoring": "監測 OCV 和中心模組溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "isolation_resistance_100_ohm_per_V", "no_external_venting", "no_rupture", "no_external_leakage"],
+        "description": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏"
+      },
+      "exemptions": [
+        "大型應用（非乘用車）可在模組層級測試",
+        "越野車輛（UL 583）可按 ISO 6469-1 測試"
+      ],
+      "original_text_snippet": "35 Vibration Endurance Test: A sample is subjected to a vibration endurance test in accordance with the anticipated end application vehicle vibration profile. In the absence of this information, the vibration method outlined in SAE J2380 shall be used."
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "機械衝擊測試",
+      "test_name_en": "Shock Test",
+      "section": "36",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "waveform": "半正弦波",
+        "acceleration": "25 gn",
+        "pulse_duration": "15 ms",
+        "directions": "3 個互相垂直軸，每軸正負方向各 3 次（共 18 次）",
+        "rest_period": "測試後靜置 6-24 小時",
+        "off_road_params": "越野車輛：≤12 kg: 50 gn/11 ms；>12-100 kg: 25 gn/15 ms；>100 kg: 10 gn/20 ms"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "isolation_resistance_100_ohm_per_V", "no_external_venting", "no_rupture", "no_external_leakage"],
+        "description": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏"
+      },
+      "exemptions": [
+        "大型應用（非乘用車）可在模組層級測試",
+        "越野車輛（UL 583）可使用表 36.1 參數"
+      ],
+      "original_text_snippet": "36 Shock Test: A fully charged sample is to be subjected to the half sine wave shock test in accordance with IEC 60068-2-27, with the parameters as outlined in Table 36.2 (25 gn, 15 ms, 3 axes, 18 shocks total)."
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "跌落測試",
+      "test_name_en": "Drop Test",
+      "section": "37",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "height": "1.0 m（3.3 ft）",
+        "surface": "平坦混凝土表面（至少 76 mm 厚）",
+        "orientation": "最可能產生不利結果的位置，代表維護/拆卸時的實際情況",
+        "drop_count": "至少 1 次（若一次是平面跌落，則至少另一次非平面跌落）",
+        "rest_period": "測試後 6-24 小時內檢查"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_toxic_gas_release", "isolation_resistance_100_ohm_per_V"],
+        "description": "應無起火、無爆炸、無有毒氣體釋放；最小絕緣電阻 100 Ω/V"
+      },
+      "exemptions": [
+        "設計為不可從車輛拆卸的電池組可豁免"
+      ],
+      "original_text_snippet": "37 Drop Test: An electric energy storage assembly at MOSOC is to be dropped from a minimum height of 1.0 m to strike a flat concrete surface in the position most likely to produce the adverse results."
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "擠壓測試",
+      "test_name_en": "Crush Test",
+      "section": "38",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "force": "車輛預期的最大擠壓負載（由製造商定義）",
+        "direction": "代表車輛碰撞時最可能受擠壓的方向",
+        "rest_period": "測試後靜置 6-24 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_toxic_gas_release", "isolation_resistance_100_ohm_per_V"],
+        "description": "應無起火、無爆炸、無有毒氣體釋放；最小絕緣電阻 100 Ω/V"
+      },
+      "exemptions": [],
+      "original_text_snippet": "38 Crush Test: The sample is to be crushed in a direction that represents the most likely direction of crush during a vehicle collision. The force applied shall be the maximum expected crush load of the vehicle."
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "溫度循環測試",
+      "test_name_en": "Thermal Cycling",
+      "section": "39",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "cycle_profile": "按製造商規定的溫度循環輪廓；若無，使用 SAE J2380 或 IEC 60068-2-30",
+        "rest_period": "測試後靜置 6-24 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "isolation_resistance_100_ohm_per_V", "no_external_venting", "no_rupture", "no_external_leakage"],
+        "description": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏"
+      },
+      "exemptions": [],
+      "original_text_snippet": "39 Thermal Cycling: The sample is to be subjected to thermal cycling in accordance with the manufacturer's specified temperature cycling profile. In the absence of this information, use SAE J2380 or IEC 60068-2-30."
+    },
+    {
+      "test_id": "ENV-06",
+      "test_name_zh": "鹽霧測試",
+      "test_name_en": "Salt Spray Test",
+      "section": "40",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "test_method": "IEC 60068-2-52 或等效標準",
+        "rest_period": "測試後靜置 6-24 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "isolation_resistance_100_ohm_per_V", "no_external_venting", "no_rupture", "no_external_leakage"],
+        "description": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏"
+      },
+      "exemptions": [],
+      "original_text_snippet": "40 Salt Spray Test: The sample is to be subjected to salt spray testing in accordance with IEC 60068-2-52 or equivalent standard."
+    },
+    {
+      "test_id": "ENV-08",
+      "test_name_zh": "浸水測試",
+      "test_name_en": "Immersion Test",
+      "section": "41",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "test_method": "按 NEMA 60529 IP 等級要求或 UL 50E",
+        "rest_period": "測試後靜置 6-24 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "isolation_resistance_100_ohm_per_V", "no_external_venting", "no_rupture", "no_external_leakage"],
+        "description": "應無起火、無爆炸；最小絕緣電阻 100 Ω/V；無外部排氣、無破裂、無外部洩漏"
+      },
+      "exemptions": [],
+      "original_text_snippet": "41 Immersion Test: The energy storage assembly shall comply with its IP rating for ingress of fluids and other foreign materials as determined by NEMA 60529."
+    },
+    {
+      "test_id": "THERM-09",
+      "test_name_zh": "外部火災暴露測試",
+      "test_name_en": "External Fire Exposure Test",
+      "section": "42",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "test_method": "按車輛預期的火災暴露條件",
+        "monitoring": "監測溫度、氣體釋放"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_toxic_gas_release"],
+        "description": "應無爆炸、無有毒氣體釋放（起火可能發生但不得爆炸）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "42 External Fire Exposure Test: The sample is to be subjected to external fire exposure in accordance with the anticipated fire exposure conditions for the vehicle application."
+    },
+    {
+      "test_id": "INTERNAL-01",
+      "test_name_zh": "單電池失效設計容差測試（鋰離子）",
+      "test_name_en": "Single Cell Failure Design Tolerance (Lithium Ion)",
+      "section": "43.2",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "trigger_method": "使用內部短路觸發電池（見 Annex C）",
+        "trigger_cell_count": "至少 1 個觸發電池",
+        "monitoring": "監測熱擴散、起火、爆炸"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire_propagation", "no_explosion_propagation"],
+        "description": "單電池失效不應導致相鄰電池熱失控傳播；系統應無起火/爆炸傳播"
+      },
+      "exemptions": [],
+      "original_text_snippet": "43.2 Single cell failure design tolerance (lithium ion): The EESA shall be evaluated for its ability to tolerate a single cell failure without resulting in a hazardous condition. A trigger cell shall be used to initiate an internal short circuit."
+    },
+    {
+      "test_id": "INTERNAL-02",
+      "test_name_zh": "單電池失效設計容差測試（其他技術）",
+      "test_name_en": "Single Cell Failure Design Tolerance (Other Technologies)",
+      "section": "43.3",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "trigger_method": "按電池技術使用適當的失效觸發方法",
+        "monitoring": "監測熱擴散、起火、爆炸"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire_propagation", "no_explosion_propagation"],
+        "description": "單電池失效不應導致相鄰電池熱失控傳播；系統應無起火/爆炸傳播"
+      },
+      "exemptions": [],
+      "original_text_snippet": "43.3 Single cell failure design tolerance (other technologies): The EESA shall be evaluated for its ability to tolerate a single cell failure without resulting in a hazardous condition."
+    },
+    {
+      "test_id": "ANNEX-B-01",
+      "test_name_zh": "鋰電池測試計劃（Annex B）",
+      "test_name_en": "Test Program for Secondary Lithium Cells (Annex B)",
+      "section": "Annex B",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "tests_included": [
+          "B2.1 振動",
+          "B2.2 衝擊",
+          "B2.3 跌落",
+          "B2.4 擠壓",
+          "B2.5 加熱",
+          "B2.6 溫度循環",
+          "B2.7 外部短路",
+          "B2.8 過充電",
+          "B2.9 強制放電",
+          "B2.10 拋射物"
+        ],
+        "reference": "參考 Annex B 詳細測試條件"
+      },
+      "criteria": {
+        "pass_conditions": ["per_annex_b"],
+        "description": "按 Annex B 規定的測試方法和判定標準"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Annex B (Normative) Test Program for Secondary Lithium Cells: Includes vibration, shock, drop, crush, heating, temperature cycling, external short circuit, overcharge, forced discharge, and projectile tests."
+    },
+    {
+      "test_id": "ANNEX-D-01",
+      "test_name_zh": "替代鋰電池測試計劃（Annex D）",
+      "test_name_en": "Alternative Test Program for Secondary Lithium Cells (Annex D)",
+      "section": "Annex D",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "tests_included": [
+          "D3.1 短路",
+          "D3.2 過充電",
+          "D3.3 擠壓",
+          "D3.4 衝擊",
+          "D3.5 衝擊",
+          "D3.6 振動",
+          "D3.7 加熱",
+          "D3.8 溫度循環",
+          "D3.9 低壓（高度模擬）",
+          "D3.10 拋射物"
+        ],
+        "reference": "參考 Annex D 詳細測試條件"
+      },
+      "criteria": {
+        "pass_conditions": ["per_annex_d"],
+        "description": "按 Annex D 規定的測試方法和判定標準"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Annex D (Normative) Alternative Test Program for Secondary Lithium Cells: Includes short-circuit, overcharge, crush, impact, shock, vibration, heating, temperature cycling, low pressure, and projectile tests."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Rotation Test (34)",
+      "exemption": "已按 CMVSS 305 / FMVSS 305 進行翻滾測試的公路車輛用電池可豁免；富液式鉛酸電池豁免"
+    },
+    {
+      "test_id": "Vibration Endurance Test (35)",
+      "exemption": "大型應用（非乘用車）可在模組層級測試；越野車輛（UL 583）可按 ISO 6469-1 測試"
+    },
+    {
+      "test_id": "Shock Test (36)",
+      "exemption": "大型應用（非乘用車）可在模組層級測試；越野車輛（UL 583）可使用表 36.1 參數"
+    },
+    {
+      "test_id": "Drop Test (37)",
+      "exemption": "設計為不可從車輛拆卸的電池組可豁免"
+    },
+    {
+      "test_id": "Overcharge/Short Circuit/Overdischarge Tests",
+      "exemption": "若子組件被認定為可代表完整 EESA，可在子組件層級測試"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-17 23:45",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction)",
+    "ocr_quality_notes": "OCR 品質良好，使用 PDF 直接提取，英文內容完整，章節編號清晰。ULC-2580 是北美電動車電池系統的基礎安全標準，涵蓋電氣、機械、環境、內部失效四大類測試。部分頁面有版權水印但不影響內容提取。"
+  }
+}

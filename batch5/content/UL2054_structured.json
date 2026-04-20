@@ -1,0 +1,427 @@
+{
+  "standard_id": "UL-2054",
+  "filename": "s2054_3.md",
+  "full_name": "UL 2054:2021 (R2022) - Standard for Safety for Household and Commercial Batteries (Third Edition)",
+  "publication_date": "1997-05 (First), 2004-10 (Second), 2021-11-17 (Third), 2022-03-10 (Revisions)",
+  "publisher": "UL (Underwriters Laboratories)",
+  "li_applicable": true,
+  "test_count": 19,
+  "battery_types": ["Primary (non-rechargeable)", "Secondary (rechargeable)"],
+  "ocr_quality": "良好（PDF 直接提取，英文內容完整，但部分頁面有版權水印）",
+  "tests": [
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "短路測試",
+      "test_name_en": "Short-Circuit Test",
+      "section": "11",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "soc": "充滿電",
+        "resistance": "80 ± 20 mΩ",
+        "temperatures": ["20 ± 5°C", "55 ± 2°C"],
+        "duration": "直到起火/爆炸、完全放電 (<0.2 V)、或溫度恢復至環境±10°C",
+        "fault_condition": "負載電路中任何保護裝置的單一故障",
+        "paper_test": "5 個樣品中的 1 個在軟木表面覆蓋薄紙和粗棉布下測試"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_chemical_leak", "cell_temp_le_150C_lithium", "paper_cloth_no_fire"],
+        "description": "應無爆炸、無起火、無化學洩漏；鋰電池內部電芯溫度≤150°C；薄紙和粗棉布不應起火"
+      },
+      "exemptions": [
+        "單電池組且電池已通過 11.1-11.6 測試可豁免 11.8-11.12"
+      ],
+      "original_text_snippet": "11 Short-Circuit Test: Fully charged sample short-circuited with 80±20 mΩ at 20°C and 55°C. Non-compliant: explosion, fire, chemical leak. Cell temp ≤150°C for lithium."
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "異常充電測試",
+      "test_name_en": "Abnormal Charging Test",
+      "section": "12",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "primary_soc": "放電至製造商規定容量",
+        "secondary_soc": "以 0.2C/1h 放電至終止電壓",
+        "charging_current": "3×Ic（製造商規定的最大充電電流）",
+        "primary_duration": "t = 2.5 × (Cc / 3Ic)，最少 7 h",
+        "secondary_duration": "達到充電結束條件後再加 7 h",
+        "fault_condition": "充電電路中單一故障（可能導致過充電）",
+        "protective_device": "可重置保護裝置允許重置並繼續測試（至少 10 次循環）"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_chemical_leak"],
+        "description": "應無爆炸、無起火、無化學洩漏"
+      },
+      "exemptions": [],
+      "original_text_snippet": "12 Abnormal Charging Test: 3×Ic charging current. Primary: min 7 h. Secondary: end-of-charge + 7 h. Non-compliant: explosion, fire, chemical leak."
+    },
+    {
+      "test_id": "ELEC-03",
+      "test_name_zh": "濫用過充電測試",
+      "test_name_en": "Abusive Overcharge Test",
+      "section": "13",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "charging_current": "10×C5 安培率",
+        "voltage": "足以維持 10×C5 安培率的供電電壓",
+        "duration": "直到爆炸、排氣、保護裝置啟動且溫度穩定",
+        "fault_condition": "充電電路中單一故障",
+        "protective_device": "可重置保護裝置允許重置至少 10 次",
+        "additional_test": "至少 1 個樣品以 5×C5 安培率測試"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "應無爆炸、無起火"
+      },
+      "exemptions": [],
+      "original_text_snippet": "13 Abusive Overcharge Test: 10×C5 rate charging until explosion, vent, or protection operates. Non-compliant: explosion, fire."
+    },
+    {
+      "test_id": "ELEC-04",
+      "test_name_zh": "強制放電測試",
+      "test_name_en": "Forced-Discharge Test",
+      "section": "14",
+      "test_objects": ["CELL"],
+      "applicability": "僅適用於多串聯電池應用（如電池組）",
+      "conditions": {
+        "setup": "完全放電的電池與完全充電的同類型電池串聯",
+        "series_cells": "串聯電池數量 = 電池組總電池數 - 1",
+        "parallel_strings": "串聯電池數量 = 電池組總電池數 - 放電並聯串電池數",
+        "resistance": "80 ± 20 mΩ 銅線",
+        "duration": "直到起火/爆炸、完全放電、或溫度恢復至環境±10°C",
+        "fault_condition": "放電電路中單一故障"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "應無爆炸、無起火"
+      },
+      "exemptions": [
+        "僅適用於多串聯配置的電池"
+      ],
+      "original_text_snippet": "14 Forced-Discharge Test: For multi-cell series applications. Discharged cell connected in series with charged cells, short-circuited with 80±20 mΩ. Non-compliant: explosion, fire."
+    },
+    {
+      "test_id": "ELEC-15",
+      "test_name_zh": "有限電源測試",
+      "test_name_en": "Limited Power Source Test",
+      "section": "15",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "soc": "充滿電",
+        "measurement": "Uoc（開路電壓）、Isc（短路電流）、S（視在功率）",
+        "limits_table_15_1": {
+          "Uoc_le_30V": "Isc ≤ 8.0 A, S ≤ 100 VA",
+          "30V_Uoc_le_60V": "Isc ≤ 150/Uoc A, S ≤ 100 VA"
+        },
+        "limits_table_15_2": "使用過流保護裝置時的限制",
+        "measurement_time": "電子電路或 PTC 保護後 5 秒，其他情況 60 秒"
+      },
+      "criteria": {
+        "pass_conditions": ["within_limits"],
+        "description": "輸出應符合表 15.1 或 15.2 的限制；符合要求的電池可標記為 'LPS'"
+      },
+      "exemptions": [
+        "可選測試（僅在製造商請求時進行）"
+      ],
+      "original_text_snippet": "15 Limited Power Source Test: Optional. Measures Uoc, Isc, S. Limits per Table 15.1 (without OCPD) or 15.2 (with OCPD). Compliant batteries may be marked 'LPS'."
+    },
+    {
+      "test_id": "THERM-01",
+      "test_name_zh": "電池組元件溫度測試",
+      "test_name_en": "Battery Pack Component Temperature Test",
+      "section": "16",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "output_test": "充滿電的電池組以恆定電阻負載放電，電流設為略低於放電保護電路工作限值",
+        "input_test": "完全放電的電池組以 CCCV 方法充電，電流不超過 3×最大充電電流或充電保護限值",
+        "stabilization": "連續 3 次讀數（間隔≥15 min）無進一步增加",
+        "protective_devices": "測試期間保護裝置不應啟動",
+        "formula": "Ti ≤ Tmax + Tamb - Tma"
+      },
+      "criteria": {
+        "pass_conditions": ["within_limits"],
+        "description": "溫度敏感元件的溫度不應超過表 16.1 規定的限值"
+      },
+      "exemptions": [],
+      "original_text_snippet": "16 Battery Pack Component Temperature Test: Input/output loading until thermal stabilization. Temperatures shall not exceed limits in Table 16.1."
+    },
+    {
+      "test_id": "THERM-02",
+      "test_name_zh": "電池組表面溫度測試",
+      "test_name_en": "Battery Pack Surface Temperature Test",
+      "section": "17",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "output_test": "充滿電的電池組以恆定電阻負載放電",
+        "input_test": "完全放電的電池組以 CCCV 方法充電",
+        "stabilization": "連續 3 次讀數（間隔≥15 min）無進一步增加",
+        "protective_devices": "測試期間保護裝置不應啟動",
+        "formula": "Ti ≤ Tmax + Tamb - Tma"
+      },
+      "criteria": {
+        "pass_conditions": ["within_limits"],
+        "description": "外部可接觸表面的溫度不應超過表 17.1 規定的限值"
+      },
+      "exemptions": [],
+      "original_text_snippet": "17 Battery Pack Surface Temperature Test: Input/output loading until thermal stabilization. Surface temperatures shall not exceed limits in Table 17.1."
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "擠壓測試",
+      "test_name_en": "Crush Test",
+      "section": "18",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "apparatus": "兩個平面之間擠壓",
+        "force": "13 ± 1.0 kN (3000 ± 224 lbf)",
+        "orientation": "圓柱/方型：縱軸平行於平面；方型需旋轉 90°測試寬窄兩面；鈕扣型：平面平行",
+        "release": "達到最大力後釋放"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "應無爆炸、無起火"
+      },
+      "exemptions": [],
+      "original_text_snippet": "18 Crush Test: Battery crushed between two flat surfaces to 13±1.0 kN. Non-compliant: explosion, fire."
+    },
+    {
+      "test_id": "MECH-26",
+      "test_name_zh": "衝擊測試",
+      "test_name_en": "Impact Test",
+      "section": "19",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "apparatus": "15.8 ± 0.1 mm (5/8 英寸) 直徑棒橫置於電池中心",
+        "weight": "9.10 ± 0.46 kg (20 ± 1 lb)",
+        "height": "610 ± 25 mm (24 ± 1 英寸)",
+        "orientation": "圓柱/方型：縱軸平行於平面且垂直於棒；方型需旋轉 90°測試寬窄兩面；鈕扣型：平面平行",
+        "impact_count": "每個樣品僅承受 1 次衝擊"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "應無爆炸、無起火"
+      },
+      "exemptions": [],
+      "original_text_snippet": "19 Impact Test: 9.10 kg weight dropped from 610 mm onto 15.8 mm diameter bar across battery center. Non-compliant: explosion, fire."
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "衝擊測試",
+      "test_name_en": "Shock Test",
+      "section": "20",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "acceleration": "初始 3 ms 內最小平均加速度 75 gn，峰值加速度 125-175 gn",
+        "directions": "3 個互相垂直方向各 3 次衝擊（若只有 2 個對稱軸則測試 2 個方向）",
+        "post_test": "測試後 6 小時檢查"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_vent", "no_leak"],
+        "description": "應無爆炸、無起火、無排氣、無洩漏"
+      },
+      "exemptions": [],
+      "original_text_snippet": "20 Shock Test: 3 shocks in 3 mutually perpendicular directions, 75g avg (first 3 ms), 125-175g peak. Examine after 6 h. Non-compliant: explosion, fire, vent, leak."
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動測試",
+      "test_name_en": "Vibration Test",
+      "section": "21",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "amplitude": "0.8 mm (0.03 英寸) [1.6 mm (0.06 英寸) 總最大行程]",
+        "frequency": "10-55 Hz，1 Hz/min 速率，90-100 min/循環",
+        "directions": "3 個互相垂直方向（若只有 2 個對稱軸則測試 2 個方向）",
+        "post_test": "測試後 6 小時檢查"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_vent", "no_leak"],
+        "description": "應無爆炸、無起火、無排氣、無洩漏"
+      },
+      "exemptions": [],
+      "original_text_snippet": "21 Vibration Test: 0.8 mm amplitude, 10-55 Hz, 90-100 min/cycle in 3 directions. Examine after 6 h. Non-compliant: explosion, fire, vent, leak."
+    },
+    {
+      "test_id": "MECH-27",
+      "test_name_zh": "穩態力測試",
+      "test_name_en": "Steady Force Test",
+      "section": "23",
+      "test_objects": ["PACK"],
+      "applicability": "僅適用於帶外殼的電池組",
+      "conditions": {
+        "force": "250 ± 10 N (56 ± 2 lbf)",
+        "duration": "5 秒",
+        "tool": "直徑 30 mm (1.2 英寸) 圓形平面",
+        "surfaces": "頂部、底部、側面",
+        "post_test": "測試後 6 小時檢查"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_exposure", "no_vent", "no_leak"],
+        "description": "應無爆炸、無起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏"
+      },
+      "exemptions": [
+        "僅適用於帶外殼的電池組"
+      ],
+      "original_text_snippet": "23 Steady Force Test: 250±10 N for 5 s on top, bottom, sides with 30 mm diameter tool. Examine after 6 h. Non-compliant: explosion, fire, exposure, vent, leak."
+    },
+    {
+      "test_id": "MECH-28",
+      "test_name_zh": "模應力釋放測試",
+      "test_name_en": "Mold Stress Relief Test",
+      "section": "24",
+      "test_objects": ["PACK"],
+      "applicability": "僅適用於帶塑料外殼的電池組",
+      "conditions": {
+        "temperature": "70°C (158°F) 或 T_max + 10°C（若 T_max > 60°C）",
+        "duration": "7 小時（循環空氣烤箱）",
+        "preparation": "完全放電或使用假電池防止過熱",
+        "post_test": "冷卻至室溫後檢查"
+      },
+      "criteria": {
+        "pass_conditions": ["no_exposure", "no_crack", "no_warp", "no_melt"],
+        "description": "外殼不應破裂、翹曲、熔化至電芯或保護裝置暴露"
+      },
+      "exemptions": [
+        "僅適用於帶塑料外殼的電池組"
+      ],
+      "original_text_snippet": "24 Mold Stress Relief Test: 70°C (or T_max+10°C) for 7 h. Non-compliant: crack, warp, melt exposing cells or protection."
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "跌落衝擊測試",
+      "test_name_en": "Drop Impact Test",
+      "section": "25",
+      "test_objects": ["PACK"],
+      "applicability": "僅適用於帶外殼的電池組",
+      "conditions": {
+        "height": "1 m (3.28 英尺)",
+        "drop_count": "每個樣品 3 次",
+        "samples": "3 個樣品",
+        "surface": "混凝土表面",
+        "orientation": "最可能產生不利結果的位置",
+        "cold_conditioning": "若用於 0°C 以下的塑料外殼電池組，需先在 0°C 調節 3 小時",
+        "post_test": "測試後 6 小時檢查"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_exposure", "no_vent", "no_leak", "protection_maintained"],
+        "description": "應無爆炸、無起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏、保護裝置完整性維持"
+      },
+      "exemptions": [
+        "僅適用於帶外殼的電池組"
+      ],
+      "original_text_snippet": "25 Drop Impact Test: 3 samples dropped 3 times from 1 m onto concrete. Examine after 6 h. Non-compliant: explosion, fire, exposure, vent, leak."
+    },
+    {
+      "test_id": "FIRE-01",
+      "test_name_zh": "拋射物測試",
+      "test_name_en": "Projectile Test",
+      "section": "26",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "setup": "電池放置在 102 mm (4 英寸) 直徑孔上的鋼絲網（20 孔/英寸，0.43 mm 線徑）",
+        "heat_source": "本生燈，燃料和空氣流量設定使鋼絲網發亮紅色",
+        "cage": "八面體金屬絲網籠（610 mm × 305 mm，0.25 mm 鋁線，16-18 線/英寸）",
+        "duration": "直到爆炸或電池燃燒殆盡"
+      },
+      "criteria": {
+        "pass_conditions": ["no_penetration"],
+        "description": "爆炸時不應有部件穿透或穿出金屬絲網籠"
+      },
+      "exemptions": [],
+      "original_text_snippet": "26 Projectile Test: Battery heated on screen until explosion or burnout. Covered with 8-sided wire cage. Non-compliant: parts penetrate cage."
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "加熱測試",
+      "test_name_en": "Heating Test",
+      "section": "27",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "start_temp": "20 ± 5°C",
+        "ramp_rate": "5 ± 2°C/min",
+        "target_temp": "130 ± 2°C (266 ± 4°F)",
+        "hold_time": "10 分鐘",
+        "oven_type": "重力對流或循環空氣烤箱"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "應無爆炸、無起火"
+      },
+      "exemptions": [],
+      "original_text_snippet": "27 Heating Test: Heat at 5±2°C/min to 130±2°C, hold 10 min. Non-compliant: explosion, fire."
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "溫度循環測試",
+      "test_name_en": "Temperature Cycling Test",
+      "section": "28",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "cycle_profile": [
+          {"temp": "70 ± 3°C", "duration": "4 h", "ramp": "≤30 min"},
+          {"temp": "20 ± 3°C", "duration": "2 h", "ramp": "≤30 min"},
+          {"temp": "-40 ± 3°C", "duration": "4 h", "ramp": "≤30 min"},
+          {"temp": "20 ± 3°C", "duration": "immediate", "ramp": "≤30 min"}
+        ],
+        "cycle_count": "10 次循環",
+        "post_storage": "20 ± 5°C 下儲存至少 24 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_vent", "no_leak"],
+        "description": "應無爆炸、無起火、無排氣、無洩漏"
+      },
+      "exemptions": [],
+      "original_text_snippet": "28 Temperature Cycling Test: 10 cycles: 70°C/4h → 20°C/2h → -40°C/4h → 20°C. Store 24 h at 20°C. Non-compliant: explosion, fire, vent, leak."
+    },
+    {
+      "test_id": "LABEL-01",
+      "test_name_zh": "標籤耐久性測試",
+      "test_name_en": "Label Permanence Test",
+      "section": "29",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "procedure": ["用浸水的布手擦 15 秒", "用浸石油精（脂肪族溶劑己烷）的布手擦 15 秒"],
+        "alternative": "可使用試劑級己烷（≥85% 正己烷）替代"
+      },
+      "criteria": {
+        "pass_conditions": ["legible", "no_damage", "not_easily_removable"],
+        "description": "標籤應保持清晰、無損壞（包括捲曲）、不易手動移除"
+      },
+      "exemptions": [
+        "已按先前評估計劃評估的粘合劑標籤可豁免"
+      ],
+      "original_text_snippet": "29 Label Permanence Test: Label rubbed 15 s with water-soaked cloth, then 15 s with petroleum spirit. Non-compliant: illegible, damaged, easily removable."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Forced-Discharge Test (14)",
+      "exemption": "僅適用於多串聯配置的電池"
+    },
+    {
+      "test_id": "Limited Power Source Test (15)",
+      "exemption": "可選測試（僅在製造商請求時進行）"
+    },
+    {
+      "test_id": "Steady Force/Mold Stress/Drop Impact Tests (23-25)",
+      "exemption": "僅適用於帶外殼的電池組"
+    },
+    {
+      "test_id": "Mold Stress Relief Test (24)",
+      "exemption": "僅適用於帶塑料外殼的電池組"
+    },
+    {
+      "test_id": "Short-Circuit Test (11.8-11.12)",
+      "exemption": "單電池組且電池已通過 11.1-11.6 測試可豁免"
+    },
+    {
+      "test_id": "Label Permanence Test (29)",
+      "exemption": "已按先前評估計劃評估的粘合劑標籤可豁免"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 02:30",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction)",
+    "ocr_quality_notes": "OCR 品質良好，使用 PDF 直接提取，英文內容完整，章節編號清晰。UL 2054 是家用和商用電池的通用安全標準，涵蓋一次性（初級）和可充電（二級）電池。測試涵蓋電氣、機械、火災暴露、環境、標籤等。2022 年修訂僅更正公式，無要求變更。"
+  }
+}
