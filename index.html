@@ -543,6 +543,9 @@
         },
         formatEvaluationShort(row) {
           const text = row.evaluation_summary_zh || row.evaluation_summary
+          if (row.document_id === 'SAND2017-6925' && !text) {
+            return '<div class="mb-0.5">No pass/fail; HSL trend</div>'
+          }
           return this.formatTableShort(text)
         },
         formatTableShort(text) {
@@ -576,6 +579,8 @@
           if (!clause) return ''
 
           let text = clause
+            .replace(/room\s*temp(?:erature)?/ig, '室溫')
+            .replace(/no\s*pass\s*\/\s*fail/ig, 'No pass/fail')
             .replace(/^SOC\s*[:：]/i, 'SOC: ')
             .replace(/^(溫度|温度|Temperature)\s*[:：]/i, 'Temp: ')
             .replace(/^(電阻|Resistance)\s*[:：]/i, 'R: ')
@@ -589,13 +594,24 @@
           const params = (text.match(paramPattern) || []).map(x => x.replace(/\s+/g, ' ').trim())
           const hasLabel = /[:：]/.test(text)
 
+          const untilMatch = text.match(/(?:until|直到|直至)\s*([^,，;；|]+)/i)
+          let untilPart = ''
+          if (untilMatch) {
+            const untilTokens = (untilMatch[1].match(paramPattern) || []).slice(0, 2)
+            untilPart = untilTokens.length ? `; until ${untilTokens.join(' ')}` : '; until end'
+          }
+
           if (params.length) {
             const dedup = [...new Set(params)].slice(0, 4)
             if (hasLabel) {
               const [label] = text.split(/[:：]/)
-              return `${label.trim()}: ${dedup.join(', ')}`
+              return `${label.trim()}: ${dedup.join(', ')}${untilPart}`
             }
-            return dedup.join(', ')
+            return `${dedup.join(', ')}${untilPart}`
+          }
+
+          if (/No\s*pass\/fail/i.test(text) || /無固定合格|無通過失敗/i.test(text)) {
+            return 'No pass/fail; HSL trend'
           }
 
           if (hasLabel) {
@@ -606,7 +622,22 @@
             }
           }
 
-          return text.length > 56 ? text.slice(0, 56) + '…' : text
+          const whitelistPattern = /\b(?:C-rate|SOC|Vmax|mΩ|°C|kPa|Hz|mm\/s|NaCl|HSL|No|pass\/fail|until|Temp|V|A|R|I|t)\b/g
+          const placeholders = []
+          const protectedText = text.replace(whitelistPattern, (m) => {
+            const idx = placeholders.push(m) - 1
+            return `§W${idx}§`
+          })
+
+          let cleaned = protectedText
+            .replace(/[A-Za-z][A-Za-z0-9\/_-]*/g, '')
+            .replace(/\s{2,}/g, ' ')
+            .trim()
+            .replace(/§W(\d+)§/g, (_, i) => placeholders[Number(i)] || '')
+
+          if (!cleaned) cleaned = text
+
+          return cleaned.length > 56 ? cleaned.slice(0, 56) + '…' : cleaned
         },
         formatSandPopover(rowData) {
           const rec = this.sandDetailMap[rowData.item_id]
