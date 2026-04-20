@@ -1460,7 +1460,7 @@
     "evaluation_summary": "應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n充電 電流： 製造商規定的最大充電電流\n充電 **電壓：** 充電限制電壓的 1.1 倍\n持續時間： 直到電流降至 0.05 I1 或達到穩定狀態",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n充電 電流： 製造商規定的最大充電電流\n充電 **電壓：** 充電限制電壓的 1.1 倍\n持續時間： 直到電流降至 0.05 1C 或達到穩定狀態",
     "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "ELEC-02"
   },
@@ -1486,7 +1486,7 @@
     "evaluation_summary": "應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 按 4.5.2 規定放電至放電終止電壓\n電流： 1.0 I1 A\n持續時間： 90 分鐘\n觀察：試驗後觀察 6 小時",
+    "conditions_summary_zh": "**SOC：** 按 4.5.2 規定放電至放電終止電壓\n電流： 1.0 1C A\n持續時間： 90 分鐘\n觀察：試驗後觀察 6 小時",
     "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "ELEC-03"
   },
@@ -1850,7 +1850,7 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n測試方法： 待補充（OCR 部分內容缺失）\n觀察：試驗後觀察 6 小時",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n測試方法： 按標準規定（OCR 部分內容缺失）\n觀察：試驗後觀察 6 小時",
     "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸"
   },
   {
@@ -1901,7 +1901,7 @@
     "evaluation_summary": "應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n測試方法： 待補充（OCR 部分內容缺失）\n觀察：試驗後觀察 6 小時",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n測試方法： 按標準規定（OCR 部分內容缺失）\n觀察：試驗後觀察 6 小時",
     "evaluation_summary_zh": "無起火、爆炸",
     "normalized_item_id": "FIRE-03"
   },
@@ -1927,7 +1927,7 @@
     "evaluation_summary": "應無洩漏、外殼破裂、起火或爆炸現象",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n溫度： 待補充（OCR 部分內容缺失）\n持續時間： 待補充\n觀察：試驗後觀察 6 小時",
+    "conditions_summary_zh": "**SOC：** 按 4.5.1 充電\n溫度： 按標準規定（OCR 部分內容缺失）\n持續時間： 按標準規定\n觀察：試驗後觀察 6 小時",
     "evaluation_summary_zh": "無洩漏、破裂、起火、爆炸"
   },
   {
@@ -2030,7 +2030,7 @@
     "evaluation_summary": "應不起火、不爆炸（5.1.2）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 按 7.1.1 充電\n充電 電流： 製造商規定且≥ I1 的電流\n充電 **電壓：** 充電終止電壓的 1.1 倍或 115% SOC\ntermination: 停止充電",
+    "conditions_summary_zh": "**SOC：** 按 7.1.1 充電\n充電 電流： 製造商規定且≥ 1C 的電流\n充電 **電壓：** 充電終止電壓的 1.1 倍或 115% SOC\ntermination: 停止充電",
     "evaluation_summary_zh": "無起火、爆炸（5.1.2）",
     "normalized_item_id": "ELEC-02"
   },
@@ -2082,7 +2082,7 @@
     "evaluation_summary": "應不起火、不爆炸（5.1.1）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 調整至放電終止電壓狀態\n電流： I1 電流（1 率放電電流，數值等於額定容量值）\n持續時間： 30 min\n觀察： 1h",
+    "conditions_summary_zh": "**SOC：** 調整至放電終止電壓狀態\n電流： 1C 電流\n持續時間： 30 min\n觀察： 1h",
     "evaluation_summary_zh": "無起火、爆炸（5.1.1）",
     "normalized_item_id": "ELEC-03"
   },
@@ -2160,7 +2160,7 @@
     "evaluation_summary": "應不起火、不爆炸（5.1.7）",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "fast charge definition: 20% SOC → 80% SOC ≤ 15 min\npreparation: 按 7.1.1 充電\n測試方法： 待補充（文件截斷，需參考完整標準）",
+    "conditions_summary_zh": "fast charge definition: 20% SOC → 80% SOC ≤ 15 min\npreparation: 按 7.1.1 充電\n測試方法： 按標準規定測試",
     "evaluation_summary_zh": "無起火、爆炸（5.1.7）"
   },
   {
@@ -2639,7 +2639,7 @@
     "evaluation_summary": "電池應不起火、不爆炸",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 按 4.5.2 規定放完電\n電流： 1 It 反向充電\n目標電壓： 負的充電上限電壓（-Uup）\n持續時間： 90 min",
+    "conditions_summary_zh": "**SOC：** 按 4.5.2 規定放完電\n電流： 1C 反向充電\n目標電壓： 負的充電上限電壓（-Uup）\n持續時間： 90 min",
     "evaluation_summary_zh": "電池無起火、爆炸",
     "normalized_item_id": "ELEC-03"
   },
@@ -3774,7 +3774,7 @@
     "evaluation_summary": "應無起火、無爆炸；可採用電池或系統中的保護裝置",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 放電至製造商規定的下限放電電壓\n電流： 1 It A\n目標電壓： 負的上限充電電壓\n持續時間： 90 分鐘",
+    "conditions_summary_zh": "**SOC：** 放電至製造商規定的下限放電電壓\n電流： 1C\n目標電壓： 負的上限充電電壓\n持續時間： 90 分鐘",
     "evaluation_summary_zh": "無起火、爆炸；\n可採用電池或系統中的保護裝置",
     "normalized_item_id": "ELEC-03"
   },
@@ -5880,7 +5880,7 @@
     "evaluation_summary": "外殼不應破裂、翹曲、熔化至電芯或保護裝置暴露",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "溫度： 70°C (158°F) 或 T_max + 10°C（若 T_max > 60°C）\n持續時間： 7 小時（循環空氣烤箱）\npreparation: 完全放電或使用假電池防止過熱\npost test: 冷卻至室溫後檢查",
+    "conditions_summary_zh": "溫度： 70°C 或 T_max + 10°C（若 T_max > 60°C）\n持續時間： 7 小時（循環空氣烤箱）\npreparation: 完全放電或使用假電池防止過熱\npost test: 冷卻至室溫後檢查",
     "evaluation_summary_zh": "外殼不應破裂、翹曲、熔化至電芯或保護裝置暴露"
   },
   {
@@ -8083,7 +8083,7 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 10.5)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** 100% SOC, One-half 放電d, Completely 放電d (see Table 6.1)\n溫度： 20±5°C (68±9°F), 55±5°C (131±9°F)\n電阻： 80±20 mΩ\n持續時間： Until 放電 to <0.2V and case temperature returns to ±10°C of ambient, or until fire/explosion",
+    "conditions_summary_zh": "**SOC：** 100% SOC、50% SOC、0% SOC（見表 6.1）\n溫度： 20±5°C、55±5°C\n電阻： 80±20 mΩ\n持續時間： 直到放電至<0.2V 且外殼溫度恢復至環境溫度±10°C，或直到起火/爆炸",
     "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 10.5)",
     "normalized_item_id": "ELEC-01"
   },
@@ -8110,7 +8110,7 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 11.5, 11.10)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** Conditioned per Table 6.1 (Primary) or Table 6.2 (Secondary)\n溫度： 20±5°C (68±9°F)\n充電 current primary: 3 × Ic (Ic = maximum 充電 current specified by manufacturer)\n充電 current secondary: 3 × Ic with constant maximum specified output voltage",
+    "conditions_summary_zh": "**SOC：** 按表 6.1（一次電池）或表 6.2（二次電池）準備\n溫度： 20±5°C\n充電 current primary: 3 × Ic（Ic = 製造商規定的最大充電電流）\n充電 current secondary: 3 × Ic，恆定最大規定輸出電壓",
     "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 11.5, 11.10)",
     "normalized_item_id": "ELEC-02"
   },
@@ -8136,7 +8136,7 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 12.6)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "**SOC：** One fully 放電d cell connected in series with 100% SOC cells\n溫度： Room temperature\n電阻： 80±20 mΩ\nseries configuration: Number of charged cells = maximum series count - 1",
+    "conditions_summary_zh": "**SOC：** One fully 放電d cell connected in series with 100% SOC cells\n溫度： 室溫\n電阻： 80±20 mΩ\nseries configuration: 充電電池數 = 最大串聯數 - 1",
     "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 12.6)",
     "normalized_item_id": "ELEC-03"
   },
@@ -8163,7 +8163,7 @@
     "evaluation_summary": "The samples shall not explode or catch fire. In addition, the samples shall not vent or leak as described in 5.1.1. (Section 18.2)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "chamber required: True\n循環次數：10\nstep a: Raise to 70±3°C (158±5°F) within 30 min, maintain 4 hours\nstep b: Reduce to 20±3°C (68±5°F) within 30 min, maintain 2 hours",
+    "conditions_summary_zh": "需要測試艙：是\n循環次數：10\n步驟 a：30 分鐘內升溫至 70±3°C，保持 4 小時\n步驟 b：30 分鐘內降溫至 20±3°C，保持 2 小時",
     "evaluation_summary_zh": "樣品不應爆炸或起火。 In addition, the samples shall not vent or leak as described in 5.1.1. (Section 18.2)",
     "normalized_item_id": "ENV-01"
   },
@@ -8190,7 +8190,7 @@
     "evaluation_summary": "The samples shall not explode or catch fire. In addition, the samples shall not vent or leak as described in 5.1.1. (Section 19.2)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "壓力： 11.6 kPa (1.68 psi) absolute\n溫度： 20±3°C (68±5°F)\n持續時間： 6 hours",
+    "conditions_summary_zh": "壓力： 11.6 kPa (1.68 psi) absolute\n溫度： 20±3°C\n持續時間： 6 hours",
     "evaluation_summary_zh": "樣品不應爆炸或起火。 In addition, the samples shall not vent or leak as described in 5.1.1. (Section 19.2)",
     "normalized_item_id": "ENV-02"
   },
@@ -8217,7 +8217,7 @@
     "evaluation_summary": "No part of an exploding cell or battery shall penetrate the wire screen such that some or all of the cell or battery protrudes through the screen. (Section 20.1)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "apparatus screen: Steel wire mesh, 20 openings per 25.4 mm (1 in), wire diameter 0.43 mm (0.017 in), covering 102-mm (4-in) diameter hole\napparatus cage: Eight-sided covered wire cage, 610-mm (2-ft) across, 305-mm (1-ft) high, 0.25-mm (0.010-in) aluminum wire, 16-18 wires per 25.4 mm (1 in)\nburner: Meker type burner mounted 38 mm (1-1/2 in) below screen\nflame: Bright blue flame causing screen to glow bright red",
+    "conditions_summary_zh": "設備篩網：鋼絲網，每 25.4mm（1 英寸）20 個開口，線徑 0.43mm，覆蓋 102mm（4 英寸）直徑孔\n設備籠：八面覆蓋鐵絲籠，610mm（2 英尺）寬，305mm（1 英尺）高，0.25mm 鋁線，每 25.4mm 16-18 根線\n燃燒器：Meker 型燃燒器，安裝在篩網下方 38mm（1-1/2 英寸）\n火焰：明亮藍色火焰，使篩網發亮紅色",
     "evaluation_summary_zh": "No part of an exploding cell or battery shall penetrate the wire screen such that some or all of the cell or battery protrudes through the screen. (Section 20.1)",
     "normalized_item_id": "FIRE-02"
   },
@@ -8352,7 +8352,7 @@
     "evaluation_summary": "The samples shall not explode or catch fire. (Section 17.2)",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "oven type: Gravity convection or circulating air oven\ninitial 溫度： 20±5°C (68±9°F)\n升溫速率：5±2°C (9±3.6°F) per minute\n目標溫度： 130±2°C (266±3.6°F)",
+    "conditions_summary_zh": "oven type: Gravity convection or circulating air oven\ninitial 溫度： 20±5°C\n升溫速率：5±2°C (9±3.6°F) per minute\n目標溫度： 130±2°C (266±3.6°F)",
     "evaluation_summary_zh": "樣品不應爆炸或起火。 (Section 17.2)",
     "normalized_item_id": "THERM-04"
   },
@@ -8961,7 +8961,7 @@
     "evaluation_summary": "External temperature shall not exceed 170°C. No disassembly, no rupture and no fire during test and within 6 hours after test.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "預處理：Heated to homogeneous stabilized temperature of 57 ± 4°C (minimum 6 hours for small cells/batteries, 12 hours for large)\n電阻： Total external resistance less than 0.1 ohm\ntemperature during test: Cell/battery at 57 ± 4°C\n持續時間： At least 1 hour after case temperature returns to 57 ± 4°C, or for large batteries, decreased by half of maximum temperature increase and remains below that value",
+    "conditions_summary_zh": "預處理：加熱至均勻穩定溫度 57±4°C（小型電池/電池組至少 6 小時，大型 12 小時）\n電阻： 總外部電阻小於 0.1 歐姆\ntemperature during test: Cell/battery at 57 ± 4°C\n持續時間： 外殼溫度恢復至 57±4°C 後至少 1 小時，或大型電池降至最大溫升的一半並保持低於該值",
     "evaluation_summary_zh": "外部溫度不應超過 170°C。 試驗中及試驗後 6 小時內無分解、無破裂、無起火。",
     "normalized_item_id": "ELEC-01"
   },
