@@ -9069,7 +9069,7 @@
     "evaluation_summary": "No leakage, no venting, no disassembly, no rupture and no fire. Open circuit voltage after testing shall not be less than 90% of voltage prior to procedure.",
     "comparison_ready": true,
     "normativity": "normative",
-    "conditions_summary_zh": "壓力：11.6 kPa 或更低\n溫度：環境溫度 (20 ± 5°C)\n持續時間：至少 6 小時\n樣品狀態：未放電（一次電池）、100% SOC（二次電池）",
+    "conditions_summary_zh": "壓力：11.6 kPa 或更低\n溫度：環境溫度 (20 ± 5°C)\n持續時間： At least 6 hours\n樣品狀態：未放電（一次電池）、100% SOC（二次電池）",
     "evaluation_summary_zh": "無洩漏、無排氣、無分解、無破裂、無起火。測試後開路電壓不得低於程序前電壓的 90%。",
     "normalized_item_id": "ENV-02"
   },

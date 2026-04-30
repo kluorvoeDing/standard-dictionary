@@ -217,7 +217,7 @@
                         <button @click.stop="showPopover(group.testId, doc.document_id)" class="expand-btn mt-1">展開詳細</button>
                       </div>
                       </div>
-                      <div v-if="group.rows[doc.document_id] && group.rows[doc.document_id].document_strength === 'guidance'" class="mt-2 text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded">
+                      <div v-if="group.rows[doc.document_id] && doc && doc.document_strength === 'guidance'" class="mt-2 text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded">
                         ⚠️ 此為建議性文件，非強制要求
                       </div>
                     </div>
@@ -288,7 +288,7 @@
           })
         },
         selectedDocDetails() {
-          return this.catalog.filter(doc => this.selectedDocs.includes(doc.document_id))
+          return this.catalog.filter(doc => doc && doc.document_id && this.selectedDocs.includes(doc.document_id))
         },
         filteredComparisonRows() {
           return this.comparisonRows.filter(row => {
