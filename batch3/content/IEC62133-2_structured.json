@@ -1,0 +1,310 @@
+{
+  "standard_id": "IEC62133-2",
+  "filename": "IEC 62133-2-2017 Amd 1-2021.md",
+  "full_name": "IEC 62133-2:2017+AMD1:2021 - Secondary cells and batteries containing alkaline or other non-acid electrolytes - Safety requirements for portable sealed secondary cells, and for batteries made from them, for use in portable applications - Part 2: Lithium systems",
+  "publication_date": "2017-02 (Edition 1.0), 2021-07 (Amendment 1)",
+  "publisher": "IEC (International Electrotechnical Commission)",
+  "li_applicable": true,
+  "test_count": 13,
+  "ocr_quality": "良好（PDF 直接提取，英文內容完整）",
+  "tests": [
+    {
+      "test_id": "USE-01",
+      "test_name_zh": "恆壓連續充電測試（電池）",
+      "test_name_en": "Continuous Charging at Constant Voltage (Cell)",
+      "section": "7.2.1",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 7.1.1 規定充滿電",
+        "charging_method": "製造商規定的電流和標準電壓方法",
+        "duration": "7 天",
+        "temperature": "20 ± 5°C"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "應無起火、無爆炸、無洩漏"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.2.1 Continuous charging at constant voltage (cells): Fully charged cells are subjected for 7 days to a charge using the charging method for current and standard voltage specified by the cell manufacturer. Acceptance criteria: No fire, no explosion, no leakage."
+    },
+    {
+      "test_id": "USE-02",
+      "test_name_zh": "高溫外殼應力測試（電池組）",
+      "test_name_en": "Case Stress at High Ambient Temperature (Battery)",
+      "section": "7.2.2",
+      "test_objects": ["PACK"],
+      "applicability": "僅適用於模塑外殼的電池組",
+      "conditions": {
+        "soc": "按 7.1.1 規定充滿電",
+        "temperature": "70 ± 2°C（空氣循環烤箱）",
+        "duration": "7 小時",
+        "post_test": "取出後恢復至室溫"
+      },
+      "criteria": {
+        "pass_conditions": ["no_internal_exposure"],
+        "description": "電池外殼無物理變形導致內部保護元件和電池暴露"
+      },
+      "exemptions": [
+        "不適用於非模塑外殼的電池組"
+      ],
+      "original_text_snippet": "7.2.2 Case stress at high ambient temperature (battery): The battery is placed in an air circulating oven at a temperature of 70 °C ± 2 °C for 7 h. Acceptance criteria: No physical distortion of the battery case resulting in exposure of internal protective components and cells."
+    },
+    {
+      "test_id": "MISUSE-01",
+      "test_name_zh": "外部短路測試（電池）",
+      "test_name_en": "External Short-Circuit (Cell)",
+      "section": "7.3.1",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 7.1.2 規定充滿電",
+        "temperature": "55 ± 5°C",
+        "stabilization": "1-4 小時",
+        "resistance": "80 ± 20 mΩ",
+        "duration": "24 小時或表面溫度下降 20%（取較早者）"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應無起火、無爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.3.1 External short-circuit (cell): Fully charge each cell according to the second procedure in 7.1.2. Store in an ambient temperature of 55 °C ± 5 °C. After stabilization for 1 h to 4 h, the cell is short-circuited by connecting the positive and negative terminals with a total external resistance of 80 mΩ ± 20 mΩ. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "test_id": "MISUSE-02",
+      "test_name_zh": "外部短路測試（電池組）",
+      "test_name_en": "External Short-Circuit (Battery)",
+      "section": "7.3.2",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 7.1.1 規定充滿電",
+        "temperature": "20 ± 5°C",
+        "resistance": "80 ± 20 mΩ",
+        "duration": "24 小時或外殼溫度下降 20%（取較早者）",
+        "fault_simulation": "1-4 個樣品需模擬放電保護電路單一故障（如 MOSFET 短路、保險絲短路等）"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應無起火、無爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.3.2 External short-circuit (battery): A fully charged battery is short-circuited by connecting the positive and negative terminals with a total external resistance of 80 mΩ ± 20 mΩ. A single fault in the discharge protection circuit should be conducted on one to four of the five samples. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "自由跌落測試",
+      "test_name_en": "Free Fall Test",
+      "section": "7.3.3",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "soc": "按 7.1.1 規定充滿電",
+        "height": "1.0 m",
+        "floor": "混凝土或金屬地板",
+        "drop_count": "每個樣品 3 次",
+        "orientation": "隨機方向",
+        "observation": "靜置至少 1 小時後目視檢查"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應無起火、無爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.3.3 Free fall: Each cell or battery is dropped three times from a height of 1.0 m onto a flat concrete floor or metal floor. The cells or batteries are dropped so as to obtain impacts in random orientations. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "test_id": "THERM-01",
+      "test_name_zh": "熱濫用測試（電池）",
+      "test_name_en": "Thermal Abuse (Cells)",
+      "section": "7.3.4",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 7.1.2 規定充滿電",
+        "ramp_rate": "5 ± 2°C/min",
+        "target_temperature": "130 ± 2°C",
+        "hold_time": "30 分鐘",
+        "oven_type": "重力或空氣對流烤箱"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應無起火、無爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.3.4 Thermal abuse (cells): The oven temperature is raised at a rate of 5 °C/min ± 2 °C/min to a temperature of 130 °C ± 2 °C. The cell remains at this temperature for 30 min. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "擠壓測試（電池）",
+      "test_name_en": "Crush (Cells)",
+      "section": "7.3.5",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 7.1.2 規定充滿電（在上限充電溫度下）",
+        "force": "13 ± 0.78 kN",
+        "termination_criteria": ["達到最大壓力", "電壓突降三分之一"],
+        "orientation": "圓柱型/方型：縱軸平行於擠壓面；鈕扣型：平面施壓",
+        "note": "方型電池僅測試寬面"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應無起火、無爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.3.5 Crush (cells): The force for the crushing is applied by a device exerting a force of 13 kN ± 0.78 kN. Once the maximum force has been applied, or an abrupt voltage drop of one-third of the original voltage has been obtained, the force is released. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過充電測試（電池組）",
+      "test_name_en": "Over-Charging of Battery",
+      "section": "7.3.6",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 7.1.1 規定放電至終止電壓",
+        "charging_current": "2.0 It A",
+        "supply_voltage_single": "1.4 倍上限充電電壓（不超過 6.0 V）",
+        "supply_voltage_series": "1.2 倍上限充電電壓/串聯電池數",
+        "duration": "直到溫度穩定（30 分鐘內變化小於 10°C）或恢復至室溫",
+        "temperature": "20 ± 5°C"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應無起火、無爆炸；過充保護電路（如有）應能保護電池"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.3.6 Over-charging of battery: Sample batteries shall then be charged at a constant current of 2.0 It A, using a supply voltage which is 1.4 times the upper limit charging voltage for single cell batteries or 1.2 times per cell for series connected multi-cell batteries. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "test_id": "ELEC-03",
+      "test_name_zh": "強制放電測試（電池）",
+      "test_name_en": "Forced Discharge (Cells)",
+      "section": "7.3.7",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "放電至製造商規定的下限放電電壓",
+        "current": "1 It A",
+        "target_voltage": "負的上限充電電壓",
+        "duration": "90 分鐘",
+        "special_case": "若 90 分鐘內達到負上限電壓，則減小電流維持該電壓至試驗結束"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "應無起火、無爆炸；可採用電池或系統中的保護裝置"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.3.7 Forced discharge (cells): The discharged cell is then subjected to a forced discharge at 1 It A to the negative value of the upper limit charging voltage. The total duration for the forced discharge testing is 90 min. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動測試（電池組）",
+      "test_name_en": "Vibration (Batteries)",
+      "section": "7.3.8.1",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 7.1.1 規定充滿電",
+        "waveform": "正弦波",
+        "frequency_range": "7 Hz 至 200 Hz",
+        "cycle_count": "12 次循環（每方向約 3 小時）",
+        "directions": "3 個互相垂直方向（其中之一垂直於端子面）",
+        "acceleration_profile": [
+          {"freq": "7-17.62 Hz", "acceleration": "1 gn"},
+          {"freq": "17.62-49.84 Hz", "amplitude": "0.8 mm"},
+          {"freq": "49.84-200 Hz", "acceleration": "8 gn"}
+        ]
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_rupture", "no_leakage", "no_venting"],
+        "description": "應無起火、無爆炸、無破裂、無洩漏、無排氣"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.3.8.1 Vibration: Test batteries shall be subjected to sinusoidal vibration according to Table 3. This cycle shall be repeated 12 times for a total of approximately 3 h for each of three mutually perpendicular mounting positions. Acceptance criteria: No fire, no explosion, no rupture, no leakage or venting."
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "機械衝擊測試（電池組）",
+      "test_name_en": "Mechanical Shock (Batteries)",
+      "section": "7.3.8.2",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 7.1.1 規定充滿電",
+        "waveform": "半正弦波",
+        "acceleration": "150 gn",
+        "pulse_duration": "6 ms",
+        "shock_count": "每個方向 3 次，共 3 個方向（18 次）"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_rupture", "no_leakage", "no_venting"],
+        "description": "應無起火、無爆炸、無破裂、無洩漏、無排氣"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.3.8.2 Mechanical shock: Each test battery shall be subjected to three shocks in each direction of three mutually perpendicular mounting positions for a total of 18 shocks. Peak acceleration: 150 gn, Pulse duration: 6 ms. Acceptance criteria: No leakage, no venting, no rupture, no explosion and no fire."
+    },
+    {
+      "test_id": "MECH-12",
+      "test_name_zh": "強制內部短路測試（電池）",
+      "test_name_en": "Forced Internal Short-Circuit (Cells)",
+      "section": "7.3.9",
+      "test_objects": ["CELL"],
+      "applicability": "僅適用於圓柱型和方型鋰離子電池（不適用於鋰離子聚合物電池和鈕扣電池）",
+      "regional_requirement": "僅法國、日本、韓國、瑞士要求",
+      "conditions": {
+        "soc": "按製造商建議充電，然後以 0.2 It A 放電至終止電壓",
+        "sample_count": "每個測試溫度 5 個樣品",
+        "test_temperatures": [
+          {"condition": "最低測試溫度", "temp": "下限充電溫度 ± 2°C"},
+          {"condition": "最高測試溫度", "temp": "上限充電溫度 ± 2°C"}
+        ],
+        "method": "使用鎳顆粒刺入捲芯模擬內部短路",
+        "press_speed": "0.1 mm/s",
+        "termination_criteria": ["電壓下降超過 50 mV", "壓力達到 800 N（圓柱型）或 400 N（方型）"],
+        "hold_time": "檢測到短路後保持 30 秒"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire"],
+        "description": "應無起火；記錄發生內部短路時的壓力"
+      },
+      "exemptions": [
+        "不適用於鈕扣電池",
+        "不適用於鋰離子聚合物電池",
+        "僅法國、日本、韓國、瑞士要求"
+      ],
+      "original_text_snippet": "7.3.9 Design evaluation – Forced internal short-circuit (cells): A forced internal short-circuit test for cylindrical cells and prismatic cells shall not cause a fire. This is a country specific test, which is only applicable to France, Japan, Korea and Switzerland and is not required on lithium ion polymer cells."
+    },
+    {
+      "test_id": "OTHER-01",
+      "test_name_zh": "鈕扣電池內部交流電阻測量",
+      "test_name_en": "Measurement of Internal AC Resistance for Coin Cells",
+      "section": "D.2 (Annex D)",
+      "test_objects": ["COIN_CELL"],
+      "conditions": {
+        "measurement_method": " Annex D 規定的交流電阻測量方法",
+        "threshold": "內部電阻 ≤ 3 Ω 的鈕扣電池需按 Table 1 測試"
+      },
+      "criteria": {
+        "pass_conditions": ["resistance_measured"],
+        "description": "測量內部交流電阻以確定測試適用性"
+      },
+      "exemptions": [
+        "內部電阻 > 3 Ω 的鈕扣電池免除 Table 1 中的測試"
+      ],
+      "original_text_snippet": "Annex D (normative) Measurement of the internal AC resistance for coin cells. Coin cells with internal resistance less than or equal to 3 Ω shall be tested in accordance with Table 1."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Forced Internal Short-Circuit (7.3.9)",
+      "exemption": "僅適用於法國、日本、韓國、瑞士；不適用於鈕扣電池和鋰離子聚合物電池"
+    },
+    {
+      "test_id": "Case Stress at High Temperature (7.2.2)",
+      "exemption": "僅適用於模塑外殼的電池組"
+    },
+    {
+      "test_id": "Coin Cell Tests (Table 1)",
+      "exemption": "內部電阻 > 3 Ω 的鈕扣電池免除 Table 1 中的測試"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-17 23:30",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction)",
+    "ocr_quality_notes": "OCR 品質良好，使用 PDF 直接提取，英文內容完整，章節編號清晰，表格結構完整。IEC 62133-2 是便攜式鋰電池的國際基礎標準。"
+  }
+}

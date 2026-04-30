@@ -1,0 +1,555 @@
+{
+  "standard_id": "UL-2271",
+  "filename": "s2271_3_20230914.md",
+  "full_name": "ANSI/CAN/UL/ULC 2271:2023 - Standard for Batteries for Use In Light Electric Vehicle (LEV) Applications (Third Edition)",
+  "publication_date": "2013-12 (First), 2018-09 (Second), 2023-09-14 (Third)",
+  "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
+  "li_applicable": true,
+  "test_count": 22,
+  "ocr_quality": "良好（PDF 直接提取，英文內容完整，但部分頁面有版權水印）",
+  "tests": [
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過充電測試",
+      "test_name_en": "Overcharge Test",
+      "section": "23",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "充滿電",
+        "charging_current": "製造商規定的最大充電電流",
+        "fault_condition": "充電電路單一故障",
+        "termination_criteria": ["保護電路終止充電", "達到正常運行限值", "發生起火/爆炸"],
+        "monitoring": "監測電壓、電流、溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_venting", "no_leakage", "no_rupture", "protection_maintained", "within_normal_operating_range"],
+        "description": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常；電壓不超出正常運行範圍"
+      },
+      "exemptions": [],
+      "original_text_snippet": "23 Overcharge Test: Fully charged sample subjected to constant charging current under single fault condition. Test continues until protective devices operate or normal operating limits exceeded. Non-compliant: E, F, C, R, L, V, S, P."
+    },
+    {
+      "test_id": "ELEC-11",
+      "test_name_zh": "高倍率充電測試",
+      "test_name_en": "High Rate Charge Test",
+      "section": "24",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "放電至 EODV",
+        "charging_rate": "高於規定的最大充電速率（按製造商規格或單一故障條件）",
+        "fault_condition": "充電電路單一故障",
+        "termination_criteria": ["保護電路終止充電", "達到正常運行限值", "發生起火/爆炸"]
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_venting", "no_leakage", "no_rupture", "protection_maintained", "within_normal_operating_range"],
+        "description": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常；電壓不超出正常運行範圍"
+      },
+      "exemptions": [],
+      "original_text_snippet": "24 High Rate Charge Test: Sample charged at rate higher than specified maximum level. Non-compliant: E, F, C, R, L, V, S, P."
+    },
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "外部短路測試",
+      "test_name_en": "Short Circuit Test",
+      "section": "25",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "resistance": "≤ 20 mΩ（或按標準規定）",
+        "temperature": "室溫環境",
+        "fault_condition": "放電保護電路單一元件故障",
+        "duration": "完全放電或溫度達到峰值/穩定狀態",
+        "monitoring": "監測電流、電壓、溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_venting", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "25 Short Circuit Test: Fully charged sample short-circuited with external resistance. Single fault condition applied. Non-compliant: E, F, C, R, L, V, S, P."
+    },
+    {
+      "test_id": "ELEC-12",
+      "test_name_zh": "放電過載測試",
+      "test_name_en": "Overload Under Discharge Test",
+      "section": "26",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "discharge_rate": "高於正常放電速率（按製造商規格或單一故障條件）",
+        "fault_condition": "放電電路單一故障（可能導致過載）",
+        "termination_criteria": ["保護電路終止放電", "達到正常運行限值", "發生起火/爆炸"]
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_venting", "no_leakage", "no_rupture", "protection_maintained", "within_normal_operating_range"],
+        "description": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常；電壓不超出正常運行範圍"
+      },
+      "exemptions": [],
+      "original_text_snippet": "26 Overload Under Discharge Test: Replaces 'soft short' in Short Circuit Test. Sample subjected to overload discharge under single fault condition. Non-compliant: E, F, C, R, L, S, P."
+    },
+    {
+      "test_id": "ELEC-06",
+      "test_name_zh": "過放電測試",
+      "test_name_en": "Overdischarge Test",
+      "section": "27",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "discharge_current": "製造商規定的最大放電電流",
+        "fault_condition": "放電電路單一故障（可能導致過放電）",
+        "termination_criteria": ["被動保護裝置啟動", "電壓接近 0 V", "發生起火/爆炸"],
+        "monitoring": "監測電池電壓、溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_venting", "no_leakage", "no_rupture", "protection_maintained", "within_normal_discharge_range"],
+        "description": "保護裝置應啟動防止電池過放電；應無起火、無爆炸、無排氣、無洩漏、無破裂；電壓不超出正常放電範圍"
+      },
+      "exemptions": [],
+      "original_text_snippet": "27 Overdischarge Test: Fully charged sample subjected to constant discharging current under single fault condition. Test continues until fully discharged or protective devices operate. Non-compliant: E, F, C, R, L, V, S, P."
+    },
+    {
+      "test_id": "THERM-02",
+      "test_name_zh": "溫度測試",
+      "test_name_en": "Temperature Test",
+      "section": "28",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "放電至 EODV 後充電至充滿",
+        "ambient_temperature": "上限充電溫度",
+        "cycles": "至少 2 次完整充放電循環，直到連續循環電池溫度不超過 2°C 增加",
+        "monitoring": "監測電池/模組電壓/電流/溫度，用戶可接觸表面溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["within_limits", "protection_not_operate", "surface_temp_within_spec"],
+        "description": "製造商規定的限值（電壓、電流、溫度）不得超出；熱保護和過流保護裝置不應啟動；表面溫度符合表 28.2 限值"
+      },
+      "exemptions": [],
+      "original_text_snippet": "28 Temperature Test: DUT charged/discharged at maximum parameters at upper limit charging temperature. Cycles repeated until consecutive cycles do not increase max cell temp more than 2°C. Non-compliant: E, F, C, R, L, V, S, P."
+    },
+    {
+      "test_id": "ELEC-07",
+      "test_name_zh": "不平衡充電測試",
+      "test_name_en": "Imbalanced Charging Test",
+      "section": "29",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "除一個電池/電池組外全部放電至完全放電狀態，未放電電池放電至約 50% SOC（創建不平衡狀態）",
+        "charging": "按製造商規格充電",
+        "monitoring": "監測部分充電電池的電壓是否超出限值"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_venting", "no_leakage", "no_rupture", "protection_maintained", "voltage_within_limit"],
+        "description": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常；電池最大電壓限值不得超出"
+      },
+      "exemptions": [],
+      "original_text_snippet": "29 Imbalanced Charging Test: Imbalanced condition created by discharging all cells except one to EODV, undischarged cells to 50% SOC. Sample then charged. Cell voltage limits shall not be exceeded. Non-compliant: E, F, C, R, L, V, S, P."
+    },
+    {
+      "test_id": "ELEC-08",
+      "test_name_zh": "介電耐壓測試",
+      "test_name_en": "Dielectric Voltage Withstand Test",
+      "section": "30",
+      "test_objects": ["PACK"],
+      "applicability": "≥60 Vdc 的電路",
+      "conditions": {
+        "test_voltage_dc": "2 × 額定電壓 × 1.414（DC）",
+        "test_voltage_ac": "2 × 額定電壓（60 Hz 正弦波 AC，可選）",
+        "mains_connected": "1000 V + 2×額定電壓（AC）",
+        "duration": "至少 1 分鐘（電池/模組斷開）",
+        "application": "危險電壓電路與非載流可接觸導電部件之間"
+      },
+      "criteria": {
+        "pass_conditions": ["no_dielectric_breakdown"],
+        "description": "應無介電擊穿（絕緣擊穿導致短路/飛弧）；電暈放電或單次瞬時放電不視為介電擊穿"
+      },
+      "exemptions": [
+        "半導體或類似電子元件可能被旁路或斷開（若易受測試電壓損壞）"
+      ],
+      "original_text_snippet": "30 Dielectric Voltage Withstand Test: Circuits at 60 Vdc or higher subjected to 2×rated×1.414 (DC) or 2×rated (AC) for 1 min. No dielectric breakdown shall occur."
+    },
+    {
+      "test_id": "ELEC-09",
+      "test_name_zh": "絕緣電阻測試",
+      "test_name_en": "Isolation Resistance Test",
+      "section": "31",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "test_method_120V_plus": "ISO 6469-1 Clause 6.1.3（系統≥120 V）",
+        "test_method_below_120V": "500 Vdc 施加 60 秒，測量絕緣電阻（系統<120 V）",
+        "conditioning": [
+          "（a）接收狀態（無濕度調節）",
+          "（b）IEC 60068-2-30 調節：55 ± 2°C，6 次循環（僅≥120 V 系統）"
+        ],
+        "soc": "充滿電狀態",
+        "measurement": "使用高阻電壓表測量"
+      },
+      "criteria": {
+        "pass_conditions": ["isolation_resistance_100_ohm_per_V_dc", "isolation_resistance_500_ohm_per_V_ac", "insulation_resistance_ge_50000_ohm_below_120V"],
+        "description": "絕緣電阻/最大工作電壓 ≥ 100 Ω/V（DC）或 500 Ω/V（AC）；<120 V 系統絕緣電阻 ≥ 50,000 Ω"
+      },
+      "exemptions": [],
+      "original_text_snippet": "31 Isolation Resistance Test: Systems ≥120 V per ISO 6469-1 (100 Ω/V DC, 500 Ω/V AC). Systems <120 V: 500 Vdc applied for 60 s, insulation resistance ≥50,000 Ω."
+    },
+    {
+      "test_id": "ELEC-10",
+      "test_name_zh": "接地連續性測試",
+      "test_name_en": "Grounding Continuity Test",
+      "section": "32",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "test_current": "150% 最大充電電流或 25 A（取較大者）",
+        "duration": "5 秒",
+        "voltage_limit": "無負載電壓不超過 60 Vdc",
+        "measurement": "測量任意兩個外露導電部件之間的電壓降"
+      },
+      "criteria": {
+        "pass_conditions": ["resistance_le_0_1_ohm"],
+        "description": "保護接地系統電阻不超過 0.1 Ω"
+      },
+      "exemptions": [],
+      "original_text_snippet": "32 Grounding Continuity Test: Grounding system resistance measured after applying 150% max charging current or 25 A for 5 s. Resistance shall not exceed 0.1 Ω."
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動耐久性測試",
+      "test_name_en": "Vibration Endurance Test",
+      "section": "33",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "test_standard": "ISO 6469-1 或製造商規定的測試輪廓",
+        "axes": "X、Y、Z 三方向各 12 小時",
+        "vibration_type": "隨機振動（5-200 Hz，PSD 按表 33.1）",
+        "temperature": "室溫（無溫度變化）",
+        "rest_period": "測試後靜置觀察",
+        "monitoring": "監測 OCV 和中心電池溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_venting", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "33 Vibration Endurance Test: DUT subjected to random vibration (5-200 Hz) per ISO 6469-1 for 12 h per axis (X, Y, Z) at room ambient. Non-compliant: E, F, C, R, L, V, S, P."
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "衝擊測試",
+      "test_name_en": "Shock Test",
+      "section": "34",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "waveform": "半正弦波",
+        "acceleration_by_weight": [
+          {"weight": "≤12 kg", "acceleration": "50 gn", "duration": "11 ms"},
+          {"weight": ">12-100 kg", "acceleration": "25 gn", "duration": "15 ms"},
+          {"weight": ">100 kg", "acceleration": "10 gn", "duration": "20 ms"}
+        ],
+        "directions": "稜柱形 6 方向，圓柱形 3 方向",
+        "rest_period": "測試後靜置觀察",
+        "monitoring": "監測 OCV 和中心電池溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_venting", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "34 Shock Test: DUT subjected to half-sinusoidal shock per Table 34.1 (50 gn/11 ms for ≤12 kg, 25 gn/15 ms for >12-100 kg, 10 gn/20 ms for >100 kg). Non-compliant: E, F, C, R, L, V, S, P."
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "擠壓測試",
+      "test_name_en": "Crush Test",
+      "section": "35",
+      "test_objects": ["PACK"],
+      "applicability": "僅適用於道路用 LEV（如滑板車、摩托車）",
+      "conditions": {
+        "soc": "充滿電",
+        "apparatus": "帶肋條的擠壓板（半圓柱體半徑 75 mm，間距 30 mm）",
+        "deformation": "50% 變形或 1000×DUT 重量或 100 kN（取較早者）",
+        "directions": "3 個互相垂直方向",
+        "rate": "約 1.5 cm/s",
+        "monitoring": "監測電壓、溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "應無起火、無爆炸、無洩漏"
+      },
+      "exemptions": [
+        "僅適用於道路用 LEV（如滑板車、摩托車）",
+        "DUT 可安裝在車輛提供的保護框架內"
+      ],
+      "original_text_snippet": "35 Crush Test: Only applicable to on-road LEVs. DUT crushed between fixed surface and ribbed platen (R=75 mm, 30 mm spacing) to 50% deformation or 1000×weight or 100 kN. Non-compliant: E, F, C, L, S."
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "跌落測試（用戶可拆卸）",
+      "test_name_en": "Drop Test (User Removable)",
+      "section": "36.1",
+      "test_objects": ["PACK"],
+      "applicability": "用戶可拆卸的 EESA",
+      "conditions": {
+        "soc": "充滿電",
+        "height": "1.0 ± 0.01 m",
+        "drop_count": "3 次",
+        "surface": "平坦混凝土表面（至少 76 mm 厚）",
+        "orientation": "代表用戶提攜/處理時最可能發生的位置",
+        "cold_conditioning": "若使用塑膠外殼且用於 0°C 以下，需先在 0°C 調節 3 小時",
+        "rest_period": "測試後靜置觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage", "no_rupture", "protection_maintained", "no_hazardous_part_access"],
+        "description": "應無起火、無爆炸、無洩漏、無破裂；保護控制正常；外殼無損壞導致危險部件可接觸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "36.1 Drop Test for User Removable EESAs: Fully charged DUT dropped 3 times from 1.0 m. Non-compliant: E, F, C, R, L, S, P."
+    },
+    {
+      "test_id": "MECH-07",
+      "test_name_zh": "跌落測試（僅維修處理）",
+      "test_name_en": "Drop Test (Service Handling Only)",
+      "section": "36.2",
+      "test_objects": ["PACK"],
+      "applicability": "僅維修處理的 EESA",
+      "conditions": {
+        "soc": "充滿電",
+        "height": "≥1.0 m",
+        "drop_count": "至少 1 次（若一次是平面跌落，則至少另一次非平面跌落）",
+        "surface": "平坦混凝土表面（至少 76 mm 厚）",
+        "orientation": "維護/拆卸時最可能發生的位置",
+        "rest_period": "測試後 6-24 小時內檢查"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "應無起火、無爆炸、無洩漏"
+      },
+      "exemptions": [],
+      "original_text_snippet": "36.2 Drop Test for Service Handling Only: Fully charged DUT dropped from 1.0 m minimum. Non-compliant: E, F, C, L, S."
+    },
+    {
+      "test_id": "MECH-08",
+      "test_name_zh": "模應力釋放測試",
+      "test_name_en": "Mold Stress Relief Test",
+      "section": "37",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "完全放電（防止過熱）",
+        "temperature": "70°C 或 T_max + 10°C（若 T_max > 60°C）",
+        "duration": "7 小時（循環空氣烤箱）",
+        "post_test": "冷卻至室溫後檢查，進行介電耐壓或絕緣電阻測試"
+      },
+      "criteria": {
+        "pass_conditions": ["no_insulation_breakdown", "no_hazardous_part_access"],
+        "description": "應無絕緣擊穿；外殼無損壞導致危險部件可接觸（使用關節測試指和測試針檢查）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "37 Mold Stress Relief Test: Sample placed in 70°C (or T_max+10°C) oven for 7 h. After cooling, no insulation breakdown and no hazardous part access. Non-compliant: insulation breakdown, enclosure damage."
+    },
+    {
+      "test_id": "MECH-09",
+      "test_name_zh": "把手負載測試",
+      "test_name_en": "Handle Loading Test",
+      "section": "38",
+      "test_objects": ["PACK"],
+      "applicability": "用戶可拆卸的 EESA 把手",
+      "conditions": {
+        "force": "4 倍 DUT 重量（若多把手則按重量分配）",
+        "application": "均勻施加於把手中心 75 mm 長度上",
+        "ramp": "5-10 秒內從 0 增加至目標力",
+        "hold": "保持 1 分鐘"
+      },
+      "criteria": {
+        "pass_conditions": ["no_breakage"],
+        "description": "把手、固定裝置或 DUT 連接部位應無破裂"
+      },
+      "exemptions": [],
+      "original_text_snippet": "38 Handle Loading Test: Force of 4×DUT weight applied to handle center for 1 min. No breakage of handle, securing means, or attachment part."
+    },
+    {
+      "test_id": "MECH-10",
+      "test_name_zh": "翻滾測試",
+      "test_name_en": "Roll Over Test",
+      "section": "39",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "充滿電",
+        "rotation_rate": "90°/15 秒",
+        "directions": "3 個互相垂直方向各 360°旋轉（圓柱型設計 2 個方向）",
+        "rest_period": "測試後靜置觀察",
+        "monitoring": "監測電壓、溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_venting", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常"
+      },
+      "exemptions": [
+        "DUT 可安裝在代表車輛應用的固定裝置內"
+      ],
+      "original_text_snippet": "39 Roll Over Test: Fully charged sample rotated 360° at 90°/15 s in 3 mutually perpendicular directions. Non-compliant: E, F, C, R, L, V, S, P."
+    },
+    {
+      "test_id": "MECH-11",
+      "test_name_zh": "應力釋放測試（電線固定）",
+      "test_name_en": "Strain Relief Tests (Cord Anchorages)",
+      "section": "40",
+      "test_objects": ["PACK"],
+      "applicability": "有外露不可拆卸電線/電纜的 EESA",
+      "conditions": {
+        "pull_test": "2 倍 DUT 重量（最大 156 N）施加 1 分鐘",
+        "push_back_test": "電線推回 25.4 mm 增量，直到彎曲或力超過 26.7 N",
+        "post_mold_stress": "若把手安裝在聚合物外殼上，需在模應力測試後進行"
+      },
+      "criteria": {
+        "pass_conditions": ["no_damage", "no_displacement", "conductor_elongation_le_2mm"],
+        "description": "電線或導體應無損壞；內部連接器應無位移；導體伸長不超過 2 mm"
+      },
+      "exemptions": [],
+      "original_text_snippet": "40 Strain Relief Tests: Pull test (2×weight, max 156 N, 1 min) and push-back test (25.4 mm increments). No damage, displacement, or conductor elongation >2 mm."
+    },
+    {
+      "test_id": "ENV-08",
+      "test_name_zh": "浸水測試",
+      "test_name_en": "Immersion Test",
+      "section": "41",
+      "test_objects": ["PACK"],
+      "applicability": "可能浸水的 LEV 應用（如車底位置）",
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "water_type": "鹽水（5% NaCl）",
+        "temperature": "室溫",
+        "duration": "至少 2 小時或直到可見反應停止",
+        "depth": "完全淹沒 DUT",
+        "orientation": "正常運行方向，開關/接觸器閉合",
+        "post_test": "介電耐壓或絕緣電阻測試"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_rupture", "no_shock_hazard"],
+        "description": "應無起火、無爆炸、無破裂、無電擊危險"
+      },
+      "exemptions": [
+        "可在模組層級測試（若能代表完整儲能系統）"
+      ],
+      "original_text_snippet": "41 Immersion Test: For EESAs subject to potential immersion. DUT immersed in 5% NaCl solution for 2 h minimum. Non-compliant: E, F, R, S."
+    },
+    {
+      "test_id": "ENV-09",
+      "test_name_zh": "水暴露測試（IP 等級）",
+      "test_name_en": "Water Exposure Test (IP Code Rating)",
+      "section": "42",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "test_standard": "IEC 60529 IPX3（或更高 IP 等級按製造商規定）",
+        "monitoring": "監測電壓、溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_venting", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "42 Water Exposure Test (IP Code Rating): DUT subjected to water exposure per IEC 60529 IPX3 minimum (or higher if rated). Non-compliant: E, F, C, R, L, V, S, P."
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "熱循環測試",
+      "test_name_en": "Thermal Cycling Test",
+      "section": "43",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "充滿電（MOSOC）",
+        "test_standard": "SAE J2464 熱衝擊測試",
+        "temperature_range": "85 ± 2°C 至 -40 ± 2°C",
+        "rest_period": "測試後恢復至室溫，進行充放電循環和觀察",
+        "monitoring": "監測電壓、溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_venting", "no_leakage", "no_rupture", "protection_maintained"],
+        "description": "應無起火、無爆炸、無排氣、無洩漏、無破裂；保護控制正常"
+      },
+      "exemptions": [
+        "可在模組層級測試（若能代表完整儲能系統）"
+      ],
+      "original_text_snippet": "43 Thermal Cycling Test: DUT subjected to thermal shock per SAE J2464 (85°C to -40°C). Non-compliant: E, F, C, R, L, V, S, P."
+    },
+    {
+      "test_id": "LABEL-01",
+      "test_name_zh": "標籤耐久性測試",
+      "test_name_en": "Label Permanence Test",
+      "section": "44",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "procedure": ["用浸水的布手擦 15 秒", "用浸石油精的布手擦 15 秒"],
+        "petroleum_spirit": "脂肪族溶劑己烷（芳香烴≤0.1%，Kauri-butanol 值 29，沸點 65-69°C）"
+      },
+      "criteria": {
+        "pass_conditions": ["legible", "no_curling", "not_easily_removable"],
+        "description": "標籤應保持清晰、無捲曲、不易手動移除"
+      },
+      "exemptions": [
+        "已按 UL 969 或 CSA C22.2 No. 0.15 評估的粘合劑標籤可豁免"
+      ],
+      "original_text_snippet": "44 Label Permanence Test: Label rubbed 15 s with water-soaked cloth, then 15 s with petroleum spirit-soaked cloth. Label shall remain legible, no curling, not easily removable."
+    },
+    {
+      "test_id": "INTERNAL-01",
+      "test_name_zh": "單電池失效設計容差測試",
+      "test_name_en": "Single Cell Failure Design Tolerance Test",
+      "section": "45",
+      "test_objects": ["PACK"],
+      "applicability": "額定能量 > 1 kWh 的二次鋰電池系統",
+      "conditions": {
+        "test_reference": "UL/ULC 2580 單電池失效設計容差測試",
+        "trigger_method": "觸發單電池失效",
+        "monitoring": "監測火災傳播、爆炸"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire_propagation_outside_DUT", "no_explosion"],
+        "description": "單電池失效不應導致火災傳播至 DUT 外部或爆炸"
+      },
+      "exemptions": [
+        "僅適用於額定能量 > 1 kWh 的二次鋰電池系統"
+      ],
+      "original_text_snippet": "45 Single Cell Failure Design Tolerance Test: Secondary lithium batteries >1 kWh rated energy subjected to UL/ULC 2580 test. No fire propagating from DUT or explosion."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Crush Test (35)",
+      "exemption": "僅適用於道路用 LEV（如滑板車、摩托車）；DUT 可安裝在車輛提供的保護框架內"
+    },
+    {
+      "test_id": "Drop Test (36.1)",
+      "exemption": "僅適用於用戶可拆卸的 EESA；若使用塑膠外殼且用於 0°C 以下，需先在 0°C 調節 3 小時"
+    },
+    {
+      "test_id": "Drop Test (36.2)",
+      "exemption": "僅適用於僅維修處理的 EESA"
+    },
+    {
+      "test_id": "Handle Loading Test (38)",
+      "exemption": "僅適用於用戶可拆卸的 EESA 把手"
+    },
+    {
+      "test_id": "Immersion Test (41)",
+      "exemption": "僅適用於可能浸水的 LEV 應用（如車底位置）；可在模組層級測試"
+    },
+    {
+      "test_id": "Thermal Cycling Test (43)",
+      "exemption": "可在模組層級測試"
+    },
+    {
+      "test_id": "Single Cell Failure Design Tolerance Test (45)",
+      "exemption": "僅適用於額定能量 > 1 kWh 的二次鋰電池系統"
+    },
+    {
+      "test_id": "Label Permanence Test (44)",
+      "exemption": "已按 UL 969 或 CSA C22.2 No. 0.15 評估的粘合劑標籤可豁免"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 01:30",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction)",
+    "ocr_quality_notes": "OCR 品質良好，使用 PDF 直接提取，英文內容完整，章節編號清晰。UL 2271 是北美輕型電動車（LEV）電池系統的基礎安全標準，涵蓋電氣、機械、環境、標籤、單電池失效等測試。部分頁面有版權水印但不影響內容提取。2023 版新增了高倍率充電測試、放電過載測試（替代軟短路）、單電池失效設計容差測試（大型電池）、接地連續性測試等。"
+  }
+}

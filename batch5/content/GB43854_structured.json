@@ -1,0 +1,464 @@
+{
+  "standard_id": "GB-43854",
+  "filename": "GB43854-2024_OCR.md",
+  "full_name": "GB 43854-2024 电动自行车用锂离子蓄电池安全技术规范 (Safety technical specification of lithium-ion battery for electric bicycle)",
+  "publication_date": "2024-04-25 发布，2024-11-01 实施",
+  "publisher": "国家市场监督管理总局 / 国家标准化管理委员会",
+  "li_applicable": true,
+  "test_count": 21,
+  "ocr_quality": "中等（Tesseract OCR chi_sim+eng 提取，部分中文識別有亂碼，但大部分內容可讀）",
+  "ocr_issues": [
+    "部分頁面有 OCR 錯誤（如「鞋电池」應為「蓄电池」，「忆」應為「°C」）",
+    "部分表格和公式識別不完整",
+    "關鍵測試條件和判定標準已提取，但部分數值可能需要人工覆核"
+  ],
+  "tests": [
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "静电放电测试",
+      "test_name_en": "Electrostatic Discharge Test",
+      "section": "5.2.1.1, 6.4.1.1",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "test_standard": "GB/T 17626.2",
+        "contact_discharge": "±4 kV 各 10 次（每个端子）",
+        "air_discharge": "±8 kV 各 10 次（每个端子）",
+        "post_esd": "施加（充电限制电压 +5 V）至电池组保护，恢复后短路测试"
+      },
+      "criteria": {
+        "pass_conditions": ["protection_functional"],
+        "description": "过充电保护、短路保护功能应正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.1.1 静电放电：按 6.4.1.1 试验后，电池组的过充电保护、短路保护功能应正常。"
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "过充电测试",
+      "test_name_en": "Overcharge Test",
+      "section": "5.1.1, 5.2.1.2, 6.3.1, 6.4.1.2",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "soc_cell": "按 6.2.1.1 标准充电",
+        "soc_pack": "按 6.2.2.1 标准充电",
+        "charging_current_cell": "I2(A)",
+        "charging_voltage_cell": "1.5 倍充电限制电压或 1.5 h",
+        "charging_current_pack": "制造商规定的最大充电电流",
+        "duration_pack": "2 h",
+        "fault_condition": "正常工作条件和充电保护元器件单一故障条件分别进行",
+        "rest": "静置 6 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_rupture", "no_fire", "no_explosion"],
+        "description": "应不泄漏、不破裂、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.1.2 过充电：按 6.4.1.2 试验，电池组应不泄漏、不破裂、不起火、不爆炸。"
+    },
+    {
+      "test_id": "ELEC-06",
+      "test_name_zh": "过放电测试",
+      "test_name_en": "Overdischarge Test",
+      "section": "5.1.2, 5.2.1.3, 6.3.2, 6.4.1.3",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "soc": "按 6.2.1.1/6.2.2.1 标准充电",
+        "discharge_current_cell": "2×I2(A)",
+        "discharge_current_pack": "2×I2(A)",
+        "duration": "90 min",
+        "rest": "静置 1 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_rupture", "no_fire", "no_explosion"],
+        "description": "应不泄漏、不破裂、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.1.3 过放电：按 6.4.1.3 试验，电池组应不泄漏、不破裂、不起火、不爆炸。"
+    },
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "外部短路测试",
+      "test_name_en": "External Short Circuit Test",
+      "section": "5.1.3, 5.2.1.4, 6.3.3, 6.4.1.4",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "soc": "按 6.2.1.1/6.2.2.1 标准充电",
+        "resistance": "(20±5) mΩ",
+        "duration": "1 h 或电压低于 0.2 V",
+        "fault_condition": "正常工作条件和放电保护元器件单一故障条件分别进行",
+        "rest": "静置 6 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_rupture", "no_fire", "no_explosion"],
+        "description": "应不泄漏、不破裂、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.1.4 外部短路：按 6.4.1.4 试验，电池组应不泄漏、不破裂、不起火、不爆炸。"
+    },
+    {
+      "test_id": "ELEC-05",
+      "test_name_zh": "过流放电测试",
+      "test_name_en": "Overcurrent Discharge Test",
+      "section": "5.2.1.5, 6.4.1.5",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "discharge_current": "1.5 倍制造商规定的最大放电电流",
+        "duration": "2 h",
+        "fault_condition": "正常工作条件和放电保护元器件单一故障条件分别进行"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_rupture", "no_fire", "no_explosion"],
+        "description": "应不泄漏、不破裂、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.1.5 过流放电：按 6.4.1.5 试验，电池组应不泄漏、不破裂、不起火、不爆炸。"
+    },
+    {
+      "test_id": "THERM-03",
+      "test_name_zh": "温度保护测试",
+      "test_name_en": "Temperature Protection Test",
+      "section": "5.2.1.6, 6.4.1.6",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "high_temp_test": {
+          "soc": "按 6.2.2.2 放完电",
+          "temperature": "制造商规定的最高充电温度或 55°C（取较高者）+5°C",
+          "duration": "8 h",
+          "charge": "制造商规定的最大充电电流充电 10 min",
+          "rest": "静置 6 h"
+        },
+        "low_temp_test": {
+          "soc": "按 6.2.2.2 放完电",
+          "temperature": "制造商规定的最低充电温度或 0°C（取较低者）-5°C",
+          "duration": "16 h",
+          "charge": "制造商规定的最大充电电流充电 10 min",
+          "rest": "静置 6 h"
+        }
+      },
+      "criteria": {
+        "pass_conditions": ["no_charge", "no_leakage", "no_rupture", "no_fire", "no_explosion"],
+        "description": "应不能充电、不泄漏、不破裂、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.1.6 温度保护：按 6.4.1.6 试验，电池组应不能充电、不泄漏、不破裂、不起火、不爆炸。"
+    },
+    {
+      "test_id": "ELEC-09",
+      "test_name_zh": "绝缘电阻测试",
+      "test_name_en": "Insulation Resistance Test",
+      "section": "5.2.1.7, 6.4.1.7",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "test_voltage": "500 Vdc",
+        "measurement": "正极与外壳、负极与外壳之间",
+        "note": "外壳易触及部分为绝缘材料的，用金属条覆盖"
+      },
+      "criteria": {
+        "pass_conditions": ["insulation_resistance_ge_20_Mohm"],
+        "description": "绝缘阻值 ≥ 20 MΩ"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.1.7 绝缘电阻：按 6.4.1.7 试验，电池组正负极同外壳之间的绝缘阻值 ≥ 20 MΩ。"
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "挤压测试",
+      "test_name_en": "Crush Test",
+      "section": "5.2.2.1, 6.4.2.1",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "apparatus": "钢制平板 + 钢制异形板（R=75 mm 半圆柱形挤压头）",
+        "directions": "X 轴和 Y 轴方向（各 1 次）",
+        "speed": "(5±1) mm/s",
+        "termination_criteria": ["压缩至原尺寸 70%", "挤压力达到 30 kN"],
+        "hold": "保持 5 min",
+        "observation": "观察 1 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "应不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.2.1 挤压：按 6.4.2.1 试验，电池组应不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "加速度冲击测试",
+      "test_name_en": "Acceleration Shock Test",
+      "section": "5.2.2.2, 6.4.2.2",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "waveform": "半正弦波",
+        "acceleration": "150 gn",
+        "pulse_duration": "6 ms",
+        "directions": "3 个互相垂直方向各 6 次（3 次正方向，3 次负方向），至少 1 个方向与水平面垂直",
+        "post_test": "静置 1 h 后，进行 1 次标准放电和标准充电"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_rupture", "no_fire", "no_explosion"],
+        "description": "应不泄漏、不破裂、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.2.2 加速度冲击：按 6.4.2.2 试验，电池组应不泄漏、不破裂、不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振动测试",
+      "test_name_en": "Vibration Test",
+      "section": "5.2.2.3, 6.4.2.3",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "test_type": "随机振动（按表 1 振动谱）",
+        "axes": "X/Y/Z 方向各 12 h（顺序 Z-Y-X）",
+        "psd": {
+          "X_rms": "1.09 gn",
+          "Y_rms": "0.68 gn",
+          "Z_rms": "1.25 gn"
+        },
+        "post_test": "静置 1 h 后，进行 1 次标准放电和标准充电"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_rupture", "no_fire", "no_explosion"],
+        "description": "应不泄漏、不破裂、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.2.3 振动：按 6.4.2.3 试验，电池组应不泄漏、不破裂、不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "自由跌落测试",
+      "test_name_en": "Free Fall Test",
+      "section": "5.2.2.4, 6.4.2.4",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "height": "1.0 m",
+        "orientation": "3 个互相垂直方向各 1 次",
+        "surface": "混凝土地面"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "应不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.2.4 自由跌落：按 6.4.2.4 试验，电池组应不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-25",
+      "test_name_zh": "提把强度测试",
+      "test_name_en": "Handle Strength Test",
+      "section": "5.2.2.5, 6.4.2.5",
+      "test_objects": ["PACK"],
+      "applicability": "带提把的电池组",
+      "conditions": {
+        "force": "按表 4（根据电池组重量）",
+        "duration": "1 min",
+        "note": "若提把长度<25 mm，以其最大长度施加力"
+      },
+      "criteria": {
+        "pass_conditions": ["handle_no_break", "connection_no_crack", "connection_no_detach"],
+        "description": "提把应不断裂，提把与外壳连接处应不开裂、不脱落"
+      },
+      "exemptions": [
+        "仅适用于带提把的电池组"
+      ],
+      "original_text_snippet": "5.2.2.5 提把强度：按 6.4.2.5 试验，提把应不断裂，连接处应不开裂、不脱落。"
+    },
+    {
+      "test_id": "ENV-02",
+      "test_name_zh": "低气压测试",
+      "test_name_en": "Low Pressure Test",
+      "section": "5.2.3.1, 6.4.3.1",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "pressure": "≤11.6 kPa",
+        "duration": "6 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_rupture", "no_fire", "no_explosion"],
+        "description": "应不泄漏、不破裂、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.3.1 低气压：按 6.4.3.1 试验，电池组应不泄漏、不破裂、不起火、不爆炸。"
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "温度循环测试",
+      "test_name_en": "Temperature Cycling Test",
+      "section": "5.2.3.2, 6.4.3.2",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "cycle_profile": [
+          {"temp": "72 ± 2°C", "duration": "6 h"},
+          {"temp": "-40 ± 2°C", "duration": "6 h"}
+        ],
+        "transition_time": "≤30 min",
+        "cycle_count": "10 次",
+        "post_storage": "20 ± 5°C 下存放 24 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_rupture", "no_fire", "no_explosion"],
+        "description": "应不泄漏、不破裂、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.3.2 温度循环：按 6.4.3.2 试验，电池组应不泄漏、不破裂、不起火、不爆炸。"
+    },
+    {
+      "test_id": "ENV-08",
+      "test_name_zh": "浸水测试",
+      "test_name_en": "Immersion Test",
+      "section": "5.2.3.3, 6.4.3.3",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "water_temp": "20 ± 5°C",
+        "depth": "以水淹没电池组最上端为准",
+        "duration": "48 h",
+        "rest": "静置 4 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_rupture", "no_fire", "no_explosion"],
+        "description": "应不泄漏、不破裂、不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.3.3 浸水：按 6.4.3.3 试验，电池组应不泄漏、不破裂、不起火、不爆炸。"
+    },
+    {
+      "test_id": "ENV-06",
+      "test_name_zh": "盐雾测试",
+      "test_name_en": "Salt Fog Test",
+      "section": "5.2.3.4, 6.4.3.4",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "test_standard": "GB/T 2423.18-2021 试验方法 3",
+        "post_test": "观察 2 h，进行 1 次标准放电和标准充电",
+        "insulation_test": "500 Vdc 测量正负极与外壳之间的绝缘电阻"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_rupture", "no_fire", "no_explosion", "insulation_resistance_ge_1_Mohm"],
+        "description": "应不泄漏、不破裂、不起火、不爆炸；绝缘阻值 ≥ 1 MΩ"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.3.4 盐雾：按 6.4.3.4 试验，绝缘阻值 ≥ 1 MΩ。"
+    },
+    {
+      "test_id": "ENV-04",
+      "test_name_zh": "湿热循环测试",
+      "test_name_en": "Alternating Damp Heat Test",
+      "section": "5.2.3.5, 6.4.3.5",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "test_standard": "GB/T 2423.4-2008 试验方法 2",
+        "max_temp": "65°C",
+        "cycle_count": "5 次",
+        "post_test": "观察 2 h，进行 1 次标准放电和标准充电",
+        "insulation_test": "500 Vdc 测量正负极与外壳之间的绝缘电阻"
+      },
+      "criteria": {
+        "pass_conditions": ["no_leakage", "no_rupture", "no_fire", "no_explosion", "insulation_resistance_ge_1_Mohm"],
+        "description": "应不泄漏、不破裂、不起火、不爆炸；绝缘阻值 ≥ 1 MΩ"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.3.5 湿热循环：按 6.4.3.5 试验，绝缘阻值 ≥ 1 MΩ。"
+    },
+    {
+      "test_id": "THERM-13",
+      "test_name_zh": "阻燃性测试",
+      "test_name_en": "Flame Retardancy Test",
+      "section": "5.2.3.6, 6.4.3.6",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "non_metallic_housing": "GB/T 5169.16",
+        "pcb": "GB/T 5169.16",
+        "wires": "附录 A（GB/T 5169.5-2020 修改版）"
+      },
+      "criteria": {
+        "pass_conditions": ["flame_retardant"],
+        "description": "非金属材料外壳、印制板、导线应符合阻燃要求"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.3.6 阻燃性：非金属材料外壳、印制板按 GB/T 5169.16；导线按附录 A。"
+    },
+    {
+      "test_id": "THERM-08",
+      "test_name_zh": "热扩散测试",
+      "test_name_en": "Thermal Propagation Test",
+      "section": "5.2.4, 6.4.4",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "soc": "按 6.2.2.1 标准充电",
+        "trigger_methods": ["加热触发", "过充触发（可选其一）"],
+        "trigger_object": "靠近中心位置或被其他单体电池包围的单体电池",
+        "heating_power": "按表 2（<80 Wh: 30-200 W; ≥80 Wh: 100-300 W）",
+        "overcharge_current": "电池能持续工作的最大电流至 3 倍额定容量",
+        "monitoring": "电压/温度采样间隔<1 s，准确度±2°C",
+        "termination_criteria": ["电压降>25%", "温度达最高工作温度", "dT/dt>1°C/s 持续 3 s 以上"]
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "记录热失控报警至起火或爆炸的时间；如未发生起火爆炸，认为通过"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.4 热扩散：按 6.4.4 试验，如电池组未发生起火爆炸，认为通过。"
+    },
+    {
+      "test_id": "FUNC-01",
+      "test_name_zh": "互认协同充电测试",
+      "test_name_en": "Mutual Recognition Cooperative Charging Test",
+      "section": "5.2.5, 6.4.5",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "method_a": "使用不匹配充电装置充电，观察工作状态",
+        "method_b": "使用通信模拟器模拟通信协议，观察工作状态"
+      },
+      "criteria": {
+        "pass_conditions": ["charging_controlled"],
+        "description": "电池组应能识别不匹配充电器并控制充电"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.5 互认协同充电：使用不匹配充电器或通信模拟器测试，电池组应能识别并控制。"
+    },
+    {
+      "test_id": "FUNC-02",
+      "test_name_zh": "数据采集测试",
+      "test_name_en": "Data Acquisition Test",
+      "section": "5.2.6, 6.4.6",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "method": "按制造商提供的通信方式或上位机进行验证"
+      },
+      "criteria": {
+        "pass_conditions": ["data_acquisition_functional"],
+        "description": "数据采集功能应正常"
+      },
+      "exemptions": [],
+      "original_text_snippet": "5.2.6 数据采集：按制造商通信方式或上位机验证。"
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Handle Strength Test (5.2.2.5)",
+      "exemption": "仅适用于带提把的电池组"
+    },
+    {
+      "test_id": "Thermal Propagation Test (5.2.4)",
+      "exemption": "如未发生起火爆炸，认为通过"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 02:15",
+    "extraction_method": "Manual reading and analysis of complete .md file (Tesseract OCR chi_sim+eng)",
+    "ocr_quality_notes": "OCR 品质中等，使用 Tesseract chi_sim+eng 提取。部分中文识别有乱码（如「鞋电池」应为「蓄电池」，「忆」应为「°C」），部分表格和公式识别不完整。关键测试条件和判定标准已提取，但部分数值可能需要人工覆核。GB 43854-2024 是中国电动自行车用锂离子蓄电池的强制性安全标准，2024-04-25 发布，2024-11-01 实施。测试涵盖电气、机械、环境、热扩散、功能等。"
+  }
+}

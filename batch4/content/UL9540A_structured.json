@@ -1,0 +1,219 @@
+{
+  "standard_id": "UL-9540A",
+  "filename": "s9540A_5.md",
+  "full_name": "ANSI/CAN/UL 9540A:2025 - Standard for Test Method for Evaluating Thermal Runaway Fire Propagation in Battery Energy Storage Systems (Fifth Edition)",
+  "publication_date": "2017-11 (First), 2018-01 (Second), 2018-06 (Third), 2019-11 (Fourth), 2025-03-12 (Fifth)",
+  "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
+  "li_applicable": true,
+  "test_count": 4,
+  "test_type": "測試方法標準 (Test Method Standard)",
+  "ocr_quality": "良好（PDF 直接提取，英文內容完整，但部分頁面有版權水印）",
+  "tests": [
+    {
+      "test_id": "CELL-01",
+      "test_name_zh": "電池級熱失控判定測試",
+      "test_name_en": "Cell Level Thermal Runaway Determination Test",
+      "section": "7",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按製造商規格充電至最大運行狀態 (MOSOC)",
+        "rest_time": "室溫靜置至少 1 小時",
+        "trigger_methods": [
+          "外部加熱（熱失控判定）",
+          "過充電（鉛酸/鎳鎘電池）",
+          "內部短路（高溫電池）"
+        ],
+        "measurements": [
+          "排氣溫度 (T_vent)",
+          "熱失控溫度",
+          "排氣成分（FTIR 可選，氫氣測量）",
+          "排氣體積和壓力"
+        ],
+        "thermal_ramp": "可選連續熱斜坡直到熱失控（2025 新增）"
+      },
+      "criteria": {
+        "pass_conditions": ["thermal_runaway_determined", "vent_gas_characterized"],
+        "description": "判定電池熱失控溫度和排氣特性；若無電池觸發熱失控且無可燃氣體排放，可豁免模組級和單元級測試"
+      },
+      "performance_criteria": {
+        "7.8": "若無熱失控且無可燃氣體（ASTM E918 測試），可豁免模組級和單元級測試",
+        "7.9": "液流電池熱失控判定",
+        "7.10": "鉛酸/鎳鎘電池熱失控判定",
+        "7.11": "高溫電池熱失控判定"
+      },
+      "exemptions": [
+        "若無電池樣品觸發熱失控且無可燃氣體排放，可豁免模組級和單元級測試"
+      ],
+      "original_text_snippet": "7 Cell Level: Testing conducted on individual cells using stress conditions (external heating, overcharge, internal short) to force thermal runaway. Measures vent temperature, thermal runaway temperature, vent gas composition/volume/pressure. If no thermal runaway and no flammable gases, module and unit level testing not required."
+    },
+    {
+      "test_id": "MODULE-01",
+      "test_name_zh": "模組級熱傳播測試",
+      "test_name_en": "Module Level Thermal Propagation Test",
+      "section": "8",
+      "test_objects": ["MODULE"],
+      "conditions": {
+        "soc": "按製造商規格充電至 MOSOC",
+        "rest_time": "調節後靜置至少 1 小時",
+        "trigger_method": "使用電池級測試確定的應力方法觸發單或多電池熱失控",
+        "propagation_requirement": "建立電池到電池熱傳播（8.2.4）",
+        "measurements": [
+          "熱釋放速率（化學和對流）",
+          "煙霧釋放速率",
+          "模組最高溫度",
+          "排氣成分",
+          "模組外殼完整性",
+          "火焰傳播範圍和持續時間"
+        ],
+        "residential_test_room": "住宅單元級測試移除 NFPA 286 測試室，改用測試牆（2025 修訂）"
+      },
+      "criteria": {
+        "pass_conditions": ["propagation_characterized"],
+        "description": "評估模組內熱傳播特性；若模組設計控制熱失控且電池排氣不可燃，可豁免單元級測試"
+      },
+      "performance_criteria": {
+        "8.5": "單元級測試可豁免條件：(a) 排氣不可燃；(b) 無火焰傳播至模組外；(c) 模組外表面溫度不超過電池排氣溫度",
+        "8.6": "高溫電池：(a) 熱失控由模組設計控制；(b) 無危險材料洩漏、模組外殼破裂或飛射物爆炸"
+      },
+      "exemptions": [
+        "若模組設計控制熱失控且電池排氣不可燃，可豁免單元級測試"
+      ],
+      "original_text_snippet": "8 Module Level: Testing on battery modules using stresses from cell level test to force thermal runaway. Measures heat release rate, smoke release rate, max temperature, vent gas composition. Unit level testing not required if: (a) vent gas nonflammable; (b) no flame spread outside module; (c) module surface temp < cell venting temp."
+    },
+    {
+      "test_id": "UNIT-01",
+      "test_name_zh": "單元級火災傳播測試",
+      "test_name_en": "Unit Level Fire Propagation Test",
+      "section": "9",
+      "test_objects": ["UNIT"],
+      "test_configurations": [
+        "室內落地安裝（非住宅/住宅）",
+        "室外落地安裝（非住宅/住宅）",
+        "室內壁掛安裝（非住宅/住宅）",
+        "室外壁掛安裝（非住宅/住宅）",
+        "屋頂安裝（非住宅/住宅）",
+        "開放停車場安裝（非住宅）"
+      ],
+      "conditions": {
+        "soc": "按製造商規格充電至 MOSOC，靜置至少 1 小時",
+        "initiating_unit": "1 個啟動 BESS 單元（觸發模組內電池到電池熱傳播）",
+        "target_units": "相鄰目標 BESS 單元（代表安裝）",
+        "wall_sections": "儀器化牆段（石膏牆板，塗平黑漆）",
+        "measurements": [
+          "熱釋放速率（化學和對流）",
+          "煙霧釋放速率",
+          "氣體生成和成分",
+          "目標牆面和 BESS 單元熱通量",
+          "牆面和模組表面溫度",
+          "火焰範圍",
+          "爆炸/爆燃觀察"
+        ],
+        "thermocouples": "No. 24-gauge 或更小，K 型裸露接點，152 mm (6 英寸) 間距",
+        "heat_flux_gauges": "水冷 Schmidt-Boelter 或 Gardon 量規",
+        "cheesecloth": "住宅用 BESS 覆蓋單層粗棉布點火指示器",
+        "outdoor_testing": "室外測試可選（需風速≤12 mph、溫度 10-40°C、濕度<90%、無降水等控制）"
+      },
+      "criteria": {
+        "pass_conditions": ["fire_propagation_characterized"],
+        "description": "評估單元級火災傳播特性；若符合表 9.1 性能標準，可豁免安裝級測試"
+      },
+      "performance_criteria": {
+        "Table 9.1": {
+          "Indoor Floor Mount": "(a) 無單元外火焰；(b) 目標模組溫度≤T_vent；(c) 牆面溫升≤97°C；(d) 無爆炸危險",
+          "Outdoor Ground Mount": "(a) 目標模組溫度≤T_vent；(b) 牆面溫升≤97°C（靠近暴露物）；(c) 無爆炸危險；(d) 逃生路徑熱通量≤1.3 kW/m²",
+          "Indoor Wall Mount": "(a) 無單元外火焰；(b) 目標模組溫度≤T_vent；(c) 牆面溫升≤97°C；(d) 無爆炸危險",
+          "Outdoor Wall Mount": "(a) 目標模組溫度≤T_vent；(b) 牆面/屋簷溫升≤97°C；(c) 無爆炸危險；(d) 逃生路徑熱通量≤1.3 kW/m²",
+          "Rooftop": "(a) 無單元外火焰；(b) 目標模組溫度≤T_vent；(c) 屋頂溫升≤97°C；(d) 無爆炸危險",
+          "Parking Garage": "(a) 無單元外火焰；(b) 目標模組溫度≤T_vent；(c) 牆面溫升≤97°C；(d) 無爆炸危險；(e) 逃生路徑熱通量≤1.3 kW/m²"
+        },
+        "9.8": "若符合表 9.1 性能標準，可豁免安裝級測試"
+      },
+      "exemptions": [
+        "若符合表 9.1 性能標準，可豁免安裝級測試",
+        "高溫電池室外集裝箱安裝可豁免單元級測試，直接進行安裝級測試（10.9）",
+        "室外專用安裝可選室外測試（需環境控制）"
+      ],
+      "original_text_snippet": "9 Unit Level: Testing with initiating BESS unit (thermal runaway triggered) and adjacent target units. Configurations: indoor/outdoor floor mount, wall mount, rooftop, parking garage. Measures heat release rate, smoke release, gas composition, heat flux, temperatures. Installation level testing not required if performance criteria in Table 9.1 met."
+    },
+    {
+      "test_id": "INSTALL-01",
+      "test_name_zh": "安裝級火災抑制測試",
+      "test_name_en": "Installation Level Fire Suppression Test",
+      "section": "10",
+      "test_objects": ["INSTALLATION"],
+      "test_methods": [
+        "測試方法 1：噴水滅火系統有效性（10.3）",
+        "測試方法 2：火災防護計劃有效性（10.6）",
+        "高溫電池集裝箱系統安裝級測試（10.9，2025 新增）"
+      ],
+      "conditions": {
+        "test_room": "6.10 × 6.10 m (20 × 20 英尺) 測試室，高度≥2.44 m (8 英尺)，1.22 × 2.13 m (4 × 7 英尺) 門開口",
+        "sprinklers_method1": "4 個噴頭，3.05 m (10 英尺) 間距，K 係數和啟動溫度按安裝規格",
+        "fire_protection_method2": "氣體滅火劑、水霧系統、組合系統等",
+        "initiating_unit": "與單元級測試相同，觸發模組內電池到電池熱傳播",
+        "overhead_cabling": "電纜托盤作為火焰傳播指示器",
+        "measurements": [
+          "氣體生成和成分（若單元級未測量）",
+          "目標 BESS 單元和牆面熱通量",
+          "牆面和模組表面溫度",
+          "爆炸/爆燃/飛射物觀察",
+          "再點火觀察"
+        ],
+        "termination_criteria": [
+          "模組內連續 3 次溫度讀數下降（15 分鐘間隔）",
+          "模組溫度<60°C (140°F)",
+          "火災傳播至相鄰單元或牆壁",
+          "對測試人員或設施危險需緩解",
+          "測試室外觀察到火焰"
+        ]
+      },
+      "criteria": {
+        "pass_conditions": ["fire_suppression_effective"],
+        "description": "評估火災抑制系統有效性；若符合性能標準，測試完成"
+      },
+      "performance_criteria": {
+        "10.5": "測試方法 1（噴水）：(a) 無房間外火焰；(b) 無電纜托盤火焰傳播；(c) 無爆炸危險；(d) 目標模組溫度≤T_vent；(e) 牆面溫升≤97°C",
+        "10.8": "測試方法 2（火災防護計劃）：(a) 無房間外火焰；(b) 無電纜托盤火焰傳播；(c) 無爆炸危險；(d) 目標模組溫度≤T_vent；(e) 牆面溫升≤97°C",
+        "10.11": "高溫電池集裝箱：(a) 集裝箱內可燃結構溫度溫升≤97°C；(b) 無爆燃觀察（除非工程爆燃保護系統緩解）；(c) 逃生路徑熱通量≤1.3 kW/m²"
+      },
+      "exemptions": [
+        "住宅用 BESS 無安裝級測試選項，必須符合單元級性能標準",
+        "高溫電池室外集裝箱安裝使用 10.9 測試方法"
+      ],
+      "original_text_snippet": "10 Installation Level: Two test methods: (1) Effectiveness of sprinklers (6.10×6.10 m room, 4 sprinklers); (2) Effectiveness of fire protection plan (gaseous agents, water mist, etc.). Measures heat flux, temperatures, gas composition, explosions. Performance criteria: no flaming outside room, no cable tray flame spread, no explosion, target temp ≤ T_vent, wall temp rise ≤97°C."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Module Level Test (8)",
+      "exemption": "若電池級測試無熱失控且無可燃氣體排放，可豁免模組級和單元級測試"
+    },
+    {
+      "test_id": "Unit Level Test (9)",
+      "exemption": "若模組級測試符合性能標準（排氣不可燃、無火焰傳播、模組溫度≤T_vent），可豁免單元級測試"
+    },
+    {
+      "test_id": "Installation Level Test (10)",
+      "exemption": "若單元級測試符合表 9.1 性能標準，可豁免安裝級測試；住宅用 BESS 無安裝級測試選項"
+    },
+    {
+      "test_id": "Unit Level Test for High Temperature Batteries (9.1.3)",
+      "exemption": "高溫電池室外集裝箱安裝可豁免單元級測試，直接進行安裝級測試（10.9）"
+    },
+    {
+      "test_id": "Outdoor Testing (9.1.2 Exception)",
+      "exemption": "室外專用安裝可選室外測試（需風速≤12 mph、溫度 10-40°C、濕度<90%、無降水、植被控制、人員保護）"
+    }
+  ],
+  "flowcharts": {
+    "Figure A.1": "BESS 火災傳播評估流程圖 - 電池級、模組級、單元級測試",
+    "Figure A.2": "BESS 火災傳播評估流程圖 - 安裝級測試",
+    "Figure A.3": "BESS 爆燃保護分析流程圖"
+  },
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 01:45",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction)",
+    "ocr_quality_notes": "OCR 品質良好，使用 PDF 直接提取，英文內容完整，章節編號清晰。UL 9540A 是測試方法標準（非產品認證標準），用於評估電池儲能系統的熱失控火災傳播特性。涵蓋四個層級測試：電池級、模組級、單元級、安裝級。2025 第五版新增：FTIR 測量可選、氫氣測量、住宅單元級測試改用測試牆（移除 NFPA 286 測試室）、連續熱斜坡選項、高溫電池測試方法、鉛酸/鎳鎘電池測試方法。測試結果用於驗證 BESS 安裝是否符合消防規範要求，或作為替代規範特定要求的技術依據。"
+  }
+}

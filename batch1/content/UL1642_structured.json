@@ -1,0 +1,288 @@
+{
+  "standard_id": "UL1642",
+  "filename": "UL 1642-2020.md",
+  "full_name": "UL Standard for Safety for Lithium Batteries, UL 1642, Sixth Edition",
+  "publication_date": "September 29, 2020",
+  "li_applicable": true,
+  "test_count": 11,
+  "tests": [
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "外部短路測試",
+      "test_name_en": "Short-Circuit Test",
+      "section": "10",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "soc": "Fully charged, One-half discharged, Completely discharged (see Table 6.1)",
+        "temperature": ["20±5°C (68±9°F)", "55±5°C (131±9°F)"],
+        "resistance": "80±20 mΩ",
+        "duration": "Until discharge to <0.2V and case temperature returns to ±10°C of ambient, or until fire/explosion",
+        "sample_size": "5 samples per condition (Table 6.1)",
+        "equilibrium": "Batteries must reach equilibrium at test temperature before connecting terminals"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "The samples shall not explode or catch fire. (Section 10.5)",
+        "protective_device": "When overcurrent protective device activates, test shall be repeated with maximum load that does not cause device to open (Section 10.4)"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 10.1: Each test sample battery, in turn, is to be short-circuited by connecting the positive and negative terminals of the battery with a circuit load having a resistance load of 80±20 mΩ. The temperature of the battery case is to be recorded during the test. The battery is to discharge until a fire or explosion is obtained, or until it has reached a completely discharged state of less than 0.2V and the battery case temperature has returned to ±10°C (±18°F) of ambient temperature. Section 10.5: The samples shall not explode or catch fire."
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過度充電測試",
+      "test_name_en": "Abnormal Charging Test",
+      "section": "11",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "soc": "Conditioned per Table 6.1 (Primary) or Table 6.2 (Secondary)",
+        "temperature": "20±5°C (68±9°F)",
+        "charging_current_primary": "3 × Ic (Ic = maximum charging current specified by manufacturer)",
+        "charging_current_secondary": "3 × Ic with constant maximum specified output voltage",
+        "charging_time_primary": "t = 2.5C / (3 × Ic), minimum 7 hours",
+        "charging_time_secondary": "7 hours or time to reach end-of-charge condition, whichever is greater",
+        "pre_discharge_secondary": "Discharged at 0.2C/1h to manufacturer specified endpoint voltage",
+        "sample_size": "5 samples per condition"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "The samples shall not explode or catch fire. (Section 11.5, 11.10)",
+        "protective_device": "Non-resettable: repeat test below operating level. Resettable: allowed to reset up to 10 cycles or until charging time completed, minimum 7 hours (Section 11.4, 11.9)"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 11.3: Each test sample battery is to be subjected to a charging current of three times the current Ic, specified by the manufacturer by connecting it in opposition to a dc-power supply. The test charging time is to be calculated using the formula: t = 2.5C / (3 × Ic). The minimum charging time is to be 7h. Section 11.5: The samples shall not explode or catch fire."
+    },
+    {
+      "test_id": "ELEC-03",
+      "test_name_zh": "強制放電測試",
+      "test_name_en": "Forced-Discharge Test",
+      "section": "12",
+      "test_objects": ["CELL"],
+      "applicability": "Only for cells intended for series-connected, multicell applications (battery packs)",
+      "conditions": {
+        "soc": "One fully discharged cell connected in series with fully charged cells",
+        "temperature": "Room temperature",
+        "resistance": "80±20 mΩ",
+        "series_configuration": "Number of charged cells = maximum series count - 1",
+        "duration": "Until fire/explosion, or until <0.2V and case temperature returns to ±10°C of ambient",
+        "sample_size": "5 fully discharged cells"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "The samples shall not explode or catch fire. (Section 12.6)",
+        "protective_device": "When overcurrent protective device operates, repeat with maximum load that does not cause device to open (Section 12.5)"
+      },
+      "exemptions": [
+        "Not applicable to cells not intended for series-connected applications (Section 12.1)"
+      ],
+      "original_text_snippet": "Section 12.1: This test is intended for cells that are to be used in series-connected, multicell applications, such as battery packs. Section 12.2: A fully discharged cell is to be force-discharged by connecting it in series with fully charged cells of the same kind. Section 12.6: The samples shall not explode or catch fire."
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "擠壓測試",
+      "test_name_en": "Crush Test",
+      "section": "13",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "apparatus": "Hydraulic ram or similar force mechanism with two flat surfaces",
+        "force": "13±1 kN (3000±224 lbs)",
+        "orientation_cylindrical": "Longitudinal axis parallel to flat surfaces",
+        "orientation_prismatic": "Both wide and narrow sides (rotate 90°), one direction per sample",
+        "orientation_coin": "Flat surface parallel to crushing apparatus",
+        "orientation_pouch": "Wide side only (lithium ion)",
+        "release": "Force released after maximum obtained",
+        "sample_requirement": "Separate samples for each test direction"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "The samples shall not explode or catch fire. (Section 13.4)",
+        "user_replaceable_stricter": "User-replaceable batteries shall not explode or ignite (Section 5.2.1)"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 13.1: A battery is to be crushed between two flat surfaces. The force for the crushing is to be applied by a hydraulic ram or similar force mechanism. The crushing is to be continued until an applied force of 13±1 kN (3000±224 lbs) is reached. Once the maximum force has been obtained it is to be released. Section 13.4: The samples shall not explode or catch fire."
+    },
+    {
+      "test_id": "MECH-01",
+      "test_name_zh": "撞擊測試",
+      "test_name_en": "Impact Test",
+      "section": "14",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "apparatus": "15.8±0.1 mm (5/8±0.004 in) diameter bar placed across center of sample",
+        "weight": "9.1±0.46 kg (20±1 lb)",
+        "height": "610±25 mm (24±1 in)",
+        "orientation_cylindrical": "Longitudinal axis parallel to flat surface, perpendicular to bar",
+        "orientation_prismatic": "Both wide and narrow sides (rotate 90°), one impact per sample",
+        "orientation_coin": "Flat surface parallel to flat surface, bar across center",
+        "orientation_pouch": "Wide side only (lithium ion)",
+        "impacts_per_sample": "Single impact only"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "The samples shall not explode or catch fire. (Section 14.4)",
+        "user_replaceable_stricter": "User-replaceable batteries shall not explode or ignite (Section 5.2.1)"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 14.1: A test sample battery is to be placed on a flat surface. A 15.8±0.1-mm (5/8±0.004-in) diameter bar is to be placed across the center of the sample. A 9.1±0.46-kg (20±1-lb) weight is to be dropped from a height of 610±25 mm (24±1 in) onto the sample. Section 14.4: The samples shall not explode or catch fire."
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "衝擊測試",
+      "test_name_en": "Shock Test",
+      "section": "15",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "mounting": "Secured to testing machine by rigid mount supporting all mounting surfaces",
+        "shock_count": "3 shocks of equal magnitude",
+        "directions": "3 mutually perpendicular directions (or 2 if only 2 axes of symmetry)",
+        "acceleration_initial": "Minimum average 75g during initial 3 ms",
+        "acceleration_peak": "125-175g",
+        "temperature": "20±5°C (68±9°F)",
+        "orientation": "Each shock applied in direction normal to face of cell"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_venting", "no_leakage"],
+        "description": "The samples shall not explode or catch fire. In addition, the sample shall not vent or leak as described in 5.1.1. (Section 15.2)",
+        "leakage_criteria": "Mass loss must not exceed values in Table 5.1 (Section 5.1.3)"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 15.1: Each cell shall be subjected to a total of three shocks of equal magnitude. The shocks are to be applied in each of three mutually perpendicular directions... For each shock the cell is to be accelerated in such a manner that during the initial 3 ms the minimum average acceleration is 75g. The peak acceleration shall be between 125 and 175g. Section 15.2: The samples shall not explode or catch fire. In addition, the sample shall not vent or leak as described in 5.1.1."
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動測試",
+      "test_name_en": "Vibration Test",
+      "section": "16",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "motion_type": "Simple harmonic motion",
+        "amplitude": "0.8 mm (0.03 in) [1.6 mm (0.06 in) total maximum excursion]",
+        "frequency_range": "10 to 55 Hz",
+        "frequency_rate": "1 Hz/min variation",
+        "duration_per_direction": "90-100 minutes (one complete cycle)",
+        "directions": "3 mutually perpendicular directions (or perpendicular to each axis if 2 axes of symmetry)"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_venting", "no_leakage"],
+        "description": "The samples shall not explode or catch fire. In addition the sample shall not vent or leak as described in 5.1.1. (Section 16.3)",
+        "leakage_criteria": "Mass loss must not exceed values in Table 5.1 (Section 5.1.3)"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 16.1: A battery is to be subjected to simple harmonic motion with an amplitude of 0.8 mm (0.03 in) [1.6 mm (0.06 in) total maximum excursion]. Section 16.2: The frequency is to be varied at the rate of 1 Hz/min between 10 and 55 Hz, and return in not less than 90 nor more than 100 min. Section 16.3: The samples shall not explode or catch fire. In addition the sample shall not vent or leak as described in 5.1.1."
+    },
+    {
+      "test_id": "THERM-01",
+      "test_name_zh": "加熱測試",
+      "test_name_en": "Heating Test",
+      "section": "17",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "oven_type": "Gravity convection or circulating air oven",
+        "initial_temperature": "20±5°C (68±9°F)",
+        "ramp_rate": "5±2°C (9±3.6°F) per minute",
+        "target_temperature": "130±2°C (266±3.6°F)",
+        "hold_time": "10 minutes",
+        "high_temp_batteries": "For batteries specified for temperatures above 100°C: target = manufacturer max + 30±2°C",
+        "lithium_metal": "For lithium metal chemistry: maximum 170±2°C (338±3.6°F)",
+        "post_test": "Return to room temperature (20±5°C) before examination"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "The samples shall not explode or catch fire. (Section 17.2)"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 17.1: A battery is to be heated in a gravity convection or circulating air oven with an initial temperature of 20±5°C (68±9°F). The temperature of the oven is to be raised at a rate of 5±2°C (9±3.6°F) per minute to a temperature of 130±2°C (266±3.6°F) and remain for 10 min. Section 17.2: The samples shall not explode or catch fire."
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "溫度循環測試",
+      "test_name_en": "Temperature Cycling Test",
+      "section": "18",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "chamber_required": true,
+        "cycle_count": 10,
+        "step_a": "Raise to 70±3°C (158±5°F) within 30 min, maintain 4 hours",
+        "step_b": "Reduce to 20±3°C (68±5°F) within 30 min, maintain 2 hours",
+        "step_c": "Reduce to -40±3°C (-40±5°F) within 30 min, maintain 4 hours",
+        "step_d": "Raise to 20±3°C (68±5°F) within 30 min",
+        "post_test_storage": "Minimum 24 hours at 20±5°C (68±9°F) before examination"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_venting", "no_leakage"],
+        "description": "The samples shall not explode or catch fire. In addition, the samples shall not vent or leak as described in 5.1.1. (Section 18.2)",
+        "leakage_criteria": "Mass loss must not exceed values in Table 5.1 (Section 5.1.3)"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 18.1: The batteries are to be placed in a test chamber and subjected to the following cycles: a) Raising the chamber-temperature to 70±3°C (158±5°F) within 30 min and maintaining this temperature for 4 h. b) Reducing the chamber temperature to 20±3°C (68±5°F) within 30 min and maintaining this temperature for 2 h. c) Reducing the chamber temperature to minus 40±3°C (minus 40±5°F) within 30 min and maintaining this temperature for 4 h. d) Raising the chamber temperature to 20±3°C (68±5°F) within 30 min. e) Repeating the sequence for a further 9 cycles. Section 18.2: The samples shall not explode or catch fire. In addition, the samples shall not vent or leak as described in 5.1.1."
+    },
+    {
+      "test_id": "ENV-02",
+      "test_name_zh": "低氣壓測試（海拔模擬）",
+      "test_name_en": "Low Pressure (Altitude Simulation) Test",
+      "section": "19",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "pressure": "11.6 kPa (1.68 psi) absolute",
+        "temperature": "20±3°C (68±5°F)",
+        "duration": "6 hours"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_venting", "no_leakage"],
+        "description": "The samples shall not explode or catch fire. In addition, the samples shall not vent or leak as described in 5.1.1. (Section 19.2)",
+        "leakage_criteria": "Mass loss must not exceed values in Table 5.1 (Section 5.1.3)"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Section 19.1: Sample batteries are to be stored for 6 hours at an absolute pressure of 11.6 kPa (1.68 psi) and a temperature of 20±3°C (68±5°F). Section 19.2: The samples shall not explode or catch fire as a result of the Low Pressure (Altitude Simulation) Test. In addition, the samples shall not vent or leak as described in 5.1.1."
+    },
+    {
+      "test_id": "FIRE-01",
+      "test_name_zh": "彈射測試（火災暴露）",
+      "test_name_en": "Projectile Test (Fire Exposure)",
+      "section": "20",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "apparatus_screen": "Steel wire mesh, 20 openings per 25.4 mm (1 in), wire diameter 0.43 mm (0.017 in), covering 102-mm (4-in) diameter hole",
+        "apparatus_cage": "Eight-sided covered wire cage, 610-mm (2-ft) across, 305-mm (1-ft) high, 0.25-mm (0.010-in) aluminum wire, 16-18 wires per 25.4 mm (1 in)",
+        "burner": "Meker type burner mounted 38 mm (1-1/2 in) below screen",
+        "flame": "Bright blue flame causing screen to glow bright red",
+        "duration": "Until explosion or battery ignites and burns out",
+        "securing": "Not required unless sample at risk of falling; if needed, secure with single wire tied around sample",
+        "sample_size": "5 samples (10 if non-compliance, per Table 6.1)"
+      },
+      "criteria": {
+        "pass_conditions": ["no_screen_penetration"],
+        "description": "No part of an exploding cell or battery shall penetrate the wire screen such that some or all of the cell or battery protrudes through the screen. (Section 20.1)",
+        "technician_replaceable_note": "If fire/explosion occurs, use shall be restricted to applications where not exposed to or protected from conditions shown to cause fire/explosion (Section 5.1.2)"
+      },
+      "exemptions": [
+        "Primary cells intended for only technician replacement applications (i.e., liquid cathode types) may be waived (Table 6.1 footnote d)"
+      ],
+      "original_text_snippet": "Section 20.1: When subjected to the test described in 20.2-20.5 no part of an exploding cell or battery shall penetrate the wire screen such that some or all of the cell or battery protrudes through the screen. Section 20.5: The sample is to be heated and shall remain on the screen until it explodes or the cell or battery has ignited and burned out."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "ELEC-03",
+      "exemption": "Not applicable to cells not intended for series-connected applications (Section 12.1)"
+    },
+    {
+      "test_id": "FIRE-01",
+      "exemption": "Primary cells intended for only technician replacement applications (i.e., liquid cathode types) may be waived (Table 6.1 footnote d)"
+    }
+  ],
+  "venting_leakage_criteria": {
+    "table_5_1": {
+      "mass_not_more_than_1g": "Maximum 0.5% mass loss",
+      "mass_1g_to_5g": "Maximum 0.2% mass loss",
+      "mass_more_than_5g": "Maximum 0.1% mass loss"
+    },
+    "applicable_tests": ["MECH-02", "MECH-05", "ENV-01", "ENV-02"]
+  },
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-17 18:35",
+    "extraction_method": "Manual reading and analysis of complete .md file",
+    "notes": "This structured data was created by reading the complete UL 1642-2020.md file and extracting test conditions, criteria, and exemptions manually to ensure accuracy and completeness."
+  }
+}

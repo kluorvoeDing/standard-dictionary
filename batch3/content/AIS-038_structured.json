@@ -1,0 +1,422 @@
+{
+  "standard_id": "AIS-038",
+  "filename": "AIS-038_Rev.2.doc.md",
+  "full_name": "AIS-038 (Revision 2) - Specific Requirements for Electric Power Train of Vehicles (Part I: Vehicle Requirements, Part II: REESS Safety)",
+  "publication_date": "2020-07-01 (Draft Finalized)",
+  "publisher": "Automotive Industry Standards Committee (AISC), India / ARAI (Automotive Research Association of India)",
+  "li_applicable": true,
+  "test_count": 16,
+  "ocr_quality": "良好（PDF 直接提取，英文內容完整）",
+  "tests": [
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動測試",
+      "test_name_en": "Vibration Test",
+      "section": "Annexure IX-A (6.2.1)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "按 Annexure IX Appendix 2 調整",
+        "temperature": "22 ± 5°C",
+        "waveform": "正弦波，對數掃頻",
+        "frequency_range": "7 Hz 至 50 Hz 再回到 7 Hz（15 分鐘）",
+        "cycle_count": "12 次循環（共 3 小時）",
+        "direction": "垂直方向（或按製造商指定的安裝方向）",
+        "acceleration_profile": [
+          {"freq": "7-18 Hz", "acceleration": "10 m/s²"},
+          {"freq": "18-30 Hz", "acceleration": "從 10 降至 2 m/s²"},
+          {"freq": "30-50 Hz", "acceleration": "2 m/s²"}
+        ],
+        "post_test": "進行標準循環（若未被禁止）",
+        "observation": "測試環境下觀察 1 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage", "no_rupture"],
+        "description": "應無起火、無爆炸、無洩漏、無破裂；保護裝置應正常運作"
+      },
+      "exemptions": [
+        "若使用 REESS 子系統測試，需證明結果可代表完整 REESS",
+        "若電子管理單元未整合在電池外殼內，製造商可請求豁免安裝",
+        "可使用車輛製造商確認的振動輪廓替代（但批准僅限於特定車型）"
+      ],
+      "original_text_snippet": "Annexure IX-A Vibration Test: The Tested-Device shall be subjected to a vibration having a sinusoidal waveform with a logarithmic sweep between 7 Hz and 50 Hz and back to 7 Hz traversed in 15 minutes. This cycle shall be repeated 12 times for a total of 3 hours in the vertical direction."
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "熱衝擊和循環測試",
+      "test_name_en": "Thermal Shock and Cycling Test",
+      "section": "Annexure IX-B (6.3.1)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "按 Annexure IX Appendix 2 調整",
+        "temperature_profile": [
+          {"temp": "60 ± 2°C（或更高，若製造商請求）", "duration": "至少 6 小時"},
+          {"temp": "-40 ± 2°C（或更低，若製造商請求）", "duration": "至少 6 小時"}
+        ],
+        "transition_time": "極端溫度之間不超過 30 分鐘",
+        "cycle_count": "至少 5 次循環",
+        "post_storage": "22 ± 5°C 下儲存 24 小時",
+        "post_test": "進行標準循環（若未被禁止）",
+        "observation": "測試環境下觀察 1 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage", "no_rupture"],
+        "description": "應無起火、無爆炸、無洩漏、無破裂；保護裝置應正常運作"
+      },
+      "exemptions": [
+        "若使用 REESS 子系統測試，需證明結果可代表完整 REESS",
+        "若電子管理單元未整合在電池外殼內，製造商可請求豁免安裝"
+      ],
+      "original_text_snippet": "Annexure IX-B Thermal shock and cycling test: The Tested-Device shall be stored for at least six hours at 60 ± 2 °C, followed by storage for at least six hours at -40 ± 2 °C. The maximum time interval between test temperature extremes shall be 30 minutes. This procedure shall be repeated until a minimum of 5 total cycles are completed."
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "機械衝擊測試",
+      "test_name_en": "Mechanical Shock Test",
+      "section": "Annexure IX-C (6.4.1.2)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "按 Annexure IX Appendix 2 調整",
+        "temperature": "20 ± 10°C",
+        "pulse_type": "半正弦波或後峰鋸齒波",
+        "directions": "縱向、橫向、垂直（正負方向由製造商決定）",
+        "shock_count": "每個方向至少 3 次（可使用不同樣品）",
+        "vehicle_category_M1_N1": {
+          "longitudinal": "20 g（50 ms）",
+          "transverse": "8 g（50 ms）",
+          "vertical": "8 g（50 ms）"
+        },
+        "vehicle_category_M2_M3_N2_N3": {
+          "longitudinal": "10 g（50 ms）",
+          "transverse": "5 g（50 ms）",
+          "vertical": "5 g（50 ms）"
+        },
+        "observation": "測試環境下觀察 1 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage", "no_rupture"],
+        "description": "應無起火、無爆炸、無洩漏、無破裂；保護裝置應正常運作"
+      },
+      "exemptions": [
+        "若使用 REESS 子系統測試，需證明結果可代表完整 REESS",
+        "若電子管理單元未整合在電池外殼內，製造商可請求豁免安裝",
+        "每個測試脈衝可使用不同樣品"
+      ],
+      "original_text_snippet": "Annexure IX-C Mechanical shock: The Tested-Device shall be decelerated or accelerated in compliance with the acceleration corridors specified in Tables 1 to 3. For M1/N1 vehicles: 20g longitudinal, 8g transverse. For M2/M3/N2/N3: 10g longitudinal, 5g transverse."
+    },
+    {
+      "test_id": "MECH-14",
+      "test_name_zh": "機械完整性測試",
+      "test_name_en": "Mechanical Integrity Test",
+      "section": "Annexure IX-D (6.4.2)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "按 Annexure IX Appendix 2 調整",
+        "temperature": "20 ± 10°C",
+        "test_type": "靜態擠壓測試",
+        "direction": "縱向和橫向（各一次，可使用不同樣品）",
+        "force": "製造商定義的最大預期車輛碰撞負載",
+        "hold_time": "達到目標力後保持 100-500 ms",
+        "observation": "測試環境下觀察 1 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage", "no_rupture"],
+        "description": "應無起火、無爆炸、無洩漏、無破裂；保護裝置應正常運作"
+      },
+      "exemptions": [
+        "若使用 REESS 子系統測試，需證明結果可代表完整 REESS",
+        "若電子管理單元未整合在電池外殼內，製造商可請求豁免安裝"
+      ],
+      "original_text_snippet": "Annexure IX-D Mechanical integrity: The Tested-Device shall be subjected to a static crush test in longitudinal and transverse directions. The force applied shall be the maximum expected vehicle crash load as defined by the manufacturer."
+    },
+    {
+      "test_id": "THERM-10",
+      "test_name_zh": "防火測試",
+      "test_name_en": "Fire Resistance Test",
+      "section": "Annexure IX-E (6.5)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "按 Annexure IX Appendix 2 調整",
+        "test_setup": "REESS 放置在耐火磚上，周圍環繞耐火磚（見附錄 E Appendix 1）",
+        "fire_source": "丙烷火焰，溫度 700-750°C",
+        "duration": "直接火焰暴露 70 秒，然後移除火焰觀察",
+        "thermocouples": "至少 2 個熱電偶監測電池表面溫度",
+        "observation": "持續監測直到溫度穩定或起火/爆炸發生"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion"],
+        "description": "應無爆炸（起火可能發生但不應爆炸）"
+      },
+      "exemptions": [
+        "若使用 REESS 子系統測試，需證明結果可代表完整 REESS",
+        "若電子管理單元未整合在電池外殼內，製造商可請求豁免安裝"
+      ],
+      "original_text_snippet": "Annexure IX-E Fire resistance: The Tested-Device shall be exposed to direct flame from a propane fire source at 700-750°C for 70 seconds. Acceptance criteria: No explosion."
+    },
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "外部短路保護測試",
+      "test_name_en": "External Short Circuit Protection Test",
+      "section": "Annexure IX-F (6.6)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "按 Annexure IX Appendix 2 調整（≥95% 外部充電，≥90% 車載充電）",
+        "temperature": "22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）",
+        "resistance": "≤ 5 mΩ",
+        "duration": "直到保護裝置啟動或電流降至初始值的 10% 或至少 1 小時",
+        "fault_simulation": "若保護電路有單一故障可能，需模擬故障後測試"
+      },
+      "criteria": {
+        "pass_conditions": ["protection_activates", "no_fire", "no_explosion"],
+        "description": "保護裝置應啟動；應無起火、無爆炸"
+      },
+      "exemptions": [
+        "若使用 REESS 子系統測試，需證明結果可代表完整 REESS"
+      ],
+      "original_text_snippet": "Annexure IX-F External short circuit protection: The Tested-Device shall be short-circuited with a resistance of ≤ 5 mΩ. The test continues until the protection device activates or current drops to 10% of initial value. Acceptance criteria: Protection activates, no fire, no explosion."
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過充電保護測試",
+      "test_name_en": "Overcharge Protection Test",
+      "section": "Annexure IX-G (6.7)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "初始放電至製造商規定的終止電壓",
+        "temperature": "22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）",
+        "charging_current": "製造商規定的最大充電電流",
+        "charging_voltage": "製造商規定的上限充電電壓的 1.1 倍（或系統最大允許電壓）",
+        "duration": "直到保護裝置啟動或達到穩定狀態或至少 1 小時",
+        "fault_simulation": "若保護電路有單一故障可能，需模擬故障後測試"
+      },
+      "criteria": {
+        "pass_conditions": ["protection_activates", "no_fire", "no_explosion"],
+        "description": "保護裝置應啟動；應無起火、無爆炸"
+      },
+      "exemptions": [
+        "若使用 REESS 子系統測試，需證明結果可代表完整 REESS"
+      ],
+      "original_text_snippet": "Annexure IX-G Overcharge protection: The Tested-Device shall be charged at 1.1 times the upper limit charging voltage with maximum charging current. The test continues until the protection device activates. Acceptance criteria: Protection activates, no fire, no explosion."
+    },
+    {
+      "test_id": "ELEC-06",
+      "test_name_zh": "過放電保護測試",
+      "test_name_en": "Over-discharge Protection Test",
+      "section": "Annexure IX-H (6.8)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "按 Annexure IX Appendix 2 調整（充滿電）",
+        "temperature": "22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）",
+        "discharge_current": "製造商規定的最大放電電流",
+        "duration": "直到保護裝置啟動或達到製造商規定的終止電壓後 30 分鐘",
+        "fault_simulation": "若保護電路有單一故障可能，需模擬故障後測試"
+      },
+      "criteria": {
+        "pass_conditions": ["protection_activates", "no_fire", "no_explosion"],
+        "description": "保護裝置應啟動防止電池過放電；應無起火、無爆炸"
+      },
+      "exemptions": [
+        "若使用 REESS 子系統測試，需證明結果可代表完整 REESS"
+      ],
+      "original_text_snippet": "Annexure IX-H Over-discharge protection: The Tested-Device shall be discharged at maximum discharge current until the protection device activates or 30 min after reaching the specified end voltage. Acceptance criteria: Protection activates, no fire, no explosion."
+    },
+    {
+      "test_id": "THERM-03",
+      "test_name_zh": "過溫度保護測試",
+      "test_name_en": "Over-temperature Protection Test",
+      "section": "Annexure IX-I (6.9)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "按 Annexure IX Appendix 2 調整（充滿電）",
+        "ambient_temperature": "製造商規定的最高工作溫度或更高",
+        "operation": "以最大電流充放電直到保護裝置啟動",
+        "fault_simulation": "若溫度管理系統有單一故障可能，需模擬故障後測試"
+      },
+      "criteria": {
+        "pass_conditions": ["protection_activates", "no_fire", "no_explosion"],
+        "description": "保護裝置應啟動防止過溫；應無起火、無爆炸"
+      },
+      "exemptions": [
+        "若使用 REESS 子系統測試，需證明結果可代表完整 REESS"
+      ],
+      "original_text_snippet": "Annexure IX-I Over-temperature protection: The Tested-Device shall be operated at maximum current in high ambient temperature until the protection device activates. Acceptance criteria: Protection activates, no fire, no explosion."
+    },
+    {
+      "test_id": "ELEC-05",
+      "test_name_zh": "過電流保護測試",
+      "test_name_en": "Over-current Protection Test",
+      "section": "Annexure IX-J (6.10)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "按 Annexure IX Appendix 2 調整（充滿電）",
+        "temperature": "22 ± 5°C（元件測試）或 20 ± 10°C（車輛測試）",
+        "current": "製造商規定的最大允許電流的 1.1 倍或更高",
+        "duration": "直到保護裝置啟動或達到穩定狀態",
+        "fault_simulation": "若保護電路有單一故障可能，需模擬故障後測試"
+      },
+      "criteria": {
+        "pass_conditions": ["protection_activates", "no_fire", "no_explosion"],
+        "description": "保護裝置應啟動防止過電流；應無起火、無爆炸"
+      },
+      "exemptions": [
+        "若使用 REESS 子系統測試，需證明結果可代表完整 REESS"
+      ],
+      "original_text_snippet": "Annexure IX-J Over-current protection: The Tested-Device shall be subjected to 1.1 times the maximum allowable current until the protection device activates. Acceptance criteria: Protection activates, no fire, no explosion."
+    },
+    {
+      "test_id": "THERM-08",
+      "test_name_zh": "熱擴散測試",
+      "test_name_en": "Thermal Propagation Test",
+      "section": "Annexure X (6.11)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "soc": "按 Annexure IX Appendix 2 調整（充滿電）",
+        "trigger_method": "使用內部加熱器、外部加熱、外部壓痕、釘刺等方法觸發單電池熱失控",
+        "trigger_location": "REESS 內部任意位置（由製造商指定或測試機構選擇）",
+        "monitoring": "監測所有電池溫度、電壓、氣體釋放、起火、爆炸",
+        "observation": "觸發後觀察至少 1 小時或直到溫度穩定"
+      },
+      "criteria": {
+        "pass_conditions": ["no_propagation_or_safe_propagation"],
+        "description": "熱失控不應傳播至相鄰電池，或若傳播，應有足夠警告時間（≥5 分鐘）供乘員逃離"
+      },
+      "exemptions": [
+        "若使用 REESS 子系統測試，需證明結果可代表完整 REESS",
+        "若電子管理單元未整合在電池外殼內，製造商可請求豁免安裝"
+      ],
+      "original_text_snippet": "Annexure X Thermal Propagation Test: A single cell in the REESS shall be triggered into thermal runaway. The test evaluates whether thermal runaway propagates to adjacent cells. Acceptance criteria: No propagation or safe propagation with ≥5 min warning time for occupant escape."
+    },
+    {
+      "test_id": "ENV-09",
+      "test_name_zh": "氫氣排放測試（正常充電）",
+      "test_name_en": "Hydrogen Emissions Test (Normal Charge)",
+      "section": "Annexure VIII (5.4)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "僅適用於使用水性電解質的電池（如鎳氫電池）",
+      "conditions": {
+        "soc": "完全放電後開始",
+        "chamber": "密閉測試艙，配備氫氣分析儀",
+        "charging_profile": "按製造商規定的正常充電程序",
+        "duration": "整個充電過程",
+        "monitoring": "監測氫氣濃度、溫度、氣壓"
+      },
+      "criteria": {
+        "pass_conditions": ["hydrogen_mass_within_limit"],
+        "description": "氫氣排放質量不得超過規定限值（按 Annexure VIII 第 6 段計算）"
+      },
+      "exemptions": [
+        "不適用於非水性電解質電池（如鋰離子電池）"
+      ],
+      "original_text_snippet": "Annexure VIII Determination of hydrogen emissions during the charge procedures: The hydrogen mass emissions are calculated using initial and final hydrogen concentrations, temperatures and pressures in the enclosure. Applicable only for aqueous electrolyte batteries."
+    },
+    {
+      "test_id": "ENV-10",
+      "test_name_zh": "氫氣排放測試（充電失效）",
+      "test_name_en": "Hydrogen Emissions Test (Charging Failure)",
+      "section": "Annexure VIII (5.4.5)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "applicability": "僅適用於使用水性電解質的電池（如鎳氫電池）",
+      "conditions": {
+        "soc": "完全放電後開始",
+        "chamber": "密閉測試艙，配備氫氣分析儀",
+        "charging_profile": [
+          "（a）以恆定功率充電 t'1 時間",
+          "（b）以製造商規定的最大電流充電 30 分鐘"
+        ],
+        "duration": "t'1 + 30 分鐘",
+        "monitoring": "監測氫氣濃度、溫度、氣壓"
+      },
+      "criteria": {
+        "pass_conditions": ["hydrogen_mass_within_limit"],
+        "description": "氫氣排放質量不得超過規定限值（按 Annexure VIII 第 6 段計算）"
+      },
+      "exemptions": [
+        "不適用於非水性電解質電池（如鋰離子電池）"
+      ],
+      "original_text_snippet": "Annexure VIII, 5.4.5 Charging failure procedure: (a) Charging at constant power during t'1, (b) Charging at maximum current for 30 minutes. Hydrogen emissions are calculated using the formula in paragraph 6."
+    },
+    {
+      "test_id": "ELEC-09",
+      "test_name_zh": "絕緣電阻測試（車輛級）",
+      "test_name_en": "Isolation Resistance Measurement (Vehicle-based)",
+      "section": "Annexure V-A (5.1.3.1)",
+      "test_objects": ["VEHICLE"],
+      "conditions": {
+        "test_method": "使用外部 DC 電壓源或車輛自身 REESS 作為電壓源",
+        "voltage": "至少為高壓母線工作電壓的一半",
+        "measurement_points": "高壓母線正/負極與電氣底盤之間",
+        "calculation": "Ri = Ro × Ub × (1/U' - 1/U)",
+        "result": "絕緣電阻值（Ω）除以工作電壓（V）得到 Ω/V"
+      },
+      "criteria": {
+        "pass_conditions": ["isolation_resistance_100_ohm_per_V_or_500_ohm_per_V"],
+        "description": "最小絕緣電阻：100 Ω/V（一般）或 500 Ω/V（若要求更高）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Annexure V-A Isolation resistance measurement method for vehicle based tests: The electrical isolation value Ri (in Ω) divided by the working voltage of the high voltage bus (in V) results in the isolation resistance (in Ω/V). Minimum: 100 Ω/V or 500 Ω/V."
+    },
+    {
+      "test_id": "ELEC-09",
+      "test_name_zh": "絕緣電阻測試（元件級 REESS）",
+      "test_name_en": "Isolation Resistance Measurement (Component-based REESS)",
+      "section": "Annexure V-B (6.2.2.2)",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "test_method": "使用外部 DC 電壓源或 REESS 自身作為電壓源",
+        "voltage": "至少為受試裝置額定電壓",
+        "measurement_points": "受試裝置正/負極與接地連接之間",
+        "calculation": "Ri = Ro × Ub × (1/U' - 1/U)",
+        "result": "絕緣電阻值（Ω）除以額定電壓（V）得到 Ω/V"
+      },
+      "criteria": {
+        "pass_conditions": ["isolation_resistance_100_ohm_per_V_or_500_ohm_per_V"],
+        "description": "最小絕緣電阻：100 Ω/V（一般）或 500 Ω/V（若要求更高）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Annexure V-B Isolation resistance measurement method for component based tests of a REESS: The electrical isolation value Ri (in Ω) divided by the nominal voltage of the Tested-Device (in V) results in the isolation resistance (in Ω/V)."
+    },
+    {
+      "test_id": "PROT-01",
+      "test_name_zh": "直接接触防護測試（IPXXB）",
+      "test_name_en": "Protection Against Direct Contact Test (IPXXB)",
+      "section": "Annexure III (2.35)",
+      "test_objects": ["VEHICLE", "PACK", "SYSTEM"],
+      "conditions": {
+        "test_finger": "關節測試指（IPXXB，見 Figure 1）",
+        "force": "按 Table 1 規定的力",
+        "penetration_limit": "測試指可插入 80 mm，但止動面（50 mm 直徑）不得通過開口",
+        "test_method": "測試指接觸任何開口，若部分或完全插入，則在所有可能位置測試",
+        "signal_circuit": "可在測試指和帶電部件之間連接低壓電源（40-50 V）和燈泡"
+      },
+      "criteria": {
+        "pass_conditions": ["no_contact_with_live_parts"],
+        "description": "測試指不得接觸帶電部件；若使用信號電路，燈泡不應亮起"
+      },
+      "exemptions": [],
+      "original_text_snippet": "Annexure III Protection against direct contacts: The jointed test finger (IPXXB) may penetrate to its 80 mm length, but the stop face (diameter 50 mm x 20 mm) shall not pass through the opening. The access probe shall not touch live parts."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Hydrogen Emissions Tests (Annexure VIII)",
+      "exemption": "僅適用於水性電解質電池（如鎳氫電池）；不適用於非水性電解質電池（如鋰離子電池）"
+    },
+    {
+      "test_id": "Vibration/Thermal Shock/Mechanical Shock/Fire/Thermal Propagation Tests",
+      "exemption": "若使用 REESS 子系統測試，需證明結果可代表完整 REESS；若電子管理單元未整合在電池外殼內，製造商可請求豁免安裝"
+    },
+    {
+      "test_id": "Mechanical Shock Test (Annexure IX-C)",
+      "exemption": "每個測試脈衝可使用不同樣品"
+    },
+    {
+      "test_id": "Vibration Test (Annexure IX-A)",
+      "exemption": "可使用車輛製造商確認的振動輪廓替代（但批准僅限於特定車型）"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 00:15",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction)",
+    "ocr_quality_notes": "OCR 品質良好，使用 PDF 直接提取，英文內容完整，章節編號清晰。AIS-038 是印度汽車行業標準，基於 UN GTR 20 Phase 1 和 UN R100 Rev 3 Draft，涵蓋電動車電力系統和 REESS 安全要求。測試項目包括機械、環境、電氣、熱管理、氫氣排放（僅水性電解質）等。"
+  }
+}

@@ -1,0 +1,388 @@
+{
+  "standard_id": "GB44240",
+  "filename": "GB44240-2024.md",
+  "full_name": "GB 44240-2024 电能存储系统用锂蓄电池和电池组安全要求 (Secondary lithium cells and batteries used in electrical energy storage systems - Safety requirements)",
+  "publication_date": "2024-07-24 发布，2025-08-01 实施",
+  "li_applicable": true,
+  "test_count": 18,
+  "ocr_quality": "良好（使用 pdfplumber 提取，中文識別準確）",
+  "tests": [
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "高溫外部短路測試（電池）",
+      "test_name_en": "High Temperature External Short Circuit Test (Cell)",
+      "section": "6.1",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充滿電",
+        "temperature": "57 ± 4°C",
+        "preconditioning": "在 57 ± 4°C 環境中放置 30 min",
+        "resistance": "外部電阻不高於 5 mΩ",
+        "termination_criteria": ["電池溫度下降值達到峰值溫升的 80%", "短接時間達到 6 h"],
+        "observation": "試驗終止後觀察 1 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "電池應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.1 高溫外部短路：將電池按照 4.5.1 規定的試驗方法充滿電後，放置在 57 ℃±4 ℃的環境中，待電池達到 57 ℃±4 ℃後，再放置 30 min。然後用導線連接電池正負極端，並確保全部外部電阻不高於 5 mΩ。試驗過程中監測電池溫度變化，當出現以下兩種情形之一時，試驗終止：a) 電池溫度下降值達到峰值溫升的 80%；b) 短接時間達到 6 h。試驗終止後觀察 1 h。電池應不起火、不爆炸。"
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "過充電測試（電池）",
+      "test_name_en": "Overcharge Test (Cell)",
+      "section": "6.2",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充滿電",
+        "charging_current": "製造商規定的最大充電電流",
+        "termination_criteria": ["充電至 1.5 倍的充電限制電壓後持續恆壓充電 1 h", "總充電時間達到 1.5 h"],
+        "observation": "試驗後觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "電池應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.2 過充電：將電池按照 4.5.1 規定的試驗方法充滿電後，用製造商規定的最大充電電流充電。當出現以下兩種情形之一時，試驗終止：a) 充電至 1.5 倍的充電限制電壓後持續恆壓充電 1 h；b) 總充電時間達到 1.5 h。電池應不起火、不爆炸。"
+    },
+    {
+      "test_id": "ELEC-03",
+      "test_name_zh": "強制放電測試（電池）",
+      "test_name_en": "Forced Discharge Test (Cell)",
+      "section": "6.3",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.2 規定放完電",
+        "current": "1 It 反向充電",
+        "target_voltage": "負的充電上限電壓（-Uup）",
+        "duration": "90 min",
+        "special_case": "如果最大放電電流小於 1 It，則以最大放電電流進行反向充電，時間 t = (1 It / Im) × 90 min"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "電池應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "6.3 強制放電：將電池按照 4.5.2 規定的試驗方法放完電後，以 1 It 的電流進行反向充電至負的充電上限電壓（-Uup），反向充電時間共計 90 min。如果在反向充電 90 min 內，電壓達到負的充電上限電壓（-Uup），應通過減小電流保持該電壓繼續進行反向充電，反向充電共計 90 min 後終止試驗。電池應不起火、不爆炸。"
+    },
+    {
+      "test_id": "ENV-02",
+      "test_name_zh": "低氣壓測試（電池）",
+      "test_name_en": "Low Pressure Test (Cell)",
+      "section": "7.1",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充滿電",
+        "pressure": "11.6 kPa",
+        "temperature": "20 ± 5°C",
+        "duration": "6 h",
+        "test_method": "按照 GB/T 2423.21 中的相關條款"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "電池應不起火、不爆炸、不漏液"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.1 低氣壓：將電池按照 4.5.1 規定的試驗方法充滿電後，將電池放置於 20 ℃±5 ℃的真空箱中，抽真空將箱內壓強降低至 11.6 kPa，並保持 6 h。電池應不起火、不爆炸、不漏液。"
+    },
+    {
+      "test_id": "ENV-01",
+      "test_name_zh": "溫度循環測試（電池）",
+      "test_name_en": "Temperature Cycling Test (Cell)",
+      "section": "7.2",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充滿電",
+        "cycle_count": "10 次",
+        "temperature_profile": [
+          {"temp": "72 ± 2°C", "duration": "6 h"},
+          {"temp": "-40 ± 2°C", "duration": "6 h"}
+        ],
+        "transition_time": "不大於 30 min",
+        "large_cell_duration": "至少 12 h（大型電池）",
+        "test_method": "按照 GB/T 2423.22 中的相關條款"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "電池應不起火、不爆炸、不漏液"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.2 溫度循環：將電池按照 4.5.1 規定的試驗方法充滿電後，將電池放置在溫度為 20 ℃±5 ℃的可控溫的試驗箱中進行如下步驟：a) 將試驗箱溫度升為 72 ℃±2 ℃，並保持 6 h；b) 然後將試驗箱溫度降至 -40 ℃±2 ℃，並保持 6 h；c) 重複步驟 a)~步驟 b)，共循環 10 次。試驗過程中每兩個溫度之間的轉換時間應不大於 30 min。對於大型電池，暴露於極端試驗溫度的時間至少應為 12 h。電池應不起火、不爆炸、不漏液。"
+    },
+    {
+      "test_id": "MECH-05",
+      "test_name_zh": "振動測試（電池）",
+      "test_name_en": "Vibration Test (Cell)",
+      "section": "7.3",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充滿電",
+        "waveform": "正弦波",
+        "frequency_range": "7 Hz 至 200 Hz",
+        "cycle_count": "12 次循環（每方向 3 h）",
+        "directions": "圓柱型：軸向和径向（2 方向）；方型和軟包裝：3 個互相垂直方向",
+        "acceleration_profile": [
+          {"freq": "7-17.62 Hz", "acceleration": "1 gn"},
+          {"freq": "17.62-49.84 Hz", "amplitude": "0.8 mm"},
+          {"freq": "49.84-200 Hz", "acceleration": "8 gn"}
+        ],
+        "test_method": "按照 GB/T 2423.10 中的相關條款"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "電池應不起火、不爆炸、不漏液"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.3 振動：將電池按照 4.5.1 規定的試驗方法充滿電後，將樣品緊固在振動試驗台上，按表 4 中的參數進行正弦振動測試。每個方向進行 12 個循環，每個方向循環時間共計 3 h 的振動。圓柱型電池按照其軸向和徑向兩個方向進行振動試驗，方型電池和軟包裝電池按照三個互相垂直的方向進行振動試驗。電池應不起火、不爆炸、不漏液。"
+    },
+    {
+      "test_id": "MECH-02",
+      "test_name_zh": "加速度衝擊測試（電池）",
+      "test_name_en": "Acceleration Shock Test (Cell)",
+      "section": "7.4",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充滿電",
+        "waveform": "半正弦脈衝",
+        "acceleration": "150 gn ± 25 gn，脈衝持續時間 6 ms ± 1 ms",
+        "large_cell_acceleration": "50 gn ± 8 gn，脈衝持續時間 11 ms ± 2 ms（大型電池）",
+        "shock_count": "圓柱型：12 次（軸向和径向各 6 次）；方型和軟包裝：18 次（3 方向各 6 次）",
+        "test_method": "按照 GB/T 2423.5 中的相關條款"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion", "no_leakage"],
+        "description": "電池應不起火、不爆炸、不漏液"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.4 加速度衝擊：將電池按照 4.5.1 規定的試驗方法充滿電後，固定在衝擊台上，進行半正弦脈衝衝擊試驗，峰值加速度為 150 gn ± 25 gn，脈衝持續時間為 6 ms ± 1 ms。大型電池應經受峰值加速度 50 gn ± 8 gn、脈衝持續時間 11 ms ± 2 ms 的半正弦波衝擊。電池每個方向進行三次加速度衝擊試驗，接著在反方向進行三次加速度衝擊試驗。圓柱型電池按照其軸向和徑向兩個方向進行衝擊試驗，總共進行 12 次衝擊；方型電池和軟包裝電池按照三個互相垂直的方向依次進行衝擊試驗，總共進行 18 次衝擊。電池應不起火、不爆炸、不漏液。"
+    },
+    {
+      "test_id": "MECH-09",
+      "test_name_zh": "重物衝擊測試（電池）",
+      "test_name_en": "Heavy Object Impact Test (Cell)",
+      "section": "7.5",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充滿電，靜置 10 min，再按 4.5.2 放出額定容量的 50%",
+        "apparatus": "直徑 15.8 ± 0.1 mm 金屬棒",
+        "mass": "9.1 ± 0.1 kg",
+        "height": "610 ± 25 mm",
+        "orientation": "圓柱型：縱軸向與重物表面平行；方型和軟包裝：只對寬面進行衝擊",
+        "observation": "觀察 6 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "電池應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.5 重物衝擊：將電池按照 4.5.1 規定的試驗方法充滿電，靜置 10 min，再按照 4.5.2 規定的試驗方法放出額定容量的 50% 後，將電池置於平台表面，將直徑為 15.8 mm±0.1 mm 的金屬棒橫置在電池幾何中心上表面，採用質量為 9.1 kg±0.1 kg 的重物從 610 mm±25 mm 的高處自由落體狀態撞擊放有金屬棒的樣品表面，並觀察 6 h。圓柱型電池衝擊試驗時使其縱軸向與重物表面平行，金屬棒與電池縱軸向垂直且盡量與衝擊面平行，方型電池和軟包裝電池只對寬面進行衝擊試驗。1 個樣品只做一次衝擊試驗。電池應不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-03",
+      "test_name_zh": "擠壓測試（電池）",
+      "test_name_en": "Crush Test (Cell)",
+      "section": "7.6",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充滿電",
+        "apparatus": "半徑 75 mm 的鋼質半圓柱體",
+        "force": "50 ± 1 kN",
+        "speed": "0.1 mm/s",
+        "termination_criteria": ["壓力達到最大值", "電池電壓下降三分之一"],
+        "hold_time": "試驗後觀察 1 h",
+        "orientation": "圓柱型：縱軸向與平面平行；方型和軟包裝：只對寬面進行擠壓"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "電池應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.6 擠壓：將電池按照 4.5.1 規定的試驗方法充滿電後，置於平面上，將半徑（R）75 mm 的鋼質半圓柱體置於電池寬面上進行擠壓，半圓柱體縱軸經過寬面幾何中心且與電池極耳方向垂直，長度（L）應大於被擠壓電池尺寸，施加 50 kN±1 kN 的擠壓力，擠壓電池的速度為 0.1 mm/s。一旦壓力達到最大值或電池的電壓下降三分之一時，停止擠壓試驗。試驗過程中電池應防止發生外部短路。試驗後觀察 1 h。圓柱型電池擠壓時使其縱軸向與平面平行，方型電池和軟包裝電池只對電池的寬面進行擠壓試驗。1 個樣品只做一次擠壓試驗。電池應不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-11",
+      "test_name_zh": "淺刺（模擬內部短路）測試（電池）",
+      "test_name_en": "Shallow Penetration (Simulated Internal Short Circuit) Test (Cell)",
+      "section": "7.7",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充滿電",
+        "apparatus": "Φ 5 mm 耐高溫鋼針（如鎢鋼），針尖圓錐角 45°",
+        "speed": "0.1 mm/s",
+        "depth": "10 mm 深度或電池厚的 30%（取較大值）",
+        "position": "垂直於電池極板方向，宜靠近所刺面的幾何中心",
+        "hold": "鋼針停留在電池中",
+        "observation": "觀察 1 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "電池應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.7 淺刺（模擬內部短路）：將電池按照 4.5.1 規定的試驗方法充滿電後，用 Φ 5 mm 的耐高溫鋼針（如鎢鋼，針尖的圓錐角為 45°），以 0.1 mm/s 的速度，從垂直於電池極板的方向刺入電池 10 mm 深度或電池厚的 30%，取較大值，刺入位置宜靠近所刺面的幾何中心，鋼針停留在電池中，觀察 1 h。電池應不起火、不爆炸。"
+    },
+    {
+      "test_id": "THERM-01",
+      "test_name_zh": "熱濫用測試（電池）",
+      "test_name_en": "Thermal Abuse Test (Cell)",
+      "section": "7.8",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充滿電",
+        "ramp_rate": "5 ± 2°C/min",
+        "target_temperature": "130 ± 2°C",
+        "hold_time": "1 h",
+        "observation": "試驗後觀察"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "電池應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.8 熱濫用：將電池按照 4.5.1 規定的試驗方法充滿電後，將電池放入試驗箱中。試驗箱試驗環境溫度以（5±2）℃/min 的溫升速率進行升溫，當箱內溫度達到（130±2）℃後恆溫，並持續 1 h。電池應不起火、不爆炸。"
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "跌落測試（電池或電池組）",
+      "test_name_en": "Drop Test (Cell or Battery)",
+      "section": "7.9",
+      "test_objects": ["CELL", "PACK"],
+      "conditions": {
+        "soc": "按 4.5.1 規定充滿電",
+        "floor": "混凝土板或金屬板",
+        "drop_height_by_mass": [
+          {"mass": "< 7 kg", "height": "100 cm", "orientation": "自由跌落"},
+          {"mass": "7-20 kg", "height": "100 cm", "orientation": "底面向下"},
+          {"mass": "20-50 kg", "height": "100-5×(m-20)/3 cm", "orientation": "底面向下"},
+          {"mass": "50-100 kg", "height": "5 cm", "orientation": "邊和角"},
+          {"mass": "≥ 100 kg", "height": "2.5 cm", "orientation": "邊和角"}
+        ],
+        "observation": "觀察 1 h"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire", "no_explosion"],
+        "description": "樣品應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "7.9 跌落：將電池或電池組按照 4.5.1 的試驗方法充滿電後，按表 5 和圖 6 的跌落高度及方式自由落體跌落于混凝土板或金屬板上。試驗後需觀察 1 h。樣品應不起火、不爆炸。"
+    },
+    {
+      "test_id": "ELEC-04",
+      "test_name_zh": "過壓充電控制測試（電池組系統）",
+      "test_name_en": "Overvoltage Charging Control Test (Battery System)",
+      "section": "8.3",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "test_method": "按照 8.3 進行過壓充電控制試驗",
+        "bms_requirement": "BMS 應控制充電電壓不超過充電上限電壓"
+      },
+      "criteria": {
+        "pass_conditions": ["bms_controls", "no_fire", "no_explosion"],
+        "description": "BMS 應控制充電電壓，系統應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "8.3 過壓充電控制：電池組系統應設計有電池組管理單元（BMU）或電池組管理系統（BMS），確保電池和電池組在指定的工作範圍內工作。BMU/BMS 應能發現電池和電池組的電壓、溫度和電流等參數，並在過充、過流、過熱等情況下進行保護。"
+    },
+    {
+      "test_id": "ELEC-05",
+      "test_name_zh": "過流充電控制測試（電池組系統）",
+      "test_name_en": "Overcurrent Charging Control Test (Battery System)",
+      "section": "8.4",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "test_method": "按照 8.4 進行過流充電控制試驗",
+        "bms_requirement": "BMS 應控制充電電流不超過最大充電電流"
+      },
+      "criteria": {
+        "pass_conditions": ["bms_controls", "no_fire", "no_explosion"],
+        "description": "BMS 應控制充電電流，系統應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "8.4 過流充電控制：BMU/BMS 應能發現電池和電池組的電壓、溫度和電流等參數，並在過充、過流、過熱等情況下進行保護。"
+    },
+    {
+      "test_id": "ELEC-06",
+      "test_name_zh": "欠壓放電控制測試（電池組系統）",
+      "test_name_en": "Undervoltage Discharge Control Test (Battery System)",
+      "section": "8.5",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "test_method": "按照 8.5 進行欠壓放電控制試驗",
+        "bms_requirement": "BMS 應控制放電電壓不低於放電截止電壓"
+      },
+      "criteria": {
+        "pass_conditions": ["bms_controls", "no_fire", "no_explosion"],
+        "description": "BMS 應控制放電電壓，系統應不起火、不爆炸"
+      },
+      "exemptions": [
+        "如果電池製造商與用戶達成協議，過放切斷並不是強制性的（3.6 注 2）"
+      ],
+      "original_text_snippet": "8.5 欠壓放電控制：BMU/BMS 應能發現電池和電池組的電壓、溫度和電流等參數，並在過放等情況下進行保護。如果電池製造商與用戶達成協議，過放切斷並不是強制性的。"
+    },
+    {
+      "test_id": "THERM-03",
+      "test_name_zh": "過熱控制測試（電池組系統）",
+      "test_name_en": "Overheat Control Test (Battery System)",
+      "section": "8.6",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "test_method": "按照 8.6 進行過熱控制試驗",
+        "bms_requirement": "BMS 應控制溫度不超過上限充電/放電溫度"
+      },
+      "criteria": {
+        "pass_conditions": ["bms_controls", "no_fire", "no_explosion"],
+        "description": "BMS 應控制溫度，系統應不起火、不爆炸"
+      },
+      "exemptions": [],
+      "original_text_snippet": "8.6 過熱控制：BMU/BMS 應能發現電池和電池組的電壓、溫度和電流等參數，並在過熱等情況下進行保護。"
+    },
+    {
+      "test_id": "THERM-07",
+      "test_name_zh": "電池熱失控測試",
+      "test_name_en": "Cell Thermal Runaway Test",
+      "section": "9.7.1",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "test_method": "按照附錄 B 進行電池熱失控試驗",
+        "trigger_method": "激光照射或其他方法啟動熱失控"
+      },
+      "criteria": {
+        "pass_conditions": ["no_fire_propagation"],
+        "description": "評估電池熱失控特性"
+      },
+      "exemptions": [],
+      "original_text_snippet": "9.7.1 電池熱失控：按照附錄 B 進行電池熱失控試驗程序。"
+    },
+    {
+      "test_id": "THERM-08",
+      "test_name_zh": "電池組系統熱擴散測試",
+      "test_name_en": "Battery System Thermal Propagation Test",
+      "section": "9.7.2",
+      "test_objects": ["SYSTEM"],
+      "conditions": {
+        "test_method": "按照附錄 B、C、D 進行熱擴散試驗",
+        "trigger_method": "激光照射（附錄 C）或其他方法（附錄 D）啟動單體熱失控"
+      },
+      "criteria": {
+        "pass_conditions": ["no_thermal_propagation", "no_external_fire"],
+        "description": "評估電池組系統熱擴散特性，防止熱失控傳播"
+      },
+      "exemptions": [],
+      "original_text_snippet": "9.7.2 電池組系統熱擴散：按照附錄 B、C、D 進行熱擴散試驗程序。評估電池組系統抵禦單體熱失控引發的熱擴散能力。"
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Over-discharge Control (8.5)",
+      "exemption": "如果電池製造商與用戶達成協議，過放切斷並不是強制性的（3.6 注 2）"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-17 19:25",
+    "extraction_method": "Manual reading and analysis of complete .md file",
+    "ocr_quality_notes": "OCR 品質良好，使用 pdfplumber 提取，中文識別準確，數字和單位正確，章節編號清晰，表格結構完整。"
+  }
+}

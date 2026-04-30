@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Standard Dictionary | 國際標準對比資料庫</title>
+  <script src="https://unpkg.com/vue@3.4.21/dist/vue.global.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .badge-standard { background-color: rgb(219, 234, 254); color: rgb(30, 64, 175); }
+    .badge-guidance { background-color: rgb(254, 249, 195); color: rgb(161, 98, 7); }
+    .badge-test-method { background-color: rgb(243, 232, 255); color: rgb(107, 33, 168); }
+    .checkbox-card { border: 1px solid rgb(229, 231, 235); border-radius: 0.5rem; padding: 0.75rem; cursor: pointer; transition: all 0.2s; }
+    .checkbox-card:hover { box-shadow: 0 4px 6px -1px rgb(0, 0, 0, 0.1); }
+    .checkbox-card.selected { border-color: rgb(59, 130, 246); background-color: rgb(239, 246, 255); ring: 2px solid rgb(147, 197, 253); }
+    .test-object-tag { font-size: 0.75rem; padding: 0.125rem 0.5rem; border-radius: 9999px; background-color: rgb(229, 231, 235); color: rgb(55, 65, 81); }
+    .expand-btn { background: none; border: none; color: rgb(59, 130, 246); cursor: pointer; font-size: 0.875rem; text-decoration: underline; }
+    .detail-row { font-size: 0.75rem; color: rgb(107, 114, 128); margin-top: 0.25rem; }
+    .edit-area { width: 100%; border: 1px solid rgb(209, 213, 219); border-radius: 0.25rem; padding: 0.25rem; font-size: 0.75rem; }
+    /* 問題 #5: 淡色測試對象標籤 */
+    .tag-cell { background-color: #E3F2FD; color: #1565C0; }
+    .tag-pack { background-color: #E8F5E9; color: #2E7D32; }
+    .tag-module { background-color: #F3E5F5; color: #6A1B9A; }
+    .tag-ess { background-color: #FFF3E0; color: #E65100; }
+    .tag-system { background-color: #F5F5F5; color: #424242; }
+    .tag-vehicle { background-color: #FFF8E1; color: #FF8F00; }
+    /* 條件條列式樣式 */
+    .conditions-list { list-style: none; padding: 0; margin: 0; }
+    .conditions-list li { padding: 0.25rem 0; border-bottom: 1px solid #f0f0f0; }
+    .conditions-list li:last-child { border-bottom: none; }
+    .conditions-list strong { color: #374151; }
+    /* 測試項目分類底色 */
+    .category-elec { background-color: #E3F2FD; }
+    .category-mech { background-color: #F3E5F5; }
+    .category-env { background-color: #E8F5E9; }
+    .category-therm { background-color: #FFF3E0; }
+    .category-fire { background-color: #FFEBEE; }
+    .category-other { background-color: #F5F5F5; }
+    /* 懸浮視窗樣式 */
+    .popover-overlay { position: fixed; inset: 0; z-index: 9998; background: rgba(17, 24, 39, 0.45); display: flex; align-items: center; justify-content: center; }
+    .popover { position: relative; z-index: 9999; background: white; border: 1px solid #e5e7eb; border-radius: 0.75rem; box-shadow: 0 20px 40px rgba(0,0,0,0.25); width: 80vw; height: 80vh; overflow-y: auto; padding: 1rem; }
+    .popover-close { position: sticky; top: 0; float: right; border: none; background: #f3f4f6; color: #374151; border-radius: 9999px; width: 2rem; height: 2rem; cursor: pointer; }
+    .popover-content { line-height: 1.6; }
+    .popover-content .label { color: #6b7280; font-size: 0.75rem; font-weight: 600; display: block; margin-bottom: 0.25rem; }
+    .popover-content .value { color: #374151; font-size: 0.875rem; }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <div id="app" class="container mx-auto px-4 py-8">
+    <!-- Header -->
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold text-gray-800 mb-2">📚 Standard Dictionary</h1>
+      <p class="text-gray-600">國際標準對比資料庫 - 快速查詢和對比不同電池安全標準之間的測試要求差異</p>
+      <p class="text-sm text-gray-500 mt-2">版本：v0.9.0 | 文件：{{ catalog.length }} | 測試項目：{{ comparisonRows.length }}</p>
+      <div class="flex gap-2 mt-4">
+        <button @click="downloadJSON" class="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 text-sm">📥 下載 JSON</button>
+        <label class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 text-sm cursor-pointer">
+          📤 上傳 JSON
+          <input type="file" @change="uploadJSON" accept=".json" class="hidden">
+        </label>
+        <button @click="saveToLocalStorage" class="px-4 py-2 bg-purple-600 text-white rounded-lg hover:bg-purple-700 text-sm">💾 儲存狀態</button>
+        <button @click="clearLocalStorage" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 text-sm">🗑️ 清除狀態</button>
+      </div>
+    </header>
+
+    <!-- Controls -->
+    <div class="bg-white rounded-lg shadow p-6 mb-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <!-- Document Type Filter -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">文件類型</label>
+          <select v-model="filters.documentType" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500">
+            <option value="all">全部</option>
+            <option value="standard">標準 (Standard)</option>
+            <option value="guidance">建議 (Guidance)</option>
+            <option value="test_method">測試方法 (Test Method)</option>
+          </select>
+        </div>
+
+        <!-- Test Object Filter -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">測試對象</label>
+          <select v-model="filters.testObject" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500">
+            <option value="all">全部</option>
+            <option value="CELL">CELL (電芯)</option>
+            <option value="MODULE">MODULE (模組)</option>
+            <option value="PACK">PACK (電池包)</option>
+            <option value="ESS">ESS (儲能系統)</option>
+            <option value="SYSTEM">SYSTEM (整套裝置)</option>
+            <option value="VEHICLE">VEHICLE (車輛)</option>
+          </select>
+        </div>
+
+        <!-- Search -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-2">搜尋</label>
+          <input v-model="filters.search" type="text" placeholder="搜尋測試項目名稱..." class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-blue-500">
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+      <!-- Document Selection Panel -->
+      <aside class="lg:col-span-1">
+        <div class="bg-white rounded-lg shadow p-4 sticky top-4">
+          <div class="flex justify-between items-center mb-4">
+            <h2 class="text-lg font-semibold text-gray-800">📋 選擇標準</h2>
+            <button @click="generateComparison" 
+                    :disabled="selectedDocs.length < 2"
+                    :class="selectedDocs.length >= 2 ? 'bg-blue-600 hover:bg-blue-700' : 'bg-gray-300 cursor-not-allowed'"
+                    class="px-3 py-1.5 text-sm text-white rounded-lg transition-colors">
+              開始比對
+            </button>
+          </div>
+          <p class="text-sm text-gray-500 mb-4">勾選 2-5 個標準進行對比</p>
+          
+          <div class="space-y-2 max-h-[600px] overflow-y-auto">
+            <div v-for="doc in filteredCatalog" :key="doc.document_id"
+                 @click="toggleDocument(doc.document_id)"
+                 :class="['checkbox-card', selectedDocs.includes(doc.document_id) ? 'selected' : '']">
+              <div class="flex items-start justify-between">
+                <div class="flex-1">
+                  <div class="flex items-center gap-2 mb-1">
+                    <span class="font-medium text-gray-800">{{ doc.display_name }}</span>
+                    <span :class="getBadgeClass(doc.document_type)" class="text-xs px-2 py-0.5 rounded">
+                      {{ getBadgeLabel(doc.document_type) }}
+                    </span>
+                  </div>
+                  <p class="text-xs text-gray-500 line-clamp-2">{{ doc.full_name }}</p>
+                  <div class="flex items-center gap-2 mt-2">
+                    <span class="text-xs text-gray-400">{{ doc.item_count }} 項測試</span>
+                    <span class="text-xs text-gray-400">•</span>
+                    <span class="text-xs text-gray-400">{{ doc.publisher }}</span>
+                  </div>
+                </div>
+                <input type="checkbox" :checked="selectedDocs.includes(doc.document_id)" class="mt-1 h-4 w-4 text-blue-600 rounded">
+              </div>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-4 border-t">
+            <div class="flex items-center justify-between mb-2">
+              <span class="text-sm font-medium text-gray-700">已選：{{ selectedDocs.length }} 個</span>
+              <button @click="selectedDocs = []" v-if="selectedDocs.length > 0" class="text-sm text-red-600 hover:text-red-800">清空</button>
+            </div>
+            <p class="text-xs text-gray-500">💡 按鈕已移至標題旁</p>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Comparison Grid -->
+      <main class="lg:col-span-3">
+        <div v-if="!showComparison" class="bg-white rounded-lg shadow p-8 text-center">
+          <div class="text-6xl mb-4">📊</div>
+          <h2 class="text-xl font-semibold text-gray-800 mb-2">選擇標準開始對比</h2>
+          <p class="text-gray-600">從左側勾選至少 2 個標準，然後點擊「開始對比」</p>
+        </div>
+
+        <div v-else class="bg-white rounded-lg shadow overflow-hidden">
+          <!-- Comparison Header -->
+          <div class="p-4 border-b bg-gray-50">
+            <div class="flex items-center justify-between">
+              <h2 class="text-lg font-semibold text-gray-800">📊 標準對比結果</h2>
+              <button @click="showComparison = false" class="text-gray-600 hover:text-gray-800">✕ 關閉</button>
+            </div>
+            <p class="text-sm text-gray-500 mt-1">共 {{ filteredComparisonRows.length }} 項測試</p>
+          </div>
+
+          <!-- Comparison Table -->
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th class="px-4 py-3 text-left text-sm font-medium text-gray-700 sticky left-0 bg-gray-50">測試項目</th>
+                  <th v-for="doc in selectedDocDetails" :key="doc.document_id" class="px-4 py-3 text-left text-sm font-medium text-gray-700 min-w-[200px]">
+                    <div class="flex items-center gap-2">
+                      <span class="font-semibold" :title="doc.full_name">{{ doc.display_name }}</span>
+                      <span :class="getBadgeClass(doc.document_type)" class="text-xs px-2 py-0.5 rounded whitespace-nowrap">
+                        {{ getBadgeLabel(doc.document_type) }}
+                      </span>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr v-for="(group, index) in groupedComparisonRows" :key="group.testId" class="hover:bg-gray-50">
+                  <td class="px-4 py-3 sticky left-0 bg-white" :class="getCategoryClass(group.category)">
+                    <div class="flex items-center gap-2 flex-wrap">
+                      <div>
+                        <div class="font-medium text-gray-800">{{ group.testNameZh }}</div>
+                        <div class="text-xs text-gray-500">{{ group.testNameEn }}</div>
+                      </div>
+                      <div class="flex gap-1 flex-wrap">
+                        <span v-for="obj in group.uniqueTestObjects" :key="obj" 
+                              :class="getTestObjectClass(obj)" 
+                              class="text-xs px-2 py-0.5 rounded">
+                          {{ obj }}
+                        </span>
+                      </div>
+                    </div>
+                  </td>
+                  <td v-for="doc in selectedDocDetails" :key="doc.document_id" class="px-4 py-3 align-top">
+                    <div v-if="group.rows[doc.document_id]" class="text-sm">
+                      <!-- 簡短版 -->
+                      <div>
+                        <div class="text-gray-600 mb-1">
+                          <span class="text-xs text-gray-400">章節：</span>{{ group.rows[doc.document_id].section }}
+                        </div>
+                        <div class="text-gray-700 mb-2">
+                          <span class="text-xs text-gray-400 block mb-1">條件：</span>
+                          <div class="text-xs" v-html="formatConditionsShort(group.rows[doc.document_id])"></div>
+                        </div>
+                        <div class="text-gray-700">
+                          <span class="text-xs text-gray-400 block mb-1">判定：</span>
+                          <div class="text-xs" v-html="formatEvaluationShort(group.rows[doc.document_id])"></div>
+                        </div>
+                        <button @click.stop="showPopover(group.testId, doc.document_id)" class="expand-btn mt-1">展開詳細</button>
+                      </div>
+                      </div>
+                      <div v-if="group.rows[doc.document_id] && doc && doc.document_strength === 'guidance'" class="mt-2 text-xs text-yellow-600 bg-yellow-50 px-2 py-1 rounded">
+                        ⚠️ 此為建議性文件，非強制要求
+                      </div>
+                    </div>
+                    <div v-else class="text-gray-400 text-sm">—</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- 懸浮視窗（全局） -->
+    <div v-if="activePopover" class="popover-overlay" @click="closePopover">
+      <div class="popover" @click.stop>
+        <button class="popover-close" @click="closePopover">✕</button>
+        <div class="popover-content mt-8">
+          <div class="mb-4">
+            <span class="label">章節：</span>
+            <span class="value">{{ activePopoverData.section }}</span>
+          </div>
+          <div class="mb-4">
+            <span class="label">條件：</span>
+            <div class="value" v-html="activePopoverData.conditions"></div>
+          </div>
+          <div>
+            <span class="label">判定：</span>
+            <div class="value" v-html="activePopoverData.evaluation"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const { createApp } = Vue
+
+    createApp({
+      data() {
+        return {
+          catalog: [],
+          comparisonRows: [],
+          selectedDocs: [],
+          showComparison: false,
+          filters: {
+            documentType: 'all',
+            testObject: 'all',
+            search: ''
+          },
+          expandedCells: {},
+          editingCells: {},
+          editBackup: {},
+          activePopover: null,
+          activePopoverData: {},
+          sandDetailMap: {}
+        }
+      },
+      async mounted() {
+        this.loadFromLocalStorage()
+        await this.loadData()
+      },
+      computed: {
+        filteredCatalog() {
+          return this.catalog.filter(doc => {
+            if (this.filters.documentType !== 'all' && doc.document_type !== this.filters.documentType) return false
+            return true
+          })
+        },
+        selectedDocDetails() {
+          return this.catalog.filter(doc => doc && doc.document_id && this.selectedDocs.includes(doc.document_id))
+        },
+        filteredComparisonRows() {
+          return this.comparisonRows.filter(row => {
+            if (!this.selectedDocs.includes(row.document_id)) return false
+            if (this.filters.testObject !== 'all' && !row.test_objects.includes(this.filters.testObject)) return false
+            if (this.filters.search) {
+              const search = this.filters.search.toLowerCase()
+              if (!row.item_name_zh.toLowerCase().includes(search) && 
+                  !row.item_name_en.toLowerCase().includes(search)) return false
+            }
+            return true
+          })
+        },
+        groupedComparisonRows() {
+          const groups = {}
+          // 分類排序優先級
+          const categoryOrder = { 'ELEC': 1, 'MECH': 2, 'ENV': 3, 'THERM': 4, 'FIRE': 5, 'OTHER': 6 }
+          
+          this.filteredComparisonRows.forEach(row => {
+            // 分組邏輯：
+            // 1. 優先使用 normalized_item_id（如果有）
+            // 2. 否則使用 item_id（如果有）
+            // 3. 如果都沒有，從名稱提取（去除測試對象括號）
+            let key = row.normalized_item_id
+            if (!key) {
+              key = row.item_id
+            }
+            if (!key) {
+              // 從名稱中提取測試項目（去除括號中的測試對象）
+              const name = row.item_name_zh || row.item_name_en || ''
+              key = name.replace(/\s*\([^)]*\)/g, '').trim()
+            }
+            
+            if (!groups[key]) {
+              // 去除測試名稱中的括號（測試對象）
+              let testNameZh = row.normalized_item_name_zh || row.item_name_zh || ''
+              let testNameEn = row.normalized_item_name_en || row.item_name_en || ''
+              testNameZh = testNameZh.replace(/\s*\([^)]*\)/g, '').trim()
+              testNameEn = testNameEn.replace(/\s*\([^)]*\)/g, '').trim()
+              
+              // 提取分類（從 normalized_item_id 或 key）
+              const categoryId = row.normalized_item_id || key || ''
+              let category = 'OTHER'
+              if (categoryId.startsWith('ELEC')) category = 'ELEC'
+              else if (categoryId.startsWith('MECH')) category = 'MECH'
+              else if (categoryId.startsWith('ENV')) category = 'ENV'
+              else if (categoryId.startsWith('THERM')) category = 'THERM'
+              else if (categoryId.startsWith('FIRE')) category = 'FIRE'
+              
+              groups[key] = {
+                testId: key,
+                testNameZh: testNameZh,
+                testNameEn: testNameEn,
+                testObjects: row.test_objects,
+                uniqueTestObjects: [],
+                rows: {},
+                category: category,
+                categoryOrder: categoryOrder[category]
+              }
+            }
+            groups[key].rows[row.document_id] = row
+          })
+          // 計算唯一測試對象（移除重複）
+          Object.values(groups).forEach(group => {
+            const allObjects = []
+            Object.values(group.rows).forEach(row => {
+              if (row.normalized_test_objects) {
+                allObjects.push(...row.normalized_test_objects)
+              } else if (row.test_objects) {
+                allObjects.push(...row.test_objects)
+              }
+            })
+            group.uniqueTestObjects = [...new Set(allObjects)]
+          })
+          // 排序：按分類優先級，然後按測試名稱
+          return Object.values(groups).sort((a, b) => {
+            if (a.categoryOrder !== b.categoryOrder) {
+              return a.categoryOrder - b.categoryOrder
+            }
+            return a.testNameZh.localeCompare(b.testNameZh, 'zh-Hant')
+          })
+        }
+      },
+      methods: {
+        async loadData() {
+          try {
+            // 自動偵測運行環境：file:// 或 http://
+            const isFileProtocol = window.location.protocol === 'file:'
+            const baseUrl = isFileProtocol 
+              ? 'https://raw.githubusercontent.com/kluorvoeDing/standard-dictionary/main/'
+              : './'
+            
+            console.log('Running in', isFileProtocol ? 'GitHub mode (file://)' : 'Local mode (http://)', '| Base URL:', baseUrl)
+            
+            const sandPromise = fetch(baseUrl + 'batch6/content/SAND2017_guidance.json')
+              .then(res => res.ok ? res.json() : null)
+              .catch(() => null)
+
+            const [catalogRes, rowsRes, sandData] = await Promise.all([
+              fetch(baseUrl + 'data/catalog.json'),
+              fetch(baseUrl + 'data/comparison_rows.json'),
+              sandPromise
+            ])
+            if (!catalogRes.ok || !rowsRes.ok) {
+              throw new Error('HTTP ' + catalogRes.status)
+            }
+            this.catalog = await catalogRes.json()
+            this.comparisonRows = await rowsRes.json()
+
+            if (sandData && sandData.recommendations) {
+              const map = {}
+              sandData.recommendations.forEach(rec => {
+                const id = (rec.recommendation_id || '').replace(/-A$/, '')
+                if (id) map[id] = rec
+              })
+              this.sandDetailMap = map
+            }
+
+            console.log('Loaded', this.catalog.length, 'documents and', this.comparisonRows.length, 'comparison rows')
+          } catch (error) {
+            console.error('Failed to load data:', error)
+            const isFileProtocol = window.location.protocol === 'file:'
+            let msg = '載入資料失敗。\n\n'
+            if (isFileProtocol) {
+              msg += '可能原因：\n'
+              msg += '1. 無法訪問 GitHub（公司防火牆限制）\n'
+              msg += '2. GitHub raw content 網址錯誤\n\n'
+              msg += '解決方法：\n'
+              msg += '1. 確認能訪問 https://github.com\n'
+              msg += '2. 改用 HTTP server：python3 -m http.server 8080\n'
+              msg += '3. 用 VS Code Live Server 擴充功能'
+            } else {
+              msg += '請確認 data/catalog.json 和 data/comparison_rows.json 是否存在'
+            }
+            alert(msg)
+          }
+        },
+        toggleDocument(docId) {
+          const index = this.selectedDocs.indexOf(docId)
+          if (index > -1) {
+            this.selectedDocs.splice(index, 1)
+          } else {
+            this.selectedDocs.push(docId)
+          }
+        },
+        generateComparison() {
+          console.log('generateComparison called, selectedDocs:', this.selectedDocs)
+          if (this.selectedDocs.length < 2) {
+            alert('請至少勾選 2 個標準進行對比')
+            return
+          }
+          this.showComparison = true
+          // Vue 3 需要確保響應式更新
+          this.$nextTick(() => {
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          })
+        },
+        getBadgeClass(type) {
+          const classes = {
+            'standard': 'badge-standard',
+            'guidance': 'badge-guidance',
+            'test_method': 'badge-test-method'
+          }
+          return classes[type] || 'badge-standard'
+        },
+        getBadgeLabel(type) {
+          const labels = {
+            'standard': '標準',
+            'guidance': '建議',
+            'test_method': '測試方法'
+          }
+          return labels[type] || '標準'
+        },
+        getTestObjectClass(obj) {
+          const classMap = {
+            'CELL': 'tag-cell',
+            'PACK': 'tag-pack',
+            'MODULE': 'tag-module',
+            'ESS': 'tag-ess',
+            'SYSTEM': 'tag-system',
+            'VEHICLE': 'tag-vehicle'
+          }
+          return classMap[obj] || 'tag-system'
+        },
+        getCategoryClass(category) {
+          const classMap = {
+            'ELEC': 'category-elec',
+            'MECH': 'category-mech',
+            'ENV': 'category-env',
+            'THERM': 'category-therm',
+            'FIRE': 'category-fire'
+          }
+          return classMap[category] || 'category-other'
+        },
+        parseConditions(text) {
+          // 將條件文字解析成條列式
+          if (!text) return []
+          const items = []
+          // 嘗試按 | 分隔
+          const parts = text.split('|')
+          for (const part of parts) {
+            const trimmed = part.trim()
+            if (!trimmed) continue
+            const colonIdx = trimmed.indexOf(':')
+            if (colonIdx > 0) {
+              items.push({
+                label: trimmed.substring(0, colonIdx).trim(),
+                value: trimmed.substring(colonIdx + 1).trim()
+              })
+            } else {
+              items.push({ label: '條件', value: trimmed })
+            }
+          }
+          return items.length > 0 ? items : [{ label: '條件', value: text }]
+        },
+        parseEvaluation(text) {
+          // 將判定文字解析成條列式
+          if (!text) return []
+          const items = []
+          const parts = text.split(';')
+          for (const part of parts) {
+            const trimmed = part.trim()
+            if (!trimmed) continue
+            const colonIdx = trimmed.indexOf(':')
+            if (colonIdx > 0) {
+              items.push({
+                label: trimmed.substring(0, colonIdx).trim(),
+                value: trimmed.substring(colonIdx + 1).trim()
+              })
+            } else {
+              items.push({ label: '判定', value: trimmed })
+            }
+          }
+          return items.length > 0 ? items : [{ label: '判定', value: text }]
+        },
+        formatConditions(row) {
+          // 優先使用翻譯後的繁體中文內容
+          const text = row.conditions_summary_zh || row.conditions_summary
+          if (!text) return ''
+          // 將 Markdown 粗體 **xxx** 轉換為 HTML <strong>xxx</strong>
+          return text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>')
+        },
+        formatConditionsShort(row) {
+          const fixedTemplate = this.buildFixedTemplateCondition(row)
+          if (fixedTemplate) {
+            return `<div class="mb-0.5">${this.escapeHtml(fixedTemplate)}</div>`
+          }
+
+          if (row.document_id === 'SAND2017-6925') {
+            return this.formatSandConditionsShort(row)
+          }
+          const text = row.conditions_summary_zh || row.conditions_summary
+          return this.formatTableShort(text)
+        },
+        buildFixedTemplateCondition(row) {
+          const text = (row.conditions_summary_zh || row.conditions_summary || '').trim()
+          if (!text) return ''
+
+          const type = this.detectTemplateType(row)
+          if (!type) return ''
+
+          if (type === 'external_short') {
+            const resistance = this.extractResistance(text)
+            const temp = this.extractTempToken(text)
+            if (!resistance && !temp) return ''
+            return `${resistance || 'R(spec)'}@${temp || 'RT'}`
+          }
+
+          if (type === 'overcharge') {
+            const current = this.extractCurrentC(text) || this.extractCurrentA(text)
+            const vlimit = this.extractVoltageLimit(text)
+            const soc = this.extractSocToken(text)
+            const left = current || (/(最大充電電流|製造商規定.*充電電流|charge\s*current)/i.test(text) ? 'Imax(spec)' : 'I(spec)')
+            const right = vlimit || (/(限制電壓|終止電壓|保護電壓|charge\s*voltage|voltage)/i.test(text) ? 'Vmax(spec)' : 'V(spec)')
+            return `${left} to ${right}${soc ? ` or ${soc}` : ''}`
+          }
+
+          if (type === 'overdischarge') {
+            const soc = this.extractSocToken(text) || (/(放電終止電壓|放完電|終止電壓|0\s*V)/.test(text) ? '0%SOC' : '')
+            const current = this.extractCurrentC(text) || this.extractCurrentA(text) || (/(最大放電電流|discharge\s*current)/i.test(text) ? 'Imax(spec)' : 'I(spec)')
+            const duration = this.extractDuration(text)
+            const parts = []
+            if (soc) parts.push(soc)
+            if (current) parts.push(current)
+            const head = parts.join(', ') || '0%SOC, I(spec)'
+            return duration ? `${head} for ${duration}` : head
+          }
+
+          if (type === 'crush') {
+            const radius = this.extractRadius(text)
+            const speed = this.extractSpeed(text)
+            const until = this.extractCrushUntil(text)
+            const prefix = radius
+              ? `半徑 ${radius} 的半圓柱擠壓`
+              : '半圓柱擠壓'
+            const speedPart = speed ? `，擠壓速度為${speed}` : ''
+            const untilPart = until ? `直至${until}` : '直至規範終止條件'
+            return `${prefix}${speedPart}${untilPart}`
+          }
+
+          if (type === 'heating') {
+            const start = this.extractStartTemp(text)
+            const target = this.extractTargetTemp(text)
+            const duration = this.extractDuration(text)
+            const rate = this.extractRate(text)
+            if (!start && !target && !duration && !rate) return ''
+            const main = `${start || 'RT'} to ${target || 'Tmax'}${duration ? ` for ${duration}` : ''}`
+            return rate ? `${main}@${rate}` : main
+          }
+
+          if (type === 'penetration') {
+            const needle = this.extractNeedle(text)
+            const speed = this.extractSpeed(text)
+            const temp = this.extractTempToken(text)
+            const left = needle || '針刺'
+            const mid = speed || '速度依規範'
+            const right = temp || 'RT'
+            return `${left}, ${mid}, ${right}`
+          }
+
+          return ''
+        },
+        detectTemplateType(row) {
+          const name = `${row.item_name_zh || ''} ${(row.item_name_en || '')}`.toLowerCase()
+          const norm = (row.normalized_item_id || '').toUpperCase()
+          const hasName = name.trim().length > 0
+
+          // 先排除非六大模板項（避免 normalized_item_id 錯映射誤套模板）
+          if (/振動|vibration|絕緣|insulation/.test(name)) return ''
+
+          if (/外部短路|external short/.test(name)) return 'external_short'
+          if (/過充|overcharge|abnormal charging/.test(name)) return 'overcharge'
+          if (/過放|強制放電|overdischarge|forced discharge|over-discharge/.test(name)) return 'overdischarge'
+          if (/穿刺|penetration|nail/.test(name)) return 'penetration'
+          if (/擠壓|crush/.test(name)) return 'crush'
+          if (/加熱|熱斜坡|thermal ramp|heating/.test(name)) return 'heating'
+
+          // 只有在名稱缺失時，才回退使用 normalized_item_id
+          if (!hasName) {
+            if (norm === 'ELEC-01') return 'external_short'
+            if (norm === 'ELEC-02') return 'overcharge'
+            if (['ELEC-03', 'ELEC-06'].includes(norm)) return 'overdischarge'
+            if (norm === 'MECH-04') return 'penetration'
+            if (norm === 'MECH-03') return 'crush'
+            if (norm === 'THERM-01') return 'heating'
+          }
+
+          return ''
+        },
+        extractResistance(text) {
+          const pm = text.match(/([0-9]+(?:\.[0-9]+)?)\s*±\s*([0-9]+(?:\.[0-9]+)?)\s*(mΩ|mohm|Ω|ohm)/i)
+          if (pm) {
+            const center = Number(pm[1])
+            const delta = Number(pm[2])
+            const min = Math.round((center - delta) * 1000) / 1000
+            const max = Math.round((center + delta) * 1000) / 1000
+            const unit = /m/i.test(pm[3]) ? 'mΩ' : 'Ω'
+            return `${min}~${max} ${unit}`
+          }
+
+          const m = text.match(/(?:≤|<=|<|not\s+exceeding|不高於|小於)?\s*([0-9]+(?:\.[0-9]+)?)\s*(mΩ|mohm|Ω|ohm)/i)
+          if (!m) return ''
+          const symbol = /≤|<=|小於|不高於|not\s+exceeding/i.test(m[0]) ? '<' : (/</.test(m[0]) ? '<' : '')
+          const unit = /m/i.test(m[2]) ? 'mΩ' : 'Ω'
+          return `${symbol ? symbol + ' ' : ''}${m[1]} ${unit}`.trim()
+        },
+        extractTempToken(text) {
+          if (/(room\s*temp|ambient|常溫|室溫|normal\s*temperature)/i.test(text)) return 'RT'
+
+          const plusMinus = text.match(/(-?\d+(?:\.\d+)?)\s*±\s*(\d+(?:\.\d+)?)\s*°C/i)
+          if (plusMinus) {
+            const center = Number(plusMinus[1])
+            const delta = Number(plusMinus[2])
+            const min = Math.round((center - delta) * 10) / 10
+            const max = Math.round((center + delta) * 10) / 10
+            if (min >= 18 && max <= 30) return 'RT'
+            return `${min}~${max}°C`
+          }
+
+          const range = text.match(/(-?\d+(?:\.\d+)?)\s*(?:~|to|-)\s*(-?\d+(?:\.\d+)?)\s*°C/i)
+          if (range) {
+            const min = Number(range[1])
+            const max = Number(range[2])
+            if (min >= 18 && max <= 30) return 'RT'
+            return `${min}~${max}°C`
+          }
+
+          const single = text.match(/(-?\d+(?:\.\d+)?)\s*°C(?!\s*\/?\s*min)/i)
+          if (single) {
+            const t = Number(single[1])
+            if (t >= 20 && t <= 25) return 'RT'
+            return `${t}°C`
+          }
+          return ''
+        },
+        extractCurrentC(text) {
+          const frac = text.match(/(?:at\s+least\s+)?(\d+\s*\/\s*\d+)\s*C\b/i)
+          if (frac) return `${frac[1].replace(/\s+/g, '')}C`
+
+          const m = text.match(/(?:≥|>=|<=|≤|>|<)?\s*\d+(?:\.\d+)?\s*C\b/i)
+          return m ? m[0].replace(/\s+/g, ' ').trim() : ''
+        },
+        extractCurrentA(text) {
+          const formula = text.match(/\d+\s*[×x]\s*I\d*\s*\(\s*A\s*\)/i)
+          if (formula) return formula[0].replace(/\s+/g, '').replace('x', '×')
+
+          const eq = text.match(/I\s*=\s*[^,，;；\n]+/i)
+          if (eq) return eq[0].replace(/\s+/g, ' ').trim()
+
+          const m = text.match(/(?:≥|>=|<=|≤|>|<)?\s*\d+(?:\.\d+)?\s*(?:mA|A|kA)\b/i)
+          return m ? m[0].replace(/\s+/g, ' ').trim() : ''
+        },
+        extractVoltageLimit(text) {
+          if (/1\.1\s*\*?\s*vmax/i.test(text)) return '1.1*Vmax'
+          if (/1\.1\s*倍/.test(text)) return '1.1*Vmax'
+          if (/1\.5\s*倍/.test(text)) return '1.5*Vmax'
+          if (/(限制電壓|終止電壓|過充保護電壓|voltage\s*limit|charge\s*voltage)/i.test(text)) return 'Vmax(spec)'
+          const v = text.match(/(?:≥|>=|<=|≤|>|<)?\s*\d+(?:\.\d+)?\s*(?:mV|V|kV)\b/i)
+          return v ? v[0].replace(/\s+/g, ' ').trim() : ''
+        },
+        extractSocToken(text) {
+          const p = text.match(/(\d+(?:\.\d+)?)\s*%\s*SOC/i)
+          if (p) return `${p[1]}%SOC`
+          if (/(充滿電|滿電|100%\s*SOC)/i.test(text)) return '100%SOC'
+          if (/(放完電|0\s*%\s*SOC)/i.test(text)) return '0%SOC'
+          return ''
+        },
+        extractDuration(text) {
+          const m = text.match(/(\d+(?:\.\d+)?)\s*(min|分鐘|h|小時|hr|s|秒)/i)
+          if (!m) return ''
+          const val = m[1]
+          const unitRaw = m[2].toLowerCase()
+          const unit = /min|分鐘/.test(unitRaw) ? 'min' : (/h|小時|hr/.test(unitRaw) ? 'h' : 's')
+          return `${val}${unit}`
+        },
+        extractRadius(text) {
+          const m = text.match(/(?:半徑|r\s*=?)\s*([0-9]+(?:\.[0-9]+)?)\s*mm/i)
+          return m ? `${m[1]}mm` : ''
+        },
+        extractSpeed(text) {
+          const m = text.match(/(?:≤|<=|<|>=|≥|>|=)?\s*\d+(?:\.\d+)?\s*mm\/?s/i)
+          if (m) return m[0].replace(/\s+/g, ' ').trim()
+          const m2 = text.match(/(?:≤|<=|<|>=|≥|>|=)?\s*\d+(?:\.\d+)?\s*mm\/?min/i)
+          if (m2) return m2[0].replace(/\s+/g, ' ').trim()
+          return ''
+        },
+        extractCrushUntil(text) {
+          const terms = []
+          if (/0\s*V/i.test(text)) terms.push('0V')
+          if (/100\s*kN/i.test(text)) terms.push('100kN')
+          if (/15\s*%/.test(text)) terms.push('15%變形')
+          if (/1000\s*倍|1000\s*times/i.test(text)) terms.push('1000倍樣品重量')
+          if (/達到最大力後釋放|最大壓力|最大力/.test(text)) terms.push('最大力')
+          if (!terms.length) {
+            const force = text.match(/(?:\d+(?:\.\d+)?\s*kN)/i)
+            if (force) terms.push(force[0].replace(/\s+/g, ''))
+          }
+          return terms.join(' or ')
+        },
+        extractStartTemp(text) {
+          if (/(room\s*temp|ambient|常溫|室溫|normal\s*temperature)/i.test(text)) return 'RT'
+
+          const start = text.match(/(?:起始|初始|start)\s*(?:溫度|temperature)?\s*[:：]?\s*(-?\d+(?:\.\d+)?)\s*°C/i)
+          if (start) {
+            const t = Number(start[1])
+            if (t >= 20 && t <= 25) return 'RT'
+            return `${t}°C`
+          }
+
+          return 'RT'
+        },
+        extractTargetTemp(text) {
+          const all = [...text.matchAll(/(-?\d+(?:\.\d+)?)\s*°C/gi)].map(m => Number(m[1]))
+          if (!all.length) return ''
+          return `${Math.max(...all)}°C`
+        },
+        extractRate(text) {
+          const m = text.match(/\d+(?:\.\d+)?\s*°C\/?min/gi)
+          if (!m || !m.length) return ''
+          return m[0].replace(/\s+/g, ' ').trim()
+        },
+        extractNeedle(text) {
+          const m = text.match(/([0-9]+(?:\.[0-9]+)?)\s*mm\s*(?:導電\s*)?(?:rod|鋼針|針)/i)
+          if (m) return `${m[1]}mm鋼針`
+          const d = text.match(/(?:φ|Φ)?\s*([0-9]+(?:\.[0-9]+)?)\s*mm/i)
+          return d ? `${d[1]}mm鋼針` : ''
+        },
+        formatEvaluation(row) {
+          // 優先使用翻譯後的繁體中文內容
+          const text = row.evaluation_summary_zh || row.evaluation_summary
+          if (!text) return ''
+          return text.replace(/\n/g, '<br>')
+        },
+        formatEvaluationShort(row) {
+          if (row.document_id === 'SAND2017-6925') {
+            return this.formatSandEvaluationShort(row)
+          }
+          const text = row.evaluation_summary_zh || row.evaluation_summary
+          return this.formatTableShort(text)
+        },
+        formatSandConditionsShort(row) {
+          const rec = this.sandDetailMap[row.item_id]
+          const chunks = []
+
+          if (rec && rec.suggested_conditions) {
+            this.flattenToStrings(rec.suggested_conditions, chunks)
+          }
+
+          if (!chunks.length) {
+            chunks.push(row.conditions_summary_zh || row.conditions_summary || '')
+          }
+
+          const merged = chunks.join(' ; ')
+          const params = this.extractKeyParams(merged)
+          const topic = (row.item_name_zh || '').replace(/建議|測試/g, '').trim() || '測試條件'
+          const method = this.detectMethodZh(merged, topic)
+
+          const lines = []
+          lines.push(`條件: ${topic}`)
+          if (method) {
+            lines.push(`方法: ${method}`)
+          }
+          if (params.length) {
+            lines.push(`關鍵參數: ${params.slice(0, 5).join(', ')}`)
+          } else {
+            const translated = this.translateTableEnglish(merged)
+            lines.push(`關鍵條件: ${this.condenseClause(translated)}`)
+          }
+
+          return lines.map(line => `<div class="mb-0.5">${this.escapeHtml(line)}</div>`).join('')
+        },
+        formatSandEvaluationShort(row) {
+          const text = row.evaluation_summary_zh || row.evaluation_summary
+          if (!text) {
+            return '<div class="mb-0.5">No pass/fail; HSL 趨勢比較</div>'
+          }
+          const translated = this.translateTableEnglish(text)
+          const short = this.condenseClause(translated)
+          return `<div class="mb-0.5">${this.escapeHtml(short)}</div>`
+        },
+        translateTableEnglish(text) {
+          if (!text) return ''
+          return text
+            .replace(/No\s*pass\s*\/\s*fail/ig, 'No pass/fail')
+            .replace(/compare\s+by/ig, '以')
+            .replace(/trend/ig, '趨勢')
+            .replace(/short\s*circuit|short/ig, '短路')
+            .replace(/overcharge/ig, '過充')
+            .replace(/overdischarge|over-discharge/ig, '過放')
+            .replace(/crush/ig, '擠壓')
+            .replace(/penetration/ig, '穿刺')
+            .replace(/thermal\s*ramp|heat/ig, '升溫')
+            .replace(/temperature/ig, '溫度')
+            .replace(/current/ig, '電流')
+            .replace(/voltage/ig, '電壓')
+            .replace(/resistance/ig, '電阻')
+            .replace(/duration|hold/ig, '保持')
+            .replace(/failure/ig, '失效')
+            .replace(/until/ig, 'until')
+            .replace(/\s{2,}/g, ' ')
+            .trim()
+        },
+        extractKeyParams(text) {
+          if (!text) return []
+          const normalized = text
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*minute(s)?/ig, '$1 min')
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*hour(s)?/ig, '$1 h')
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*second(s)?/ig, '$1 s')
+          const paramPattern = /(?:<=|>=|<|>|≈|=|±)?\s*\d+(?:\.\d+)?\s*(?:%SOC|SOC|mΩ|Ω|°C|kPa|MPa|Pa|mV|kV|V|mA|kA|A|C\b|C-rate|mm\/s|mm|min|h|s|Hz|N|kN|kg|g|Wh|mAh|Ah|%)|(?:\d+(?:\.\d+)?\s*\*\s*[A-Za-z][A-Za-z0-9_]*)|(?:[A-Za-z][A-Za-z0-9_]*\s*[/*+-]\s*\d+(?:\.\d+)?)/g
+          return [...new Set((normalized.match(paramPattern) || []).map(x => x.replace(/\s+/g, ' ').trim()).filter(Boolean))]
+        },
+        flattenToStrings(value, out = []) {
+          if (value == null) return out
+          if (Array.isArray(value)) {
+            value.forEach(v => this.flattenToStrings(v, out))
+            return out
+          }
+          if (typeof value === 'object') {
+            Object.values(value).forEach(v => this.flattenToStrings(v, out))
+            return out
+          }
+          out.push(String(value))
+          return out
+        },
+        detectMethodZh(text, fallback = '') {
+          if (!text) return fallback
+          const s = text.toLowerCase()
+          if ((/dc\s*resistance|mω|mΩ|ohm|resistance/.test(s)) && /短路/.test(fallback)) return '依阻值分級短路測試'
+          if (/hard|medium|soft|short/.test(s)) return '依阻值分級短路測試'
+          if (/overcharge/.test(s)) return '分級過充測試'
+          if (/overdischarge|over-discharge/.test(s)) return '過放測試'
+          if (/crush/.test(s)) return '低速擠壓測試'
+          if (/penetration/.test(s)) return '導電針穿刺測試'
+          if (/thermal\s*ramp|heat/.test(s)) return '升溫至失效條件測試'
+          if (/arc/.test(s)) return 'ARC 量熱測試'
+          if (/salt|nacl/.test(s)) return '鹽水浸沒測試'
+          if (/fuel\s*fire/.test(s)) return '燃油火災暴露測試'
+          return fallback
+        },
+        formatTableShort(text) {
+          // 表格欄位：精簡但保留關鍵參數（公式/單位/C-rate）
+          if (!text) return '<div class="mb-0.5 text-gray-500">—</div>'
+
+          const normalized = text
+            .replace(/\*\*(.+?)\*\*/g, '$1')
+            .replace(/\r/g, '')
+            .trim()
+
+          const specialSummary = this.summarizeSpecialPatterns(normalized)
+          if (specialSummary.length) {
+            return specialSummary.map(line => `<div class="mb-0.5">${line}</div>`).join('')
+          }
+
+          const rawClauses = normalized
+            .split(/\n|\|(?!\|)/)
+            .map(x => x.trim())
+            .filter(Boolean)
+
+          const condensed = rawClauses
+            .map(x => this.condenseClause(x))
+            .filter(Boolean)
+
+          const selected = this.pickKeyClauses(condensed)
+
+          if (!selected.length) {
+            return `<div class="mb-0.5">${this.escapeHtml(this.condenseClause(normalized))}</div>`
+          }
+
+          return selected.map(line => `<div class="mb-0.5">${this.escapeHtml(line)}</div>`).join('')
+        },
+        escapeHtml(value) {
+          return String(value)
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;')
+            .replace(/"/g, '&quot;')
+            .replace(/'/g, '&#39;')
+        },
+        summarizeSpecialPatterns(text) {
+          // 溫度循環/溫度曲線等長條件，先輸出可執行的關鍵摘要
+          const isTempProfile = /temperature\s*profile|溫度循環|溫度曲線|temp\s*profile/i.test(text)
+          if (!isTempProfile) return []
+
+          const lines = []
+
+          const soc = text.match(/SOC\s*[:：]\s*([^\n;；]+)/i)
+          if (soc) {
+            lines.push(`SOC: ${soc[1].trim()}`)
+          }
+
+          const cycle = text.match(/循環次數\s*[:：]\s*(\d+)/)
+          const temps = (text.match(/-?\d+(?:\.\d+)?\s*°C/g) || []).map(x => x.replace(/\s+/g, ''))
+          const mins = (text.match(/\d+(?:\.\d+)?\s*min/g) || []).map(x => x.replace(/\s+/g, ''))
+          const ramps = (text.match(/\d+\/\d+\s*°C\/min/g) || []).map(x => x.replace(/\s+/g, ''))
+
+          if (temps.length) {
+            const uniqTemps = [...new Set(temps)]
+            const numeric = uniqTemps.map(t => parseFloat(t.replace('°C', ''))).filter(n => !Number.isNaN(n))
+            const tMin = numeric.length ? Math.min(...numeric) : null
+            const tMax = numeric.length ? Math.max(...numeric) : null
+            const cyclePart = cycle ? `${cycle[1]} cycles, ` : ''
+            const rangePart = (tMin !== null && tMax !== null) ? `${tMin}~${tMax}°C` : uniqTemps.join('/')
+            const holdPart = mins.length ? `, hold ${mins.slice(0, 6).join('/')}` : ''
+            const rampPart = ramps.length ? `, ramp ${[...new Set(ramps)].join(', ')}` : ''
+            lines.push(`Temp profile: ${cyclePart}${rangePart}${holdPart}${rampPart}`)
+          }
+
+          return lines.slice(0, 3)
+        },
+        pickKeyClauses(condensedClauses) {
+          const unique = [...new Set(condensedClauses)]
+          const whitelistPattern = /(C-rate|SOC|Vmax|mΩ|°C|kPa|Hz|mm\/s|NaCl|No pass\/fail|HSL|until|A|V|R|I|t)/i
+
+          const priorityOrder = {
+            'SOC': 1,
+            'Temp': 2,
+            'I': 3,
+            'V': 4,
+            'R': 5,
+            't': 6,
+            '循環次數': 7,
+            'No pass/fail': 8
+          }
+
+          const scored = unique.map((line, idx) => {
+            const label = (line.split(':')[0] || '').trim()
+            const paramHits = (line.match(/(?:<=|>=|<|>|=|±)?\s*\d+(?:\.\d+)?\s*(?:%SOC|SOC|mΩ|Ω|°C|kPa|MPa|Pa|mV|kV|V|mA|kA|A|C\b|mm\/s|mm|min|h|s|Hz|N|kN|kg|g|Wh|mAh|Ah|%)/g) || []).length
+            const whitelistHit = whitelistPattern.test(line) ? 1 : 0
+            const hasLabel = /:/.test(line) ? 1 : 0
+            const key = Object.keys(priorityOrder).find(k => label.includes(k))
+            const order = key ? priorityOrder[key] : 99
+            const score = paramHits * 2 + whitelistHit + hasLabel
+            return { line, idx, order, score }
+          })
+
+          scored.sort((a, b) => {
+            if (a.order !== b.order) return a.order - b.order
+            if (a.score !== b.score) return b.score - a.score
+            return a.idx - b.idx
+          })
+
+          return scored.slice(0, 3).map(x => x.line)
+        },
+        condenseClause(clause) {
+          if (!clause) return ''
+
+          let text = clause
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*minute(s)?/ig, '$1 min')
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*hour(s)?/ig, '$1 h')
+            .replace(/(\d+(?:\.\d+)?)\s*-\s*second(s)?/ig, '$1 s')
+            .replace(/充電終止電壓的\s*1\.1\s*倍/ig, '1.1*Vmax')
+            .replace(/最大(?:允許)?電壓的\s*1\.1\s*倍/ig, '1.1*Vmax')
+            .replace(/room\s*temp(?:erature)?/ig, '室溫')
+            .replace(/no\s*pass\s*\/\s*fail/ig, 'No pass/fail')
+            .replace(/^SOC\s*[:：]/i, 'SOC: ')
+            .replace(/^(溫度|温度|Temperature)\s*[:：]/i, 'Temp: ')
+            .replace(/^(電阻|Resistance)\s*[:：]/i, 'R: ')
+            .replace(/^(電壓|充電\s*電壓|放電\s*電壓|Voltage)\s*[:：]/i, 'V: ')
+            .replace(/^(電流|充電\s*電流|放電\s*電流|Current)\s*[:：]/i, 'I: ')
+            .replace(/^(速度|rate|ramp)\s*[:：]/i, 'Rate: ')
+            .replace(/^(時間|持續時間|Duration)\s*[:：]/i, 't: ')
+            .replace(/\s{2,}/g, ' ')
+            .trim()
+
+          const params = this.extractKeyParams(text)
+          const hasLabel = /[:：]/.test(text)
+          const coreLabels = ['SOC', 'Temp', 'I', 'V', 'R', 'Rate', 't']
+
+          const untilMatch = text.match(/(?:until|直到|直至)\s*([^,，;；|]+)/i)
+          let untilPart = ''
+          if (untilMatch) {
+            const untilTokens = this.extractKeyParams(untilMatch[1]).slice(0, 2)
+            untilPart = untilTokens.length ? `; until ${untilTokens.join(' ')}` : '; until end'
+          }
+
+          if (params.length) {
+            const dedup = [...new Set(params)].slice(0, 4)
+            if (hasLabel) {
+              const [label] = text.split(/[:：]/)
+              const labelTrim = label.trim()
+              if (!coreLabels.includes(labelTrim)) {
+                const value = text.split(/[:：]/).slice(1).join(':').trim()
+                const shortened = value.length > 44 ? value.slice(0, 44) + '…' : value
+                return `${labelTrim}: ${shortened}`
+              }
+              return `${label.trim()}: ${dedup.join(', ')}${untilPart}`
+            }
+            return `${dedup.join(', ')}${untilPart}`
+          }
+
+          if (/No\s*pass\/fail/i.test(text) || /無固定合格|無通過失敗/i.test(text)) {
+            return 'No pass/fail; HSL trend'
+          }
+
+          if (hasLabel) {
+            const [label, ...rest] = text.split(/[:：]/)
+            const value = rest.join(':').trim()
+            if (value) {
+              return `${label.trim()}: ${value.length > 56 ? value.slice(0, 56) + '…' : value}`
+            }
+          }
+
+          const whitelistPattern = /\b(?:C-rate|SOC|Vmax|mΩ|°C|kPa|Hz|mm\/s|NaCl|HSL|No|pass\/fail|until|Temp|V|A|R|I|t)\b/g
+          const placeholders = []
+          const protectedText = text.replace(whitelistPattern, (m) => {
+            const idx = placeholders.push(m) - 1
+            return `§W${idx}§`
+          })
+
+          let cleaned = protectedText
+            .replace(/[A-Za-z][A-Za-z0-9\/_-]*/g, '')
+            .replace(/\s{2,}/g, ' ')
+            .trim()
+            .replace(/§W(\d+)§/g, (_, i) => placeholders[Number(i)] || '')
+
+          if (!cleaned) cleaned = text
+
+          return cleaned.length > 56 ? cleaned.slice(0, 56) + '…' : cleaned
+        },
+        formatSandPopover(rowData) {
+          const rec = this.sandDetailMap[rowData.item_id]
+          if (!rec) {
+            return {
+              conditions: this.formatConditions(rowData),
+              evaluation: this.formatEvaluation(rowData)
+            }
+          }
+
+          const suggested = rec.suggested_conditions
+          let conditionsDetail = ''
+          if (suggested && typeof suggested === 'object' && !Array.isArray(suggested)) {
+            conditionsDetail = Object.entries(suggested)
+              .map(([k, v]) => `<div class="mb-1">• <strong>${k}</strong>：${Array.isArray(v) ? v.join('；') : v}</div>`)
+              .join('')
+          } else if (Array.isArray(suggested)) {
+            conditionsDetail = suggested.map(v => `<div class="mb-1">• ${v}</div>`).join('')
+          } else {
+            conditionsDetail = suggested ? `<div class="mb-1">${suggested}</div>` : ''
+          }
+
+          const measurements = Array.isArray(rec.suggested_measurements)
+            ? rec.suggested_measurements.join('、')
+            : (rec.suggested_measurements || '')
+
+          const conditions = `
+            <div class="mb-2"><strong>目的：</strong>${rec.purpose || '—'}</div>
+            <div class="mb-2"><strong>建議條件：</strong></div>
+            <div class="mb-2">${conditionsDetail || '—'}</div>
+            <div><strong>建議量測：</strong>${measurements || '—'}</div>
+          `
+
+          const evaluation = `
+            <div class="mb-2"><strong>評估依據：</strong>${rec.evaluation_basis || '—'}</div>
+            <div><strong>補充理由：</strong>${rec.rationale || '—'}</div>
+          `
+
+          return { conditions, evaluation }
+        },
+        truncate(text, length) {
+          if (!text) return ''
+          return text.length > length ? text.substring(0, length) + '...' : text
+        },
+        toggleExpand(testId, docId) {
+          const key = `${testId}-${docId}`
+          // Vue 3: 確保響應式更新
+          this.$set(this.expandedCells, key, !this.expandedCells[key])
+        },
+        toggleEdit(testId, docId) {
+          const key = `${testId}-${docId}`
+          const group = this.groupedComparisonRows.find(g => g.testId === testId)
+          if (group && group.rows[docId]) {
+            this.editBackup[key] = {
+              conditions: group.rows[docId].conditions_summary,
+              evaluation: group.rows[docId].evaluation_summary
+            }
+            this.editingCells[key] = true
+          }
+        },
+        saveEdit(testId, docId) {
+          const key = `${testId}-${docId}`
+          delete this.editingCells[key]
+          delete this.editBackup[key]
+          this.saveToLocalStorage()
+        },
+        cancelEdit(testId, docId) {
+          const key = `${testId}-${docId}`
+          const group = this.groupedComparisonRows.find(g => g.testId === testId)
+          if (group && group.rows[docId] && this.editBackup[key]) {
+            group.rows[docId].conditions_summary = this.editBackup[key].conditions
+            group.rows[docId].evaluation_summary = this.editBackup[key].evaluation
+          }
+          delete this.editingCells[key]
+          delete this.editBackup[key]
+        },
+        showPopover(testId, docId) {
+          // 如果已經打開且點擊同一個，則關閉
+          if (this.activePopover && this.activePopover.testId === testId && this.activePopover.docId === docId) {
+            this.activePopover = null
+            this.activePopoverData = {}
+            return
+          }
+          // 獲取數據
+          const group = this.groupedComparisonRows.find(g => g.testId === testId)
+          if (!group || !group.rows[docId]) return
+          
+          const rowData = group.rows[docId]
+          
+          // 設置懸浮視窗數據
+          const sandDetails = rowData.document_id === 'SAND2017-6925'
+            ? this.formatSandPopover(rowData)
+            : null
+
+          this.activePopover = { testId, docId }
+          this.activePopoverData = {
+            section: rowData.section,
+            conditions: sandDetails ? sandDetails.conditions : this.formatConditions(rowData),
+            evaluation: sandDetails ? sandDetails.evaluation : this.formatEvaluation(rowData)
+          }
+        },
+        closePopover() {
+          this.activePopover = null
+          this.activePopoverData = {}
+        },
+        downloadJSON() {
+          const data = {
+            catalog: this.catalog,
+            comparisonRows: this.comparisonRows,
+            exportedAt: new Date().toISOString()
+          }
+          const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' })
+          const url = URL.createObjectURL(blob)
+          const a = document.createElement('a')
+          a.href = url
+          a.download = `standard-dictionary-${new Date().toISOString().split('T')[0]}.json`
+          a.click()
+          URL.revokeObjectURL(url)
+        },
+        uploadJSON(event) {
+          const file = event.target.files[0]
+          if (!file) return
+          const reader = new FileReader()
+          reader.onload = (e) => {
+            try {
+              const data = JSON.parse(e.target.result)
+              if (data.catalog && data.comparisonRows) {
+                this.catalog = data.catalog
+                this.comparisonRows = data.comparisonRows
+                this.saveToLocalStorage()
+                alert('JSON 上傳成功！')
+              } else {
+                alert('無效的 JSON 格式')
+              }
+            } catch (error) {
+              alert('讀取 JSON 失敗：' + error.message)
+            }
+          }
+          reader.readAsText(file)
+          event.target.value = ''
+        },
+        saveToLocalStorage() {
+          const state = {
+            catalog: this.catalog,
+            comparisonRows: this.comparisonRows,
+            selectedDocs: this.selectedDocs,
+            filters: this.filters,
+            savedAt: new Date().toISOString()
+          }
+          localStorage.setItem('standardDictionaryState', JSON.stringify(state))
+          console.log('狀態已保存到 localStorage')
+        },
+        loadFromLocalStorage() {
+          const saved = localStorage.getItem('standardDictionaryState')
+          if (saved) {
+            try {
+              const state = JSON.parse(saved)
+              if (state.catalog) this.catalog = state.catalog
+              if (state.comparisonRows) this.comparisonRows = state.comparisonRows
+              if (state.selectedDocs) this.selectedDocs = state.selectedDocs
+              if (state.filters) this.filters = state.filters
+              console.log('已從 localStorage 還原狀態')
+            } catch (error) {
+              console.error('讀取 localStorage 失敗:', error)
+            }
+          }
+        },
+        clearLocalStorage() {
+          if (confirm('確定要清除儲存的狀態嗎？')) {
+            localStorage.removeItem('standardDictionaryState')
+            alert('狀態已清除')
+            location.reload()
+          }
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>

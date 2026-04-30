@@ -1,0 +1,345 @@
+{
+  "standard_id": "UL-2056",
+  "filename": "s2056_1.md",
+  "full_name": "ANSI/CAN/UL 2056:2025 - Standard for Safety for Power Banks (First Edition)",
+  "publication_date": "2024-10-22 (First Edition), 2025-02-18 (Revisions)",
+  "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
+  "li_applicable": true,
+  "test_count": 15,
+  "battery_types": ["Lithium", "Nickel"],
+  "power_limits": {
+    "input": "≤60 Vdc or AC mains (direct plug-in)",
+    "output": "≤60 Vdc",
+    "watt_hour": "≤100 Wh"
+  },
+  "ocr_quality": "良好（PDF 直接提取，英文內容完整，但部分頁面有版權水印）",
+  "tests": [
+    {
+      "test_id": "ELEC-01",
+      "test_name_zh": "輸出端口短路測試",
+      "test_name_en": "Short-Circuit of Output Port Test",
+      "section": "12",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "soc": "充滿電",
+        "resistance": "80 ± 20 mΩ",
+        "temperatures": ["20 ± 5°C", "55 ± 5°C"],
+        "duration": "直到起火/爆炸、完全放電、或溫度恢復至環境±5°C",
+        "fault_condition": "負載電路中任何保護裝置的單一故障",
+        "paper_test": "5 個樣品中的 1 個在軟木表面覆蓋薄紙和粗棉布下測試（20 mΩ）",
+        "simultaneous_io_test": "若支持輸入時輸出，需同時進行最大充電速率輸入和 20 mΩ 輸出負載測試",
+        "direct_battery_discharge": "鋰電池化學：1 個樣品以 1.2×最大連續放電電流直接放電（繞過轉換電路）"
+      },
+      "criteria": {
+        "pass_conditions": ["no_vent", "no_explosion", "no_fire", "no_chemical_leak", "cell_temp_le_75C_lithium", "paper_cloth_no_charring", "discharge_current_within_limit"],
+        "description": "應無排氣、無爆炸、無起火、無化學洩漏；鋰電池溫度≤75°C；薄紙和粗棉布不應燒焦；放電電流不應超過最大連續放電電流"
+      },
+      "exemptions": [],
+      "original_text_snippet": "12 Short-Circuit of Output Port Test: Fully charged sample short-circuited with 80±20 mΩ at 20°C and 55°C. Non-compliant: vent, explosion, fire, chemical leak. Cell temp ≤75°C for lithium."
+    },
+    {
+      "test_id": "ELEC-02",
+      "test_name_zh": "電池異常充電測試",
+      "test_name_en": "Abnormal Charging of the Battery Test",
+      "section": "13",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "soc": "以 0.2C/1h 放電至終止電壓",
+        "charging_current": "3×電池最大電流（非行動電源最大電流）",
+        "charging_voltage": "製造商規定的最大異常充電電壓",
+        "duration": "達到充電結束條件後再加 7 h",
+        "fault_condition": "電池保護電路中單一故障（可能導致過充電）",
+        "protective_device": "可重置保護裝置允許重置並繼續測試（至少 10 次循環）",
+        "deep_discharge_test": "鋰電池化學：1 個樣品放電至比終止電壓深 10%（繞過轉換電路）",
+        "overcharge_current_test": "鋰電池化學：1 個樣品以 1.2×最大充電電流充電（繞過轉換電路）"
+      },
+      "criteria": {
+        "pass_conditions": ["no_vent", "no_explosion", "no_fire", "no_chemical_leak", "cell_temp_le_90C_lithium", "voltage_within_limit", "current_within_limit"],
+        "description": "應無排氣、無爆炸、無起火、無化學洩漏；鋰電池溫度≤90°C；電壓/電流不應超出運行區域限值"
+      },
+      "exemptions": [],
+      "original_text_snippet": "13 Abnormal Charging Test: 3×battery max current charging. End-of-charge + 7 h. Non-compliant: vent, explosion, fire, chemical leak. Cell temp ≤90°C for lithium."
+    },
+    {
+      "test_id": "ELEC-03",
+      "test_name_zh": "電池濫用過充電測試",
+      "test_name_en": "Abusive Overcharge of the Battery Test",
+      "section": "14",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "charging_current": "10×C5 安培率",
+        "voltage": "足以維持 10×C5 安培率的供電電壓",
+        "duration": "直到爆炸、排氣、保護裝置啟動且溫度穩定",
+        "fault_condition": "電池保護電路中單一故障",
+        "protective_device": "可重置保護裝置允許重置至少 10 次",
+        "additional_test": "至少 1 個樣品以 5×C5 安培率測試",
+        "overcharge_voltage_test": "鋰電池化學：1 個樣品以最大充電電流 Ic、1.1 倍上限充電電壓充電（繞過轉換電路）"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "cell_temp_le_90C_lithium", "voltage_within_limit"],
+        "description": "應無爆炸、無起火；鋰電池溫度≤90°C；電壓不應超出上限充電電壓"
+      },
+      "exemptions": [],
+      "original_text_snippet": "14 Abusive Overcharge Test: 10×C5 rate charging until explosion, vent, or protection operates. Non-compliant: explosion, fire. Cell temp ≤90°C for lithium."
+    },
+    {
+      "test_id": "ELEC-04",
+      "test_name_zh": "電池強制放電測試",
+      "test_name_en": "Forced-Discharge of the Cells Test",
+      "section": "15",
+      "test_objects": ["CELL"],
+      "applicability": "僅適用於多串聯電池配置的行動電源",
+      "conditions": {
+        "setup": "完全放電的電池與完全充電的同類型電池串聯",
+        "series_cells": "串聯電池數量 = 電池組總電池數 - 1",
+        "parallel_strings": "串聯電池數量 = 電池組總電池數 - 放電並聯串電池數",
+        "resistance": "80 ± 20 mΩ 銅線",
+        "duration": "直到起火/爆炸、完全放電、或溫度恢復至環境±10°C",
+        "fault_condition": "放電電路中單一故障"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire"],
+        "description": "應無爆炸、無起火"
+      },
+      "exemptions": [
+        "僅適用於多串聯配置的行動電源"
+      ],
+      "original_text_snippet": "15 Forced-Discharge Test: For multi-cell series applications. Discharged cell connected in series with charged cells, short-circuited with 80±20 mΩ. Non-compliant: explosion, fire."
+    },
+    {
+      "test_id": "THERM-01",
+      "test_name_zh": "溫度測試和 BMS 驗證",
+      "test_name_en": "Temperature Test and BMS Verification",
+      "section": "16",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "output_test": "充滿電的行動電源以輸出端口最大額定電流恆定電阻負載放電",
+        "input_test": "完全放電的行動電源以製造商規定的最大電流充電",
+        "stabilization": "連續 3 次讀數（間隔≥15 min）無進一步增加",
+        "protective_devices": "測試期間保護裝置不應啟動",
+        "monitoring": "監測溫度和電池電壓",
+        "formula": "Ti ≤ Tmax + Tamb - Tma"
+      },
+      "criteria": {
+        "pass_conditions": ["within_limits", "voltage_within_range"],
+        "description": "溫度敏感元件的溫度不應超過表 16.1/16.2 規定的限值；電池電壓不應低於終止電壓（放電）或高於上限充電電壓（充電）"
+      },
+      "exemptions": [],
+      "original_text_snippet": "16 Temperature Test and BMS Verification: Input/output loading until thermal stabilization. Temperatures and cell voltages shall be within limits."
+    },
+    {
+      "test_id": "ELEC-16",
+      "test_name_zh": "電源輸入測試",
+      "test_name_en": "Power Input Test",
+      "section": "17",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "load": "最大正常負載（包括所有可能模式：電池不同 SOC 狀態、輸出端口空載/滿載、輔助功能如手電筒/揚聲器等）",
+        "measurement": "測量輸入電流"
+      },
+      "criteria": {
+        "pass_conditions": ["input_current_le_110pct_rated"],
+        "description": "輸入電流不應超過行動電源標稱輸入電流額定值的 110%"
+      },
+      "exemptions": [],
+      "original_text_snippet": "17 Power Input Test: Input current shall not exceed 110% of marked input current rating under maximum normal load."
+    },
+    {
+      "test_id": "ELEC-17",
+      "test_name_zh": "輸出端口過載測試",
+      "test_name_en": "Overload of Output Ports Test",
+      "section": "18",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "soc": "按製造商規格充滿電",
+        "setup": "覆蓋單層粗棉布，放置在覆蓋單層薄紙的軟木板上",
+        "load": "每個輸出引腳負載至最大功率",
+        "duration": "1 小時或電池組允許的最大運行時間（取較短者）",
+        "simultaneous_io": "若支持輸入時輸出，需同時進行最大充電速率輸入"
+      },
+      "criteria": {
+        "pass_conditions": ["no_vent", "no_explosion", "no_fire", "cloth_paper_intact", "cell_temp_within_limit"],
+        "description": "應無排氣、無爆炸、無起火；粗棉布和薄紙應保持完好（無變色或輕微燒焦）；電池溫度不應超過製造商規定的最高溫度"
+      },
+      "exemptions": [],
+      "original_text_snippet": "18 Overload of Output Ports Test: Each output pin loaded to max power for 1 h. Covered with cheesecloth on tissue paper. Non-compliant: vent, explosion, fire, charring."
+    },
+    {
+      "test_id": "FIRE-02",
+      "test_name_zh": "光伏電池可燃性測試",
+      "test_name_en": "Flammability of Photovoltaic Cells Test",
+      "section": "19",
+      "test_objects": ["POWER_BANK"],
+      "applicability": "僅適用於帶整體光伏電池的行動電源",
+      "conditions": {
+        "soc": "按製造商規格充滿電",
+        "setup": "覆蓋單層粗棉布，放置在覆蓋單層薄紙的軟木板上",
+        "fault_condition": "單一故障可能導致光伏電池可燃性問題（如電池反向饋電）",
+        "duration": "1 小時"
+      },
+      "criteria": {
+        "pass_conditions": ["no_vent", "no_explosion", "no_fire", "cloth_paper_intact"],
+        "description": "電池應無排氣、無爆炸、無起火；粗棉布和薄紙應保持完好"
+      },
+      "exemptions": [
+        "僅適用於帶光伏電池的行動電源"
+      ],
+      "original_text_snippet": "19 Flammability of Photovoltaic Cells Test: For power banks with integral PV cells. Single fault for 1 h. Non-compliant: vent, explosion, fire, charring."
+    },
+    {
+      "test_id": "PERF-01",
+      "test_name_zh": "容量驗證測試",
+      "test_name_en": "Capacity Verification Test",
+      "section": "20",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "test_standard": "鋰電池：IEC 61960-3 Clause 7.3.1；鎳電池：IEC 61951-2 Clause 7.3.2.3",
+        "discharge_current": "輸出端口額定電流",
+        "termination": "放電至輸出端口終止電壓"
+      },
+      "criteria": {
+        "pass_conditions": ["capacity_within_spec"],
+        "description": "標稱電容量應符合 IEC 標準規定"
+      },
+      "exemptions": [],
+      "original_text_snippet": "20 Capacity Verification Test: Discharge at rated current to end-of-discharge voltage. Capacity shall comply with IEC 61960-3 (lithium) or IEC 61951-2 (nickel)."
+    },
+    {
+      "test_id": "MECH-27",
+      "test_name_zh": "穩態均勻力測試",
+      "test_name_en": "Steady Uniform Force Test",
+      "section": "22",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "soc": "充滿電",
+        "force": "250 ± 10 N (56 ± 2 lbf)",
+        "rate": "10 ± 2.5 N/s 速率施加",
+        "duration": "保持 30 秒",
+        "tool": "直徑 30 mm (1.2 英寸) 圓形平面",
+        "surfaces": "頂部、底部、側面（圓柱型需固定防止滾動，旋轉 90°測試各側面）",
+        "post_test": "測試後 6 小時檢查"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_exposure", "no_separation", "no_vent", "no_leak"],
+        "description": "應無爆炸、無起火、外殼不應破裂至電芯或保護裝置暴露、外殼不應分離、無排氣、無洩漏"
+      },
+      "exemptions": [],
+      "original_text_snippet": "22 Steady Uniform Force Test: 250±10 N for 30 s on top, bottom, sides. Examine after 6 h. Non-compliant: explosion, fire, exposure, separation, vent, leak."
+    },
+    {
+      "test_id": "MECH-29",
+      "test_name_zh": "彎曲力測試",
+      "test_name_en": "Flexing Force Test",
+      "section": "23",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "soc": "充滿電",
+        "samples": "2 個樣品（第二個旋轉 180°）",
+        "setup": "行動電源放置在兩端 3.175 mm (1/8 英寸) 金屬棒上，中心放置 12.7 mm (1/2 英寸) 金屬棒",
+        "force": "250 ± 10 N (56 ± 2 lbf)",
+        "rate": "10 N/s ± 2.5 N 速率施加",
+        "duration": "保持 5 秒",
+        "post_test": "測試後 6 小時檢查",
+        "exemption": "所有外部尺寸>40 mm (1.6 英寸) 的行動電源不適用"
+      },
+      "criteria": {
+        "pass_conditions": ["no_explosion", "no_fire", "no_exposure", "no_vent", "no_leak"],
+        "description": "應無爆炸、無起火、外殼不應破裂至電芯或保護裝置暴露、無排氣、無洩漏"
+      },
+      "exemptions": [
+        "所有外部尺寸>40 mm 的行動電源不適用"
+      ],
+      "original_text_snippet": "23 Flexing Force Test: 2 samples (one rotated 180°). 250±10 N for 5 s using metal rods. Examine after 6 h. Non-compliant: explosion, fire, exposure, vent, leak."
+    },
+    {
+      "test_id": "MECH-28",
+      "test_name_zh": "模應力釋放測試",
+      "test_name_en": "Mold Stress Relief Test",
+      "section": "24",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "samples": "3 個樣品",
+        "temperature": "70 ± 1°C (158 ± 2°F) 或 T_max + 10°C（若 T_max > 60°C）",
+        "duration": "7 小時（循環空氣烤箱）",
+        "preparation": "完全放電或使用假電池防止過熱",
+        "post_test": "冷卻至室溫後檢查"
+      },
+      "criteria": {
+        "pass_conditions": ["no_exposure", "no_crack", "no_warp", "no_melt"],
+        "description": "外殼不應破裂、翹曲、熔化至電芯或保護裝置暴露"
+      },
+      "exemptions": [],
+      "original_text_snippet": "24 Mold Stress Relief Test: 70°C (or T_max+10°C) for 7 h. Non-compliant: crack, warp, melt exposing cells or protection."
+    },
+    {
+      "test_id": "MECH-06",
+      "test_name_zh": "跌落衝擊測試",
+      "test_name_en": "Drop Impact Test",
+      "section": "25",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "soc": "充滿電",
+        "height": "1 m (3.28 英尺)",
+        "drop_count": "每個樣品 3 次（獨特方向）",
+        "samples": "3 個樣品",
+        "surface": "混凝土表面",
+        "orientation": "最可能產生不利結果的位置",
+        "cold_conditioning": "若用於<5°C 環境的塑料外殼行動電源，需先在 0°C 或製造商規定的最低溫度調節 3 小時",
+        "post_test": "測試後 6 小時檢查"
+      },
+      "criteria": {
+        "pass_conditions": ["no_vent", "no_explosion", "no_fire", "no_leak", "protection_maintained", "no_crack", "no_separation"],
+        "description": "應無排氣、無爆炸、無起火、無洩漏、保護裝置完整性維持、外殼不應破裂、蓋子不應分離"
+      },
+      "exemptions": [],
+      "original_text_snippet": "25 Drop Impact Test: 3 samples dropped 3 times from 1 m onto concrete. Examine after 6 h. Non-compliant: vent, explosion, fire, leak, protection failure."
+    },
+    {
+      "test_id": "LABEL-01",
+      "test_name_zh": "標籤耐久性測試",
+      "test_name_en": "Label Permanence Test",
+      "section": "26",
+      "test_objects": ["POWER_BANK"],
+      "conditions": {
+        "procedure": ["用浸水的布手擦 15 秒", "用浸石油精（脂肪族溶劑己烷）的布手擦 15 秒"],
+        "alternative": "可使用試劑級己烷（≥85% 正己烷）替代"
+      },
+      "criteria": {
+        "pass_conditions": ["legible", "no_damage", "not_easily_removable"],
+        "description": "標籤應保持清晰、無損壞（包括捲曲）、不易手動移除"
+      },
+      "exemptions": [
+        "已按先前評估計劃評估的粘合劑標籤可豁免"
+      ],
+      "original_text_snippet": "26 Label Permanence Test: Label rubbed 15 s with water-soaked cloth, then 15 s with petroleum spirit. Non-compliant: illegible, damaged, easily removable."
+    }
+  ],
+  "exemptions_summary": [
+    {
+      "test_id": "Forced-Discharge Test (15)",
+      "exemption": "僅適用於多串聯配置的行動電源"
+    },
+    {
+      "test_id": "Flammability of Photovoltaic Cells Test (19)",
+      "exemption": "僅適用於帶整體光伏電池的行動電源"
+    },
+    {
+      "test_id": "Flexing Force Test (23)",
+      "exemption": "所有外部尺寸>40 mm 的行動電源不適用"
+    },
+    {
+      "test_id": "Drop Impact Test (25)",
+      "exemption": "若用於<5°C 環境的塑料外殼行動電源，需先進行冷調節"
+    },
+    {
+      "test_id": "Label Permanence Test (26)",
+      "exemption": "已按先前評估計劃評估的粘合劑標籤可豁免"
+    }
+  ],
+  "metadata": {
+    "extracted_by": "Beta (OpenClaw Agent)",
+    "extraction_date": "2026-04-18 02:45",
+    "extraction_method": "Manual reading and analysis of complete .md file (PDF extraction)",
+    "ocr_quality_notes": "OCR 品質良好，使用 PDF 直接提取，英文內容完整，章節編號清晰。UL 2056 是行動電源（便携式 USB 充電器）的專用安全標準，第一版 2024-10-22 發布，2025-02-18 修訂（外殼要求）。涵蓋鋰電池和鎳電池，功率限制≤60 Vdc 輸入/輸出、≤100 Wh。測試涵蓋電氣、溫度、機械、火災、標籤等。"
+  }
+}
