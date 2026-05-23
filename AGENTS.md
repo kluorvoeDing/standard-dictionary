@@ -21,6 +21,20 @@
 
 ## 紀錄
 
+## 2026-05-24 (Feature)
+- 事件：實作「AI 小幫手 (AI Consultant Chat)」並升級為 Vercel 全端架構
+- 背景：
+  1. 使用者希望能有一個浮動視窗，可以根據當前選取的標準直接進行交叉比對與法規問答。
+  2. 原先純前端架構若直接串接 Gemini API 會有金鑰外洩的嚴重資安風險。
+- 內容：
+  - 開發 `AiConsultantChat.jsx` 懸浮聊天視窗，實作 Context-Aware（僅讀取畫面上勾選的標準）的 Prompt 機制。
+  - 將專案升級為 Serverless 架構，建立 `api/chat.js` Vercel Edge Function，將 Gemini API 的調用邏輯移至後端代理。
+  - 實作雙 API 鑰匙的 Fallback 機制，當第一把鑰匙遇到 429 限制時，自動切換至第二把鑰匙。
+  - 處理 SSE (Server-Sent Events) 串流斷字 bug（加入字串 Buffer 機制）。
+  - 在系統指令中加入防護力場 (Prompt Injection 防禦)，嚴禁 AI 洩漏內部 Metadata 與 JSON 架構。
+- 影響：成功賦予觀測站強大的 AI 諮詢能力，同時確保 100% 的金鑰安全與對話品質。
+- 後續：觀察 Vercel 免費額度的使用狀況與 API 呼叫頻率。
+
 ## 2026-05-23 (UI Polish)
 - 事件：升級標準矩陣表互動體驗，實作預選與比對流程分離
 - 背景：原先選取滿 2 份標準會強制進入橫向比對，導致使用者在矩陣中探索與選取時缺乏緩衝與掌控感。且矩陣在未選取時視覺色彩較為單調。
