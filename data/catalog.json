@@ -45,7 +45,8 @@
     "is_latest": true,
     "latest_version": "2017版 (最新指南)",
     "versions_behind": 0,
-    "base_standard_id": "SAND2017-6925"
+    "base_standard_id": "SAND2017-6925",
+    "prerequisites": {}
   },
   {
     "document_id": "AIS-038",
@@ -93,7 +94,13 @@
     "is_latest": true,
     "latest_version": "Rev 2 (2020)",
     "versions_behind": 0,
-    "base_standard_id": "AIS-038"
+    "base_standard_id": "AIS-038",
+    "prerequisites": {
+      "CELL": [
+        "AIS-038",
+        "IS 16893"
+      ]
+    }
   },
   {
     "document_id": "AIS-156",
@@ -141,7 +148,12 @@
     "is_latest": true,
     "latest_version": "2020 (Amd 3)",
     "versions_behind": 0,
-    "base_standard_id": "AIS-156"
+    "base_standard_id": "AIS-156",
+    "prerequisites": {
+      "CELL": [
+        "IS 16893"
+      ]
+    }
   },
   {
     "document_id": "GB-43854",
@@ -188,7 +200,8 @@
     "is_latest": true,
     "latest_version": "2024版",
     "versions_behind": 0,
-    "base_standard_id": "GB-43854"
+    "base_standard_id": "GB-43854",
+    "prerequisites": {}
   },
   {
     "document_id": "GB31241",
@@ -236,7 +249,8 @@
     "is_latest": true,
     "latest_version": "2022版",
     "versions_behind": 0,
-    "base_standard_id": "GB31241"
+    "base_standard_id": "GB31241",
+    "prerequisites": {}
   },
   {
     "document_id": "GB38031",
@@ -285,7 +299,8 @@
     "is_latest": true,
     "latest_version": "2025版",
     "versions_behind": 0,
-    "base_standard_id": "GB38031"
+    "base_standard_id": "GB38031",
+    "prerequisites": {}
   },
   {
     "document_id": "GB44240",
@@ -333,7 +348,8 @@
     "is_latest": true,
     "latest_version": "2024版",
     "versions_behind": 0,
-    "base_standard_id": "GB44240"
+    "base_standard_id": "GB44240",
+    "prerequisites": {}
   },
   {
     "document_id": "GBT-36276",
@@ -381,7 +397,8 @@
     "is_latest": true,
     "latest_version": "2023版",
     "versions_behind": 0,
-    "base_standard_id": "GBT-36276"
+    "base_standard_id": "GBT-36276",
+    "prerequisites": {}
   },
   {
     "document_id": "IEC62133-2",
@@ -429,7 +446,8 @@
     "is_latest": true,
     "latest_version": "Edition 1.0 (2017) + AMD1 (2021)",
     "versions_behind": 0,
-    "base_standard_id": "IEC62133-2"
+    "base_standard_id": "IEC62133-2",
+    "prerequisites": {}
   },
   {
     "document_id": "IEC62619",
@@ -477,7 +495,8 @@
     "is_latest": true,
     "latest_version": "Edition 2.0 (2022)",
     "versions_behind": 0,
-    "base_standard_id": "IEC62619"
+    "base_standard_id": "IEC62619",
+    "prerequisites": {}
   },
   {
     "document_id": "UL-1973",
@@ -524,7 +543,8 @@
     "is_latest": true,
     "latest_version": "Third Edition (2022)",
     "versions_behind": 0,
-    "base_standard_id": "UL-1973"
+    "base_standard_id": "UL-1973",
+    "prerequisites": {}
   },
   {
     "document_id": "UL-2054",
@@ -571,7 +591,8 @@
     "is_latest": false,
     "latest_version": "Third Edition (2021, rev 2025)",
     "versions_behind": 1,
-    "base_standard_id": "UL-2054"
+    "base_standard_id": "UL-2054",
+    "prerequisites": {}
   },
   {
     "document_id": "UL-2056",
@@ -618,7 +639,8 @@
     "is_latest": true,
     "latest_version": "First Edition (2024, rev 2025)",
     "versions_behind": 0,
-    "base_standard_id": "UL-2056"
+    "base_standard_id": "UL-2056",
+    "prerequisites": {}
   },
   {
     "document_id": "UL-2271",
@@ -664,7 +686,8 @@
     "is_latest": true,
     "latest_version": "Third Edition (2023)",
     "versions_behind": 0,
-    "base_standard_id": "UL-2271"
+    "base_standard_id": "UL-2271",
+    "prerequisites": {}
   },
   {
     "document_id": "UL-3030",
@@ -713,7 +736,8 @@
     "is_latest": true,
     "latest_version": "First Edition (2018, reaff 2024)",
     "versions_behind": 0,
-    "base_standard_id": "UL-3030"
+    "base_standard_id": "UL-3030",
+    "prerequisites": {}
   },
   {
     "document_id": "UL-9540",
@@ -759,7 +783,8 @@
     "is_latest": true,
     "latest_version": "Third Edition (2023, rev 2025)",
     "versions_behind": 0,
-    "base_standard_id": "UL-9540"
+    "base_standard_id": "UL-9540",
+    "prerequisites": {}
   },
   {
     "document_id": "UL1642",
@@ -805,7 +830,8 @@
     "is_latest": false,
     "latest_version": "Sixth Edition (rev 2022)",
     "versions_behind": 1,
-    "base_standard_id": "UL1642"
+    "base_standard_id": "UL1642",
+    "prerequisites": {}
   },
   {
     "document_id": "ULC-2580",
@@ -853,7 +879,8 @@
     "is_latest": true,
     "latest_version": "Third Edition (2020, rev 2022)",
     "versions_behind": 0,
-    "base_standard_id": "ULC-2580"
+    "base_standard_id": "ULC-2580",
+    "prerequisites": {}
   },
   {
     "document_id": "UN38.3",
@@ -901,7 +928,8 @@
     "is_latest": false,
     "latest_version": "Rev. 8 (2023)",
     "versions_behind": 2,
-    "base_standard_id": "UN38.3"
+    "base_standard_id": "UN38.3",
+    "prerequisites": {}
   },
   {
     "document_id": "UL-9540A",
@@ -950,7 +978,8 @@
     "is_latest": true,
     "latest_version": "Fifth Edition (2025)",
     "versions_behind": 0,
-    "base_standard_id": "UL-9540A"
+    "base_standard_id": "UL-9540A",
+    "prerequisites": {}
   },
   {
     "document_id": "UL1642-2022",
@@ -996,7 +1025,8 @@
     "is_latest": true,
     "latest_version": "Sixth Edition (rev 2022)",
     "versions_behind": 0,
-    "base_standard_id": "UL1642"
+    "base_standard_id": "UL1642",
+    "prerequisites": {}
   },
   {
     "document_id": "UL2743",
@@ -1026,6 +1056,7 @@
     "test_count_v2": 3,
     "is_latest": true,
     "latest_version": "Third Edition (2025)",
-    "versions_behind": 0
+    "versions_behind": 0,
+    "prerequisites": {}
   }
 ]

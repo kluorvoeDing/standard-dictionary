@@ -425,12 +425,16 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
                 const activeDocId = activeVersions[baseId] || (versions[0] ? versions[0].document_id : baseId);
                 const recordsForActiveVersion = group.records[baseId] ? group.records[baseId][activeDocId] : null;
 
+                const activeDoc = versions.find(v => v.document_id === activeDocId);
+                const prerequisites = activeDoc && activeDoc.prerequisites ? activeDoc.prerequisites : {};
+
                 return (
                   <StandardColumn 
                     key={`${group.id}-${baseId}`} 
                     docId={activeDocId}
                     testRecords={recordsForActiveVersion} 
                     filterObjects={filterObjects}
+                    prerequisites={prerequisites}
                   />
                 );
               })}

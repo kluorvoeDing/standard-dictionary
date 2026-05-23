@@ -218,7 +218,7 @@ function SingleCard({ testRecord }) {
   );
 }
 
-export default function StandardColumn({ testRecords, filterObjects }) {
+export default function StandardColumn({ testRecords, filterObjects, prerequisites }) {
   const emptyStyle = {
     padding: '0.5rem',
     backgroundColor: 'rgba(128, 128, 128, 0.05)',
@@ -233,11 +233,41 @@ export default function StandardColumn({ testRecords, filterObjects }) {
     minHeight: '100px'
   };
 
+  // Helper to generate precise tooltip based on prerequisites
+  const getTooltipContent = (isMissingLevel) => {
+    let preReqList = [];
+    if (prerequisites && filterObjects && filterObjects.length > 0) {
+      filterObjects.forEach(obj => {
+        // We match exactly the active filter objects (e.g. CELL, PACK_SYSTEM)
+        // If the object matches a key in prerequisites (or simplified like 'PACK' for 'PACK_SYSTEM'), get it
+        const objKey = obj.replace('_SYSTEM', ''); // Basic mapping for 'PACK_SYSTEM' to 'PACK', etc. if needed
+        if (prerequisites[obj]) {
+          preReqList.push(...prerequisites[obj]);
+        } else if (prerequisites[objKey]) {
+          preReqList.push(...prerequisites[objKey]);
+        }
+      });
+    }
+    
+    // Remove duplicates
+    preReqList = [...new Set(preReqList)];
+
+    if (preReqList.length > 0) {
+      return `本標準未包含此層級測試。實務上取得本標準認證前，該層級樣品通常需先通過 ${preReqList.join(' 或 ')} 等認證。`;
+    }
+
+    // Default fallbacks
+    if (isMissingLevel) {
+      return "本標準包含此測試，但不適用於您篩選的樣品層級。請確認該層級是否被標準豁免，或是否需依賴更底層之前提標準認證。";
+    }
+    return "本標準可能未規範此層級之獨立測試。實務上，該層級可能需要滿足其他前提標準或元件認證。";
+  };
+
   if (!testRecords || testRecords.length === 0) {
     return (
       <div 
         style={emptyStyle} 
-        title="本標準可能未規範此層級之獨立測試。實務上，該層級可能需要滿足其他前提標準或元件認證（例如：系統端標準常要求電芯需先通過 UL1642 或 IEC62133 認證）。"
+        title={getTooltipContent(false)}
       >
         無此測試
         <span style={{ marginLeft: '4px', fontSize: '10px', cursor: 'help' }}>ⓘ</span>
@@ -257,7 +287,7 @@ export default function StandardColumn({ testRecords, filterObjects }) {
     return (
       <div 
         style={emptyStyle}
-        title="本標準包含此測試，但不適用於您篩選的樣品層級。請確認該層級是否被標準豁免，或是否需依賴更底層之前提標準認證。"
+        title={getTooltipContent(true)}
       >
         樣品層級不符
         <span style={{ marginLeft: '4px', fontSize: '10px', cursor: 'help' }}>ⓘ</span>
