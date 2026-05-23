@@ -544,7 +544,16 @@
     "latest_version": "Third Edition (2022)",
     "versions_behind": 0,
     "base_standard_id": "UL-1973",
-    "prerequisites": {}
+    "prerequisites": {
+      "CELL": [
+        "UL 1642",
+        "IEC 62133",
+        "UL 2580"
+      ],
+      "MODULE": [
+        "UL 2580"
+      ]
+    }
   },
   {
     "document_id": "UL-2054",
@@ -592,7 +601,11 @@
     "latest_version": "Third Edition (2021, rev 2025)",
     "versions_behind": 1,
     "base_standard_id": "UL-2054",
-    "prerequisites": {}
+    "prerequisites": {
+      "CELL": [
+        "UL 1642"
+      ]
+    }
   },
   {
     "document_id": "UL-2056",
@@ -640,7 +653,11 @@
     "latest_version": "First Edition (2024, rev 2025)",
     "versions_behind": 0,
     "base_standard_id": "UL-2056",
-    "prerequisites": {}
+    "prerequisites": {
+      "CELL": [
+        "UL 1642"
+      ]
+    }
   },
   {
     "document_id": "UL-2271",
@@ -687,7 +704,13 @@
     "latest_version": "Third Edition (2023)",
     "versions_behind": 0,
     "base_standard_id": "UL-2271",
-    "prerequisites": {}
+    "prerequisites": {
+      "CELL": [
+        "UL 1642",
+        "UL 2271 (Cell tests)",
+        "UL 2580"
+      ]
+    }
   },
   {
     "document_id": "UL-3030",
@@ -737,7 +760,11 @@
     "latest_version": "First Edition (2018, reaff 2024)",
     "versions_behind": 0,
     "base_standard_id": "UL-3030",
-    "prerequisites": {}
+    "prerequisites": {
+      "CELL": [
+        "UL 1642"
+      ]
+    }
   },
   {
     "document_id": "UL-9540",
@@ -784,7 +811,20 @@
     "latest_version": "Third Edition (2023, rev 2025)",
     "versions_behind": 0,
     "base_standard_id": "UL-9540",
-    "prerequisites": {}
+    "prerequisites": {
+      "CELL": [
+        "UL 1642"
+      ],
+      "MODULE": [
+        "UL 1973"
+      ],
+      "PACK": [
+        "UL 1973"
+      ],
+      "SYSTEM": [
+        "UL 1973"
+      ]
+    }
   },
   {
     "document_id": "UL1642",
@@ -880,7 +920,12 @@
     "latest_version": "Third Edition (2020, rev 2022)",
     "versions_behind": 0,
     "base_standard_id": "ULC-2580",
-    "prerequisites": {}
+    "prerequisites": {
+      "CELL": [
+        "UL 1642",
+        "UL 2271"
+      ]
+    }
   },
   {
     "document_id": "UN38.3",
@@ -979,7 +1024,20 @@
     "latest_version": "Fifth Edition (2025)",
     "versions_behind": 0,
     "base_standard_id": "UL-9540A",
-    "prerequisites": {}
+    "prerequisites": {
+      "CELL": [
+        "UL 1642"
+      ],
+      "MODULE": [
+        "UL 1973"
+      ],
+      "PACK": [
+        "UL 1973"
+      ],
+      "SYSTEM": [
+        "UL 1973"
+      ]
+    }
   },
   {
     "document_id": "UL1642-2022",
