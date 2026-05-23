@@ -1,0 +1,282 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "UL9540A",
+    "full_name": "ANSI/CAN/UL 9540A:2025 - Standard for Test Method for Evaluating Thermal Runaway Fire Propagation in Battery Energy Storage Systems (Fifth Edition)",
+    "full_name_zh": "評估電池儲能系統熱失控火災蔓延的測試方法",
+    "short_name": "UL 9540A",
+    "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
+    "publication_date": "March 12, 2025 (Fifth Edition)",
+    "type": "standard",
+    "scope": "提供一種量化評估電池發生熱失控能力、火災風險及爆炸特徵的方法，以支持儲能系統 (ESS) 的安裝要求（如間隔距離、消防滅火需求）。",
+    "applicable_objects": ["CELL", "MODULE", "PACK_SYSTEM"],
+    "source_pdf": "s9540A_5.pdf",
+    "source_gemini_md": "UL9540A_zh-TW_standardized.md"
+  },
+  "terms": [
+    {
+      "term_en": "BATTERY ENERGY STORAGE SYSTEM (BESS)",
+      "term_zh": "電池儲能系統",
+      "definition": "接收電能，並利用電池儲存該電能以供日後使用的固定設備。"
+    },
+    {
+      "term_en": "INITIATING BESS UNIT",
+      "term_zh": "啟動 BESS 單元",
+      "definition": "配備電阻加熱器或類似裝置，旨在產生電池到電池熱失控傳播的 BESS 單元。"
+    },
+    {
+      "term_en": "TARGET BESS UNIT",
+      "term_zh": "目標 BESS 單元",
+      "definition": "物理支撐或包含 BESS 組件的外殼和/或機架硬體。它不包含儲能組件，但可作為測量啟動單元熱暴露的儀器化對象。"
+    },
+    {
+      "term_en": "THERMAL RUNAWAY",
+      "term_zh": "熱失控",
+      "definition": "電化學電芯透過自發熱而以不可控的方式升高溫度的事件。"
+    },
+    {
+      "term_en": "THERMAL RUNAWAY PROPAGATION",
+      "term_zh": "熱失控傳播",
+      "definition": "正在經歷熱失控的一個或多個電芯釋放能量，並誘導其他電芯發生熱失控（無需額外的啟動機制）。"
+    }
+  ],
+  "tests": [
+    {
+      "id": "UL9540A-CELL",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "電池級熱失控判定測試 (Cell Level Thermal Runaway Determination Test)",
+      "name_en": "Cell Level Thermal Runaway Determination Test",
+      "section": "7",
+      "category": "THERM",
+      "subcategory": "熱蔓延 (Thermal Propagation)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "soc": {
+          "value": "MOSOC",
+          "detail": "依製造商規格充電至最大運行狀態 (Maximum Operating State of Charge)。"
+        },
+        "rest_time": {
+          "value": "≥ 1 小時",
+          "detail": "調節後在室內環境靜置至少 1 小時 (7.2.2)。"
+        },
+        "trigger_methods": {
+          "value": "外部加熱、過充電或短路",
+          "detail": "使用外部加熱觸發；或對鉛酸/鎳鎘電池使用過充電；高溫電池亦可使用內部短路或針刺。"
+        },
+        "thermal_ramp": {
+          "value": "可選連續熱斜坡",
+          "detail": "可選連續熱斜坡直到發生熱失控 (2025年版新增, 7.3.1.5)。"
+        },
+        "measurements": {
+          "value": "T_vent, 氣體成分與壓力",
+          "detail": "測量排氣溫度 (T_vent)、熱失控表面溫度、排氣成分（包括氫氣，FTIR可選）、排氣體積、爆炸下限 (LFL) 及燃燒速度。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "確定電池是否有能力發生熱失控，以及排氣的燃燒特性。",
+        "details": [
+          "這是一個特徵化測試，而非單純的通過/失敗測試。",
+          "記錄 T_start, T_venting，以及產生的氫氣/烴類氣體濃度。",
+          "若無法誘導熱失控且排氣不可燃(ASTM E918)，則後續測試不需進行。"
+        ]
+      },
+      "exemptions": [
+        "若無電池樣品觸發熱失控且無可燃氣體排放，可豁免模組級和單元級測試 (7.8)。"
+      ],
+      "related_tests": ["UL9540A-MODULE"],
+      "source_reference": "7.3, 7.4, 7.8",
+      "original_text_snippet": "Module level testing in Section 8 is not required if the following performance conditions are met: (a) Thermal runaway cannot be induced in the cell; and (b) The cell vent gas does not present a flammability hazard when mixed with any volume of air, as determined in accordance with ASTM E918."
+    },
+    {
+      "id": "UL9540A-MODULE",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "模組級熱傳播測試 (Module Level Thermal Propagation Test)",
+      "name_en": "Module Level Thermal Propagation Test",
+      "section": "8",
+      "category": "THERM",
+      "subcategory": "熱蔓延 (Thermal Propagation)",
+      "test_objects": ["MODULE"],
+      "conditions": {
+        "soc": {
+          "value": "MOSOC",
+          "detail": "按製造商規格充電至 100% SOC (MOSOC)。"
+        },
+        "rest_time": {
+          "value": "≥ 1 小時",
+          "detail": "充電後靜置至少 1 小時 (8.1.2)。"
+        },
+        "trigger_method": {
+          "value": "同電池級觸發方式",
+          "detail": "使用在電池級測試中驗證有效的應力方法觸發一個或多個電芯熱失控。"
+        },
+        "propagation": {
+          "value": "建立電池到電池熱傳播",
+          "detail": "必須確立足以發生電池到電池熱傳播 (cell to cell thermal runaway propagation) 的條件 (8.2.4)。"
+        },
+        "measurements": {
+          "value": "HRR, 溫度, 排氣",
+          "detail": "測量化學與對流熱釋放速率 (HRR)、煙霧釋放速率、最高溫度、排氣成分、模組外殼完整性與火焰傳播情況。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "確定模組內熱傳播特徵。若影響被限制在模組內，可豁免單元級測試。",
+        "details": [
+          "這也是一個特徵化測試。",
+          "若 (a) 排氣不可燃，(b) 無火焰傳播至模組外，(c) 模組外表面溫度不超過電池排氣溫度，則可豁免單元級測試。"
+        ]
+      },
+      "exemptions": [
+        "若模組設計控制了熱失控且符合 8.5 的性能標準，可豁免單元級測試。"
+      ],
+      "related_tests": ["UL9540A-CELL", "UL9540A-UNIT"],
+      "source_reference": "8.2, 8.5",
+      "original_text_snippet": "Unit level testing in Section 9 is not required if all of the following performance conditions are met during the module level test: (a) Vent gas is nonflammable... (b) There is no spread of flame outside of the module; and (c) The module exterior surface temperature does not exceed the cell venting temperature."
+    },
+    {
+      "id": "UL9540A-UNIT",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "單元級火災傳播測試 (Unit Level Fire Propagation Test)",
+      "name_en": "Unit Level Fire Propagation Test",
+      "section": "9",
+      "category": "THERM",
+      "subcategory": "熱蔓延 (Thermal Propagation)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "configurations": {
+          "value": "依實際安裝環境",
+          "detail": "室內/室外、落地/壁掛、屋頂/停車場等。包含一個啟動 BESS 單元與相鄰目標 BESS 單元 (9.1)。"
+        },
+        "wall_setup": {
+          "value": "儀器化牆段",
+          "detail": "安裝漆平黑的儀器化石膏牆板，並配備熱通量量規 (Schmidt-Boelter 或 Gardon) 及 Type-K 熱電偶。"
+        },
+        "residential_indicator": {
+          "value": "單層粗棉布",
+          "detail": "住宅用 BESS 需覆蓋單層粗棉布 (Cheesecloth) 作為點火指示器 (9.2.21)。"
+        },
+        "termination": {
+          "value": "溫度下降或危害發生",
+          "detail": "連續 3 次(每15分鐘)溫度下降、或低於 60°C、或火災傳播至目標單元/牆壁時終止測試 (9.2.25)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "確定 BESS 單元間的火災傳播與周遭牆壁受熱情況，符合表 9.1 標準則過關。",
+        "details": [
+          "目標模組表面溫度 ≤ T_vent",
+          "目標牆壁或屋簷表面溫升 ≤ 97°C (175°F)",
+          "無爆炸/爆燃/爆轟危險",
+          "逃生路徑測得之熱通量 ≤ 1.3 kW/m²",
+          "室內安裝應無火焰蔓延至單元外"
+        ]
+      },
+      "exemptions": [
+        "若符合表 9.1 規定的性能標準，可豁免安裝級測試 (9.8)。",
+        "高溫電池室外集裝箱安裝可豁免此測試，直接進入安裝級測試 (9.1.3)。"
+      ],
+      "related_tests": ["UL9540A-MODULE", "UL9540A-INSTALL"],
+      "source_reference": "9.1, 9.2, 9.8, Table 9.1",
+      "original_text_snippet": "Installation level testing in Section 10 is not required if the following performance conditions outlined in Table 9.1 are met during the unit level test. ... Surface temperature measurements on wall surfaces do not exceed 97°C (175°F) of temperature rise above ambient."
+    },
+    {
+      "id": "UL9540A-INSTALL",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "安裝級火災抑制測試 (Installation Level Fire Suppression Test)",
+      "name_en": "Installation Level Fire Suppression Test",
+      "section": "10",
+      "category": "THERM",
+      "subcategory": "熱蔓延 (Thermal Propagation)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "method_1": {
+          "value": "噴水滅火系統",
+          "detail": "預設 6.10×6.10×3.05 m 測試室，部署 4 個噴頭（間距 3.05 m），K 係數 5.6，啟動溫度 93°C (10.3)。"
+        },
+        "method_2": {
+          "value": "其他火災防護計畫",
+          "detail": "評估氣體滅火劑、水霧系統、組合系統等 (10.6)。"
+        },
+        "flame_indicator": {
+          "value": "電纜托盤",
+          "detail": "上方配備具防火等級的電纜托盤作為火焰傳播指示器 (10.2.2)。"
+        },
+        "method_high_temp": {
+          "value": "高溫電池集裝箱",
+          "detail": "依據製造商規格的集裝箱進行安裝級測試 (10.9)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "驗證抑制系統能有效防止火災蔓延至室外及目標牆壁。",
+        "details": [
+          "測試室外不應有火焰 (10.5.4)",
+          "電纜托盤火焰不應蔓延超出 BESS 外殼尺寸",
+          "無爆轟危險，除非有防爆系統否則無爆燃",
+          "目標牆壁溫升 ≤ 97°C (175°F)",
+          "關閉抑制系統後 24 小時內無復燃"
+        ]
+      },
+      "exemptions": [
+        "住宅用 (Residential Use) BESS 系統不適用安裝級測試 (10.1.1)。"
+      ],
+      "related_tests": ["UL9540A-UNIT"],
+      "source_reference": "10.1, 10.3, 10.5",
+      "original_text_snippet": "For BESS units intended for installation in locations with combustible construction, surface temperature measurements along instrumented wall surfaces shall not exceed a temperature rise of 97°C (175°F) above ambient. ... There shall be no flaming outside the test room."
+    }
+  ],
+  "test_sequence": {
+    "description": "UL 9540A 為遞進式四級測試架構 (Progression Levels)",
+    "sequences": [
+      {
+        "group": "層級遞進",
+        "tests": ["UL9540A-CELL", "UL9540A-MODULE", "UL9540A-UNIT", "UL9540A-INSTALL"],
+        "rule": "每一級測試結果將決定是否需要進入下一級測試。若在某一級已證明不會發生危險的熱失控或火災傳播，則可終止測試。",
+        "source_reference": "Figure 1.1 Schematic of Test Sequence"
+      }
+    ]
+  },
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "若電池級測試中無法誘發熱失控，且排氣為不可燃氣體，可直接豁免模組級及單元級測試。",
+      "applicable_tests": ["UL9540A-MODULE", "UL9540A-UNIT", "UL9540A-INSTALL"],
+      "source_reference": "7.8"
+    },
+    {
+      "id": "GE-02",
+      "description": "若模組級測試證明模組設計可控制熱失控、無火焰蔓延至模組外，且排氣不可燃，可豁免單元級測試。",
+      "applicable_tests": ["UL9540A-UNIT", "UL9540A-INSTALL"],
+      "source_reference": "8.5"
+    },
+    {
+      "id": "GE-03",
+      "description": "若單元級測試的火災蔓延、目標溫度與熱輻射通量等符合 Table 9.1 所列性能標準，可豁免安裝級測試。",
+      "applicable_tests": ["UL9540A-INSTALL"],
+      "source_reference": "9.8"
+    },
+    {
+      "id": "GE-04",
+      "description": "住宅用 (Residential Use) 系統無安裝級測試選項，必須在單元級滿足性能標準。",
+      "applicable_tests": ["UL9540A-INSTALL"],
+      "source_reference": "10.1.1"
+    },
+    {
+      "id": "GE-05",
+      "description": "高溫電池的室外集裝箱安裝可豁免單元級測試，直接進行特製的安裝級測試 (10.9)。",
+      "applicable_tests": ["UL9540A-UNIT"],
+      "source_reference": "9.1.3"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from Gemini CLI md, original PDF-extracted OCR md (authoritative), and batch4 structured JSON.",
+    "cross_validation_notes": [
+      "All sources correctly identify the four levels: Cell, Module, Unit, Installation.",
+      "Table 9.1 parameters (1.3 kW/m2 heat flux, 97°C wall temp rise) cross-validated successfully across all sources.",
+      "The 'Residential Use' exemption is correctly placed: it skips installation level and MUST pass unit level.",
+      "All thermal propagation tests mapped to 'THERM-PROP' under 'THERM' category.",
+      "OCR markdown text was directly excerpted for the 'original_text_snippet' field for maximum fidelity."
+    ],
+    "total_test_entries": 4
+  }
+}

@@ -1,0 +1,438 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "UL9540",
+    "full_name": "Standard for Safety for Energy Storage Systems and Equipment",
+    "full_name_zh": "儲能系統 (ESS) 與設備安全標準",
+    "short_name": "UL 9540",
+    "publisher": "Underwriters Laboratories (UL)",
+    "publication_date": "2023-06-28 (Third Edition, with 2025-03-07 Revision)",
+    "type": "standard",
+    "scope": "涵蓋電化學 (BESS)、化學、機械（飛輪）及熱儲能系統，評估系統集成、組件兼容性及環境安全性。",
+    "applicable_objects": [
+      "PACK_SYSTEM"
+    ],
+    "source_pdf": "s9540_3.pdf",
+    "source_gemini_md": "UL9540_zh-TW_standardized.md"
+  },
+  "terms": [],
+  "tests": [
+    {
+      "id": "UL9540-30",
+      "normalized_id": "ELEC-CC",
+      "name_zh": "正常運行測試",
+      "name_en": "Normal Operations Test",
+      "section": "30",
+      "category": "ELEC",
+      "subcategory": "正常運行 (Normal Operation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "operation": {
+          "value": "最大負載充放電循環",
+          "detail": "系統按製造商規格在最大負載下進行正常充放電循環測試（至少 2 次循環）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "系統應在規定限值內運行且保護功能正常",
+        "details": [
+          "電壓、電流、溫度不超限",
+          "表面溫度合格",
+          "保護功能正常"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "30",
+      "original_text_snippet": "The ESS is operated under normal conditions. System shall operate within specified limits."
+    },
+    {
+      "id": "UL9540-32",
+      "normalized_id": "ELEC-IR",
+      "name_zh": "介電耐壓測試",
+      "name_en": "Dielectric Voltage Withstand Test",
+      "section": "32",
+      "category": "ELEC",
+      "subcategory": "介電耐壓 (Dielectric Withstand)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "test_voltage": {
+          "value": "2倍額定電壓",
+          "detail": "施加 2 倍額定電壓於危險電壓電路與非載流導電部件之間。適用於 ≥ 60 Vdc 系統。"
+        },
+        "duration": {
+          "value": "1 分鐘",
+          "detail": "持續施加 1 分鐘（生產測試可減至 1 秒）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無絕緣擊穿或電弧產生",
+        "details": [
+          "應無介電擊穿（絕緣擊穿導致短路或飛弧）"
+        ]
+      },
+      "exemptions": [
+        "若已按特定技術標準測試可豁免"
+      ],
+      "related_tests": [],
+      "source_reference": "32",
+      "original_text_snippet": "Hazardous voltage circuits are subjected to dielectric withstand voltage. No dielectric breakdown shall occur."
+    },
+    {
+      "id": "UL9540-33",
+      "normalized_id": "ELEC-IR",
+      "name_zh": "衝擊電壓測試",
+      "name_en": "Impulse Test",
+      "section": "33",
+      "category": "ELEC",
+      "subcategory": "衝擊電壓 (Impulse)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "waveform": {
+          "value": "1.2/50 µs 波形",
+          "detail": "施加 1.2/50 µs 衝擊電壓波形（模擬浪湧）。"
+        },
+        "count": {
+          "value": "正負極各 3 次",
+          "detail": "正負極各施加 3 次脈衝。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無擊穿、飛弧或閃絡",
+        "details": [
+          "系統應無損壞",
+          "功能應正常運作"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "33",
+      "original_text_snippet": "The system is subjected to impulse voltages. No damage shall occur."
+    },
+    {
+      "id": "UL9540-34",
+      "normalized_id": "ELEC-IR",
+      "name_zh": "設備接地與接合測試",
+      "name_en": "Equipment Grounding and Bonding Test",
+      "section": "34",
+      "category": "ELEC",
+      "subcategory": "接地連續性 (Grounding Continuity)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "measurement": {
+          "value": "端子與金屬件間阻抗",
+          "detail": "測量接地端子與待接地金屬零件間（或任意兩點之間）的阻抗。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "阻抗 ≤ 0.1 Ω",
+        "details": [
+          "接地和接合系統電阻不超過 0.1 Ω"
+        ]
+      },
+      "exemptions": [
+        "若通過生產實踐審查確定良好接地可豁免"
+      ],
+      "related_tests": [],
+      "source_reference": "34",
+      "original_text_snippet": "Grounding and bonding system resistance shall not exceed 0.1 Ω."
+    },
+    {
+      "id": "UL9540-35",
+      "normalized_id": "ELEC-IR",
+      "name_zh": "絕緣電阻測試",
+      "name_en": "Insulation Resistance Test",
+      "section": "35",
+      "category": "ELEC",
+      "subcategory": "絕緣電阻 (Insulation Resistance)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "test_voltage": {
+          "value": "500 Vdc",
+          "detail": "施加 500 Vdc 電壓測量危險電壓電路與可接觸導電部件之間的絕緣電阻。"
+        },
+        "duration": {
+          "value": "1 分鐘",
+          "detail": "施加時間 1 分鐘。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "阻值 ≥ 1 MΩ",
+        "details": [
+          "絕緣電阻應符合規定限值（大於等於 1 MΩ）"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "35",
+      "original_text_snippet": "Insulation resistance between hazardous voltage circuits and accessible conductive parts shall meet specified limits."
+    },
+    {
+      "id": "UL9540-40.1",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "壁掛固定裝置測試",
+      "name_en": "Wall Mount Fixture Test",
+      "section": "40.1",
+      "category": "MECH",
+      "subcategory": "結構強度 (Structural Strength)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "load": {
+          "value": "3 倍系統重量",
+          "detail": "施加 3 倍系統重量的力。"
+        },
+        "duration": {
+          "value": "1 分鐘",
+          "detail": "持續 1 分鐘。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "固定裝置無損壞/脫落",
+        "details": [
+          "壁掛固定裝置不應出現導致危險的損壞或脫落"
+        ]
+      },
+      "exemptions": [
+        "若元件已單獨測試可豁免壁掛測試"
+      ],
+      "related_tests": [],
+      "source_reference": "40.1",
+      "original_text_snippet": "Includes wall mount fixture test (3x weight). No damage leading to hazard shall occur."
+    },
+    {
+      "id": "UL9540-40.2",
+      "normalized_id": "MECH-IMPACT",
+      "name_zh": "外殼衝擊測試",
+      "name_en": "Enclosure Impact",
+      "section": "40.2",
+      "category": "MECH",
+      "subcategory": "外殼衝擊 (Enclosure Impact)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "impact_object": {
+          "value": "535g 鋼球, 1.29m 跌落",
+          "detail": "使用 535g 鋼球從 1.29m 高度跌落，產生 6.8J 的衝擊能量。"
+        },
+        "impact_count": {
+          "value": "3 次衝擊",
+          "detail": "對外殼進行 3 次衝擊。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無損壞，不暴露帶電件",
+        "details": [
+          "無損壞",
+          "通過測試後的耐壓測試",
+          "不暴露危險帶電部件"
+        ]
+      },
+      "exemptions": [
+        "僅適用於住宅應用或 ≤50 kWh 的非住宅應用"
+      ],
+      "related_tests": [],
+      "source_reference": "40.2",
+      "original_text_snippet": "Enclosure impact (6.8 J). No damage leading to hazard shall occur."
+    },
+    {
+      "id": "UL9540-40.3",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "外殼穩態力測試",
+      "name_en": "Enclosure Steady Force",
+      "section": "40.3",
+      "category": "MECH",
+      "subcategory": "外殼受力 (Enclosure Steady Force)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "force": {
+          "value": "250 N ± 10 N",
+          "detail": "施加 250 N 的穩態力，施加平面的直徑必須為 30 mm。"
+        },
+        "duration": {
+          "value": "5 秒",
+          "detail": "持續 5 秒。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無損壞，不暴露帶電件",
+        "details": [
+          "無損壞",
+          "無危險帶電件暴露"
+        ]
+      },
+      "exemptions": [
+        "僅適用於住宅應用或 ≤50 kWh 的非住宅應用"
+      ],
+      "related_tests": [],
+      "source_reference": "40.3",
+      "original_text_snippet": "Enclosure steady force (250 N). No damage leading to hazard shall occur."
+    },
+    {
+      "id": "UL9540-40.4",
+      "normalized_id": "THERM-STAB",
+      "name_zh": "模具應力測試",
+      "name_en": "Mold Stress",
+      "section": "40.4",
+      "category": "THERM",
+      "subcategory": "模具應力 (Mold Stress)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "70°C 或 T+10°C",
+          "detail": "在 70°C 或正常運行最高溫度加 10°C 的環境中進行。"
+        },
+        "duration": {
+          "value": "7 小時",
+          "detail": "持續 7 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無機械損壞，通過耐壓測試",
+        "details": [
+          "外殼無機械損壞變形",
+          "通過耐壓測試"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "40.4",
+      "original_text_snippet": "Mold stress (70°C for 7 h). No damage leading to hazard shall occur."
+    },
+    {
+      "id": "UL9540-38",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "洩漏測試",
+      "name_en": "Leakage Tests",
+      "section": "38",
+      "category": "MECH",
+      "subcategory": "液/氣壓洩漏 (Fluid/Gas Leakage)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "test_pressure": {
+          "value": "1.5倍(液) / 1.1倍(氣)",
+          "detail": "對含流體部件施加 1.5 倍最大運行壓力（液體測試）或 1.1 倍最大運行壓力（氣體測試）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏跡象",
+        "details": [
+          "含流體部件及其連接處應無洩漏"
+        ]
+      },
+      "exemptions": [
+        "若部件已按元件標準（如 UL 1973 附錄 C）評估可豁免"
+      ],
+      "related_tests": [],
+      "source_reference": "38",
+      "original_text_snippet": "Fluid-containing parts and connections are subjected to 1.5x max operating pressure (liquid) or 1.1x (air). No leaks shall occur."
+    },
+    {
+      "id": "UL9540-39",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "強度測試",
+      "name_en": "Strength Tests",
+      "section": "39",
+      "category": "MECH",
+      "subcategory": "結構強度 (Structural Strength)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "test_pressure": {
+          "value": "1.5倍(液) / 1.3倍(氣)",
+          "detail": "液壓強度測試施加 1.5 倍設計壓力（1分鐘）；氣壓強度測試施加 1.3 倍設計壓力（1分鐘）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無變形、破裂或損壞",
+        "details": [
+          "含流體部件應無破裂、變形、破裂或其他損壞"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "39",
+      "original_text_snippet": "Includes hydrostatic strength test (1.5x design pressure) and pneumatic strength test (1.3x design pressure). No fracture, distortion, or rupture shall occur."
+    },
+    {
+      "id": "UL9540-26.2",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "大型火災測試 (UL 9540A)",
+      "name_en": "Large Scale Fire Testing (UL 9540A)",
+      "section": "26.2",
+      "category": "THERM",
+      "subcategory": "熱失控傳播 (Thermal Propagation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "trigger": {
+          "value": "依安裝條件或容量超限",
+          "detail": "當單元容量超過 20 kWh（住宅）或 50 kWh（非住宅），或間距減小、室內安裝時，必須執行 UL 9540A 測試以驗證火災蔓延特性。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "火災傳播特性受控",
+        "details": [
+          "按 UL 9540A 測試標準評估合格"
+        ]
+      },
+      "exemptions": [
+        "僅適用於電化學儲能系統（電容器和電池）"
+      ],
+      "related_tests": [],
+      "source_reference": "26.2",
+      "original_text_snippet": "Electrochemical ESS shall be subjected to UL 9540A testing for increased capacity, decreased separation, indoor systems, or residential installations."
+    }
+  ],
+  "test_sequence": {
+    "description": "UL 9540 的測試順序通常由製造商與測試機構協調，無強制線性順序，但一般建議先進行正常運行與電氣安全，後進行機械與環境耐受測試。",
+    "sequences": []
+  },
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "住宅用電化學 ESS 單一系統額定能量不得超過 20 kWh；非住宅用不得超過 50 kWh。若通過 UL 9540A 驗證其火災傳播特性受控，則可允許更高的安裝容量。",
+      "applicable_tests": [],
+      "source_reference": "4.3.1, 4.3.2"
+    },
+    {
+      "id": "GE-02",
+      "description": "系統中的元件若已符合適用的安全標準（如 UL 1973 電池系統），可豁免部分重複的元件級測試。",
+      "applicable_tests": [],
+      "source_reference": "2.1"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from 3 sources: Gemini CLI standardized markdown, Original OCR markdown, and existing batch JSON",
+    "cross_validation_notes": [
+      "UL 9540 為系統層級標準，主要針對 ESS 的整合安全，許多參數參照子標準（如 UL 1973, UL 9540A）。",
+      "所有測試項目在三來源（Gemini MD, OCR MD, JSON Batch4）間一致。",
+      "外殼衝擊與外殼受力測試主要針對較小容量設備（住宅 ≤20kWh，非住宅 ≤50kWh）。",
+      "已提取 12 項最具代表性的電池系統級安全與機械測試。"
+    ],
+    "total_test_entries": 12,
+    "note": "UL 9540 涵蓋了消防、漏液、通風、飛輪等非純電池系統測試。本表聚焦於與電池/電氣/外殼相關之安全測試。"
+  }
+}

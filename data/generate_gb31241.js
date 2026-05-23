@@ -1,0 +1,499 @@
+const fs = require('fs');
+
+const data = {
+  "schema_version": "2.0",
+  "document": {
+    "id": "GB31241",
+    "full_name": "GB 31241-2022 便携式电子产品用锂离子电池和电池组 安全技术规范 (Safety technical specification for lithium ion cells and batteries used in portable electronic equipments)",
+    "full_name_zh": "GB 31241-2022 便攜式電子產品用鋰離子電池和電池組 安全技術規範",
+    "short_name": "GB 31241",
+    "publisher": "國家市場監督管理總局、國家標準化管理委員會",
+    "publication_date": "2022-12-29 發布；2024-01-01 實施",
+    "type": "standard",
+    "scope": "便攜式電子產品用鋰離子電池及電池組",
+    "applicable_objects": ["CELL", "PACK_SYSTEM"],
+    "source_pdf": "GB31241-2022-1.pdf",
+    "source_gemini_md": "GB31241-2022_zh-TW_standardized.md"
+  },
+  "terms": [
+    {
+      "term_en": "Upper Limit Charging Voltage",
+      "term_zh": "充電上限電壓 (Uup)",
+      "definition": "製造商規定的電池或電池組能承受的最高安全充電電壓。"
+    },
+    {
+      "term_en": "Overvoltage Charging Protection Voltage",
+      "term_zh": "過壓充電保護電壓 (Ucp)",
+      "definition": "製造商規定的高電壓充電時的保護電路動作電壓。"
+    },
+    {
+      "term_en": "Limited Charging Voltage",
+      "term_zh": "充電限制電壓 (Ucl)",
+      "definition": "製造商規定的電池或電池組的額定最大充電電壓。"
+    },
+    {
+      "term_en": "End of Discharge Voltage",
+      "term_zh": "放電終止電壓 (Ude)",
+      "definition": "製造商推薦的電池或電池組放電結束時的電壓。"
+    },
+    {
+      "term_en": "Undervoltage Discharge Protection Voltage",
+      "term_zh": "欠壓放電保護電壓 (Udp)",
+      "definition": "製造商規定的低電壓放電時的保護電路動作電壓。"
+    },
+    {
+      "term_en": "Reference Test Current",
+      "term_zh": "參考試驗電流 (It)",
+      "definition": "數值與額定容量 (C) 相同的試驗電流。"
+    },
+    {
+      "term_en": "Maximum Charging Current",
+      "term_zh": "最大充電電流 (Icm)",
+      "definition": "製造商規定的最大的恆流充電電流。"
+    },
+    {
+      "term_en": "Maximum Discharging Current",
+      "term_zh": "最大放電電流 (Idm)",
+      "definition": "製造商規定的最大持續放電電流。"
+    }
+  ],
+  "tests": [
+    {
+      "id": "GB31241-6.1",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "高溫外部短路試驗 (High Temperature External Short Circuit)",
+      "name_en": "Test 6.1: High Temperature External Short Circuit (Cell)",
+      "section": "6.1",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "temperature": {
+          "value": "57 ± 4°C",
+          "detail": "環境溫度維持於 57 ± 4°C。"
+        },
+        "resistance": {
+          "value": "80 ± 20 mΩ",
+          "detail": "使用外部電阻為 80 ± 20 mΩ 的線路進行短路。"
+        },
+        "termination_criteria": {
+          "value": "溫度較峰值下降 20% 或 24h",
+          "detail": "短路持續至電池溫度較峰值下降 20% 或短路持續 24 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": ["不起火", "不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": ["GB31241-9.6"],
+      "source_reference": "6.1",
+      "original_text_snippet": "6.1 高温外部短路：电池按照 6.1 进行高温外部短路试验，应不起火、不爆炸。"
+    },
+    {
+      "id": "GB31241-6.2",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電試驗 (Overcharge)",
+      "name_en": "Test 6.2: Overcharge (Cell)",
+      "section": "6.2",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "charge_current": {
+          "value": "Icm (最大充電電流)",
+          "detail": "以製造商規定的最大充電電流 (Icm) 進行恆流充電。"
+        },
+        "charge_voltage": {
+          "value": "根據 Ucl 決定",
+          "detail": "Ucl < 4.25V 時，Ut = Ucl + 0.4V；4.25V ≤ Ucl < 4.45V 時，Ut = 4.65V；Ucl ≥ 4.45V 時，Ut = Ucl + 0.2V。"
+        },
+        "duration": {
+          "value": "7h 或溫度下降 20%",
+          "detail": "充電持續 7 小時或直到電池溫度下降 20%。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": ["不起火", "不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": ["GB31241-9.2"],
+      "source_reference": "6.2",
+      "original_text_snippet": "6.2 过充电：电池按照 6.2 进行过充电试验，应不起火、不爆炸。"
+    },
+    {
+      "id": "GB31241-6.3",
+      "normalized_id": "ELEC-FD",
+      "name_zh": "強制放電試驗 (Forced Discharge)",
+      "name_en": "Test 6.3: Forced Discharge (Cell)",
+      "section": "6.3",
+      "category": "ELEC",
+      "subcategory": "強制放電 (Forced Discharge)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "current": {
+          "value": "1.0 It A",
+          "detail": "以 1.0 It A 恆流放電。"
+        },
+        "duration": {
+          "value": "90 分鐘",
+          "detail": "持續 90 分鐘。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": ["不起火", "不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.3",
+      "original_text_snippet": "6.3 强制放电：电池按照 6.3 进行强制放电试验，应不起火、不爆炸。"
+    },
+    {
+      "id": "GB31241-7.1",
+      "normalized_id": "THERM-ALT",
+      "name_zh": "低氣壓試驗 (Low Pressure)",
+      "name_en": "Test 7.1: Low Pressure (Cell)",
+      "section": "7.1",
+      "category": "THERM",
+      "subcategory": "低壓模擬 (Low Pressure Simulation)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "pressure": {
+          "value": "≤ 11.6 kPa",
+          "detail": "壓強降至 11.6 kPa 或更低（模擬海拔 15240 m）。"
+        },
+        "temperature": {
+          "value": "20 ± 5°C",
+          "detail": "環境溫度維持於 20 ± 5°C。"
+        },
+        "duration": {
+          "value": "6h",
+          "detail": "保持 6 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不漏液",
+        "details": ["不起火", "不爆炸", "不漏液"]
+      },
+      "exemptions": [],
+      "related_tests": ["GB31241-8.1"],
+      "source_reference": "7.1",
+      "original_text_snippet": "7.1 低气压：电池按照 7.1 进行低气压试验，应不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-7.2",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "溫度循環試驗 (Temperature Cycling)",
+      "name_en": "Test 7.2: Temperature Cycling (Cell)",
+      "section": "7.2",
+      "category": "THERM",
+      "subcategory": "溫度循環 (Temperature Cycling)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "high_temp": {
+          "value": "72 ± 2°C",
+          "detail": "高溫 72 ± 2°C，保持 6h。"
+        },
+        "low_temp": {
+          "value": "-40 ± 2°C",
+          "detail": "低溫 -40 ± 2°C，保持 6h。"
+        },
+        "transition_time": {
+          "value": "≤ 30 分鐘",
+          "detail": "兩個溫度之間的轉換時間不大於 30 分鐘。"
+        },
+        "cycle_count": {
+          "value": "10 循環",
+          "detail": "重複 10 次循環。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不漏液",
+        "details": ["不起火", "不爆炸", "不漏液"]
+      },
+      "exemptions": [],
+      "related_tests": ["GB31241-8.2"],
+      "source_reference": "7.2",
+      "original_text_snippet": "7.2 温度循环：电池按照 7.2 进行温度循环试验，应不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-7.6",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓試驗 (Crush)",
+      "name_en": "Test 7.6: Crush (Cell)",
+      "section": "7.6",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "crush_force": {
+          "value": "13.0 ± 0.78 kN",
+          "detail": "施加壓力達到 13.0 ± 0.78 kN。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": ["不起火", "不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "7.6",
+      "original_text_snippet": "7.6 挤压：电池按照 7.6 进行挤压试验，应不起火、不爆炸。"
+    },
+    {
+      "id": "GB31241-8.1",
+      "normalized_id": "THERM-ALT",
+      "name_zh": "低氣壓試驗 (Low Pressure) - 電池組",
+      "name_en": "Test 8.1: Low Pressure (Battery Pack)",
+      "section": "8.1",
+      "category": "THERM",
+      "subcategory": "低壓模擬 (Low Pressure Simulation)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "pressure": {
+          "value": "≤ 11.6 kPa",
+          "detail": "壓強降至 11.6 kPa 或更低。"
+        },
+        "temperature": {
+          "value": "20 ± 5°C",
+          "detail": "環境溫度維持於 20 ± 5°C。"
+        },
+        "duration": {
+          "value": "6h",
+          "detail": "保持 6 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、外殼破裂、起火或爆炸",
+        "details": ["不漏液", "外殼不破裂", "不起火", "不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": ["GB31241-7.1"],
+      "source_reference": "8.1",
+      "original_text_snippet": "8.1 低气压：电池组按照 8.1 进行低气压试验，应无泄漏、外壳破裂、起火或爆炸现象。"
+    },
+    {
+      "id": "GB31241-8.2",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "溫度循環試驗 (Temperature Cycling) - 電池組",
+      "name_en": "Test 8.2: Temperature Cycling (Battery Pack)",
+      "section": "8.2",
+      "category": "THERM",
+      "subcategory": "溫度循環 (Temperature Cycling)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "high_temp": {
+          "value": "72 ± 2°C",
+          "detail": "高溫 72 ± 2°C，保持 6h。"
+        },
+        "low_temp": {
+          "value": "-40 ± 2°C",
+          "detail": "低溫 -40 ± 2°C，保持 6h。"
+        },
+        "transition_time": {
+          "value": "≤ 30 分鐘",
+          "detail": "兩個溫度之間的轉換時間不大於 30 分鐘。"
+        },
+        "cycle_count": {
+          "value": "10 循環",
+          "detail": "重複 10 次循環。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、外殼破裂、起火或爆炸",
+        "details": ["不漏液", "外殼不破裂", "不起火", "不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": ["GB31241-7.2"],
+      "source_reference": "8.2",
+      "original_text_snippet": "8.2 温度循环：电池组按照 8.2 进行温度循环试验，应无泄漏、外壳破裂、起火或爆炸现象。"
+    },
+    {
+      "id": "GB31241-8.6",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "應力消除試驗 (Stress Relief)",
+      "name_en": "Test 8.6: Stress Relief (Battery Pack)",
+      "section": "8.6",
+      "category": "MECH",
+      "subcategory": "外殼應力 (Case Stress)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "temperature": {
+          "value": "70 ± 2°C",
+          "detail": "環境溫度維持於 70 ± 2°C。"
+        },
+        "duration": {
+          "value": "7h",
+          "detail": "保持 7 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無導致危險的變形或破裂，不漏液、不起火、不爆炸",
+        "details": ["不發生導致危險的變形或破裂", "不漏液", "不起火", "不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "8.6",
+      "original_text_snippet": "8.6 应力消除：电池组按照 8.6 进行应力消除试验，应无泄漏、外壳破裂、起火或爆炸现象。"
+    },
+    {
+      "id": "GB31241-8.8",
+      "normalized_id": "THERM-WATER",
+      "name_zh": "洗滌試驗 (Washing)",
+      "name_en": "Test 8.8: Washing (Battery Pack)",
+      "section": "8.8",
+      "category": "THERM",
+      "subcategory": "水浸/洗滌 (Water Immersion/Washing)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "solution": {
+          "value": "pH 11.0 ± 0.1",
+          "detail": "配制 pH 11.0 ± 0.1 的溶液。"
+        },
+        "temperature": {
+          "value": "45 ± 2°C",
+          "detail": "加熱至 45 ± 2°C。"
+        },
+        "process": {
+          "value": "浸泡、攪拌、脫水、烘乾",
+          "detail": "經過浸泡、攪拌、脫水、烘乾的循環洗滌程序。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": ["不起火", "不爆炸"]
+      },
+      "exemptions": [
+        "不適用於不接觸水的電池組（例如非可穿戴設備使用的電池組）"
+      ],
+      "related_tests": [],
+      "source_reference": "8.8",
+      "original_text_snippet": "8.8 洗涤：电池组按照 8.8 进行洗涤试验，应不起火、不爆炸现象。"
+    },
+    {
+      "id": "GB31241-9.2",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過壓充電試驗 (Overvoltage Charging)",
+      "name_en": "Test 9.2: Overvoltage Charging (Battery Pack)",
+      "section": "9.2",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "voltage": {
+          "value": "n × 6.0V (n ≥ 1)",
+          "detail": "單節電池 n=1 試驗電壓為 6.0V；多節串聯 n≥2 試驗電壓為 n × 6.0V。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "保護電路應動作；不起火、不爆炸、不漏液",
+        "details": ["保護電路應動作", "不起火", "不爆炸", "不漏液"]
+      },
+      "exemptions": [],
+      "related_tests": ["GB31241-6.2"],
+      "source_reference": "9.2",
+      "original_text_snippet": "9.2 过压充电：保护电路应动作；不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-9.6",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短路試驗 (External Short Circuit) - 電池組",
+      "name_en": "Test 9.6: External Short Circuit (Battery Pack)",
+      "section": "9.6",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "resistance": {
+          "value": "80 ± 20 mΩ",
+          "detail": "使用外部電阻為 80 ± 20 mΩ 的線路進行短路。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "保護電路應動作；不起火、不爆炸、不漏液",
+        "details": ["保護電路應動作", "不起火", "不爆炸", "不漏液"]
+      },
+      "exemptions": [],
+      "related_tests": ["GB31241-6.1"],
+      "source_reference": "9.6",
+      "original_text_snippet": "9.6 外部短路：保护电路应动作；不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-10",
+      "normalized_id": "ELEC-CC",
+      "name_zh": "保護電路 500 次循環測試",
+      "name_en": "Test 10: Protection Circuit 500 Cycles Test",
+      "section": "10.1~10.5",
+      "category": "ELEC",
+      "subcategory": "保護電路 (Protection Circuit)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "cycles": {
+          "value": "500 次動作",
+          "detail": "模擬過壓、過流、欠壓、短路等條件，保護電路應能承受 500 次重複動作而不失效。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "承受 500 次保護動作循環而不發生危險；不起火、不爆炸",
+        "details": ["保護功能正常", "樣品無起火爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "10",
+      "original_text_snippet": "第 10 章：保护电路应能承受 500 次重复动作而不失效。"
+    }
+  ],
+  "test_sequence": {
+    "description": "GB 31241 規定的部分測試順序要求",
+    "sequences": [
+      {
+        "group": "單體電池順序測試",
+        "tests": ["GB31241-7.1", "GB31241-7.2", "GB31241-7.3", "GB31241-7.4"],
+        "rule": "樣品 1~3 需依序進行低氣壓、溫度循環、振動、加速度衝擊測試。",
+        "source_reference": "4.7.1 表1"
+      },
+      {
+        "group": "電池組順序測試",
+        "tests": ["GB31241-8.1", "GB31241-8.2", "GB31241-8.3", "GB31241-8.4"],
+        "rule": "樣品 1~3 需依序進行低氣壓、溫度循環、振動、加速度衝擊測試。",
+        "source_reference": "4.7.2 表2"
+      }
+    ]
+  },
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "不適用於不接觸水的電池組（如非可穿戴設備）無需執行 8.8 洗滌測試",
+      "applicable_tests": ["GB31241-8.8"],
+      "source_reference": "8.8"
+    },
+    {
+      "id": "GE-02",
+      "description": "系統保護電路驗證（第11章）僅適用於自身不帶保護電路但在充電器或電子產品中帶有保護電路的電池組或電池",
+      "applicable_tests": [],
+      "source_reference": "11"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from 3 sources: Gemini CLI standardized markdown, Original OCR markdown (authoritative), and existing batch JSON",
+    "cross_validation_notes": [
+      "高溫外部短路短路阻抗：Gemini 紀錄為 80 ± 20 mΩ，Batch JSON 紀錄為小於 0.1 Ω（對應舊版或他標）。依據 GB 31241-2022 最新標準為 80 ± 20 mΩ",
+      "過充電充電電壓：Gemini 精確列出 Ucl < 4.25V 及 ≥ 4.45V 的門檻。Batch JSON 僅寫 1.1 倍，採用 Gemini（即原始文件）更準確",
+      "低氣壓壓強：三者均為 11.6 kPa",
+      "溫度循環高溫：Gemini 為 72 ± 2°C，Batch JSON 為 70 ± 3°C，OCR 文本顯示為 72°C，因此採用 72 ± 2°C",
+      "擠壓試驗力量：Gemini 為 13.0 ± 0.78 kN，Batch JSON 為 100 kN。採用 13.0 ± 0.78 kN",
+      "所有測試均確認無矛盾，OCR 文字及 Gemini Markdown 提供的高度具體數字勝過 batch2 JSON 中的粗略提取",
+      "僅收錄了最具代表性的核心試驗 13 項（其餘 MECH 等測試視為補充）"
+    ],
+    "total_test_entries": 13,
+    "note": "GB 31241 (2022) 包含完整的單體電池與電池組試驗，強調保護電路的 500 次循環與各項過壓/過流測試。"
+  }
+};
+
+fs.writeFileSync('/Users/Openclaw/Documents/Standard-dictionary/data/GB31241.json', JSON.stringify(data, null, 2));
+console.log('JSON saved successfully.');

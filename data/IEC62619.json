@@ -1,0 +1,807 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "IEC62619",
+    "full_name": "IEC 62619:2022 Edition 2.0 - Secondary cells and batteries containing alkaline or other non-acid electrolytes – Safety requirements for secondary lithium cells and batteries, for use in industrial applications",
+    "full_name_zh": "含鹼性或其他非酸性電解質的二次電芯與電池 – 工業應用二次鋰電芯與電池之安全要求",
+    "short_name": "IEC 62619",
+    "publisher": "IEC (International Electrotechnical Commission)",
+    "publication_date": "2022-05 (Edition 2.0)",
+    "type": "standard",
+    "scope": "本標準規定了工業應用二次鋰電芯與電池（含鹼性或其他非酸性電解質）在預期使用及合理可預見誤用條件下的安全要求和測試方法。適用於固定式儲能、牽引車、鐵路等工業應用場景。為 IEC 62133-2（可攜式鋰電池）之工業應用對應標準。",
+    "applicable_objects": ["CELL", "MODULE", "PACK_SYSTEM"],
+    "source_pdf": "IEC62619-2022.pdf",
+    "source_gemini_md": "IEC62619_zh-TW_standardized.md"
+  },
+  "terms": [
+    {
+      "term_en": "Cell",
+      "term_zh": "電芯",
+      "definition": "由電極、電解質、容器及端子組成的基本電化學單元，為電池系統的最小組成單位。",
+      "source": "3.1 (IEC 62619:2022)"
+    },
+    {
+      "term_en": "Cell block",
+      "term_zh": "電芯組 / 並聯組合",
+      "definition": "將多個電芯的正極端子和負極端子分別連接在一起的並聯連接配置 (Parallel connection of cells where the positive terminals and negative terminals are connected together respectively)。",
+      "source": "3.4 (IEC 62619:2022)"
+    },
+    {
+      "term_en": "Battery system",
+      "term_zh": "電池系統",
+      "definition": "由一個或多個電芯或電芯組組成，可能包含 BMS、連接器、外殼及其他電氣和機械組件的完整系統。",
+      "source": "3.3 (IEC 62619:2022)"
+    },
+    {
+      "term_en": "Battery management system (BMS)",
+      "term_zh": "電池管理系統",
+      "definition": "評估電芯和電池系統狀態的電子控制系統，維持電芯和電池系統在指定的電芯操作區域內運作。關鍵因素包括電壓、溫度和電流。",
+      "source": "8.2.1 (IEC 62619:2022)"
+    },
+    {
+      "term_en": "Upper limit charging voltage",
+      "term_zh": "上限充電電壓",
+      "definition": "由電芯製造商指定的電芯操作區域中最高充電電壓。",
+      "source": "3.21 (IEC 62619:2022)"
+    },
+    {
+      "term_en": "Maximum charging current",
+      "term_zh": "最大充電電流",
+      "definition": "由電芯製造商指定的電芯操作區域中最大充電電流。",
+      "source": "3.21 (IEC 62619:2022)"
+    },
+    {
+      "term_en": "Rated capacity (C5 Ah)",
+      "term_zh": "額定容量",
+      "definition": "在指定條件下測定並由製造商宣告的電芯或電池容量值。以 0.2 It A 參考測試電流 (It A) 放電至指定終止電壓所得電量。",
+      "source": "3.17 (IEC 62619:2022)"
+    },
+    {
+      "term_en": "Reference test current (It)",
+      "term_zh": "參考測試電流",
+      "definition": "以 It A 的倍數表示的充放電電流，其中 It A = C5 Ah / 1 h。",
+      "source": "3.18 (IEC 62619:2022)"
+    },
+    {
+      "term_en": "Thermal runaway",
+      "term_zh": "熱失控",
+      "definition": "電芯因內部能量釋放導致不可控溫度上升的失效模式。蔓延測試 (7.3.3) 即評估熱失控是否蔓延至整個電池系統。",
+      "source": "7.3.3 (IEC 62619:2022)"
+    },
+    {
+      "term_en": "Fire",
+      "term_zh": "起火",
+      "definition": "從電芯或電池系統發射火焰 (Emission of flames)。",
+      "source": "IEC 62619:2022"
+    },
+    {
+      "term_en": "Explosion",
+      "term_zh": "爆炸",
+      "definition": "電芯容器或電池系統外殼劇烈打開且主要組件被強力彈出的失效。",
+      "source": "IEC 62619:2022"
+    }
+  ],
+  "tests": [
+    {
+      "id": "IEC62619-7.2.1",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短路測試 (External Short-Circuit Test)",
+      "name_en": "External Short-Circuit Test (Cell or Cell Block)",
+      "section": "7.2.1",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": {
+          "value": "滿充 (Fully charged)",
+          "detail": "電芯需滿充後在 25 °C ± 5 °C 環境中穩定。"
+        },
+        "ambient_temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "滿充電芯儲存於環境溫度 25 °C ± 5 °C (Fully charged cells are stored in an ambient temperature of 25 °C ± 5 °C)。"
+        },
+        "external_resistance": {
+          "value": "30 ± 10 mΩ",
+          "detail": "以總外部電阻 30 mΩ ± 10 mΩ 連接正負極端子進行短路 (connecting the positive and negative terminals with a total external resistance of 30 mΩ ± 10 mΩ)。"
+        },
+        "duration": {
+          "value": "6 小時或溫度下降 80%（取先到者）",
+          "detail": "電芯維持測試狀態 6 小時，或直到外殼溫度從最大溫升下降 80%，以先到者為準 (6 h or until the case temperature declines by 80 % of the maximum temperature rise, whichever is the sooner)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62619:2022, Clause 7.2.1",
+      "original_text_snippet": "Fully charged cells are stored in an ambient temperature of 25 °C ± 5 °C. Each cell is then short-circuited by connecting the positive and negative terminals with a total external resistance of 30 mΩ ± 10 mΩ. The cells are to remain on test for 6 h or until the case temperature declines by 80 % of the maximum temperature rise, whichever is the sooner. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62619-7.2.2",
+      "normalized_id": "MECH-IMPACT",
+      "name_zh": "撞擊測試 (Impact Test)",
+      "name_en": "Impact Test (Cell or Cell Block)",
+      "section": "7.2.2",
+      "category": "MECH",
+      "subcategory": "撞擊 (Impact)",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": {
+          "value": "50% 額定容量",
+          "detail": "電芯或電芯組以 0.2 It A 恆流放電至額定容量的 50% (discharged at a constant current of 0.2 It A, to 50 % capacity of the rated capacity)。"
+        },
+        "steel_bar": {
+          "value": "Ø15.8 ± 0.1 mm, Type 316 不鏽鋼棒, ≥ 60 mm",
+          "detail": "使用直徑 15.8 mm ± 0.1 mm、長度至少 60 mm（或電芯最長尺寸，取較大值）之 Type 316 不鏽鋼棒，置於樣品中央 (A type 316 stainless steel bar with a diameter of 15.8 mm ± 0.1 mm and at least 60 mm in length or the longest dimension of the cell, whichever is greater, is placed across the centre of the cell)。"
+        },
+        "drop_mass": {
+          "value": "9.1 kg",
+          "detail": "9.1 kg 剛性質量 (A 9.1 kg rigid mass)。"
+        },
+        "drop_height": {
+          "value": "610 ± 25 mm",
+          "detail": "從 610 mm ± 25 mm 高度垂直落下撞擊不鏽鋼棒 (dropped from a height of 610 mm ± 25 mm onto the bar placed on the sample)。"
+        },
+        "orientation_cylindrical": {
+          "value": "縱軸平行地板，垂直於鋼棒",
+          "detail": "圓柱形電芯縱軸平行於平坦混凝土或金屬地板，垂直於 15.8 mm 直徑鋼棒 (longitudinal axis parallel to the flat concrete or metal floor and perpendicular to the longitudinal axis of the 15.8 mm diameter curved surface lying across the centre)。"
+        },
+        "orientation_prismatic": {
+          "value": "需測試寬面和窄面（旋轉 90°）",
+          "detail": "方形電芯需額外繞縱軸旋轉 90 度，使寬面和窄面均受撞擊，每次使用不同樣品 (A prismatic cell is also to be rotated 90 degrees around its longitudinal axis so that both the wide and narrow sides will be subjected to the impact. Each sample is to be subjected to only a single impact with separate samples to be used for each impact)。"
+        },
+        "pouch_cells": {
+          "value": "視為方形電芯測試",
+          "detail": "軟包電芯以方形電芯方式測試 (Pouch cells are tested as prismatic cells)。"
+        },
+        "impact_count": {
+          "value": "每個樣品僅 1 次撞擊",
+          "detail": "每個樣品僅承受一次撞擊，不同撞擊使用不同樣品 (Each sample is to be subjected to only a single impact with separate samples to be used for each impact)。"
+        },
+        "floor_note": {
+          "value": "金屬地板需防止外部短路",
+          "detail": "若使用金屬地板，應採取適當措施避免電芯或電芯組與地板發生外部短路 (In the case of a metal floor, external short circuit of the cell or cell block with the floor should be avoided by appropriate measures)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62619:2022, Clause 7.2.2, Figure 1",
+      "original_text_snippet": "The cell or cell block shall be discharged at a constant current of 0.2 It A, to 50 % capacity of the rated capacity. The cell or cell block is placed on a flat concrete or metal floor. A type 316 stainless steel bar with a diameter of 15.8 mm ± 0.1 mm and at least 60 mm in length is placed across the centre of the cell or cell block. A 9.1 kg rigid mass is then dropped from a height of 610 mm ± 25 mm onto the bar placed on the sample. Each sample is to be subjected to only a single impact with separate samples to be used for each impact. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62619-7.2.3",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落測試 (Drop Test)",
+      "name_en": "Drop Test (Cell or Cell Block, and Battery System)",
+      "section": "7.2.3",
+      "category": "MECH",
+      "subcategory": "跌落 (Drop / Free Fall)",
+      "test_objects": ["CELL", "MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "滿充 (Fully charged)",
+          "detail": "每個測試單元均為滿充狀態 (Each fully charged test unit)。"
+        },
+        "floor": {
+          "value": "平坦混凝土或金屬地板",
+          "detail": "跌落至平坦混凝土或金屬地板 (onto a flat concrete or metal floor)。金屬地板需防止外部短路。"
+        },
+        "mass_based_conditions": {
+          "value": "依質量分級（見 detail）",
+          "detail": "Table 2 — 跌落方法與條件：(1) 質量 < 7 kg：全跌落 (Whole drop), 1000 mm, 隨機方向, 3 次；(2) 7 kg ≤ 質量 < 20 kg：全跌落 (Whole drop), 100 mm, 底部朝下（由製造商指定）, 3 次；(3) 20 kg ≤ 質量 < 50 kg：棱角跌落 (Edge and corner drop), 100 mm, 每類撞擊 2 次；(4) 50 kg ≤ 質量 < 100 kg：棱角跌落, 50 mm, 每類撞擊 2 次；(5) 質量 ≥ 100 kg：棱角跌落, 25 mm, 每類撞擊 2 次。"
+        },
+        "whole_drop_count": {
+          "value": "3 次（質量 < 20 kg）",
+          "detail": "全跌落測試 (7.2.3.2)：質量 < 7 kg 時以隨機方向跌落 3 次；7-20 kg 時以底部朝下方向跌落 3 次 (dropped three times from a height shown in Table 2)。"
+        },
+        "edge_corner_drop_count": {
+          "value": "棱角各 2 次（質量 ≥ 20 kg）",
+          "detail": "棱角跌落測試 (7.2.3.3)：質量 ≥ 20 kg 時執行最短邊跌落 2 次 + 角跌落 2 次，兩次撞擊在同一角和同一最短邊上 (dropped two times, the two impacts per impact type shall be on the same corner and on the same shortest edge)。"
+        },
+        "rest_time": {
+          "value": "測試後靜置 ≥ 1 小時",
+          "detail": "測試後靜置至少 1 小時，然後進行目視檢查 (put on rest for a minimum of 1 h, and then a visual inspection shall be performed)。"
+        },
+        "subdivision_note": {
+          "value": "可測試代表性子單元",
+          "detail": "若電池系統可分為較小單元，可測試代表性子單元。製造商可為測試單元添加最終電池系統中的功能，須明確聲明測試單元 (If the battery system is divided into smaller units, the unit can be tested as the representative of the battery system)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62619:2022, Clause 7.2.3, Table 2, Figure 2-4",
+      "original_text_snippet": "The drop test is conducted on a cell or cell block, and battery system. The test method and the height of the drop are determined by the test unit weight as shown in Table 2. Each fully charged test unit is dropped three times from a height shown in Table 2 onto a flat concrete or metal floor. After the test, the test units shall be put on rest for a minimum of 1 h, and then a visual inspection shall be performed. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62619-7.2.4",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "熱濫用測試 (Thermal Abuse Test)",
+      "name_en": "Thermal Abuse Test (Cell or Cell Block)",
+      "section": "7.2.4",
+      "category": "THERM",
+      "subcategory": "熱濫用 (Thermal Abuse / Heating)",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": {
+          "value": "滿充 (Fully charged)",
+          "detail": "完全充電的電芯在 25 °C ± 5 °C 環境溫度下穩定 (Each fully charged cell, stabilized in an ambient temperature of 25 °C ± 5 °C)。"
+        },
+        "initial_temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "環境溫度 25 °C ± 5 °C 下穩定後放入烤箱。"
+        },
+        "oven_type": {
+          "value": "重力或循環空氣對流烤箱",
+          "detail": "放入重力型或循環空氣對流烤箱 (placed in a gravity or circulating air-convection oven)。"
+        },
+        "ramp_rate": {
+          "value": "5 ± 2 °C/min",
+          "detail": "烤箱溫度以 5 °C/min ± 2 °C/min 的速率升溫 (The oven temperature is raised at a rate of 5 °C / min ± 2 °C /min)。"
+        },
+        "target_temperature": {
+          "value": "85 ± 5 °C",
+          "detail": "升溫至 85 °C ± 5 °C (to a temperature of 85 °C ± 5 °C)。注意：此溫度低於 IEC 62133-2 的 130 °C 目標溫度。"
+        },
+        "hold_time": {
+          "value": "3 小時",
+          "detail": "電芯在此溫度下維持 3 小時後結束測試 (The cell remains at this temperature for 3 h before the test is discontinued)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62619:2022, Clause 7.2.4",
+      "original_text_snippet": "Each fully charged cell, stabilized in an ambient temperature of 25 °C ± 5 °C, is placed in a gravity or circulating air-convection oven. The oven temperature is raised at a rate of 5 °C / min ± 2 °C /min to a temperature of 85 °C ± 5 °C. The cell remains at this temperature for 3 h before the test is discontinued. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62619-7.2.5",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電測試 (Overcharge Test)",
+      "name_en": "Overcharge Test (Cell or Cell Block)",
+      "section": "7.2.5",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "applicability": {
+          "value": "僅限單一充電電壓控制/保護的電池系統",
+          "detail": "此測試僅適用於只有單一充電電壓控制或保護的電池系統。提供兩個或以上獨立充電電壓保護/控制的電池系統可豁免 (This test shall be performed for those battery systems that are provided with only a single control or protection for the charging voltage control. For those battery systems provided with two or more independent protection(s) or control(s) for the charging voltage control, this test may be waived)。"
+        },
+        "soc": {
+          "value": "放電至終止電壓 (0.2 It A)",
+          "detail": "測試電芯先以 0.2 It A 恆流放電至製造商指定的終止電壓 (Each test cell shall be discharged at a constant current of 0.2 It A to a final voltage specified by the manufacturer)。"
+        },
+        "ambient_temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "測試在環境溫度 25 °C ± 5 °C 下進行 (The test shall be carried out in an ambient temperature of 25 °C ± 5 °C)。"
+        },
+        "charging_current": {
+          "value": "電池系統最大充電電流",
+          "detail": "以等於電池系統最大指定充電電流的恆流進行充電 (charged with a constant current equal to the maximum specified charging current of the battery system)。對於並聯電芯，單電芯電流 = 電池系統最大充電電流 ÷ 並聯電芯數。"
+        },
+        "charging_voltage": {
+          "value": "原充電控制失效時的最大電壓",
+          "detail": "充電直至電壓達到在原充電控制不工作條件下可能達到的最大電壓值，然後終止充電 (until the voltage reaches the maximum voltage value that is possible under the condition where the original charging control of the battery system does not work)。"
+        },
+        "termination": {
+          "value": "溫度穩定（30 分鐘內 < 10 °C 變化）或恢復至環境溫度",
+          "detail": "測試持續至電芯表面溫度達穩態條件（30 分鐘內變化小於 10 °C）或恢復至環境溫度 (until the temperature of the cell surface reaches steady state conditions (less than 10 °C change in a 30-min period) or returns to ambient temperature)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [
+        "電池系統提供兩個或以上獨立充電電壓控制/保護時可豁免。例如：(1) 電芯電壓監測裝置控制充電電流防止超過上限充電電壓；加上 (2) 診斷監測系統偵測電芯電壓監測裝置故障並終止充電（如比對電池系統總電壓與各電芯電壓加總值）。(7.2.5 NOTE)"
+      ],
+      "related_tests": ["IEC62619-8.2.2"],
+      "source_reference": "IEC 62619:2022, Clause 7.2.5",
+      "original_text_snippet": "This test shall be performed for those battery systems that are provided with only a single control or protection for the charging voltage control. For those battery systems provided with two or more independent protection(s) or control(s) for the charging voltage control, this test may be waived. Sample cells shall then be charged with a constant current equal to the maximum specified charging current of the battery system until the voltage reaches the maximum voltage value that is possible under the condition where the original charging control of the battery system does not work. The test shall be continued until the temperature of the cell surface reaches steady state conditions (less than 10 °C change in a 30-min period) or returns to ambient temperature. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62619-7.2.6",
+      "normalized_id": "ELEC-FD",
+      "name_zh": "強制放電測試 (Forced Discharge Test)",
+      "name_en": "Forced Discharge Test (Cell or Cell Block)",
+      "section": "7.2.6",
+      "category": "ELEC",
+      "subcategory": "強制放電 (Forced Discharge)",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "soc": {
+          "value": "放電至終止電壓 (0.2 It A)",
+          "detail": "測試電芯先以 0.2 It A 恆流放電至製造商指定的終止電壓 (Each test cell shall be discharged at a constant current of 0.2 It A to a final voltage specified by the manufacturer)。"
+        },
+        "ambient_temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "測試在環境溫度 25 °C ± 5 °C 下進行。"
+        },
+        "forced_discharge_current": {
+          "value": "1.0 It A",
+          "detail": "已放電電芯以 1.0 It A 恆流進行強制放電 (A discharged cell is subjected to a forced discharge at a constant current of 1.0 It A)。若電芯最大放電電流 < 1.0 It A，則按公式調整：t = Im / It × 90 min（Im = 最大放電電流）。"
+        },
+        "duration": {
+          "value": "90 分鐘",
+          "detail": "強制放電持續 90 分鐘 (for a test period of 90 min)。測試結束後進行目視檢查。"
+        },
+        "target_voltage_case_1": {
+          "value": "-(上限充電電壓)",
+          "detail": "情況一：電池系統具備兩個或以上獨立放電電壓保護/控制，或電池系統僅有單個電芯或電芯組時，目標電壓 = 負的電芯上限充電電壓 (Target voltage is minus the value of the upper limit charging voltage of the cell)。"
+        },
+        "target_voltage_case_2": {
+          "value": "-(n-1) × 上限充電電壓",
+          "detail": "情況二：電池系統僅有單一或無放電電壓保護/控制時，目標電壓 = -(n-1) × 電芯上限充電電壓，其中 n 為串聯電芯數 (Target voltage is minus the value of (n−1) multiplied by the upper limit charging voltage of the cell, where n is the number of cells connected in series)。"
+        },
+        "voltage_hold": {
+          "value": "達目標電壓後降低電流維持至測試結束",
+          "detail": "若放電電壓在測試期間達到目標電壓，應通過降低電流將電壓維持在目標電壓，直到測試期結束 (If the voltage in discharge reaches the target voltage, the voltage shall be kept at the target voltage by reducing the current for the remaining test period)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62619:2022, Clause 7.2.6",
+      "original_text_snippet": "A discharged cell is subjected to a forced discharge at a constant current of 1.0 It A for a test period of 90 min. At the end of the test period, a visual inspection shall be performed. If the voltage in discharge reaches the target voltage shown below within the test period, the voltage shall be kept at the target voltage by reducing the current for the remaining test period. i) If the battery system is provided with two or more independent protection(s) or control(s) for discharging voltage control or the battery system has only a single cell or cell block: Target voltage is minus the value of the upper limit charging voltage of the cell. ii) If the battery system is provided with only a single or no protection or control for the discharging voltage control: Target voltage is minus the value of (n−1) multiplied by the upper limit charging voltage of the cell, where n is the number of cells connected in series. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62619-7.3.2",
+      "normalized_id": "ELEC-SC-INT",
+      "name_zh": "強制內部短路測試 (Internal Short-Circuit Test)",
+      "name_en": "Internal Short-Circuit Test (Cell) — Design Evaluation",
+      "section": "7.3.2",
+      "category": "ELEC",
+      "subcategory": "強制內部短路 (Forced Internal Short Circuit)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "applicability": {
+          "value": "圓柱形及方形電芯（設計評估）",
+          "detail": "針對圓柱形電芯和方形電芯的強制內部短路測試。設計評估性質，由電芯製造商或第三方實驗室執行 (An evaluation of a newly designed cell shall be conducted by the cell manufacturer or a third-party test house)。"
+        },
+        "charging_procedure": {
+          "value": "放電 (0.2 It A) → CC-CV 充電至 0.05 It A",
+          "detail": "先以 0.2 It A 恆流放電至指定終止電壓。然後以上限充電電壓及製造商指定電流進行恆流-恆壓 (CC-CV) 充電，直到充電電流降至 0.05 It A (Prior to charging, the cell shall be discharged at a constant current of 0.2 It A, down to a specified final voltage. Then, the cell shall be charged at the upper limited charging voltage at the constant current specified by the manufacturer, continue charging at constant voltage at upper limited charge current drops to 0.05 It A)。"
+        },
+        "ambient_temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "所有測試在環境溫度 25 °C ± 5 °C 下進行。鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘。"
+        },
+        "nickel_particle": {
+          "value": "鎳片刺入捲芯模擬內部短路",
+          "detail": "參照 IEC 62133-2:2017 附錄 A.5 及 A.6 的樣品準備指南。將鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘。取出後 10 分鐘內完成安裝 (Refer to the sample preparation guidance in Clause A.5 and Clause A.6 of IEC 62133-2:2017)。"
+        },
+        "press_speed": {
+          "value": "0.1 mm/s",
+          "detail": "壓裝具以 0.1 mm/s 的速度下壓，同時監測電芯電壓 (The fixture is moved down at a speed of 0.1 mm/s monitoring the cell voltage)。"
+        },
+        "pressing_jig": {
+          "value": "10 mm × 10 mm 不鏽鋼軸 + 丁腈橡膠/壓克力樹脂",
+          "detail": "壓裝具底面為丁腈橡膠 (nitrile rubber)，置於 10 mm × 10 mm 不鏽鋼軸上。圓柱形使用丁腈橡膠底面；方形電芯另加 5 mm × 5 mm（2 mm 厚）壓克力樹脂 (acrylic resin)。"
+        },
+        "short_circuit_detection": {
+          "value": "電壓降 > 50 mV",
+          "detail": "以大於每秒 100 次的速率監測電壓。若電壓相對初始電壓下降超過 50 mV，即判定發生內部短路 (If the voltage drops more than 50 mV compared the initial voltage, an internal short-circuit has been determined to have occurred)。也可使用低於 50 mV 的閾值，但需使用足夠精度的高精度電壓計並確認短路位置。"
+        },
+        "stop_criteria_voltage": {
+          "value": "偵測到電壓降 > 50 mV 時立即停止，保持 30 秒",
+          "detail": "偵測到內部短路時立即停止下壓，保持壓裝具位置 30 秒後釋放壓力 (stop the descent immediately and keep the pressing jig in the position for 30 s, and then release the pressure)。"
+        },
+        "stop_criteria_force_cylindrical": {
+          "value": "800 N",
+          "detail": "若壓力達到 800 N 仍未發生 50 mV 電壓降，立即停止下壓（圓柱形電芯）(If the force of the press reaches 800 N for a cylindrical cell before the 50 mV voltage drop, stop the descent immediately)。"
+        },
+        "stop_criteria_force_prismatic": {
+          "value": "400 N",
+          "detail": "若壓力達到 400 N 仍未發生 50 mV 電壓降，立即停止下壓（方形電芯）(400 N for a prismatic cell)。對於堆疊式或折疊式電極方形電芯，鎳顆粒應插入最外側正負電極對的中心位置，最大壓力為 400 N。"
+        },
+        "voltage_monitoring_rate": {
+          "value": "> 100 次/秒",
+          "detail": "電壓監測速率大於每秒 100 次 (The voltage is monitored at a rate of more than 100 times per second)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火",
+        "details": [
+          "無起火 (No fire)",
+          "註：判定標準僅為「無起火」，不包含「無爆炸」（與 7.2 節測試不同）"
+        ]
+      },
+      "exemptions": [
+        "此為設計評估測試，須由電芯製造商或第三方測試機構執行 (7.3.2 a))",
+        "可選擇以 7.3.3 蔓延測試替代本測試（7.3.1 規定：須以 7.3.2 或 7.3.3 至少一項證明安全性）"
+      ],
+      "related_tests": ["IEC62619-7.3.3"],
+      "source_reference": "IEC 62619:2022, Clause 7.3.2, Figure 5",
+      "original_text_snippet": "The fixture is moved down at a speed of 0.1 mm/s monitoring the cell voltage. When a voltage drop caused by the internal short-circuit is detected, stop the descent immediately and keep the pressing jig in the position for 30 s, and then release the pressure. The voltage is monitored at a rate of more than 100 times per second. If the voltage drops more than 50 mV compared the initial voltage, an internal short-circuit has been determined to have occurred. If the force of the press reaches 800 N for a cylindrical cell or 400 N for a prismatic cell before the 50 mV voltage drop, stop the descent immediately. Acceptance criteria: No fire."
+    },
+    {
+      "id": "IEC62619-7.3.3",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "蔓延測試 / 熱擴散測試 (Propagation Test)",
+      "name_en": "Propagation Test (Battery System)",
+      "section": "7.3.3",
+      "category": "THERM",
+      "subcategory": "熱擴散 (Thermal Propagation / Thermal Runaway)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "滿充 (Fully charged)",
+          "detail": "電池系統滿充後在 25 °C ± 5 °C 環境中等待電芯穩定 (The battery system is fully charged and then left until the cells stabilize in an ambient temperature of 25 °C ± 5 °C)。"
+        },
+        "ambient_temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "環境溫度 25 °C ± 5 °C。"
+        },
+        "trigger_method": {
+          "value": "雷射或其他方式誘發單電芯熱失控",
+          "detail": "電池系統中一個目標電芯 (target cell) 例如以雷射加熱直至進入熱失控 (One cell in the battery system (hereafter target cell) is e.g. heated by laser until the cell enters into thermal runaway)。亦允許使用雷射以外的其他方法，見附錄 B（雷射範例）及附錄 C（其他方法）。"
+        },
+        "trigger_off": {
+          "value": "目標電芯熱失控後關閉觸發源",
+          "detail": "目標電芯發生熱失控後，關閉觸發源 (After thermal runaway in the cell is initiated, the triggering source is turned off)。"
+        },
+        "observation_time": {
+          "value": "8 小時",
+          "detail": "關閉觸發源後觀察電池系統 8 小時 (battery system is observed for 8 h)。"
+        },
+        "modification_note": {
+          "value": "可最小化修改電池系統以利測試",
+          "detail": "可對電池系統進行修改以利目標電芯熱失控，但修改應最小化且不影響電池系統的熱特性 (The battery system may be modified to facilitate the thermal runaway of the target cell. The modification should be minimized and it shall not affect the thermal properties of the battery system)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電池系統無外部起火、無外殼破裂",
+        "details": [
+          "電池系統無外部起火 (No external fire from the battery system)",
+          "電池系統外殼無破裂 (No battery system case rupture)",
+          "若電池系統無外殼，製造商須指定防火保護區域",
+          "註：目標電芯本身起火或外殼破裂是可接受的，因其為測試目的故意觸發 (Fire or battery system case rupture caused by the target cell is acceptable because the first thermal runaway is intentionally made for the test purpose as a trigger)"
+        ]
+      },
+      "exemptions": [
+        "可選擇以 7.3.2 內部短路測試替代本測試（7.3.1 規定：須以 7.3.2 或 7.3.3 至少一項證明安全性）"
+      ],
+      "related_tests": ["IEC62619-7.3.2"],
+      "source_reference": "IEC 62619:2022, Clause 7.3.3, Annex B, Annex C",
+      "original_text_snippet": "The battery system is fully charged and then left until the cells stabilize in an ambient temperature of 25 °C ± 5 °C. One cell in the battery system (hereafter target cell) is e.g. heated by laser until the cell enters into thermal runaway. After thermal runaway in the cell is initiated, the triggering source is turned off and battery system is observed for 8 h. Acceptance criteria: No external fire from the battery system, no battery system case rupture. Fire or battery system case rupture caused by the target cell is acceptable because the first thermal runaway is intentionally made for the test purpose as a trigger."
+    },
+    {
+      "id": "IEC62619-8.2.2",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電壓控制測試 (Overcharge Control of Voltage) — BMS",
+      "name_en": "Overcharge Control of Voltage (Battery System)",
+      "section": "8.2.2",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge) — BMS 功能測試",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "放電至終止電壓 (0.2 It A)",
+          "detail": "測試電池系統先以 0.2 It A 恆流放電至製造商指定的終止電壓 (Each test battery system shall be discharged at a constant current of 0.2 It A, to a final voltage specified by the manufacturer)。"
+        },
+        "ambient_temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "測試在環境溫度 25 °C ± 5 °C 下進行。"
+        },
+        "operating_conditions": {
+          "value": "正常操作條件，冷卻系統運作",
+          "detail": "在正常操作條件下進行，冷卻系統（若有）須運作。主接觸器閉合，電池系統由 BMS 控制 (under normal operating conditions with the cooling system (if any) operating, main contactors are closed with the battery system controlled by the BMS)。"
+        },
+        "charging_current": {
+          "value": "推薦充電器的最大電流",
+          "detail": "以推薦充電器的最大電流進行充電 (charged at the maximum current of the recommended charger)。"
+        },
+        "excess_voltage": {
+          "value": "每電芯上限充電電壓 + 10%",
+          "detail": "設定電壓超過每個電芯上限充電電壓 10% (with set voltage exceeding the upper limit charging voltage by 10 % for each cell in the battery system)。可使用附加充電器施加過量電壓；也可僅對電池系統中部分電芯施加。"
+        },
+        "termination": {
+          "value": "直到 BMS 終止充電",
+          "detail": "測試持續至 BMS 終止充電 (The test shall be carried out until the BMS terminates the charging)。數據擷取/監測在充電停止後繼續 1 小時。"
+        },
+        "post_test_monitoring": {
+          "value": "BMS 終止充電後 1 小時",
+          "detail": "數據擷取/監測在充電停止後繼續 1 小時 (Data acquisition/monitoring shall be continued for 1 h after charging is stopped)。"
+        },
+        "safety_stop": {
+          "value": "BMS 失效時：電芯電壓達 103% 上限或超過上限 1 分鐘後停止",
+          "detail": "若 BMS 未能終止充電，應在適當時機出於安全原因停止測試，例如電芯電壓達到上限充電電壓的 103% 或超過上限充電電壓 1 分鐘後 (If the BMS fails to terminate the charging, the test should be stopped at the proper timing for safety reasons, for example when the cell voltage reaches 103 % of the upper limit charging voltage or 1 min after having exceeded the upper limit charging voltage)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "BMS 在超過上限充電電壓前終止充電；無起火、無爆炸",
+        "details": [
+          "BMS 須在超過電芯上限充電電壓前終止充電 (BMS terminates charging before exceeding the upper limit charging voltage)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "註：BMS 可通過接觸器、繼電器、場效電晶體 (FET)、斷路器、電磁開關等方式終止主電路充電電流"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["IEC62619-7.2.5", "IEC62619-8.2.3", "IEC62619-8.2.4"],
+      "source_reference": "IEC 62619:2022, Clause 8.2.2, Figure 7",
+      "original_text_snippet": "Sample battery systems shall then be charged at the maximum current of the recommended charger with set voltage exceeding the upper limit charging voltage by 10 % for each cell in the battery system. The test shall be carried out until the BMS terminates the charging. Data acquisition/monitoring shall be continued for 1 h after charging is stopped. If the BMS fails to terminate the charging, the test should be stopped at the proper timing for safety reasons, for example when the cell voltage reaches 103 % of the upper limit charging voltage or 1 min after having exceeded the upper limit charging voltage. Acceptance criteria: BMS terminates charging before exceeding the upper limit charging voltage. No fire, no explosion."
+    },
+    {
+      "id": "IEC62619-8.2.3",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "過充電流控制測試 (Overcharge Control of Current) — BMS",
+      "name_en": "Overcharge Control of Current (Battery System)",
+      "section": "8.2.3",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current) — BMS 功能測試",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "放電至終止電壓 (0.2 It A)",
+          "detail": "測試電池系統先以 0.2 It A 恆流放電至製造商指定的終止電壓。"
+        },
+        "ambient_temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "測試在環境溫度 25 °C ± 5 °C 下進行。"
+        },
+        "operating_conditions": {
+          "value": "正常操作條件，冷卻系統運作",
+          "detail": "在正常操作條件下進行，冷卻系統（若有）須運作。主接觸器閉合，電池系統由 BMS 控制 (under normal operating conditions with the cooling system (if any) operating, main contactors closed with the battery system being controlled by the BMS)。"
+        },
+        "charging_current": {
+          "value": "最大充電電流 + 20%",
+          "detail": "以超過最大充電電流 20% 的電流進行充電 (charged at a current exceeding the maximum charging current by 20 %)。"
+        },
+        "post_test_monitoring": {
+          "value": "充電停止後 1 小時",
+          "detail": "數據擷取和/或監測在充電停止後繼續 1 小時 (Data acquisition and/or monitoring shall be continued for 1 h after charging is stopped)。"
+        },
+        "full_operation": {
+          "value": "所有 BMS 功能須完全運作",
+          "detail": "測試期間電池系統的所有功能須按設計完全運作 (During the test, all functions of the battery system shall be fully operational as designed)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "BMS 偵測過充電流並控制於最大充電電流以下；無起火、無爆炸",
+        "details": [
+          "BMS 須偵測過充電流 (The BMS shall detect the overcharging current)",
+          "BMS 須控制充電於最大充電電流以下 (shall control the charging below the maximum charging current)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [
+        "若上層系統的最大充電電流能力低於電池系統的最大充電電流，可豁免此測試 (If the maximum ability of charging current of the upper system is lower than the maximum charging current for the battery system, this test may be waived) (8.2.3)"
+      ],
+      "related_tests": ["IEC62619-8.2.2", "IEC62619-8.2.4"],
+      "source_reference": "IEC 62619:2022, Clause 8.2.3",
+      "original_text_snippet": "If the maximum ability of charging current of the upper system is lower than the maximum charging current for the battery system, this test may be waived. The battery system shall be discharged at a constant current of 0.2 It A, to a final voltage specified by the manufacturer. Sample battery systems shall then be charged at a current exceeding the maximum charging current by 20 %. Data acquisition and/or monitoring shall be continued for 1 h after charging is stopped. Acceptance criteria: The BMS shall detect the overcharging current and shall control the charging below the maximum charging current. No fire, no explosion."
+    },
+    {
+      "id": "IEC62619-8.2.4",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "過熱控制測試 (Overheating Control) — BMS",
+      "name_en": "Overheating Control (Battery System)",
+      "section": "8.2.4",
+      "category": "THERM",
+      "subcategory": "熱濫用 (Thermal Abuse / Heating) — BMS 功能測試",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "放電至終止電壓 (0.2 It A)，充電至 50% 額定容量",
+          "detail": "測試電池系統先以 0.2 It A 恆流放電至製造商指定的終止電壓，然後以推薦電流充電至額定容量的 50% (Each test battery system shall be discharged at a constant current of 0.2 It A, to a final voltage specified by the manufacturer. Sample battery systems shall then be charged at the recommended current to a 50 % capacity of the rated capacity)。"
+        },
+        "initial_temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "初始環境溫度 25 °C ± 5 °C (at an initial ambient temperature of 25 °C ± 5 °C)。"
+        },
+        "operating_conditions": {
+          "value": "正常操作條件，但冷卻系統斷開",
+          "detail": "在正常操作條件下進行，主接觸器閉合由 BMS 控制，但冷卻系統（若有）須斷開 (under normal operating conditions with the exception that the cooling system, if provided, shall be disconnected)。"
+        },
+        "temperature_elevation": {
+          "value": "最高操作溫度 + 5 °C",
+          "detail": "電池系統溫度升高至超過最高操作溫度 5 °C (The temperature of the battery system shall be increased to 5 °C above the maximum operating temperature)。"
+        },
+        "charging_continuation": {
+          "value": "在升高溫度下繼續充電至 BMS 終止",
+          "detail": "在升高溫度下繼續充電，直到 BMS 終止充電 (The charging is continued at the elevated temperature until the BMS terminates the charging)。"
+        },
+        "post_test_monitoring": {
+          "value": "BMS 終止充電後 1 小時",
+          "detail": "數據擷取/監測在序列停止後繼續 1 小時 (Data acquisition/monitoring shall be continued for one hour after the sequence is stopped (e.g. the BMS has terminated charging))。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "BMS 偵測過熱溫度並終止充電；所有功能正常運作；無起火、無爆炸",
+        "details": [
+          "BMS 須偵測過熱溫度並終止充電 (The BMS shall detect the overheat temperature and shall terminate charging)",
+          "測試期間電池系統所有功能須按設計完全運作 (During the test, all functions of the battery system shall be fully operational as designed)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["IEC62619-8.2.2", "IEC62619-8.2.3"],
+      "source_reference": "IEC 62619:2022, Clause 8.2.4",
+      "original_text_snippet": "The test shall be carried out at an initial ambient temperature of 25 °C ± 5 °C and under normal operating conditions (main contactors are closed with battery system being controlled by the BMS) with the exception that the cooling system, if provided, shall be disconnected. Sample battery systems shall then be charged at the recommended current to a 50 % capacity of the rated capacity. The temperature of the battery system shall be increased to 5 °C above the maximum operating temperature. The charging is continued at the elevated temperature until the BMS terminates the charging. Acceptance criteria: The BMS shall detect the overheat temperature and shall terminate charging. No fire, no explosion."
+    }
+  ],
+  "test_sequence": {
+    "description": "IEC 62619 將測試分為三大區塊：7.2 節（合理可預見誤用測試）、7.3 節（內部短路設計評估）和 8.2 節（BMS 功能安全測試）。標準未規定特定的測試執行順序。7.3.1 規定內部短路安全性須以 7.3.2（電芯層級內部短路）或 7.3.3（系統層級蔓延測試）至少一項證明。",
+    "groups": [
+      {
+        "group": "7.2 合理可預見誤用測試 (Reasonably Foreseeable Misuse)",
+        "tests": ["IEC62619-7.2.1", "IEC62619-7.2.2", "IEC62619-7.2.3", "IEC62619-7.2.4", "IEC62619-7.2.5", "IEC62619-7.2.6"],
+        "rule": "電芯/電芯組/電池系統層級的基本安全測試",
+        "source_reference": "7.2"
+      },
+      {
+        "group": "7.3 內部短路設計評估 (Internal Short-Circuit Design Evaluation)",
+        "tests": ["IEC62619-7.3.2", "IEC62619-7.3.3"],
+        "rule": "須以 7.3.2（電芯層級）或 7.3.3（系統層級）至少一項證明內部短路不會導致電池系統起火或火焰蔓延 (This shall be demonstrated either at the cell level according to 7.3.2 or at the battery system level according to 7.3.3)",
+        "source_reference": "7.3.1"
+      },
+      {
+        "group": "8.2 BMS 功能安全測試 (Battery Management System Tests)",
+        "tests": ["IEC62619-8.2.2", "IEC62619-8.2.3", "IEC62619-8.2.4"],
+        "rule": "評估 BMS 的充電電壓控制、充電電流控制及過熱保護功能",
+        "source_reference": "8.2.1 ~ 8.2.4"
+      }
+    ]
+  },
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "過充電測試 (7.2.5) 豁免：電池系統提供兩個或以上獨立充電電壓控制/保護時可豁免",
+      "detail": "例如：(1) 電芯電壓監測裝置控制充電電流防止超過上限充電電壓；加上 (2) 診斷監測系統偵測電芯電壓監測裝置故障並終止充電（如比對電池系統總電壓與各電芯電壓加總值）。",
+      "applicable_tests": ["IEC62619-7.2.5"],
+      "source_reference": "7.2.5"
+    },
+    {
+      "id": "GE-02",
+      "description": "過充電流控制測試 (8.2.3) 豁免：若上層系統最大充電電流能力低於電池系統最大充電電流時可豁免",
+      "applicable_tests": ["IEC62619-8.2.3"],
+      "source_reference": "8.2.3"
+    },
+    {
+      "id": "GE-03",
+      "description": "內部短路測試 (7.3.2) 與蔓延測試 (7.3.3) 為二擇一：須以其中一項證明安全性",
+      "detail": "7.3.1 規定須以 7.3.2（電芯內部短路測試）或 7.3.3（電池系統蔓延測試）至少一項證明內部短路不會導致電池系統起火或火焰蔓延至系統外部。",
+      "applicable_tests": ["IEC62619-7.3.2", "IEC62619-7.3.3"],
+      "source_reference": "7.3.1"
+    },
+    {
+      "id": "GE-04",
+      "description": "電池系統可測試代表性子單元替代完整系統（跌落測試）",
+      "detail": "若電池系統可分為較小單元，可測試代表性子單元。製造商可為測試單元添加最終電池系統中的功能，須明確聲明測試單元。",
+      "applicable_tests": ["IEC62619-7.2.3"],
+      "source_reference": "7.2.3.1, Table 2"
+    }
+  ],
+  "bms_requirements": {
+    "section": "8.1 ~ 8.2",
+    "description": "BMS 功能安全要求。BMS 須評估電芯和電池系統狀態，維持在指定電芯操作區域內。電池系統的安全關鍵電氣/電子/軟體控制須進行功能安全分析。",
+    "functional_safety_standards": [
+      "IEC 61508 (all parts)",
+      "IEC 60730-1:2020, Annex H",
+      "ISO 13849 (all parts)"
+    ],
+    "key_factors": ["電壓 (Voltage)", "溫度 (Temperature)", "電流 (Current)"],
+    "hazard_analysis_required": true,
+    "risk_assessment_required": true,
+    "sil_target_required": true,
+    "tests": ["IEC62619-8.2.2", "IEC62619-8.2.3", "IEC62619-8.2.4"],
+    "source_reference": "8.1, 8.2.1"
+  },
+  "cross_validation_notes": {
+    "description": "三來源交叉驗證結果",
+    "sources_compared": [
+      "Gemini CLI markdown (IEC62619_zh-TW_standardized.md)",
+      "Original OCR markdown (IEC62619-2022.md) — 權威來源",
+      "Batch1 JSON (IEC62619_structured.json)"
+    ],
+    "discrepancies_found": [
+      {
+        "parameter": "7.2.1 外部短路 - 外部電阻值",
+        "gemini_value": "30 mΩ ± 10 mΩ",
+        "ocr_value": "30 mΩ ± 10 mΩ",
+        "batch_value": "30 ± 10 mΩ",
+        "resolution": "三來源完全一致。",
+        "resolved_value": "30 ± 10 mΩ"
+      },
+      {
+        "parameter": "7.2.2 撞擊測試 - test_objects 對應",
+        "gemini_value": "電芯/電芯組",
+        "ocr_value": "cell or cell block",
+        "batch_value": "CELL, CELL_BLOCK",
+        "resolution": "Schema v2.0 將 CELL_BLOCK 統一為 MODULE（並聯組合）。Batch JSON 使用舊分類 CELL_BLOCK。",
+        "resolved_value": "CELL, MODULE"
+      },
+      {
+        "parameter": "7.2.4 熱濫用 - 目標溫度",
+        "gemini_value": "85°C",
+        "ocr_value": "85 °C ± 5 °C",
+        "batch_value": "85 ± 5°C",
+        "resolution": "三來源一致。Gemini 缺少容差 ± 5 °C。以 OCR 為準。",
+        "resolved_value": "85 ± 5 °C"
+      },
+      {
+        "parameter": "7.2.5 過充電 - 充電電流描述",
+        "gemini_value": "最大充電電流直至充電終止",
+        "ocr_value": "maximum specified charging current of the battery system until the voltage reaches the maximum voltage value",
+        "batch_value": "Maximum specified charging current of battery system",
+        "resolution": "Gemini 描述過於簡略。OCR 明確指定充電至「原充電控制不工作時的最大電壓值」。以 OCR 為準。",
+        "resolved_value": "以電池系統最大充電電流恆流充電，直至電壓達到原充電控制失效時的最大電壓值"
+      },
+      {
+        "parameter": "7.3.3 蔓延測試 - test_objects 對應",
+        "gemini_value": "電池系統",
+        "ocr_value": "battery system",
+        "batch_value": "BATTERY_SYSTEM",
+        "resolution": "Schema v2.0 將 BATTERY_SYSTEM 統一為 PACK_SYSTEM。",
+        "resolved_value": "PACK_SYSTEM"
+      },
+      {
+        "parameter": "8.2.4 過熱控制 - batch JSON 中獨立測試條目",
+        "gemini_value": "未獨立列出",
+        "ocr_value": "獨立測試 (8.2.4)",
+        "batch_value": "僅在 bms_requirements.tests_required 中提及",
+        "resolution": "OCR 明確定義 8.2.4 為獨立測試，有完整 requirement/test/criteria 結構。Schema v2.0 將其作為獨立測試條目。",
+        "resolved_value": "獨立測試條目 IEC62619-8.2.4"
+      }
+    ],
+    "validation_summary": "所有關鍵測試參數（溫度、電阻值、力、電流、持續時間）在三來源之間一致。主要差異為：(1) test_objects 命名（CELL_BLOCK → MODULE, BATTERY_SYSTEM → PACK_SYSTEM）；(2) Gemini markdown 缺少部分容差值；(3) Batch JSON 未將 8.2.4 過熱控制列為獨立測試。以 OCR 原文為最終權威來源。"
+  },
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "三來源交叉驗證：Gemini CLI markdown, Original OCR markdown (authoritative), Batch1 structured JSON",
+    "source_files": [
+      "/Users/Openclaw/Documents/Standard-dictionary/資料庫/02_Standardized_Markdown/IEC62619_zh-TW_standardized.md",
+      "/Users/Openclaw/Documents/Henry & Beta/Standards/IEC62619-2022.md",
+      "/Users/Openclaw/Documents/Standard-dictionary/batch1/content/IEC62619_structured.json"
+    ],
+    "total_tests": 11,
+    "total_terms": 11,
+    "notes": [
+      "IEC 62619:2022 Edition 2.0 為工業應用二次鋰電池安全標準，為 IEC 62133-2（可攜式）的工業對應版本",
+      "主要差異：IEC 62619 熱濫用目標溫度 85°C（IEC 62133-2 為 130°C）；IEC 62619 包含 BMS 功能安全測試及蔓延測試",
+      "測試分三大區塊：7.2（誤用測試, 6 項）、7.3（設計評估, 2 項, 二擇一）、8.2（BMS 測試, 3 項）",
+      "7.3.2 內部短路與 7.3.3 蔓延測試為「至少擇一」關係，非全部必須",
+      "外部短路電阻 30 mΩ（vs IEC 62133-2 的 80 mΩ），反映工業應用的不同使用場景",
+      "跌落測試依質量分為全跌落（< 20 kg）和棱角跌落（≥ 20 kg），反映工業電池較大的重量特性"
+    ]
+  }
+}

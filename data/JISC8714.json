@@ -1,0 +1,419 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "JISC8714",
+    "full_name": "JIS C 8714:2007 Safety Tests for Portable Lithium Ion Secondary Cells and Batteries for Use in Portable Electronic Applications",
+    "full_name_zh": "JIS C 8714:2007 攜帶式電子設備用鋰離子二次電芯與電池之安全性測試",
+    "short_name": "JIS C 8714",
+    "publisher": "Japanese Standards Association (JSA)",
+    "publication_date": "2007",
+    "type": "standard",
+    "scope": "攜帶式電子設備用鋰離子二次電芯 (Cells) 與組電池 (Batteries) 之安全性試驗。涵蓋電芯層級（壓壞、外部短絡、外部加熱、強制內部短絡）及組電池層級（跌落、外部短絡、過充電保護確認）之測試要求。",
+    "applicable_objects": ["CELL", "PACK_SYSTEM"],
+    "source_pdf": "JISC8714_2007.pdf",
+    "source_gemini_md": "JISC8714_zh-TW_standardized.md"
+  },
+  "terms": [
+    {
+      "term_en": "Upper Limit Charge Voltage",
+      "term_zh": "上限充電電壓",
+      "definition": "電芯或電池塊允許的最高充電電壓，通常為 4.25V。若適用非 4.25V 之上限充電電壓，須依附錄 B 流程保留技術依據資料。(The maximum allowable charging voltage for a cell or battery block, typically 4.25V.)"
+    },
+    {
+      "term_en": "Upper Test Temperature",
+      "term_zh": "上限試驗溫度",
+      "definition": "45°C — 所有電芯測試需在此溫度條件下分別進行的高溫環境。(45°C — the high temperature condition at which all cell tests shall be separately conducted.)"
+    },
+    {
+      "term_en": "Lower Test Temperature",
+      "term_zh": "下限試驗溫度",
+      "definition": "10°C — 所有電芯測試需在此溫度條件下分別進行的低溫環境。(10°C — the low temperature condition at which all cell tests shall be separately conducted.)"
+    },
+    {
+      "term_en": "Polymer Cell",
+      "term_zh": "聚合物電池",
+      "definition": "使用聚合物電解質之鋰離子電芯。此類電芯可豁免強制內部短絡測試（章節 5.5.1）。(Lithium-ion cell using polymer electrolyte. Such cells may be exempted from the forced internal short circuit test per Section 5.5.1.)"
+    },
+    {
+      "term_en": "Assembled Battery",
+      "term_zh": "組電池",
+      "definition": "由多個電芯或電池塊組合而成的電池系統，含保護電路與外殼等附屬裝置。在本標準中進行跌落測試、外部短絡測試及過充電保護確認測試。(A battery system composed of multiple cells or battery blocks, including protective circuits and enclosures.)"
+    },
+    {
+      "term_en": "Nickel Piece (for Forced Internal Short Circuit)",
+      "term_zh": "鎳片（強制內部短絡用）",
+      "definition": "在強制內部短絡測試中插入電芯內部以誘發內部短路的金屬片。(A metallic piece inserted into the cell interior to induce internal short circuit during the forced internal short circuit test.)"
+    }
+  ],
+  "tests": [
+    {
+      "id": "JISC8714-CRUSH",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "壓壞試驗 (Crush Test)",
+      "name_en": "Crush Test",
+      "section": "5.2",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "force": {
+          "value": "13 ± 1 kN",
+          "detail": "施加壓力上限為 13 ± 1 kN。達到此壓力時應立即釋放。(Maximum applied force: 13 ± 1 kN. Pressure shall be released immediately upon reaching this force.)"
+        },
+        "test_temperature": {
+          "value": "上限 45°C / 下限 10°C（各溫度分別進行）",
+          "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
+        },
+        "sample_quantity": {
+          "value": "每溫度 5 個；方型電芯長/短側各 5 個",
+          "detail": "每個溫度條件下 5 個樣品。方型電芯 (Prismatic cells) 須分別針對長側 (long side) 與短側 (short side) 各進行 5 個樣品測試。"
+        },
+        "termination_voltage_drop": {
+          "value": "電壓降至初始電壓的 1/3 以下",
+          "detail": "壓壞過程中若電壓降至初始電壓的 1/3 以下，應立即釋放壓力。(If voltage drops below 1/3 of initial voltage, pressure shall be released immediately.)"
+        },
+        "termination_deformation": {
+          "value": "電池高度變形量達 10%",
+          "detail": "壓壞過程中若電池高度變形量達到 10%，應立即釋放壓力。(If cell height deformation reaches 10%, pressure shall be released immediately.)"
+        },
+        "termination_logic": {
+          "value": "最大壓力 / 電壓驟降 / 變形量 — 三者先到者停止",
+          "detail": "滿足以下任一條件時，應立即釋放壓力：(1) 達到 13 ± 1 kN 最大壓力；(2) 電壓降至初始電壓的 1/3 以下；(3) 電池高度變形量達到 10%。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不發火、不破裂",
+        "details": [
+          "不發火 (No fire)：測試過程中不得出現燃燒現象",
+          "不破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["JISC8714-CELL-SC"],
+      "source_reference": "5.2, 5.1 (壓壞測試終止邏輯)",
+      "original_text_snippet": "Crush test: 13 ± 1 kN force applied to single cells. For prismatic cells, tests shall be conducted on both long and short sides (5 samples each). Termination conditions: (1) maximum force of 13 ± 1 kN reached; (2) voltage drops below 1/3 of initial voltage; (3) cell height deformation reaches 10%. Pass criteria: no fire, no explosion/burst."
+    },
+    {
+      "id": "JISC8714-CELL-SC",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短絡試驗（電芯層級）(External Short Circuit — Cell Level)",
+      "name_en": "External Short Circuit Test — Cell Level",
+      "section": "5.3",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "temperature": {
+          "value": "55 ± 5°C",
+          "detail": "電芯外部短絡測試在 55 ± 5°C 環境溫度條件下進行。(Cell-level external short circuit test conducted at 55 ± 5°C ambient temperature.)"
+        },
+        "external_resistance": {
+          "value": "80 ± 20 mΩ",
+          "detail": "外部短絡電阻為 80 ± 20 mΩ。(External short circuit resistance: 80 ± 20 mΩ.)"
+        },
+        "test_temperature": {
+          "value": "上限 45°C / 下限 10°C（各溫度分別進行）",
+          "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
+        },
+        "sample_quantity": {
+          "value": "每溫度 5 個",
+          "detail": "每個溫度條件下 5 個樣品。(5 samples per temperature condition.)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不發火、不破裂",
+        "details": [
+          "不發火 (No fire)：測試過程中不得出現燃燒現象",
+          "不破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["JISC8714-CRUSH", "JISC8714-HEAT", "JISC8714-PACK-SC"],
+      "source_reference": "5.3",
+      "original_text_snippet": "External short circuit test (cell level): conducted at 55 ± 5°C with external resistance of 80 ± 20 mΩ, 5 samples per temperature. Pass criteria: no fire, no explosion/burst."
+    },
+    {
+      "id": "JISC8714-HEAT",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "外部加熱試驗 (External Heating Test)",
+      "name_en": "External Heating Test",
+      "section": "5.4",
+      "category": "THERM",
+      "subcategory": "熱濫用 / 加熱 (Thermal Abuse / Heating)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "heating_rate": {
+          "value": "5 ± 2°C/min",
+          "detail": "加熱速率為 5 ± 2°C/min。(Heating rate: 5 ± 2°C/min.)"
+        },
+        "target_temperature": {
+          "value": "130 ± 2°C",
+          "detail": "升溫至 130 ± 2°C。(Heat up to 130 ± 2°C.)"
+        },
+        "hold_duration": {
+          "value": "保持 10 分鐘",
+          "detail": "達到目標溫度後保持 10 分鐘。(Hold at target temperature for 10 minutes.)"
+        },
+        "test_temperature": {
+          "value": "上限 45°C / 下限 10°C（各溫度分別進行）",
+          "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
+        },
+        "sample_quantity": {
+          "value": "每溫度 5 個",
+          "detail": "每個溫度條件下 5 個樣品。(5 samples per temperature condition.)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不發火、不破裂",
+        "details": [
+          "不發火 (No fire)：測試過程中不得出現燃燒現象",
+          "不破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["JISC8714-CELL-SC", "JISC8714-FISC"],
+      "source_reference": "5.4",
+      "original_text_snippet": "External heating test: heat at 5 ± 2°C/min to 130 ± 2°C and hold for 10 minutes, 5 samples per temperature. Pass criteria: no fire, no explosion/burst."
+    },
+    {
+      "id": "JISC8714-FISC",
+      "normalized_id": "ELEC-SC-INT",
+      "name_zh": "強制內部短絡試驗 (Forced Internal Short Circuit Test)",
+      "name_en": "Forced Internal Short Circuit Test",
+      "section": "5.5",
+      "category": "ELEC",
+      "subcategory": "強制內部短路 (Forced Internal Short Circuit)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "method": {
+          "value": "插入鎳片誘發內部短路",
+          "detail": "將鎳片 (Nickel piece) 插入電芯內部，以誘發內部短路。(Insert a nickel piece into the cell interior to induce internal short circuit.)"
+        },
+        "force_cylindrical": {
+          "value": "800 N（圓柱形電芯）",
+          "detail": "圓柱形電芯 (Cylindrical cells) 之壓力上限為 800 N。(Upper limit pressure for cylindrical cells: 800 N.)"
+        },
+        "force_prismatic": {
+          "value": "400 N（方型電芯）",
+          "detail": "方型電芯 (Prismatic cells) 之壓力上限為 400 N。(Upper limit pressure for prismatic cells: 400 N.)"
+        },
+        "environment_dew_point": {
+          "value": "露點溫度 ≤ -25°C",
+          "detail": "操作環境之露點溫度須 ≤ -25°C。(Operating environment dew point must be ≤ -25°C.)"
+        },
+        "disassembly_time_limit": {
+          "value": "解體至密封需在 30 分鐘內完成",
+          "detail": "從電芯解體至重新密封的過程須在 30 分鐘內完成。(The process from cell disassembly to resealing must be completed within 30 minutes.)"
+        },
+        "voltage_drop_stop_condition": {
+          "value": "偵測到電壓降 ≥ 50 mV 時停止加壓，30 秒後釋放",
+          "detail": "若偵測到電壓降 ≥ 50 mV：停止加壓 (stop pressurizing)，30 秒後釋放壓力。(If voltage drop ≥ 50 mV detected: stop pressurizing, release after 30 seconds.)"
+        },
+        "force_limit_stop_condition": {
+          "value": "壓力達上限 (800N/400N) 時停止加壓並釋放",
+          "detail": "若壓力達到上限值（圓柱形 800N / 方型 400N）：停止加壓並釋放壓力。(If force reaches upper limit (800N cylindrical / 400N prismatic): stop pressurizing and release.)"
+        },
+        "extended_sampling": {
+          "value": "若達上限壓力仍未短絡，可追加至最多 10 個樣品",
+          "detail": "若達到上限壓力仍未發生短絡，樣品數量可追加至最多 10 個。(If short circuit does not occur at upper limit pressure, sample count may be extended up to 10.)"
+        },
+        "test_temperature": {
+          "value": "上限 45°C / 下限 10°C（各溫度分別進行）",
+          "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
+        },
+        "sample_quantity": {
+          "value": "每溫度 5 個（可追加至 10 個）",
+          "detail": "每個溫度條件下 5 個樣品。若達到上限壓力仍未發生短絡，可追加至最多 10 個。(5 samples per temperature, extendable up to 10 if no short circuit at upper limit pressure.)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不發火、不破裂",
+        "details": [
+          "不發火 (No fire)：測試過程中不得出現燃燒現象",
+          "不破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
+        ]
+      },
+      "exemptions": [
+        "聚合物電池 (Polymer cells) 可豁免此測試（依章節 5.5.1）"
+      ],
+      "related_tests": ["JISC8714-HEAT"],
+      "source_reference": "5.5, 5.5.1",
+      "original_text_snippet": "Forced internal short circuit test: insert nickel piece into cell, apply pressure up to 800N (cylindrical) or 400N (prismatic). Environment requires dew point ≤ -25°C, disassembly to sealing within 30 minutes. Stop conditions: voltage drop ≥ 50 mV (stop, release after 30s) or force reaches upper limit. Polymer cells are exempted per Section 5.5.1."
+    },
+    {
+      "id": "JISC8714-DROP",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落試驗 (Drop Test)",
+      "name_en": "Drop Test",
+      "section": "5.6",
+      "category": "MECH",
+      "subcategory": "落下 / 自由跌落 (Drop / Free Fall)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "drop_height": {
+          "value": "依 JIS C 6950 / JIS C 6065 規定",
+          "detail": "跌落高度依照 JIS C 6950（資訊科技設備）或 JIS C 6065（音訊/視訊設備）規定。具體高度取決於設備類別與重量。(Drop height per JIS C 6950 or JIS C 6065 specifications. Actual height depends on device class and weight.)"
+        },
+        "drop_surface": {
+          "value": "混凝土面",
+          "detail": "跌落面為混凝土面 (concrete surface)。"
+        },
+        "drop_count": {
+          "value": "1 次",
+          "detail": "每個樣品跌落 1 次。(Each sample is dropped once.)"
+        },
+        "sample_quantity": {
+          "value": "3 個（總量）",
+          "detail": "組電池跌落測試共需 3 個樣品（不分溫度）。(3 assembled battery samples total.)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不得產生外部短絡；單電芯不得產生內部短絡",
+        "details": [
+          "內部短絡預防 (Internal Short Prevention)：跌落測試後，組電池內部不得產生外部短絡，且單電芯不得產生內部短絡",
+          "不發火 (No fire)：測試過程中不得出現燃燒現象",
+          "不破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["JISC8714-PACK-SC"],
+      "source_reference": "5.6",
+      "original_text_snippet": "Drop test for assembled batteries: drop height per JIS C 6950/6065, onto concrete surface, 1 drop per sample, 3 samples total. After drop, no external short circuit in the assembled battery and no internal short circuit in individual cells."
+    },
+    {
+      "id": "JISC8714-PACK-SC",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短絡試驗（組電池層級）(External Short Circuit — Battery Level)",
+      "name_en": "External Short Circuit Test — Battery Level",
+      "section": "5.7",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "temperature": {
+          "value": "20 ± 5°C",
+          "detail": "組電池外部短絡測試在 20 ± 5°C（室溫）環境溫度條件下進行。與電芯層級 (55 ± 5°C) 不同。(Battery-level external short circuit test conducted at 20 ± 5°C room temperature, different from cell-level 55 ± 5°C.)"
+        },
+        "external_resistance": {
+          "value": "80 ± 20 mΩ",
+          "detail": "外部短絡電阻為 80 ± 20 mΩ，與電芯層級相同。(External short circuit resistance: 80 ± 20 mΩ, same as cell level.)"
+        },
+        "sample_quantity": {
+          "value": "5 個",
+          "detail": "組電池外部短絡測試需 5 個樣品。(5 assembled battery samples.)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不發火、不破裂",
+        "details": [
+          "不發火 (No fire)：測試過程中不得出現燃燒現象",
+          "不破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["JISC8714-CELL-SC", "JISC8714-DROP"],
+      "source_reference": "5.7",
+      "original_text_snippet": "External short circuit test (battery level): conducted at 20 ± 5°C with external resistance of 80 ± 20 mΩ, 5 assembled battery samples. Pass criteria: no fire, no explosion/burst."
+    },
+    {
+      "id": "JISC8714-OCP",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電保護確認試驗 (Overcharge Protection Verification Test)",
+      "name_en": "Overcharge Protection Verification Test",
+      "section": "5.8",
+      "category": "ELEC",
+      "subcategory": "過充電保護 (Overcharge Protection)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "voltage_limit": {
+          "value": "不超過上限充電電壓（通常 4.25V）",
+          "detail": "驗證組電池內的單電芯或電池塊在充電過程中不得超過上限充電電壓（通常為 4.25V）。(Verify that individual cells or battery blocks within the assembled battery do not exceed the upper limit charge voltage, typically 4.25V, during charging.)"
+        },
+        "method_single_stage": {
+          "value": "直接測量充電電壓",
+          "detail": "單級電池（單電芯/單電池塊組成的組電池）：直接測量充電電壓。(Single-stage battery: directly measure the charging voltage.)"
+        },
+        "method_series_A": {
+          "value": "方法 A：強制放電其中一個電池塊，測量其餘電壓",
+          "detail": "串聯電池 (2 級以上) 方法 A：充電時強制放電其中一個電池塊，測量其餘電池塊電壓是否超過上限。(Series battery Method A: during charging, force discharge one battery block and measure remaining blocks' voltage.)"
+        },
+        "method_series_B": {
+          "value": "方法 B：對單電芯施加超過上限電壓，測量停止時電壓",
+          "detail": "串聯電池 (2 級以上) 方法 B：對單電芯施加超過上限充電電壓的電壓，測量充電停止時的電壓。(Series battery Method B: apply voltage exceeding upper limit to a single cell and measure voltage when charging stops.)"
+        },
+        "sample_quantity": {
+          "value": "1 個（總量）",
+          "detail": "過充電保護確認測試僅需 1 個組電池樣品。(Only 1 assembled battery sample required.)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "單電芯或電池塊不得超過上限充電電壓（通常 4.25V）",
+        "details": [
+          "電壓限制 (Voltage Limit)：組電池內的單電芯或電池塊不得超過上限充電電壓（通常為 4.25V）"
+        ]
+      },
+      "exemptions": [
+        "若攜帶式電子設備本身具有控制電壓不超過上限充電電壓的功能，組電池層級的測試可以豁免（依章節 5.8.1）"
+      ],
+      "related_tests": [],
+      "source_reference": "5.8, 5.8.1",
+      "original_text_snippet": "Overcharge protection verification: confirm that no individual cell or battery block within the assembled battery exceeds the upper limit charge voltage (typically 4.25V). Single-stage: measure charging voltage directly. Series (≥2 stages): Method A — force discharge one block during charging and measure remaining; Method B — apply over-limit voltage to single cell and measure stopping voltage. Exempted if portable device itself controls voltage below upper limit (Section 5.8.1)."
+    }
+  ],
+  "test_sequence": {
+    "description": "JIS C 8714 測試分為電芯層級與組電池層級兩組。電芯層級測試需在上限 (45°C) 及下限 (10°C) 兩種溫度條件下分別執行。",
+    "sequences": [
+      {
+        "group": "電芯層級測試 (Cell-Level Tests)",
+        "tests": ["JISC8714-CRUSH", "JISC8714-CELL-SC", "JISC8714-HEAT", "JISC8714-FISC"],
+        "rule": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。(All cell tests shall be conducted separately at upper test temperature 45°C and lower test temperature 10°C.)",
+        "source_reference": "2.1"
+      },
+      {
+        "group": "組電池層級測試 (Battery-Level Tests)",
+        "tests": ["JISC8714-DROP", "JISC8714-PACK-SC", "JISC8714-OCP"],
+        "rule": "組電池層級測試包含跌落、外部短絡及過充電保護確認。跌落測試不分溫度 (3 個樣品)，外部短絡在 20 ± 5°C 下執行。(Battery-level tests include drop, external short circuit, and overcharge protection verification.)",
+        "source_reference": "2.1"
+      }
+    ]
+  },
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "聚合物電池 (Polymer cells) 可豁免強制內部短絡測試 (Forced Internal Short Circuit Test)",
+      "applicable_tests": ["JISC8714-FISC"],
+      "source_reference": "5.5.1"
+    },
+    {
+      "id": "GE-02",
+      "description": "若攜帶式電子設備本身具有控制電壓不超過上限充電電壓的功能，組電池層級之過充電保護確認測試可以豁免",
+      "applicable_tests": ["JISC8714-OCP"],
+      "source_reference": "5.8.1"
+    },
+    {
+      "id": "GE-03",
+      "description": "若適用非 4.25V 的上限充電電壓，必須依附錄 B 流程保留技術依據資料",
+      "applicable_tests": [],
+      "source_reference": "附錄 B (Annex B)"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Single-source extraction from Gemini CLI standardized markdown only (no OCR markdown or batch JSON available)",
+    "cross_validation_notes": [
+      "⚠️ 僅有 Gemini CLI markdown 單一來源，無 OCR markdown 或批次 JSON 可供交叉驗證",
+      "電芯層級外部短絡溫度 55 ± 5°C vs 組電池層級 20 ± 5°C — 此差異為標準設計意圖，非資料錯誤",
+      "外部短絡電阻值 80 ± 20 mΩ 在電芯層級與組電池層級一致",
+      "壓壞測試終止條件三項（13±1 kN / 電壓降至 1/3 / 變形 10%）從來源 Section 5.1 邏輯段落中提取",
+      "強制內部短絡測試壓力值（圓柱 800N / 方型 400N）及停止條件（≥50 mV 壓降 / 達上限壓力）直接從來源提取",
+      "跌落測試高度引用外部標準 JIS C 6950/6065，本 Gemini markdown 未列具體數值",
+      "過充電保護確認方法 A/B 細節與串聯電池之處理方式直接從來源提取",
+      "所有判定準則（不發火、不破裂、內部短絡預防、電壓限制）從來源 Section 3.1 核心判定準則提取",
+      "建議取得原始 PDF 或 OCR markdown 後，對以下參數進行二次驗證：加熱速率、溫度保持時間、鎳片規格、跌落高度"
+    ],
+    "total_test_entries": 7,
+    "note": "JIS C 8714:2007 共 7 項測試（電芯層級 4 項 + 組電池層級 3 項）。本標準為日本特有之鋰離子二次電池安全性標準，與 IEC 62133-2 範圍類似但包含日本特有的強制內部短絡測試 (Forced Internal Short Circuit) 及雙溫度條件 (45°C/10°C) 要求。因僅有單一來源 (Gemini markdown)，建議後續補充原始 PDF 驗證。"
+  }
+}

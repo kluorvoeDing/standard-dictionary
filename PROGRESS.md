@@ -1,6 +1,6 @@
 # 專案進度追蹤 | standard-dictionary
 
-**最後更新：** 2026-04-18 09:28
+**最後更新：** 2026-05-04 00:00
 **版本：** v0.8.0
 **負責人：** Beta
 
@@ -8,7 +8,7 @@
 
 ## 📌 當前階段
 
-**階段 3 前置：Web 載入資料層完成（可開始接前端）**
+**階段 3 前置：來源 inventory + canonical/full translation pipeline 完成，且 full translation 已加上 QA 分流**
 
 - [x] 完成 Batch 1-6 結構化資料整理（20 文件 / 351 comparison rows）
 - [x] 完成 AIS-156 結構化 JSON
@@ -17,8 +17,14 @@
 - [x] 建立前端混合讀取規格（loader spec）
 - [x] 產出 `data/catalog.json`（文件索引）
 - [x] 產出 `data/comparison_rows.json`（平坦比對列）
-- [x] 建立 `scripts/build_web_catalog.py` 供後續重建
-- [ ] 下一步：做前端勾選清單與 comparison grid MVP
+- [x] 建立 `data/source_inventory.json`、`data/pilot_documents.json`
+- [x] 建立 `scripts/build_source_inventory.py`
+- [x] 建立 `scripts/build_canonical_documents.py`
+- [x] 建立 `scripts/build_full_translation_documents.py`
+- [x] 重寫 `scripts/build_web_catalog.py`，改為從 rows / inventory / canonical index 重建
+- [x] 完成 20 份 canonical markdown
+- [x] 完成 20 份 full translation markdown
+- [x] HTML 依 QA 狀態優先連向可用的 full translation markdown，否則降級到 canonical markdown
 
 ---
 
@@ -34,6 +40,14 @@
 - [x] 新增 `scripts/build_web_catalog.py`
 - [x] 輸出 `data/catalog.json`（20 文件）
 - [x] 輸出 `data/comparison_rows.json`（351 rows）
+
+### 2026-05-04
+- [x] 建立 PDF 為主的 canonical markdown 方案
+- [x] 定義 5 份 pilot 文件（GBT-36276 / GB38031 / ULC-2580 / GB31241 / AIS-038）
+- [x] 建立來源 inventory 與 canonical markdown 生成腳本
+- [x] 擴大為 20 份 canonical markdown
+- [x] 建立 full translation markdown 層
+- [x] 讓 HTML 預設連到 full translation markdown
 
 ### 2026-04-17
 - [x] 確認用戶需求（Q1-Q5）
@@ -57,23 +71,29 @@
    - 文件清單索引 `catalog.json` ✅
    - 平坦 comparison rows `comparison_rows.json` ✅
    - 標準 / test method / guidance 混合相容 ✅
+   - canonical markdown 連結 ✅
+   - full translation markdown 連結 ✅
+   - translation QA 狀態分流 ✅
 
 2. **資料重建流程**
-   - `scripts/build_web_catalog.py` 已建立 ✅
-   - 後續新增標準後可一鍵重建 ✅
+   - `scripts/build_source_inventory.py` 已建立 ✅
+   - `scripts/build_canonical_documents.py` 已建立 ✅
+   - `scripts/build_full_translation_documents.py` 已建立 ✅
+   - `scripts/build_web_catalog.py` 可重建並帶入 canonical md 路徑 ✅
 
 3. **前端銜接準備**
    - Loader spec 已完成 ✅
-   - 待做勾選 UI / comparison grid ⏳
+   - full translation md 入口已加入 UI ✅
+   - QA badge 已加入 UI ✅
 
 ---
 
 ## 📋 待處理事項
 
 ### 高優先
-- [ ] 建立前端勾選清單（讀 `data/catalog.json`）
-- [ ] 建立 comparison grid（讀 `data/comparison_rows.json`）
-- [ ] 設計 guidance / standard / test method badge 與提示文案
+- [ ] 用瀏覽器驗證 QA pass 的 full translation md 連結可開啟
+- [ ] 持續清理 QA fail/warn 的 full translation md，降低英文殘留與 OCR 缺口
+- [ ] 檢查 rebuild 後 `catalog.json` 與 `comparison_rows.json` 是否與 source inventory 對齊
 
 ### 中優先
 - [ ] 建立測試項目同義詞對照表（如：drop = free fall = 落下 = 落摔）

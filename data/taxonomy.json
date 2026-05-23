@@ -1,0 +1,256 @@
+{
+  "schema_version": "2.0",
+  "description": "電池安全測試分類體系 — 用於跨標準橫向比對的正規化 ID 定義",
+  "categories": {
+    "ELEC": {
+      "name_zh": "電氣安全測試",
+      "name_en": "Electrical Safety Tests"
+    },
+    "MECH": {
+      "name_zh": "機械測試",
+      "name_en": "Mechanical Tests"
+    },
+    "THERM": {
+      "name_zh": "熱/環境測試",
+      "name_en": "Thermal & Environmental Tests"
+    }
+  },
+  "test_types": [
+    {
+      "normalized_id": "ELEC-SC-EXT",
+      "category": "ELEC",
+      "name_zh": "外部短路",
+      "name_en": "External Short Circuit",
+      "synonyms_en": ["short circuit", "short-circuit test", "external short-circuit"],
+      "synonyms_zh": ["外部短路", "短路測試"]
+    },
+    {
+      "normalized_id": "ELEC-SC-INT",
+      "category": "ELEC",
+      "name_zh": "內部短路 / 強制內部短路",
+      "name_en": "Internal Short Circuit / Forced Internal Short Circuit",
+      "synonyms_en": ["forced internal short circuit", "internal short", "nail penetration (部分等效)"],
+      "synonyms_zh": ["內部短路", "強制內部短路"]
+    },
+    {
+      "normalized_id": "ELEC-OC",
+      "category": "ELEC",
+      "name_zh": "過充電",
+      "name_en": "Overcharge",
+      "synonyms_en": ["overcharge", "abnormal charge", "overcharge protection test"],
+      "synonyms_zh": ["過充電", "過度充電", "異常充電"]
+    },
+    {
+      "normalized_id": "ELEC-FD",
+      "category": "ELEC",
+      "name_zh": "強制放電",
+      "name_en": "Forced Discharge",
+      "synonyms_en": ["forced discharge", "forced over-discharge"],
+      "synonyms_zh": ["強制放電"]
+    },
+    {
+      "normalized_id": "ELEC-OD",
+      "category": "ELEC",
+      "name_zh": "過放電",
+      "name_en": "Over-discharge",
+      "synonyms_en": ["over-discharge", "over-discharge protection"],
+      "synonyms_zh": ["過放電", "過度放電"]
+    },
+    {
+      "normalized_id": "ELEC-OCUR",
+      "category": "ELEC",
+      "name_zh": "過電流",
+      "name_en": "Over-current",
+      "synonyms_en": ["over-current", "over-current protection"],
+      "synonyms_zh": ["過電流"]
+    },
+    {
+      "normalized_id": "ELEC-IR",
+      "category": "ELEC",
+      "name_zh": "絕緣電阻",
+      "name_en": "Insulation Resistance",
+      "synonyms_en": ["insulation resistance", "isolation resistance"],
+      "synonyms_zh": ["絕緣電阻", "隔離電阻"]
+    },
+    {
+      "normalized_id": "ELEC-CC",
+      "category": "ELEC",
+      "name_zh": "持續充電 / 恆壓充電",
+      "name_en": "Continuous Charging / Constant Voltage Charging",
+      "synonyms_en": ["continuous charging", "constant voltage charging", "abnormal charging"],
+      "synonyms_zh": ["持續充電", "恆壓充電"]
+    },
+    {
+      "normalized_id": "MECH-VIB",
+      "category": "MECH",
+      "name_zh": "振動",
+      "name_en": "Vibration",
+      "synonyms_en": ["vibration", "vibration test"],
+      "synonyms_zh": ["振動", "振動測試"]
+    },
+    {
+      "normalized_id": "MECH-SHOCK",
+      "category": "MECH",
+      "name_zh": "機械衝擊",
+      "name_en": "Mechanical Shock",
+      "synonyms_en": ["shock", "mechanical shock", "half-sine shock"],
+      "synonyms_zh": ["機械衝擊", "衝擊"]
+    },
+    {
+      "normalized_id": "MECH-IMPACT",
+      "category": "MECH",
+      "name_zh": "撞擊",
+      "name_en": "Impact",
+      "synonyms_en": ["impact", "impact test"],
+      "synonyms_zh": ["撞擊"]
+    },
+    {
+      "normalized_id": "MECH-CRUSH",
+      "category": "MECH",
+      "name_zh": "擠壓",
+      "name_en": "Crush",
+      "synonyms_en": ["crush", "crush test", "static force", "compression"],
+      "synonyms_zh": ["擠壓", "壓碎"]
+    },
+    {
+      "normalized_id": "MECH-DROP",
+      "category": "MECH",
+      "name_zh": "落下 / 自由跌落",
+      "name_en": "Drop / Free Fall",
+      "synonyms_en": ["drop", "free fall", "drop test"],
+      "synonyms_zh": ["落下", "自由跌落", "落摔"]
+    },
+    {
+      "normalized_id": "MECH-NAIL",
+      "category": "MECH",
+      "name_zh": "穿刺",
+      "name_en": "Nail Penetration",
+      "synonyms_en": ["nail penetration", "nail test", "penetration"],
+      "synonyms_zh": ["穿刺", "釘刺"]
+    },
+    {
+      "normalized_id": "MECH-CRASH",
+      "category": "MECH",
+      "name_zh": "碰撞模擬",
+      "name_en": "Simulated Crash / Crash Test",
+      "synonyms_en": ["crash", "simulated crash", "crash simulation"],
+      "synonyms_zh": ["碰撞模擬", "模擬碰撞"]
+    },
+    {
+      "normalized_id": "MECH-PROJ",
+      "category": "MECH",
+      "name_zh": "拋射體 / 子彈測試",
+      "name_en": "Projectile / Bullet Test",
+      "synonyms_en": ["projectile", "bullet test"],
+      "synonyms_zh": ["拋射體", "子彈測試"]
+    },
+    {
+      "normalized_id": "MECH-STRESS",
+      "category": "MECH",
+      "name_zh": "外殼應力",
+      "name_en": "Mold Stress / Case Stress",
+      "synonyms_en": ["mold stress", "housing stress", "case stress"],
+      "synonyms_zh": ["外殼應力", "模具應力"]
+    },
+    {
+      "normalized_id": "THERM-CYCLE",
+      "category": "THERM",
+      "name_zh": "溫度循環",
+      "name_en": "Temperature Cycling / Thermal Test",
+      "synonyms_en": ["temperature cycling", "thermal cycling", "thermal test"],
+      "synonyms_zh": ["溫度循環", "溫度試驗"]
+    },
+    {
+      "normalized_id": "THERM-ABUSE",
+      "category": "THERM",
+      "name_zh": "熱濫用 / 加熱",
+      "name_en": "Thermal Abuse / Heating",
+      "synonyms_en": ["thermal abuse", "heating", "heat test", "oven test"],
+      "synonyms_zh": ["熱濫用", "加熱", "高溫測試"]
+    },
+    {
+      "normalized_id": "THERM-PROP",
+      "category": "THERM",
+      "name_zh": "熱擴散 / 熱失控",
+      "name_en": "Thermal Propagation / Thermal Runaway",
+      "synonyms_en": ["thermal propagation", "thermal runaway", "cell-to-cell propagation"],
+      "synonyms_zh": ["熱擴散", "熱失控", "熱傳播"]
+    },
+    {
+      "normalized_id": "THERM-ALT",
+      "category": "THERM",
+      "name_zh": "低氣壓 / 高海拔模擬",
+      "name_en": "Altitude Simulation / Low Pressure",
+      "synonyms_en": ["altitude simulation", "low pressure", "altitude test"],
+      "synonyms_zh": ["低氣壓", "高海拔模擬", "高空模擬"]
+    },
+    {
+      "normalized_id": "THERM-SHOCK",
+      "category": "THERM",
+      "name_zh": "溫度衝擊",
+      "name_en": "Thermal Shock",
+      "synonyms_en": ["thermal shock", "rapid temperature change"],
+      "synonyms_zh": ["溫度衝擊", "熱衝擊"]
+    },
+    {
+      "normalized_id": "THERM-STAB",
+      "category": "THERM",
+      "name_zh": "熱穩定性",
+      "name_en": "Thermal Stability",
+      "synonyms_en": ["thermal stability"],
+      "synonyms_zh": ["熱穩定性"]
+    },
+    {
+      "normalized_id": "THERM-FIRE",
+      "category": "THERM",
+      "name_zh": "外部火燒",
+      "name_en": "Fire Resistance / External Fire",
+      "synonyms_en": ["fire resistance", "external fire", "fire test", "fire exposure"],
+      "synonyms_zh": ["外部火燒", "防火測試", "火燒測試"]
+    },
+    {
+      "normalized_id": "THERM-WATER",
+      "category": "THERM",
+      "name_zh": "浸水",
+      "name_en": "Water Immersion / Submersion",
+      "synonyms_en": ["water immersion", "submersion", "immersion", "IPX7"],
+      "synonyms_zh": ["浸水", "沉水"]
+    },
+    {
+      "normalized_id": "THERM-HUMID",
+      "category": "THERM",
+      "name_zh": "濕熱循環",
+      "name_en": "Damp Heat / Humidity Cycling",
+      "synonyms_en": ["damp heat", "humidity cycling", "moisture"],
+      "synonyms_zh": ["濕熱循環", "濕度測試"]
+    },
+    {
+      "normalized_id": "THERM-SALT",
+      "category": "THERM",
+      "name_zh": "鹽霧",
+      "name_en": "Salt Spray / Salt Mist",
+      "synonyms_en": ["salt spray", "salt mist", "salt fog"],
+      "synonyms_zh": ["鹽霧", "鹽霧測試"]
+    }
+  ],
+  "test_objects": [
+    {
+      "id": "CELL",
+      "name_zh": "電芯 / 單電池",
+      "name_en": "Cell",
+      "maps_from": ["cell", "single cell", "coin cell", "button cell", "component cell", "single cell battery", "電芯", "單電池", "鈕扣電池"]
+    },
+    {
+      "id": "MODULE",
+      "name_zh": "模組",
+      "name_en": "Module",
+      "maps_from": ["module", "cell block", "battery block", "cluster", "模組", "電池模組"]
+    },
+    {
+      "id": "PACK_SYSTEM",
+      "name_zh": "電池包 / 系統",
+      "name_en": "Pack / System",
+      "maps_from": ["pack", "battery pack", "battery system", "system", "ESS", "power bank", "UAS", "vehicle", "電池包", "電池系統", "儲能系統"]
+    }
+  ]
+}

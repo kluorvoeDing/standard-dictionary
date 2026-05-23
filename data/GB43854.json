@@ -1,0 +1,629 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "GB43854-2024",
+    "full_name": "GB 43854-2024 電動自行車用鋰離子蓄電池安全技術規範 (Safety technical specification of lithium-ion battery for electric bicycle)",
+    "full_name_zh": "GB 43854-2024 電動自行車用鋰離子蓄電池安全技術規範",
+    "short_name": "GB 43854",
+    "publisher": "國家市場監督管理總局 / 國家標準化管理委員會",
+    "publication_date": "2024-04-25 發佈，2024-11-01 實施",
+    "type": "standard",
+    "scope": "適用於符合 GB 17761 規定的電動自行車用鋰離子蓄電池單體電池和電池組",
+    "applicable_objects": ["CELL", "PACK_SYSTEM"],
+    "source_pdf": "GB43854-2024.pdf",
+    "source_gemini_md": "GB43854-2024_zh-TW_standardized.md"
+  },
+  "terms": [
+    {
+      "term_en": "rated capacity",
+      "term_zh": "額定容量",
+      "definition": "在規定條件下測得，並由製造商標稱的電池或電池組的容量值。"
+    },
+    {
+      "term_en": "cell",
+      "term_zh": "單體電池",
+      "definition": "直接將化學能轉化為電能的基本單元裝置。注：包括電極、電解質外殼和端子，並被設計成可充電。"
+    },
+    {
+      "term_en": "battery",
+      "term_zh": "電池組",
+      "definition": "由一個或多個單體電池和外殼、端子及保護裝置等必需的部件裝配成的組合體。"
+    },
+    {
+      "term_en": "thermal runaway",
+      "term_zh": "熱失控",
+      "definition": "單體電池放熱連鎖反應引起電池溫度不可控上升的現象。"
+    }
+  ],
+  "tests": [
+    {
+      "id": "GB43854-T1",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "單體電池 - 過充電試驗",
+      "name_en": "Cell - Overcharge Test",
+      "section": "5.1.1, 6.3.1",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.1.1 的試驗方法充滿電"},
+        "charging_current": {"value": "1 I2 (A)", "detail": "用直流電源以 I2 (A) 電流充電"},
+        "termination": {"value": "1.5倍充電限制電壓或1.5小時", "detail": "充電至 1.5 倍充電限制電壓或總充電時間達到 1.5 h，停止充電"},
+        "observation": {"value": "靜置 6 h", "detail": "停止充電後，靜置 6 h"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.3.1",
+      "original_text_snippet": "電池按照 6.2.1.1 的試驗方法充滿電後,用直流電源以 I2(A)電流,充電至 1.5 倍充電限制電壓或總充電時間達到 1.5 h ,停止充電,然後靜置 6 h。"
+    },
+    {
+      "id": "GB43854-T2",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "單體電池 - 過放電試驗",
+      "name_en": "Cell - Overdischarge Test",
+      "section": "5.1.2, 6.3.2",
+      "category": "ELEC",
+      "subcategory": "過放電 (Overdischarge)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.1.1 的試驗方法充滿電"},
+        "discharge_current": {"value": "2 I2 (A)", "detail": "對電池以 2 I2(A) 電流放電"},
+        "duration": {"value": "90 min", "detail": "共持續 90 min"},
+        "observation": {"value": "靜置 1 h", "detail": "然後靜置 1 h"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.3.2",
+      "original_text_snippet": "電池按照 6.2.1.1 的試驗方法充滿電後,對電池以 2 I2(A)電流放電,共持續 90 min,然後靜置 1 h。"
+    },
+    {
+      "id": "GB43854-T3",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "單體電池 - 外部短路試驗",
+      "name_en": "Cell - External Short Circuit Test",
+      "section": "5.1.3, 6.3.3",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.1.1 的試驗方法充滿電"},
+        "resistance": {"value": "20 ± 5 mΩ", "detail": "用外部電阻為 (20±5) mΩ 的導體連接電池正負極端"},
+        "duration": {"value": "1 h", "detail": "保持 1 h"},
+        "observation": {"value": "靜置 6 h", "detail": "然後靜置 6 h"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.3.3",
+      "original_text_snippet": "電池按照 6.2.1.1 的試驗方法充滿電後,用外部電阻為(20±5)mΩ 的導體連接電池正負極端並保持 1 h,然後靜置 6 h。"
+    },
+    {
+      "id": "GB43854-T4",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "單體電池 - 熱濫用試驗",
+      "name_en": "Cell - Thermal Abuse Test",
+      "section": "5.1.4, 6.3.4",
+      "category": "THERM",
+      "subcategory": "熱濫用 (Thermal Abuse)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.1.1 的試驗方法充滿電"},
+        "heating_rate": {"value": "5 ± 2 °C/min", "detail": "放入試驗箱中，以 (5±2) °C/min 的溫升速率進行升溫"},
+        "target_temperature": {"value": "130 ± 2 °C", "detail": "當箱內溫度達到 (130±2) °C 後恆溫"},
+        "duration": {"value": "60 min", "detail": "保持 60 min"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.3.4",
+      "original_text_snippet": "電池按照 6.2.1.1 的試驗方法充滿電後,放入試驗箱中,然後以(5±2)°C/min 的溫升速率進行升溫,當箱內溫度達到(130±2)°C後恆溫,並保持 60 min。"
+    },
+    {
+      "id": "GB43854-T5",
+      "normalized_id": "MECH-NAIL",
+      "name_zh": "單體電池 - 針刺試驗",
+      "name_en": "Cell - Nail Penetration Test",
+      "section": "5.1.5, 6.3.5",
+      "category": "MECH",
+      "subcategory": "針刺 (Nail Penetration)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.1.1 的試驗方法充滿電"},
+        "nail_spec": {"value": "φ5 mm", "detail": "用直徑 φ5 mm 的耐高溫鋼針（如鎢鋼，針尖的圓錐角為 45°）"},
+        "speed": {"value": "25 ± 5 mm/s", "detail": "以 (25±5) mm/s 的速度"},
+        "location": {"value": "幾何中心", "detail": "從垂直於電池極板的方向貫穿電池的幾何中心"},
+        "observation": {"value": "停留在內 1 h", "detail": "鋼針停留在電池中，並觀察 1 h"}
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": ["應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.3.5",
+      "original_text_snippet": "電池按照 6.2.1.1 的試驗方法充滿電後,用直徑 φ5 mm 的耐高溫鋼針(如鎢鋼,針尖的圓錐角為45°),以(25±5)mm/s 的速度,從垂直於電池極板的方向貫穿電池的幾何中心,鋼針停留在電池中 ,並觀察 1 h。"
+    },
+    {
+      "id": "GB43854-T6",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "電池組 - 過充電試驗",
+      "name_en": "Pack - Overcharge Test",
+      "section": "5.2.1.2, 6.4.1.2",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "charging_current": {"value": "最大充電電流", "detail": "用直流電源以製造商規定的最大充電電流充電"},
+        "duration": {"value": "2 h", "detail": "共持續 2 h"},
+        "fault_condition": {"value": "正常和單一故障條件", "detail": "試驗應在電池組正常工作條件和充電保護元器件單一故障條件下分別進行。"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.1.2",
+      "original_text_snippet": "電池組按照 6.2.2.1 的試驗方法充滿電後,用直流電源以製造商規定的最大充電電流充電 ,共持續2 h。試驗應在電池組正常工作條件和充電保護元器件(充電迴路保護開關管,保險絲等)單一故障條件下分別進行。"
+    },
+    {
+      "id": "GB43854-T7",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "電池組 - 過放電試驗",
+      "name_en": "Pack - Overdischarge Test",
+      "section": "5.2.1.3, 6.4.1.3",
+      "category": "ELEC",
+      "subcategory": "過放電 (Overdischarge)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "discharge_current": {"value": "2 I2 (A)", "detail": "對電池組以 2 I2(A) 電流放電"},
+        "duration": {"value": "90 min", "detail": "共持續 90 min"},
+        "observation": {"value": "靜置 1 h", "detail": "然後靜置 1 h"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.1.3",
+      "original_text_snippet": "電池組按照 6.2.2.1 的試驗方法充滿電後,對電池組以 2 I2(A)電流放電,共持續 90 min,然後靜置1 h。"
+    },
+    {
+      "id": "GB43854-T8",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "電池組 - 外部短路試驗",
+      "name_en": "Pack - External Short Circuit Test",
+      "section": "5.2.1.4, 6.4.1.4",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "resistance": {"value": "20 ± 5 mΩ", "detail": "用外部電阻為 (20±5) mΩ 的導體連接電池組正負極端"},
+        "termination": {"value": "1 h 或電壓 < 0.2 V", "detail": "當電池組電壓低於 0.2 V 或者短路時間達到 1 h，停止試驗"},
+        "observation": {"value": "靜置 6 h", "detail": "然後靜置 6 h"},
+        "fault_condition": {"value": "正常和單一故障條件", "detail": "試驗應在電池組正常工作條件和放電保護元器件的單一故障條件下分別進行。"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.1.4",
+      "original_text_snippet": "電池組按照 6.2.2.1 的試驗方法充滿電後,用外部電阻為(20±5)mΩ 的導體連接電池組正負極端,當電池組電壓低於 0.2 V 或者短路時間達到 1 h,停止試驗,然後靜置 6 h。"
+    },
+    {
+      "id": "GB43854-T9",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "電池組 - 過流放電試驗",
+      "name_en": "Pack - Overcurrent Discharge Test",
+      "section": "5.2.1.5, 6.4.1.5",
+      "category": "ELEC",
+      "subcategory": "過流放電 (Overcurrent Discharge)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "discharge_current": {"value": "1.5 倍最大放電電流", "detail": "用製造商規定的最大放電電流的 1.5 倍放電"},
+        "duration": {"value": "2 h", "detail": "共持續 2 h"},
+        "fault_condition": {"value": "正常和單一故障條件", "detail": "試驗應在電池組正常工作條件和放電保護元器件單一故障條件下分別進行。"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.1.5",
+      "original_text_snippet": "電池組按照 6.2.2.1 的試驗方法充滿電後,用製造商規定的最大放電電流的 1.5 倍放電,共持續2 h。"
+    },
+    {
+      "id": "GB43854-T10",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "電池組 - 溫度保護試驗",
+      "name_en": "Pack - Temperature Protection Test",
+      "section": "5.2.1.6, 6.4.1.6",
+      "category": "THERM",
+      "subcategory": "溫度保護 (Temperature Protection)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準放電", "detail": "按照 6.2.2.2 的試驗方法放完電"},
+        "high_temp_condition": {"value": "最高充電溫度 +5 °C, 8 h", "detail": "在製造商規定的最高充電溫度或 55 °C(取兩者較高的溫度)加 5 °C的環境下放置 8 h,然後用製造商規定的最大充電電流進行充電,並保持 10 min, 然後靜置 6 h。"},
+        "low_temp_condition": {"value": "最低充電溫度 -5 °C, 16 h", "detail": "在製造商規定的最低充電溫度或 0 °C(取兩者較低的溫度)再降 5 °C的環境下放置 16 h,然後用製造商規定的最大充電電流進行充電,並保持 10 min,然後靜置 6 h。"}
+      },
+      "acceptance_criteria": {
+        "summary": "不能充電、不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不能充電", "應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.1.6",
+      "original_text_snippet": "電池組按照 6.2.2.2 的試驗方法放完電後 ,在製造商規定的最高充電溫度或 55 °C(取兩者較高的溫度)加 5 °C的環境下放置 8 h,然後用製造商規定的最大充電電流進行充電,並保持 10 min, 然後靜置6 h。電池組按照 6.2.2.2 的試驗方法放完電後 ,在製造商規定的最低充電溫度或 0 °C(取兩者較低的溫度)再降 5 °C的環境下放置 16 h,然後用製造商規定的最大充電電流進行充電,並保持 10 min,然後靜置 6 h。"
+    },
+    {
+      "id": "GB43854-T11",
+      "normalized_id": "ELEC-IR",
+      "name_zh": "電池組 - 絕緣電阻試驗",
+      "name_en": "Pack - Insulation Resistance Test",
+      "section": "5.2.1.7, 6.4.1.7",
+      "category": "ELEC",
+      "subcategory": "絕緣電阻 (Insulation Resistance)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "test_voltage": {"value": "500 Vdc", "detail": "用絕緣電阻測量設備，施加直流電壓 500 V"},
+        "test_points": {"value": "正極與外殼、負極與外殼", "detail": "測試電池組正極與外殼、負極與外殼之間的絕緣電阻值。外殼易觸及部分為絕緣材料的，用金屬條覆蓋。"}
+      },
+      "acceptance_criteria": {
+        "summary": "絕緣阻值 ≥ 20 MΩ",
+        "details": ["電池組正負極同外殼之間的絕緣阻值應大於或等於 20 MΩ"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.1.7",
+      "original_text_snippet": "電池組按照 6.2.2.1 的試驗方法充滿電後,用絕緣電阻測量設備,施加直流電壓 500 V ,測試電池組正極與外殼、負極與外殼之間的絕緣電阻值。"
+    },
+    {
+      "id": "GB43854-T12",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "電池組 - 擠壓試驗",
+      "name_en": "Pack - Crush Test",
+      "section": "5.2.2.1, 6.4.2.1",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "crush_tool": {"value": "半圓柱形擠壓頭 R=75 mm", "detail": "放置在一側是鋼製平板，一側是鋼製異形板的中間。異形板的半圓柱形擠壓頭的半徑為 75 mm"},
+        "direction": {"value": "X 軸和 Y 軸", "detail": "擠壓方向為 X 軸方向和 Y 軸方向，每個電池組只接受 1 次擠壓。"},
+        "speed": {"value": "5 ± 1 mm/s", "detail": "擠壓速度為 (5±1) mm/s"},
+        "termination": {"value": "形變 70% 或 30 kN", "detail": "當擠壓至電池組原尺寸的 70%，或擠壓力達到 30 kN 時保持 5 min"},
+        "observation": {"value": "觀察 1 h", "detail": "之後撤除擠壓力，並觀察 1 h"}
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": ["應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.2.1",
+      "original_text_snippet": "擠壓速度為(5±1)mm/s,當擠壓至電池組原尺寸的70% ,或擠壓力達到 30 kN 時保持 5 min,之後撤除擠壓力,並觀察 1 h。"
+    },
+    {
+      "id": "GB43854-T13",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "電池組 - 加速度衝擊試驗",
+      "name_en": "Pack - Acceleration Shock Test",
+      "section": "5.2.2.2, 6.4.2.2",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "shock_profile": {"value": "150gn, 6ms 半正弦波", "detail": "每個電池組應經受峰值加速度 150gn、脈衝持續時間 6 ms 的半正弦波衝擊。"},
+        "direction": {"value": "3 軸，各 6 次", "detail": "在電池組 3 個互相垂直的方向上各承受 6 次等值的衝擊(3 次正方向，3 次負方向)"},
+        "post_test": {"value": "標準充放電 1 次", "detail": "測試結束靜置 1 h 後，進行 1 次標準放電和標準充電。"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.2.2",
+      "original_text_snippet": "在電池組 3 個互相垂直的方向上各承受 6 次等值的衝擊(3 次正方向,3 次負方向)... 每個電池組應經受峰值加速度 150gn 、脈衝持續時間 6 ms 的半正弦波衝擊。"
+    },
+    {
+      "id": "GB43854-T14",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "電池組 - 振動試驗",
+      "name_en": "Pack - Vibration Test",
+      "section": "5.2.2.3, 6.4.2.3",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "vibration_profile": {"value": "隨機振動，X:1.09g, Y:0.68g, Z:1.25g", "detail": "按表 1 規定振動譜進行隨機振動測試，X 軸功率譜密度均方根為 1.09g，Y 軸為 0.68g，Z 軸為 1.25g"},
+        "duration": {"value": "各 12 h", "detail": "X 軸、Y 軸和 Z 軸方向各進行 12 h 振動，振動順序為 Z-Y-X"},
+        "post_test": {"value": "標準充放電 1 次", "detail": "測試結束靜置 1 h 後，進行 1 次標準放電和標準充電。"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.2.3",
+      "original_text_snippet": "按表 1 規定振動譜進行隨機振動測試,X 軸、Y 軸和 Z 軸方向各進行 12 h 振動,振動順序為 Z-Y-X... 測試結束靜置 1 h 後,進行 1 次標準放電和標準充電。"
+    },
+    {
+      "id": "GB43854-T15",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "電池組 - 自由跌落試驗",
+      "name_en": "Pack - Free Fall Test",
+      "section": "5.2.2.4, 6.4.2.4",
+      "category": "MECH",
+      "subcategory": "跌落 (Drop)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "drop_height": {"value": "1.0 m", "detail": "跌落高度為 1.0 m"},
+        "direction": {"value": "3 個互相垂直方向各 1 次", "detail": "在電池組 3 個互相垂直方向(其中至少包括一個與水平面垂直的方向)各 1 次自由跌落"},
+        "surface": {"value": "混凝土地面", "detail": "跌落至混凝土地面上"}
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": ["應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.2.4",
+      "original_text_snippet": "電池組按照 6.2.2.1 的試驗方法充滿電後... 跌落高度為 1.0 m,跌落至混凝土地面上。"
+    },
+    {
+      "id": "GB43854-T16",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "電池組 - 提把強度試驗",
+      "name_en": "Pack - Handle Strength Test",
+      "section": "5.2.2.5, 6.4.2.5",
+      "category": "MECH",
+      "subcategory": "外殼應力 (Case Stress)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "force": {"value": "按表 4 施加", "detail": "在電池組提把中心位置至少25 mm長度均勻施加按表4規定的力，並保持 1 min。力基於電池組重量的倍數（例如4倍重量）。"},
+        "duration": {"value": "1 min", "detail": "保持 1 min"}
+      },
+      "acceptance_criteria": {
+        "summary": "提把不斷裂，連接處不開裂、不脫落",
+        "details": ["提把應不斷裂", "提把與外殼連接處應不開裂、不脫落"]
+      },
+      "exemptions": ["僅適用於帶提把的電池組"],
+      "related_tests": [],
+      "source_reference": "6.4.2.5",
+      "original_text_snippet": "在電池組提把中心位置至少25 mm長度均勻施加按表4規定的力,並保持 1 min。"
+    },
+    {
+      "id": "GB43854-T17",
+      "normalized_id": "THERM-ALT",
+      "name_zh": "電池組 - 低氣壓試驗",
+      "name_en": "Pack - Low Pressure Test",
+      "section": "5.2.3.1, 6.4.3.1",
+      "category": "THERM",
+      "subcategory": "低壓模擬 (Low Pressure Simulation)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "pressure": {"value": "≤ 11.6 kPa", "detail": "放置在真空箱中，逐漸降低箱內氣壓至不大於 11.6 kPa"},
+        "duration": {"value": "6 h", "detail": "保持 6 h"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.3.1",
+      "original_text_snippet": "電池組按照 6.2.2.1 的試驗方法充滿電後,放置在真空箱中 ,逐漸降低箱內氣壓至不大於 11.6 kPa,並保持 6 h。"
+    },
+    {
+      "id": "GB43854-T18",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "電池組 - 溫度循環試驗",
+      "name_en": "Pack - Temperature Cycling Test",
+      "section": "5.2.3.2, 6.4.3.2",
+      "category": "THERM",
+      "subcategory": "溫度循環 (Temperature Cycling)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "high_temp": {"value": "72 ± 2 °C", "detail": "在溫度為(72±2)°C的環境下存放 6 h"},
+        "low_temp": {"value": "-40 ± 2 °C", "detail": "在溫度為(-40±2)°C的環境下存放 6 h"},
+        "transition": {"value": "≤ 30 min", "detail": "兩個溫度之間的轉換時間不超過 30 min"},
+        "cycles": {"value": "10 次", "detail": "共循環 10 次"},
+        "post_test": {"value": "20 ± 5 °C 存放 24 h", "detail": "將電池組在溫度為(20±5)°C的環境下存放 24 h"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.3.2",
+      "original_text_snippet": "在溫度為(72±2)°C的環境下存放 6 h,然後在溫度為(-40±2)°C的環境下存放 6 h,兩個溫度之間的轉換時間不超過 30 min,按以上步驟循環進行,共循環 10 次。"
+    },
+    {
+      "id": "GB43854-T19",
+      "normalized_id": "THERM-WATER",
+      "name_zh": "電池組 - 浸水試驗",
+      "name_en": "Pack - Immersion Test",
+      "section": "5.2.3.3, 6.4.3.3",
+      "category": "THERM",
+      "subcategory": "浸水 (Water Immersion)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "water_condition": {"value": "20 ± 5 °C 水", "detail": "浸沒在溫度為(20±5)°C的水槽中(以水淹沒電池組最上端為準)"},
+        "duration": {"value": "48 h", "detail": "浸水 48 h"},
+        "post_test": {"value": "靜置 4 h", "detail": "然後取出靜置 4 h"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.3.3",
+      "original_text_snippet": "浸沒在溫度為(20±5)°C的水槽中(以水淹沒電池組最上端為準)48 h,然後取出靜置4 h。"
+    },
+    {
+      "id": "GB43854-T20",
+      "normalized_id": "THERM-SALT",
+      "name_zh": "電池組 - 鹽霧試驗",
+      "name_en": "Pack - Salt Fog Test",
+      "section": "5.2.3.4, 6.4.3.4",
+      "category": "THERM",
+      "subcategory": "鹽霧 (Salt Spray)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "standard": {"value": "GB/T 2423.18 試驗方法 3", "detail": "按照 GB/T 2423.18—2021 中試驗方法 3 進行測試"},
+        "post_test": {"value": "觀察 2 h，標準充放電 1 次，測絕緣", "detail": "試驗後觀察 2 h，進行 1 次標準放電和標準充電。然後用直流電壓 500 V，測試絕緣電阻值。"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸；絕緣電阻 ≥ 1 MΩ",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸", "絕緣阻值應大於或等於 1 MΩ"]
+      },
+      "exemptions": ["若電池組完全放置於乘員艙、行李艙或封閉式貨艙內，可免除此測試。"],
+      "related_tests": [],
+      "source_reference": "6.4.3.4",
+      "original_text_snippet": "按照 GB/T 2423.18—2021 中試驗方法 3 進行測試。試驗後觀察 2 h... 絕緣阻值應大於或等於 1 MΩ。"
+    },
+    {
+      "id": "GB43854-T21",
+      "normalized_id": "THERM-HUMID",
+      "name_zh": "電池組 - 溼熱循環試驗",
+      "name_en": "Pack - Alternating Damp Heat Test",
+      "section": "5.2.3.5, 6.4.3.5",
+      "category": "THERM",
+      "subcategory": "溼熱循環 (Damp Heat)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 的試驗方法充滿電"},
+        "standard": {"value": "GB/T 2423.4 試驗方法 2, 65°C", "detail": "按照 GB/T 2423.4—2008 執行試驗方法 2，最高溫度為 65 °C"},
+        "cycles": {"value": "5 次", "detail": "循環 5 次"},
+        "post_test": {"value": "觀察 2 h，標準充放電 1 次，測絕緣", "detail": "試驗後觀察 2 h，進行 1 次標準放電和標準充電。然後用 500 V 測試絕緣電阻。"}
+      },
+      "acceptance_criteria": {
+        "summary": "不洩漏、不破裂、不起火、不爆炸；絕緣電阻 ≥ 1 MΩ",
+        "details": ["應不洩漏", "應不破裂", "應不起火", "應不爆炸", "絕緣阻值應大於或等於 1 MΩ"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.3.5",
+      "original_text_snippet": "按照 GB/T 2423.4—2008 執行試驗方法 2,最高溫度為 65 °C ,循環 5 次... 絕緣阻值應大於或等於 1 MΩ。"
+    },
+    {
+      "id": "GB43854-T22",
+      "normalized_id": "THERM-FIRE",
+      "name_zh": "電池組 - 阻燃性試驗",
+      "name_en": "Pack - Flame Retardancy Test",
+      "section": "5.2.3.6, 6.4.3.6",
+      "category": "THERM",
+      "subcategory": "阻燃 (Flame Retardancy)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "non_metallic_case": {"value": "GB/T 5169.16 (V-0)", "detail": "非金屬材料外殼按照 GB/T 5169.16 進行測試，符合 V-0"},
+        "pcb": {"value": "GB/T 5169.16 (V-1)", "detail": "印製板按照 GB/T 5169.16 進行測試，符合 V-1"},
+        "wires": {"value": "附錄 A 針焰試驗", "detail": "導線按照附錄 A 針焰試驗進行測試"}
+      },
+      "acceptance_criteria": {
+        "summary": "符合對應阻燃要求",
+        "details": ["非金屬外殼 V-0", "PCB V-1", "導線通過針焰試驗不蔓延"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.3.6",
+      "original_text_snippet": "電池組的非金屬材料外殼 、印製板按照 GB/T 5169.16 進行測試;導線按照附錄 A 進行測試。"
+    },
+    {
+      "id": "GB43854-T23",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "電池組 - 熱擴散試驗",
+      "name_en": "Pack - Thermal Propagation Test",
+      "section": "5.2.4, 6.4.4",
+      "category": "THERM",
+      "subcategory": "熱擴散 (Thermal Propagation)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preconditioning": {"value": "標準充電", "detail": "按照 6.2.2.1 進行標準充電後"},
+        "target_cell": {"value": "中心或被包圍的單體", "detail": "選擇電池組內靠近中心位置，或者被其他單體電池包圍的一個單體電池作為觸發對象"},
+        "trigger_method": {"value": "加熱或過充", "detail": "推薦加熱或過充作為熱擴散試驗的可選方法"},
+        "heating_power": {"value": "30-200W (<80Wh) 或 100-300W (≥80Wh)", "detail": "根據單體能量選擇加熱功率"},
+        "termination_for_trigger": {"value": "電壓降>25% 或 達最高工作溫度 或 dT/dt>1°C/s 持續3s", "detail": "判定條件達到認為觸發熱失控"}
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": ["電池組應提供熱失控警示", "如未發生起火爆炸，認為通過"]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.4.4",
+      "original_text_snippet": "記錄電池組發出熱失控報警至起火或爆炸的時間... 如電池組未發生起火爆炸,認為電池組通過熱擴散試驗。"
+    }
+  ],
+  "test_sequence": {
+    "description": "GB 43854 型式試驗順序要求",
+    "sequences": [
+      {
+        "group": "電池組序列 1",
+        "tests": ["GB43854-T12", "GB43854-T11"],
+        "rule": "樣品 5# 執行絕緣電阻和擠壓測試（根據表 3）",
+        "source_reference": "表 3"
+      }
+    ]
+  },
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "若電池組完全放置於乘員艙、行李艙或封閉式貨艙內，可免除鹽霧測試",
+      "applicable_tests": ["GB43854-T20"],
+      "source_reference": "3.1 結構與環境豁免 (標準化 Markdown)"
+    },
+    {
+      "id": "GE-02",
+      "description": "若電池組設計不具備提把，則不適用提把強度測試",
+      "applicable_tests": ["GB43854-T16"],
+      "source_reference": "3.1 結構與環境豁免 (標準化 Markdown)"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from Gemini CLI markdown, OCR markdown, and existing batch JSON.",
+    "cross_validation_notes": [
+      "The OCR markdown was designated as authoritative for specific numerical parameters.",
+      "ESD, Mutual Recognition, and Data Acquisition tests from the standard were excluded as they fall outside the core battery safety tests according to schema requirements (unless functionally critical for thermal/electrical safety, but typically classified as functional/EMC tests).",
+      "All thermal, mechanical, and electrical abuse tests were perfectly aligned across sources."
+    ],
+    "total_test_entries": 23
+  }
+}

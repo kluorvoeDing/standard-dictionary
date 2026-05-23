@@ -1,0 +1,830 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "UL-2271",
+    "full_name": "ANSI/CAN/UL/ULC 2271:2023 - Standard for Batteries for Use In Light Electric Vehicle (LEV) Applications",
+    "full_name_zh": "輕型電動車 (LEV) 用電池安全標準",
+    "short_name": "UL 2271",
+    "publisher": "UL",
+    "publication_date": "2023-09-14",
+    "type": "standard",
+    "scope": "涵蓋用於輕型電動車（如電動自行車、電動滑板車、電動輪椅、高爾夫球車等）的電能存儲組件 (EESAs)，包含電池包、電容包及其模組。",
+    "applicable_objects": ["MODULE", "PACK_SYSTEM"],
+    "source_pdf": "s2271_3_20230914.pdf",
+    "source_gemini_md": "UL2271_zh-TW_standardized.md"
+  },
+  "terms": [],
+  "tests": [
+    {
+      "id": "UL2271-T23",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電測試 (Overcharge Test)",
+      "name_en": "Overcharge Test",
+      "section": "23",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "滿充 (MOSOC)",
+          "detail": "測試前樣品處於最大運行充電狀態 (MOSOC)。"
+        },
+        "charging_current": {
+          "value": "最大充電電流",
+          "detail": "以製造商規定的最大充電電流進行恆流充電。"
+        },
+        "fault_condition": {
+          "value": "單一故障",
+          "detail": "在充電電路中引入單一故障條件。"
+        },
+        "termination": {
+          "value": "保護啟動或超出限值",
+          "detail": "測試持續至保護電路終止充電、達到正常運行限值，或發生起火/爆炸。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、排氣、洩漏或破裂；保護控制正常",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無排氣 (No venting)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)",
+          "保護控制正常 (Protection maintained)",
+          "電壓不超出正常運行範圍"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "23",
+      "original_text_snippet": "Fully charged sample subjected to constant charging current under single fault condition. Test continues until protective devices operate or normal operating limits exceeded."
+    },
+    {
+      "id": "UL2271-T24",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "高倍率充電測試 (High Rate Charge Test)",
+      "name_en": "High Rate Charge Test",
+      "section": "24",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "放電至 EODV",
+          "detail": "測試前樣品放電至終止電壓 (EODV)。"
+        },
+        "charging_rate": {
+          "value": "高於最大充電速率",
+          "detail": "以高於規定的最大充電速率（按製造商規格或單一故障條件）進行充電。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、排氣、洩漏或破裂；保護控制正常",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無排氣 (No venting)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)",
+          "保護控制正常"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "24",
+      "original_text_snippet": "Sample charged at rate higher than specified maximum level."
+    },
+    {
+      "id": "UL2271-T25",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短路測試 (Short Circuit Test)",
+      "name_en": "Short Circuit Test",
+      "section": "25",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "滿充 (MOSOC)",
+          "detail": "樣品處於滿充狀態。"
+        },
+        "resistance": {
+          "value": "≤ 20 mΩ",
+          "detail": "外部短路電阻不大於 20 mΩ。"
+        },
+        "fault_condition": {
+          "value": "單一故障",
+          "detail": "在放電保護電路中引入單一元件故障。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、排氣、洩漏或破裂；保護控制正常",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無排氣 (No venting)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)",
+          "保護控制正常"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "25",
+      "original_text_snippet": "Fully charged sample short-circuited with external resistance. Single fault condition applied."
+    },
+    {
+      "id": "UL2271-T26",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "放電過載測試 (Overload Under Discharge Test)",
+      "name_en": "Overload Under Discharge Test",
+      "section": "26",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "滿充 (MOSOC)",
+          "detail": "樣品處於滿充狀態。"
+        },
+        "discharge_rate": {
+          "value": "過載放電",
+          "detail": "高於正常放電速率進行放電（以 90% BMS 過流保護值，或 135% 主熔斷器額定值）。"
+        },
+        "fault_condition": {
+          "value": "單一故障",
+          "detail": "放電電路單一故障（可能導致過載）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、排氣、洩漏或破裂；保護控制正常",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無排氣 (No venting)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)",
+          "保護控制正常"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "26",
+      "original_text_snippet": "Sample subjected to overload discharge under single fault condition."
+    },
+    {
+      "id": "UL2271-T27",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "過放電測試 (Overdischarge Test)",
+      "name_en": "Overdischarge Test",
+      "section": "27",
+      "category": "ELEC",
+      "subcategory": "過放電 (Over-discharge)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "滿充 (MOSOC)",
+          "detail": "樣品處於滿充狀態。"
+        },
+        "discharge_current": {
+          "value": "最大放電電流",
+          "detail": "以製造商規定的最大放電電流進行放電。"
+        },
+        "fault_condition": {
+          "value": "單一故障",
+          "detail": "放電電路單一故障。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、排氣、洩漏或破裂；電壓不超出正常範圍",
+        "details": [
+          "保護裝置應啟動防止電池過放電",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無排氣 (No venting)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "27",
+      "original_text_snippet": "Fully charged sample subjected to constant discharging current under single fault condition. Test continues until fully discharged or protective devices operate."
+    },
+    {
+      "id": "UL2271-T28",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "溫度測試 (Temperature Test)",
+      "name_en": "Temperature Test",
+      "section": "28",
+      "category": "THERM",
+      "subcategory": "高溫 (High Temperature)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "temperature": {
+          "value": "上限充電溫度",
+          "detail": "在上限充電溫度下進行充放電。"
+        },
+        "cycles": {
+          "value": "≥ 2 次循環",
+          "detail": "至少 2 次完整充放電循環，直到連續循環電池溫度增加不超過 2°C。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不超限值，保護不啟動，表面溫度合規",
+        "details": [
+          "電壓、電流、溫度不得超出製造商限值",
+          "熱保護和過流保護裝置不應啟動",
+          "表面溫度符合表 28.2 限值"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "28",
+      "original_text_snippet": "DUT charged/discharged at maximum parameters at upper limit charging temperature. Cycles repeated until consecutive cycles do not increase max cell temp more than 2°C."
+    },
+    {
+      "id": "UL2271-T29",
+      "normalized_id": "ELEC-CC",
+      "name_zh": "不平衡充電測試 (Imbalanced Charging Test)",
+      "name_en": "Imbalanced Charging Test",
+      "section": "29",
+      "category": "ELEC",
+      "subcategory": "不平衡充電 (Imbalanced Charging)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "soc_preparation": {
+          "value": "人工不平衡狀態",
+          "detail": "除一個電池/電池組外全部放電至完全放電狀態，未放電電池放電至約 50% SOC。"
+        },
+        "charging": {
+          "value": "按製造商規格充電",
+          "detail": "在不平衡狀態下依正常規格充電。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電池電壓不超限；無起火、爆炸、洩漏等",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無排氣 (No venting)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)",
+          "電池最大電壓限值不得超出"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "29",
+      "original_text_snippet": "Imbalanced condition created by discharging all cells except one to EODV, undischarged cells to 50% SOC. Sample then charged."
+    },
+    {
+      "id": "UL2271-T30",
+      "normalized_id": "ELEC-IR",
+      "name_zh": "介電耐壓測試 (Dielectric Voltage Withstand Test)",
+      "name_en": "Dielectric Voltage Withstand Test",
+      "section": "30",
+      "category": "ELEC",
+      "subcategory": "絕緣耐壓 (Dielectric Withstand)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "applicability": {
+          "value": "≥ 60 Vdc 系統",
+          "detail": "僅適用於額定電壓 60 Vdc 及以上的電路。"
+        },
+        "test_voltage": {
+          "value": "2 × 額定電壓 × 1.414 (DC)",
+          "detail": "施加 2倍額定電壓乘 1.414 的直流電壓，或 2倍額定電壓的交流電壓。"
+        },
+        "duration": {
+          "value": "1 分鐘",
+          "detail": "維持 1 分鐘。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無介電擊穿",
+        "details": [
+          "無介電擊穿 (No dielectric breakdown)",
+          "電暈放電或單次瞬時放電不視為介電擊穿"
+        ]
+      },
+      "exemptions": [
+        "半導體或類似電子元件若易受測試電壓損壞，可能被旁路或斷開"
+      ],
+      "related_tests": [],
+      "source_reference": "30",
+      "original_text_snippet": "Circuits at 60 Vdc or higher subjected to 2×rated×1.414 (DC) or 2×rated (AC) for 1 min. No dielectric breakdown shall occur."
+    },
+    {
+      "id": "UL2271-T31",
+      "normalized_id": "ELEC-IR",
+      "name_zh": "絕緣電阻測試 (Isolation Resistance Test)",
+      "name_en": "Isolation Resistance Test",
+      "section": "31",
+      "category": "ELEC",
+      "subcategory": "絕緣電阻 (Insulation Resistance)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "test_method_120V": {
+          "value": "系統 ≥ 120 V",
+          "detail": "按 ISO 6469-1 測試。"
+        },
+        "test_method_low": {
+          "value": "系統 < 120 V",
+          "detail": "施加 500 Vdc 60 秒。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "絕緣電阻達標",
+        "details": [
+          "系統 ≥ 120V: 絕緣電阻 ≥ 100 Ω/V (DC) 或 500 Ω/V (AC)",
+          "系統 < 120V: 絕緣電阻 ≥ 50,000 Ω"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "31",
+      "original_text_snippet": "Systems ≥120 V per ISO 6469-1 (100 Ω/V DC, 500 Ω/V AC). Systems <120 V: 500 Vdc applied for 60 s, insulation resistance ≥50,000 Ω."
+    },
+    {
+      "id": "UL2271-T32",
+      "normalized_id": "ELEC-IR",
+      "name_zh": "接地連續性測試 (Grounding Continuity Test)",
+      "name_en": "Grounding Continuity Test",
+      "section": "32",
+      "category": "ELEC",
+      "subcategory": "接地連續性 (Grounding Continuity)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "test_current": {
+          "value": "1.5倍 Ic 或 25A",
+          "detail": "施加 150% 最大充電電流或 25 A，取較大者。"
+        },
+        "duration": {
+          "value": "5 秒",
+          "detail": "持續 5 秒。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "接地電阻 ≤ 0.1 Ω",
+        "details": [
+          "保護接地系統電阻不超過 0.1 Ω"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "32",
+      "original_text_snippet": "Grounding system resistance measured after applying 150% max charging current or 25 A for 5 s. Resistance shall not exceed 0.1 Ω."
+    },
+    {
+      "id": "UL2271-T33",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動耐久性測試 (Vibration Endurance Test)",
+      "name_en": "Vibration Endurance Test",
+      "section": "33",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "vibration_type": {
+          "value": "隨機振動 5-200 Hz",
+          "detail": "按 ISO 6469-1 進行隨機振動測試。"
+        },
+        "duration": {
+          "value": "每軸 12 小時",
+          "detail": "X、Y、Z 三方向各 12 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、排氣、洩漏或破裂；保護控制正常",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無排氣 (No venting)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)",
+          "測試後能完成 1 次充放電"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "33",
+      "original_text_snippet": "DUT subjected to random vibration (5-200 Hz) per ISO 6469-1 for 12 h per axis (X, Y, Z) at room ambient."
+    },
+    {
+      "id": "UL2271-T34",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "衝擊測試 (Shock Test)",
+      "name_en": "Shock Test",
+      "section": "34",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "waveform": {
+          "value": "半正弦波",
+          "detail": "依重量不同，加速度為 50gn (≤12kg)、25gn (12-100kg)、10gn (>100kg)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、排氣、洩漏或破裂",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無排氣 (No venting)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "34",
+      "original_text_snippet": "DUT subjected to half-sinusoidal shock per Table 34.1 (50 gn/11 ms for ≤12 kg, 25 gn/15 ms for >12-100 kg, 10 gn/20 ms for >100 kg)."
+    },
+    {
+      "id": "UL2271-T35",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓測試 (Crush Test)",
+      "name_en": "Crush Test",
+      "section": "35",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "applicability": {
+          "value": "道路用 LEV",
+          "detail": "僅適用於道路用輕型電動車（如滑板車、摩托車）。"
+        },
+        "force": {
+          "value": "1000倍重量或 100 kN",
+          "detail": "使用半徑 75mm 肋狀壓板擠壓，施加至 1000倍 DUT 重量或 100 kN（取較早者），或 50% 變形。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、洩漏",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無洩漏 (No leakage)"
+        ]
+      },
+      "exemptions": [
+        "非道路用 LEV 免測",
+        "若安裝在車輛提供的保護框架內，也可考慮豁免/在框架內測試"
+      ],
+      "related_tests": [],
+      "source_reference": "35",
+      "original_text_snippet": "Only applicable to on-road LEVs. DUT crushed between fixed surface and ribbed platen (R=75 mm, 30 mm spacing) to 50% deformation or 1000×weight or 100 kN."
+    },
+    {
+      "id": "UL2271-T36a",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落測試 - 用戶可拆卸 (Drop Test - User Removable)",
+      "name_en": "Drop Test for User Removable EESAs",
+      "section": "36.1",
+      "category": "MECH",
+      "subcategory": "跌落 (Drop)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "height": {
+          "value": "1.0 m",
+          "detail": "從 1 公尺高度跌落至混凝土表面。"
+        },
+        "count": {
+          "value": "3 次",
+          "detail": "進行 3 次跌落。"
+        },
+        "cold_condition": {
+          "value": "低溫預處理",
+          "detail": "若外殼為塑膠且用於 0°C 以下，需在 0°C 下調節 3 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、洩漏；危險部件不可觸及",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)",
+          "測試指無法觸及危險帶電零件"
+        ]
+      },
+      "exemptions": [
+        "非用戶可拆卸設備不適用本節"
+      ],
+      "related_tests": ["UL2271-T36b"],
+      "source_reference": "36.1",
+      "original_text_snippet": "Fully charged DUT dropped 3 times from 1.0 m."
+    },
+    {
+      "id": "UL2271-T36b",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落測試 - 僅維修處理 (Drop Test - Service Handling Only)",
+      "name_en": "Drop Test for Service Handling Only",
+      "section": "36.2",
+      "category": "MECH",
+      "subcategory": "跌落 (Drop)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "height": {
+          "value": "≥ 1.0 m",
+          "detail": "從至少 1 公尺高度跌落至混凝土表面。"
+        },
+        "count": {
+          "value": "至少 1 次",
+          "detail": "至少進行 1 次跌落。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、洩漏",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無洩漏 (No leakage)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["UL2271-T36a"],
+      "source_reference": "36.2",
+      "original_text_snippet": "Fully charged DUT dropped from 1.0 m minimum."
+    },
+    {
+      "id": "UL2271-T37",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "模具應力釋放測試 (Mold Stress Relief Test)",
+      "name_en": "Mold Stress Relief Test",
+      "section": "37",
+      "category": "MECH",
+      "subcategory": "應力釋放 (Stress Relief)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "temperature": {
+          "value": "70°C 或 T_max + 10°C",
+          "detail": "放置於 70°C 烤箱中（若最高工作溫度超過 60°C，則為 T_max + 10°C）。"
+        },
+        "duration": {
+          "value": "7 小時",
+          "detail": "持續 7 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無絕緣擊穿，外殼無危險變形",
+        "details": [
+          "無絕緣擊穿 (No insulation breakdown)",
+          "外殼無損壞導致危險部件可接觸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "37",
+      "original_text_snippet": "Sample placed in 70°C (or T_max+10°C) oven for 7 h. After cooling, no insulation breakdown and no hazardous part access."
+    },
+    {
+      "id": "UL2271-T38",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "把手負載測試 (Handle Loading Test)",
+      "name_en": "Handle Loading Test",
+      "section": "38",
+      "category": "MECH",
+      "subcategory": "把手負載 (Handle Loading)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "force": {
+          "value": "4 倍重量",
+          "detail": "對把手施加 4 倍 DUT 重量的拉力。"
+        },
+        "duration": {
+          "value": "1 分鐘",
+          "detail": "保持 1 分鐘。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "把手及連接部位無破裂",
+        "details": [
+          "把手、固定裝置或連接部位應無破裂 (No breakage)"
+        ]
+      },
+      "exemptions": [
+        "非用戶可拆卸的設備不適用"
+      ],
+      "related_tests": [],
+      "source_reference": "38",
+      "original_text_snippet": "Force of 4×DUT weight applied to handle center for 1 min. No breakage of handle, securing means, or attachment part."
+    },
+    {
+      "id": "UL2271-T39",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "翻滾測試 (Roll Over Test)",
+      "name_en": "Roll Over Test",
+      "section": "39",
+      "category": "MECH",
+      "subcategory": "翻滾 (Roll Over)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "rotation": {
+          "value": "90°/15秒，360°旋轉",
+          "detail": "在 3 個互相垂直方向各以每 15 秒 90° 的速度旋轉 360°。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、洩漏等",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無排氣 (No venting)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)"
+        ]
+      },
+      "exemptions": [
+        "可安裝在代表車輛應用的固定裝置內測試"
+      ],
+      "related_tests": [],
+      "source_reference": "39",
+      "original_text_snippet": "Fully charged sample rotated 360° at 90°/15 s in 3 mutually perpendicular directions."
+    },
+    {
+      "id": "UL2271-T40",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "應力釋放測試 - 電線固定 (Strain Relief Tests - Cord Anchorages)",
+      "name_en": "Strain Relief Tests",
+      "section": "40",
+      "category": "MECH",
+      "subcategory": "電線應力釋放 (Strain Relief)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "pull_test": {
+          "value": "2 倍重量拉力",
+          "detail": "施加 2 倍 DUT 重量（最大 156 N）拉力持續 1 分鐘。"
+        },
+        "push_back": {
+          "value": "推回測試",
+          "detail": "將電線向內推回。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無損壞、無位移",
+        "details": [
+          "電線或導體應無損壞",
+          "內部連接器應無位移",
+          "導體伸長不超過 2 mm"
+        ]
+      },
+      "exemptions": [
+        "無外露不可拆卸電線之設備不適用"
+      ],
+      "related_tests": [],
+      "source_reference": "40",
+      "original_text_snippet": "Pull test (2×weight, max 156 N, 1 min) and push-back test (25.4 mm increments). No damage, displacement, or conductor elongation >2 mm."
+    },
+    {
+      "id": "UL2271-T41",
+      "normalized_id": "THERM-WATER",
+      "name_zh": "浸水測試 (Immersion Test)",
+      "name_en": "Immersion Test",
+      "section": "41",
+      "category": "THERM",
+      "subcategory": "水浸 (Water Immersion)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "fluid": {
+          "value": "5% NaCl 鹽水",
+          "detail": "浸入 5% 鹽水中。"
+        },
+        "duration": {
+          "value": "≥ 2 小時",
+          "detail": "完全淹沒至少 2 小時，或直到可見反應停止。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、無電擊危險",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無破裂 (No rupture)",
+          "無電擊危險 (No shock hazard)"
+        ]
+      },
+      "exemptions": [
+        "若非可能浸水位置（如非車底）可評估不適用"
+      ],
+      "related_tests": [],
+      "source_reference": "41",
+      "original_text_snippet": "DUT immersed in 5% NaCl solution for 2 h minimum."
+    },
+    {
+      "id": "UL2271-T42",
+      "normalized_id": "THERM-WATER",
+      "name_zh": "水暴露測試 (Water Exposure Test)",
+      "name_en": "Water Exposure Test",
+      "section": "42",
+      "category": "THERM",
+      "subcategory": "噴水 (Water Exposure)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "standard": {
+          "value": "IPX3 或更高",
+          "detail": "按 IEC 60529 進行 IPX3 噴水測試（或按製造商宣稱之更高防護等級）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、洩漏",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無排氣 (No venting)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "42",
+      "original_text_snippet": "DUT subjected to water exposure per IEC 60529 IPX3 minimum (or higher if rated)."
+    },
+    {
+      "id": "UL2271-T43",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "熱循環測試 (Thermal Cycling Test)",
+      "name_en": "Thermal Cycling Test",
+      "section": "43",
+      "category": "THERM",
+      "subcategory": "溫度循環 (Thermal Cycling)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "standard": {
+          "value": "SAE J2464",
+          "detail": "按 SAE J2464 熱衝擊測試程序。"
+        },
+        "range": {
+          "value": "85°C 至 -40°C",
+          "detail": "在 85 ± 2°C 與 -40 ± 2°C 之間進行 5 次循環（參考 Gemini md 記載的 5 次）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、爆炸、洩漏",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無排氣 (No venting)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)",
+          "保護控制正常"
+        ]
+      },
+      "exemptions": [
+        "可在模組層級測試"
+      ],
+      "related_tests": [],
+      "source_reference": "43",
+      "original_text_snippet": "DUT subjected to thermal shock per SAE J2464 (85°C to -40°C)."
+    },
+    {
+      "id": "UL2271-T45",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "單電池失效設計容差測試 (Single Cell Failure Design Tolerance Test)",
+      "name_en": "Single Cell Failure Design Tolerance Test",
+      "section": "45",
+      "category": "THERM",
+      "subcategory": "熱失控傳播 (Thermal Propagation)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "applicability": {
+          "value": "> 1 kWh 系統",
+          "detail": "僅適用於額定能量 > 1 kWh 的二次鋰電池系統。"
+        },
+        "trigger": {
+          "value": "觸發單電池熱失控",
+          "detail": "依 UL 2580 單電池失效測試方法，誘發單一電芯熱失控。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "火勢不傳播至外部，不爆炸",
+        "details": [
+          "單電池失效不應導致火災傳播至 DUT 外部",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [
+        "≤ 1 kWh 之電池系統豁免"
+      ],
+      "related_tests": [],
+      "source_reference": "45",
+      "original_text_snippet": "Secondary lithium batteries >1 kWh rated energy subjected to UL/ULC 2580 test. No fire propagating from DUT or explosion."
+    }
+  ],
+  "test_sequence": {},
+  "global_exemptions": [],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from 3 sources: Gemini CLI standardized markdown, Original OCR markdown (authoritative), and existing batch JSON",
+    "cross_validation_notes": [
+      "Label Permanence Test (Section 44) was excluded as it is not a battery safety test.",
+      "Gemini MD provided 5 cycles for Thermal Cycling which aligns with standard SAE J2464 requirements usually referenced.",
+      "The mapping to schema v2.0 normalizes test names strictly based on taxonomy constraints."
+    ],
+    "total_test_entries": 21
+  }
+}

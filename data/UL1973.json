@@ -1,0 +1,485 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "UL1973",
+    "full_name": "ANSI/CAN/UL 1973:2022 Standard for Batteries for Use in Stationary and Motive Auxiliary Power Applications",
+    "full_name_zh": "ANSI/CAN/UL 1973:2022 固定式和動力輔助電源應用電池標準",
+    "short_name": "UL 1973",
+    "publisher": "Underwriters Laboratories (UL)",
+    "publication_date": "2022-02-25 (Third Edition)",
+    "type": "standard",
+    "scope": "涵蓋用於固定應用（如太陽能、風能儲存或 UPS）的電池系統，以及輕軌 (LER) 應用和車輛輔助電源 (VAP) 的電池系統。",
+    "applicable_objects": ["MODULE", "PACK_SYSTEM"],
+    "source_pdf": "s1973_3.pdf",
+    "source_gemini_md": "UL1973_zh-TW_standardized.md"
+  },
+  "terms": [],
+  "tests": [
+    {
+      "id": "UL1973-15",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電測試 (Overcharge)",
+      "name_en": "Overcharge Test",
+      "section": "15",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "0% SOC (EODV)",
+          "detail": "放電至製造商規定的 EODV (End of Discharge Voltage)。"
+        },
+        "charging_rate": {
+          "value": "最大充電速率",
+          "detail": "使用電池組規定的最大充電速率。"
+        },
+        "fault_condition": {
+          "value": "充電電路單一故障",
+          "detail": "引入可能導致過充的充電電路單一故障 (Single fault condition)。若有多級保護，故障最強大的主動保護裝置。"
+        },
+        "termination": {
+          "value": "充電至 110% 或保護啟動",
+          "detail": "測試持續至保護電路終止充電、充電至最大規定電壓之 110% 或發生起火/爆炸。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無可燃氣體、無有毒氣體、無洩漏、無破裂",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無可燃氣體 (No combustible vapor)",
+          "無有毒氣體 (No toxic vapor)",
+          "無電擊危險 (No shock hazard)",
+          "無洩漏 (No leakage)",
+          "無破裂 (No rupture)",
+          "保護控制正常 (Protection maintained)"
+        ]
+      },
+      "exemptions": [
+        "若子組件具代表性，可在子組件層級進行測試"
+      ],
+      "related_tests": [],
+      "source_reference": "Section 15",
+      "original_text_snippet": "A fully discharged sample is to be subjected to the maximum specified charging rate with a single fault condition in the charging circuit."
+    },
+    {
+      "id": "UL1973-16",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "高倍率充電測試 (High Rate Charge)",
+      "name_en": "High Rate Charge",
+      "section": "16",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "0% SOC (EODV)",
+          "detail": "放電至製造商規定的 EODV。"
+        },
+        "charging_rate": {
+          "value": "高倍率",
+          "detail": "高於正常充電速率（按製造商規格或單一故障條件）。"
+        },
+        "fault_condition": {
+          "value": "充電電路單一故障",
+          "detail": "充電電路單一故障（可能導致高倍率充電）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 16",
+      "original_text_snippet": "The sample is subjected to high rate charging with a single fault condition."
+    },
+    {
+      "id": "UL1973-17",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "短路測試 (Short Circuit)",
+      "name_en": "Short Circuit Test",
+      "section": "17",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "100% SOC (MOSOC)",
+          "detail": "充滿電 (Maximum Operating State of Charge, MOSOC)。"
+        },
+        "resistance": {
+          "value": "≤ 20 mΩ",
+          "detail": "外部短路電阻不大於 20 mΩ。"
+        },
+        "fault_condition": {
+          "value": "放電保護電路單一故障",
+          "detail": "放電電路中引入單一元件故障。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "若無內部短路保護的模組，允收標準僅要求無起火爆炸 (無 E, F)",
+          "整體系統: 無起火、無爆炸、無洩漏、無破裂、無毒氣"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 17",
+      "original_text_snippet": "The sample is short-circuited with a resistance ≤ 20 mΩ. A single fault condition is applied to the discharge protection circuit."
+    },
+    {
+      "id": "UL1973-18",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "放電過載測試 (Overload Under Discharge)",
+      "name_en": "Overload Under Discharge",
+      "section": "18",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "100% SOC",
+          "detail": "充滿電狀態。"
+        },
+        "discharge_rate": {
+          "value": "過載放電",
+          "detail": "高於正常放電速率的過載放電電流。"
+        },
+        "fault_condition": {
+          "value": "放電電路單一故障",
+          "detail": "放電電路中引入單一元件故障。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火、無爆炸、無可燃/有毒氣體、無洩漏破裂"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 18",
+      "original_text_snippet": "The sample is subjected to overload discharge with a single fault condition."
+    },
+    {
+      "id": "UL1973-19",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "過放電保護測試 (Overdischarge Protection)",
+      "name_en": "Overdischarge Protection Test",
+      "section": "19",
+      "category": "ELEC",
+      "subcategory": "過放電 (Over-discharge)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "100% SOC",
+          "detail": "從充滿電開始放電。"
+        },
+        "discharge_rate": {
+          "value": "最大放電速率",
+          "detail": "以製造商規定的最大放電速率進行放電。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "保護裝置應啟動，無起火、無爆炸",
+        "details": [
+          "保護裝置必須啟動防止電池電壓低於截止電壓",
+          "無起火、無爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 19",
+      "original_text_snippet": "The DUT is discharged until the protection device activates. Protection shall prevent cells from going below cut-off voltage."
+    },
+    {
+      "id": "UL1973-20",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "溫度和工作極限測試 (Temperature and Operating Limits)",
+      "name_en": "Temperature and Operating Limits Check Test",
+      "section": "20",
+      "category": "THERM",
+      "subcategory": "極限工作測試 (Operating Limits)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "temperature": {
+          "value": "最高/最低工作溫度",
+          "detail": "在製造商規定的最高及最低額定環境溫度下運行。"
+        },
+        "operation": {
+          "value": "多次充放電",
+          "detail": "進行完整的充放電循環。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不超出規定的極限值",
+        "details": [
+          "電壓、電流、溫度不得超出製造商規格限值",
+          "元件溫度不得超出其額定規格"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 20",
+      "original_text_snippet": "The DUT is operated at maximum/minimum ambient temperatures through charge/discharge cycles. Manufacturer limits shall not be exceeded."
+    },
+    {
+      "id": "UL1973-24",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "冷卻系統失效測試 (Cooling System Failure)",
+      "name_en": "Failure of Cooling/Thermal Stability System Test",
+      "section": "24",
+      "category": "THERM",
+      "subcategory": "熱穩定失效 (Thermal Stability Failure)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "0% 或 100% SOC",
+          "detail": "測試充電及放電過程。"
+        },
+        "fault_condition": {
+          "value": "關閉冷卻系統",
+          "detail": "在最高及最低額定環境溫度下，關閉冷卻系統進行充放電。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "安全關閉或無起火/爆炸",
+        "details": [
+          "系統應安全關閉或不產生危險(無起火、無爆炸)"
+        ]
+      },
+      "exemptions": [
+        "僅限具備主動冷卻/熱穩定系統（如液冷或強迫風冷）者"
+      ],
+      "related_tests": [],
+      "source_reference": "Section 24",
+      "original_text_snippet": "The DUT is charged/discharged with cooling system disabled. System shall shut down safely or no hazardous condition shall occur."
+    },
+    {
+      "id": "UL1973-28",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動測試 (Vibration)",
+      "name_en": "Vibration Test",
+      "section": "28",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "100% SOC",
+          "detail": "充滿電 (MOSOC) 狀態。"
+        },
+        "profile": {
+          "value": "車輛振動輪廓",
+          "detail": "根據預期的車輛或輕軌應用環境的振動頻譜。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火、爆炸、破裂、洩漏，保護控制維持正常。"
+        ]
+      },
+      "exemptions": [
+        "僅限 LER 動力與 VAP 應用，靜止式儲能 (Stationary) 若非安裝於 LER/VAP 則豁免"
+      ],
+      "related_tests": [],
+      "source_reference": "Section 28",
+      "original_text_snippet": "The sample is subjected to vibration profile representative of vehicle application."
+    },
+    {
+      "id": "UL1973-29",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "衝擊測試 (Shock)",
+      "name_en": "Shock Test",
+      "section": "29",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "100% SOC",
+          "detail": "充滿電狀態。"
+        },
+        "waveform": {
+          "value": "半正弦波或其他",
+          "detail": "按標準規定的機械衝擊參數（多個方向）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火、無爆炸、無洩漏、無破裂。"
+        ]
+      },
+      "exemptions": [
+        "LER 與 VAP 必測，一般固定式儲能可豁免"
+      ],
+      "related_tests": [],
+      "source_reference": "Section 29",
+      "original_text_snippet": "The sample is subjected to mechanical shock."
+    },
+    {
+      "id": "UL1973-30",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓測試 (Crush)",
+      "name_en": "Crush Test",
+      "section": "30",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "100% SOC",
+          "detail": "充滿電狀態。"
+        },
+        "force": {
+          "value": "模擬車輛碰撞",
+          "detail": "代表車輛碰撞時最可能受擠壓的方向，施加預期的最大擠壓負載。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火、無爆炸、無可燃氣體、無有毒氣體。"
+        ]
+      },
+      "exemptions": [
+        "僅限 LER 與 VAP 應用"
+      ],
+      "related_tests": [],
+      "source_reference": "Section 30",
+      "original_text_snippet": "The sample is crushed in a direction representative of vehicle collision."
+    },
+    {
+      "id": "UL1973-33",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落衝擊測試 (Drop Impact)",
+      "name_en": "Drop Impact Test",
+      "section": "33",
+      "category": "MECH",
+      "subcategory": "跌落 (Drop)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "100% SOC",
+          "detail": "充滿電狀態。"
+        },
+        "height": {
+          "value": "按標準規定",
+          "detail": "從規定高度跌落至混凝土或金屬表面。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火、爆炸、電擊、洩漏、破裂。"
+        ]
+      },
+      "exemptions": [
+        "僅限機架安裝式模組 (rack-mount)",
+        "重量 > 100 kg 的模組，跌落高度降至 2.5 cm"
+      ],
+      "related_tests": [],
+      "source_reference": "Section 33",
+      "original_text_snippet": "Modules intended for rack-mount installation are dropped from specified height."
+    },
+    {
+      "id": "UL1973-35",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "模具應力測試 (Mold Stress)",
+      "name_en": "Mold Stress Test",
+      "section": "35",
+      "category": "MECH",
+      "subcategory": "外殼應力 (Case Stress)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "0% SOC",
+          "detail": "未充電狀態。"
+        },
+        "temperature": {
+          "value": "最高測得溫度 + 10°C (≥70°C)",
+          "detail": "在烤箱中維持該溫度持續 7 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "外殼無過度變形",
+        "details": [
+          "外殼不應有過度變形或導致危險的失效。"
+        ]
+      },
+      "exemptions": [
+        "僅限支撐帶電部件或作為安全外殼的聚合材料(塑膠)。若為金屬外殼則豁免。"
+      ],
+      "related_tests": [],
+      "source_reference": "Section 35",
+      "original_text_snippet": "Enclosure materials are tested for resistance to mold stress at elevated temperature."
+    },
+    {
+      "id": "UL1973-42.2",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "單芯失效設計耐受性 (Single Cell Failure Design Tolerance)",
+      "name_en": "Single Cell Failure Design Tolerance",
+      "section": "42",
+      "category": "THERM",
+      "subcategory": "熱擴散 (Thermal Propagation)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "soc": {
+          "value": "100% SOC",
+          "detail": "充滿電狀態。"
+        },
+        "trigger": {
+          "value": "誘發熱失控",
+          "detail": "在最大額定操作溫度下，於最嚴苛位置使用內部短路或加熱器觸發單一電芯熱失控。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "外部無火焰蔓延，無爆炸",
+        "details": [
+          "外部無火焰蔓延 (No fire propagation outside enclosure)",
+          "無爆炸 (No explosion)",
+          "允許內部起火，但不可擴散至系統外部。"
+        ]
+      },
+      "exemptions": [
+        "鋰離子電池必測"
+      ],
+      "related_tests": [],
+      "source_reference": "Section 42",
+      "original_text_snippet": "A trigger cell initiates thermal runaway. Internal fire shall not spread to outside of the DUT enclosure."
+    }
+  ],
+  "test_sequence": {},
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "系統與子組件替代：測試可在子組件上進行，前提是其具備完整系統的代表性",
+      "applicable_tests": ["all"],
+      "source_reference": "General"
+    },
+    {
+      "id": "GE-02",
+      "description": "機械測試豁免：靜止式儲能 (Stationary) 系統若非安裝於輕軌 (LER) 或車輛輔助動力 (VAP)，豁免振動、衝擊、擠壓、熱循環等測試",
+      "applicable_tests": ["UL1973-28", "UL1973-29", "UL1973-30", "UL1973-38"],
+      "source_reference": "Sections 28, 29, 30"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from 3 sources: Gemini CLI standardized markdown, Original OCR markdown, and existing batch JSON",
+    "cross_validation_notes": [
+      "Tests selected cover major electrical, mechanical, and thermal tests.",
+      "Vibration/Shock/Crush are confirmed by both Gemini and Batch JSON to apply specifically to LER and VAP applications.",
+      "Mold Stress test requires max temp + 10C (min 70C) for 7h as noted in Gemini MD, and only applies to polymeric materials.",
+      "Single Cell Failure Test (Thermal Propagation) must show no fire outside enclosure and no explosion; internal fire is acceptable."
+    ]
+  }
+}

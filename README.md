@@ -27,7 +27,7 @@
 ### 第一版（MVP）
 - **前端**：靜態 HTML + Vue 3 + Tailwind CSS
 - **部署**：GitHub Pages
-- **數據源**：預先處理的 JSON 檔案（來自 Obsidian Standards）
+- **數據源**：PDF 原文 -> canonical markdown -> 完整翻譯版 markdown（QA 分流） -> 預先處理的 JSON
 - **編輯**：localStorage 暫存
 
 ### 第二版（擴充）
@@ -42,19 +42,24 @@
 standard-dictionary/
 ├── README.md           # 本文件
 ├── PROGRESS.md         # 專案進度
+├── AGENTS.md           # 專案事件紀錄
 ├── index.html          # 網頁主體
 ├── data/
-│   ├── batch*/content/*.json   # 各標準/Guidance 原始結構化資料
 │   ├── catalog.json            # 給前端 checkbox / 文件清單使用
-│   └── comparison_rows.json    # 給前端直接載入的平坦比對列
+│   ├── comparison_rows.json    # 給前端直接載入的平坦比對列
+│   ├── source_inventory.json   # PDF / md 對應與來源狀態
+│   └── pilot_documents.json    # 先做 canonical md 的 3-5 份高風險文件
 ├── docs/
 │   ├── guidance-comparison-schema.md  # Guidance / research 文件相容方案
 │   └── web-comparison-loader-spec.md  # 前端混合讀取規格
 ├── scripts/
-│   └── build_web_catalog.py    # 自動產生 catalog + comparison rows
-└── assets/
-    ├── style.css
-    └── app.js
+│   ├── build_source_inventory.py      # 掃描 Standards 來源與 PDF/md 配對
+│   ├── build_canonical_documents.py   # 產生 canonical markdown
+│   ├── build_full_translation_documents.py  # 產生完整翻譯版 markdown
+│   └── build_web_catalog.py           # 由 catalog/rows/source inventory 重建 web 資料
+└── generated/
+    ├── standards/                   # canonical markdown 輸出
+    └── translations/                # 完整翻譯版 markdown 輸出
 ```
 
 ---
@@ -98,9 +103,21 @@ standard-dictionary/
 - `data/comparison_rows.json`
   - 已正規化的 comparison rows
   - 標準 / test method / guidance 可混合載入
+- `data/source_inventory.json`
+  - PDF / md 對應關係、來源狀態、pilot 文件標記
+- `generated/standards/*.md`
+  - canonical markdown，供人工檢視與後續改寫
+- `generated/translations/*.md`
+  - 完整翻譯版 markdown，HTML 只在 QA pass 時優先使用，否則降級到 canonical
 - `scripts/build_web_catalog.py`
-  - 每次新增或修改 `batch*/content/*.json` 後重新執行
+  - 每次更新 `comparison_rows.json`、`source_inventory.json`、canonical md 或完整翻譯版後重新執行
   - 指令：`python3 scripts/build_web_catalog.py`
+- `scripts/build_canonical_documents.py`
+  - 先產出 pilot 文件的 canonical markdown
+  - 指令：`python3 scripts/build_source_inventory.py && python3 scripts/build_canonical_documents.py`
+- `scripts/build_full_translation_documents.py`
+  - 產出完整翻譯版 markdown，並標記 OCR 缺口 / 英文殘留風險
+  - 指令：`python3 scripts/build_full_translation_documents.py`
 
 ---
 
@@ -125,7 +142,7 @@ cd standard-dictionary
 ```
 
 > ✅ **優點：** 無需啟動服務器，點開就用
-> ⚠️ **注意：** 需要網路訪問 GitHub（載入 JSON 資料）
+> ⚠️ **注意：** file:// 模式仍會優先使用 GitHub raw JSON；若要使用本機生成的 canonical md，建議改用本地 HTTP server。
 
 ---
 
