@@ -21,10 +21,11 @@ AI 接收到處理指令後，即刻啟動本 SOP。
 2. **全新標準註冊**：
    - 若為全新標準，直接在 `data/catalog.json` 寫入新的物件。
    - 預設 `is_latest: true`, `versions_behind: 0`。
+   - **配置前置標準 (Prerequisites)**：盤點該標準是否依賴更底層的標準（例如系統級依賴電芯級標準）。若有，必須在 `catalog.json` 中的 `prerequisites` 物件定義依賴關係（如 `"CELL": ["UL 1642", "UL 2580"]`），以便前端 Tooltip 動態精準提示。
 3. **現有標準的更新版 (Version Update) 處理**：
    - **保留舊版**：絕對不可以刪除或覆寫舊版的 JSON 檔案與 `catalog.json` 中的舊紀錄。
    - **更新舊版狀態**：將舊版紀錄中的 `is_latest` 改為 `false`，並增加 `versions_behind` 的數值，同時更新 `latest_version` 欄位為新版的名稱。
-   - **註冊新版**：在 `catalog.json` 中為新版建立一筆獨立的紀錄（給予不同的 `document_id`，例如從 `UN38.3` 變成 `UN38.3-Rev8`），並設定 `is_latest: true`。
+   - **註冊新版**：在 `catalog.json` 中為新版建立一筆獨立的紀錄（給予不同的 `document_id`，例如從 `UN38.3` 變成 `UN38.3-Rev8`），並設定 `is_latest: true` 與對應的 `prerequisites`。
 
 ## 4. 前端介面更新：新舊版本分頁切換 (Tab UI)
 當發現匯入的是現有標準的「新版本」時，AI 必須連帶修改前端的介面設計：
