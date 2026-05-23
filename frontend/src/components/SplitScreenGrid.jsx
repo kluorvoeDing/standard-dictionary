@@ -9,10 +9,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
   const objectTypes = [
     { id: 'CELL', label: 'Cell (電芯)' },
     { id: 'MODULE', label: 'Module (模組)' },
-    { id: 'PACK_SYSTEM', label: 'System (系統)' },
-    { id: 'COMPONENT_CELL', label: 'Comp. Cell (元件電芯)' },
-    { id: 'SINGLE_CELL_BATTERY', label: 'Single Cell (單電芯電池)' },
-    { id: 'BATTERY_SYSTEM', label: 'Batt. System (電池系統)' }
+    { id: 'PACK_SYSTEM', label: 'System (系統)' }
   ];
   const [filterObjects, setFilterObjects] = useState(['CELL']);
 
