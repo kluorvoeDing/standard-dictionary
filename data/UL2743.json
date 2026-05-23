@@ -9,7 +9,7 @@
     "publication_date": "2025-09-24",
     "type": "standard",
     "scope": "涵蓋內建電池或電容的攜帶式或移動式電源包 (Portable Power Packs)，包含提供給車輛緊急啟動的升壓功能 (Booster function)、USB輸出、AC插座等。不涵蓋容量大於 70kWh (鉛酸) 或 20kWh (鋰電池) 的儲能系統 (UL 9540)。",
-    "applicable_objects": ["PACK", "SYSTEM"],
+    "applicable_objects": ["PACK_SYSTEM"],
     "source_pdf": "s2743_3.pdf",
     "source_gemini_md": ""
   },
@@ -30,7 +30,7 @@
       "section": "55.2",
       "category": "ELEC",
       "subcategory": "外部短路",
-      "test_objects": ["PACK", "SYSTEM"],
+      "test_objects": ["PACK_SYSTEM"],
       "conditions": {
         "resistance": {
           "value": "≤ 10 mΩ",
@@ -59,7 +59,7 @@
       "section": "55.9",
       "category": "ELEC",
       "subcategory": "異常充電",
-      "test_objects": ["PACK"],
+      "test_objects": ["PACK_SYSTEM"],
       "conditions": {
         "charging_current": {
           "value": "3倍最大充電電流或外部充電器最大輸出",
@@ -88,7 +88,7 @@
       "section": "60.3",
       "category": "MECH",
       "subcategory": "落下",
-      "test_objects": ["PACK", "SYSTEM"],
+      "test_objects": ["PACK_SYSTEM"],
       "conditions": {
         "temperature": {
           "value": "低溫 0°C",
