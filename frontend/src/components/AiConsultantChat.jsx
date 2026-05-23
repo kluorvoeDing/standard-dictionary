@@ -147,16 +147,21 @@ ${JSON.stringify(contextData)}
 
       const reader = response.body.getReader();
       const decoder = new TextDecoder("utf-8");
+      let buffer = "";
 
       while (true) {
         const { value, done } = await reader.read();
         if (done) break;
-        const chunk = decoder.decode(value, { stream: true });
-        const lines = chunk.split('\n');
+        buffer += decoder.decode(value, { stream: true });
+        
+        const lines = buffer.split('\n');
+        buffer = lines.pop(); // Keep the last incomplete line in the buffer
+
         for (const line of lines) {
-          if (line.startsWith('data: ')) {
-            const dataStr = line.replace('data: ', '').trim();
-            if (dataStr === '[DONE]') continue;
+          const trimmedLine = line.trim();
+          if (trimmedLine.startsWith('data: ')) {
+            const dataStr = trimmedLine.replace(/^data:\s*/, '');
+            if (dataStr === '[DONE]' || !dataStr) continue;
             try {
               const data = JSON.parse(dataStr);
               const textChunk = data.candidates?.[0]?.content?.parts?.[0]?.text;
@@ -164,7 +169,9 @@ ${JSON.stringify(contextData)}
                 aiResponseText += textChunk;
                 updateLastMessage((usedKeyIndex === '1' ? `【系統提示】第一把鑰匙忙碌中，自動切換至備援鑰匙...\n\n` : '') + aiResponseText);
               }
-            } catch (e) {}
+            } catch (e) {
+              console.warn("SSE Parse Warning", e, dataStr);
+            }
           }
         }
       }
