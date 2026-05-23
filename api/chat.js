@@ -24,8 +24,8 @@ export default async function handler(req) {
     // Try keys from process.env (Vercel automatically injects them)
     // We try VITE_GEMINI_API_KEY_1 first, then fallback to VITE_GEMINI_API_KEY_2
     const keys = [
-      process.env.VITE_GEMINI_API_KEY_1,
-      process.env.VITE_GEMINI_API_KEY_2
+      process.env.GEMINI_API_KEY_1,
+      process.env.GEMINI_API_KEY_2
     ].filter(Boolean);
 
     if (keys.length === 0) {
