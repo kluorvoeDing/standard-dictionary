@@ -3,7 +3,7 @@ import ReactMarkdown from 'react-markdown';
 
 export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsData }) {
   const [messages, setMessages] = useState([
-    { sender: 'AI', text: '您好！我是您的 **AI 法規顧問**。\n您可以詢問我任何關於「目前已選取標準」的問題。\n\n💡 *提示：請先在左側選單勾選您想了解的標準。*' }
+    { sender: 'AI', text: '您好！我是您的 **AI 小幫手**。\n您可以詢問我任何關於「目前已選取標準」的問題。\n\n💡 *提示：請先在左側選單勾選您想了解的標準。*' }
   ]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
@@ -94,7 +94,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
       if (testsData[id]) contextData[id] = testsData[id];
     });
 
-    const systemInstruction = `您是電池法規資料庫的「AI 法規顧問」。
+    const systemInstruction = `您是電池法規資料庫的「AI 小幫手」。
 目前使用者在畫面上勾選了以下標準：${selectedDocs.length > 0 ? selectedDocs.join(', ') : '無'}。
 以下是這些標準的內容：
 ${JSON.stringify(contextData)}
@@ -200,7 +200,7 @@ ${JSON.stringify(contextData)}
         }}
         onMouseEnter={(e) => { if(!dragging) e.currentTarget.style.transform = 'scale(1.05)'; }}
         onMouseLeave={(e) => { if(!dragging) e.currentTarget.style.transform = 'scale(1)'; }}
-        title="打開 AI 法規顧問"
+        title="打開 AI 小幫手"
       >
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
           <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/>
@@ -238,7 +238,7 @@ ${JSON.stringify(contextData)}
             <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/>
             <path d="M5 3v4"/><path d="M3 5h4"/>
           </svg>
-          AI 法規顧問
+          AI 小幫手
         </h3>
         <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
           <span style={{ fontSize: '0.8rem', opacity: 0.8 }}>
