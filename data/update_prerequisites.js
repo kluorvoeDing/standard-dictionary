@@ -46,11 +46,12 @@ const prerequisitesMap = {
 
 catalog.forEach(doc => {
   // Try to find if base_standard_id or document_id starts with the keys in prerequisitesMap
-  const baseId = doc.base_standard_id || doc.document_id;
+  const baseId = (doc.base_standard_id || doc.document_id).replace(/-/g, '');
   
   let pr = {};
   for (const [key, value] of Object.entries(prerequisitesMap)) {
-    if (baseId.startsWith(key)) {
+    const cleanKey = key.replace(/-/g, '');
+    if (baseId.startsWith(cleanKey)) {
       pr = value;
       break;
     }
