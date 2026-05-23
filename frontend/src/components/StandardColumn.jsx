@@ -233,14 +233,12 @@ export default function StandardColumn({ testRecords, filterObjects, prerequisit
     minHeight: '100px'
   };
 
-  // Helper to generate precise tooltip based on prerequisites
-  const getTooltipContent = (isMissingLevel) => {
+  // Helper to extract prerequisite list
+  const getPrerequisitesList = () => {
     let preReqList = [];
     if (prerequisites && filterObjects && filterObjects.length > 0) {
       filterObjects.forEach(obj => {
-        // We match exactly the active filter objects (e.g. CELL, PACK_SYSTEM)
-        // If the object matches a key in prerequisites (or simplified like 'PACK' for 'PACK_SYSTEM'), get it
-        const objKey = obj.replace('_SYSTEM', ''); // Basic mapping for 'PACK_SYSTEM' to 'PACK', etc. if needed
+        const objKey = obj.replace('_SYSTEM', '');
         if (prerequisites[obj]) {
           preReqList.push(...prerequisites[obj]);
         } else if (prerequisites[objKey]) {
@@ -248,31 +246,44 @@ export default function StandardColumn({ testRecords, filterObjects, prerequisit
         }
       });
     }
-    
-    // Remove duplicates
-    preReqList = [...new Set(preReqList)];
+    return [...new Set(preReqList)];
+  };
 
-    if (preReqList.length > 0) {
-      return `本標準未包含此層級測試。實務上取得本標準認證前，該層級樣品通常需先通過 ${preReqList.join(' 或 ')} 等認證。`;
-    }
+  const preReqList = getPrerequisitesList();
 
-    // Default fallbacks
-    if (isMissingLevel) {
-      return "本標準包含此測試，但不適用於您篩選的樣品層級。請確認該層級是否被標準豁免，或是否需依賴更底層之前提標準認證。";
-    }
-    return "本標準可能未規範此層級之獨立測試。實務上，該層級可能需要滿足其他前提標準或元件認證。";
+  const renderEmptyState = (mainText) => {
+    return (
+      <div style={{...emptyStyle, flexDirection: 'column', gap: '0.5rem'}}>
+        <div>{mainText}</div>
+        {preReqList.length > 0 && (
+          <div style={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            gap: '0.25rem',
+            justifyContent: 'center',
+            marginTop: '0.25rem'
+          }}>
+            {preReqList.map(req => (
+              <span key={req} style={{
+                backgroundColor: 'rgba(255, 165, 0, 0.1)',
+                color: 'var(--accent-color)',
+                border: '1px solid rgba(255, 165, 0, 0.3)',
+                padding: '0.1rem 0.4rem',
+                borderRadius: '4px',
+                fontSize: '0.65rem',
+                fontWeight: '600'
+              }}>
+                依賴: {req}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    );
   };
 
   if (!testRecords || testRecords.length === 0) {
-    return (
-      <div 
-        style={emptyStyle} 
-        title={getTooltipContent(false)}
-      >
-        無此測試
-        <span style={{ marginLeft: '4px', fontSize: '10px', cursor: 'help' }}>ⓘ</span>
-      </div>
-    );
+    return renderEmptyState("無此測試");
   }
 
   const validRecords = testRecords.filter(record => {
@@ -284,15 +295,7 @@ export default function StandardColumn({ testRecords, filterObjects, prerequisit
   });
 
   if (validRecords.length === 0) {
-    return (
-      <div 
-        style={emptyStyle}
-        title={getTooltipContent(true)}
-      >
-        樣品層級不符
-        <span style={{ marginLeft: '4px', fontSize: '10px', cursor: 'help' }}>ⓘ</span>
-      </div>
-    );
+    return renderEmptyState("樣品層級不符");
   }
 
   return (
