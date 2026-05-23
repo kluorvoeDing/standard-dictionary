@@ -1,0 +1,619 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "AIS-038",
+    "full_name": "Specific Requirements for Electric Power Train of Vehicles (Part I: Vehicle Requirements, Part II: REESS Safety)",
+    "full_name_zh": "車輛電力驅動系統特定要求",
+    "short_name": "AIS-038 Rev.2",
+    "publisher": "Automotive Industry Standards Committee (AISC), India",
+    "publication_date": "2020",
+    "type": "standard",
+    "scope": "M 與 N 類機動車輛之電力驅動系統安全要求 (Part I) 及 REESS 安全要求 (Part II)",
+    "applicable_objects": [
+      "PACK_SYSTEM"
+    ],
+    "source_pdf": "AIS-038_Rev.2.doc.pdf",
+    "source_gemini_md": "AIS-038-Rev2_2020_zh-TW_standardized.md"
+  },
+  "terms": [],
+  "tests": [
+    {
+      "id": "AIS-038-IX-A",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動測試 (Vibration Test)",
+      "name_en": "Annexure IX-A: Vibration Test",
+      "section": "6.2, Annexure IX-A",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "依 Annexure IX Appendix 2 調整",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 調整。"
+        },
+        "temperature": {
+          "value": "22 ± 5°C",
+          "detail": "測試應在環境溫度 22 ± 5°C 下進行。"
+        },
+        "waveform": {
+          "value": "正弦波對數掃頻",
+          "detail": "振動波形為正弦波，以對數掃頻在 7 Hz 至 50 Hz 間往返，耗時 15 分鐘。"
+        },
+        "duration": {
+          "value": "12 次循環，共 3 小時",
+          "detail": "每軸重複 12 次，總計 3 小時，施加於 REESS 之垂直安裝方向。"
+        },
+        "acceleration": {
+          "value": "7-18Hz: 10m/s²; 18-30Hz: 10→2m/s²; 30-50Hz: 2m/s²",
+          "detail": "依 Table 1：7-18 Hz 為 10 m/s²；18-30 Hz 逐漸從 10 降至 2 m/s²；30-50 Hz 為 2 m/s²。"
+        },
+        "post_test": {
+          "value": "標準循環與 1 小時觀察",
+          "detail": "振動後進行一次標準循環，並在測試環境下觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
+        "details": [
+          "測試期間無電解液洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture，僅適用於高壓 REESS)",
+          "無起火 (Fire)",
+          "無爆炸 (Explosion)"
+        ]
+      },
+      "exemptions": [
+        "可使用車輛製造商確認並經同意之振動輪廓替代 (但僅限特定車型)"
+      ],
+      "related_tests": [],
+      "source_reference": "Annexure IX-A, 6.2.2.1",
+      "original_text_snippet": "The Tested-Device shall be subjected to a vibration having a sinusoidal waveform with a logarithmic sweep between 7 Hz and 50 Hz and back to 7 Hz traversed in 15 minutes. This cycle shall be repeated 12 times for a total of 3 hours in the vertical direction."
+    },
+    {
+      "id": "AIS-038-IX-B",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "熱衝擊和循環測試 (Thermal Shock and Cycling Test)",
+      "name_en": "Annexure IX-B: Thermal shock and cycling test",
+      "section": "6.3, Annexure IX-B",
+      "category": "THERM",
+      "subcategory": "溫度循環 (Temperature Cycling)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "依 Annexure IX Appendix 2 調整",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 調整。"
+        },
+        "temperature_profile": {
+          "value": "60 ± 2°C (≥ 6h) 與 -40 ± 2°C (≥ 6h)",
+          "detail": "在 60 ± 2°C 下存放至少 6 小時，隨後在 -40 ± 2°C 下存放至少 6 小時。"
+        },
+        "transition_time": {
+          "value": "≤ 30 分鐘",
+          "detail": "極端溫度之間的最大轉換時間不得超過 30 分鐘。"
+        },
+        "cycle_count": {
+          "value": "至少 5 次循環",
+          "detail": "重複上述程序，直到完成至少 5 次總循環。"
+        },
+        "post_storage": {
+          "value": "22 ± 5°C, 24 小時",
+          "detail": "循環完成後，樣品在 22 ± 5°C 環境溫度下存放 24 小時。"
+        },
+        "post_test": {
+          "value": "標準循環與 1 小時觀察",
+          "detail": "存放 24 小時後進行一次標準循環，並觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
+        "details": [
+          "測試期間無電解液洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture)",
+          "無起火 (Fire)",
+          "無爆炸 (Explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annexure IX-B, 6.3.2.1",
+      "original_text_snippet": "The Tested-Device shall be stored for at least six hours at a test temperature equal to 60 ± 2 °C or higher... followed by storage for at least six hours at a test temperature equal to -40 ± 2 °C or lower... The maximum time interval between test temperature extremes shall be 30 minutes. This procedure shall be repeated until a minimum of 5 total cycles are completed."
+    },
+    {
+      "id": "AIS-038-IX-C",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "機械衝擊測試 (Mechanical Shock)",
+      "name_en": "Annexure IX-C: Mechanical shock",
+      "section": "6.4.1, Annexure IX-C",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "20 ± 10°C",
+          "detail": "測試應在 20 ± 10°C 環境溫度下進行。"
+        },
+        "pulse_type": {
+          "value": "半正弦波或後峰鋸齒波",
+          "detail": "受測設備需承受依據車輛類別 (M1/N1 或 M2/N2 或 M3/N3) 規定之加速度脈衝。"
+        },
+        "acceleration_M1_N1": {
+          "value": "縱向 20-28g, 橫向 8-15g",
+          "detail": "M1 與 N1 車輛：縱向加速度峰值範圍約 20-28g，橫向 8-15g。"
+        },
+        "acceleration_M2_M3_N2_N3": {
+          "value": "縱向 10-17g, 橫向 5-10g",
+          "detail": "M2/M3 與 N2/N3 車輛：縱向加速度峰值範圍約 10-17g，橫向 5-10g。"
+        },
+        "observation": {
+          "value": "1 小時",
+          "detail": "測試結束後在測試環境下觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
+        "details": [
+          "測試期間無電解液洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture)",
+          "無起火 (Fire)",
+          "無爆炸 (Explosion)"
+        ]
+      },
+      "exemptions": [
+        "每個測試脈衝允許使用不同的受測樣品"
+      ],
+      "related_tests": [],
+      "source_reference": "Annexure IX-C, 6.4.1.3",
+      "original_text_snippet": "The Tested-Device shall be decelerated or accelerated in compliance with the acceleration corridors which are specified in Tables 1 to 3."
+    },
+    {
+      "id": "AIS-038-IX-D",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "機械完整性測試 (Mechanical Integrity)",
+      "name_en": "Annexure IX-D: Mechanical integrity",
+      "section": "6.4.2, Annexure IX-D",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "20 ± 10°C",
+          "detail": "測試應在 20 ± 10°C 環境溫度下進行。"
+        },
+        "crush_force": {
+          "value": "100 kN ~ 105 kN",
+          "detail": "施加至少 100 kN 但不超過 105 kN 的擠壓力 (除非另有規定)。"
+        },
+        "onset_time": {
+          "value": "< 3 分鐘",
+          "detail": "施加力至目標值的時間應小於 3 分鐘。"
+        },
+        "hold_time": {
+          "value": "100 ms ~ 10 s",
+          "detail": "達到目標力後保持時間為至少 100 毫秒且不超過 10 秒。"
+        },
+        "direction": {
+          "value": "水平且垂直於行駛方向",
+          "detail": "力道應水平施加，並垂直於 REESS 安裝於車輛時的行駛方向。"
+        },
+        "crush_plate": {
+          "value": "≤ 600 x 600 mm",
+          "detail": "使用 600 mm x 600 mm 或更小的擠壓板 (crush plate)。"
+        },
+        "observation": {
+          "value": "1 小時",
+          "detail": "測試結束後在測試環境下觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
+        "details": [
+          "測試期間無電解液洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture)",
+          "無起火 (Fire)",
+          "無爆炸 (Explosion)"
+        ]
+      },
+      "exemptions": [
+        "車體結構等防護裝置若屬保護 REESS 之用，可隨同測試"
+      ],
+      "related_tests": [],
+      "source_reference": "Annexure IX-D, 6.4.2.2.2",
+      "original_text_snippet": "The Tested-Device shall be crushed between a resistance and a crush plate... with a force of at least 100 kN, but not exceeding 105 kN... with an onset time less than 3 minutes and a hold time of at least 100 ms but not exceeding 10 s."
+    },
+    {
+      "id": "AIS-038-IX-E",
+      "normalized_id": "THERM-FIRE",
+      "name_zh": "防火測試 (Fire Resistance)",
+      "name_en": "Annexure IX-E: Fire resistance",
+      "section": "6.5, Annexure IX-E",
+      "category": "THERM",
+      "subcategory": "耐火 (Fire Resistance)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "≥ 0°C",
+          "detail": "測試應在至少 0°C 的環境溫度下進行。"
+        },
+        "test_type": {
+          "value": "汽油池火或 LPG 噴嘴",
+          "detail": "可選擇車輛級別或組件級別測試。組件級別可選用 Gasoline pool fire 或 LPG burner。"
+        },
+        "gasoline_pool_fire": {
+          "value": "A:60s, B:70s, C:60s, D:3h",
+          "detail": "Phase A (預熱) 60 秒；Phase B (直接火焰) 70 秒；Phase C (耐火磚阻隔間接火焰) 60 秒 (或延長 B 階段 60 秒)；Phase D (觀察) 3 小時。"
+        },
+        "lpg_burner_fire": {
+          "value": "800~1100°C 燃燒 2 分鐘",
+          "detail": "LPG 火焰平均溫度 30 秒內達 800°C，維持在 800-1100°C，受測設備暴露於火焰中 2 分鐘。測試後觀察 3 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無爆炸",
+        "details": [
+          "測試期間與測試後無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [
+        "若 REESS 安裝位置之最低表面離地高度 > 1.5m，可豁免耐火測試"
+      ],
+      "related_tests": [],
+      "source_reference": "Annexure IX-E, 6.5.2",
+      "original_text_snippet": "The Tested-Device shall be exposed to the flame from the freely burning fuel for 70 seconds... Acceptance criteria: The REESS shall exhibit no evidence of explosion."
+    },
+    {
+      "id": "AIS-038-IX-F",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短路保護測試 (External Short Circuit Protection)",
+      "name_en": "Annexure IX-F: External short circuit protection",
+      "section": "6.6, Annexure IX-F",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "20 ± 10°C",
+          "detail": "測試在 20 ± 10°C 或應製造商要求在更高溫度下進行。"
+        },
+        "resistance": {
+          "value": "≤ 5 mΩ",
+          "detail": "使用不超過 5 mΩ (含接線) 的短路連接短接正負極。"
+        },
+        "duration": {
+          "value": "至保護啟動或溫度穩定後 1 小時",
+          "detail": "持續短路直到 REESS 保護功能切斷電流，或在測試設備外殼溫度穩定 (2 小時內溫度梯度變化 < 4°C) 後至少持續 1 小時。"
+        },
+        "post_test": {
+          "value": "標準循環與 1 小時觀察",
+          "detail": "短路終止後直接進行一次標準循環，並觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸",
+        "details": [
+          "短路保護功能應作動",
+          "無電解液洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture)",
+          "無起火 (Fire)",
+          "無爆炸 (Explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annexure IX-F, 6.6.2",
+      "original_text_snippet": "The positive and negative terminals of the Tested-Device shall be connected to each other to produce a short circuit. The connection used for this purpose shall have a resistance not exceeding 5 mΩ."
+    },
+    {
+      "id": "AIS-038-IX-G",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電保護測試 (Overcharge Protection)",
+      "name_en": "Annexure IX-G: Overcharge protection",
+      "section": "6.7, Annexure IX-G",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "20 ± 10°C",
+          "detail": "測試在 20 ± 10°C 或應製造商要求在更高溫度下進行。"
+        },
+        "soc": {
+          "value": "中間工作範圍",
+          "detail": "測試前 SOC 調整至正常操作範圍的中間。"
+        },
+        "charge_current": {
+          "value": "製造商規定的最大充電電流",
+          "detail": "以外部充電設備提供製造商規定的最大充電電流進行充電。"
+        },
+        "charge_voltage": {
+          "value": "大於電壓限制 (約 1.1 倍)",
+          "detail": "外部充放電設備的跳脫電壓設定應至少高於受測設備電壓限制的 10%。"
+        },
+        "termination": {
+          "value": "保護啟動或溫度超限/12小時",
+          "detail": "持續充電直到過充保護功能啟動。若失效，則持續至 REESS 溫度達到最高工作溫度以上 10°C。若電流未中斷且溫度未超限，則在開始充電後 12 小時終止。"
+        },
+        "post_test": {
+          "value": "標準循環與 1 小時觀察",
+          "detail": "終止後進行一次標準循環，並觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸",
+        "details": [
+          "過充保護功能應正常啟動",
+          "無電解液洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture)",
+          "無起火 (Fire)",
+          "無爆炸 (Explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annexure IX-G, 6.7.2",
+      "original_text_snippet": "The trip current/voltage setting of the external charge-discharge equipment shall be at least 10 per cent higher than the current/voltage limit of the Tested-Device."
+    },
+    {
+      "id": "AIS-038-IX-H",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "過放電保護測試 (Over-discharge Protection)",
+      "name_en": "Annexure IX-H: Over-discharge protection",
+      "section": "6.8, Annexure IX-H",
+      "category": "ELEC",
+      "subcategory": "過放電 (Over-discharge)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "20 ± 10°C",
+          "detail": "測試在 20 ± 10°C 或應製造商要求在更高溫度下進行。"
+        },
+        "soc": {
+          "value": "較低水準",
+          "detail": "測試前 SOC 調整至正常操作範圍內的較低水準。"
+        },
+        "discharge_current": {
+          "value": "製造商規定的最大放電電流",
+          "detail": "以外部充放電設備進行放電，使用製造商規定的最大放電電流。"
+        },
+        "termination": {
+          "value": "保護啟動或達截止電壓後 30 分鐘",
+          "detail": "持續放電直到過放保護功能切斷電流。若失效，則持續至達到製造商規定的放電截止電壓後再等待 30 分鐘。"
+        },
+        "post_test": {
+          "value": "標準充電與 1 小時觀察",
+          "detail": "終止放電後進行一次標準充電 (Standard charge)，並觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸",
+        "details": [
+          "過放保護功能應正常啟動",
+          "無電解液洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture)",
+          "無起火 (Fire)",
+          "無爆炸 (Explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annexure IX-H, 6.8.2",
+      "original_text_snippet": "The discharging shall be continued until the REESS over-discharge protection control terminates the REESS discharge current."
+    },
+    {
+      "id": "AIS-038-IX-I",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "過溫度保護測試 (Over-temperature Protection)",
+      "name_en": "Annexure IX-I: Over-temperature protection",
+      "section": "6.9, Annexure IX-I",
+      "category": "THERM",
+      "subcategory": "熱濫用 (Thermal Abuse)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "正常範圍",
+          "detail": "測試前 SOC 調整至正常操作範圍內。"
+        },
+        "temperature": {
+          "value": "高於最高工作溫度",
+          "detail": "測試環境溫度應設定為確保 REESS 溫度能持續上升的程度，或將 REESS 加熱至過溫保護預期作動之溫度。"
+        },
+        "operation": {
+          "value": "連續充放電",
+          "detail": "在提高的環境溫度下，以製造商規定的最大電流進行連續充放電操作，促使內部溫度上升。"
+        },
+        "termination": {
+          "value": "保護啟動",
+          "detail": "持續測試直到過溫保護功能（如冷卻啟動或電流限制/切斷）成功啟動。"
+        },
+        "observation": {
+          "value": "1 小時",
+          "detail": "測試結束後在測試環境下觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸",
+        "details": [
+          "過溫保護功能應正常啟動",
+          "無電解液洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture)",
+          "無起火 (Fire)",
+          "無爆炸 (Explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annexure IX-I, 6.9.2",
+      "original_text_snippet": "The Tested-Device shall be operated at maximum current in high ambient temperature until the protection device activates."
+    },
+    {
+      "id": "AIS-038-IX-J",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "過電流保護測試 (Over-current Protection)",
+      "name_en": "Annexure IX-J: Over-current protection",
+      "section": "6.10, Annexure IX-J",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "20 ± 10°C",
+          "detail": "測試在 20 ± 10°C 下進行。"
+        },
+        "current": {
+          "value": "大於最大允許電流",
+          "detail": "施加高於製造商規定的最大允許充/放電電流之電流 (例如 1.1 倍)。"
+        },
+        "termination": {
+          "value": "保護啟動",
+          "detail": "持續過電流直到過電流保護功能啟動並切斷或限制電流。"
+        },
+        "post_test": {
+          "value": "標準循環與 1 小時觀察",
+          "detail": "終止後進行一次標準循環，並觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸",
+        "details": [
+          "過電流保護功能應正常啟動",
+          "無電解液洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture)",
+          "無起火 (Fire)",
+          "無爆炸 (Explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annexure IX-J, 6.10.2",
+      "original_text_snippet": "The Tested-Device shall be subjected to over-current... until the protection device activates."
+    },
+    {
+      "id": "AIS-038-X",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "熱擴散測試 (Thermal Propagation Test)",
+      "name_en": "Annexure X: Thermal Propagation Test",
+      "section": "6.11, Annexure X",
+      "category": "THERM",
+      "subcategory": "熱擴散 (Thermal Propagation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電",
+          "detail": "測試前 SOC 應調整至滿充狀態。"
+        },
+        "trigger_method": {
+          "value": "加熱、壓痕、釘刺等",
+          "detail": "使用內部加熱器、外部加熱、外部壓痕、釘刺等方法觸發單一電芯熱失控。"
+        },
+        "trigger_location": {
+          "value": "REESS 內部任意位置",
+          "detail": "觸發位置由製造商指定或測試機構選擇。"
+        },
+        "observation": {
+          "value": "1 小時或直至溫度穩定",
+          "detail": "觸發熱失控後持續觀察至少 1 小時，或直至溫度穩定下降。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無熱擴散或提供乘員 ≥5 分鐘逃生預警",
+        "details": [
+          "無熱擴散：熱失控不傳播至相鄰電芯",
+          "若發生熱擴散，需在危害狀態 (煙霧、火焰) 進入乘員艙前提供至少 5 分鐘之警示信號"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annexure X, 6.15.1",
+      "original_text_snippet": "A single cell in the REESS shall be triggered into thermal runaway. The test evaluates whether thermal runaway propagates to adjacent cells. Acceptance criteria: No propagation or safe propagation with ≥5 min warning time for occupant escape."
+    }
+  ],
+  "test_sequence": {
+    "description": "AIS-038 REESS 測試不強制所有測試在同一樣品上依序進行。",
+    "sequences": [
+      {
+        "group": "獨立測試 (Independent Tests)",
+        "tests": [
+          "AIS-038-IX-A",
+          "AIS-038-IX-B",
+          "AIS-038-IX-C",
+          "AIS-038-IX-D",
+          "AIS-038-IX-E",
+          "AIS-038-IX-F",
+          "AIS-038-IX-G",
+          "AIS-038-IX-H",
+          "AIS-038-IX-I",
+          "AIS-038-IX-J",
+          "AIS-038-X"
+        ],
+        "rule": "除非特別指定，製造商可為每項測試或同一測試的不同階段提供新的受測樣品。測試間無需特定相依順序。",
+        "source_reference": "Annexure IX"
+      }
+    ]
+  },
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "若使用 REESS 子系統測試，需提供證據證明測試結果能合理代表完整 REESS 在相同條件下的安全效能。",
+      "applicable_tests": [
+        "AIS-038-IX-A",
+        "AIS-038-IX-B",
+        "AIS-038-IX-C",
+        "AIS-038-IX-D",
+        "AIS-038-IX-E",
+        "AIS-038-IX-F",
+        "AIS-038-IX-G",
+        "AIS-038-IX-H",
+        "AIS-038-IX-I",
+        "AIS-038-IX-J",
+        "AIS-038-X"
+      ],
+      "source_reference": "Annexure IX, Section 2"
+    },
+    {
+      "id": "GE-02",
+      "description": "若電子管理單元 (Electronic management unit) 未整合於包覆電芯的外殼內，經製造商請求，可豁免將其安裝於受測設備上。",
+      "applicable_tests": [
+        "AIS-038-IX-A",
+        "AIS-038-IX-B",
+        "AIS-038-IX-C",
+        "AIS-038-IX-D",
+        "AIS-038-IX-E"
+      ],
+      "source_reference": "Annexure IX, Section 2.1"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from 3 sources: Gemini CLI standardized markdown, Original OCR markdown (authoritative), and existing batch JSON",
+    "cross_validation_notes": [
+      "所有參數已從 batch JSON 進行第一階段萃取，並透過 OCR 原文逐條比對確認細節。",
+      "例如 MECH-SHOCK 之加速度範圍，OCR 原文中包含 M1/N1/M2/N2/M3/N3 各種不同級距之詳細表列；",
+      "THERM-FIRE 中確認了 70 秒直接火焰以及 60 秒耐火磚阻隔/間接火焰的時長設定；",
+      "ELEC-OC 測試之電壓條件為跳脫電壓高於限制 10% (約等於 1.1 倍)。"
+    ],
+    "total_test_entries": 11,
+    "note": "排除水性電池氫氣排放測試 (Hydrogen Emission Tests)，專注於鋰離子等一般 REESS 安全性能測試。"
+  }
+}

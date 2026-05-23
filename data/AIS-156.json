@@ -1,0 +1,512 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "AIS-156",
+    "full_name": "Specific Requirements for L Category Electric Power Train Vehicles",
+    "full_name_zh": "L 類電動動力系統車輛特定要求",
+    "short_name": "AIS-156",
+    "publisher": "Automotive Industry Standards Committee (AISC), India",
+    "publication_date": "2020",
+    "type": "standard",
+    "scope": "L 類機動車輛 (二輪、三輪車等) 之電力驅動系統與 REESS 安全要求",
+    "applicable_objects": [
+      "PACK_SYSTEM",
+      "MODULE"
+    ],
+    "source_pdf": "AIS-156.pdf",
+    "source_gemini_md": "AIS-156_2020_zh-TW_standardized.md"
+  },
+  "terms": [],
+  "tests": [
+    {
+      "id": "AIS-156-VIB",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動測試 (Vibration Test)",
+      "name_en": "Vibration Test",
+      "section": "6.2.1, Annex 8A",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "≥ 50% SOC",
+          "detail": "正常操作 SOC 範圍的上半部 (Upper 50 per cent of the normal operating SOC range)。"
+        },
+        "waveform": {
+          "value": "正弦波對數掃頻",
+          "detail": "正弦波對數掃頻，頻率在 7 Hz 至 200 Hz 之間往返，每次 15 分鐘。"
+        },
+        "duration": {
+          "value": "3 小時",
+          "detail": "垂直安裝方向進行 12 次循環，總計 3 小時。"
+        },
+        "profile_lt_12kg": {
+          "value": "電芯/小型電池加速度曲線",
+          "detail": "7-18 Hz：10 m/s²；18-~50 Hz：漸增至 80 m/s²；50-200 Hz：80 m/s²。"
+        },
+        "profile_ge_12kg": {
+          "value": "大型電池加速度曲線",
+          "detail": "7-18 Hz：10 m/s²；18-~25 Hz：漸增至 20 m/s²；25-200 Hz：20 m/s²。"
+        },
+        "post_test": {
+          "value": "標準循環 + 1 小時觀察",
+          "detail": "測試後進行一次標準充放電循環，並觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "details": [
+          "無電解液洩漏 (No electrolyte leakage)",
+          "無破裂 (No rupture，僅限高壓 REESS)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
+        ]
+      },
+      "exemptions": [
+        "若經驗證並同意，製造商可使用特定車輛的振動曲線，但核准僅限於該特定車型。"
+      ],
+      "related_tests": [],
+      "source_reference": "6.2.1, 6.2.2, Annex 8A",
+      "original_text_snippet": "The tested-device shall be subjected to a vibration having a sinusoidal waveform with a logarithmic sweep between 7 Hz and 200 Hz and back to 7 Hz traversed in 15 minutes. This cycle shall be repeated 12 times for a total of 3 hours in the vertical mounting direction of the REESS."
+    },
+    {
+      "id": "AIS-156-THERM-CYCLE",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "熱衝擊與循環測試 (Thermal Shock and Cycling)",
+      "name_en": "Thermal Shock and Cycling Test",
+      "section": "6.3.1, Annex 8B",
+      "category": "THERM",
+      "subcategory": "溫度循環 (Temperature Cycling)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "≥ 50% SOC",
+          "detail": "正常操作 SOC 範圍的上半部 (Upper 50 per cent of the normal operating SOC range)。"
+        },
+        "temp_high": {
+          "value": "60 ± 2°C",
+          "detail": "最高溫度 60 ± 2°C (或製造商要求之更高溫度)。"
+        },
+        "temp_low": {
+          "value": "-40 ± 2°C",
+          "detail": "最低溫度 -40 ± 2°C (或製造商要求之更低溫度)。"
+        },
+        "dwell_time": {
+          "value": "≥ 6 小時",
+          "detail": "每個極端溫度下停留至少 6 小時。"
+        },
+        "transition_time": {
+          "value": "≤ 30 分鐘",
+          "detail": "極端溫度間的轉換時間不得超過 30 分鐘。"
+        },
+        "cycle_count": {
+          "value": "≥ 5 循環",
+          "detail": "至少進行 5 次完整循環。"
+        },
+        "post_storage": {
+          "value": "24 小時",
+          "detail": "循環完成後於 20 ± 10°C 靜置 24 小時。"
+        },
+        "post_test": {
+          "value": "標準循環 + 1 小時觀察",
+          "detail": "靜置後進行一次標準充放電循環，並觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "details": [
+          "無電解液洩漏 (No electrolyte leakage)",
+          "無破裂 (No rupture，僅限高壓 REESS)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.3.1, 6.3.2, Annex 8B",
+      "original_text_snippet": "The tested-device shall be stored for at least six hours at a test temperature equal to 60°C ±2°C or higher if requested by the manufacturer, followed by storage for at least six hours at a test temperature equal to -40°C ±2°C or lower if requested by the manufacturer."
+    },
+    {
+      "id": "AIS-156-DROP",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "可拆卸 REESS 跌落測試 (Mechanical Drop)",
+      "name_en": "Mechanical Drop Test for Removable REESS",
+      "section": "6.4.1.1, Annex 8C",
+      "category": "MECH",
+      "subcategory": "跌落 (Drop)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "≥ 90%",
+          "detail": "SOC 至少為額定容量的 90%。"
+        },
+        "temperature": {
+          "value": "20 ± 10°C",
+          "detail": "測試在環境溫度 20 ± 10°C 下進行。"
+        },
+        "drop_height": {
+          "value": "1.0 m",
+          "detail": "從 1.0 m 高度自由落下。"
+        },
+        "surface": {
+          "value": "平滑混凝土",
+          "detail": "跌落表面為平滑水平混凝土墊或具有等效硬度的表面。"
+        },
+        "drop_count": {
+          "value": "6 次",
+          "detail": "從 6 個不同方向各跌落一次。"
+        },
+        "post_test": {
+          "value": "標準循環 + 1 小時觀察",
+          "detail": "測試後直接進行標準循環（若適用）或觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "details": [
+          "無電解液洩漏 (No electrolyte leakage)",
+          "無破裂 (No rupture，僅限高壓 REESS)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
+        ]
+      },
+      "exemptions": [
+        "此測試僅適用於可拆卸式 REESS (Removable REESS)。"
+      ],
+      "related_tests": [],
+      "source_reference": "6.4.1.1, 6.4.1.2, Annex 8C",
+      "original_text_snippet": "The test shall be conducted by free fall of the removed REESS from a height of 1.0 m to a smooth horizontal concrete pad or other flooring type with equivalent hardness. The removed REESS shall be dropped six times from different orientations."
+    },
+    {
+      "id": "AIS-156-SHOCK",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "機械衝擊測試 (Mechanical Shock)",
+      "name_en": "Mechanical Shock Test",
+      "section": "6.4.2.1, Annex 8D",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "≥ 50% SOC",
+          "detail": "正常操作 SOC 範圍的上半部 (Upper 50 per cent of the normal operating SOC range)。"
+        },
+        "temperature": {
+          "value": "20 ± 10°C",
+          "detail": "測試在環境溫度 20 ± 10°C 下進行。"
+        },
+        "shock_lt_12kg": {
+          "value": "1500 m/s², 6 ms",
+          "detail": "對於質量較小的 REESS：半正弦衝擊，峰值加速度 1500 m/s²，脈衝持續時間 6 ms。"
+        },
+        "shock_ge_12kg": {
+          "value": "500 m/s², 11 ms",
+          "detail": "對於質量較大的 REESS：半正弦衝擊，峰值加速度 500 m/s²，脈衝持續時間 11 ms。"
+        },
+        "shock_directions": {
+          "value": "18 次",
+          "detail": "在三個互相垂直的安裝方向上，每個方向正負各 3 次衝擊，總計 18 次。"
+        },
+        "post_test": {
+          "value": "標準循環 + 1 小時觀察",
+          "detail": "測試後進行一次標準充放電循環，並觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "details": [
+          "無電解液洩漏 (No electrolyte leakage)",
+          "無破裂 (No rupture，僅限高壓 REESS)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
+        ]
+      },
+      "exemptions": [
+        "此測試僅適用於配備中柱及/或側支架的車輛 (Vehicles with a centre and/or side stand)。"
+      ],
+      "related_tests": [],
+      "source_reference": "6.4.2.1, 6.4.2.2, Annex 8D",
+      "original_text_snippet": "The tested-device shall be subjected to a half-sine shock of peak acceleration of 1500 m/s² and pulse duration of 6 ms... Each tested-device shall be subjected to three shocks in the positive direction and three shocks in the negative direction of each of three mutually perpendicular mounting positions."
+    },
+    {
+      "id": "AIS-156-FIRE",
+      "normalized_id": "THERM-FIRE",
+      "name_zh": "耐火測試 (Fire Resistance)",
+      "name_en": "Fire Resistance Test",
+      "section": "6.5, Annex 8E",
+      "category": "THERM",
+      "subcategory": "防火 (Fire Resistance)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "≥ 50% SOC",
+          "detail": "正常操作 SOC 範圍的上半部 (Upper 50 per cent of the normal operating SOC range)。"
+        },
+        "setup": {
+          "value": "燃料盤燃燒",
+          "detail": "使用裝有商業燃料的燃燒盤，燃燒盤尺寸需超出測試物體水平投影 20-50 cm。"
+        },
+        "phase_a": {
+          "value": "60 秒預熱",
+          "detail": "A階段：燃料盤在遠離測試設備處點燃並預熱 60 秒。"
+        },
+        "phase_b": {
+          "value": "70 秒直接暴露",
+          "detail": "B階段：將燃燒盤移至測試設備下方，直接火焰暴露 70 秒。"
+        },
+        "phase_c": {
+          "value": "60 秒間接暴露",
+          "detail": "C階段：在燃燒盤上方加入耐火屏蔽層，進行間接火焰暴露 60 秒 (或可選擇延續 B 階段直接暴露 60 秒)。"
+        },
+        "phase_d": {
+          "value": "觀察冷卻",
+          "detail": "D階段：移除火源，觀察直至測試設備溫度降至環境溫度，或確認溫度已持續下降至少 3 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "測試期間及觀察期內無爆炸",
+        "details": [
+          "測試期間測試設備不得有爆炸的跡象 (shall exhibit no evidence of explosion)"
+        ]
+      },
+      "exemptions": [
+        "僅適用於包含可燃電解液的 REESS。",
+        "製造商可選擇以車輛層級或組件層級執行此測試。"
+      ],
+      "related_tests": [],
+      "source_reference": "6.5, Annex 8E",
+      "original_text_snippet": "During the test, the tested-device shall exhibit no evidence of explosion. Phase B: Direct exposure to flame. For 70 seconds the tested-device shall be exposed to the flame from the freely burning fuel."
+    },
+    {
+      "id": "AIS-156-SC-EXT",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短路保護測試 (External Short Circuit Protection)",
+      "name_en": "External Short Circuit Protection Test",
+      "section": "6.6.1, Annex 8F",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "≥ 50% SOC",
+          "detail": "正常操作 SOC 範圍的上半部 (Upper 50 per cent of the normal operating SOC range)。"
+        },
+        "temperature": {
+          "value": "20 ± 10°C",
+          "detail": "測試在環境溫度 20 ± 10°C 下進行 (或製造商要求之更高溫度)。"
+        },
+        "contactors": {
+          "value": "主接觸器閉合",
+          "detail": "充電與放電的所有相關主接觸器均處於閉合狀態。"
+        },
+        "resistance": {
+          "value": "≤ 5 mΩ",
+          "detail": "連接正負極的短路電阻不得超過 5 mΩ。"
+        },
+        "duration": {
+          "value": "保護介入或溫度穩定",
+          "detail": "持續短路直至保護功能中斷或限制電流，或在外殼溫度穩定 (1 小時內溫度梯度小於 4°C) 後至少持續 1 小時。"
+        },
+        "post_test": {
+          "value": "標準循環 + 1 小時觀察",
+          "detail": "測試後進行一次標準充放電循環，並觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "details": [
+          "無電解液洩漏 (No electrolyte leakage)",
+          "無破裂 (No rupture，僅限高壓 REESS)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.6.1, 6.6.2, Annex 8F",
+      "original_text_snippet": "The positive and negative terminals of the tested-device shall be connected to each other to produce a short circuit. The connection used for this purpose shall have a resistance not exceeding 5 mΩ."
+    },
+    {
+      "id": "AIS-156-OC",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電保護測試 (Overcharge Protection)",
+      "name_en": "Overcharge Protection Test",
+      "section": "6.7.1, Annex 8G",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "20 ± 10°C",
+          "detail": "測試在環境溫度 20 ± 10°C 下進行 (或製造商要求之更高溫度)。"
+        },
+        "charge_current": {
+          "value": "≥ 1/3 C",
+          "detail": "以至少 1/3 C 的速率充電，但不超過製造商指定的正常工作範圍內的最大電流。"
+        },
+        "controls": {
+          "value": "停用外部充電控制",
+          "detail": "任何外部的充電控制限制應被停用。"
+        },
+        "end_condition": {
+          "value": "保護介入或 2 倍容量",
+          "detail": "持續充電直至測試設備自動中斷或限制充電；若保護未介入，則持續充至額定充電容量的兩倍 (200%)。"
+        },
+        "post_test": {
+          "value": "標準循環 + 1 小時觀察",
+          "detail": "測試後進行一次標準充放電循環，並觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "details": [
+          "無電解液洩漏 (No electrolyte leakage)",
+          "無破裂 (No rupture，僅限高壓 REESS)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.7.1, 6.7.2, Annex 8G",
+      "original_text_snippet": "The tested-device shall be charged with at least 1/3 C rate but not exceeding the maximum current within the normal operating range specified by the manufacturer... The charging shall be continued until the tested-device (automatically) interrupts or limits the charging... or to twice rated charge capacity."
+    },
+    {
+      "id": "AIS-156-OD",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "過放電保護測試 (Over-discharge Protection)",
+      "name_en": "Over-discharge Protection Test",
+      "section": "6.8.1, Annex 8H",
+      "category": "ELEC",
+      "subcategory": "過放電 (Over-discharge)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "20 ± 10°C",
+          "detail": "測試在環境溫度 20 ± 10°C 下進行 (或製造商要求之更高溫度)。"
+        },
+        "discharge_current": {
+          "value": "≥ 1/3 C",
+          "detail": "以至少 1/3 C 的速率放電，但不超過製造商指定的正常工作範圍內的最大電流。"
+        },
+        "end_condition": {
+          "value": "保護介入或 25% 標稱電壓",
+          "detail": "持續放電直至測試設備自動中斷或限制放電；若保護未介入，則放電至標稱電壓的 25%。"
+        },
+        "post_test": {
+          "value": "標準充電 + 1 小時觀察",
+          "detail": "測試後進行一次標準充電，並觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "details": [
+          "無電解液洩漏 (No electrolyte leakage)",
+          "無破裂 (No rupture，僅限高壓 REESS)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.8.1, 6.8.2, Annex 8H",
+      "original_text_snippet": "A discharge shall be performed with at least 1/3 C rate but not exceeding the maximum current within the normal operating range... The discharging shall be continued until the tested-device (automatically) interrupts or limits the discharging... or until 25 per cent of nominal voltage level."
+    },
+    {
+      "id": "AIS-156-THERM-ABUSE",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "過溫保護測試 (Over-temperature Protection)",
+      "name_en": "Over-temperature Protection Test",
+      "section": "6.9.1, Annex 8I",
+      "category": "THERM",
+      "subcategory": "熱濫用 (Thermal Abuse)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "cooling": {
+          "value": "停用冷卻",
+          "detail": "若 REESS 可在無冷卻狀態下運行，則停用冷卻系統。"
+        },
+        "temperature_measurement": {
+          "value": "監測內部溫度",
+          "detail": "持續量測外殼內靠近電芯處的溫度。"
+        },
+        "operation": {
+          "value": "充放電循環",
+          "detail": "以能在正常操作範圍內最快提升電芯溫度的穩定電流進行連續充放電。"
+        },
+        "environment": {
+          "value": "逐漸升溫",
+          "detail": "將設備置於對流烤箱或環境試驗箱中，將環境溫度逐漸提升至保護閾值溫度或最高操作溫度並維持。"
+        },
+        "end_condition": {
+          "value": "保護介入或溫度穩定",
+          "detail": "測試持續直至 REESS 抑制或限制充放電，或溫度穩定 (2 小時內溫度梯度小於 4°C)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "details": [
+          "無電解液洩漏 (No electrolyte leakage)",
+          "無破裂 (No rupture，僅限高壓 REESS)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
+        ]
+      },
+      "exemptions": [
+        "若不需要特定的保護措施，則必須證明在這些過溫條件下仍能安全運作且符合允收標準。"
+      ],
+      "related_tests": [],
+      "source_reference": "6.9.1, 6.9.2, Annex 8I",
+      "original_text_snippet": "The tested-device shall be continuously charged and discharged with a steady current that will increase the temperature of cells as rapidly as possible within the normal operation range... The tested-device shall be placed in a convective oven or climatic chamber... chamber temperature shall be gradually increased."
+    }
+  ],
+  "test_sequence": {
+    "description": "AIS-156 REESS 測試不強制所有項目在同一組樣品上循序進行，通常可由多個測試樣品分別執行。",
+    "sequences": []
+  },
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "具備封閉化學反應系統（如鋰離子電池）的 REESS 在適當文件證明下可豁免氫氣排放測試 (Hydrogen Emission Test)。",
+      "applicable_tests": [],
+      "source_reference": "5.4"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from 3 sources: Gemini CLI standardized markdown, Original OCR markdown (authoritative), and existing batch JSON",
+    "cross_validation_notes": [
+      "重點關注 REESS 電池本體測試 (Section 6 & Annex 8)。",
+      "所有通過標準均包含：無洩漏、無破裂 (高壓系統)、無起火、無爆炸，且高壓系統絕緣電阻 ≥ 100 Ω/V。",
+      "測試參數與 OCR Markdown 進行交叉驗證完全吻合。"
+    ]
+  }
+}

@@ -1,0 +1,623 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "UL2056",
+    "full_name": "ANSI/CAN/UL 2056:2025 - Standard for Safety for Power Banks (First Edition)",
+    "full_name_zh": "ANSI/CAN/UL 2056:2025 - 行動電源安全標準 (第一版)",
+    "short_name": "UL 2056",
+    "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
+    "publication_date": "2024-10-22 (First Edition), 2025-02-18 (Revisions)",
+    "type": "standard",
+    "scope": "行動電源（可攜式 USB 充電器），包含一次或二次電池，用於為低壓電子設備供電。輸入/輸出直流電壓最大 60 Vdc，額定瓦時不超過 100 Wh。",
+    "applicable_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
+    "source_pdf": "s2056_1.pdf",
+    "source_gemini_md": "UL2056_zh-TW_standardized.md"
+  },
+  "terms": [],
+  "tests": [
+    {
+      "id": "UL2056-12",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "輸出埠短路測試 (Short-Circuit of Output Port Test)",
+      "name_en": "Section 12: Short-Circuit of Output Port Test",
+      "section": "12",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電",
+          "detail": "樣品需完全充電。"
+        },
+        "resistance": {
+          "value": "80 ± 20 mΩ",
+          "detail": "連接正負極輸出埠的電阻負載為 80 ± 20 mΩ。"
+        },
+        "temperature": {
+          "value": "20 ± 5°C 及 55 ± 5°C",
+          "detail": "測試分別在 20 ± 5°C 及 55 ± 5°C 的環境溫度下進行。"
+        },
+        "duration": {
+          "value": "直到起火/爆炸、完全放電，或溫度恢復",
+          "detail": "短路持續至起火、爆炸、完全放電，或電芯外殼溫度回落至環境溫度 ±5°C。"
+        },
+        "fault_condition": {
+          "value": "負載電路單一故障",
+          "detail": "在負載電路中的任何保護裝置上施加單一故障。若保護裝置啟動，則使用不會觸發裝置的最大負載重新測試。"
+        },
+        "special_condition_1": {
+          "value": "起司布與紙巾覆蓋測試",
+          "detail": "20°C 下 1 個樣品需以 20 mΩ 負載在鋪有紙巾的軟木表面進行測試，並覆蓋單層起司布 (Cheesecloth)。"
+        },
+        "special_condition_2": {
+          "value": "邊充邊放測試",
+          "detail": "若支援輸入時輸出，20°C 下 1 個樣品需同時進行最大充電速率輸入與 20 mΩ 輸出負載測試。"
+        },
+        "special_condition_3": {
+          "value": "直接電芯放電 (僅限鋰電池)",
+          "detail": "1 個樣品以 1.2 倍最大連續放電電流直接放電 (繞過轉換電路，不需單一故障)，直到爆炸、排氣或 BMS 動作且溫度穩定。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無排氣、無爆炸、無起火、無化學洩漏；鋰電池溫度 ≤ 75°C；起司布/紙巾不燃",
+        "details": [
+          "所有樣品應無排氣 (no vent)、無爆炸 (no explosion)、無起火 (no fire)",
+          "不應因電芯外殼破裂或爆裂導致化學洩漏",
+          "鋰系電池的電芯外殼溫度不得超過 75 ± 1°C",
+          "覆蓋起司布與紙巾的樣品，不應發生燒焦或燃燒現象",
+          "直接放電樣品的放電電流不得超過其操作區域的最大連續放電電流"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "12.1 - 12.7",
+      "original_text_snippet": "Each fully charged test sample power bank, in turn, is to be short-circuited by connecting the positive and negative output port terminals... with a circuit load having a resistance load of 80 ± 20 mΩ... Tests are to be conducted at ambient temperatures of 20 ± 5 °C and at 55 ± 5 °C... the samples shall not vent, explode, or catch fire... The temperature of the cell casings shall not exceed 75 ± 1 °C for lithium chemistries."
+    },
+    {
+      "id": "UL2056-13",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "電池異常充電測試 (Abnormal Charging of the Battery Test)",
+      "name_en": "Section 13: Abnormal Charging of the Battery Test",
+      "section": "13",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "放電至終止電壓",
+          "detail": "樣品先以 0.2C 恆流放電至製造商規定的終止電壓。"
+        },
+        "charging_current": {
+          "value": "3 倍最大充電電流",
+          "detail": "充電電流為電池最大充電電流 (非行動電源最大電流) 的 3 倍。"
+        },
+        "charging_voltage": {
+          "value": "最大異常充電電壓",
+          "detail": "充電電壓設定為製造商規定的最大異常充電電壓。"
+        },
+        "duration": {
+          "value": "達到充電結束條件後 + 7 小時",
+          "detail": "持續充電至達到充電結束條件後，再維持 7 小時。"
+        },
+        "fault_condition": {
+          "value": "保護電路單一故障",
+          "detail": "在電池保護電路中施加可能導致過充的單一故障 (BMS 故障)。"
+        },
+        "special_condition_1": {
+          "value": "深度放電 (僅限鋰電池)",
+          "detail": "1 個樣品需繞過輸入電壓轉換電路，放電至低於終止電壓 10% 深度，直到爆炸、排氣或 BMS 動作。"
+        },
+        "special_condition_2": {
+          "value": "直接過充 (僅限鋰電池)",
+          "detail": "1 個樣品需繞過輸入電壓轉換電路，以 1.2 倍最大充電電流充電，直到爆炸、排氣或 BMS 動作。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無排氣、無爆炸、無起火、無化學洩漏；鋰電池溫度 ≤ 90°C",
+        "details": [
+          "無排氣 (no vent)、無爆炸 (no explosion)、無起火 (no fire)",
+          "無化學洩漏 (no chemical leak)",
+          "鋰系電池的電芯溫度不得超過 90 ± 1°C",
+          "電壓/電流不應超出製造商規定的操作區域限值"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "13.1 - 13.9",
+      "original_text_snippet": "Each power bank shall be discharged at a constant current of 0.2 C/1h... 3 times the maximum charging current... subjected to a single fault in the battery protective circuit... shall not vent, explode, or catch fire... temperature of the cell casings shall not exceed 90 ± 1 °C for lithium chemistries."
+    },
+    {
+      "id": "UL2056-14",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "電池濫用過充電測試 (Abusive Overcharge of the Battery Test)",
+      "name_en": "Section 14: Abusive Overcharge of the Battery Test",
+      "section": "14",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "放電至終止電壓",
+          "detail": "樣品先以 0.2C 恆流放電至終止電壓。"
+        },
+        "charging_current": {
+          "value": "10 倍 C5 速率電流",
+          "detail": "使用足以維持 10 倍 C5 安培率電流的供電電壓進行充電。至少 1 個樣品需以 5 倍 C5 安培率進行測試。"
+        },
+        "duration": {
+          "value": "直到爆炸、排氣、起火或保護裝置啟動",
+          "detail": "持續充電直到電池爆炸、排氣、起火，或保護裝置啟動且電芯溫度恢復穩態。"
+        },
+        "fault_condition": {
+          "value": "保護電路單一故障",
+          "detail": "在電池保護電路中施加單一故障。"
+        },
+        "special_condition_1": {
+          "value": "過充電壓測試 (僅限鋰電池)",
+          "detail": "1 個樣品需繞過輸入電壓轉換電路，以最大充電電流與 1.1 倍上限充電電壓充電，直到爆炸、排氣或 BMS 動作。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無爆炸、無起火；鋰電池溫度 ≤ 90°C",
+        "details": [
+          "無爆炸 (no explosion)、無起火 (no fire)",
+          "鋰系電池的電芯溫度不得超過 90 ± 1°C",
+          "過充電壓測試中，電芯電壓不得超過其上限充電電壓"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "14.1 - 14.6",
+      "original_text_snippet": "Each test sample power bank is to be subjected to a charging current of 10 times the C5 amp rate... subjected to a single fault in the battery protective circuit... The samples shall not explode or catch fire... temperature of the cell casings shall not exceed 90 ± 1 °C for lithium chemistries."
+    },
+    {
+      "id": "UL2056-15",
+      "normalized_id": "ELEC-FD",
+      "name_zh": "電芯強制放電測試 (Forced-Discharge of the Cells Test)",
+      "name_en": "Section 15: Forced-Discharge of the Cells Test",
+      "section": "15",
+      "category": "ELEC",
+      "subcategory": "強制放電 (Forced Discharge)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "applicability": {
+          "value": "僅適用於多串聯配置",
+          "detail": "僅適用於內部電芯採用多串聯配置的行動電源。"
+        },
+        "setup": {
+          "value": "一完放電芯串聯多滿充電芯",
+          "detail": "將一個完全放電的電芯，與同類型的多個完全充電的電芯串聯。"
+        },
+        "series_cells": {
+          "value": "總電芯數減去放電串電芯數",
+          "detail": "串聯的充電電芯數量等於電池組總電芯數減去放電並聯串的電芯數。"
+        },
+        "resistance": {
+          "value": "80 ± 20 mΩ",
+          "detail": "電芯串與 80 ± 20 mΩ 電阻負載短接。"
+        },
+        "duration": {
+          "value": "直到起火/爆炸、完全放電，或溫度恢復",
+          "detail": "持續放電至起火、爆炸、完全放電，或電芯溫度回落至環境溫度 ±10°C。"
+        },
+        "fault_condition": {
+          "value": "放電電路單一故障",
+          "detail": "在放電電路中施加單一故障。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無爆炸、無起火",
+        "details": [
+          "無爆炸 (no explosion)、無起火 (no fire)"
+        ]
+      },
+      "exemptions": [
+        "不採用多電芯串聯配置的行動電源不適用此測試 (7.1, 15.1)"
+      ],
+      "related_tests": [],
+      "source_reference": "15.1 - 15.5",
+      "original_text_snippet": "The Forced-Discharge Test is applicable only to power banks with cells in multi-cell series applications... A completely discharged cell is to be connected in series with the specified number of fully charged cells... short-circuited... 80 ± 20 mΩ... The samples shall not explode or catch fire."
+    },
+    {
+      "id": "UL2056-16",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "溫度測試與 BMS 驗證 (Temperature Test and BMS Verification)",
+      "name_en": "Section 16: Temperature Test and BMS Verification",
+      "section": "16",
+      "category": "THERM",
+      "subcategory": "熱穩定性/溫度 (Thermal Stability/Temperature)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "output_test": {
+          "value": "最大額定電流恆定電阻放電",
+          "detail": "充滿電的行動電源連接恆定電阻負載，以輸出埠的最大額定電流進行放電。"
+        },
+        "input_test": {
+          "value": "最大電流充電",
+          "detail": "完全放電的行動電源以製造商規定的最大電流充電。"
+        },
+        "stabilization": {
+          "value": "溫度穩定",
+          "detail": "測試持續至溫度穩定（連續 3 次讀數間隔 ≥15 分鐘無進一步增加）。"
+        },
+        "protective_devices": {
+          "value": "保護裝置不應啟動",
+          "detail": "在正常輸入輸出負載測試期間，保護裝置不應啟動。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "元件溫度不超標；電池電壓不超標",
+        "details": [
+          "溫度敏感元件的溫度不應超過表 16.1 與表 16.2 規定的限值 (Ti ≤ Tmax + Tamb - Tma)",
+          "放電期間，電池電壓不應低於終止電壓",
+          "充電期間，電池電壓不應高於上限充電電壓"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "16.1 - 16.5",
+      "original_text_snippet": "A fully charged power bank is to be connected to a constant resistance load resulting in the maximum rated current for the output port... Temperatures and cell voltages shall be monitored... The temperatures on temperature-sensitive components shall not exceed the limits... Cell voltage shall not fall below the end-of-discharge voltage."
+    },
+    {
+      "id": "UL2056-17",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "電源輸入測試 (Power Input Test)",
+      "name_en": "Section 17: Power Input Test",
+      "section": "17",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "load": {
+          "value": "最大正常負載",
+          "detail": "行動電源在所有可能模式 (電池不同 SOC 狀態、輸出埠滿載、開啟手電筒等輔助功能) 下以最大正常負載運行，並測量輸入電流。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "輸入電流 ≤ 110% 額定值",
+        "details": [
+          "測得的輸入電流不應超過行動電源標稱輸入電流額定值的 110%"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "17.1 - 17.2",
+      "original_text_snippet": "The power bank input current shall be measured under the maximum normal load... shall not exceed 110% of the marked input current rating."
+    },
+    {
+      "id": "UL2056-18",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "輸出埠過載測試 (Overload of Output Ports Test)",
+      "name_en": "Section 18: Overload of Output Ports Test",
+      "section": "18",
+      "category": "ELEC",
+      "subcategory": "過負載 (Overload)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電",
+          "detail": "樣品需完全充電。"
+        },
+        "setup": {
+          "value": "起司布與紙巾覆蓋",
+          "detail": "行動電源覆蓋單層起司布，並放置在鋪有單層紙巾的軟木板上。"
+        },
+        "load": {
+          "value": "最大功率過載",
+          "detail": "每個輸出引腳均負載至剛好不會觸發過流保護的最大功率。"
+        },
+        "duration": {
+          "value": "1 小時或最大運行時間",
+          "detail": "測試持續 1 小時，或電池組允許的最大運行時間（取較短者）。"
+        },
+        "simultaneous_io": {
+          "value": "邊充邊放測試",
+          "detail": "若支援輸入時輸出，需同時進行最大充電速率輸入與輸出最大功率過載。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無排氣、無爆炸、無起火；起司布/紙巾無燒焦；電池溫度不超標",
+        "details": [
+          "無排氣 (no vent)、無爆炸 (no explosion)、無起火 (no fire)",
+          "起司布和紙巾應保持完好，不應燒焦或燃燒 (允許煙霧造成的變色)",
+          "電池溫度不應超過製造商規定的最高溫度"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "18.1 - 18.3",
+      "original_text_snippet": "Each output pin is to be loaded to its maximum power... test is to be conducted for 1 h or the maximum run time... covered with a single layer of cheesecloth and placed on a softwood board covered with a single layer of tissue paper... shall not vent, explode, or catch fire... no charring or burning of the cheesecloth."
+    },
+    {
+      "id": "UL2056-19",
+      "normalized_id": "THERM-FIRE",
+      "name_zh": "光伏電池可燃性測試 (Flammability of Photovoltaic Cells Test)",
+      "name_en": "Section 19: Flammability of Photovoltaic Cells Test",
+      "section": "19",
+      "category": "THERM",
+      "subcategory": "起火危險 (Fire Hazard)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "applicability": {
+          "value": "帶光伏電池的行動電源",
+          "detail": "僅適用於帶有整合式光伏 (PV) 電池的行動電源。"
+        },
+        "soc": {
+          "value": "充滿電",
+          "detail": "樣品需完全充電。"
+        },
+        "setup": {
+          "value": "起司布與紙巾覆蓋",
+          "detail": "覆蓋單層起司布，放置在覆蓋單層紙巾的軟木板上。"
+        },
+        "fault_condition": {
+          "value": "光伏相關單一故障",
+          "detail": "施加可能導致光伏電池可燃性問題的單一故障 (例如電池向 PV 電池反向饋電)。"
+        },
+        "duration": {
+          "value": "1 小時",
+          "detail": "測試持續 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無排氣、無爆炸、無起火；起司布/紙巾無燒焦",
+        "details": [
+          "無排氣 (no vent)、無爆炸 (no explosion)、無起火 (no fire)",
+          "起司布和紙巾應保持完好，不應燒焦"
+        ]
+      },
+      "exemptions": [
+        "不帶整合式光伏電池的行動電源不適用"
+      ],
+      "related_tests": [],
+      "source_reference": "19.1 - 19.3",
+      "original_text_snippet": "For power banks with integral photovoltaic cells... covered with a single layer of cheesecloth and placed on a softwood board covered with a single layer of tissue paper... single fault... for 1 h... shall not vent, explode, or catch fire."
+    },
+    {
+      "id": "UL2056-22",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "穩態均勻力測試 (Steady Uniform Force Test)",
+      "name_en": "Section 22: Steady Uniform Force Test",
+      "section": "22",
+      "category": "MECH",
+      "subcategory": "擠壓/外殼應力 (Case/Mold Stress)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電",
+          "detail": "樣品需完全充電。"
+        },
+        "force": {
+          "value": "250 ± 10 N",
+          "detail": "使用直徑 30 mm 的圓形平面工具，施加 250 ± 10 N (56 ± 2 lbf) 的力。"
+        },
+        "rate": {
+          "value": "10 ± 2.5 N/s",
+          "detail": "以 10 ± 2.5 N/s 的速率逐漸施加力。"
+        },
+        "duration": {
+          "value": "30 秒",
+          "detail": "達到規定力後保持 30 秒。"
+        },
+        "surfaces": {
+          "value": "頂部、底部、側面",
+          "detail": "分別對樣品的頂部、底部與側面施力。對於圓柱形樣品，需固定防止滾動，並在各側面旋轉 90° 進行測試。"
+        },
+        "post_test": {
+          "value": "6 小時觀察",
+          "detail": "測試後繼續觀察 6 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無爆炸、無起火、無排氣、無漏液；外殼不分離、不破裂",
+        "details": [
+          "無爆炸 (no explosion)、無起火 (no fire)",
+          "外殼不應破裂至電芯或保護裝置暴露",
+          "外殼不應分離 (no separation)",
+          "無排氣 (no vent)、無漏液 (no leak，質量損失不超過 0.1%)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "22.1 - 22.4",
+      "original_text_snippet": "A steady uniform force of 250 ± 10 N is to be applied... using a 30 mm diameter circular flat surface... rate of 10 ± 2.5 N/s... maintained for 30 s... examined 6 h after the test... shall not explode, catch fire... enclosure shall not crack to the extent that cells or protective devices are exposed."
+    },
+    {
+      "id": "UL2056-23",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "撓曲力測試 (Flexing Force Test)",
+      "name_en": "Section 23: Flexing Force Test",
+      "section": "23",
+      "category": "MECH",
+      "subcategory": "擠壓/外殼應力 (Case/Mold Stress)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電",
+          "detail": "樣品需完全充電。"
+        },
+        "setup": {
+          "value": "三點彎曲",
+          "detail": "將行動電源放置在相距盡可能遠的兩端 3.175 mm 金屬棒上，在中心放置 12.7 mm 金屬棒以施力。"
+        },
+        "force": {
+          "value": "250 ± 10 N",
+          "detail": "透過中心的 12.7 mm 金屬棒施加 250 ± 10 N (56 ± 2 lbf) 的力。"
+        },
+        "rate": {
+          "value": "10 ± 2.5 N/s",
+          "detail": "以 10 N/s ± 2.5 N 的速率逐漸施加力。"
+        },
+        "duration": {
+          "value": "5 秒",
+          "detail": "達到規定力後保持 5 秒。"
+        },
+        "post_test": {
+          "value": "6 小時觀察",
+          "detail": "測試後繼續觀察 6 小時。使用 2 個樣品，第二個樣品需翻轉 180° 測試。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無爆炸、無起火、無排氣、無漏液；外殼不破裂",
+        "details": [
+          "無爆炸 (no explosion)、無起火 (no fire)",
+          "外殼不應破裂至電芯或保護裝置暴露",
+          "無排氣 (no vent)、無漏液 (no leak，質量損失不超過 0.1%)"
+        ]
+      },
+      "exemptions": [
+        "所有外部尺寸均大於 40 mm (1.6 英寸) 的行動電源不適用此測試 (23.2)"
+      ],
+      "related_tests": [],
+      "source_reference": "23.1 - 23.4",
+      "original_text_snippet": "The power bank is to be placed across two 3.175 mm metal rods... A 12.7 mm metal rod is to be placed on the power bank at its center... force of 250 ± 10 N... maintained for 5 s... examined 6 h after the test... shall not explode, catch fire... This test does not apply to power banks where all exterior dimensions are > 40 mm."
+    },
+    {
+      "id": "UL2056-24",
+      "normalized_id": "THERM-STAB",
+      "name_zh": "模具應力釋放測試 (Mold Stress Relief Test)",
+      "name_en": "Section 24: Mold Stress Relief Test",
+      "section": "24",
+      "category": "THERM",
+      "subcategory": "熱穩定性 (Thermal Stability)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "70 ± 1°C 或 Tmax + 10°C",
+          "detail": "將樣品放入循環空氣烤箱中，溫度設定為 70 ± 1°C。若在溫度測試中記錄的最高溫度 (Tmax) 超過 60°C，則烤箱溫度設定為 Tmax + 10°C。"
+        },
+        "duration": {
+          "value": "7 小時",
+          "detail": "樣品在烤箱中保持 7 小時。"
+        },
+        "preparation": {
+          "value": "完全放電或使用假電池",
+          "detail": "為防止電池過熱，可使用完全放電的樣品或使用假電池替換真實電芯。"
+        },
+        "post_test": {
+          "value": "冷卻至室溫後檢查",
+          "detail": "取出後冷卻至室溫再進行檢查。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無機械損壞；外殼不翹曲、不融化、不破裂",
+        "details": [
+          "外殼不應破裂 (no crack)、翹曲 (no warp) 或融化 (no melt)，導致電芯或保護裝置暴露"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "24.1 - 24.3",
+      "original_text_snippet": "The samples are to be placed in a full draft circulating-air oven maintained at 70 ± 1 °C for 7 h... If the maximum temperature T recorded during the Temperature Test exceeds 60 °C, the oven temperature is to be T + 10 °C... The enclosure shall not crack, warp, or melt to the extent that cells or protective devices are exposed."
+    },
+    {
+      "id": "UL2056-25",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落衝擊測試 (Drop Impact Test)",
+      "name_en": "Section 25: Drop Impact Test",
+      "section": "25",
+      "category": "MECH",
+      "subcategory": "跌落 (Drop / Free Fall)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電",
+          "detail": "樣品需完全充電。"
+        },
+        "height": {
+          "value": "1 m",
+          "detail": "從 1 m (3.28 英尺) 的高度跌落。"
+        },
+        "surface": {
+          "value": "混凝土表面",
+          "detail": "跌落到混凝土表面上。"
+        },
+        "drop_count": {
+          "value": "3 次跌落",
+          "detail": "每個樣品跌落 3 次，每次跌落的方向需不同，選擇最可能產生不利結果的方向。"
+        },
+        "cold_conditioning": {
+          "value": "低溫預處理 (若適用)",
+          "detail": "若塑膠外殼行動電源預期用於低於 5°C 的環境，則需在 0°C 或製造商規定的最低溫度下預處理 3 小時後再跌落。"
+        },
+        "post_test": {
+          "value": "6 小時觀察",
+          "detail": "測試後繼續觀察 6 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無排氣、無爆炸、無起火、無漏液；保護裝置完整；外殼不破裂/不分離",
+        "details": [
+          "無排氣 (no vent)、無爆炸 (no explosion)、無起火 (no fire)",
+          "無漏液 (no leak，質量損失不超過 0.1%)",
+          "保護裝置的完整性必須維持 (protection maintained)",
+          "外殼不應破裂，蓋子不應分離 (no crack, no separation)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "25.1 - 25.5",
+      "original_text_snippet": "Each sample is to be dropped three times from a height of 1 m to a concrete surface... examined 6 h after the test... shall not vent, explode, or catch fire... no leak... enclosure shall not crack and lids shall not separate."
+    }
+  ],
+  "test_sequence": {},
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "豁免測試 (Exemptions based on applicability)",
+      "applicable_tests": [
+        "UL2056-15",
+        "UL2056-19",
+        "UL2056-23"
+      ],
+      "source_reference": "15.1, 19.1, 23.2"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from Gemini CLI standardized markdown, original OCR markdown, and existing batch JSON.",
+    "cross_validation_notes": [
+      "Excluded Capacity Verification Test (Section 20) and Label Permanence Test (Section 26) as they are not purely safety tests and violate Rule 2.",
+      "Mapped Section 12 Short Circuit to ELEC-SC-EXT.",
+      "Mapped Section 13 Abnormal Charging to ELEC-OCUR and Section 14 Abusive Overcharge to ELEC-OC.",
+      "Mapped Section 15 Forced Discharge to ELEC-FD.",
+      "Mapped Section 16 Temperature Test to THERM-ABUSE as thermal stability/temperature check.",
+      "Mapped Section 17 Power Input and Section 18 Overload to ELEC-OCUR.",
+      "Mapped Section 19 Flammability of Photovoltaic Cells to THERM-FIRE.",
+      "Mapped Section 22 and 23 to MECH-STRESS.",
+      "Mapped Section 24 Mold Stress Relief to THERM-STAB.",
+      "Mapped Section 25 Drop Impact to MECH-DROP."
+    ],
+    "total_test_entries": 11,
+    "note": "Excludes Section 20 Capacity Verification and Section 26 Label Permanence per rules."
+  }
+}

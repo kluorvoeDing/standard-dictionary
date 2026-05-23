@@ -1,0 +1,603 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "UL3030",
+    "full_name": "ANSI/CAN/UL 3030:2018 (R2024) - Standard for Safety for Unmanned Aircraft Systems",
+    "full_name_zh": "無人機系統 (UAS) 安全標準",
+    "short_name": "UL 3030",
+    "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
+    "publication_date": "2018-09-18 (First Edition, Reaffirmed 2024-08-30)",
+    "type": "standard",
+    "scope": "商業用途 UAS (重量 < 25 kg, 電壓 ≤ 100 V dc) 的電氣系統安全要求",
+    "applicable_objects": ["PACK_SYSTEM"],
+    "source_pdf": "s3030_1.pdf",
+    "source_gemini_md": "UL3030_zh-TW_standardized.md"
+  },
+  "terms": [],
+  "tests": [
+    {
+      "id": "UL3030-32.6",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電試驗",
+      "name_en": "Overcharge",
+      "section": "32.6",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "discharge": {
+          "value": "0.2C 或更高放電率至 EODV",
+          "detail": "樣品以 0.2 倍額定容量之電流（或製造商允許之更高電流）放電至規定的截止電壓 (EODV)。"
+        },
+        "charge": {
+          "value": "最大指定充電率恆流充電",
+          "detail": "以製造商指定之最大充電率（基於最大預期充電器輸出電流）進行恆流充電。"
+        },
+        "fault": {
+          "value": "充電控制電路單一故障",
+          "detail": "在充電保護電路中施加可能導致過充電之單一故障。可靠之保護裝置可保留於電路中。"
+        },
+        "termination": {
+          "value": "電壓達上限 110% 或溫度回穩後再加 2 小時，或起火/爆炸",
+          "detail": "測試持續至電壓達到最大指定電壓限制之 110%，或監測溫度降至環境溫度/穩定狀態後再持續 2 小時，或發生起火/爆炸為止。"
+        },
+        "post_test_cycle": {
+          "value": "1 次充放電循環",
+          "detail": "若測試後系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "充放電循環（若適用）後，觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂、無洩漏；電池電壓不超過指定上限",
+        "details": [
+          "所有測試皆不得發生爆炸 (E)",
+          "所有測試皆不得發生持續燃燒/明火 (F)",
+          "外殼不得破裂導致內部危險零件外露 (R)",
+          "電解液不得洩漏至外殼外部 (L)",
+          "電池之電壓限制不得超過指定的充電電壓上限",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) 以確保無電擊危險 (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "32.6",
+      "original_text_snippet": "The sample is then subjected to a constant current charging at the manufacturer's specified charging rate... under a single fault condition in the charging protection circuitry... The test is to be continued until the voltage has reached 110% of the maximum specified voltage limit and/or monitored temperatures return to ambient or steady state conditions and an additional 2 h has elapsed, or explosion/fire occurs."
+    },
+    {
+      "id": "UL3030-32.7",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "短路試驗",
+      "name_en": "Short circuit",
+      "section": "32.7",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "resistance": {
+          "value": "≤ 20 mΩ",
+          "detail": "將滿充樣品之正負極以總電阻小於或等於 20 mΩ 之電路負載連接進行短路。"
+        },
+        "fault": {
+          "value": "充電控制電路單一故障",
+          "detail": "在充電控制電路中跨接任何保護裝置施加單一故障。可靠之保護裝置可保留於電路中。"
+        },
+        "duration": {
+          "value": "至溫度降回環境溫度，或起火/爆炸",
+          "detail": "持續短路放電，直到樣品回復至環境溫度，或發生起火、爆炸。"
+        },
+        "post_test_cycle": {
+          "value": "1 次充放電循環",
+          "detail": "若測試後系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "測試及充放電循環後，觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂、無洩漏、無電擊危險",
+        "details": [
+          "不得發生爆炸 (E)",
+          "不得發生持續燃燒 (F)",
+          "不得破裂 (R)",
+          "不得有電解液洩漏 (L)",
+          "冷卻至接近環境溫度後，通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "32.7",
+      "original_text_snippet": "A fully charged sample is to be short-circuited by connecting the positive and negative terminals of the sample with a circuit load having a total resistance of less than or equal to 20 mΩ."
+    },
+    {
+      "id": "UL3030-32.8",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "不平衡充電試驗",
+      "name_en": "Imbalanced charging",
+      "section": "32.8",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "preparation": {
+          "value": "1 個電芯完放，其餘 50% SOC",
+          "detail": "將滿充電池組中除了 1 個電芯（或電芯塊）外的所有電芯放電至規定的完全放電狀態；未放電之電芯則放電至約 50% 規定之充電狀態 (SOC)，以建立不平衡條件。"
+        },
+        "charging": {
+          "value": "使用指定充電器充電",
+          "detail": "依製造商規範使用指定的充電器進行充電。充電期間監測部分充電電芯之電壓以確認是否超過電壓限制。"
+        },
+        "post_test_cycle": {
+          "value": "1 次充放電循環",
+          "detail": "若測試後系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "測試後觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂、無洩漏",
+        "details": [
+          "不得發生爆炸 (E)",
+          "不得發生持續燃燒 (F)",
+          "不得破裂 (R)",
+          "不得有電解液洩漏 (L)",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "32.8",
+      "original_text_snippet": "A fully charged battery pack of a UAS shall have all of its cells with the exception of one cell/cell block discharged to its specified fully discharged condition. The undischarged cell shall be discharged to approximately 50% of its specified state of charge (SOC) to create an imbalanced condition prior to charging."
+    },
+    {
+      "id": "UL3030-32.9",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "衝擊試驗",
+      "name_en": "Shock test",
+      "section": "32.9",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "light_uas": {
+          "value": "≤ 12kg：50g 半正弦波, 11ms, 6 方向",
+          "detail": "最大起飛重量 ≤ 12kg：半正弦波，峰值加速度 50g，持續時間 11ms。在 3 個相互垂直的軸向（共 6 個空間方向）施加衝擊。"
+        },
+        "heavy_uas": {
+          "value": "> 12kg 且 ≤ 25kg：25g, 15ms, 6 方向",
+          "detail": "最大起飛重量 > 12kg 且 ≤ 25kg：峰值加速度 25g，持續時間 15ms。在 3 個相互垂直的軸向施加衝擊。"
+        },
+        "post_test_cycle": {
+          "value": "1 次充放電循環",
+          "detail": "若系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂、無洩漏、結構未鬆脫",
+        "details": [
+          "不得發生爆炸 (E)",
+          "不得發生持續燃燒 (F)",
+          "不得破裂 (R)",
+          "不得有電解液洩漏 (L)",
+          "結構與電氣連接不鬆脫",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "32.9",
+      "original_text_snippet": "The sample is to be subjected to mechanical shock testing with parameters as shown in Table 32.1... The shocks are to be applied in all 6 spatial directions."
+    },
+    {
+      "id": "UL3030-32.10",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "熱循環試驗",
+      "name_en": "Thermal cycling",
+      "section": "32.10",
+      "category": "THERM",
+      "subcategory": "溫度循環 (Temperature Cycling)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "temperatures": {
+          "value": "製造商建議之操作環境極端值（或儲存溫度）",
+          "detail": "於製造商建議之操作環境溫度極端值或額定儲存溫度（取較嚴苛者）之間進行循環。"
+        },
+        "transition_rate": {
+          "value": "5°C/min 或在兩腔室間移動",
+          "detail": "溫度轉換率為每分鐘 5°C (9°F)，或在兩個設定在極端溫度的腔室間移動樣品。"
+        },
+        "dwell_time": {
+          "value": "至少 6 小時",
+          "detail": "在各極端溫度停留至樣品達到均勻溫度 (±5°C)，但不得少於 6 小時。"
+        },
+        "cycles": {
+          "value": "5 次循環",
+          "detail": "總共進行 5 次完整的高低溫循環。"
+        },
+        "post_test_cycle": {
+          "value": "1 次充放電循環",
+          "detail": "樣品回復至室溫後，若系統可運作，須執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "測試後觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂、無洩漏",
+        "details": [
+          "不得發生爆炸 (E)",
+          "不得發生持續燃燒 (F)",
+          "不得破裂 (R)",
+          "不得有電解液洩漏 (L)",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "32.10",
+      "original_text_snippet": "The UAS shall be placed in a chamber with ambient air cycling at the temperature extremes of the manufacturer's recommended operating ambient range... A total of five cycles (at the high and low temperature extremes) are to be performed."
+    },
+    {
+      "id": "UL3030-33.1",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "電池組振動試驗",
+      "name_en": "Vibration Test (Batteries/battery packs)",
+      "section": "33.1",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "standard": {
+          "value": "IEC 60068-2-64 / ISO 12405-1",
+          "detail": "依據 IEC 60068-2-64 進行寬帶隨機振動測試，功率頻譜密度 (PSD) 依據 ISO 12405-1。"
+        },
+        "frequency": {
+          "value": "5 Hz 至 200 Hz",
+          "detail": "頻率範圍為 5 Hz 至 200 Hz。"
+        },
+        "duration": {
+          "value": "每軸 21 小時",
+          "detail": "在三個垂直軸向 (Z, X, Y) 各承受 21 小時之振動。"
+        },
+        "post_test_cycle": {
+          "value": "1 次充放電循環",
+          "detail": "若電池組可運作，須執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂、無洩漏",
+        "details": [
+          "不得發生爆炸 (E)",
+          "不得發生持續燃燒 (F)",
+          "不得破裂 (R)",
+          "不得有電解液洩漏 (L)",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
+      ],
+      "related_tests": ["UL3030-33.2"],
+      "source_reference": "33.1",
+      "original_text_snippet": "The sample shall be subjected to the vibration in each axis for 21 h. For each axis the frequency shall be varied from 5 Hz to 200 Hz with power spectral density (PSD) ... as outlined in ISO 12405-1."
+    },
+    {
+      "id": "UL3030-33.2",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "整機振動試驗",
+      "name_en": "Vibration Test (Complete UAS)",
+      "section": "33.2",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "frequency": {
+          "value": "10-55-10 Hz 掃頻",
+          "detail": "頻率由 10 Hz 至 55 Hz 再回到 10 Hz 進行線性掃頻。"
+        },
+        "sweep_time": {
+          "value": "2 分鐘/循環",
+          "detail": "每個掃頻循環耗時 2 分鐘。"
+        },
+        "amplitude": {
+          "value": "1.0 mm (峰對峰)",
+          "detail": "在垂直平面上維持 1.0 +0.1, -0 mm 峰對峰位移。"
+        },
+        "duration": {
+          "value": "1 小時",
+          "detail": "振動測試持續 1 小時。"
+        },
+        "post_test_cycle": {
+          "value": "1 次充放電循環",
+          "detail": "測試後須執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無熔融金屬、零件未鬆脫且運作正常",
+        "details": [
+          "不排放火焰或熔融金屬",
+          "無起火、電擊或人員傷害危險",
+          "零件不得有鬆脫現象",
+          "系統必須能正常運作",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["UL3030-33.1"],
+      "source_reference": "33.2",
+      "original_text_snippet": "The vibration test shall consist of vibration for 1 h at a frequency of 10 to 55 Hz and back to 10 Hz, with a linear sweep having a sweep time of 2 min per sweep cycle."
+    },
+    {
+      "id": "UL3030-34.1",
+      "normalized_id": "MECH-IMPACT",
+      "name_zh": "外殼衝擊試驗",
+      "name_en": "Strength of Enclosures Tests - Impact",
+      "section": "34.1",
+      "category": "MECH",
+      "subcategory": "撞擊 (Impact)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "impact_energy": {
+          "value": "6.78 N-m",
+          "detail": "使用重約 0.535 kg、直徑 50.8 mm 的鋼球，從 1.30 m 高度落下產生 6.78 N-m 之衝擊能量。"
+        },
+        "surfaces": {
+          "value": "所有可能受擊表面 1 次",
+          "detail": "對預期使用或儲存期間可能承受衝擊的每個表面施加 1 次衝擊。"
+        },
+        "cold_conditioning": {
+          "value": "非金屬外殼需低溫調節 4 小時",
+          "detail": "第二個樣品需在製造商建議的最低環境溫度下調節 4 小時，取出後立即進行衝擊測試。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "外殼未損壞致危險零件外露",
+        "details": [
+          "外殼不得有損壞導致危險電壓零件可被接觸 (使用 2.5mm 直徑測試棒驗證)",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["UL3030-34.2"],
+      "source_reference": "34.1",
+      "original_text_snippet": "An enclosure, guard, or cover is to be subjected to an impact of 6.78 N-m (5 foot-pounds) on any surface that may be subjected to an impact during intended use or storage."
+    },
+    {
+      "id": "UL3030-34.2",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落試驗",
+      "name_en": "Strength of Enclosures Tests - Drop",
+      "section": "34.2",
+      "category": "MECH",
+      "subcategory": "跌落 (Drop/Free Fall)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "height": {
+          "value": "1.0 ± 0.01 m",
+          "detail": "從 1.0 ± 0.01 公尺高度跌落。"
+        },
+        "surface": {
+          "value": "混凝土",
+          "detail": "跌落至至少 76 mm 厚的混凝土表面。"
+        },
+        "drop_count": {
+          "value": "3 次",
+          "detail": "總共跌落 3 次，方向採最能代表使用者搬運時不慎跌落之姿態。"
+        },
+        "cold_conditioning": {
+          "value": "非金屬外殼需低溫調節 4 小時",
+          "detail": "若是使用非金屬外殼的 UAS，第二個樣品需在製造商建議的最低環境溫度下調節 4 小時，取出後立即進行跌落測試。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "外殼未損壞致危險零件外露",
+        "details": [
+          "外殼不得有損壞導致危險電壓零件可被接觸 (使用 2.5mm 直徑測試棒驗證)",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["UL3030-34.1"],
+      "source_reference": "34.2",
+      "original_text_snippet": "A UAS that contain hazardous operating voltage... is to be dropped three times from a height of 1.0 ± 0.01 m (40 ± 0.4 inches) to strike a concrete surface"
+    },
+    {
+      "id": "UL3030-35",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "模應力測試",
+      "name_en": "Mold Stress",
+      "section": "35",
+      "category": "MECH",
+      "subcategory": "外殼/模具應力 (Case/Mold Stress)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "temperature": {
+          "value": "外殼最高溫度 + 10°C，或 80°C（取高者）",
+          "detail": "樣品置於烤箱中，溫度設定為外殼在測試中觀察到的最高溫度加上 10°C (18°F) 或 80°C (176°F)，兩者取較高值。"
+        },
+        "duration": {
+          "value": "7 小時",
+          "detail": "樣品在烤箱中維持 7 小時。"
+        },
+        "preparation": {
+          "value": "電池完全放電",
+          "detail": "為防止電池過熱危險，測試前樣品必須完全放電。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無危險零件外露，無絕緣破壞",
+        "details": [
+          "冷卻後檢查，不得有收縮或變形導致危險零件外露或電氣間隙縮減",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "未包含危險操作電壓 (Hazardous operating voltage) 的 UAS 不需執行此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "35",
+      "original_text_snippet": "The sample is to be placed in a full-draft circulating-air oven maintained at a uniform temperature equal to 10°C (18°F) higher than the highest temperature observed on the enclosure or a temperature of 80°C (176°F) whichever is higher. The samples are to remain in the oven for 7 h."
+    },
+    {
+      "id": "UL3030-36.1",
+      "normalized_id": "THERM-WATER",
+      "name_zh": "IPX4 水暴露試驗",
+      "name_en": "IPX4 Code Rating",
+      "section": "36.1",
+      "category": "THERM",
+      "subcategory": "水浸/水暴露 (Water Exposure/Immersion)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "standard": {
+          "value": "IEC 60529 IPX4 或更高",
+          "detail": "依據 IEC 60529 對滿充之 UAS 進行 IPX4 (防潑水) 測試；若製造商標示更高防護等級則依其等級測試。"
+        },
+        "post_test_cycle": {
+          "value": "5 分鐘運作 + 1 次充放電",
+          "detail": "測試後使 UAS 按預期運作 5 分鐘，並執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "測試後觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸，能正常運作",
+        "details": [
+          "不得發生爆炸 (E)",
+          "不得發生持續燃燒 (F)",
+          "不得破裂 (R)",
+          "不得有電解液洩漏 (L)",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "標示為僅限室內使用 (Indoor Use) 之 UAS 豁免此測試"
+      ],
+      "related_tests": ["UL3030-36.2"],
+      "source_reference": "36.1",
+      "original_text_snippet": "A fully charged UAS shall be subjected to a water exposure test in accordance with the Standard for Degrees of Protection Provided by Enclosures (IP Code), IEC 60529, Tests for Protection Against Water Indicated by the Second Characteristic Numeral 4 (IPX4)"
+    },
+    {
+      "id": "UL3030-36.2",
+      "normalized_id": "THERM-WATER",
+      "name_zh": "臨時浸水試驗",
+      "name_en": "Temporary immersion",
+      "section": "36.2",
+      "category": "THERM",
+      "subcategory": "水浸/水暴露 (Water Exposure/Immersion)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "depth": {
+          "value": "水面高於最高點 76 mm",
+          "detail": "將 UAS 完全浸入水中，深度使其最高點覆蓋至少 76 mm (3 英寸) 的水。"
+        },
+        "duration": {
+          "value": "5 分鐘",
+          "detail": "浸泡持續 5 分鐘。"
+        },
+        "post_test": {
+          "value": "充放電循環或連接充電器檢查",
+          "detail": "若 UAS 仍可運作，執行至少 1 次充放電循環。若無法運作，將其連接充電器並確認無危險發生。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "測試後觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "浸水前及任何充放電循環後，均不得發生起火或爆炸",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "標示為僅限室內使用 (Indoor Use) 之 UAS 豁免此測試"
+      ],
+      "related_tests": ["UL3030-36.1"],
+      "source_reference": "36.2",
+      "original_text_snippet": "The UAS is subjected to complete immersion to a depth that covers the highest point of the UAS with 76 mm (3 inches) of water. The UAS is subjected to this immersion for 5 min."
+    }
+  ],
+  "test_sequence": {
+    "description": "UL 3030 的測試序列與樣品要求",
+    "sequences": [
+      {
+        "group": "異常運行與環境測試 (Abnormal Operation & Environmental)",
+        "tests": [
+          "UL3030-32.6",
+          "UL3030-32.7",
+          "UL3030-32.8",
+          "UL3030-32.9",
+          "UL3030-32.10",
+          "UL3030-33.1",
+          "UL3030-33.2"
+        ],
+        "rule": "每個故障或異常條件單獨使用一個樣品進行測試；若樣品在排除故障後仍能正常運作，則可重複用於多項測試 (32.6.1)。"
+      }
+    ]
+  },
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "若電池組已符合 UL 62133 或 UL 2271 (如 17.3.2(a) 或 17.3.2(b) 規定)，則豁免短路 (32.7)、不平衡充電 (32.8)、衝擊 (32.9)、熱循環 (32.10) 及電池組振動 (33.1) 等測試。",
+      "applicable_tests": [
+        "UL3030-32.7",
+        "UL3030-32.8",
+        "UL3030-32.9",
+        "UL3030-32.10",
+        "UL3030-33.1"
+      ]
+    },
+    {
+      "id": "GE-02",
+      "description": "標示為僅限室內使用 (Indoor Use) 的 UAS 可豁免 IPX4 防水及臨時浸水測試。",
+      "applicable_tests": [
+        "UL3030-36.1",
+        "UL3030-36.2"
+      ]
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from 3 sources: Gemini CLI standardized markdown, Original OCR markdown, and existing batch JSON",
+    "cross_validation_notes": [
+      "所有源文件對關鍵參數描述一致。OCR 被用作主要權威來源，以確定精確的測試時間、負載和判定標準。",
+      "UL 3030 是針對無人機 (UAS) 系統層級的安全標準，故大部分測試的受測對象為 'PACK_SYSTEM'（即整台無人機及其電池系統）。",
+      "異常測試後需進行 1 小時的觀察期，此點在 OCR 文本的 24.7 中確認並適用於各項相關測試。"
+    ],
+    "total_test_entries": 12,
+    "note": "本資料僅提取與電池/電氣安全直接相關的測試，排除純機械結構強度、標籤耐久性及馬達過載等不直接影響電池本體安全的測試條款（如 22, 23, 27, 29, 30, 31, 37, 38, 39）。部分外殼測試 (34, 35) 予以保留因其結果會直接影響電池的安全隔離與保護。"
+  }
+}

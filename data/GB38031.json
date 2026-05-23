@@ -1,0 +1,930 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "GB38031",
+    "full_name": "GB 38031-2025 Electric vehicles traction battery safety requirements",
+    "full_name_zh": "GB 38031—2025 電動汽車用動力蓄電池安全要求",
+    "short_name": "GB 38031-2025",
+    "publisher": "國家市場監督管理總局、國家標準化管理委員會",
+    "publication_date": "2025-03-28發佈 2026-07-01實施",
+    "type": "standard",
+    "scope": "涵蓋電動汽車用動力蓄電池的電芯 (Cell)、電池包 (Pack) 及電池系統 (System)。旨在規定其安全要求及試驗方法。",
+    "applicable_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
+    "source_pdf": "GB38031-2025.pdf",
+    "source_gemini_md": "GB38031-2025_zh-TW_standardized.md"
+  },
+  "terms": [
+    {
+      "term_en": "battery cell",
+      "term_zh": "電池單體",
+      "definition": "將化學能與電能進行相互轉換的基本單元裝置。通常包括電極、隔膜、電解質、外殼和端子，並被設計成可充電。"
+    },
+    {
+      "term_en": "battery pack",
+      "term_zh": "電池包",
+      "definition": "從外部獲得電能並能夠對外輸出電能的單元。通常包括電池單體、電池管理模塊(不含BCU)、電池箱及相應附件(冷卻部件、連接線纜等)。"
+    },
+    {
+      "term_en": "battery system",
+      "term_zh": "電池系統",
+      "definition": "一個或一個以上的電池包及相應附件(管理系統、高壓電路、低壓電路及機械總成等)構成的能量存儲裝置。"
+    }
+  ],
+  "tests": [
+    {
+      "id": "GB38031-8.1.2",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "過放電試驗 (電池單體)",
+      "name_en": "Over-discharge Test (Cell)",
+      "section": "8.1.2",
+      "category": "ELEC",
+      "subcategory": "過放電 (Over-discharge)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "調整至放電終止電壓狀態",
+          "detail": "將試驗對象荷電狀態調整至放電終止電壓狀態"
+        },
+        "current": {
+          "value": "I1",
+          "detail": "以 I1 (1率放電電流) 恆流放電"
+        },
+        "duration": {
+          "value": "30 min",
+          "detail": "放電持續 30 min"
+        },
+        "observation": {
+          "value": "1 h",
+          "detail": "在試驗環境溫度下觀察 1 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "不起火",
+          "不爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.1.1, 8.1.2",
+      "original_text_snippet": "電池單體按照 8.1.2 進行過放電試驗，應不起火、不爆炸。將試驗對象荷電狀態調整至放電終止電壓狀態，以 I1 電流放電 30 min。完成以上試驗步驟後，在試驗環境溫度下觀察 1h。"
+    },
+    {
+      "id": "GB38031-8.1.3",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電試驗 (電池單體)",
+      "name_en": "Overcharge Test (Cell)",
+      "section": "8.1.3",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "標準充電後",
+          "detail": "試驗對象按 7.1.1 方法進行標準充電"
+        },
+        "current": {
+          "value": "≥ I1",
+          "detail": "以製造商規定且不小於 I1 的電流恆流充電"
+        },
+        "termination": {
+          "value": "1.1倍電壓 或 115% SOC",
+          "detail": "充電至製造商規定的充電終止電壓的 1.1 倍或 115% SOC 後停止充電"
+        },
+        "observation": {
+          "value": "1 h",
+          "detail": "在試驗環境溫度下觀察 1 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "不起火",
+          "不爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.1.2, 8.1.3",
+      "original_text_snippet": "電池單體按照 8.1.3 進行過充電試驗，應不起火、不爆炸。以製造商規定且不小於 I1 的電流恆流充電至製造商規定的充電終止電壓的 1.1 倍或 115% SOC 後，停止充電。"
+    },
+    {
+      "id": "GB38031-8.1.4",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短路試驗 (電池單體)",
+      "name_en": "External Short Circuit Test (Cell)",
+      "section": "8.1.4",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "標準充電後",
+          "detail": "試驗對象按 7.1.1 方法進行標準充電"
+        },
+        "resistance": {
+          "value": "< 5 mΩ",
+          "detail": "外部線路電阻應小於 5 mΩ"
+        },
+        "duration": {
+          "value": "10 min",
+          "detail": "將試驗對象正極端子和負極端子經外部短路 10 min"
+        },
+        "observation": {
+          "value": "1 h",
+          "detail": "在試驗環境溫度下觀察 1 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "不起火",
+          "不爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.1.3, 8.1.4",
+      "original_text_snippet": "電池單體按照 8.1.4 進行外部短路試驗，應不起火、不爆炸。將試驗對象正極端子和負極端子經外部短路 10 min，外部線路電阻應小於 5 mΩ。"
+    },
+    {
+      "id": "GB38031-8.1.5",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "加熱試驗 (電池單體)",
+      "name_en": "Heating Test (Cell)",
+      "section": "8.1.5",
+      "category": "THERM",
+      "subcategory": "加熱 (Heating)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "標準充電後",
+          "detail": "試驗對象按 7.1.1 方法進行標準充電"
+        },
+        "ramp_rate": {
+          "value": "5 °C/min",
+          "detail": "溫度箱按照 5 °C/min 的速率由試驗環境溫度升溫"
+        },
+        "target_condition_non_nimh": {
+          "value": "130 °C, 30 min",
+          "detail": "對於鎳氫電池單體以外的試驗對象，升至 130 °C，並保持此溫度 30 min 後停止加熱"
+        },
+        "target_condition_nimh": {
+          "value": "85 °C, 2 h",
+          "detail": "對於鎳氫電池單體，升至 85 °C，並保持此溫度 2 h 後停止加熱"
+        },
+        "observation": {
+          "value": "1 h",
+          "detail": "在試驗環境溫度下觀察 1 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "不起火",
+          "不爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.1.4, 8.1.5",
+      "original_text_snippet": "電池單體按照 8.1.5 進行加熱試驗，應不起火、不爆炸。對於鎳氫電池單體以外的試驗對象，溫度箱按照 5℃/min 的速率由試驗環境溫度升至 130℃，並保持此溫度 30 min 後停止加熱；對於鎳氫電池單體，溫度箱按照 5℃/min 的速率由試驗環境溫度升至 85℃，並保持此溫度 2h 後停止加熱。"
+    },
+    {
+      "id": "GB38031-8.1.6",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "溫度循環試驗 (電池單體)",
+      "name_en": "Temperature Cycling Test (Cell)",
+      "section": "8.1.6",
+      "category": "THERM",
+      "subcategory": "溫度循環 (Temperature Cycling)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "標準充電後",
+          "detail": "試驗對象按 7.1.1 方法充電"
+        },
+        "cycle_count": {
+          "value": "5 循環",
+          "detail": "循環次數 5 次"
+        },
+        "temperatures": {
+          "value": "-40 °C ↔ 85 °C",
+          "detail": "溫度極值 -40 °C 和 85 °C，按照表 1 和圖 1 曲線進行調節"
+        },
+        "observation": {
+          "value": "1 h",
+          "detail": "在試驗環境溫度下觀察 1 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "不起火",
+          "不爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.1.5, 8.1.6",
+      "original_text_snippet": "電池單體按照 8.1.6 進行溫度循環試驗，應不起火、不爆炸。放入溫度箱中，溫度箱溫度按照表 1 和圖 1 進行調節，循環次數 5 次。"
+    },
+    {
+      "id": "GB38031-8.1.7",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓試驗 (電池單體)",
+      "name_en": "Crush Test (Cell)",
+      "section": "8.1.7",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "標準充電後",
+          "detail": "試驗對象按 7.1.1 方法充電"
+        },
+        "direction": {
+          "value": "垂直極板或最易受擠壓方向",
+          "detail": "垂直於電池單體極板方向施壓，或與電池單體在整車佈局上最容易受到擠壓的方向相同"
+        },
+        "apparatus": {
+          "value": "R75 mm 半圓柱體",
+          "detail": "半徑 75 mm 的半圓柱體"
+        },
+        "speed": {
+          "value": "≤ 2 mm/s",
+          "detail": "擠壓速度不大於 2 mm/s"
+        },
+        "termination": {
+          "value": "0V 或 15%變形 或 100kN 或 1000倍質量",
+          "detail": "電壓達到 0V 或變形量達到 15% 或擠壓力達到 100 kN 或 1000 倍試驗對象質量後停止擠壓"
+        },
+        "hold_time": {
+          "value": "10 min",
+          "detail": "保持當前位置 10 min"
+        },
+        "observation": {
+          "value": "1 h",
+          "detail": "在試驗環境溫度下觀察 1 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "不起火",
+          "不爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB38031-8.2.4"
+      ],
+      "source_reference": "5.1.6, 8.1.7",
+      "original_text_snippet": "電池單體按照 8.1.7 進行擠壓試驗，應不起火、不爆炸。擠壓程度：電壓達到 0V 或變形量達到 15% 或擠壓力達到 100 kN 或 1000 倍試驗對象質量後停止擠壓；保持當前位置 10 min。"
+    },
+    {
+      "id": "GB38031-8.1.8",
+      "normalized_id": "ELEC-CC",
+      "name_zh": "快充循環後安全試驗 (電池單體)",
+      "name_en": "Safety After Fast-Charge Cycling Test (Cell)",
+      "section": "8.1.8",
+      "category": "ELEC",
+      "subcategory": "快充循環 (Fast-Charge Cycling)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "applicability": {
+          "value": "快充單體",
+          "detail": "試驗對象為從 20% SOC 充電至 80% SOC 總充電時間不超過 15 min 的電池單體"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "不起火",
+          "不爆炸"
+        ]
+      },
+      "exemptions": [
+        "不含僅通過車輛能源進行充電的電池單體"
+      ],
+      "related_tests": [],
+      "source_reference": "5.1.7, 8.1.8",
+      "original_text_snippet": "電池單體按照 8.1.8 進行快充循環後安全試驗，應不起火、不爆炸。試驗對象為從 20% SOC 充電至 80% SOC 總充電時間不超過 15 min 的電池單體(不含僅通過車輛能源進行充電的電池單體)。"
+    },
+    {
+      "id": "GB38031-8.2.1",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動試驗 (電池包或系統)",
+      "name_en": "Vibration Test (Battery Pack or System)",
+      "section": "8.2.1",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試 (6.1.10)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (若有交流電路，絕緣電阻應不小於 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.1, 8.2.1",
+      "original_text_snippet": "電池包或系統按照 8.2.1 進行振動試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。若有交流電路，絕緣電阻應不小於 500 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.2",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "機械衝擊試驗 (電池包或系統)",
+      "name_en": "Mechanical Shock Test (Battery Pack or System)",
+      "section": "8.2.2",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.2, 8.2.2",
+      "original_text_snippet": "電池包或系統按照 8.2.2 進行機械衝擊試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.3",
+      "normalized_id": "MECH-CRASH",
+      "name_zh": "模擬碰撞試驗 (電池包或系統)",
+      "name_en": "Simulated Collision Test (Battery Pack or System)",
+      "section": "8.2.3",
+      "category": "MECH",
+      "subcategory": "模擬碰撞 (Simulated Collision)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.3, 8.2.3",
+      "original_text_snippet": "電池包或系統按照 8.2.3 進行模擬碰撞試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.4",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓試驗 (電池包或系統)",
+      "name_en": "Crush Test (Battery Pack or System)",
+      "section": "8.2.4",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)",
+          "注意：不要求無破裂、無洩漏"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB38031-8.1.7"
+      ],
+      "source_reference": "5.2.4, 8.2.4",
+      "original_text_snippet": "電池包或系統按照 8.2.4 進行擠壓試驗，應不起火、不爆炸，試驗後的絕緣電阻應不小於 100 Ω/V。若有交流電路，絕緣電阻應不小於 500 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.5",
+      "normalized_id": "THERM-HUMID",
+      "name_zh": "溼熱循環試驗 (電池包或系統)",
+      "name_en": "Damp Heat Cycling Test (Battery Pack or System)",
+      "section": "8.2.5",
+      "category": "THERM",
+      "subcategory": "溼熱循環 (Damp Heat Cycling)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；30min內絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後 30 min 內的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.5, 8.2.5",
+      "original_text_snippet": "電池包或系統按照 8.2.5 進行溼熱循環試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後 30 min 內的絕緣電阻應不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.6",
+      "normalized_id": "THERM-WATER",
+      "name_zh": "浸水試驗 (電池包或系統)",
+      "name_en": "Water Immersion Test (Battery Pack or System)",
+      "section": "8.2.6",
+      "category": "THERM",
+      "subcategory": "浸水 (Water Immersion)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "option_1": {
+          "value": "方式一",
+          "detail": "3.5% NaCl 水溶液 2h"
+        },
+        "option_2": {
+          "value": "方式二",
+          "detail": "符合 GB/T 4208-2017 IPX7 要求"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "方式一：不起火、不爆炸；方式二：無洩漏破裂起火爆炸，IPX7絕緣合格",
+        "details": [
+          "按方式一進行：不起火、不爆炸",
+          "按方式二進行：試驗後滿足 GB/T 4208-2017 IPX7 要求，且無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.6, 8.2.6",
+      "original_text_snippet": "電池包或系統按照 8.2.6 進行浸水試驗，應滿足如下要求之一：a) 按方式一進行，不起火、不爆炸。b) 按方式二進行，試驗後滿足 GB/T 4208-2017 IPX7 要求，且無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.7.1",
+      "normalized_id": "THERM-FIRE",
+      "name_zh": "外部火燒試驗 (熱穩定性)",
+      "name_en": "External Fire Test (Thermal Stability)",
+      "section": "8.2.7.1",
+      "category": "THERM",
+      "subcategory": "外部火燒 (External Fire)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不爆炸",
+        "details": [
+          "不爆炸"
+        ]
+      },
+      "exemptions": [
+        "鎳氫電池包或系統不適用 5.2.7 規定的熱穩定性強制要求"
+      ],
+      "related_tests": [
+        "GB38031-8.2.7.2"
+      ],
+      "source_reference": "5.2.7(a), 8.2.7.1",
+      "original_text_snippet": "按照 8.2.7 進行熱穩定性試驗(除鎳氫電池包或系統外)，要求如下：a) 電池包或系統按照 8.2.7.1 進行外部火燒試驗，應不爆炸。"
+    },
+    {
+      "id": "GB38031-8.2.7.2",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "熱擴散分析和驗證 (熱穩定性)",
+      "name_en": "Thermal Propagation Analysis and Verification",
+      "section": "8.2.7.2",
+      "category": "THERM",
+      "subcategory": "熱擴散 (Thermal Propagation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "SOC ≥ 90% 或 95%",
+          "detail": "視具體觸發要求"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸，5min內報警且無危險煙氣",
+        "details": [
+          "不起火、不爆炸",
+          "提供熱事件報警信號，且報警信號的發出不晚於觸發電池單體發生熱失控之後的 5 min",
+          "在發出熱事件報警信號之前，以及發出熱事件報警信號之後的 5 min 內，煙氣不導致乘員艙發生危險(電池包級) / 無煙氣進入乘員艙(整車級)"
+        ]
+      },
+      "exemptions": [
+        "鎳氫電池包或系統不適用 5.2.7 規定的熱穩定性強制要求"
+      ],
+      "related_tests": [
+        "GB38031-8.2.7.1"
+      ],
+      "source_reference": "5.2.7(b), 8.2.7.2",
+      "original_text_snippet": "b) 電池包或系統或整車按照 8.2.7.2 進行熱擴散分析和驗證，應：1) 不起火、不爆炸；2) 提供熱事件報警信號，且報警信號的發出不晚於觸發電池單體發生熱失控之後的 5 min；3) 對於電池包或系統級別測試，提供在發出熱事件報警信號之前，以及發出熱事件報警信號之後的 5 min 內，煙氣不導致乘員艙發生危險的技術說明文件。"
+    },
+    {
+      "id": "GB38031-8.2.8",
+      "normalized_id": "THERM-SHOCK",
+      "name_zh": "溫度衝擊試驗 (電池包或系統)",
+      "name_en": "Temperature Shock Test (Battery Pack or System)",
+      "section": "8.2.8",
+      "category": "THERM",
+      "subcategory": "溫度衝擊 (Temperature Shock)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.8, 8.2.8",
+      "original_text_snippet": "電池包或系統按照 8.2.8 進行溫度衝擊試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.9",
+      "normalized_id": "THERM-SALT",
+      "name_zh": "鹽霧試驗 (電池包或系統)",
+      "name_en": "Salt Spray Test (Battery Pack or System)",
+      "section": "8.2.9",
+      "category": "THERM",
+      "subcategory": "鹽霧 (Salt Spray)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [
+        "若電池包完全安裝於乘員艙、行李艙或封閉式貨艙內，可免於此項測試"
+      ],
+      "related_tests": [],
+      "source_reference": "5.2.9, 8.2.9",
+      "original_text_snippet": "電池包或系統按照 8.2.9 進行鹽霧試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.10",
+      "normalized_id": "THERM-ALT",
+      "name_zh": "高海拔試驗 (電池包或系統)",
+      "name_en": "High Altitude Test (Battery Pack or System)",
+      "section": "8.2.10",
+      "category": "THERM",
+      "subcategory": "高海拔 (High Altitude)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.10, 8.2.10",
+      "original_text_snippet": "電池包或系統按照 8.2.10 進行高海拔試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.11",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "過溫保護試驗 (電池系統)",
+      "name_en": "Over-temperature Protection Test (Battery System)",
+      "section": "8.2.11",
+      "category": "THERM",
+      "subcategory": "過溫保護 (Over-temperature Protection)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.11, 8.2.11",
+      "original_text_snippet": "電池系統按照 8.2.11 進行過溫保護試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.12",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "過流保護試驗 (電池系統)",
+      "name_en": "Over-current Protection Test (Battery System)",
+      "section": "8.2.12",
+      "category": "ELEC",
+      "subcategory": "過流保護 (Over-current Protection)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.12, 8.2.12",
+      "original_text_snippet": "電池系統按照 8.2.12 進行過流保護試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.13",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短路保護試驗 (電池系統)",
+      "name_en": "External Short Circuit Protection Test (Battery System)",
+      "section": "8.2.13",
+      "category": "ELEC",
+      "subcategory": "外部短路保護 (External Short Circuit Protection)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.13, 8.2.13",
+      "original_text_snippet": "電池系統按照 8.2.13 進行外部短路保護試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.14",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電保護試驗 (電池系統)",
+      "name_en": "Overcharge Protection Test (Battery System)",
+      "section": "8.2.14",
+      "category": "ELEC",
+      "subcategory": "過充電保護 (Overcharge Protection)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.14, 8.2.14",
+      "original_text_snippet": "電池系統按照 8.2.14 進行過充電保護試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.15",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "過放電保護試驗 (電池系統)",
+      "name_en": "Over-discharge Protection Test (Battery System)",
+      "section": "8.2.15",
+      "category": "ELEC",
+      "subcategory": "過放電保護 (Over-discharge Protection)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "5.2.15, 8.2.15",
+      "original_text_snippet": "電池系統按照 8.2.15 進行過放電保護試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。"
+    },
+    {
+      "id": "GB38031-8.2.16",
+      "normalized_id": "MECH-IMPACT",
+      "name_zh": "底部撞擊試驗 (電池包或系統或整車)",
+      "name_en": "Bottom Impact Test (Battery Pack or System or Vehicle)",
+      "section": "8.2.16",
+      "category": "MECH",
+      "subcategory": "底部撞擊 (Bottom Impact)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最高工作荷電狀態",
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無外殼破裂、不起火、不爆炸；絕緣電阻合格",
+        "details": [
+          "無洩漏",
+          "無外殼破裂",
+          "不起火",
+          "不爆炸",
+          "試驗後的絕緣電阻應不小於 100 Ω/V (交流 500 Ω/V)"
+        ]
+      },
+      "exemptions": [
+        "對於安裝在滿載狀態下最小離地間隙 ≥ 200 mm 的 N 類車輛電池包，可免於此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "5.2.16, 8.2.16",
+      "original_text_snippet": "電池包或系統或整車按照 8.2.16 進行底部撞擊試驗，應無洩漏、外殼破裂、起火或爆炸現象，試驗後的絕緣電阻應不小於 100 Ω/V。"
+    }
+  ],
+  "test_sequence": {},
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "鹽霧測試豁免：若電池包完全安裝於乘員艙、行李艙或封閉式貨艙內，可免於此項測試。",
+      "applicable_tests": [
+        "GB38031-8.2.9"
+      ],
+      "source_reference": "Gemini Markdown / 豁免條款"
+    },
+    {
+      "id": "GE-02",
+      "description": "底部撞擊豁免：對於安裝在滿載狀態下最小離地間隙 ≥ 200 mm 的 N 類車輛電池包，可免於此測試。",
+      "applicable_tests": [
+        "GB38031-8.2.16"
+      ],
+      "source_reference": "Gemini Markdown / 豁免條款"
+    },
+    {
+      "id": "GE-03",
+      "description": "熱穩定性要求豁免：鎳氫電池包或系統不適用 5.2.7 規定的熱穩定性/熱擴散強制要求。",
+      "applicable_tests": [
+        "GB38031-8.2.7.1",
+        "GB38031-8.2.7.2"
+      ],
+      "source_reference": "5.2.7"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from 3 sources: Gemini CLI standardized markdown, Original OCR markdown, and existing batch JSON",
+    "cross_validation_notes": [
+      "Heating Test: OCR and Gemini both specify 130°C/30min for non-NiMH and 85°C/2h for NiMH.",
+      "Crush Test (Cell): OCR specifies 0V or 15% deformation or 100kN or 1000x mass. Gemini mentions 15% for cell and 30% for system. In OCR we only see 15% for cell in 8.1.7.",
+      "Insulation resistance requirements generally consistently require ≥ 100 Ω/V for DC and ≥ 500 Ω/V for AC.",
+      "Tests perfectly aligned across all sources."
+    ],
+    "total_test_entries": 23
+  }
+}

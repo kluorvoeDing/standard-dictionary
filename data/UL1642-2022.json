@@ -1,0 +1,883 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "UL1642-2022",
+    "full_name": "UL Standard for Safety for Lithium Batteries, UL 1642, Sixth Edition (rev 2022)",
+    "full_name_zh": "UL 鋰電池安全標準，UL 1642，第六版",
+    "short_name": "UL 1642",
+    "publisher": "UL (Underwriters Laboratories)",
+    "publication_date": "2022-10-12",
+    "type": "standard",
+    "scope": "涵蓋用作產品電源的一次（不可充電）和二次（可充電）鋰電池。含金屬鋰、鋰合金或鋰離子電池，目的在於降低鋰電池在使用中發生火災或爆炸的風險。電池視為「組件」(Component)，最終可接受性取決於其在最終產品中的使用。涵蓋技術人員可更換電池（鋰含量 ≤5.0g）及使用者可更換電池（總鋰含量 ≤4.0g，每電芯 ≤1.0g）。",
+    "applicable_objects": [
+      "CELL"
+    ],
+    "source_pdf": "s1642_6.pdf",
+    "source_gemini_md": "UL1642-2020_zh-TW_standardized.md"
+  },
+  "terms": [
+    {
+      "term_en": "Battery",
+      "term_zh": "電池",
+      "definition": "通用術語，指 (1) 單一電芯，或 (2) 以串聯和/或並聯方式連接的一組電芯。可為即用型或已安裝之組件。",
+      "section": "3.2"
+    },
+    {
+      "term_en": "Battery Pack",
+      "term_zh": "電池組",
+      "definition": "即用型電池，裝於硬殼中，可含或不含保護裝置。",
+      "section": "3.3"
+    },
+    {
+      "term_en": "Battery, Primary",
+      "term_zh": "一次電池",
+      "definition": "只能放電一次的電池，非設計為可充電，須防止充電電流。",
+      "section": "3.4"
+    },
+    {
+      "term_en": "Battery, Secondary",
+      "term_zh": "二次電池",
+      "definition": "依照製造商建議可多次放電及充電的電池。",
+      "section": "3.5"
+    },
+    {
+      "term_en": "Battery, Technician-Replaceable",
+      "term_zh": "技術人員可更換電池",
+      "definition": "預計安裝於產品內部，僅由受過訓練的專業技術人員進行維修與更換的電池。鋰含量限制 ≤5.0g。",
+      "section": "3.6"
+    },
+    {
+      "term_en": "Battery, User-Replaceable",
+      "term_zh": "使用者可更換電池",
+      "definition": "預計由使用者自行更換的電池。總鋰含量 ≤4.0g，每電芯 ≤1.0g。二次鋰電芯不屬於此類。",
+      "section": "3.7"
+    },
+    {
+      "term_en": "Casing",
+      "term_zh": "外殼",
+      "definition": "個別電芯或單電芯標準化電池的外部硬殼或軟袋，包含電芯內部組件。形式包括圓柱形、方形、鈕扣及軟包。",
+      "section": "3.8"
+    },
+    {
+      "term_en": "Cell, Component",
+      "term_zh": "組件電芯",
+      "definition": "基本功能電化學單元，包含電極組件、電解質、容器、端子及通常包含隔膜，為透過化學能直接轉換為電能的電能源。",
+      "section": "3.9"
+    },
+    {
+      "term_en": "Cell Operating Region",
+      "term_zh": "電芯操作區域",
+      "definition": "鋰離子系統在充放電過程中，電芯在製造商指定的電壓、電流及溫度範圍內運作的條件。",
+      "section": "3.10"
+    },
+    {
+      "term_en": "Explosion",
+      "term_zh": "爆炸",
+      "definition": "電芯或電池內容物被強制噴出，且外殼被撕裂或分裂為兩塊或以上碎片。",
+      "section": "3.18"
+    },
+    {
+      "term_en": "Venting",
+      "term_zh": "排氣",
+      "definition": "電池或電芯電解質以液體、液滴或蒸氣形式從設計的排氣口或密封處排出。",
+      "section": "3.24"
+    },
+    {
+      "term_en": "Upper Limit Charging Voltage",
+      "term_zh": "充電電壓上限",
+      "definition": "製造商指定的電芯操作區域中最高充電電壓。雖為上限值，但可能低於異常充電測試所指定的最高充電電壓參數。",
+      "section": "3.23"
+    },
+    {
+      "term_en": "Maximum Charging Current",
+      "term_zh": "最大充電電流",
+      "definition": "鋰離子系統中，電芯操作區域內由電芯製造商指定的最大充電電流。",
+      "section": "3.20"
+    }
+  ],
+  "tests": [
+    {
+      "id": "UL1642-T10",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "短路測試 (Short-Circuit Test)",
+      "name_en": "Short-Circuit Test",
+      "section": "10",
+      "category": "ELEC",
+      "subcategory": "外部短路",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "resistance": {
+          "value": "80±20 mΩ",
+          "detail": "將電池正負端子以電阻負載 80±20 mΩ 之電路連接，進行短路。記錄電池外殼溫度。放電至起火/爆炸，或電壓降至 <0.2V 且外殼溫度回復至環境溫度 ±10°C 以內。"
+        },
+        "temperature": {
+          "value": "20±5°C 及 55±5°C",
+          "detail": "測試分別在 20±5°C (68±9°F) 及 55±5°C (131±9°F) 兩個溫度下進行。電池須在端子連接前達到測試溫度平衡。"
+        },
+        "termination": {
+          "value": "<0.2V 且殼溫回復至環境 ±10°C",
+          "detail": "放電至起火或爆炸，或電壓降至 <0.2V 且外殼溫度回復至環境溫度 ±10°C。電壓可能因保護裝置動作而未降至 0.2V。"
+        },
+        "sample_size": {
+          "value": "每條件 5 顆",
+          "detail": "一次電池：滿充 5 顆 + 半放電 5 顆（室溫及 55°C 各一組）。二次電池：滿充 5 顆 + 循環後 5 顆（室溫及 55°C 各一組）。"
+        },
+        "multicell": {
+          "value": "串並聯需額外測試",
+          "detail": "若製造商指示電池用於串聯或並聯，須另以 5 組電池在最大串並聯數量配置下進行短路測試 (Section 10.3)。"
+        },
+        "protective_device": {
+          "value": "動作後須以不觸發之最大負載重新測試",
+          "detail": "當過電流保護裝置在測試中動作時，須以不使保護裝置開路的最大負載重新進行測試 (Section 10.4)。所依賴之保護裝置須符合 2.3.1 要求。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "所有樣品不得爆炸或起火 (Section 10.5)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "UL1642-T12"
+      ],
+      "source_reference": "Section 10.1–10.5",
+      "original_text_snippet": "Each test sample battery, in turn, is to be short-circuited by connecting the positive and negative terminals of the battery with a circuit load having a resistance load of 80±20 mΩ. The temperature of the battery case is to be recorded during the test. The battery is to discharge until a fire or explosion is obtained, or until it has reached a completely discharged state of less than 0.2V and the battery case temperature has returned to ±10°C (±18°F) of ambient temperature."
+    },
+    {
+      "id": "UL1642-T11",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "異常充電測試 (Abnormal Charging Test)",
+      "name_en": "Abnormal Charging Test",
+      "section": "11",
+      "category": "ELEC",
+      "subcategory": "異常充電",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "20±5°C",
+          "detail": "測試在環境溫度 20±5°C (68±9°F) 下進行。"
+        },
+        "charging_current": {
+          "value": "3×Ic",
+          "detail": "一次電池：施加 3 倍製造商指定最大充電電流 Ic，以串聯電阻方式對 DC 電源連接。二次電池：以恒壓方式充電，電流限制為 3 倍 Ic，輸出電壓為製造商指定最大電壓。"
+        },
+        "charging_time_primary": {
+          "value": "t = 2.5C / (3×Ic)，最少 7 小時",
+          "detail": "一次電池充電時間公式 tc = 2.5C / (3×Ic)，其中 C 為電池容量 (Ah)，Ic 為最大充電電流 (A)。最短充電時間為 7 小時。製造商可選擇施加高於 3×Ic 的測試電流以加快測試，但最少仍為 7 小時。"
+        },
+        "charging_time_secondary": {
+          "value": "7 小時或達到充電終止條件，取較長者",
+          "detail": "二次電池先以 0.2C/1h 放電至製造商指定終止電壓，再以 3×Ic 充電。充電時間為 7 小時或達到製造商指定充電終止條件，取較長者 (Section 11.8)。"
+        },
+        "protective_device": {
+          "value": "非可復位：降低電流重測；可復位：允許復位最多 10 次",
+          "detail": "非可復位保護裝置動作時，須以低於動作電流重新測試。可復位保護裝置允許復位最多 10 次，或直至充電時間完成但不少於 7 小時 (Section 11.4/11.9)。"
+        },
+        "sample_size": {
+          "value": "每條件 5 顆",
+          "detail": "一次電池：滿充 5 + 半放電 5 + 完放 5。二次電池：滿充 5 + 循環後 5。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "一次電池樣品不得爆炸或起火 (Section 11.5)",
+          "二次電池樣品不得爆炸或起火 (Section 11.10)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 11.1–11.10",
+      "original_text_snippet": "Each test sample battery is to be subjected to a charging current of three times the current Ic, specified by the manufacturer by connecting it in opposition to a dc-power supply. The specified charging current is to be obtained by connecting a resistor of the specified size and rating in series with the battery. The test charging time is to be calculated using the formula: t = 2.5C / (3 × Ic). The minimum charging time is to be 7h."
+    },
+    {
+      "id": "UL1642-T12",
+      "normalized_id": "ELEC-FD",
+      "name_zh": "強制放電測試 (Forced-Discharge Test)",
+      "name_en": "Forced-Discharge Test",
+      "section": "12",
+      "category": "ELEC",
+      "subcategory": "強制放電",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "applicability": {
+          "value": "僅適用於串聯多電芯應用",
+          "detail": "本測試僅適用於設計用於串聯多電芯應用（如電池組）的電芯 (Section 12.1)。"
+        },
+        "configuration": {
+          "value": "1 顆完放電芯串聯 (N-1) 顆滿充電芯",
+          "detail": "將 1 顆完全放電電芯與相同類型的滿充電芯串聯，滿充電芯數量等於最大串聯數減 1。5 顆電芯須完全放電，在室溫下進行。"
+        },
+        "resistance": {
+          "value": "80±20 mΩ",
+          "detail": "串聯完成後，將正負端子以 80±20 mΩ 電阻負載連接進行短路 (Section 12.4)。"
+        },
+        "termination": {
+          "value": "<0.2V 且殼溫回復至環境 ±10°C",
+          "detail": "放電至起火或爆炸，或電壓降至 <0.2V 且外殼溫度回復至環境溫度 ±10°C。"
+        },
+        "temperature": {
+          "value": "室溫",
+          "detail": "5 顆電芯在室溫下完全放電 (Section 12.2)。"
+        },
+        "sample_size": {
+          "value": "5 顆",
+          "detail": "5 顆完全放電電芯分別作為待測樣品。"
+        },
+        "protective_device": {
+          "value": "動作後須以不觸發之最大負載重新測試",
+          "detail": "當過電流保護裝置動作時，須以不使保護裝置開路的最大負載重新測試 (Section 12.5)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "所有樣品不得爆炸或起火 (Section 12.6)"
+        ]
+      },
+      "exemptions": [
+        "不適用於非串聯多電芯應用之電芯 (Section 12.1)"
+      ],
+      "related_tests": [
+        "UL1642-T10"
+      ],
+      "source_reference": "Section 12.1–12.6",
+      "original_text_snippet": "This test is intended for cells that are to be used in series-connected, multicell applications, such as battery packs. A fully discharged cell is to be force-discharged by connecting it in series with fully charged cells of the same kind. The number of fully charged cells to be connected in series with the discharged cell is to equal the maximum number less one of the cells to be covered for series use."
+    },
+    {
+      "id": "UL1642-T13",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓測試 (Crush Test)",
+      "name_en": "Crush Test",
+      "section": "13",
+      "category": "MECH",
+      "subcategory": "擠壓",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "force": {
+          "value": "13±1 kN (3000±224 lbs)",
+          "detail": "以液壓機或類似加力機構施加 13±1 kN 之擠壓力，使用兩個平面夾壓電池。達到最大力後釋放。"
+        },
+        "orientation_cylindrical_pouch": {
+          "value": "長軸平行於平面",
+          "detail": "圓柱形、軟包或方形電芯以長軸平行於擠壓裝置平面進行擠壓。鋰離子系統：僅測試軟包及方形電芯的寬面 (Section 13.2 Exception)。"
+        },
+        "orientation_prismatic_non_li_ion": {
+          "value": "寬面及窄面各測一次（非鋰離子）",
+          "detail": "非鋰離子系統之方形電芯需旋轉 90° 使寬面及窄面均受到擠壓力。每個樣品僅在一個方向受力，不同方向使用不同樣品。"
+        },
+        "orientation_coin": {
+          "value": "平面平行於擠壓裝置",
+          "detail": "鈕扣電池以平面平行於擠壓裝置平面進行擠壓 (Section 13.3)。"
+        },
+        "sample_size": {
+          "value": "5 顆（方形電芯需 10 顆）",
+          "detail": "一次電池：滿充 5 + 半放電 5。二次電池：滿充 5(10) + 循環後 5(10)，方形電芯因需測試兩方向故需 10 顆。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "所有樣品不得爆炸或起火 (Section 13.4)",
+          "使用者可更換電池：絕對不得起火或爆炸 (Section 5.2.1)",
+          "技術人員可更換電池：若起火或爆炸，使用須限制於受保護應用 (Section 5.1.2)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "UL1642-T14",
+        "UL1642-T14A"
+      ],
+      "source_reference": "Section 13.1–13.4",
+      "original_text_snippet": "A battery is to be crushed between two flat surfaces. The force for the crushing is to be applied by a hydraulic ram or similar force mechanism. The flat surfaces are to be brought in contact with the cells and the crushing is to be continued until an applied force of 13±1 kN (3000±224 lbs) is reached. Once the maximum force has been obtained it is to be released."
+    },
+    {
+      "id": "UL1642-T14",
+      "normalized_id": "MECH-IMPACT",
+      "name_zh": "衝擊測試 (Impact Test)",
+      "name_en": "Impact Test",
+      "section": "14",
+      "category": "MECH",
+      "subcategory": "衝擊",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "bar_diameter": {
+          "value": "15.8±0.1 mm",
+          "detail": "將直徑 15.8±0.1 mm (5/8±0.004 in) 之鋼棒置於樣品中心上方。"
+        },
+        "drop_weight": {
+          "value": "9.1±0.46 kg (20±1 lb)",
+          "detail": "使用質量 9.1±0.46 kg 之重物進行落下衝擊。"
+        },
+        "drop_height": {
+          "value": "610±25 mm (24±1 in)",
+          "detail": "重物從 610±25 mm 高度自由落下砸擊於鋼棒上的電池。"
+        },
+        "orientation_cylindrical_pouch": {
+          "value": "長軸平行於平面，垂直於鋼棒",
+          "detail": "圓柱形、軟包或方形電芯以長軸平行於平面、垂直於鋼棒長軸方向進行衝擊。鋰離子系統：僅測試軟包及方形電芯的寬面 (Section 14.2 Exception)。"
+        },
+        "orientation_prismatic_non_li_ion": {
+          "value": "寬面及窄面各測一次（非鋰離子）",
+          "detail": "非鋰離子系統之方形電芯需旋轉 90° 使寬面及窄面均受衝擊。每樣品僅進行一次衝擊，不同方向使用不同樣品。"
+        },
+        "orientation_coin": {
+          "value": "平面平行於表面，鋼棒置於中心",
+          "detail": "鈕扣電池以平面平行於表面，鋼棒置於中心進行衝擊 (Section 14.3)。"
+        },
+        "impacts_per_sample": {
+          "value": "每樣品僅一次衝擊",
+          "detail": "每個樣品僅受一次衝擊，不同方向使用不同樣品 (Section 14.2)。"
+        },
+        "sample_size": {
+          "value": "5 顆（方形電芯需 10 顆）",
+          "detail": "一次電池：滿充 5 + 半放電 5。二次電池：滿充 5(10) + 循環後 5(10)，方形電芯因需測試兩方向故需 10 顆。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "所有樣品不得爆炸或起火 (Section 14.4)",
+          "使用者可更換電池：絕對不得起火或爆炸 (Section 5.2.1)",
+          "技術人員可更換電池：若起火或爆炸，使用須限制於受保護應用 (Section 5.1.2)"
+        ]
+      },
+      "exemptions": [
+        "容量大於 300 mAh 的軟包電芯 (Pouch Cells) 若未依此節測試，則必須依 Section 14A 進行 Round Bar Crush Test (Section 14.2 Exception 2)。"
+      ],
+      "related_tests": [
+        "UL1642-T13",
+        "UL1642-T14A"
+      ],
+      "source_reference": "Section 14.1–14.4",
+      "original_text_snippet": "A test sample battery is to be placed on a flat surface. A 15.8±0.1-mm (5/8±0.004-in) diameter bar is to be placed across the center of the sample. A 9.1±0.46-kg (20±1-lb) weight is to be dropped from a height of 610±25 mm (24±1 in) onto the sample."
+    },
+    {
+      "id": "UL1642-T14A",
+      "normalized_id": "MECH-RBCR",
+      "name_zh": "圓柱體擠壓測試 (Round Bar Crush Test)",
+      "name_en": "Round Bar Crush Test",
+      "section": "14A",
+      "category": "MECH",
+      "subcategory": "擠壓",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "bar_diameter": {
+          "value": "25±1 mm",
+          "detail": "使用直徑 25±1 mm 之鋼圓棒置於樣品上方，邊緣與電芯主體頂端對齊，縱軸與極耳垂直。鋼棒超出兩側至少 5 mm。"
+        },
+        "preload_pressure": {
+          "value": "0.4–0.6 N/cm²",
+          "detail": "施加 0.4–0.6 N/cm² 預壓後測量樣品厚度。"
+        },
+        "crush_speed": {
+          "value": "≤ 0.1 mm/s",
+          "detail": "擠壓板移動速度不得大於 0.1 mm/s。"
+        },
+        "termination": {
+          "value": "變形量 13±1% 或達到指定力值",
+          "detail": "當電芯變形量達到預壓厚度之 13±1% 時，或擠壓力達到 Table 14A.1 規定力值 (1~13kN 依寬度而定) 時停止，並保持 30 秒。"
+        },
+        "orientation": {
+          "value": "正負極耳在兩側時，每側各用不同樣品測",
+          "detail": "若正負極耳在相反兩側，圓棒放置與擠壓需分別在極耳附近進行（每側使用不同樣品）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "所有樣品不得爆炸或起火 (Section 14A.7)"
+        ]
+      },
+      "exemptions": [
+        "僅適用於容量大於 300 mAh 且未經過衝擊測試 (Impact Test) 的軟包電芯"
+      ],
+      "related_tests": [
+        "UL1642-T13",
+        "UL1642-T14"
+      ],
+      "source_reference": "Section 14A",
+      "original_text_snippet": "With reference to Exception No. 2 in 14.2, pouch cells not evaluated with the Impact Test in Section 14 and with a capacity greater than 300 mAh shall be evaluated with this test."
+    },
+    {
+      "id": "UL1642-T15",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "機械衝擊測試 (Shock Test)",
+      "name_en": "Shock Test",
+      "section": "15",
+      "category": "MECH",
+      "subcategory": "機械衝擊",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "mounting": {
+          "value": "剛性安裝，支撐所有安裝面",
+          "detail": "電芯以剛性安裝座固定於測試機上，支撐所有安裝面 (Section 15.1)。"
+        },
+        "shock_count": {
+          "value": "每方向 3 次，共 3 個方向",
+          "detail": "每顆電芯受到 3 次等量衝擊。衝擊分別施加於 3 個相互垂直方向（僅有 2 軸對稱者則為 2 個方向）。每次衝擊方向垂直於電芯面。"
+        },
+        "acceleration_initial": {
+          "value": "初始 3 ms 平均加速度 ≥75g",
+          "detail": "每次衝擊中，在初始 3 毫秒內，最低平均加速度為 75g (Section 15.1)。"
+        },
+        "acceleration_peak": {
+          "value": "125–175g",
+          "detail": "峰值加速度須在 125g 至 175g 之間 (Section 15.1)。"
+        },
+        "temperature": {
+          "value": "20±5°C",
+          "detail": "測試在 20±5°C (68±9°F) 下進行。"
+        },
+        "sample_size": {
+          "value": "每條件 5 顆",
+          "detail": "一次電池：滿充 5 + 半放電 5 + 完放 5。二次電池：滿充 5 + 循環後 5。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不排氣、不漏液",
+        "details": [
+          "所有樣品不得爆炸或起火 (Section 15.2)",
+          "不得排氣或漏液，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 15.1–15.2",
+      "original_text_snippet": "Each cell shall be subjected to a total of three shocks of equal magnitude. The shocks are to be applied in each of three mutually perpendicular directions unless it has only two axes of symmetry in which case only two directions shall be tested. For each shock the cell is to be accelerated in such a manner that during the initial 3 ms the minimum average acceleration is 75g. The peak acceleration shall be between 125 and 175g."
+    },
+    {
+      "id": "UL1642-T16",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動測試 (Vibration Test)",
+      "name_en": "Vibration Test",
+      "section": "16",
+      "category": "MECH",
+      "subcategory": "振動",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "motion_type": {
+          "value": "簡諧運動 (Simple Harmonic Motion)",
+          "detail": "電池承受簡諧運動振動。"
+        },
+        "amplitude": {
+          "value": "0.8 mm（總行程 1.6 mm）",
+          "detail": "振幅 0.8 mm (0.03 in)，總最大行程 1.6 mm (0.06 in) (Section 16.1)。"
+        },
+        "frequency_range": {
+          "value": "10–55 Hz",
+          "detail": "頻率在 10 至 55 Hz 之間變化。"
+        },
+        "sweep_rate": {
+          "value": "1 Hz/min",
+          "detail": "頻率以 1 Hz/min 的速率變化，一個完整掃頻循環（10→55→10 Hz）為 90–100 分鐘 (Section 16.2)。"
+        },
+        "directions": {
+          "value": "3 個相互垂直方向",
+          "detail": "在 3 個相互垂直方向上分別測試（僅有 2 軸對稱者則為 2 個方向）。"
+        },
+        "sample_size": {
+          "value": "每條件 5 顆",
+          "detail": "一次電池：滿充 5 + 半放電 5 + 完放 5。二次電池：滿充 5 + 循環後 5。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不排氣、不漏液",
+        "details": [
+          "所有樣品不得爆炸或起火 (Section 16.3)",
+          "不得排氣或漏液，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 16.1–16.3",
+      "original_text_snippet": "A battery is to be subjected to simple harmonic motion with an amplitude of 0.8 mm (0.03 in) [1.6 mm (0.06 in) total maximum excursion]. The frequency is to be varied at the rate of 1 Hz/min between 10 and 55 Hz, and return in not less than 90 nor more than 100 min."
+    },
+    {
+      "id": "UL1642-T17",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "加熱測試 (Heating Test)",
+      "name_en": "Heating Test",
+      "section": "17",
+      "category": "THERM",
+      "subcategory": "加熱濫用",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "oven_type": {
+          "value": "重力對流或循環空氣烘箱",
+          "detail": "使用重力對流或循環空氣烘箱進行加熱 (Section 17.1)。"
+        },
+        "initial_temperature": {
+          "value": "20±5°C",
+          "detail": "烘箱初始溫度為 20±5°C (68±9°F)。"
+        },
+        "ramp_rate": {
+          "value": "5±2°C/min",
+          "detail": "升溫速率為 5±2°C (9±3.6°F) 每分鐘。"
+        },
+        "target_temperature": {
+          "value": "130±2°C",
+          "detail": "升溫至 130±2°C (266±3.6°F) 並維持。若電池指定操作溫度 >100°C，則目標溫度提高至製造商最高指定溫度 +30±2°C。鋰金屬化學體系最高至 170±2°C (338±3.6°F) (Section 17.1)。"
+        },
+        "hold_time": {
+          "value": "10 分鐘",
+          "detail": "在目標溫度維持 10 分鐘後，回復至室溫 (20±5°C) 再進行檢查。"
+        },
+        "li_ion_preconditioning": {
+          "value": "鋰離子電芯需在操作區域溫度邊界預處理後充電",
+          "detail": "鋰離子電芯須依 Section 6.3–6.5 預處理：先完全放電至終止電壓，再分別在操作區域上限溫度及下限溫度放置 1–4 小時，然後在該溫度下以最大充電電流及上限充電電壓進行恒壓充電，直至電流降至 0.05 倍充電電流。每組各 5 顆。"
+        },
+        "sample_size": {
+          "value": "5 顆（鋰離子可能需 10 顆）",
+          "detail": "一次電池：滿充 5 + 半放電 5。二次電池：滿充 5(10) + 循環後 5(10)，鋰離子電芯因需在操作區域上下限溫度各預處理 5 顆故可能需 10 顆。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "所有樣品不得爆炸或起火 (Section 17.2)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 17.1–17.2, Section 6.3–6.5",
+      "original_text_snippet": "A battery is to be heated in a gravity convection or circulating air oven with an initial temperature of 20±5°C (68±9°F). The temperature of the oven is to be raised at a rate of 5±2°C (9±3.6°F) per minute to a temperature of 130±2°C (266±3.6°F) and remain for 10 min. The sample shall return to room temperature (20±5°C) and then be examined."
+    },
+    {
+      "id": "UL1642-T18",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "溫度循環測試 (Temperature Cycling Test)",
+      "name_en": "Temperature Cycling Test",
+      "section": "18",
+      "category": "THERM",
+      "subcategory": "溫度循環",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "cycle_count": {
+          "value": "10 次循環",
+          "detail": "先完成第 1 次循環，再重複 9 次共 10 次循環 (Section 18.1e)。"
+        },
+        "step_a_high_temp": {
+          "value": "70±3°C，維持 4 小時",
+          "detail": "在 30 分鐘內將溫度升至 70±3°C (158±5°F)，維持 4 小時 (Section 18.1a)。"
+        },
+        "step_b_ambient": {
+          "value": "20±3°C，維持 2 小時",
+          "detail": "在 30 分鐘內降溫至 20±3°C (68±5°F)，維持 2 小時 (Section 18.1b)。"
+        },
+        "step_c_low_temp": {
+          "value": "-40±3°C，維持 4 小時",
+          "detail": "在 30 分鐘內降溫至 -40±3°C (-40±5°F)，維持 4 小時 (Section 18.1c)。"
+        },
+        "step_d_recovery": {
+          "value": "回復至 20±3°C",
+          "detail": "在 30 分鐘內升溫至 20±3°C (68±5°F) (Section 18.1d)。"
+        },
+        "post_test_storage": {
+          "value": "至少 24 小時於 20±5°C",
+          "detail": "第 10 次循環完成後，電池在 20±5°C (68±9°F) 下靜置至少 24 小時再進行檢查 (Section 18.1f)。"
+        },
+        "sample_size": {
+          "value": "每條件 5 顆",
+          "detail": "一次電池：滿充 5 + 半放電 5 + 完放 5。二次電池：滿充 5 + 循環後 5。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不排氣、不漏液",
+        "details": [
+          "所有樣品不得爆炸或起火 (Section 18.2)",
+          "不得排氣或漏液，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 18.1–18.2",
+      "original_text_snippet": "The batteries are to be placed in a test chamber and subjected to the following cycles: a) Raising the chamber-temperature to 70±3°C (158±5°F) within 30 min and maintaining this temperature for 4 h. b) Reducing the chamber temperature to 20±3°C (68±5°F) within 30 min and maintaining this temperature for 2 h. c) Reducing the chamber temperature to minus 40±3°C (minus 40±5°F) within 30 min and maintaining this temperature for 4 h. d) Raising the chamber temperature to 20±3°C (68±5°F) within 30 min. e) Repeating the sequence for a further 9 cycles."
+    },
+    {
+      "id": "UL1642-T19",
+      "normalized_id": "THERM-ALT",
+      "name_zh": "低氣壓（海拔模擬）測試 (Low Pressure / Altitude Simulation Test)",
+      "name_en": "Low Pressure (Altitude Simulation) Test",
+      "section": "19",
+      "category": "THERM",
+      "subcategory": "海拔模擬",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "pressure": {
+          "value": "11.6 kPa (1.68 psi) 絕對壓力",
+          "detail": "模擬約 15,240 公尺 (50,000 呎) 高空之低氣壓環境，絕對壓力 11.6 kPa (Section 19.1)。"
+        },
+        "temperature": {
+          "value": "20±3°C",
+          "detail": "測試溫度為 20±3°C (68±5°F)。"
+        },
+        "duration": {
+          "value": "6 小時",
+          "detail": "電池在低壓環境下存放 6 小時 (Section 19.1)。"
+        },
+        "sample_size": {
+          "value": "每條件 5 顆",
+          "detail": "一次電池：滿充 5 + 半放電 5 + 完放 5。二次電池：滿充 5 + 循環後 5。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不排氣、不漏液",
+        "details": [
+          "所有樣品不得爆炸或起火 (Section 19.2)",
+          "不得排氣或漏液，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 19.1–19.2",
+      "original_text_snippet": "Sample batteries are to be stored for 6 hours at an absolute pressure of 11.6 kPa (1.68 psi) and a temperature of 20±3°C (68±5°F). The samples shall not explode or catch fire as a result of the Low Pressure (Altitude Simulation) Test. In addition, the samples shall not vent or leak as described in 5.1.1."
+    },
+    {
+      "id": "UL1642-T20",
+      "normalized_id": "THERM-FIRE",
+      "name_zh": "拋射體測試 (Projectile Test / Fire Exposure)",
+      "name_en": "Projectile Test (Fire Exposure Test)",
+      "section": "20",
+      "category": "THERM",
+      "subcategory": "火焰暴露",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "platform_screen": {
+          "value": "鋼絲網覆蓋 102 mm 孔",
+          "detail": "電池放置於覆蓋平台中心 102 mm (4 in) 直徑孔的鋼絲網上。鋼絲網規格：每 25.4 mm 有 20 個開口，線徑 0.43 mm (0.017 in) (Section 20.2)。"
+        },
+        "burner": {
+          "value": "Meker 型燃燒器，距網下方 38 mm",
+          "detail": "Meker 型燃燒器安裝於鋼絲網下方 38 mm (1-1/2 in)。調節燃料與空氣流量，產生明亮的藍色火焰使支撐網呈明亮紅熱 (Section 20.3)。"
+        },
+        "cage": {
+          "value": "八面鋁線罩，610 mm 寬 × 305 mm 高",
+          "detail": "八面帶蓋鋁線罩，寬 610 mm (2 ft)、高 305 mm (1 ft)。鋁線直徑 0.25 mm (0.010 in)，每 25.4 mm 有 16–18 根線 (Section 20.4)。"
+        },
+        "duration": {
+          "value": "至爆炸或燃燒完畢",
+          "detail": "加熱至電池爆炸，或電池點燃並燒盡。除非有掉落風險，否則不需固定；需要時以單根鐵絲固定 (Section 20.5)。"
+        },
+        "sample_size": {
+          "value": "5 顆（不合格時追加至 10 顆）",
+          "detail": "一次電池：滿充 5(10) 顆。二次電池：滿充 5(10) 顆。當 5 顆中有 1 顆不合格時，須再測 5 顆且全部合格 (Section 5.2.2)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "爆炸碎片不得穿透鋁線罩篩網",
+        "details": [
+          "爆炸之電芯或電池的任何部分不得穿透鋁線罩篩網使部分或全部突出於篩網之外 (Section 20.1)",
+          "技術人員可更換電池：若穿透篩網，使用須限制於受保護應用 (Section 5.1.2)"
+        ]
+      },
+      "exemptions": [
+        "僅用於技術人員更換之一次電池（液態陰極型如氯化亞碲或二氧化硫）可免除此測試 (Table 6.1 footnote d)"
+      ],
+      "related_tests": [],
+      "source_reference": "Section 20.1–20.5",
+      "original_text_snippet": "When subjected to the test described in 20.2–20.5 no part of an exploding cell or battery shall penetrate the wire screen such that some or all of the cell or battery protrudes through the screen. Each test sample cell or battery is to be placed on a screen that covers a 102-mm (4-in) diameter hole in the center of a platform table."
+    }
+  ],
+  "test_sequence": {
+    "description": "UL 1642 未規定強制性測試順序。所有測試（Section 10–20）均使用獨立樣品組，各測試間無先後依賴關係。",
+    "note": "各測試使用獨立的樣品集合，依 Table 6.1（一次電池）或 Table 6.2（二次電池）規定的數量及調度狀態進行。",
+    "groups": [
+      {
+        "group_name": "電氣測試 (Electrical Tests)",
+        "sections": [
+          "10",
+          "11",
+          "12"
+        ],
+        "tests": [
+          "UL1642-T10",
+          "UL1642-T11",
+          "UL1642-T12"
+        ]
+      },
+      {
+        "group_name": "機械測試 (Mechanical Tests)",
+        "sections": [
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "tests": [
+          "UL1642-T13",
+          "UL1642-T14",
+          "UL1642-T15",
+          "UL1642-T16"
+        ]
+      },
+      {
+        "group_name": "環境測試 (Environmental Tests)",
+        "sections": [
+          "17",
+          "18",
+          "19"
+        ],
+        "tests": [
+          "UL1642-T17",
+          "UL1642-T18",
+          "UL1642-T19"
+        ]
+      },
+      {
+        "group_name": "火焰暴露測試 (Fire Exposure Test)",
+        "sections": [
+          "20"
+        ],
+        "tests": [
+          "UL1642-T20"
+        ]
+      }
+    ]
+  },
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "強制放電測試 (Section 12) 僅適用於設計用於串聯多電芯應用之電芯。",
+      "applicable_tests": [
+        "UL1642-T12"
+      ],
+      "source_reference": "Section 12.1"
+    },
+    {
+      "id": "GE-02",
+      "description": "拋射體測試 (Section 20) 可免除僅用於技術人員更換之一次電池（液態陰極型），如氯化亞碲或二氧化硫型電池。",
+      "applicable_tests": [
+        "UL1642-T20"
+      ],
+      "source_reference": "Table 6.1 footnote d"
+    },
+    {
+      "id": "GE-03",
+      "description": "二次鋰電芯不得被視為「使用者可更換」類別 (Section 5.2.1)。",
+      "applicable_tests": [],
+      "source_reference": "Section 5.2.1"
+    },
+    {
+      "id": "GE-04",
+      "description": "技術人員可更換電池在擠壓或衝擊測試中起火/爆炸時，使用須限制於受保護應用 (Section 5.1.2)。",
+      "applicable_tests": [
+        "UL1642-T13",
+        "UL1642-T14",
+        "UL1642-T20"
+      ],
+      "source_reference": "Section 5.1.2"
+    }
+  ],
+  "venting_leakage_criteria": {
+    "description": "排氣與漏液質量損失判定標準 (Table 5.1)",
+    "table_5_1": [
+      {
+        "mass_range": "≤1g",
+        "max_mass_loss_percent": 0.5
+      },
+      {
+        "mass_range": ">1g 且 ≤5g",
+        "max_mass_loss_percent": 0.2
+      },
+      {
+        "mass_range": ">5g",
+        "max_mass_loss_percent": 0.1
+      }
+    ],
+    "applicable_tests": [
+      "UL1642-T15",
+      "UL1642-T16",
+      "UL1642-T18",
+      "UL1642-T19"
+    ],
+    "source_reference": "Section 5.1.3, Table 5.1"
+  },
+  "sample_conditioning": {
+    "primary_battery": {
+      "fully_charged": "依製造商規格滿充",
+      "half_discharged": "僅液態陰極電池（如氯化亞碲或二氧化硫）需半放電調度 (Section 7.1.1)",
+      "completely_discharged": "以電阻連接端子，在室溫下 60 天內放電。閉路電壓 <0.2V 且短路電流 <1mA (Section 3.14, 7.1.1)"
+    },
+    "secondary_battery": {
+      "fully_charged": "依製造商規格滿充",
+      "conditioned_by_cycling": "在 25°C 下依製造商規格連續循環，至少達到宣稱循環壽命的 25% 或連續循環 90 天（取較短者），再充電後進行測試 (Section 7.2.1)"
+    }
+  },
+  "cross_validation_notes": [
+    {
+      "parameter": "短路測試電阻值",
+      "gemini_value": "≤0.1Ω",
+      "ocr_value": "80±20 mΩ",
+      "batch_value": "80±20 mΩ",
+      "resolution": "採用 OCR 權威值 80±20 mΩ。Gemini '≤0.1Ω' 為概略描述，實際規格為 80±20 mΩ (Section 10.1)。",
+      "authoritative_source": "OCR (Section 10.1)"
+    },
+    {
+      "parameter": "test_objects 範圍",
+      "gemini_value": "CELL (主要)",
+      "ocr_value": "cells or batteries (Section 1.1)",
+      "batch_value": "CELL + PACK",
+      "resolution": "UL 1642 涵蓋電芯 (cell) 及電池 (battery，含多電芯)，但其本質是組件級 (component) 標準。統一標記為 CELL，因本標準不直接涵蓋系統級 pack。batch JSON 中的 PACK 為誤標。",
+      "authoritative_source": "OCR (Section 1.1, 2.2.1)"
+    },
+    {
+      "parameter": "加熱測試維持時間",
+      "gemini_value": "10 分鐘（特定大型電池為 30 分鐘）",
+      "ocr_value": "10 min",
+      "batch_value": "10 minutes",
+      "resolution": "OCR 原文只有 10 min。Gemini 所述「30 分鐘」未見於 OCR 原文，可能是其他版本或誤解。採用 10 min。",
+      "authoritative_source": "OCR (Section 17.1)"
+    },
+    {
+      "parameter": "機械衝擊測試 - 衝擊方向數",
+      "gemini_value": "未詳述",
+      "ocr_value": "3 個方向各 3 次（2 軸對稱者 2 個方向）",
+      "batch_value": "3 mutually perpendicular directions (or 2 if only 2 axes)",
+      "resolution": "三源一致，採用 OCR 原文。",
+      "authoritative_source": "OCR (Section 15.1)"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-21",
+    "source_files": [
+      "UL1642-2020_zh-TW_standardized.md (Gemini CLI markdown)",
+      "UL 1642-2020.md (OCR markdown - authoritative)",
+      "UL1642_structured.json (batch1 existing JSON)"
+    ],
+    "cross_validation": "所有參數已在三個來源間交叉驗證。OCR markdown 為權威來源。發現差異已記錄於 cross_validation_notes。",
+    "total_tests": 11,
+    "test_categories": {
+      "ELEC": 3,
+      "MECH": 4,
+      "THERM": 4
+    }
+  }
+}

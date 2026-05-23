@@ -1,0 +1,377 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "GBT36276",
+    "full_name": "GB/T 36276-2023 電力儲能用鋰離子電池 (Lithium ion battery for electrical energy storage)",
+    "full_name_zh": "GB/T 36276-2023 電力儲能用鋰離子電池",
+    "short_name": "GB/T 36276",
+    "publisher": "State Administration for Market Regulation (SAMR) / Standardization Administration of the PRC (SAC)",
+    "publication_date": "2023",
+    "type": "standard",
+    "scope": "電力儲能用鋰離子電池單體、電池模塊、電池簇",
+    "applicable_objects": ["CELL", "MODULE", "PACK_SYSTEM"],
+    "source_pdf": "GB/T 36276-2023.pdf",
+    "source_gemini_md": "GBT36276-2023_zh-TW_standardized.md"
+  },
+  "terms": [],
+  "tests": [
+    {
+      "id": "GBT36276-6.7.1.1",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電性能試驗 (Overcharge)",
+      "name_en": "Overcharge Performance Test",
+      "section": "6.7.1.1",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "charging_current": {
+          "value": "I = P_rc / U_nom",
+          "detail": "以 I = P_rc / U_nom 的恆定電流進行充電。"
+        },
+        "termination": {
+          "value": "1.5倍截止電壓或1h",
+          "detail": "充電至電壓達到電池單體或模塊充電截止電壓的1.5倍，或時間達到1小時停止充電。"
+        },
+        "observation": {
+          "value": "1小時",
+          "detail": "停止充電後觀察1小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不漏液",
+        "details": [
+          "不應起火 (No fire)",
+          "不應爆炸 (No explosion)",
+          "不應漏液 (No leakage)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.7.1.1",
+      "original_text_snippet": "以I=P_rc/U_nom恆流充電至電壓達到電池單體充電截止電壓的1.5倍或時間達到1h時停止充電，觀察1h。"
+    },
+    {
+      "id": "GBT36276-6.7.1.2",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "過放電性能試驗 (Overdischarge)",
+      "name_en": "Overdischarge Performance Test",
+      "section": "6.7.1.2",
+      "category": "ELEC",
+      "subcategory": "過放電 (Overdischarge)",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "discharge_current": {
+          "value": "I = P_rd / U_nom",
+          "detail": "以 I = P_rd / U_nom 的恆定電流進行放電。"
+        },
+        "termination": {
+          "value": "0V或1h",
+          "detail": "放電至電壓達到0V，或時間達到1小時停止放電。"
+        },
+        "observation": {
+          "value": "1小時",
+          "detail": "停止放電後觀察1小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不漏液",
+        "details": [
+          "不應起火 (No fire)",
+          "不應爆炸 (No explosion)",
+          "不應漏液 (No leakage)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.7.1.2",
+      "original_text_snippet": "以I=P_rd/U_nom恆流放電至電壓達到0V或時間達到1h時停止放電，觀察1h。"
+    },
+    {
+      "id": "GBT36276-6.7.1.3",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "過載性能試驗 (Overload)",
+      "name_en": "Overload Performance Test",
+      "section": "6.7.1.3",
+      "category": "ELEC",
+      "subcategory": "過載 (Overload / Overcurrent)",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "charge": {
+          "value": "4×P_rc 至截止電壓",
+          "detail": "以 4倍 P_rc 恆功率充電至充電截止電壓，靜置10分鐘。"
+        },
+        "discharge": {
+          "value": "4×P_rd 至截止電壓",
+          "detail": "以 4倍 P_rd 恆功率放電至放電截止電壓。"
+        },
+        "observation": {
+          "value": "1小時",
+          "detail": "放電結束後觀察1小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不漏液",
+        "details": [
+          "不應起火 (No fire)",
+          "不應爆炸 (No explosion)",
+          "不應漏液 (No leakage)",
+          "外殼不得破裂及破裂位置 (針對單體)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.7.1.3",
+      "original_text_snippet": "以4*P_rc恆功率充電至電池單體的充電截止電壓，靜置10min；以4*P_rd恆功率放電至電池單體的放電截止電壓，觀察1h。"
+    },
+    {
+      "id": "GBT36276-6.7.1.4",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "短路性能試驗 (Short Circuit)",
+      "name_en": "Short Circuit Performance Test",
+      "section": "6.7.1.4",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "resistance_cell": {
+          "value": "[0.8, 1.0] mΩ",
+          "detail": "單體外部線路總電阻應在 [0.8, 1.0] mΩ，保持 10 分鐘。"
+        },
+        "resistance_module": {
+          "value": "雙重短路：[0.8, 1.0]mΩ (10min) 及 [27.0, 32.8]mΩ (30min)",
+          "detail": "模塊先在 [0.8, 1.0] mΩ 下短路 10 分鐘；更換樣品後，在 [27.0, 32.8] mΩ 下短路 30 分鐘。"
+        },
+        "observation": {
+          "value": "1小時",
+          "detail": "斷開短路後觀察1小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不漏液",
+        "details": [
+          "不應起火 (No fire)",
+          "不應爆炸 (No explosion)",
+          "不應漏液 (No leakage)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.7.1.4",
+      "original_text_snippet": "調節短路試驗裝置電阻至[0.8,1.0]mΩ，保持10min。模塊附加測試：電阻至[27.0,32.8]mΩ，保持30min。"
+    },
+    {
+      "id": "GBT36276-6.7.1.5",
+      "normalized_id": "ELEC-IR",
+      "name_zh": "絕緣性能試驗 (Insulation)",
+      "name_en": "Insulation Resistance Test",
+      "section": "6.7.1.5",
+      "category": "ELEC",
+      "subcategory": "絕緣電阻 (Insulation Resistance)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "voltage": {
+          "value": "500V/1000V/2500V",
+          "detail": "根據截止電壓不同，施加 500V、1000V 或 2500V 試驗電壓。"
+        },
+        "duration": {
+          "value": "1 min",
+          "detail": "持續 1 分鐘，測量絕緣電阻。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "絕緣電阻達標",
+        "details": [
+          "絕緣電阻與標稱電壓的比值應符合標準要求"
+        ]
+      },
+      "exemptions": [
+        "不適用於電池單體"
+      ],
+      "related_tests": [],
+      "source_reference": "6.7.1.5",
+      "original_text_snippet": "按表16施加試驗電壓持續1min，測量正負極與外部裸露可導電部分絕緣電阻。"
+    },
+    {
+      "id": "GBT36276-6.7.1.6",
+      "normalized_id": "ELEC-IR",
+      "name_zh": "耐壓性能試驗 (Withstand Voltage)",
+      "name_en": "Withstand Voltage Test",
+      "section": "6.7.1.6",
+      "category": "ELEC",
+      "subcategory": "耐壓試驗 (Withstand Voltage)",
+      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "conditions": {
+        "dc_voltage": {
+          "value": "1530V~5370V DC",
+          "detail": "根據額定電壓，施加相應的直流試驗電壓 60s。"
+        },
+        "ac_voltage": {
+          "value": "1080V~3800V AC",
+          "detail": "施加相應的交流試驗電壓 60s (45Hz~62Hz)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無擊穿、無閃絡",
+        "details": [
+          "不應發生擊穿 (No breakdown)",
+          "不應發生閃絡 (No flashover)"
+        ]
+      },
+      "exemptions": [
+        "不適用於電池單體"
+      ],
+      "related_tests": [],
+      "source_reference": "6.7.1.6",
+      "original_text_snippet": "按表17施加直流/交流試驗電壓保持60s，記錄試驗現象，包括擊穿、閃絡。"
+    },
+    {
+      "id": "GBT36276-6.7.2.1",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓性能試驗 (Crush)",
+      "name_en": "Crush Performance Test",
+      "section": "6.7.2.1",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "crusher": {
+          "value": "R=75mm 半圓柱體",
+          "detail": "使用半徑 75mm 的半圓柱體擠壓頭。"
+        },
+        "force": {
+          "value": "50 kN",
+          "detail": "擠壓力達到 50 kN 時保持該擠壓力 10 min。"
+        },
+        "observation": {
+          "value": "1小時",
+          "detail": "停止擠壓後觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不漏液",
+        "details": [
+          "不應起火 (No fire)",
+          "不應爆炸 (No explosion)",
+          "不應漏液 (No leakage)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.7.2.1",
+      "original_text_snippet": "選取半徑R為75mm半圓柱體擠壓頭，擠壓力達到50kN時保持10min，停止擠壓觀察1h。"
+    },
+    {
+      "id": "GBT36276-6.7.2.2",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落性能試驗 (Drop)",
+      "name_en": "Drop Performance Test",
+      "section": "6.7.2.2",
+      "category": "MECH",
+      "subcategory": "自由跌落 (Free Fall Drop)",
+      "test_objects": ["CELL", "MODULE"],
+      "conditions": {
+        "height": {
+          "value": "單體 1.5m, 模塊 2.0m",
+          "detail": "單體從 1.5m 高度跌落；模塊從 2.0m 高度跌落至水泥地面。"
+        },
+        "orientation": {
+          "value": "正/負極朝下",
+          "detail": "正極或負極朝下跌落。"
+        },
+        "observation": {
+          "value": "1小時",
+          "detail": "跌落後觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不漏液",
+        "details": [
+          "不應起火 (No fire)",
+          "不應爆炸 (No explosion)",
+          "不應漏液 (No leakage)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.7.2.2",
+      "original_text_snippet": "電池單體1.5m、電池模塊2.0m自由跌落至水泥地面，正極或負極朝下，觀察1h。"
+    },
+    {
+      "id": "GBT36276-6.7.4.2",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "熱失控性能試驗 (Thermal Runaway)",
+      "name_en": "Thermal Runaway Test",
+      "section": "6.7.4.2",
+      "category": "THERM",
+      "subcategory": "熱失控 (Thermal Runaway)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "heating": {
+          "value": "加熱觸發",
+          "detail": "使用加熱部件對單體進行加熱，同時以恆流充電。"
+        },
+        "trigger": {
+          "value": "dT/dt ≥ 3°C/s 或 起火/爆炸 或 300°C",
+          "detail": "監測溫度速率，當連續三個溫升速率 ≥ 3°C/s，或起火爆炸，或達到 300°C，或時間達到 4h 時停止加熱。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "記錄熱失控溫度及現象",
+        "details": [
+          "記錄發生熱失控的溫度 (熱失控溫度)",
+          "記錄試驗現象 包括膨脹、漏液、冒煙、起火、爆炸、外殼破裂及位置"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.7.4.2",
+      "original_text_snippet": "連續監測到三個溫升速率值均≥3℃/s或起火或爆炸為發生熱失控的判定條件...觸發或溫度達到300℃或試驗時間達到4h時停止充電和加熱。"
+    },
+    {
+      "id": "GBT36276-6.7.4.3",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "熱失控擴散性能試驗 (Thermal Runaway Propagation)",
+      "name_en": "Thermal Runaway Propagation Test",
+      "section": "6.7.4.3",
+      "category": "THERM",
+      "subcategory": "熱失控擴散 (Thermal Propagation)",
+      "test_objects": ["MODULE"],
+      "conditions": {
+        "trigger_method": {
+          "value": "加熱/過充/針刺",
+          "detail": "對模塊內的中心單體或最小並聯單元觸發熱失控（通常採用加熱等方式）。"
+        },
+        "observation": {
+          "value": "監測相鄰電池",
+          "detail": "監測相鄰單體是否發生熱失控。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不應擴散，不起火、不爆炸",
+        "details": [
+          "不應觸發其他單體發生熱失控 (No propagation)",
+          "整體不起火、不爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.7.4.3",
+      "original_text_snippet": "以電池模塊中心位置的電池單體或最小並聯單元為熱失控觸發對象... 不應觸發其他單體熱失控，不起火、不爆炸"
+    }
+  ],
+  "test_sequence": {},
+  "global_exemptions": [],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Battery Safety Standards Agent",
+    "created_date": "2026-05-22",
+    "extraction_method": "Cross-validated from Gemini CLI markdown, OCR markdown (authoritative), and batch JSON",
+    "cross_validation_notes": [
+      "Excluded all pure performance/cycle tests (PERF-01~06, DUR-01~02) per instructions to only include safety tests.",
+      "Mapped module/cluster safety tests to appropriate Schema v2.0 normalizations.",
+      "Extracted Overcharge, Overdischarge, Overload, Short Circuit, Insulation, Withstand Voltage, Crush, Drop, Thermal Runaway, and Thermal Runaway Propagation from Section 6.7 Safety Tests."
+    ],
+    "total_test_entries": 10
+  }
+}

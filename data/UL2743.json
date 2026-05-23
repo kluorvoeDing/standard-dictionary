@@ -1,0 +1,113 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "UL2743",
+    "full_name": "ANSI/CAN/UL 2743:2025 Standard for Safety for Portable Power Packs",
+    "full_name_zh": "UL 2743 攜帶式電源包安全標準",
+    "short_name": "UL 2743",
+    "publisher": "UL",
+    "publication_date": "2025-09-24",
+    "type": "standard",
+    "scope": "涵蓋內建電池或電容的攜帶式或移動式電源包 (Portable Power Packs)，包含提供給車輛緊急啟動的升壓功能 (Booster function)、USB輸出、AC插座等。不涵蓋容量大於 70kWh (鉛酸) 或 20kWh (鋰電池) 的儲能系統 (UL 9540)。",
+    "applicable_objects": ["PACK", "SYSTEM"],
+    "source_pdf": "s2743_3.pdf",
+    "source_gemini_md": ""
+  },
+  "terms": [
+    {
+      "term_en": "Portable Power Pack",
+      "term_zh": "攜帶式電源包",
+      "definition": "可由單人移動，不永久連接於電力系統，包含內建或可拆卸電池，提供各種電力輸出。",
+      "section": "5.35"
+    }
+  ],
+  "tests": [
+    {
+      "id": "UL2743-T55-2",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "輸出端短路測試 (Output Connections Short Circuit)",
+      "name_en": "Output connections short circuit test",
+      "section": "55.2",
+      "category": "ELEC",
+      "subcategory": "外部短路",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "resistance": {
+          "value": "≤ 10 mΩ",
+          "detail": "輸出端子以不超過 10 mΩ 的阻抗進行短路。"
+        },
+        "termination": {
+          "value": "直到保護裝置斷開或溫度穩定",
+          "detail": "持續短路直到內部保護裝置斷開，或達到穩定的恆溫狀態。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不觸電",
+        "details": [
+          "不得噴出火焰或熔融金屬，不得產生起火、觸電或人員受傷之風險 (Section 55.1.1)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 55.2"
+    },
+    {
+      "id": "UL2743-T55-9",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充測試 (Overcharging Test)",
+      "name_en": "Overcharging Test",
+      "section": "55.9",
+      "category": "ELEC",
+      "subcategory": "異常充電",
+      "test_objects": ["PACK"],
+      "conditions": {
+        "charging_current": {
+          "value": "3倍最大充電電流或外部充電器最大輸出",
+          "detail": "通用充電接口：以最大充電電壓及3倍最大充電電流進行充電。非通用充電接口：以外部充電器可提供的最大電壓與電流輸出進行充電。"
+        },
+        "duration": {
+          "value": "1.25 小時",
+          "detail": "持續充電 1.25 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不爆炸、不燒焦",
+        "details": [
+          "不得發生爆炸，且覆蓋的醫療紗布或衛生紙不得有燒焦或燃燒現象 (Section 55.9.2)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 55.9.2"
+    },
+    {
+      "id": "UL2743-T60-3",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "落下測試 (Drop Test)",
+      "name_en": "Drop Test",
+      "section": "60.3",
+      "category": "MECH",
+      "subcategory": "落下",
+      "test_objects": ["PACK", "SYSTEM"],
+      "conditions": {
+        "temperature": {
+          "value": "低溫 0°C",
+          "detail": "其中一組樣品需在 0°C (32°F) 下放置 4 小時後立即進行衝擊。"
+        },
+        "drop_height": {
+          "value": "0.9 m (3 ft)",
+          "detail": "重量 ≤ 18kg：從 0.9m 高度落下 3 次。重量 > 18kg 且附提把：從 0.9m 高度落下 1 次。重量 > 25kg 且附輪子：從 0.5m 高度落下 1 次。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不漏電、耐壓通過",
+        "details": [
+          "測試棒不得接觸到危險電壓部件、通過耐壓測試、外殼無永久變形導致間距不足 (Section 60.1.1)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 60.3"
+    }
+  ]
+}

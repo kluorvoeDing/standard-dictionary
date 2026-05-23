@@ -1,0 +1,992 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "IEC62133-2",
+    "full_name": "IEC 62133-2:2017+AMD1:2021 - Secondary cells and batteries containing alkaline or other non-acid electrolytes – Safety requirements for portable sealed secondary cells, and for batteries made from them, for use in portable applications – Part 2: Lithium systems",
+    "full_name_zh": "含鹼性或其他非酸性電解質的二次單電池和電池組 – 可攜式密封二次單電池及由其製成用於可攜式應用的電池組的安全要求 – 第2部：鋰系統",
+    "short_name": "IEC 62133-2",
+    "publisher": "IEC (International Electrotechnical Commission)",
+    "publication_date": "2021-07 (Edition 1.1 Consolidated, base Edition 1.0: 2017-02, Amendment 1: 2021-07)",
+    "type": "standard",
+    "scope": "本標準規定了可攜式密封二次鋰電池（含非酸性電解質）在預期使用及合理可預見誤用條件下安全操作的要求和測試方法。",
+    "applicable_objects": ["CELL", "PACK_SYSTEM"],
+    "source_pdf": "IEC 62133-2-2017 Amd 1-2021.pdf",
+    "source_gemini_md": "IEC62133-2_zh-TW_standardized.md"
+  },
+  "terms": [
+    {
+      "term_en": "Safety",
+      "term_zh": "安全",
+      "definition": "免於不可接受風險 (Freedom from unacceptable risk)",
+      "source": "3.1"
+    },
+    {
+      "term_en": "Risk",
+      "term_zh": "風險",
+      "definition": "危害發生概率與危害嚴重程度的組合 (Combination of the probability of occurrence of harm and the severity of that harm)",
+      "source": "3.2"
+    },
+    {
+      "term_en": "Harm",
+      "term_zh": "傷害",
+      "definition": "對人員的身體傷害或健康損害，或對財產或環境的損害 (Physical injury or damage to the health of people or damage to property or to the environment)",
+      "source": "3.3"
+    },
+    {
+      "term_en": "Hazard",
+      "term_zh": "危險源",
+      "definition": "潛在的傷害來源 (Potential source of harm)",
+      "source": "3.4"
+    },
+    {
+      "term_en": "Intended use",
+      "term_zh": "預期使用",
+      "definition": "按照供應商提供的規格、說明和資訊使用產品、過程或服務",
+      "source": "3.5"
+    },
+    {
+      "term_en": "Reasonably foreseeable misuse",
+      "term_zh": "合理可預見的誤用",
+      "definition": "以非供應商預期的方式使用產品，但可能由可預見的人類行為導致",
+      "source": "3.6"
+    },
+    {
+      "term_en": "Secondary cell",
+      "term_zh": "二次電池/單電池",
+      "definition": "通過化學能直接轉換提供電能來源的基本製造單元，由電極、隔膜、電解質、容器和端子組成，設計可電氣充電",
+      "source": "3.7"
+    },
+    {
+      "term_en": "Secondary battery",
+      "term_zh": "二次電池組",
+      "definition": "由二次單電池組裝而成，可含安全及控制電路和外殼，作為電能來源使用，以電壓、尺寸、端子配置、容量和額定功率為特徵。註：含單電池電池組。",
+      "source": "3.8"
+    },
+    {
+      "term_en": "Leakage",
+      "term_zh": "漏液",
+      "definition": "未經計畫的、可見的液態電解質逸出 (Unplanned, visible escape of liquid electrolyte)",
+      "source": "3.9"
+    },
+    {
+      "term_en": "Venting",
+      "term_zh": "排氣/洩壓",
+      "definition": "以設計預期的方式從電池釋放過多內部壓力，以防止破裂或爆炸 (Release of excessive internal pressure from a cell or battery in a manner intended by design to preclude rupture or explosion)",
+      "source": "3.10"
+    },
+    {
+      "term_en": "Rupture",
+      "term_zh": "破裂",
+      "definition": "由內部或外部原因引起的電池容器或電池組外殼機械失效，導致暴露或溢出但不彈射材料",
+      "source": "3.11"
+    },
+    {
+      "term_en": "Explosion",
+      "term_zh": "爆炸",
+      "definition": "電池容器或電池組外殼劇烈打開且主要組件被強力彈出的失效",
+      "source": "3.12"
+    },
+    {
+      "term_en": "Fire",
+      "term_zh": "起火",
+      "definition": "從電池或電池組發射火焰 (Emission of flames from a cell or battery)",
+      "source": "3.13"
+    },
+    {
+      "term_en": "Portable battery",
+      "term_zh": "可攜式電池組",
+      "definition": "用於可方便手持的裝置或設備中的電池組",
+      "source": "3.14"
+    },
+    {
+      "term_en": "Lithium ion polymer cell",
+      "term_zh": "鋰離子聚合物電池",
+      "definition": "使用凝膠聚合物電解質或固態聚合物電解質而非液態電解質的電池",
+      "source": "3.16"
+    },
+    {
+      "term_en": "Rated capacity",
+      "term_zh": "額定容量",
+      "definition": "在指定條件下測定並由製造商宣告的電池容量值。C5 Ah (安培小時)，以 0.2 It A 參考測試電流放電至指定終止電壓所得的電量。",
+      "source": "3.17"
+    },
+    {
+      "term_en": "Reference test current (It)",
+      "term_zh": "參考測試電流 (It)",
+      "definition": "以 It A 的倍數表示的充電或放電電流，其中 It A = C5 Ah/1h，基於額定容量 (C5 Ah)",
+      "source": "3.18"
+    },
+    {
+      "term_en": "Upper limit charging voltage",
+      "term_zh": "上限充電電壓",
+      "definition": "由電池製造商指定的電池操作區域中最高充電電壓 (Highest charging voltage in the cell operating region, specified by the cell manufacturer)",
+      "source": "3.19"
+    },
+    {
+      "term_en": "Maximum charging current",
+      "term_zh": "最大充電電流",
+      "definition": "由電池製造商指定的電池操作區域中最大充電電流 (Maximum charging current in the cell operating region, specified by the cell manufacturer)",
+      "source": "3.20"
+    },
+    {
+      "term_en": "Coin cell / Button cell",
+      "term_zh": "鈕扣型電池",
+      "definition": "總高度小於直徑的小型圓形電池或電池組 (Small round cell or battery in which the overall height is less than the diameter)",
+      "source": "3.21"
+    },
+    {
+      "term_en": "Cylindrical cell",
+      "term_zh": "圓柱型電池",
+      "definition": "總高度等於或大於直徑的圓柱形電池",
+      "source": "3.22"
+    },
+    {
+      "term_en": "Prismatic cell",
+      "term_zh": "方型電池",
+      "definition": "具有平行六面體形狀且面為矩形的電池。可具有剛性金屬外殼或柔性層壓膜外殼。",
+      "source": "3.23"
+    },
+    {
+      "term_en": "Cell block",
+      "term_zh": "電池並聯組合",
+      "definition": "將多個單電池或電池組的正極端子和負極端子分別連接在一起的並聯連接配置",
+      "source": "3.24"
+    },
+    {
+      "term_en": "End-of-discharge voltage / Final voltage",
+      "term_zh": "放電終止電壓",
+      "definition": "電池放電終止時的指定電壓",
+      "source": "3.26"
+    }
+  ],
+  "tests": [
+    {
+      "id": "IEC62133-2-7.2.1",
+      "normalized_id": "ELEC-CC",
+      "name_zh": "恆壓持續充電 (Continuous Charging at Constant Voltage)",
+      "name_en": "Continuous Charging at Constant Voltage (Cells)",
+      "section": "7.2.1",
+      "category": "ELEC",
+      "subcategory": "持續充電 (Continuous Charging)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序一 (Procedure 1, 7.1.1)",
+          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充電。充電前先在 20 °C ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。"
+        },
+        "soc": {
+          "value": "滿充 (Fully charged)",
+          "detail": "按照 7.1.1 第一程序充滿電"
+        },
+        "test_method": {
+          "value": "恆壓充電 7 天",
+          "detail": "完全充電的單電池接受 7 天的充電，使用製造商指定的電流和標準電壓方法進行充電。"
+        },
+        "temperature": {
+          "value": "20 ± 5 °C",
+          "detail": "環境溫度 20 °C ± 5 °C"
+        },
+        "duration": {
+          "value": "7 天",
+          "detail": "持續充電 7 天 (7 days)"
+        },
+        "sample_size": {
+          "value": "5 個",
+          "detail": "5 個單電池 (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無漏液",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無漏液 (No leakage)"
+        ]
+      },
+      "exemptions": [
+        "內阻 > 3 Ω 的鈕扣電池豁免 (Coin cells with internal resistance > 3 Ω are exempt per 5.1)"
+      ],
+      "related_tests": [],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.2.1",
+      "original_text_snippet": "Fully charged cells are subjected for 7 days to a charge using the charging method for current and standard voltage specified by the cell manufacturer. Acceptance criteria: No fire, no explosion, no leakage."
+    },
+    {
+      "id": "IEC62133-2-7.2.2",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "高溫外殼應力 (Case Stress at High Ambient Temperature)",
+      "name_en": "Case Stress at High Ambient Temperature (Battery)",
+      "section": "7.2.2",
+      "category": "THERM",
+      "subcategory": "外殼應力 (Case/Mold Stress)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序一 (Procedure 1, 7.1.1)",
+          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充電。"
+        },
+        "applicability": {
+          "value": "僅限模塑外殼 (Moulded case only)",
+          "detail": "此要求僅適用於具有模塑外殼的電池組 (This requirement only applies to batteries with a moulded case)。"
+        },
+        "soc": {
+          "value": "滿充 (Fully charged)",
+          "detail": "按照 7.1.1 第一程序充滿電"
+        },
+        "temperature": {
+          "value": "70 ± 2 °C",
+          "detail": "空氣循環烤箱 (air circulating oven)，溫度 70 °C ± 2 °C"
+        },
+        "duration": {
+          "value": "7 小時",
+          "detail": "電池組在烤箱中放置 7 小時，之後取出讓其恢復至室溫。"
+        },
+        "sample_size": {
+          "value": "3 個",
+          "detail": "3 個電池組 (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電池外殼無物理變形導致內部保護元件及電池暴露",
+        "details": [
+          "電池外殼無物理變形導致內部保護元件和單電池暴露 (No physical distortion of the battery case resulting in exposure of internal protective components and cells)"
+        ]
+      },
+      "exemptions": [
+        "不適用於非模塑外殼的電池組"
+      ],
+      "related_tests": [],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.2.2",
+      "original_text_snippet": "The battery is placed in an air circulating oven at a temperature of 70 °C ± 2 °C. The batteries remain in the oven for 7 h, after which they are removed and allowed to return to room temperature. Acceptance criteria: No physical distortion of the battery case resulting in exposure of internal protective components and cells."
+    },
+    {
+      "id": "IEC62133-2-7.3.1",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短路 - 單電池 (External Short-Circuit, Cell)",
+      "name_en": "External Short-Circuit (Cell)",
+      "section": "7.3.1",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序二 (Procedure 2, 7.1.2) — 安全充電程序",
+          "detail": "在最高及最低充電溫度下穩定 1-4 小時後，使用上限充電電壓及最大充電電流充電，直到電流降至 0.05 It A (CC-CV 方法)。充電溫度條件見 Table 2，由製造商指定。"
+        },
+        "soc": {
+          "value": "滿充 (Fully charged per Procedure 2)",
+          "detail": "按照 7.1.2 第二程序充滿電"
+        },
+        "ambient_temperature": {
+          "value": "55 ± 5 °C",
+          "detail": "在 55 °C ± 5 °C 環境下儲存並進行測試 (Store in an ambient temperature of 55 °C ± 5 °C)"
+        },
+        "stabilization_time": {
+          "value": "1-4 小時",
+          "detail": "在 55 °C ± 5 °C 環境下穩定 1 至 4 小時 (After stabilization for 1 h to 4 h)"
+        },
+        "external_resistance": {
+          "value": "80 ± 20 mΩ",
+          "detail": "正負端子之間以總外部電阻 80 mΩ ± 20 mΩ 進行短路"
+        },
+        "duration": {
+          "value": "24 小時或溫升下降 20%（取先到者）",
+          "detail": "測試持續 24 小時或直到表面溫度下降為最大溫升的 20%，以先發生者為準。"
+        },
+        "sample_size": {
+          "value": "5 個/每溫度",
+          "detail": "5 個單電池 per temperature (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [
+        "內阻 > 3 Ω 的鈕扣電池豁免 (Coin cells with internal resistance > 3 Ω are exempt per 5.1)"
+      ],
+      "related_tests": ["IEC62133-2-7.3.2"],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.1",
+      "original_text_snippet": "Fully charge each cell according to the second procedure in 7.1.2. Store in an ambient temperature of 55 °C ± 5 °C. After stabilization for 1 h to 4 h and while still in an ambient temperature of 55 °C ± 5 °C, the cell is short-circuited by connecting the positive and negative terminals with a total external resistance of 80 mΩ ± 20 mΩ. The cell remains on test for 24 h or until the surface temperature declines by 20 % of the maximum temperature rise, whichever is the sooner. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62133-2-7.3.2",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短路 - 電池組 (External Short-Circuit, Battery)",
+      "name_en": "External Short-Circuit (Battery)",
+      "section": "7.3.2",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序一 (Procedure 1, 7.1.1)",
+          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充電。"
+        },
+        "soc": {
+          "value": "滿充 (Fully charged per Procedure 1)",
+          "detail": "按照 7.1.1 第一程序充滿電"
+        },
+        "ambient_temperature": {
+          "value": "20 ± 5 °C",
+          "detail": "在 20 °C ± 5 °C 環境下進行測試"
+        },
+        "external_resistance": {
+          "value": "80 ± 20 mΩ",
+          "detail": "正負端子之間以總外部電阻 80 mΩ ± 20 mΩ 進行短路"
+        },
+        "duration": {
+          "value": "24 小時或外殼溫度下降 20%（取先到者）",
+          "detail": "測試持續 24 小時或直到外殼溫度下降為最大溫升的 20%，以先發生者為準。若短路電流急速下降，電池應在電流達到低端穩態後繼續測試 1 小時（每電池電壓低於 0.8 V 且 30 分鐘內下降不超過 0.1 V）。"
+        },
+        "fault_simulation": {
+          "value": "1-4 個樣品需模擬放電保護電路單一故障",
+          "detail": "5 個樣品中 1-4 個（取決於保護電路設計）需在短路測試前模擬放電保護電路的單一故障。單一故障適用於 MOSFET、保險絲、溫控器或 PTC 熱敏電阻等保護元件。符合 Annex F 所列元件標準或經功能安全評估的電子電路不受單一故障條件約束。"
+        },
+        "sample_size": {
+          "value": "5 個",
+          "detail": "5 個電池組 (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["IEC62133-2-7.3.1"],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.2",
+      "original_text_snippet": "A fully charged battery according to the procedure in 7.1.1 is stored in an ambient temperature of 20 °C ± 5 °C. The battery is then short-circuited by connecting the positive and negative terminals with a total external resistance of 80 mΩ ± 20 mΩ. The battery remains on test for 24 h or until the case temperature of battery declines by 20 % of the maximum temperature rise, whichever is the sooner. A single fault in the discharge protection circuit should be conducted on one to four of the five samples. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62133-2-7.3.3",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "自由跌落 (Free Fall)",
+      "name_en": "Free Fall",
+      "section": "7.3.3",
+      "category": "MECH",
+      "subcategory": "跌落 (Drop / Free Fall)",
+      "test_objects": ["CELL", "PACK_SYSTEM"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序一 (Procedure 1, 7.1.1)",
+          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充滿電。"
+        },
+        "soc": {
+          "value": "滿充 (Fully charged per Procedure 1)",
+          "detail": "按照 7.1.1 第一程序充滿電"
+        },
+        "drop_height": {
+          "value": "1.0 m",
+          "detail": "從 1.0 m 高度跌落至平坦混凝土或金屬地板 (dropped from a height of 1.0 m onto a flat concrete floor or metal floor)"
+        },
+        "drop_count": {
+          "value": "3 次/每個樣品",
+          "detail": "每個單電池或電池組跌落 3 次 (dropped three times)"
+        },
+        "orientation": {
+          "value": "隨機方向",
+          "detail": "跌落方向為隨機方向以取得隨機衝擊 (dropped so as to obtain impacts in random orientations)"
+        },
+        "observation": {
+          "value": "靜置 ≥ 1 小時後目視檢查",
+          "detail": "測試後靜置至少 1 小時，然後進行目視檢查 (put on rest for a minimum of 1 h and then a visual inspection shall be performed)"
+        },
+        "temperature": {
+          "value": "20 ± 5 °C",
+          "detail": "環境溫度 20 °C ± 5 °C"
+        },
+        "sample_size": {
+          "value": "各 3 個 (Cell: 3, Battery: 3)",
+          "detail": "單電池 3 個、電池組 3 個 (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [
+        "內阻 > 3 Ω 的鈕扣電池豁免 (Cell level, Coin cells with internal resistance > 3 Ω are exempt per 5.1)"
+      ],
+      "related_tests": [],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.3",
+      "original_text_snippet": "Free fall test is conducted at an ambient temperature of 20 °C ± 5 °C, by using cells or batteries that are charged to a fully charged state, in accordance with the first procedure in 7.1.1. Each cell or battery is dropped three times from a height of 1,0 m onto a flat concrete floor or metal floor. The cells or batteries are dropped so as to obtain impacts in random orientations. After the test, the cell or battery shall be put on rest for a minimum of 1 h and then a visual inspection shall be performed. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62133-2-7.3.4",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "熱濫用 (Thermal Abuse)",
+      "name_en": "Thermal Abuse (Cells)",
+      "section": "7.3.4",
+      "category": "THERM",
+      "subcategory": "熱濫用 (Thermal Abuse / Heating)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序二 (Procedure 2, 7.1.2) — 安全充電程序",
+          "detail": "在最高及最低充電溫度下穩定 1-4 小時後，使用上限充電電壓及最大充電電流充電，直到電流降至 0.05 It A (CC-CV 方法)。"
+        },
+        "soc": {
+          "value": "滿充 (Fully charged per Procedure 2)",
+          "detail": "按照 7.1.2 第二程序充滿電"
+        },
+        "initial_condition": {
+          "value": "20 ± 5 °C，放入烤箱 1 小時",
+          "detail": "完全充電的單電池在 20 °C ± 5 °C 環境下放入重力或循環空氣對流烤箱中 1 小時 (placed in a gravity or circulating air-convection oven, in an ambient temperature of 20 °C ± 5 °C, for 1 h)"
+        },
+        "ramp_rate": {
+          "value": "5 ± 2 °C/min",
+          "detail": "烤箱溫度以 5 °C/min ± 2 °C/min 的速率上升 (oven temperature is raised at a rate of 5 °C/min ± 2 °C/min)"
+        },
+        "target_temperature": {
+          "value": "130 ± 2 °C",
+          "detail": "上升至 130 °C ± 2 °C (to a temperature of 130 °C ± 2 °C)"
+        },
+        "hold_time": {
+          "value": "30 分鐘",
+          "detail": "電池在 130 °C 下維持 30 分鐘後結束測試 (cell remains at this temperature for 30 min before the test is terminated)"
+        },
+        "oven_type": {
+          "value": "重力或空氣對流烤箱",
+          "detail": "gravity or circulating air-convection oven"
+        },
+        "sample_size": {
+          "value": "5 個/每溫度",
+          "detail": "5 個單電池 per temperature (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [
+        "內阻 > 3 Ω 的鈕扣電池豁免 (Coin cells with internal resistance > 3 Ω are exempt per 5.1)"
+      ],
+      "related_tests": [],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.4",
+      "original_text_snippet": "Each fully charged cell, according to the second procedure in 7.1.2, is placed in a gravity or circulating air-convection oven, in an ambient temperature of 20 °C ± 5 °C, for 1 h. The oven temperature is raised at a rate of 5 °C/min ± 2 °C/min to a temperature of 130 °C ± 2 °C. The cell remains at this temperature for 30 min before the test is terminated. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62133-2-7.3.5",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓 (Crush)",
+      "name_en": "Crush (Cells)",
+      "section": "7.3.5",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序二 (Procedure 2, 7.1.2) — 安全充電程序（在上限充電溫度下充電）",
+          "detail": "依照 7.1.2 第二程序在上限充電溫度下充電後立即轉移進行擠壓 (charged according to the second procedure at the upper limit charging temperature in 7.1.2, is immediately transferred and crushed)。"
+        },
+        "soc": {
+          "value": "滿充 (Fully charged per Procedure 2, at upper limit charging temp)",
+          "detail": "按照 7.1.2 第二程序在上限充電溫度下充滿電後立即進行測試"
+        },
+        "force": {
+          "value": "13 ± 0.78 kN",
+          "detail": "擠壓裝置施加 13 kN ± 0.78 kN 的力 (force of 13 kN ± 0.78 kN)"
+        },
+        "termination_criteria": {
+          "value": "達最大力 或 電壓突降 1/3",
+          "detail": "施加最大力或電壓突然下降至原始電壓三分之一時即釋放力 (Once the maximum force has been applied, or an abrupt voltage drop of one-third of the original voltage has been obtained, the force is released)"
+        },
+        "orientation_cylindrical_prismatic": {
+          "value": "縱軸平行於擠壓面",
+          "detail": "圓柱形或方形電池以其縱軸平行於擠壓裝置的平坦表面進行擠壓。方形電池僅測試寬面。(A cylindrical or prismatic cell is crushed with its longitudinal axis parallel to the flat surfaces. Test only the wide side of prismatic cells.)"
+        },
+        "orientation_coin": {
+          "value": "平坦面施壓",
+          "detail": "鈕扣電池應在其平坦表面施加壓力 (A coin cell shall be crushed by applying the force on its flat surface)"
+        },
+        "temperature": {
+          "value": "環境溫度",
+          "detail": "在環境溫度下進行擠壓 (crushed between two flat surfaces in an ambient temperature)"
+        },
+        "sample_size": {
+          "value": "5 個/每溫度",
+          "detail": "5 個單電池 per temperature (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [
+        "內阻 > 3 Ω 的鈕扣電池豁免 (Coin cells with internal resistance > 3 Ω are exempt per 5.1)",
+        "鈕扣電池若測試，須在平坦面施壓（特殊方向要求）"
+      ],
+      "related_tests": [],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.5",
+      "original_text_snippet": "Each fully charged cell, charged according to the second procedure at the upper limit charging temperature in 7.1.2, is immediately transferred and crushed between two flat surfaces in an ambient temperature. The force for the crushing is applied by a device exerting a force of 13 kN ± 0,78 kN. Once the maximum force has been applied, or an abrupt voltage drop of one-third of the original voltage has been obtained, the force is released. A cylindrical or prismatic cell is crushed with its longitudinal axis parallel to the flat surfaces. Test only the wide side of prismatic cells. A coin cell shall be crushed by applying the force on its flat surface. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62133-2-7.3.6",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電 (Over-Charging of Battery)",
+      "name_en": "Over-Charging of Battery",
+      "section": "7.3.6",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序一 (Procedure 1, 7.1.1) — 先放電至終止電壓",
+          "detail": "每個測試電池先以 0.2 It A 恆流放電至製造商指定的終止放電電壓。"
+        },
+        "soc": {
+          "value": "完全放電 (Discharged to final voltage)",
+          "detail": "按 0.2 It A 恆流放電至製造商指定的終止電壓後進行過充"
+        },
+        "charging_current": {
+          "value": "2.0 It A",
+          "detail": "以 2.0 It A 恆流進行充電 (charged at a constant current of 2.0 It A)"
+        },
+        "supply_voltage_single_cell": {
+          "value": "1.4 × 上限充電電壓（不超過 6.0 V）",
+          "detail": "單電池/電池並聯組電池組之供電電壓為上限充電電壓的 1.4 倍（但不超過 6.0 V）(1.4 times the upper limit charging voltage presented in Table A.1, but not to exceed 6.0 V, for single cell/cell block batteries)"
+        },
+        "supply_voltage_series_multi_cell": {
+          "value": "1.2 × 上限充電電壓/每電池",
+          "detail": "串聯多電池電池組之供電電壓為每個單電池的上限充電電壓的 1.2 倍 (1.2 times the upper limit charging voltage per cell for series connected multi-cell batteries)"
+        },
+        "current_maintenance": {
+          "value": "需維持 2.0 It A 至供電電壓",
+          "detail": "供電電壓須足以在整個測試期間維持 2.0 It A 的電流，直到達到供電電壓 (sufficient to maintain a current of 2.0 It A throughout the duration of the test or until the supply voltage is reached)"
+        },
+        "termination": {
+          "value": "溫度穩定（30 分鐘內 < 10 °C 變化）或恢復至室溫",
+          "detail": "外殼溫度達到穩態條件（30 分鐘內變化小於 10 °C）或恢復至環境溫度時終止測試。需附上熱電偶測量溫度。"
+        },
+        "temperature": {
+          "value": "20 ± 5 °C",
+          "detail": "環境溫度 20 °C ± 5 °C"
+        },
+        "sample_size": {
+          "value": "5 個",
+          "detail": "5 個電池組 (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.6",
+      "original_text_snippet": "Each test battery shall be discharged at a constant current of 0,2 It A, to a final discharge voltage specified by the manufacturer. Sample batteries shall then be charged at a constant current of 2,0 It A, using a supply voltage which is: 1,4 times the upper limit charging voltage presented in Table A.1 (but not to exceed 6,0 V) for single cell/cell block batteries or 1,2 times the upper limit charging voltage presented in Table A.1 per cell for series connected multi-cell batteries, and sufficient to maintain a current of 2,0 It A throughout the duration of the test or until the supply voltage is reached. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62133-2-7.3.7",
+      "normalized_id": "ELEC-FD",
+      "name_zh": "強制放電 (Forced Discharge)",
+      "name_en": "Forced Discharge (Cells)",
+      "section": "7.3.7",
+      "category": "ELEC",
+      "subcategory": "強制放電 (Forced Discharge)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序一 (Procedure 1, 7.1.1) — 先放電至下限",
+          "detail": "先將單電池放電至製造商指定的下限放電電壓。"
+        },
+        "soc": {
+          "value": "完全放電至下限電壓",
+          "detail": "放電至製造商指定的下限放電電壓 (Discharge a single cell to the lower limit discharge voltage specified by the cell manufacturer)"
+        },
+        "forced_discharge_current": {
+          "value": "1 It A",
+          "detail": "以 1 It A 的電流進行強制放電 (subjected to a forced discharge at 1 It A)"
+        },
+        "target_voltage": {
+          "value": "負上限充電電壓 (negative of upper limit charging voltage)",
+          "detail": "強制放電至上限充電電壓的負值 (to the negative value of the upper limit charging voltage)"
+        },
+        "duration": {
+          "value": "90 分鐘",
+          "detail": "強制放電測試的總持續時間為 90 分鐘。若在測試期間放電電壓達到上限充電電壓的負值，則降低電流以維持該電壓直到測試結束 (Case 1)。若未達到，則在 90 分鐘結束時終止 (Case 2)。"
+        },
+        "sample_size": {
+          "value": "5 個",
+          "detail": "5 個單電池 (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "註：可採用電池或系統中的保護裝置 (A protective device in a battery or system can be adopted)"
+        ]
+      },
+      "exemptions": [
+        "內阻 > 3 Ω 的鈕扣電池豁免 (Coin cells with internal resistance > 3 Ω are exempt per 5.1)"
+      ],
+      "related_tests": [],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.7",
+      "original_text_snippet": "Discharge a single cell to the lower limit discharge voltage specified by the cell manufacturer. The discharged cell is then subjected to a forced discharge at 1 It A to the negative value of the upper limit charging voltage. The total duration for the forced discharge testing is 90 min. If the discharge voltage reaches the negative value of upper limit charging voltage within the testing duration, the voltage shall be maintained at the negative value of the upper limit charging voltage by reducing the current for the remainder of the testing duration. Acceptance criteria: No fire, no explosion."
+    },
+    {
+      "id": "IEC62133-2-7.3.8.1",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動 (Vibration)",
+      "name_en": "Vibration (Batteries)",
+      "section": "7.3.8.1",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序一 (Procedure 1, 7.1.1)",
+          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充滿電。"
+        },
+        "soc": {
+          "value": "滿充 (Fully charged per Procedure 1)",
+          "detail": "按照 7.1.1 第一程序充滿電"
+        },
+        "waveform": {
+          "value": "正弦波 (Sinusoidal)",
+          "detail": "正弦波振動 (sinusoidal vibration)"
+        },
+        "frequency_range": {
+          "value": "7 Hz – 200 Hz – 7 Hz (對數掃描)",
+          "detail": "頻率範圍 7 Hz 到 200 Hz 的對數掃描循環 (logarithmic sweep cycle)"
+        },
+        "vibration_profile": {
+          "value": "1 gn (7-17.62 Hz) / 0.8 mm (17.62-49.84 Hz) / 8 gn (49.84-200 Hz)",
+          "detail": "f1=7 Hz 至 f2≈17.62 Hz: 加速度 A1=1 gn；f2≈17.62 Hz 至 f3≈49.84 Hz: 位移振幅 S=0.8 mm (峰-峰 1.6 mm)；f3≈49.84 Hz 至 f4=200 Hz: 加速度 A2=8 gn。(Table 3)"
+        },
+        "sweep_duration": {
+          "value": "約 15 分鐘/循環",
+          "detail": "每次對數掃描循環 (7 Hz – 200 Hz – 7 Hz) 約 15 分鐘"
+        },
+        "cycle_count": {
+          "value": "每軸 12 次循環（共 36 次循環）",
+          "detail": "X/Y/Z 三個互相垂直的方向各 12 次循環，總共 36 次循環。每個方向約 3 小時。其中一個方向須垂直於端子面。"
+        },
+        "directions": {
+          "value": "3 個互相垂直方向",
+          "detail": "三個互相垂直的安裝位置，其中之一垂直於端子面 (three mutually perpendicular mounting positions, one of the directions shall be perpendicular to the terminal face)"
+        },
+        "sample_size": {
+          "value": "3 個",
+          "detail": "3 個電池組 (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂、無漏液、無排氣",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)",
+          "無破裂 (No rupture)",
+          "無漏液 (No leakage)",
+          "無排氣 (No venting)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["IEC62133-2-7.3.8.2"],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.8.1, Table 3",
+      "original_text_snippet": "Test batteries, fully charged in accordance with the charging procedure of 7.1.1, shall be firmly secured to the platform of the vibration machine. Test batteries shall be subjected to sinusoidal vibration according to Table 3. This cycle shall be repeated 12 times for a total of approximately 3 h for each of three mutually perpendicular mounting positions. One of the directions shall be perpendicular to the terminal face. Acceptance criteria: No fire, no explosion, no rupture, no leakage or venting."
+    },
+    {
+      "id": "IEC62133-2-7.3.8.2",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "機械衝擊 (Mechanical Shock)",
+      "name_en": "Mechanical Shock (Batteries)",
+      "section": "7.3.8.2",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": ["PACK_SYSTEM"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序一 (Procedure 1, 7.1.1)",
+          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充滿電。"
+        },
+        "soc": {
+          "value": "滿充 (Fully charged per Procedure 1)",
+          "detail": "按照 7.1.1 第一程序充滿電"
+        },
+        "waveform": {
+          "value": "半正弦波 (Half sine)",
+          "detail": "半正弦波衝擊 (Table 4)"
+        },
+        "peak_acceleration": {
+          "value": "150 gn",
+          "detail": "峰值加速度 150 gn (Peak acceleration: 150 gn)"
+        },
+        "pulse_duration": {
+          "value": "6 ms",
+          "detail": "脈衝持續時間 6 ms (Pulse duration: 6 ms)"
+        },
+        "shock_count": {
+          "value": "18 次（3 方向 × 正反各 3 次）",
+          "detail": "在三個互相垂直安裝位置的每個方向施加 3 次衝擊，共 18 次衝擊 (subjected to three shocks in each direction of three mutually perpendicular mounting positions for a total of 18 shocks)"
+        },
+        "sample_size": {
+          "value": "3 個",
+          "detail": "3 個電池組 (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無漏液、無排氣、無破裂、無爆炸、無起火",
+        "details": [
+          "無漏液 (No leakage)",
+          "無排氣 (No venting)",
+          "無破裂 (No rupture)",
+          "無爆炸 (No explosion)",
+          "無起火 (No fire)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": ["IEC62133-2-7.3.8.1"],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.8.2, Table 4",
+      "original_text_snippet": "Each test battery shall be subjected to three shocks in each direction of three mutually perpendicular mounting positions of the battery for a total of 18 shocks. Waveform: Half sine, Peak acceleration: 150 gn, Pulse duration: 6 ms, Number of shocks per half axis: 3. Acceptance criteria: No leakage, no venting, no rupture, no explosion and no fire."
+    },
+    {
+      "id": "IEC62133-2-7.3.9",
+      "normalized_id": "ELEC-SC-INT",
+      "name_zh": "強制內部短路 (Forced Internal Short-Circuit)",
+      "name_en": "Design Evaluation – Forced Internal Short-Circuit (Cells)",
+      "section": "7.3.9",
+      "category": "ELEC",
+      "subcategory": "強制內部短路 (Forced Internal Short Circuit)",
+      "test_objects": ["CELL"],
+      "conditions": {
+        "charging_procedure": {
+          "value": "程序二 (Procedure 2, 7.1.2) — 含特殊預處理",
+          "detail": "先在 20 °C ± 5 °C 按製造商建議充電，然後以 0.2 It A 放電至製造商指定終止電壓。再依 Table 5 所列溫度儲存 1-4 小時後，在該溫度下以上限充電電壓和製造商指定電流充電 (CC-CV) 直到充電電流降至 0.05 It A。"
+        },
+        "applicability": {
+          "value": "僅限圓柱型和方型鋰離子電池",
+          "detail": "僅適用於圓柱型和方形鋰離子電池。不適用於鋰離子聚合物電池 (not required on lithium ion polymer cells) 和鈕扣電池 (not applicable to coin cells)。"
+        },
+        "regional_requirement": {
+          "value": "僅韓國、日本、瑞士、法國要求",
+          "detail": "此為國家特定測試，僅適用於法國、日本、韓國和瑞士 (This is a country specific test, which is only applicable to France, Japan, Korea and Switzerland)"
+        },
+        "test_temperatures": {
+          "value": "最低充電溫度 ± 2 °C / 最高充電溫度 ± 2 °C",
+          "detail": "Table 5 定義了兩組溫度條件：儲存步驟：10 ± 2 °C (低溫) 或 45 ± 2 °C (高溫)；充電步驟：同儲存溫度；壓製準備：5 ± 2 °C (低溫) 或 50 ± 2 °C (高溫)；壓製時核心表面：10 ± 5 °C (低溫) 或 45 ± 5 °C (高溫)。最低/最高充電溫度由製造商指定。"
+        },
+        "method": {
+          "value": "鎳顆粒刺入模擬內部短路",
+          "detail": "使用鎳顆粒 (nickel particle) 刺入捲芯 (winding core) 模擬內部短路。詳見附錄 A.5 及 A.6。將鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘，取出後 10 分鐘內完成安裝。"
+        },
+        "press_speed": {
+          "value": "0.1 mm/s",
+          "detail": "壓裝具以 0.1 mm/s 的速度下壓 (fixture is moved down at a speed of 0.1 mm/s)"
+        },
+        "pressing_jig": {
+          "value": "10 mm × 10 mm 不鏽鋼軸 + 丁腈橡膠/壓克力樹脂",
+          "detail": "壓裝具底面為丁腈橡膠 (硬度 A60, t=2mm)，置於 10 mm × 10 mm 不鏽鋼軸上。圓柱型用丁腈橡膠底面；方形電池加 5 mm × 5 mm (t=2mm) 壓克力樹脂。"
+        },
+        "short_circuit_detection": {
+          "value": "電壓降 > 50 mV",
+          "detail": "以大於每秒 100 次的速率監測電壓。若電壓下降超過 50 mV 即判定發生內部短路 (If the voltage drops more than 50 mV compared to the initial voltage, an internal short-circuit has been determined to have occurred)"
+        },
+        "force_limit": {
+          "value": "圓柱型 800 N / 方型 400 N",
+          "detail": "若壓力達到 800 N (圓柱型) 或 400 N (方形) 仍未發生 50 mV 電壓降，立即停止下壓 (If the force reaches 800 N for a cylindrical cell or 400 N for a prismatic cell before the 50 mV voltage drop, stop the descent immediately)"
+        },
+        "hold_after_short": {
+          "value": "保持 30 秒",
+          "detail": "偵測到短路後保持壓裝具位置 30 秒後釋放 (keep the pressing jig in the position for 30 s, and then release the pressure)"
+        },
+        "sample_size": {
+          "value": "5 個/每溫度",
+          "detail": "5 個鋰離子電池 per test temperature (Table 1)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火；記錄發生內部短路時的壓力",
+        "details": [
+          "無起火 (No fire)",
+          "記錄發生內部短路時的壓力 (Record the force when an internal short-circuit occurs if there was no fire)"
+        ]
+      },
+      "exemptions": [
+        "不適用於鈕扣電池 (Not applicable to coin cells)",
+        "不適用於鋰離子聚合物電池 (Not required on lithium ion polymer cells)",
+        "僅法國、日本、韓國、瑞士要求 (Country specific: France, Japan, Korea, Switzerland only)"
+      ],
+      "related_tests": [],
+      "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.9, Table 5, Annex A.5-A.6",
+      "original_text_snippet": "A forced internal short-circuit test for cylindrical cells and prismatic cells shall not cause a fire. Cell manufacturers shall keep a record to meet the requirements. NOTE This is a country specific test, which is only applicable to France, Japan, Korea and Switzerland and is not required on lithium ion polymer cells. The fixture is moved down at a speed of 0,1 mm/s, monitoring the cell voltage. When a voltage drop caused by the internal short-circuit is detected, stop the descent immediately and keep the pressing jig in the position for 30 s, and then release the pressure. If the voltage drops more than 50 mV compared to the initial voltage, an internal short-circuit has been determined to have occurred. If the force reaches 800 N for a cylindrical cell or 400 N for a prismatic cell before the 50 mV voltage drop, stop the descent immediately. Acceptance criteria: No fire."
+    }
+  ],
+  "charging_procedures": {
+    "procedure_1": {
+      "id": "7.1.1",
+      "name_zh": "第一程序 (First Procedure)",
+      "name_en": "First Procedure",
+      "applies_to": ["7.2.1", "7.2.2", "7.3.2", "7.3.3", "7.3.6", "7.3.7", "7.3.8.1", "7.3.8.2"],
+      "description": "適用於 7.1.2 未指定的所有條款。在 20 °C ± 5 °C 環境下，依製造商宣告的方法充電。充電前先在 20 °C ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。",
+      "original_text_snippet": "This charging procedure applies to subclauses other than those specified in 7.1.2. Unless otherwise stated, the charging procedure for test purposes is carried out in an ambient temperature of 20 °C ± 5 °C, using the method declared by the manufacturer. Prior to charging, the battery shall have been discharged at 20 °C ± 5 °C at a constant current of 0,2 It A down to a specified final voltage."
+    },
+    "procedure_2": {
+      "id": "7.1.2",
+      "name_zh": "第二程序 — 安全充電程序 (Second Procedure — Safety Charging)",
+      "name_en": "Second Procedure (Safety Charging)",
+      "applies_to": ["7.3.1", "7.3.4", "7.3.5", "7.3.9"],
+      "description": "適用於 7.3.1, 7.3.4, 7.3.5, 7.3.9。在最高及最低測試溫度 (Table 2) 下穩定 1-4 小時後，使用上限充電電壓及最大充電電流以 CC-CV 方式充電，直到充電電流降至 0.05 It A。穩定時間應盡可能達到熱平衡。電壓和電流可能因溫度範圍不同而變化。",
+      "charging_parameters": {
+        "upper_limit_charging_voltage": "由製造商指定 (Specified by the manufacturer of cells)",
+        "maximum_charging_current": "由製造商指定 (Specified by the manufacturer of cells)",
+        "charging_temperature_upper_limit": "由製造商指定 (Specified by the manufacturer of cells)",
+        "charging_temperature_lower_limit": "由製造商指定 (Specified by the manufacturer of cells)",
+        "cutoff_current": "0.05 It A",
+        "stabilization_time": "1-4 小時"
+      },
+      "original_text_snippet": "This charging procedure applies only to 7.3.1, 7.3.4, 7.3.5, and 7.3.9. After stabilization for 1 h and to 4 h, respectively, at an ambient temperature of the highest test temperature and the lowest test temperature, respectively, as specified in Table 2, cells are charged by using the upper limit charging voltage and maximum charging current, until the charging current is reduced to 0,05 It A, using a constant current to constant voltage charging method."
+    }
+  },
+  "test_sequence": {
+    "description": "IEC 62133-2 未規定特定的測試順序。各測試項目獨立進行，使用各自的樣品集。Table 1 規定每項測試的樣品數量。使用程序二 (7.1.2) 的測試需在最高和最低兩個溫度條件下各進行一組。",
+    "notes": [
+      "所有測試使用不超過六個月的電池或電池組 (cells or batteries not more than six months old)",
+      "除特別說明外，測試在 20 °C ± 5 °C 環境溫度下進行",
+      "鈕扣電池須先依 Annex D 測量內阻，內阻 ≤ 3 Ω 者須按 Table 1 進行測試",
+      "使用程序二的測試 (7.3.1, 7.3.4, 7.3.5, 7.3.9) 須在製造商指定的最高和最低充電溫度下各測試 5 個樣品"
+    ]
+  },
+  "global_exemptions": [
+    {
+      "id": "EXEMPT-COIN-3OHM",
+      "description": "內阻大於 3 Ω 的鈕扣型電池豁免於 5.2 至 5.7 節的要求及 Table 1 所有測試",
+      "detail": "Conformity with 5.2 to 5.7 for cells and batteries other than coin cells, with an internal resistance greater than 3 Ω, is checked by inspection, by the tests of Clauses 7, and in accordance with the appropriate standard. 鈕扣電池的內阻依據 Annex D 測量。",
+      "applicable_sections": ["5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "7.2.1", "7.3.1", "7.3.3 (cell)", "7.3.4", "7.3.5", "7.3.7"],
+      "measurement_method": "Annex D (AC resistance at 1.0 kHz ± 0.1 kHz, sample size: 3)"
+    },
+    {
+      "id": "EXEMPT-7.3.9-COUNTRY",
+      "description": "7.3.9 強制內部短路測試僅法國、日本、韓國、瑞士要求",
+      "detail": "7.3.9: Design evaluation – Forced internal short-circuit test only applies to Korea, Japan, Switzerland and France.",
+      "applicable_sections": ["7.3.9"]
+    },
+    {
+      "id": "EXEMPT-7.3.9-POLYMER-COIN",
+      "description": "7.3.9 不適用於鋰離子聚合物電池和鈕扣電池",
+      "detail": "Not required on lithium ion polymer cells. Not applicable to coin cells.",
+      "applicable_sections": ["7.3.9"]
+    },
+    {
+      "id": "EXEMPT-7.2.2-MOULD",
+      "description": "7.2.2 外殼應力測試僅適用於模塑外殼的電池組",
+      "detail": "This requirement only applies to batteries with a moulded case.",
+      "applicable_sections": ["7.2.2"]
+    }
+  ],
+  "annex_d_coin_cell_measurement": {
+    "section": "Annex D (normative)",
+    "title": "鈕扣電池內部交流電阻測量 (Measurement of the internal AC resistance for coin cells)",
+    "purpose": "測量鈕扣電池內阻以判定是否需依 Table 1 進行測試",
+    "sample_size": 3,
+    "method": {
+      "step_1": "在 20 °C ± 5 °C 下依製造商方法充電",
+      "step_2": "在 20 °C ± 5 °C 下儲存 1-4 小時",
+      "step_3": "施加 1.0 kHz ± 0.1 kHz 的交流電流 (Ia)，持續 1-5 秒，測量交流電壓 (Ua)。Rac = Ua/Ia [Ω]。交流電流需使峰值電壓低於 20 mV。電壓和電流測量接觸須分離（四線法）。"
+    },
+    "threshold": "≤ 3 Ω → 須進行 Table 1 測試；> 3 Ω → 豁免",
+    "original_text_snippet": "The measurement of internal AC resistance shall be performed: The alternating r.m.s. voltage, Ua, shall be measured when applying to the cell an alternating r.m.s. current, Ia, at the frequency of 1,0 kHz ± 0,1 kHz for a period of 1 s to 5 s. Rac = Ua/Ia [Ω]. Coin cells with an internal resistance of less than or equal to 3 Ω are subjected to the testing according to Clause 6 and Table 1. Coin cells with an internal resistance greater than 3 Ω require no further testing."
+  },
+  "parameter_measurement_tolerances": {
+    "section": "4",
+    "tolerances": {
+      "voltage": "± 1 %",
+      "current": "± 1 %",
+      "temperature": "± 2 °C",
+      "time": "± 0.1 %",
+      "dimension": "± 1 %",
+      "capacity": "± 1 %"
+    },
+    "original_text_snippet": "The overall accuracy of controlled or measured values, relative to the specified or actual parameters, shall be within these tolerances: ± 1 % for voltage; ± 1 % for current; ± 2 °C for temperature; ± 0,1 % for time; ± 1 % for dimension; ± 1 % for capacity."
+  },
+  "cross_validation_notes": {
+    "description": "三來源交叉驗證結果",
+    "sources_compared": [
+      "Gemini CLI markdown (IEC62133-2_zh-TW_standardized.md)",
+      "Original OCR markdown (IEC 62133-2-2017 Amd 1-2021.md) — 權威來源",
+      "Batch3 JSON (IEC62133-2_structured.json)"
+    ],
+    "discrepancies_found": [
+      {
+        "parameter": "7.3.8.2 機械衝擊 - 衝擊次數",
+        "batch3_value": "每個方向 3 次，共 3 個方向（18 次）",
+        "ocr_value": "three shocks in each direction of three mutually perpendicular mounting positions for a total of 18 shocks",
+        "gemini_value": "半正弦波，150 gn，6 個方向",
+        "resolution": "Batch3 與 OCR 一致：18 次。Gemini 描述較簡略但基本正確（6 個半軸方向 × 3 次 = 18 次）。",
+        "resolved_value": "3 方向 × 每方向正反各 3 次 = 18 次衝擊"
+      },
+      {
+        "parameter": "7.3.5 擠壓 - 充電條件",
+        "batch3_value": "按 7.1.2 規定充滿電（在上限充電溫度下）",
+        "ocr_value": "charged according to the second procedure at the upper limit charging temperature in 7.1.2, is immediately transferred",
+        "gemini_value": "程序二",
+        "resolution": "OCR 明確指出在上限充電溫度下充電後「立即轉移」進行擠壓，batch3 標注正確。",
+        "resolved_value": "程序二，在上限充電溫度下充電後立即轉移進行擠壓"
+      },
+      {
+        "parameter": "7.3.7 強制放電 - 充電程序",
+        "batch3_value": "未明確標示程序",
+        "ocr_value": "Discharge a single cell to the lower limit discharge voltage specified by the cell manufacturer",
+        "gemini_value": "程序一",
+        "resolution": "OCR 文本不直接提及充電程序，但 7.1.1 說明適用於 7.1.2 未指定的所有條款，7.3.7 不在 7.1.2 清單中，故為程序一。Gemini 正確。",
+        "resolved_value": "程序一 (Procedure 1)"
+      },
+      {
+        "parameter": "7.2.1 持續充電 - 判定標準",
+        "batch3_value": "no_fire, no_explosion, no_leakage",
+        "ocr_value": "No fire, no explosion, no leakage",
+        "gemini_value": "無起火、無爆炸、無漏液",
+        "resolution": "三來源完全一致。",
+        "resolved_value": "無起火、無爆炸、無漏液"
+      },
+      {
+        "parameter": "batch3 JSON - test_objects 對電池組的標記",
+        "batch3_value": "PACK",
+        "ocr_value": "battery",
+        "gemini_value": "電池組",
+        "resolution": "Schema v2.0 將 PACK 統一為 PACK_SYSTEM",
+        "resolved_value": "PACK_SYSTEM"
+      }
+    ],
+    "validation_summary": "所有關鍵測試參數（溫度、力量、電阻值、持續時間、樣品數量）在三來源之間一致。主要差異在於格式和細節程度。OCR 文本為最完整的權威來源。"
+  },
+  "metadata": {
+    "schema_version": "2.0",
+    "extracted_by": "Claude (Gemini Antigravity Agent)",
+    "extraction_date": "2026-05-21",
+    "extraction_method": "三來源交叉驗證：Gemini CLI markdown, Original OCR/PDF markdown (authoritative), Batch3 structured JSON",
+    "source_files": [
+      "/Users/Openclaw/Documents/Standard-dictionary/資料庫/02_Standardized_Markdown/IEC62133-2_zh-TW_standardized.md",
+      "/Users/Openclaw/Documents/Henry & Beta/Standards/IEC 62133-2-2017 Amd 1-2021.md",
+      "/Users/Openclaw/Documents/Standard-dictionary/batch3/content/IEC62133-2_structured.json"
+    ],
+    "total_tests": 11,
+    "total_terms": 24,
+    "notes": [
+      "IEC 62133-2 為可攜式鋰電池安全的國際基礎標準",
+      "兩種充電程序：程序一（一般）適用於大多數測試；程序二（安全充電）適用於 7.3.1, 7.3.4, 7.3.5, 7.3.9",
+      "鈕扣電池（內阻 > 3 Ω）享有廣泛豁免",
+      "7.3.9 為設計評估級別的國家特定測試，僅 4 國要求",
+      "Amendment 1 (2021) 新增了鈕扣電池吞食風險相關要求 (8.2, 9.3)"
+    ]
+  }
+}
