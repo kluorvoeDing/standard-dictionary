@@ -1,0 +1,8 @@
+{
+  "name": "standard-dictionary-root",
+  "version": "1.0.0",
+  "description": "Standard Dictionary Vercel Root",
+  "scripts": {
+    "dev": "vercel dev"
+  }
+}

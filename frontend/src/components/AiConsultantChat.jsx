@@ -89,17 +89,6 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
     setLastRequestTime(now);
     setCooldown(10);
 
-    const keys = [
-      import.meta.env.VITE_GEMINI_API_KEY_1,
-      import.meta.env.VITE_GEMINI_API_KEY_2
-    ].filter(Boolean);
-
-    if (keys.length === 0) {
-      setMessages(prev => [...prev, { sender: 'System', text: '系統錯誤：未設定任何 VITE_GEMINI_API_KEY。' }]);
-      setIsTyping(false);
-      return;
-    }
-
     const contextData = {};
     selectedDocs.forEach(id => {
       if (testsData[id]) contextData[id] = testsData[id];
@@ -140,64 +129,47 @@ ${JSON.stringify(contextData)}
       });
     };
 
-    let success = false;
-    for (let i = 0; i < keys.length; i++) {
-      try {
-        const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:streamGenerateContent?key=${keys[i]}&alt=sse`;
-        const response = await fetch(url, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(requestBody)
-        });
+    try {
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(requestBody)
+      });
 
-        if (response.status === 429) {
-          console.warn(`Key ${i+1} rate limited. Switching to next key if available...`);
-          if (i < keys.length - 1) {
-             updateLastMessage(`【系統提示】第一把鑰匙忙碌中，自動切換至備援鑰匙...`);
+      if (!response.ok) {
+        throw new Error(`伺服器錯誤: ${response.status} ${response.statusText}`);
+      }
+      
+      const usedKeyIndex = response.headers.get('X-Used-Key-Index');
+      if (usedKeyIndex === '1') {
+         updateLastMessage(`【系統提示】第一把鑰匙忙碌中，自動切換至備援鑰匙...\n\n`);
+      }
+
+      const reader = response.body.getReader();
+      const decoder = new TextDecoder("utf-8");
+
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+        const chunk = decoder.decode(value, { stream: true });
+        const lines = chunk.split('\n');
+        for (const line of lines) {
+          if (line.startsWith('data: ')) {
+            const dataStr = line.replace('data: ', '').trim();
+            if (dataStr === '[DONE]') continue;
+            try {
+              const data = JSON.parse(dataStr);
+              const textChunk = data.candidates?.[0]?.content?.parts?.[0]?.text;
+              if (textChunk) {
+                aiResponseText += textChunk;
+                updateLastMessage((usedKeyIndex === '1' ? `【系統提示】第一把鑰匙忙碌中，自動切換至備援鑰匙...\n\n` : '') + aiResponseText);
+              }
+            } catch (e) {}
           }
-          continue;
-        }
-        if (!response.ok) {
-          throw new Error(`API Error: ${response.status}`);
-        }
-
-        success = true;
-        const reader = response.body.getReader();
-        const decoder = new TextDecoder("utf-8");
-
-        aiResponseText = ""; 
-        updateLastMessage("");
-
-        while (true) {
-          const { value, done } = await reader.read();
-          if (done) break;
-          const chunk = decoder.decode(value, { stream: true });
-          const lines = chunk.split('\n');
-          for (const line of lines) {
-            if (line.startsWith('data: ')) {
-              const dataStr = line.replace('data: ', '').trim();
-              if (dataStr === '[DONE]') continue;
-              try {
-                const data = JSON.parse(dataStr);
-                const textChunk = data.candidates?.[0]?.content?.parts?.[0]?.text;
-                if (textChunk) {
-                  aiResponseText += textChunk;
-                  updateLastMessage(aiResponseText);
-                }
-              } catch (e) {}
-            }
-          }
-        }
-        break; 
-      } catch (err) {
-        if (i === keys.length - 1) {
-          updateLastMessage(`【連線異常】無法取得回覆：${err.message}`);
         }
       }
-    }
-
-    if (!success && keys.length > 0) {
-      updateLastMessage(`【系統警告】所有 API Key 皆已觸發限制或連線失敗，請稍後再試。`);
+    } catch (err) {
+      updateLastMessage(`【連線異常】無法取得回覆：${err.message}`);
     }
 
     setIsTyping(false);
