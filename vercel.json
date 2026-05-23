@@ -2,6 +2,7 @@
   "name": "standard-dictionary",
   "version": 2,
   "buildCommand": "cd frontend && npm install && npm run build",
+  "devCommand": "cd frontend && npx vite --port $PORT",
   "outputDirectory": "frontend/dist",
   "framework": "vite"
 }
