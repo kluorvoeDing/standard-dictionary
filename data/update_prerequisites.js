@@ -6,7 +6,8 @@ let catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
 // Define the prerequisites mapping
 const prerequisitesMap = {
   "UL1973": {
-    "CELL": ["UL 1642", "IEC 62133"]
+    "CELL": ["UL 1642", "IEC 62133", "UL 2580"],
+    "MODULE": ["UL 2580"]
   },
   "UL9540": {
     "CELL": ["UL 1642"],
@@ -21,7 +22,7 @@ const prerequisitesMap = {
     "SYSTEM": ["UL 1973"]
   },
   "UL2271": {
-    "CELL": ["UL 1642", "UL 2271 (Cell tests)"]
+    "CELL": ["UL 1642", "UL 2271 (Cell tests)", "UL 2580"]
   },
   "UL2054": {
     "CELL": ["UL 1642"]
