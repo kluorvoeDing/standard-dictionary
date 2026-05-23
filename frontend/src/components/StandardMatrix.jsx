@@ -98,9 +98,9 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
   };
 
   return (
-    <div style={{ padding: '2rem', height: '100%', overflowY: 'auto', backgroundColor: 'var(--bg-color)', color: 'var(--text-primary)', position: 'relative' }}>
-      <div style={{ marginBottom: '2rem' }}>
-        <h2 style={{ fontSize: '2rem', marginBottom: '0.5rem', color: 'var(--accent-color)' }}>
+    <div style={{ padding: '2rem', paddingTop: '1.5rem', height: '100%', overflowY: 'auto', backgroundColor: 'var(--bg-color)', color: 'var(--text-primary)', position: 'relative' }}>
+      <div style={{ marginBottom: '1.5rem', paddingLeft: '3.5rem' }}>
+        <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--accent-color)' }}>
           標準應用領域導覽
         </h2>
         <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
@@ -109,14 +109,14 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
       </div>
 
       <div style={{ overflowX: 'auto', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-panel)', paddingBottom: selectedDocs.length >= 2 ? '80px' : '0' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left', minWidth: '1000px' }}>
+        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead>
             <tr>
-              <th style={{ padding: '1rem', borderBottom: '2px solid var(--border-color)', borderRight: '2px solid var(--border-color)', position: 'sticky', top: 0, left: 0, zIndex: 10, backgroundColor: 'var(--bg-panel)', minWidth: '120px' }}>
+              <th style={{ padding: '0.75rem 0.5rem', borderBottom: '2px solid var(--border-color)', borderRight: '2px solid var(--border-color)', position: 'sticky', top: 0, left: 0, zIndex: 10, backgroundColor: 'var(--bg-panel)', minWidth: '90px', fontSize: '0.9rem' }}>
                 層級 \ 應用
               </th>
               {applications.map(app => (
-                <th key={app} style={{ padding: '1rem', borderBottom: '2px solid var(--border-color)', borderRight: '1px solid var(--border-color)', position: 'sticky', top: 0, zIndex: 5, backgroundColor: 'var(--bg-panel)', fontWeight: '600', color: 'var(--text-primary)', whiteSpace: 'nowrap' }}>
+                <th key={app} style={{ padding: '0.75rem 0.5rem', borderBottom: '2px solid var(--border-color)', borderRight: '1px solid var(--border-color)', position: 'sticky', top: 0, zIndex: 5, backgroundColor: 'var(--bg-panel)', fontWeight: '600', color: 'var(--text-primary)', whiteSpace: 'nowrap', fontSize: '0.9rem' }}>
                   {app}
                 </th>
               ))}
@@ -130,11 +130,11 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
 
               return (
                 <tr key={lvl}>
-                  <th style={{ padding: '1.5rem 1rem', borderBottom: '1px solid var(--border-color)', borderRight: '2px solid var(--border-color)', position: 'sticky', left: 0, zIndex: 5, backgroundColor: 'var(--bg-panel)', color: 'var(--accent-color)', fontWeight: 'bold' }}>
+                  <th style={{ padding: '1rem 0.5rem', borderBottom: '1px solid var(--border-color)', borderRight: '2px solid var(--border-color)', position: 'sticky', left: 0, zIndex: 5, backgroundColor: 'var(--bg-panel)', color: 'var(--accent-color)', fontWeight: 'bold', fontSize: '0.9rem' }}>
                     {lvl}
                   </th>
                   {applications.map(app => (
-                    <td key={app} style={{ padding: '1rem', borderBottom: '1px solid var(--border-color)', borderRight: '1px solid var(--border-color)', verticalAlign: 'top' }}>
+                    <td key={app} style={{ padding: '0.75rem 0.5rem', borderBottom: '1px solid var(--border-color)', borderRight: '1px solid var(--border-color)', verticalAlign: 'top' }}>
                       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
                         {matrix[lvl][app].map(doc => {
                           const baseId = doc.base_standard_id || doc.document_id;
@@ -150,17 +150,19 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                               }}
                               title={doc.display_name || doc.full_name}
                               style={{
-                                padding: '0.4rem 0.8rem',
-                                borderRadius: '20px',
+                                padding: '0.25rem 0.5rem',
+                                borderRadius: '15px',
                                 border: `1px solid ${colors.solid}`,
                                 backgroundColor: isSelected ? colors.solid : colors.light,
                                 color: isSelected ? '#fff' : 'var(--text-primary)',
-                                fontSize: '0.85rem',
+                                fontSize: '0.75rem',
                                 fontWeight: isSelected ? 'bold' : '500',
                                 cursor: 'pointer',
                                 transition: 'all 0.2s',
                                 whiteSpace: 'nowrap',
-                                boxShadow: isSelected ? `0 0 10px ${colors.solid}66` : 'none'
+                                boxShadow: isSelected ? `0 0 10px ${colors.solid}66` : 'none',
+                                flexGrow: 1,
+                                textAlign: 'center'
                               }}
                               onMouseEnter={(e) => {
                                 if (!isSelected) {
