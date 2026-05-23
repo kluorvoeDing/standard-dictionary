@@ -234,7 +234,15 @@ export default function StandardColumn({ testRecords, filterObjects }) {
   };
 
   if (!testRecords || testRecords.length === 0) {
-    return <div style={emptyStyle}>無此測試</div>;
+    return (
+      <div 
+        style={emptyStyle} 
+        title="本標準可能未規範此層級之獨立測試。實務上，該層級可能需要滿足其他前提標準或元件認證（例如：系統端標準常要求電芯需先通過 UL1642 或 IEC62133 認證）。"
+      >
+        無此測試
+        <span style={{ marginLeft: '4px', fontSize: '10px', cursor: 'help' }}>ⓘ</span>
+      </div>
+    );
   }
 
   const validRecords = testRecords.filter(record => {
@@ -246,7 +254,15 @@ export default function StandardColumn({ testRecords, filterObjects }) {
   });
 
   if (validRecords.length === 0) {
-    return <div style={emptyStyle}>樣品層級不符</div>;
+    return (
+      <div 
+        style={emptyStyle}
+        title="本標準包含此測試，但不適用於您篩選的樣品層級。請確認該層級是否被標準豁免，或是否需依賴更底層之前提標準認證。"
+      >
+        樣品層級不符
+        <span style={{ marginLeft: '4px', fontSize: '10px', cursor: 'help' }}>ⓘ</span>
+      </div>
+    );
   }
 
   return (
