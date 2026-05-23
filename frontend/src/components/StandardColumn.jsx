@@ -258,24 +258,34 @@ export default function StandardColumn({ testRecords, filterObjects, prerequisit
         {preReqList.length > 0 && (
           <div style={{
             display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.25rem',
-            justifyContent: 'center',
-            marginTop: '0.25rem'
+            flexDirection: 'column',
+            gap: '0.4rem',
+            marginTop: '0.25rem',
+            alignItems: 'center'
           }}>
-            {preReqList.map(req => (
-              <span key={req} style={{
-                backgroundColor: 'rgba(255, 165, 0, 0.1)',
-                color: 'var(--accent-color)',
-                border: '1px solid rgba(255, 165, 0, 0.3)',
-                padding: '0.1rem 0.4rem',
-                borderRadius: '4px',
-                fontSize: '0.65rem',
-                fontWeight: '600'
-              }}>
-                依賴: {req}
-              </span>
-            ))}
+            <div style={{ fontSize: '0.6rem', lineHeight: '1.4', textAlign: 'center', opacity: 0.8 }}>
+              本標準未涵蓋此層級。實務上，樣品需先通過以下前提認證：
+            </div>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              gap: '0.25rem',
+              justifyContent: 'center'
+            }}>
+              {preReqList.map(req => (
+                <span key={req} style={{
+                  backgroundColor: 'rgba(128, 128, 128, 0.1)',
+                  color: 'var(--text-secondary)',
+                  border: '1px solid var(--border-color)',
+                  padding: '0.1rem 0.4rem',
+                  borderRadius: '4px',
+                  fontSize: '0.65rem',
+                  fontWeight: '600'
+                }}>
+                  前提標準: {req}
+                </span>
+              ))}
+            </div>
           </div>
         )}
       </div>
