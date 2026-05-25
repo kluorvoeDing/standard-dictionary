@@ -10,7 +10,9 @@
     "type": "standard",
     "scope": "涵蓋電動汽車（EV）用的電能存儲組件 (EESAs)，如電池包、模組及電化學電容組件，確保人員不因電解液洩漏、爆炸、火災或電擊而受傷。",
     "applicable_objects": [
-      "PACK_SYSTEM"
+      "PACK_SYSTEM",
+      "MODULE",
+      "CELL"
     ],
     "source_pdf": "ULC-2580-2022-en.pdf",
     "source_gemini_md": "ULC2580_zh-TW_standardized.md"
@@ -26,7 +28,8 @@
       "category": "ELEC",
       "subcategory": "過充電 (Overcharge)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "soc": {
@@ -70,7 +73,8 @@
       "category": "ELEC",
       "subcategory": "外部短路 (External Short Circuit)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "soc": {
@@ -114,7 +118,8 @@
       "category": "ELEC",
       "subcategory": "過放電 (Over-discharge)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "soc": {
@@ -155,7 +160,8 @@
       "category": "THERM",
       "subcategory": "極端溫度 (Extreme Temperature)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "temperature": {
@@ -188,7 +194,8 @@
       "category": "ELEC",
       "subcategory": "不平衡充電 (Imbalanced Charging)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "imbalance_setup": {
@@ -222,7 +229,8 @@
       "category": "ELEC",
       "subcategory": "耐壓測試 (Dielectric Withstand)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "applicability": {
@@ -261,7 +269,8 @@
       "category": "ELEC",
       "subcategory": "絕緣電阻 (Isolation Resistance)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "method": {
@@ -297,7 +306,8 @@
       "category": "THERM",
       "subcategory": "熱管理失效 (Thermal Management Failure)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "cooling_disabled": {
@@ -333,7 +343,8 @@
       "category": "MECH",
       "subcategory": "旋轉翻滾 (Rollover)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "rotation": {
@@ -370,7 +381,8 @@
       "category": "MECH",
       "subcategory": "振動 (Vibration)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "profile": {
@@ -404,7 +416,8 @@
       "category": "MECH",
       "subcategory": "機械衝擊 (Mechanical Shock)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "waveform": {
@@ -441,7 +454,8 @@
       "category": "MECH",
       "subcategory": "跌落 (Drop)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "height": {
@@ -477,7 +491,8 @@
       "category": "MECH",
       "subcategory": "擠壓 (Crush)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "force": {
@@ -511,7 +526,8 @@
       "category": "THERM",
       "subcategory": "溫度循環 (Temperature Cycling)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "profile": {
@@ -541,7 +557,8 @@
       "category": "THERM",
       "subcategory": "鹽霧測試 (Salt Spray)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "method": {
@@ -571,7 +588,8 @@
       "category": "THERM",
       "subcategory": "浸水測試 (Water Immersion)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "method": {
@@ -600,7 +618,8 @@
       "category": "THERM",
       "subcategory": "耐火測試 (Fire Resistance)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "fire_exposure": {
@@ -630,7 +649,8 @@
       "category": "THERM",
       "subcategory": "熱擴散 (Thermal Propagation)",
       "test_objects": [
-        "PACK_SYSTEM"
+        "PACK_SYSTEM",
+        "MODULE"
       ],
       "conditions": {
         "trigger": {
@@ -649,6 +669,258 @@
       "related_tests": [],
       "source_reference": "43.2",
       "original_text_snippet": "43.2 Single cell failure design tolerance (lithium ion): The EESA shall be evaluated for its ability to tolerate a single cell failure without resulting in a hazardous condition. A trigger cell shall be used to initiate an internal short circuit."
+    },
+    {
+      "id": "ULC2580-B2-1",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "單電池振動測試 (Cell Vibration)",
+      "name_en": "Cell Vibration Test",
+      "section": "Annex B2.1",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "method": {
+          "value": "IEC 62660-2",
+          "detail": "依據 IEC 62660-2 進行振動。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏、無破裂",
+        "details": [
+          "No venting, leakage, rupture, fire, or explosion"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex B2.1",
+      "original_text_snippet": "The cell shall be subjected to the Vibration, Mechanical Test as outlined in IEC 62660-2."
+    },
+    {
+      "id": "ULC2580-B2-2",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "單電池衝擊測試 (Cell Shock)",
+      "name_en": "Cell Shock Test",
+      "section": "Annex B2.2",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "method": {
+          "value": "IEC 62660-2",
+          "detail": "依據 IEC 62660-2 進行機械衝擊。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏、無破裂",
+        "details": [
+          "No venting, leakage, rupture, fire, or explosion"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex B2.2",
+      "original_text_snippet": "The cell shall be subjected to the Mechanical Shock, Mechanical Test as outlined in IEC 62660-2."
+    },
+    {
+      "id": "ULC2580-B2-3",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "單電池跌落測試 (Cell Drop)",
+      "name_en": "Cell Drop Test",
+      "section": "Annex B2.3",
+      "category": "MECH",
+      "subcategory": "跌落 (Drop)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "height": {
+          "value": "1.0 m",
+          "detail": "從 1.0 m 跌落至平坦混凝土表面，共3次。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "No venting, leakage, rupture, fire, or explosion"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex B2.3",
+      "original_text_snippet": "The cell shall be dropped from a height of 1.0 m onto a flat concrete surface."
+    },
+    {
+      "id": "ULC2580-B2-4",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "單電池擠壓測試 (Cell Crush)",
+      "name_en": "Cell Crush Test",
+      "section": "Annex B2.4",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "method": {
+          "value": "IEC 62660-2",
+          "detail": "依據 IEC 62660-2 進行擠壓測試。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "No fire or explosion"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex B2.4",
+      "original_text_snippet": "The cell shall be subjected to the Crush, Mechanical Test as outlined in IEC 62660-2."
+    },
+    {
+      "id": "ULC2580-B2-5",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "單電池加熱測試 (Cell Heating)",
+      "name_en": "Cell Heating Test",
+      "section": "Annex B2.5",
+      "category": "THERM",
+      "subcategory": "極端溫度 (Extreme Temperature)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "method": {
+          "value": "IEC 62660-2",
+          "detail": "依據 IEC 62660-2 進行高溫耐久性測試。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂",
+        "details": [
+          "No rupture, fire or explosion"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex B2.5",
+      "original_text_snippet": "The cell shall be subjected to the High Temperature Endurance, Thermal Test as outlined in IEC 62660-2."
+    },
+    {
+      "id": "ULC2580-B2-6",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "單電池溫度循環 (Cell Temperature Cycling)",
+      "name_en": "Cell Temperature Cycling Test",
+      "section": "Annex B2.6",
+      "category": "THERM",
+      "subcategory": "溫度循環 (Temperature Cycling)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "method": {
+          "value": "IEC 62660-2",
+          "detail": "依據 IEC 62660-2 進行溫度循環測試。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "No venting, leakage, rupture, fire, or explosion"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex B2.6",
+      "original_text_snippet": "The cell shall be subjected to the Temperature Cycling, Thermal Test as outlined in IEC 62660-2."
+    },
+    {
+      "id": "ULC2580-B2-7",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "單電池外部短路 (Cell External Short Circuit)",
+      "name_en": "Cell External Short Circuit Test",
+      "section": "Annex B2.7",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "method": {
+          "value": "IEC 62660-2",
+          "detail": "依據 IEC 62660-2 進行外部短路測試。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂",
+        "details": [
+          "No rupture, fire or explosion"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex B2.7",
+      "original_text_snippet": "The cell shall be subjected to the External Short Circuit, Electrical Test as outlined in IEC 62660-2."
+    },
+    {
+      "id": "ULC2580-B2-8",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "單電池過充電 (Cell Overcharge)",
+      "name_en": "Cell Overcharge Test",
+      "section": "Annex B2.8",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "termination": {
+          "value": "120%電壓 或 130% SOC",
+          "detail": "以最大充電電流恆流充電至120%最大電壓或130% SOC。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂",
+        "details": [
+          "No rupture, fire or explosion"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex B2.8",
+      "original_text_snippet": "A cell shall be subjected to a constant current charge at the maximum specified charging current until the cell reaches 120%..."
+    },
+    {
+      "id": "ULC2580-B2-9",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "單電池強制放電 (Cell Forced Discharge)",
+      "name_en": "Cell Forced Discharge Test",
+      "section": "Annex B2.9",
+      "category": "ELEC",
+      "subcategory": "強制放電 (Forced Discharge)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "method": {
+          "value": "IEC 62660-2",
+          "detail": "依據 IEC 62660-2 進行強制放電測試。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂",
+        "details": [
+          "No rupture, fire or explosion"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex B2.9",
+      "original_text_snippet": "The cell shall be subjected to the Forced Discharge, Electrical Test as outlined in IEC 62660-2."
     }
   ],
   "test_sequence": {
@@ -715,6 +987,6 @@
       "單電芯失效測試：Section 43 是強制核心項目"
     ],
     "total_test_entries": 18,
-    "note": "已排除 Annex B 與 Annex D 中作為子組件引用的細節測試，專注於系統層級 (PACK_SYSTEM) 的主要測試"
+    "note": "已排除 Annex B 中不適用的部分，但加入了 Annex B 的單電池(CELL)強制測試項目與系統的模組(MODULE)適用性。"
   }
 }
