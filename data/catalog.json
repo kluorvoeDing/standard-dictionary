@@ -505,6 +505,7 @@
     "li_applicable": true,
     "item_count": 28,
     "available_objects": [
+      "CELL",
       "MODULE",
       "PACK_SYSTEM"
     ],
@@ -876,6 +877,8 @@
     "li_applicable": true,
     "item_count": 22,
     "available_objects": [
+      "CELL",
+      "MODULE",
       "PACK_SYSTEM"
     ],
     "test_type": null,

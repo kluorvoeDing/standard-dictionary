@@ -9,7 +9,11 @@
     "publication_date": "2022-02-25 (Third Edition)",
     "type": "standard",
     "scope": "涵蓋用於固定應用（如太陽能、風能儲存或 UPS）的電池系統，以及輕軌 (LER) 應用和車輛輔助電源 (VAP) 的電池系統。",
-    "applicable_objects": ["MODULE", "PACK_SYSTEM"],
+    "applicable_objects": [
+      "MODULE",
+      "PACK_SYSTEM",
+      "CELL"
+    ],
     "source_pdf": "s1973_3.pdf",
     "source_gemini_md": "UL1973_zh-TW_standardized.md"
   },
@@ -23,7 +27,10 @@
       "section": "15",
       "category": "ELEC",
       "subcategory": "過充電 (Overcharge)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "0% SOC (EODV)",
@@ -70,7 +77,10 @@
       "section": "16",
       "category": "ELEC",
       "subcategory": "過電流 (Over-current)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "0% SOC (EODV)",
@@ -104,7 +114,10 @@
       "section": "17",
       "category": "ELEC",
       "subcategory": "外部短路 (External Short Circuit)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "100% SOC (MOSOC)",
@@ -139,7 +152,10 @@
       "section": "18",
       "category": "ELEC",
       "subcategory": "過電流 (Over-current)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "100% SOC",
@@ -173,7 +189,10 @@
       "section": "19",
       "category": "ELEC",
       "subcategory": "過放電 (Over-discharge)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "100% SOC",
@@ -204,7 +223,10 @@
       "section": "20",
       "category": "THERM",
       "subcategory": "極限工作測試 (Operating Limits)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "temperature": {
           "value": "最高/最低工作溫度",
@@ -235,7 +257,10 @@
       "section": "24",
       "category": "THERM",
       "subcategory": "熱穩定失效 (Thermal Stability Failure)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "0% 或 100% SOC",
@@ -267,7 +292,10 @@
       "section": "28",
       "category": "MECH",
       "subcategory": "振動 (Vibration)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "100% SOC",
@@ -299,7 +327,10 @@
       "section": "29",
       "category": "MECH",
       "subcategory": "機械衝擊 (Mechanical Shock)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "100% SOC",
@@ -331,7 +362,10 @@
       "section": "30",
       "category": "MECH",
       "subcategory": "擠壓 (Crush)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "100% SOC",
@@ -363,7 +397,10 @@
       "section": "33",
       "category": "MECH",
       "subcategory": "跌落 (Drop)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "100% SOC",
@@ -396,7 +433,10 @@
       "section": "35",
       "category": "MECH",
       "subcategory": "外殼應力 (Case Stress)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "0% SOC",
@@ -428,7 +468,10 @@
       "section": "42",
       "category": "THERM",
       "subcategory": "熱擴散 (Thermal Propagation)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "100% SOC",
@@ -453,6 +496,200 @@
       "related_tests": [],
       "source_reference": "Section 42",
       "original_text_snippet": "A trigger cell initiates thermal runaway. Internal fire shall not spread to outside of the DUT enclosure."
+    },
+    {
+      "id": "UL1973-E3",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "單電池短路測試 (Cell Short Circuit)",
+      "name_en": "Cell Short Circuit Test",
+      "section": "Annex E3",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "100%",
+          "detail": "充滿電 (MOSOC) 狀態。"
+        },
+        "resistance": {
+          "value": "≤ 20 mΩ",
+          "detail": "外部電阻小於等於 20 mΩ。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex E3",
+      "original_text_snippet": "The cell shall be subjected to a short circuit condition using an external resistance of ≤ 20 mΩ."
+    },
+    {
+      "id": "UL1973-E4",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "單電池衝擊測試 (Cell Impact)",
+      "name_en": "Cell Impact Test",
+      "section": "Annex E4",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "100%",
+          "detail": "充滿電狀態。"
+        },
+        "impact": {
+          "value": "標準衝擊",
+          "detail": "使用規定重量及高度進行單一衝擊。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex E4",
+      "original_text_snippet": "Fully charged, conditioned cells shall be subjected to an impact test."
+    },
+    {
+      "id": "UL1973-E5",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "單電池跌落衝擊 (Cell Drop Impact)",
+      "name_en": "Cell Drop Impact",
+      "section": "Annex E5",
+      "category": "MECH",
+      "subcategory": "跌落 (Drop)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "100%",
+          "detail": "充滿電狀態。"
+        },
+        "height": {
+          "value": "1.0 m",
+          "detail": "從 1.0 m 高度跌落 3 次。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex E5",
+      "original_text_snippet": "Fully charged cells shall be dropped three times from a height of 1 m."
+    },
+    {
+      "id": "UL1973-E6",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "單電池加熱測試 (Cell Heating)",
+      "name_en": "Cell Heating Test",
+      "section": "Annex E6",
+      "category": "THERM",
+      "subcategory": "極端溫度 (Extreme Temperature)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "130°C",
+          "detail": "以 5°C/min 升溫至 130°C 並維持 10 分鐘。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex E6",
+      "original_text_snippet": "Fully charged, conditioned cells shall be subjected to a heating test."
+    },
+    {
+      "id": "UL1973-E7",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "單電池過充電測試 (Cell Overcharge)",
+      "name_en": "Cell Overcharge Test",
+      "section": "Annex E7",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "charging_rate": {
+          "value": "最大充電電流",
+          "detail": "以最大充電電流恆流充電。"
+        },
+        "termination": {
+          "value": "120% 電壓或 130% SOC",
+          "detail": "充電至 120% 最大規定電壓或 130% SOC。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex E7",
+      "original_text_snippet": "The cells are charged with a constant current at the maximum specified charge current until the voltage reaches 120%."
+    },
+    {
+      "id": "UL1973-E8",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "單電池強制放電 (Cell Forced Discharge)",
+      "name_en": "Cell Forced Discharge",
+      "section": "Annex E8",
+      "category": "ELEC",
+      "subcategory": "強制放電 (Forced Discharge)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "0%",
+          "detail": "放電至截止電壓。"
+        },
+        "duration": {
+          "value": "90分鐘",
+          "detail": "以 1.0 ItA 強制放電 90 分鐘。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Annex E8",
+      "original_text_snippet": "The discharged cells are subjected to a forced discharge at a constant current 1.0 ItA for 90 min."
     }
   ],
   "test_sequence": {},
@@ -460,13 +697,20 @@
     {
       "id": "GE-01",
       "description": "系統與子組件替代：測試可在子組件上進行，前提是其具備完整系統的代表性",
-      "applicable_tests": ["all"],
+      "applicable_tests": [
+        "all"
+      ],
       "source_reference": "General"
     },
     {
       "id": "GE-02",
       "description": "機械測試豁免：靜止式儲能 (Stationary) 系統若非安裝於輕軌 (LER) 或車輛輔助動力 (VAP)，豁免振動、衝擊、擠壓、熱循環等測試",
-      "applicable_tests": ["UL1973-28", "UL1973-29", "UL1973-30", "UL1973-38"],
+      "applicable_tests": [
+        "UL1973-28",
+        "UL1973-29",
+        "UL1973-30",
+        "UL1973-38"
+      ],
       "source_reference": "Sections 28, 29, 30"
     }
   ],
