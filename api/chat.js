@@ -67,7 +67,7 @@ export default async function handler(req) {
       const engine = engines[i];
       try {
         if (engine.type === 'gemini') {
-          const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:streamGenerateContent?key=${engine.key}&alt=sse`;
+          const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:streamGenerateContent?key=${engine.key}&alt=sse`;
           finalRes = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
