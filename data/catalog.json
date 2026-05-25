@@ -16,7 +16,7 @@
     "available_objects": [
       "CELL",
       "MODULE",
-      "PACK"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "recommended_practice",
@@ -63,9 +63,7 @@
     "li_applicable": true,
     "item_count": 16,
     "available_objects": [
-      "PACK",
-      "SYSTEM",
-      "VEHICLE"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -117,9 +115,7 @@
     "li_applicable": true,
     "item_count": 17,
     "available_objects": [
-      "PACK",
-      "SYSTEM",
-      "VEHICLE"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -171,7 +167,7 @@
     "item_count": 21,
     "available_objects": [
       "CELL",
-      "PACK"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -219,7 +215,7 @@
     "item_count": 21,
     "available_objects": [
       "CELL",
-      "PACK"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -268,9 +264,7 @@
     "item_count": 23,
     "available_objects": [
       "CELL",
-      "PACK",
-      "SYSTEM",
-      "VEHICLE"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -318,8 +312,7 @@
     "item_count": 18,
     "available_objects": [
       "CELL",
-      "PACK",
-      "SYSTEM"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -367,8 +360,8 @@
     "item_count": 26,
     "available_objects": [
       "CELL",
-      "CLUSTER",
-      "MODULE"
+      "MODULE",
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -416,8 +409,7 @@
     "item_count": 13,
     "available_objects": [
       "CELL",
-      "COIN_CELL",
-      "PACK"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -464,9 +456,9 @@
     "li_applicable": true,
     "item_count": 10,
     "available_objects": [
-      "BATTERY_SYSTEM",
       "CELL",
-      "CELL_BLOCK"
+      "MODULE",
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -513,9 +505,8 @@
     "li_applicable": true,
     "item_count": 28,
     "available_objects": [
-      "CELL",
-      "PACK",
-      "SYSTEM"
+      "MODULE",
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -571,7 +562,7 @@
     "item_count": 18,
     "available_objects": [
       "CELL",
-      "PACK"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -623,7 +614,7 @@
     "item_count": 14,
     "available_objects": [
       "CELL",
-      "POWER_BANK"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -674,7 +665,8 @@
     "li_applicable": true,
     "item_count": 24,
     "available_objects": [
-      "PACK"
+      "MODULE",
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -727,10 +719,7 @@
     "li_applicable": true,
     "item_count": 18,
     "available_objects": [
-      "BATTERY_PACK",
-      "GASKET_MATERIAL",
-      "MOTOR",
-      "UAS"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -781,7 +770,7 @@
     "li_applicable": true,
     "item_count": 24,
     "available_objects": [
-      "SYSTEM"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -841,8 +830,7 @@
     "li_applicable": true,
     "item_count": 11,
     "available_objects": [
-      "CELL",
-      "PACK"
+      "CELL"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -888,9 +876,7 @@
     "li_applicable": true,
     "item_count": 22,
     "available_objects": [
-      "CELL",
-      "PACK",
-      "SYSTEM"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -943,9 +929,7 @@
     "item_count": 8,
     "available_objects": [
       "CELL",
-      "COMPONENT_CELL",
-      "PACK",
-      "SINGLE_CELL_BATTERY"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -992,9 +976,8 @@
     "item_count": 4,
     "available_objects": [
       "CELL",
-      "INSTALLATION",
       "MODULE",
-      "UNIT"
+      "PACK_SYSTEM"
     ],
     "test_type": "測試方法標準 (Test Method Standard)",
     "normativity": "normative",
@@ -1054,8 +1037,7 @@
     "li_applicable": true,
     "item_count": 11,
     "available_objects": [
-      "CELL",
-      "PACK"
+      "CELL"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -1102,8 +1084,7 @@
     "li_applicable": true,
     "item_count": 3,
     "available_objects": [
-      "PACK",
-      "SYSTEM"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",

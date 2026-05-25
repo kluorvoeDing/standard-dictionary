@@ -138,7 +138,18 @@ ${JSON.stringify(contextData)}
       });
 
       if (!response.ok) {
-        throw new Error(`伺服器錯誤: ${response.status} ${response.statusText}`);
+        let errMsg = `伺服器錯誤: ${response.status} ${response.statusText}`;
+        try {
+          const errData = await response.json();
+          if (errData.details) {
+            errMsg += `\n詳細資訊: ${JSON.stringify(errData.details)}`;
+          } else if (errData.error) {
+            errMsg += `\n${errData.error}`;
+          }
+        } catch (e) {
+          // Ignore
+        }
+        throw new Error(errMsg);
       }
       
       const usedEngineIndex = response.headers.get('X-Used-Engine-Index');

@@ -9,7 +9,10 @@
     "publication_date": "2023-09-14",
     "type": "standard",
     "scope": "涵蓋用於輕型電動車（如電動自行車、電動滑板車、電動輪椅、高爾夫球車等）的電能存儲組件 (EESAs)，包含電池包、電容包及其模組。",
-    "applicable_objects": ["MODULE", "PACK_SYSTEM"],
+    "applicable_objects": [
+      "MODULE",
+      "PACK_SYSTEM"
+    ],
     "source_pdf": "s2271_3_20230914.pdf",
     "source_gemini_md": "UL2271_zh-TW_standardized.md"
   },
@@ -23,7 +26,10 @@
       "section": "23",
       "category": "ELEC",
       "subcategory": "過充電 (Overcharge)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "滿充 (MOSOC)",
@@ -67,7 +73,10 @@
       "section": "24",
       "category": "ELEC",
       "subcategory": "過電流 (Over-current)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "放電至 EODV",
@@ -102,7 +111,10 @@
       "section": "25",
       "category": "ELEC",
       "subcategory": "外部短路 (External Short Circuit)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "滿充 (MOSOC)",
@@ -141,7 +153,10 @@
       "section": "26",
       "category": "ELEC",
       "subcategory": "過電流 (Over-current)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "滿充 (MOSOC)",
@@ -180,7 +195,10 @@
       "section": "27",
       "category": "ELEC",
       "subcategory": "過放電 (Over-discharge)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc": {
           "value": "滿充 (MOSOC)",
@@ -219,7 +237,10 @@
       "section": "28",
       "category": "THERM",
       "subcategory": "高溫 (High Temperature)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "temperature": {
           "value": "上限充電溫度",
@@ -251,7 +272,10 @@
       "section": "29",
       "category": "ELEC",
       "subcategory": "不平衡充電 (Imbalanced Charging)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "soc_preparation": {
           "value": "人工不平衡狀態",
@@ -286,7 +310,10 @@
       "section": "30",
       "category": "ELEC",
       "subcategory": "絕緣耐壓 (Dielectric Withstand)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "applicability": {
           "value": "≥ 60 Vdc 系統",
@@ -323,7 +350,10 @@
       "section": "31",
       "category": "ELEC",
       "subcategory": "絕緣電阻 (Insulation Resistance)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "test_method_120V": {
           "value": "系統 ≥ 120 V",
@@ -354,7 +384,10 @@
       "section": "32",
       "category": "ELEC",
       "subcategory": "接地連續性 (Grounding Continuity)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "test_current": {
           "value": "1.5倍 Ic 或 25A",
@@ -384,7 +417,10 @@
       "section": "33",
       "category": "MECH",
       "subcategory": "振動 (Vibration)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "vibration_type": {
           "value": "隨機振動 5-200 Hz",
@@ -419,7 +455,10 @@
       "section": "34",
       "category": "MECH",
       "subcategory": "機械衝擊 (Mechanical Shock)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "waveform": {
           "value": "半正弦波",
@@ -449,7 +488,10 @@
       "section": "35",
       "category": "MECH",
       "subcategory": "擠壓 (Crush)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "applicability": {
           "value": "道路用 LEV",
@@ -484,7 +526,10 @@
       "section": "36.1",
       "category": "MECH",
       "subcategory": "跌落 (Drop)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "height": {
           "value": "1.0 m",
@@ -512,7 +557,9 @@
       "exemptions": [
         "非用戶可拆卸設備不適用本節"
       ],
-      "related_tests": ["UL2271-T36b"],
+      "related_tests": [
+        "UL2271-T36b"
+      ],
       "source_reference": "36.1",
       "original_text_snippet": "Fully charged DUT dropped 3 times from 1.0 m."
     },
@@ -524,7 +571,10 @@
       "section": "36.2",
       "category": "MECH",
       "subcategory": "跌落 (Drop)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "height": {
           "value": "≥ 1.0 m",
@@ -544,7 +594,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["UL2271-T36a"],
+      "related_tests": [
+        "UL2271-T36a"
+      ],
       "source_reference": "36.2",
       "original_text_snippet": "Fully charged DUT dropped from 1.0 m minimum."
     },
@@ -556,7 +608,10 @@
       "section": "37",
       "category": "MECH",
       "subcategory": "應力釋放 (Stress Relief)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "temperature": {
           "value": "70°C 或 T_max + 10°C",
@@ -587,7 +642,10 @@
       "section": "38",
       "category": "MECH",
       "subcategory": "把手負載 (Handle Loading)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "force": {
           "value": "4 倍重量",
@@ -619,7 +677,10 @@
       "section": "39",
       "category": "MECH",
       "subcategory": "翻滾 (Roll Over)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "rotation": {
           "value": "90°/15秒，360°旋轉",
@@ -651,7 +712,10 @@
       "section": "40",
       "category": "MECH",
       "subcategory": "電線應力釋放 (Strain Relief)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "pull_test": {
           "value": "2 倍重量拉力",
@@ -685,7 +749,10 @@
       "section": "41",
       "category": "THERM",
       "subcategory": "水浸 (Water Immersion)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "fluid": {
           "value": "5% NaCl 鹽水",
@@ -720,7 +787,10 @@
       "section": "42",
       "category": "THERM",
       "subcategory": "噴水 (Water Exposure)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "standard": {
           "value": "IPX3 或更高",
@@ -750,7 +820,10 @@
       "section": "43",
       "category": "THERM",
       "subcategory": "溫度循環 (Thermal Cycling)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "standard": {
           "value": "SAE J2464",
@@ -787,7 +860,10 @@
       "section": "45",
       "category": "THERM",
       "subcategory": "熱失控傳播 (Thermal Propagation)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "applicability": {
           "value": "> 1 kWh 系統",

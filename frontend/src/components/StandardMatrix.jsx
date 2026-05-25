@@ -25,7 +25,7 @@ const getMajorLevel = (raw) => {
 
 const MAJOR_LEVELS = ['Cell', 'Module', 'Pack', 'System', 'Other'];
 
-export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, setIsComparing }) {
+export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, setIsComparing, setSelectedDocs }) {
   const [activeInfoNode, setActiveInfoNode] = useState(null);
 
   const { applications, matrix } = useMemo(() => {
@@ -54,7 +54,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
       appsSet.add(getApplication(baseId));
     });
     // Sort applications to put General last, and others alphabetically or logically
-    const appOrder = ['電動汽車 (EV)', '儲能系統 (ESS)', '便攜式電子 (Portable)', '輕型電動車 (LEV)', '電動自行車 (E-Bike)', '工業應用 (Industrial)', '無人機 (UAS)', '運輸安全 (Transport)', '一般應用 (General)'];
+    const appOrder = ['運輸安全 (Transport)', '一般應用 (General)', '便攜式電子 (Portable)', '無人機 (UAS)', '輕型電動車 (LEV)', '電動自行車 (E-Bike)', '工業應用 (Industrial)', '電動汽車 (EV)', '儲能系統 (ESS)'];
     const applications = Array.from(appsSet).sort((a, b) => {
       const indexA = appOrder.indexOf(a);
       const indexB = appOrder.indexOf(b);
@@ -150,6 +150,8 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                               }}
                               title={doc.display_name || doc.full_name}
                               style={{
+                                width: '100%',
+                                maxWidth: '105px',
                                 padding: '0.25rem 0.5rem',
                                 borderRadius: '15px',
                                 border: `1px solid ${colors.solid}`,
@@ -266,6 +268,25 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                 )
               })}
             </div>
+            <button
+              onClick={() => setSelectedDocs([])}
+              style={{
+                backgroundColor: 'rgba(239, 68, 68, 0.1)',
+                color: '#ef4444',
+                border: '1px solid #ef4444',
+                padding: '0.2rem 0.6rem',
+                borderRadius: '12px',
+                fontSize: '0.8rem',
+                fontWeight: 'bold',
+                cursor: 'pointer',
+                marginLeft: '0.5rem',
+                transition: 'all 0.2s'
+              }}
+              onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#ef4444'; e.currentTarget.style.color = 'white'; }}
+              onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'rgba(239, 68, 68, 0.1)'; e.currentTarget.style.color = '#ef4444'; }}
+            >
+              ✕ 清空
+            </button>
           </div>
           <button
             onClick={() => setIsComparing(true)}
