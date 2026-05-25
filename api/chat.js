@@ -61,6 +61,7 @@ export default async function handler(req) {
     let finalRes = null;
     let usedEngine = null;
     let usedEngineIndex = 0;
+    let lastErrorData = null;
 
     for (let i = 0; i < engines.length; i++) {
       const engine = engines[i];
@@ -99,6 +100,11 @@ export default async function handler(req) {
         }
         
         if (!finalRes.ok) {
+          try {
+            lastErrorData = await finalRes.json();
+          } catch (e) {
+            lastErrorData = { message: finalRes.statusText };
+          }
           console.warn(`${engine.name} returned ${finalRes.status}. Trying next...`);
           continue;
         }
@@ -113,7 +119,10 @@ export default async function handler(req) {
     }
 
     if (!finalRes || !finalRes.ok) {
-      return new Response(JSON.stringify({ error: 'All API engines failed or rate limited.' }), {
+      return new Response(JSON.stringify({ 
+        error: '所有 API 引擎均失敗或達上限 (All API engines failed or rate limited).',
+        details: lastErrorData 
+      }), {
         status: finalRes ? finalRes.status : 500,
         headers: { 'Content-Type': 'application/json' },
       });

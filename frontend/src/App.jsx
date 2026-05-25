@@ -117,6 +117,7 @@ function App() {
             toggleDocument={toggleDocument} 
             selectedDocs={selectedDocs} 
             setIsComparing={setIsComparing} 
+            setSelectedDocs={setSelectedDocs}
           />
         ) : (
           <SplitScreenGrid 
