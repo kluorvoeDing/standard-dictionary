@@ -21,6 +21,14 @@
 
 ## 紀錄
 
+## 2026-05-26 (Bug Fix)
+- 事件：將 AI 小幫手的 Gemini 預設模型升級至 `gemini-3.1-flash`
+- 背景：原使用的 `gemini-1.5-flash` 在 2026 年的 API 環境中已被標示為棄用 (404 Not Found)，導致 AI 小幫手無法正常回覆。
+- 內容：修改 `api/chat.js`，將 API URL 中的模型字串從 `gemini-1.5-flash` 更換為最新的 `gemini-3.1-flash`。
+- 影響：成功恢復 AI 小幫手的連線，讓使用者可以繼續查詢法規細節。
+- 後續：觀察 `gemini-3.1-flash` 在法規問答上的準確度是否有顯著提升。
+
+
 ## 2026-05-25 (UI Polish & Bug Fix)
 - 事件：修復 AI 小幫手連線錯誤並優化領域導覽矩陣
 - 背景：
