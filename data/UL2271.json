@@ -44,8 +44,8 @@
           "detail": "在充電電路中引入單一故障條件。"
         },
         "termination": {
-          "value": "保護啟動或超出限值",
-          "detail": "測試持續至保護電路終止充電、達到正常運行限值，或發生起火/爆炸。"
+          "value": "電壓達 110% 且靜置 2 小時",
+          "detail": "測試持續至保護電路終止充電，或電壓達到規定的 110 % 且溫度恢復至環境溫度/穩定狀態，並額外靜置 2 小時（或發生起火/爆炸）。"
         }
       },
       "acceptance_criteria": {
@@ -104,7 +104,9 @@
           "無保護控制失效 (No Loss of protection controls - P)"
         ]
       },
-      "exemptions": [],
+      "exemptions": [
+        "若過流保護限值高於最大充電速率的 120%，則測試電流應為高於過流保護限值的 5%"
+      ],
       "related_tests": [],
       "source_reference": "24",
       "original_text_snippet": "Sample charged at rate higher than specified maximum level."
@@ -178,6 +180,10 @@
         "fault_condition": {
           "value": "單一故障",
           "detail": "放電電路單一故障（可能導致過載）。"
+        },
+        "duration": {
+          "value": "持續至完放或靜置 7 小時",
+          "detail": "測試持續至完全放電，或保護啟動/溫度穩定後並已經過 7 小時。"
         }
       },
       "acceptance_criteria": {
@@ -267,11 +273,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不超限值，保護不啟動，表面溫度合規",
+        "summary": "不超限值，保護不啟動，表面及元件溫度合規",
         "details": [
           "電壓、電流、溫度不得超出製造商限值",
           "熱保護和過流保護裝置不應啟動",
-          "表面溫度符合表 28.2 限值"
+          "表面溫度符合表 28.2 限值，且元件溫度不得超出表 28.1 規格限值"
         ]
       },
       "exemptions": [],
@@ -335,8 +341,8 @@
           "detail": "僅適用於額定電壓 60 Vdc 及以上的電路。"
         },
         "test_voltage": {
-          "value": "1000V + 2 倍額定電壓",
-          "detail": "施加 1,000 V plus twice rated voltage 的電壓 (直流需乘以 1.414)。"
+          "value": "2 倍額定電壓 × 1.414",
+          "detail": "施加 2 倍額定電壓的電壓 (直流需乘以 1.414)。若連接至 AC 電網，則為 1000 V + 2 倍額定電壓。"
         },
         "duration": {
           "value": "1 分鐘",
