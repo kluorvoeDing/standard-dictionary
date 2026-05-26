@@ -39,11 +39,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "不起火、不爆炸",
         "details": [
           "不應起火 (No fire)",
           "不應爆炸 (No explosion)",
-          "不應漏液 (No leakage)"
+          "不應在防爆閥或泄壓點之外的位置發生破裂",
+          "不應冒煙"
         ]
       },
       "exemptions": [],
@@ -79,7 +80,9 @@
         "details": [
           "不應起火 (No fire)",
           "不應爆炸 (No explosion)",
-          "不應漏液 (No leakage)"
+          "不應漏液 (No leakage)",
+          "不應在防爆閥或泄壓點之外的位置發生破裂",
+          "不應冒煙"
         ]
       },
       "exemptions": [],
@@ -116,7 +119,8 @@
           "不應起火 (No fire)",
           "不應爆炸 (No explosion)",
           "不應漏液 (No leakage)",
-          "外殼不得破裂及破裂位置 (針對單體)"
+          "不應在防爆閥或泄壓點之外的位置發生破裂",
+          "不應冒煙"
         ]
       },
       "exemptions": [],
@@ -148,11 +152,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "不起火、不爆炸",
         "details": [
           "不應起火 (No fire)",
           "不應爆炸 (No explosion)",
-          "不應漏液 (No leakage)"
+          "不應在防爆閥或泄壓點之外的位置發生破裂",
+          "不應冒煙"
         ]
       },
       "exemptions": [],
@@ -182,7 +187,7 @@
       "acceptance_criteria": {
         "summary": "絕緣電阻達標",
         "details": [
-          "絕緣電阻與標稱電壓的比值應符合標準要求"
+          "絕緣電阻與標稱電壓的比值應 ≥ 1000 Ω/V"
         ]
       },
       "exemptions": [
@@ -215,7 +220,8 @@
         "summary": "無擊穿、無閃絡",
         "details": [
           "不應發生擊穿 (No breakdown)",
-          "不應發生閃絡 (No flashover)"
+          "不應發生閃絡 (No flashover)",
+          "漏電流應 < 10 mA"
         ]
       },
       "exemptions": [
@@ -235,6 +241,10 @@
       "subcategory": "擠壓 (Crush)",
       "test_objects": ["CELL", "MODULE"],
       "conditions": {
+        "speed": {
+          "value": "5 mm/s",
+          "detail": "初始速度設置為 5 mm/s。"
+        },
         "crusher": {
           "value": "R=75mm 半圓柱體",
           "detail": "使用半徑 75mm 的半圓柱體擠壓頭。"
@@ -253,7 +263,9 @@
         "details": [
           "不應起火 (No fire)",
           "不應爆炸 (No explosion)",
-          "不應漏液 (No leakage)"
+          "不應漏液 (No leakage)",
+          "不應在防爆閥或泄壓點之外的位置發生破裂",
+          "不應冒煙"
         ]
       },
       "exemptions": [],
@@ -285,11 +297,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "不起火、不爆炸",
         "details": [
           "不應起火 (No fire)",
           "不應爆炸 (No explosion)",
-          "不應漏液 (No leakage)"
+          "不應在防爆閥或泄壓點之外的位置發生破裂",
+          "不應冒煙"
         ]
       },
       "exemptions": [],
@@ -314,13 +327,19 @@
         "trigger": {
           "value": "dT/dt ≥ 3°C/s 或 起火/爆炸 或 300°C",
           "detail": "監測溫度速率，當連續三個溫升速率 ≥ 3°C/s，或起火爆炸，或達到 300°C，或時間達到 4h 時停止加熱。"
+        },
+        "observation": {
+          "value": "觀察 1 h",
+          "detail": "測試後觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
-        "summary": "記錄熱失控溫度及現象",
+        "summary": "表面大於90℃，不起火爆炸",
         "details": [
-          "記錄發生熱失控的溫度 (熱失控溫度)",
-          "記錄試驗現象 包括膨脹、漏液、冒煙、起火、爆炸、外殼破裂及位置"
+          "表面溫度應大於 90 ℃",
+          "不應起火、爆炸",
+          "不應在防爆閥或泄壓點之外的位置發生破裂",
+          "試驗後絕緣性能應滿足 5.6.1.5.1"
         ]
       },
       "exemptions": [],
@@ -339,19 +358,20 @@
       "test_objects": ["MODULE"],
       "conditions": {
         "trigger_method": {
-          "value": "加熱/過充/針刺",
-          "detail": "對模塊內的中心單體或最小並聯單元觸發熱失控（通常採用加熱等方式）。"
+          "value": "恆流充電",
+          "detail": "對模塊內的中心單體或最小並聯單元觸發熱失控，採用恆流充電。"
         },
         "observation": {
-          "value": "監測相鄰電池",
-          "detail": "監測相鄰單體是否發生熱失控。"
+          "value": "觀察 1 h",
+          "detail": "測試後觀察 1 小時，監測相鄰單體是否發生熱失控。"
         }
       },
       "acceptance_criteria": {
         "summary": "不應擴散，不起火、不爆炸",
         "details": [
           "不應觸發其他單體發生熱失控 (No propagation)",
-          "整體不起火、不爆炸"
+          "整體不起火、不爆炸",
+          "試驗後絕緣性能應滿足 5.6.1.5.1"
         ]
       },
       "exemptions": [],

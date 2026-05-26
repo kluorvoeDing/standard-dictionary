@@ -118,6 +118,10 @@
         "sample_quantity": {
           "value": "每溫度 5 個",
           "detail": "每個溫度條件下 5 個樣品。(5 samples per temperature condition.)"
+        },
+        "duration": {
+          "value": "24 hours or temp difference ≤ 20%",
+          "detail": "持續 24 小時，或直到電芯表面溫度與環境溫度的差值降至其最大值的 20% 以下，以較短者為準。(Maintained for 24 hours or until the difference between cell surface temp and ambient drops to 20% or less of its maximum value, whichever is shorter.)"
         }
       },
       "acceptance_criteria": {
@@ -189,6 +193,14 @@
           "value": "插入鎳片誘發內部短路",
           "detail": "將鎳片 (Nickel piece) 插入電芯內部，以誘發內部短路。(Insert a nickel piece into the cell interior to induce internal short circuit.)"
         },
+        "pressing_speed": {
+          "value": "0.1 mm/s",
+          "detail": "加壓速度為 0.1 mm/s。(Pressing speed is 0.1 mm/s.)"
+        },
+        "pressure_jig": {
+          "value": "10x10mm 丁腈橡膠 + 5x5mm 壓克力板",
+          "detail": "使用包含 10x10mm 丁腈橡膠與 5x5mm 壓克力板的加壓治具。(Pressure jig specifics: 10x10mm nitrile rubber, plus 5x5mm acrylic plate.)"
+        },
         "force_cylindrical": {
           "value": "800 N（圓柱形電芯）",
           "detail": "圓柱形電芯 (Cylindrical cells) 之壓力上限為 800 N。(Upper limit pressure for cylindrical cells: 800 N.)"
@@ -255,8 +267,8 @@
           "detail": "跌落高度依照 JIS C 6950（資訊科技設備）或 JIS C 6065（音訊/視訊設備）規定。具體高度取決於設備類別與重量。(Drop height per JIS C 6950 or JIS C 6065 specifications. Actual height depends on device class and weight.)"
         },
         "drop_surface": {
-          "value": "混凝土面",
-          "detail": "跌落面為混凝土面 (concrete surface)。"
+          "value": "混凝土面或鋼板面",
+          "detail": "跌落面為混凝土面或鋼板面 (concrete or steel plate surface)。"
         },
         "drop_count": {
           "value": "1 次",
@@ -299,8 +311,12 @@
           "detail": "外部短絡電阻為 80 ± 20 mΩ，與電芯層級相同。(External short circuit resistance: 80 ± 20 mΩ, same as cell level.)"
         },
         "sample_quantity": {
-          "value": "5 個",
-          "detail": "組電池外部短絡測試需 5 個樣品。(5 assembled battery samples.)"
+          "value": "上限 45°C / 下限 10°C 充電各 5 個，共 10 個",
+          "detail": "需要經過雙溫度充電條件（45°C 及 10°C），各 5 個樣品，共 10 個樣品。(Requires dual-temperature charging requirement at 45°C and 10°C, 5 samples each, total 10 samples.)"
+        },
+        "duration_and_observation": {
+          "value": "短路直到完成，並觀察 1 小時",
+          "detail": "維持短路直到測試完成，並在測試結束後觀察 1 小時。(Maintain short circuit until completion, followed by a 1 hour observation period.)"
         }
       },
       "acceptance_criteria": {
@@ -372,7 +388,7 @@
       {
         "group": "組電池層級測試 (Battery-Level Tests)",
         "tests": ["JISC8714-DROP", "JISC8714-PACK-SC", "JISC8714-OCP"],
-        "rule": "組電池層級測試包含跌落、外部短絡及過充電保護確認。跌落測試不分溫度 (3 個樣品)，外部短絡在 20 ± 5°C 下執行。(Battery-level tests include drop, external short circuit, and overcharge protection verification.)",
+        "rule": "組電池層級測試包含跌落、外部短絡及過充電保護確認。外部短絡測試需經過上限 (45°C) 及下限 (10°C) 溫度充電條件 (各 5 個樣品)。(Battery-level tests include drop, external short circuit, and overcharge protection verification. External short circuit requires upper 45°C and lower 10°C charging regimen, 5 samples each.)",
         "source_reference": "2.1"
       }
     ]

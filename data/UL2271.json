@@ -32,8 +32,8 @@
       ],
       "conditions": {
         "soc": {
-          "value": "滿充 (MOSOC)",
-          "detail": "測試前樣品處於最大運行充電狀態 (MOSOC)。"
+          "value": "放電至 EODV 再過充",
+          "detail": "測試前樣品先放電至 EODV (End of Discharge Voltage)，再進行過充電。"
         },
         "charging_current": {
           "value": "最大充電電流",
@@ -57,7 +57,10 @@
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
           "保護控制正常 (Protection maintained)",
-          "電壓不超出正常運行範圍"
+          "電壓不超出正常運行範圍",
+          "無可燃濃度氣體 (No Combustible Concentrations - C)",
+          "無電擊危險 (No Electric shock hazard - S)",
+          "無保護控制失效 (No Loss of protection controls - P)"
         ]
       },
       "exemptions": [],
@@ -83,8 +86,8 @@
           "detail": "測試前樣品放電至終止電壓 (EODV)。"
         },
         "charging_rate": {
-          "value": "高於最大充電速率",
-          "detail": "以高於規定的最大充電速率（按製造商規格或單一故障條件）進行充電。"
+          "value": "高於最大充電速率 20%",
+          "detail": "以高於規定的最大充電速率 20% (20 % greater) 進行充電。"
         }
       },
       "acceptance_criteria": {
@@ -95,7 +98,10 @@
           "無排氣 (No venting)",
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
-          "保護控制正常"
+          "保護控制正常",
+          "無可燃濃度氣體 (No Combustible Concentrations - C)",
+          "無電擊危險 (No Electric shock hazard - S)",
+          "無保護控制失效 (No Loss of protection controls - P)"
         ]
       },
       "exemptions": [],
@@ -137,7 +143,10 @@
           "無排氣 (No venting)",
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
-          "保護控制正常"
+          "保護控制正常",
+          "無可燃濃度氣體 (No Combustible Concentrations - C)",
+          "無電擊危險 (No Electric shock hazard - S)",
+          "無保護控制失效 (No Loss of protection controls - P)"
         ]
       },
       "exemptions": [],
@@ -164,7 +173,7 @@
         },
         "discharge_rate": {
           "value": "過載放電",
-          "detail": "高於正常放電速率進行放電（以 90% BMS 過流保護值，或 135% 主熔斷器額定值）。"
+          "detail": "高於正常放電速率進行放電（以 90 % BMS 過流保護值，或 135 % 主熔斷器額定值，或 Exception 1 的 150 %）。"
         },
         "fault_condition": {
           "value": "單一故障",
@@ -179,7 +188,10 @@
           "無排氣 (No venting)",
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
-          "保護控制正常"
+          "保護控制正常",
+          "無可燃濃度氣體 (No Combustible Concentrations - C)",
+          "無電擊危險 (No Electric shock hazard - S)",
+          "無保護控制失效 (No Loss of protection controls - P)"
         ]
       },
       "exemptions": [],
@@ -221,7 +233,10 @@
           "無爆炸 (No explosion)",
           "無排氣 (No venting)",
           "無洩漏 (No leakage)",
-          "無破裂 (No rupture)"
+          "無破裂 (No rupture)",
+          "無可燃濃度氣體 (No Combustible Concentrations - C)",
+          "無電擊危險 (No Electric shock hazard - S)",
+          "無保護控制失效 (No Loss of protection controls - P)"
         ]
       },
       "exemptions": [],
@@ -320,8 +335,8 @@
           "detail": "僅適用於額定電壓 60 Vdc 及以上的電路。"
         },
         "test_voltage": {
-          "value": "2 × 額定電壓 × 1.414 (DC)",
-          "detail": "施加 2倍額定電壓乘 1.414 的直流電壓，或 2倍額定電壓的交流電壓。"
+          "value": "1000V + 2 倍額定電壓",
+          "detail": "施加 1,000 V plus twice rated voltage 的電壓 (直流需乘以 1.414)。"
         },
         "duration": {
           "value": "1 分鐘",
@@ -462,7 +477,7 @@
       "conditions": {
         "waveform": {
           "value": "半正弦波",
-          "detail": "依重量不同，加速度為 50gn (≤12kg)、25gn (12-100kg)、10gn (>100kg)。"
+          "detail": "依重量不同，加速度為 50gn/11 ms (≤12kg)、25gn/15 ms (12-100kg)、10gn/20 ms (>100kg)。"
         }
       },
       "acceptance_criteria": {
@@ -472,7 +487,10 @@
           "無爆炸 (No explosion)",
           "無排氣 (No venting)",
           "無洩漏 (No leakage)",
-          "無破裂 (No rupture)"
+          "無破裂 (No rupture)",
+          "無可燃濃度氣體 (No Combustible Concentrations - C)",
+          "無電擊危險 (No Electric shock hazard - S)",
+          "無保護控制失效 (No Loss of protection controls - P)"
         ]
       },
       "exemptions": [],
@@ -533,7 +551,7 @@
       "conditions": {
         "height": {
           "value": "1.0 m",
-          "detail": "從 1 公尺高度跌落至混凝土表面。"
+          "detail": "從 1 公尺高度跌落至混凝土表面 (±0.01 m tolerance)。"
         },
         "count": {
           "value": "3 次",
@@ -541,7 +559,7 @@
         },
         "cold_condition": {
           "value": "低溫預處理",
-          "detail": "若外殼為塑膠且用於 0°C 以下，需在 0°C 下調節 3 小時。"
+          "detail": "若外殼為塑膠且預期用於 0 °C 環境 (intended for use in 0 °C temperatures)，需在 0°C 下調節 3 小時。"
         }
       },
       "acceptance_criteria": {
@@ -551,7 +569,10 @@
           "無爆炸 (No explosion)",
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
-          "測試指無法觸及危險帶電零件"
+          "測試指無法觸及危險帶電零件",
+          "無可燃濃度氣體 (No Combustible Concentrations - C)",
+          "無電擊危險 (No Electric shock hazard - S)",
+          "無保護控制失效 (No Loss of protection controls - P)"
         ]
       },
       "exemptions": [
@@ -581,8 +602,8 @@
           "detail": "從至少 1 公尺高度跌落至混凝土表面。"
         },
         "count": {
-          "value": "至少 1 次",
-          "detail": "至少進行 1 次跌落。"
+          "value": "依平放與非平放邏輯",
+          "detail": "根據平放與非平放跌落的條件邏輯進行跌落測試。"
         }
       },
       "acceptance_criteria": {
@@ -723,7 +744,7 @@
         },
         "push_back": {
           "value": "推回測試",
-          "detail": "將電線向內推回。"
+          "detail": "將電線向內推回 (25.4-mm increments)。"
         }
       },
       "acceptance_criteria": {
@@ -769,7 +790,9 @@
           "無起火 (No fire)",
           "無爆炸 (No explosion)",
           "無破裂 (No rupture)",
-          "無電擊危險 (No shock hazard)"
+          "無電擊危險 (No shock hazard)",
+          "無可燃濃度氣體 (No Combustible Concentrations - C)",
+          "無保護控制失效 (No Loss of protection controls - P)"
         ]
       },
       "exemptions": [
@@ -804,7 +827,10 @@
           "無爆炸 (No explosion)",
           "無排氣 (No venting)",
           "無洩漏 (No leakage)",
-          "無破裂 (No rupture)"
+          "無破裂 (No rupture)",
+          "無可燃濃度氣體 (No Combustible Concentrations - C)",
+          "無電擊危險 (No Electric shock hazard - S)",
+          "無保護控制失效 (No Loss of protection controls - P)"
         ]
       },
       "exemptions": [],

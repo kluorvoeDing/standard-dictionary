@@ -32,6 +32,10 @@
         "operation": {
           "value": "最大負載充放電循環",
           "detail": "系統按製造商規格在最大負載下進行正常充放電循環測試（至少 2 次循環）。"
+        },
+        "thermal_equilibrium": {
+          "value": "±2 °C over 3 measurements at 10% elapsed time min 15min",
+          "detail": "熱平衡標準：在10%的經過時間（至少15分鐘）內，3次測量的溫度變化在±2 °C內"
         }
       },
       "acceptance_criteria": {
@@ -60,8 +64,8 @@
       ],
       "conditions": {
         "test_voltage": {
-          "value": "2倍額定電壓",
-          "detail": "施加 2 倍額定電壓於危險電壓電路與非載流導電部件之間。適用於 ≥ 60 Vdc 系統。"
+          "value": "參考 UL 62368-1 / CSA C22.2 No. 62368-1 決定耐受電壓 (Determining clearances using required withstand voltage)",
+          "detail": "參考 UL 62368-1 / CSA C22.2 No. 62368-1 決定耐受電壓於危險電壓電路與非載流導電部件之間。"
         },
         "duration": {
           "value": "1 分鐘",
@@ -98,8 +102,8 @@
           "detail": "施加 1.2/50 µs 衝擊電壓波形（模擬浪湧）。"
         },
         "count": {
-          "value": "正負極各 3 次",
-          "detail": "正負極各施加 3 次脈衝。"
+          "value": "正負極各3次；對於超過1000V的電路，正負極各施加5次脈衝 (For circuits over 1000 V, 5 pulses at each polarity)",
+          "detail": "正負極各施加 3 次脈衝。對於超過 1000V 的電路，正負極各施加 5 次脈衝。"
         }
       },
       "acceptance_criteria": {
@@ -137,9 +141,7 @@
           "接地和接合系統電阻不超過 0.1 Ω"
         ]
       },
-      "exemptions": [
-        "若通過生產實踐審查確定良好接地可豁免"
-      ],
+      "exemptions": [],
       "related_tests": [],
       "source_reference": "34",
       "original_text_snippet": "Grounding and bonding system resistance shall not exceed 0.1 Ω."
@@ -171,7 +173,9 @@
           "絕緣電阻應符合規定限值（大於等於 1 MΩ）"
         ]
       },
-      "exemptions": [],
+      "exemptions": [
+        "若先前已作為技術安全標準的一部分進行過評估，則可豁免 (Exception No. 1: previous evaluation as part of technology safety standard)"
+      ],
       "related_tests": [],
       "source_reference": "35",
       "original_text_snippet": "Insulation resistance between hazardous voltage circuits and accessible conductive parts shall meet specified limits."
@@ -227,8 +231,8 @@
           "detail": "使用 535g 鋼球從 1.29m 高度跌落，產生 6.8J 的衝擊能量。"
         },
         "impact_count": {
-          "value": "3 次衝擊",
-          "detail": "對外殼進行 3 次衝擊。"
+          "value": "至少 3 次衝擊 (Minimum of 3 impacts)",
+          "detail": "對外殼進行至少 3 次衝擊。"
         }
       },
       "acceptance_criteria": {
@@ -412,7 +416,7 @@
       "id": "GE-01",
       "description": "住宅用電化學 ESS 單一系統額定能量不得超過 20 kWh；非住宅用不得超過 50 kWh。若通過 UL 9540A 驗證其火災傳播特性受控，則可允許更高的安裝容量。",
       "applicable_tests": [],
-      "source_reference": "4.3.1, 4.3.2"
+      "source_reference": "1.6"
     },
     {
       "id": "GE-02",
