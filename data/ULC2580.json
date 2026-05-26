@@ -54,7 +54,8 @@
         "details": [
           "應無起火、無爆炸 (No fire or explosion)",
           "最小絕緣電阻 100 Ω/V (Isolation resistance ≥ 100 Ω/V)",
-          "無外部排氣、無破裂、無外部洩漏 (No external venting, no rupture, no external leakage)"
+          "無外部排氣、無破裂、無外部洩漏 (No external venting, no rupture, no external leakage)",
+          "Reaching 110% of the rated charge capacity or the manufacturer-specified charging limit would be considered as a failure of the overcharge evaluation."
         ]
       },
       "exemptions": [
@@ -90,8 +91,12 @@
           "detail": "測試在室溫環境下進行 (conducted at room ambient)。"
         },
         "duration": {
-          "value": "至完全放電或穩定後 7 小時",
-          "detail": "測試持續至完全放電或溫度達到峰值並穩定狀態後 7 小時。"
+          "value": "7 h",
+          "detail": "Until fully discharged or 7 hours after stabilization, or a fire or explosion has occurred."
+        },
+        "repeat_test": {
+          "value": "Yes",
+          "detail": "Testing is repeated at a load that draws a maximum current no less than 15% below the operation of the short circuit protection."
         }
       },
       "acceptance_criteria": {
@@ -171,6 +176,10 @@
         "cycles": {
           "value": "5 循環",
           "detail": "在最大充電與放電條件下，重複執行總共 5 次完整循環。"
+        },
+        "stabilization": {
+          "value": "1 h",
+          "detail": "All cell temperatures are estimated to be within ±10°C (±18°F) of the chamber temperature for 1 h before testing."
         }
       },
       "acceptance_criteria": {
@@ -496,12 +505,12 @@
       ],
       "conditions": {
         "force": {
-          "value": "100 ± 6 kN 或預期最大負載",
-          "detail": "使用肋狀壓板施加 100 ± 6 kN 恆定力，或施加車輛預期的最大擠壓負載（由製造商定義）。"
+          "value": "100 ±6 kN",
+          "detail": "Exception 1 strictly sets the force at 100 ±6 kN."
         },
         "direction": {
-          "value": "碰撞受力方向",
-          "detail": "代表車輛碰撞時最可能受擠壓的方向。"
+          "value": "3 mutually perpendicular directions",
+          "detail": "3 mutually perpendicular directions of press (or 2 for cylindrical)."
         }
       },
       "acceptance_criteria": {
@@ -515,7 +524,7 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "38",
-      "original_text_snippet": "38 Crush Test: The sample is to be crushed in a direction that represents the most likely direction of crush during a vehicle collision. The force applied shall be the maximum expected crush load of the vehicle."
+      "original_text_snippet": "The DUT shall be subjected to a crush force of 100 ±6 kN."
     },
     {
       "id": "ULC2580-T39",
@@ -533,6 +542,10 @@
         "profile": {
           "value": "85°C 至 -40°C",
           "detail": "按照製造商規定的溫度循環輪廓，或使用 SAE J2464 / J2380 流程，通常為 85°C 至 -40°C。"
+        },
+        "method": {
+          "value": "SAE J2464 (modified)",
+          "detail": "Thermal shock test of SAE J2464, except that the temperature extremes are from 85 ±2°C to −40 ±2°C."
         }
       },
       "acceptance_criteria": {
@@ -546,7 +559,7 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "39",
-      "original_text_snippet": "39 Thermal Cycling: The sample is to be subjected to thermal cycling in accordance with the manufacturer's specified temperature cycling profile. In the absence of this information, use SAE J2380 or IEC 60068-2-30."
+      "original_text_snippet": "The DUT is to be subjected to the thermal shock test of SAE J2464, except that the temperature extremes are from 85 ±2°C to −40 ±2°C."
     },
     {
       "id": "ULC2580-T40",
@@ -563,7 +576,7 @@
       "conditions": {
         "method": {
           "value": "IEC 60068-2-52",
-          "detail": "依據 IEC 60068-2-52 或等效標準進行鹽霧暴露。"
+          "detail": "依據 IEC 60068-2-52 或等效標準進行鹽霧暴露。 with a severity level of 6."
         }
       },
       "acceptance_criteria": {
@@ -595,6 +608,14 @@
         "method": {
           "value": "5% 鹽水浸沒 1 小時",
           "detail": "在 5% 鹽水中完全浸沒 1 小時，或滿足 NEMA 60529 / UL 50E 的 IP 等級要求。"
+        },
+        "temperature": {
+          "value": "Room temperature",
+          "detail": "Immersion at room temperature."
+        },
+        "duration": {
+          "value": "1 h",
+          "detail": "1 hour or until any visible reactions have stopped."
         }
       },
       "acceptance_criteria": {
