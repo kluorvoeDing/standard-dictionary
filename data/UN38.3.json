@@ -9,7 +9,10 @@
     "publication_date": "2015 (Sixth Revised Edition, with February 2016 Corrigendum 1 and INF.36/INF.21)",
     "type": "standard",
     "scope": "鋰金屬及鋰離子電芯 (Cells) 與電池組 (Batteries) 之運輸分類試驗，適用於 UN 3090、3091、3480、3481 危險物品運輸分類",
-    "applicable_objects": ["CELL", "PACK_SYSTEM"],
+    "applicable_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
     "source_pdf": "UN38.3 sub section.pdf",
     "source_gemini_md": "UN38.3_zh-TW_standardized.md"
   },
@@ -119,7 +122,10 @@
       "section": "38.3.4.1",
       "category": "THERM",
       "subcategory": "低壓模擬 (Low Pressure Simulation)",
-      "test_objects": ["CELL", "PACK_SYSTEM"],
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "pressure": {
           "value": "≤ 11.6 kPa",
@@ -157,7 +163,12 @@
       "exemptions": [
         "不單獨運輸的組件電芯 (Component Cell) 無須執行 T.1，僅需執行 T.6 及 T.8 (38.3.2.1)"
       ],
-      "related_tests": ["UN38.3-T2", "UN38.3-T3", "UN38.3-T4", "UN38.3-T5"],
+      "related_tests": [
+        "UN38.3-T2",
+        "UN38.3-T3",
+        "UN38.3-T4",
+        "UN38.3-T5"
+      ],
       "source_reference": "38.3.4.1.1 ~ 38.3.4.1.3",
       "original_text_snippet": "Test cells and batteries shall be stored at a pressure of 11.6 kPa or less for at least six hours at ambient temperature (20 ± 5°C). Cells and batteries meet this requirement if there is no leakage, no venting, no disassembly, no rupture and no fire and if the open circuit voltage of each test cell or battery after testing is not less than 90% of its voltage immediately prior to this procedure."
     },
@@ -169,7 +180,10 @@
       "section": "38.3.4.2",
       "category": "THERM",
       "subcategory": "溫度循環 (Temperature Cycling)",
-      "test_objects": ["CELL", "PACK_SYSTEM"],
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "high_temperature": {
           "value": "72 ± 2°C",
@@ -219,7 +233,12 @@
       "exemptions": [
         "不單獨運輸的組件電芯無須執行 T.2 (38.3.2.1)"
       ],
-      "related_tests": ["UN38.3-T1", "UN38.3-T3", "UN38.3-T4", "UN38.3-T5"],
+      "related_tests": [
+        "UN38.3-T1",
+        "UN38.3-T3",
+        "UN38.3-T4",
+        "UN38.3-T5"
+      ],
       "source_reference": "38.3.4.2.1 ~ 38.3.4.2.3",
       "original_text_snippet": "Test cells and batteries are to be stored for at least six hours at a test temperature equal to 72 ± 2 °C, followed by storage for at least six hours at a test temperature equal to -40 ± 2 °C. The maximum time interval between test temperature extremes is 30 minutes. This procedure is to be repeated until 10 total cycles are complete, after which all test cells and batteries are to be stored for 24 hours at ambient temperature (20 ± 5°C). For large cells and batteries, the duration of exposure to the test temperature extremes should be at least 12 hours."
     },
@@ -231,7 +250,10 @@
       "section": "38.3.4.3",
       "category": "MECH",
       "subcategory": "振動 (Vibration)",
-      "test_objects": ["CELL", "PACK_SYSTEM"],
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "waveform": {
           "value": "正弦波對數掃頻",
@@ -281,7 +303,12 @@
       "exemptions": [
         "不單獨運輸的組件電芯無須執行 T.3 (38.3.2.1)"
       ],
-      "related_tests": ["UN38.3-T1", "UN38.3-T2", "UN38.3-T4", "UN38.3-T5"],
+      "related_tests": [
+        "UN38.3-T1",
+        "UN38.3-T2",
+        "UN38.3-T4",
+        "UN38.3-T5"
+      ],
       "source_reference": "38.3.4.3.1 ~ 38.3.4.3.3",
       "original_text_snippet": "The vibration shall be a sinusoidal waveform with a logarithmic sweep between 7 Hz and 200 Hz and back to 7 Hz traversed in 15 minutes. This cycle shall be repeated 12 times for a total of 3 hours for each of three mutually perpendicular mounting positions of the cell. One of the directions of vibration must be perpendicular to the terminal face."
     },
@@ -293,7 +320,10 @@
       "section": "38.3.4.4",
       "category": "MECH",
       "subcategory": "機械衝擊 (Mechanical Shock)",
-      "test_objects": ["CELL", "PACK_SYSTEM"],
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "waveform": {
           "value": "半正弦波 (Half-sine)",
@@ -304,8 +334,8 @@
           "detail": "每個電芯須承受峰值加速度 150gn、脈衝持續時間 6 毫秒之半正弦衝擊。大型電芯 (Large cells, >500g) 可替代選用峰值加速度 50gn、脈衝持續時間 11 毫秒。"
         },
         "small_battery_parameters": {
-          "value": "150gn 或 √(30000/mass) gn（取小值），6ms",
-          "detail": "小型電池 (≤12 kg)：峰值加速度為 150gn 或公式 Acceleration(gn) = √(30000/mass) 計算結果，取較小值。脈衝持續時間 6 毫秒。質量以公斤計。"
+          "value": "150gn 或 √(100850/mass) gn（取小值），6ms",
+          "detail": "小型電池 (≤12 kg)：峰值加速度為 150gn 或公式 Acceleration(gn) = √(100850/mass) 計算結果，取較小值。脈衝持續時間 6 毫秒。質量以公斤計。"
         },
         "large_battery_parameters": {
           "value": "50gn 或 √(30000/mass) gn（取小值），11ms",
@@ -335,7 +365,12 @@
       "exemptions": [
         "不單獨運輸的組件電芯無須執行 T.4 (38.3.2.1)"
       ],
-      "related_tests": ["UN38.3-T1", "UN38.3-T2", "UN38.3-T3", "UN38.3-T5"],
+      "related_tests": [
+        "UN38.3-T1",
+        "UN38.3-T2",
+        "UN38.3-T3",
+        "UN38.3-T5"
+      ],
       "source_reference": "38.3.4.4.1 ~ 38.3.4.4.3",
       "original_text_snippet": "Each cell shall be subjected to a half-sine shock of peak acceleration of 150 gn and pulse duration of 6 milliseconds. Alternatively, large cells may be subjected to a half-sine shock of peak acceleration of 50 gn and pulse duration of 11 milliseconds. Each cell or battery shall be subjected to three shocks in the positive direction and to three shocks in the negative direction in each of three mutually perpendicular mounting positions of the cell or battery for a total of 18 shocks."
     },
@@ -347,7 +382,10 @@
       "section": "38.3.4.5",
       "category": "ELEC",
       "subcategory": "外部短路 (External Short Circuit)",
-      "test_objects": ["CELL", "PACK_SYSTEM"],
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "preconditioning_temperature": {
           "value": "57 ± 4°C",
@@ -383,7 +421,12 @@
       "exemptions": [
         "不單獨運輸的組件電芯無須執行 T.5 (38.3.2.1)"
       ],
-      "related_tests": ["UN38.3-T1", "UN38.3-T2", "UN38.3-T3", "UN38.3-T4"],
+      "related_tests": [
+        "UN38.3-T1",
+        "UN38.3-T2",
+        "UN38.3-T3",
+        "UN38.3-T4"
+      ],
       "source_reference": "38.3.4.5.1 ~ 38.3.4.5.3",
       "original_text_snippet": "The cell or battery to be tested shall be heated for a period of time necessary to reach a homogeneous stabilized temperature of 57 ± 4 °C, measured on the external case. Then the cell or battery at 57 ± 4 °C shall be subjected to one short circuit condition with a total external resistance of less than 0.1 ohm. This short circuit condition is continued for at least one hour after the cell or battery external case temperature has returned to 57 ± 4 °C. Cells and batteries meet this requirement if their external temperature does not exceed 170 °C and there is no disassembly, no rupture and no fire during the test and within six hours after the test."
     },
@@ -395,7 +438,9 @@
       "section": "38.3.4.6.2",
       "category": "MECH",
       "subcategory": "撞擊 (Impact)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "applicability": {
           "value": "圓柱形電芯直徑 ≥ 18.0 mm",
@@ -440,7 +485,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["UN38.3-T6b"],
+      "related_tests": [
+        "UN38.3-T6b"
+      ],
       "source_reference": "38.3.4.6.1 ~ 38.3.4.6.2, 38.3.4.6.4",
       "original_text_snippet": "Test procedure - Impact (applicable to cylindrical cells not less than 18.0 mm in diameter). A 15.8 mm ± 0.1 mm diameter, at least 6 cm long, Type 316 stainless steel bar is to be placed across the centre of the sample. A 9.1 kg ± 0.1 kg mass is to be dropped from a height of 61 ± 2.5 cm. Each sample is to be subjected to only a single impact. Cells and component cells meet this requirement if their external temperature does not exceed 170°C and there is no disassembly and no fire during the test and within six hours after this test."
     },
@@ -452,7 +499,9 @@
       "section": "38.3.4.6.3",
       "category": "MECH",
       "subcategory": "擠壓 (Crush)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "applicability": {
           "value": "方形、軟包、鈕扣電芯及圓柱形直徑 < 18.0 mm",
@@ -509,7 +558,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["UN38.3-T6a"],
+      "related_tests": [
+        "UN38.3-T6a"
+      ],
       "source_reference": "38.3.4.6.1, 38.3.4.6.3 ~ 38.3.4.6.4",
       "original_text_snippet": "Test Procedure - Crush (applicable to prismatic, pouch, coin/button cells and cylindrical cells less than 18.0 mm in diameter). A cell or component cell is to be crushed between two flat surfaces. The crushing is to be gradual with a speed of approximately 1.5 cm/s at the first point of contact. The crushing is to be continued until the first of the three options below is reached: (a) The applied force reaches 13 kN ± 0.78 kN; (b) The voltage of the cell drops by at least 100 mV; or (c) The cell is deformed by 50% or more of its original thickness."
     },
@@ -521,7 +572,9 @@
       "section": "38.3.4.7",
       "category": "ELEC",
       "subcategory": "過充電 (Overcharge)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "charge_current": {
           "value": "2 倍最大持續充電電流",
@@ -572,7 +625,9 @@
       "section": "38.3.4.8",
       "category": "ELEC",
       "subcategory": "強制放電 (Forced Discharge)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "power_supply": {
           "value": "12V 直流電源串聯",
@@ -622,19 +677,31 @@
     "sequences": [
       {
         "group": "Sequential Tests (同一組樣品依序執行)",
-        "tests": ["UN38.3-T1", "UN38.3-T2", "UN38.3-T3", "UN38.3-T4", "UN38.3-T5"],
+        "tests": [
+          "UN38.3-T1",
+          "UN38.3-T2",
+          "UN38.3-T3",
+          "UN38.3-T4",
+          "UN38.3-T5"
+        ],
         "rule": "T.1 至 T.5 必須在同一組樣品上依序進行 (shall be conducted in sequence on the same cell or battery)",
         "source_reference": "38.3.4"
       },
       {
         "group": "Fresh Sample Tests (使用未經測試的新樣品)",
-        "tests": ["UN38.3-T6a", "UN38.3-T6b", "UN38.3-T8"],
+        "tests": [
+          "UN38.3-T6a",
+          "UN38.3-T6b",
+          "UN38.3-T8"
+        ],
         "rule": "T.6 及 T.8 須使用未經其他測試之電芯或電池 (shall be conducted using not otherwise tested cells or batteries)",
         "source_reference": "38.3.4"
       },
       {
         "group": "Overcharge Test (過充電測試)",
-        "tests": ["UN38.3-T7"],
+        "tests": [
+          "UN38.3-T7"
+        ],
         "rule": "T.7 可使用曾通過 T.1 至 T.5 測試且未受損之電池，用於循環電池測試 (may be conducted using undamaged batteries previously used in Tests T.1 to T.5)",
         "source_reference": "38.3.4"
       }
@@ -644,7 +711,14 @@
     {
       "id": "GE-01",
       "description": "不單獨運輸的組件電芯 (Component Cell not transported separately) 僅需執行 T.6 及 T.8",
-      "applicable_tests": ["UN38.3-T1", "UN38.3-T2", "UN38.3-T3", "UN38.3-T4", "UN38.3-T5", "UN38.3-T7"],
+      "applicable_tests": [
+        "UN38.3-T1",
+        "UN38.3-T2",
+        "UN38.3-T3",
+        "UN38.3-T4",
+        "UN38.3-T5",
+        "UN38.3-T7"
+      ],
       "source_reference": "38.3.2.1"
     },
     {
@@ -656,31 +730,56 @@
     {
       "id": "GE-03",
       "description": "原電池 (非充電型) 豁免 T.7 過充電測試",
-      "applicable_tests": ["UN38.3-T7"],
+      "applicable_tests": [
+        "UN38.3-T7"
+      ],
       "source_reference": "38.3.2.1"
     },
     {
       "id": "GE-04",
       "description": "未配備過充保護裝置且僅設計作為其他具保護功能設備或電池組之組件使用的電池/單電芯電池，不適用 T.7",
-      "applicable_tests": ["UN38.3-T7"],
+      "applicable_tests": [
+        "UN38.3-T7"
+      ],
       "source_reference": "38.3.3(d)"
     },
     {
       "id": "GE-05",
       "description": "小型電池組裝件 (鋰含量 ≤ 500g 或鋰離子 ≤ 6200 Wh)：若組成之電池均已通過所有適用測試，僅需對一個滿充成品樣品執行 T.3、T.4、T.5 及 T.7（若為充電型）",
-      "applicable_tests": ["UN38.3-T1", "UN38.3-T2", "UN38.3-T6a", "UN38.3-T6b", "UN38.3-T8"],
+      "applicable_tests": [
+        "UN38.3-T1",
+        "UN38.3-T2",
+        "UN38.3-T6a",
+        "UN38.3-T6b",
+        "UN38.3-T8"
+      ],
       "source_reference": "38.3.3(f)"
     },
     {
       "id": "GE-06",
       "description": "大型電池組裝件 (鋰含量 > 500g 或鋰離子 > 6200 Wh)：若已驗證具備防止過充、短路及電池間過放電之功能，則可豁免所有測試",
-      "applicable_tests": ["UN38.3-T1", "UN38.3-T2", "UN38.3-T3", "UN38.3-T4", "UN38.3-T5", "UN38.3-T6a", "UN38.3-T6b", "UN38.3-T7", "UN38.3-T8"],
+      "applicable_tests": [
+        "UN38.3-T1",
+        "UN38.3-T2",
+        "UN38.3-T3",
+        "UN38.3-T4",
+        "UN38.3-T5",
+        "UN38.3-T6a",
+        "UN38.3-T6b",
+        "UN38.3-T7",
+        "UN38.3-T8"
+      ],
       "source_reference": "38.3.3(g)"
     },
     {
       "id": "GE-07",
       "description": "完全放電樣品不適用 90% OCV 電壓保持要求（適用於 T.1 ~ T.4）",
-      "applicable_tests": ["UN38.3-T1", "UN38.3-T2", "UN38.3-T3", "UN38.3-T4"],
+      "applicable_tests": [
+        "UN38.3-T1",
+        "UN38.3-T2",
+        "UN38.3-T3",
+        "UN38.3-T4"
+      ],
       "source_reference": "38.3.4.1.3, 38.3.4.2.3, 38.3.4.3.3, 38.3.4.4.3"
     }
   ],

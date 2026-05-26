@@ -9,7 +9,11 @@
     "publication_date": "March 12, 2025 (Fifth Edition)",
     "type": "standard",
     "scope": "提供一種量化評估電池發生熱失控能力、火災風險及爆炸特徵的方法，以支持儲能系統 (ESS) 的安裝要求（如間隔距離、消防滅火需求）。",
-    "applicable_objects": ["CELL", "MODULE", "PACK_SYSTEM"],
+    "applicable_objects": [
+      "CELL",
+      "MODULE",
+      "PACK_SYSTEM"
+    ],
     "source_pdf": "s9540A_5.pdf",
     "source_gemini_md": "UL9540A_zh-TW_standardized.md"
   },
@@ -49,7 +53,9 @@
       "section": "7",
       "category": "THERM",
       "subcategory": "熱蔓延 (Thermal Propagation)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "soc": {
           "value": "MOSOC",
@@ -83,7 +89,9 @@
       "exemptions": [
         "若無電池樣品觸發熱失控且無可燃氣體排放，可豁免模組級和單元級測試 (7.8)。"
       ],
-      "related_tests": ["UL9540A-MODULE"],
+      "related_tests": [
+        "UL9540A-MODULE"
+      ],
       "source_reference": "7.3, 7.4, 7.8",
       "original_text_snippet": "Module level testing in Section 8 is not required if the following performance conditions are met: (a) Thermal runaway cannot be induced in the cell; and (b) The cell vent gas does not present a flammability hazard when mixed with any volume of air, as determined in accordance with ASTM E918."
     },
@@ -95,7 +103,9 @@
       "section": "8",
       "category": "THERM",
       "subcategory": "熱蔓延 (Thermal Propagation)",
-      "test_objects": ["MODULE"],
+      "test_objects": [
+        "MODULE"
+      ],
       "conditions": {
         "soc": {
           "value": "MOSOC",
@@ -122,13 +132,16 @@
         "summary": "確定模組內熱傳播特徵。若影響被限制在模組內，可豁免單元級測試。",
         "details": [
           "這也是一個特徵化測試。",
-          "若 (a) 排氣不可燃，(b) 無火焰傳播至模組外，(c) 模組外表面溫度不超過電池排氣溫度，則可豁免單元級測試。"
+          "若 (a) 排氣不可燃，(b) 無火焰傳播至模組外，(c) 模組外表面溫度不超過電池排氣溫度，則可豁免單元級測試。 (as measured adjacent to the initiating cell where the greatest thermal exposure is anticipated)."
         ]
       },
       "exemptions": [
         "若模組設計控制了熱失控且符合 8.5 的性能標準，可豁免單元級測試。"
       ],
-      "related_tests": ["UL9540A-CELL", "UL9540A-UNIT"],
+      "related_tests": [
+        "UL9540A-CELL",
+        "UL9540A-UNIT"
+      ],
       "source_reference": "8.2, 8.5",
       "original_text_snippet": "Unit level testing in Section 9 is not required if all of the following performance conditions are met during the module level test: (a) Vent gas is nonflammable... (b) There is no spread of flame outside of the module; and (c) The module exterior surface temperature does not exceed the cell venting temperature."
     },
@@ -140,7 +153,9 @@
       "section": "9",
       "category": "THERM",
       "subcategory": "熱蔓延 (Thermal Propagation)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "configurations": {
           "value": "依實際安裝環境",
@@ -173,7 +188,10 @@
         "若符合表 9.1 規定的性能標準，可豁免安裝級測試 (9.8)。",
         "高溫電池室外集裝箱安裝可豁免此測試，直接進入安裝級測試 (9.1.3)。"
       ],
-      "related_tests": ["UL9540A-MODULE", "UL9540A-INSTALL"],
+      "related_tests": [
+        "UL9540A-MODULE",
+        "UL9540A-INSTALL"
+      ],
       "source_reference": "9.1, 9.2, 9.8, Table 9.1",
       "original_text_snippet": "Installation level testing in Section 10 is not required if the following performance conditions outlined in Table 9.1 are met during the unit level test. ... Surface temperature measurements on wall surfaces do not exceed 97°C (175°F) of temperature rise above ambient."
     },
@@ -185,7 +203,9 @@
       "section": "10",
       "category": "THERM",
       "subcategory": "熱蔓延 (Thermal Propagation)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "method_1": {
           "value": "噴水滅火系統",
@@ -217,7 +237,9 @@
       "exemptions": [
         "住宅用 (Residential Use) BESS 系統不適用安裝級測試 (10.1.1)。"
       ],
-      "related_tests": ["UL9540A-UNIT"],
+      "related_tests": [
+        "UL9540A-UNIT"
+      ],
       "source_reference": "10.1, 10.3, 10.5",
       "original_text_snippet": "For BESS units intended for installation in locations with combustible construction, surface temperature measurements along instrumented wall surfaces shall not exceed a temperature rise of 97°C (175°F) above ambient. ... There shall be no flaming outside the test room."
     }
@@ -227,7 +249,12 @@
     "sequences": [
       {
         "group": "層級遞進",
-        "tests": ["UL9540A-CELL", "UL9540A-MODULE", "UL9540A-UNIT", "UL9540A-INSTALL"],
+        "tests": [
+          "UL9540A-CELL",
+          "UL9540A-MODULE",
+          "UL9540A-UNIT",
+          "UL9540A-INSTALL"
+        ],
         "rule": "每一級測試結果將決定是否需要進入下一級測試。若在某一級已證明不會發生危險的熱失控或火災傳播，則可終止測試。",
         "source_reference": "Figure 1.1 Schematic of Test Sequence"
       }
@@ -237,31 +264,44 @@
     {
       "id": "GE-01",
       "description": "若電池級測試中無法誘發熱失控，且排氣為不可燃氣體，可直接豁免模組級及單元級測試。",
-      "applicable_tests": ["UL9540A-MODULE", "UL9540A-UNIT", "UL9540A-INSTALL"],
+      "applicable_tests": [
+        "UL9540A-MODULE",
+        "UL9540A-UNIT",
+        "UL9540A-INSTALL"
+      ],
       "source_reference": "7.8"
     },
     {
       "id": "GE-02",
       "description": "若模組級測試證明模組設計可控制熱失控、無火焰蔓延至模組外，且排氣不可燃，可豁免單元級測試。",
-      "applicable_tests": ["UL9540A-UNIT", "UL9540A-INSTALL"],
+      "applicable_tests": [
+        "UL9540A-UNIT",
+        "UL9540A-INSTALL"
+      ],
       "source_reference": "8.5"
     },
     {
       "id": "GE-03",
       "description": "若單元級測試的火災蔓延、目標溫度與熱輻射通量等符合 Table 9.1 所列性能標準，可豁免安裝級測試。",
-      "applicable_tests": ["UL9540A-INSTALL"],
+      "applicable_tests": [
+        "UL9540A-INSTALL"
+      ],
       "source_reference": "9.8"
     },
     {
       "id": "GE-04",
       "description": "住宅用 (Residential Use) 系統無安裝級測試選項，必須在單元級滿足性能標準。",
-      "applicable_tests": ["UL9540A-INSTALL"],
+      "applicable_tests": [
+        "UL9540A-INSTALL"
+      ],
       "source_reference": "10.1.1"
     },
     {
       "id": "GE-05",
       "description": "高溫電池的室外集裝箱安裝可豁免單元級測試，直接進行特製的安裝級測試 (10.9)。",
-      "applicable_tests": ["UL9540A-UNIT"],
+      "applicable_tests": [
+        "UL9540A-UNIT"
+      ],
       "source_reference": "9.1.3"
     }
   ],

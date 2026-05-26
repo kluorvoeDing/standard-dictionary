@@ -88,7 +88,7 @@
         },
         "charging_rate": {
           "value": "高倍率",
-          "detail": "高於正常充電速率（按製造商規格或單一故障條件）。"
+          "detail": "20% greater than the maximum specified charging rate."
         },
         "fault_condition": {
           "value": "充電電路單一故障",
@@ -163,7 +163,7 @@
         },
         "discharge_rate": {
           "value": "過載放電",
-          "detail": "高於正常放電速率的過載放電電流。"
+          "detail": "90% of the rated overcurrent protection value, and 135% of the main fuse rating (or 150% for Exception 1)."
         },
         "fault_condition": {
           "value": "放電電路單一故障",
@@ -372,8 +372,8 @@
           "detail": "充滿電狀態。"
         },
         "force": {
-          "value": "模擬車輛碰撞",
-          "detail": "代表車輛碰撞時最可能受擠壓的方向，施加預期的最大擠壓負載。"
+          "value": "100 ±6 kN",
+          "detail": "Apply maximum force of 100 ±6 kN."
         }
       },
       "acceptance_criteria": {
@@ -407,8 +407,8 @@
           "detail": "充滿電狀態。"
         },
         "height": {
-          "value": "按標準規定",
-          "detail": "從規定高度跌落至混凝土或金屬表面。"
+          "value": "Variable",
+          "detail": "100 cm for 7 kg or less, 10 cm for >7 kg but less than 100 kg, and 2.5 cm for > 100 kg."
         }
       },
       "acceptance_criteria": {
@@ -516,6 +516,14 @@
         "resistance": {
           "value": "≤ 20 mΩ",
           "detail": "外部電阻小於等於 20 mΩ。"
+        },
+        "ambient_temp": {
+          "value": "25 ±5 °C",
+          "detail": "Test ambient temperature."
+        },
+        "duration": {
+          "value": "7 h",
+          "detail": "Apply the short for 7 h or until temperatures on the cell cool to within ±10 °C."
         }
       },
       "acceptance_criteria": {
@@ -548,7 +556,7 @@
         },
         "impact": {
           "value": "標準衝擊",
-          "detail": "使用規定重量及高度進行單一衝擊。"
+          "detail": "Explicitly requires a 15.8 ±0.1-mm bar, a 9.1 ±0.46-kg weight, and a drop height of 610 ±25 mm."
         }
       },
       "acceptance_criteria": {
@@ -610,7 +618,7 @@
       "conditions": {
         "temperature": {
           "value": "130°C",
-          "detail": "以 5°C/min 升溫至 130°C 並維持 10 分鐘。"
+          "detail": "Rate of 5 ±2 °C per minute to a temperature of 130 ±2 °C."
         }
       },
       "acceptance_criteria": {
