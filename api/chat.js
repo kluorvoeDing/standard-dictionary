@@ -41,15 +41,7 @@ export default async function handler(req) {
       });
     }
 
-    // Engine 2: Opencode Go (Fallback 2)
-    if (process.env.OPENCODE_API_KEY && process.env.OPENCODE_BASE_URL) {
-      engines.push({
-        type: 'openai',
-        name: 'Opencode DeepSeek',
-        key: process.env.OPENCODE_API_KEY,
-        baseUrl: process.env.OPENCODE_BASE_URL
-      });
-    }
+
 
     if (engines.length === 0) {
       return new Response(JSON.stringify({ error: 'No API keys configured on server' }), {
@@ -73,25 +65,7 @@ export default async function handler(req) {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ contents }),
           });
-        } else if (engine.type === 'openai') {
-          // Convert Gemini payload to OpenAI payload
-          const messages = contents.map(c => ({
-            role: c.role === 'model' ? 'assistant' : c.role,
-            content: c.parts[0].text
-          }));
-          const url = `${engine.baseUrl.replace(/\/+$/, '')}/chat/completions`;
-          finalRes = await fetch(url, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'Authorization': `Bearer ${engine.key}`
-            },
-            body: JSON.stringify({
-              model: 'deepseek-v4-flash',
-              messages: messages,
-              stream: true
-            }),
-          });
+
         }
 
         if (finalRes.status === 429) {

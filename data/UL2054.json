@@ -65,8 +65,8 @@
           "detail": "高溫短路測試於 55 ± 2°C (電芯) 或 55 ± 5°C (電池組) 下進行。"
         },
         "duration": {
-          "value": "直到起火/爆炸，或完全放電且溫度恢復",
-          "detail": "持續短路直到起火或爆炸，或直到達到完全放電狀態（電芯 < 0.2V）且外殼溫度恢復至環境溫度 ±10°C 內。"
+          "value": "直到起火/爆炸，或完全放電和/或溫度恢復",
+          "detail": "持續短路直到起火或爆炸，或直到達到完全放電狀態（電芯 < 0.2V）和/或外殼溫度恢復至環境溫度 ±10°C 內。"
         },
         "fault_condition": {
           "value": "單一故障",
@@ -235,6 +235,10 @@
         "CELL"
       ],
       "conditions": {
+        "ambient_temperature": {
+          "value": "20 ± 5°C",
+          "detail": "測試在 20 ± 5°C 的環境溫度下進行。"
+        },
         "force": {
           "value": "13 ± 1.0 kN",
           "detail": "電池在兩個平面之間被擠壓，擠壓力為 13 ± 1.0 kN (3000 lbf)。"
@@ -271,6 +275,10 @@
         "CELL"
       ],
       "conditions": {
+        "ambient_temperature": {
+          "value": "20 ± 5°C",
+          "detail": "測試在 20 ± 5°C 的環境溫度下進行。"
+        },
         "weight": {
           "value": "9.1 ± 0.46 kg",
           "detail": "使用 9.1 ± 0.46 kg (20 ± 1 lb) 的重物。"
@@ -311,6 +319,10 @@
         "CELL"
       ],
       "conditions": {
+        "ambient_temperature": {
+          "value": "20 ± 5°C",
+          "detail": "測試在 20 ± 5°C 的環境溫度下進行。"
+        },
         "acceleration": {
           "value": "峰值 125g - 175g",
           "detail": "初始3毫秒的最小平均加速度為 75g，峰值加速度在 125g 到 175g 之間。"
@@ -320,8 +332,8 @@
           "detail": "在三個相互垂直的方向上對電池進行測試。"
         },
         "shock_count": {
-          "value": "各方向3次，共9次",
-          "detail": "每個方向上施加 3 次衝擊。"
+          "value": "共 3 次",
+          "detail": "總共施加 3 次衝擊（每個相互垂直的方向各 1 次）。"
         }
       },
       "acceptance_criteria": {
@@ -348,6 +360,10 @@
         "CELL"
       ],
       "conditions": {
+        "ambient_temperature": {
+          "value": "20 ± 5°C",
+          "detail": "測試在 20 ± 5°C 的環境溫度下進行。"
+        },
         "amplitude": {
           "value": "0.8 mm",
           "detail": "振動幅度為 0.8 mm (0.03 英寸)，即總最大偏移量為 1.6 mm (0.06 英寸)。"
@@ -385,6 +401,10 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
+        "ambient_temperature": {
+          "value": "20 ± 5°C",
+          "detail": "測試在 20 ± 5°C 的環境溫度下進行。"
+        },
         "force": {
           "value": "250 ± 10 N",
           "detail": "施加 250 ± 10 N 的力。"
@@ -458,6 +478,10 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
+        "ambient_temperature": {
+          "value": "20 ± 5°C",
+          "detail": "測試在 20 ± 5°C 的環境溫度下進行。"
+        },
         "height": {
           "value": "1 m",
           "detail": "從 1 m (3.28 英尺) 高度跌落。"
@@ -499,12 +523,12 @@
       ],
       "conditions": {
         "heating": {
-          "value": "明火加熱",
-          "detail": "將測試電池置於帶有 102 mm 圓孔的工作台上，上方覆蓋金屬絲網。使用燃燒器加熱，直到電池爆炸或電池燃燒殆盡。"
+          "value": "明火加熱 (距離 38 mm)",
+          "detail": "將測試電池置於帶有 102 mm 圓孔的工作台上，上方覆蓋金屬絲網，距離燃燒器 38 mm。使用燃燒器加熱，直到電池爆炸或電池燃燒殆盡。"
         },
         "cage": {
-          "value": "覆蓋鋁網籠",
-          "detail": "測試電池用八角形鋁質金屬絲籠覆蓋。"
+          "value": "覆蓋鋁網籠 (610x305 mm, 16-18 wires/inch)",
+          "detail": "測試電池用 610x305 mm 的八角形鋁質金屬絲籠覆蓋，網格密度為每英吋 16-18 根金屬絲。"
         }
       },
       "acceptance_criteria": {
@@ -567,8 +591,8 @@
       ],
       "conditions": {
         "cycle_profile": {
-          "value": "70°C(4h) -> 20°C(2h) -> -40°C(4h) -> 20°C",
-          "detail": "70°C (158°F) 維持 4 小時；20°C (68°F) 維持 2 小時；-40°C (-40°F) 維持 4 小時；回到 20°C。"
+          "value": "70±3°C(4h) -> 20±3°C(2h) -> -40±3°C(4h) -> 20±3°C",
+          "detail": "70±3°C (158°F) 維持 4 小時；轉換時間 < 30 分鐘；20±3°C (68°F) 維持 2 小時；轉換時間 < 30 分鐘；-40±3°C (-40°F) 維持 4 小時；轉換時間 < 30 分鐘；回到 20±3°C。"
         },
         "cycle_count": {
           "value": "10次循環",

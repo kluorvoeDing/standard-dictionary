@@ -228,8 +228,8 @@
           "detail": "5 顆電芯在室溫下完全放電 (Section 12.2)。"
         },
         "sample_size": {
-          "value": "5 顆",
-          "detail": "5 顆完全放電電芯分別作為待測樣品。"
+          "value": "10 顆 (5顆完全充電，5顆放電至50%容量)",
+          "detail": "10 顆 (5顆完全充電，5顆放電至50%容量) - 5+5 samples based on conditioning"
         },
         "protective_device": {
           "value": "動作後須以不觸發之最大負載重新測試",
@@ -391,6 +391,10 @@
           "value": "變形量 13±1% 或達到指定力值",
           "detail": "當電芯變形量達到預壓厚度之 13±1% 時，或擠壓力達到 Table 14A.1 規定力值 (1~13kN 依寬度而定) 時停止，並保持 30 秒。"
         },
+        "sample_size": {
+          "value": "10 顆 (5顆完全充電，5顆放電至50%容量)",
+          "detail": "10 顆 (5顆完全充電，5顆放電至50%容量) - 5+5 sample distribution"
+        },
         "orientation": {
           "value": "正負極耳在兩側時，每側各用不同樣品測",
           "detail": "若正負極耳在相反兩側，圓棒放置與擠壓需分別在極耳附近進行（每側使用不同樣品）。"
@@ -399,7 +403,8 @@
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
         "details": [
-          "所有樣品不得爆炸或起火 (Section 14A.7)"
+          "所有樣品不得爆炸或起火 (Section 14A.7)",
+          "技術人員可更換的電池有額外嚴格條件 (Section 5.1.2)"
         ]
       },
       "exemptions": [
@@ -543,8 +548,8 @@
           "detail": "在目標溫度維持 10 分鐘後，回復至室溫 (20±5°C) 再進行檢查。"
         },
         "li_ion_preconditioning": {
-          "value": "鋰離子電芯需在操作區域溫度邊界預處理後充電",
-          "detail": "鋰離子電芯須依 Section 6.3–6.5 預處理：先完全放電至終止電壓，再分別在操作區域上限溫度及下限溫度放置 1–4 小時，然後在該溫度下以最大充電電流及上限充電電壓進行恒壓充電，直至電流降至 0.05 倍充電電流。每組各 5 顆。"
+          "value": "使用 45°C/10°C 限制，或施加嚴格的 ±5°C 偏移",
+          "detail": "鋰離子電芯須依 Section 6.3–6.5 預處理：使用 45°C/10°C 限制，或若製造商限制超過此範圍則施加嚴格的 ±5°C 偏移 (using 45°C/10°C limits, or applying strict ±5°C shifts to manufacturer limits if they exceed these bounds)。每組各 5 顆。"
         },
         "sample_size": {
           "value": "5 顆（鋰離子可能需 10 顆）",
@@ -789,6 +794,7 @@
       "applicable_tests": [
         "UL1642-T13",
         "UL1642-T14",
+        "UL1642-T14A",
         "UL1642-T20"
       ],
       "source_reference": "Section 5.1.2"

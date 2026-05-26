@@ -32,9 +32,13 @@
       "subcategory": "外部短路",
       "test_objects": ["PACK_SYSTEM"],
       "conditions": {
+        "active_supply": {
+          "value": "Connected to rated voltage",
+          "detail": "Power pack connected to a source of supply adjusted to its rated voltage."
+        },
         "resistance": {
           "value": "≤ 10 mΩ",
-          "detail": "輸出端子以不超過 10 mΩ 的阻抗進行短路。"
+          "detail": "輸出端子以不超過 10 mΩ 的阻抗進行短路。 如果提供升壓電纜(booster cable)，短路也必須發生在電纜末端。"
         },
         "termination": {
           "value": "直到保護裝置斷開或溫度穩定",
@@ -44,7 +48,8 @@
       "acceptance_criteria": {
         "summary": "不起火、不觸電",
         "details": [
-          "不得噴出火焰或熔融金屬，不得產生起火、觸電或人員受傷之風險 (Section 55.1.1)"
+          "不得噴出火焰或熔融金屬，不得產生起火、觸電或人員受傷之風險 (Section 55.1.1)",
+          "測試後需通過 Section 55.1.2 的耐壓測試 (Dielectric Voltage Withstand Test)。"
         ]
       },
       "exemptions": [],
@@ -63,7 +68,7 @@
       "conditions": {
         "charging_current": {
           "value": "3倍最大充電電流或外部充電器最大輸出",
-          "detail": "通用充電接口：以最大充電電壓及3倍最大充電電流進行充電。非通用充電接口：以外部充電器可提供的最大電壓與電流輸出進行充電。"
+          "detail": "通用充電接口：以最大充電電壓及3倍最大充電電流進行充電。非通用充電接口：以外部充電器可提供的最大電壓與電流輸出進行充電。 測試需在充電保護電路無單一故障或有單一故障的情況下進行 (with or without a single fault condition)。"
         },
         "duration": {
           "value": "1.25 小時",
@@ -73,7 +78,9 @@
       "acceptance_criteria": {
         "summary": "不爆炸、不燒焦",
         "details": [
-          "不得發生爆炸，且覆蓋的醫療紗布或衛生紙不得有燒焦或燃燒現象 (Section 55.9.2)"
+          "不得發生爆炸，且覆蓋的醫療紗布或衛生紙不得有燒焦或燃燒現象 (Section 55.9.2)",
+          "測試後需通過 Section 55.1.2 的耐壓測試 (Dielectric Voltage Withstand Test)。",
+          "允許電池排氣 (Venting of the cells is acceptable)。"
         ]
       },
       "exemptions": [],
@@ -92,7 +99,7 @@
       "conditions": {
         "temperature": {
           "value": "低溫 0°C",
-          "detail": "其中一組樣品需在 0°C (32°F) 下放置 4 小時後立即進行衝擊。"
+          "detail": "其中一組樣品需在 0°C (32°F) 或製造商規定的最低工作溫度（若低於 0°C）下放置 4 小時後立即進行衝擊。"
         },
         "drop_height": {
           "value": "0.9 m (3 ft)",
@@ -102,7 +109,7 @@
       "acceptance_criteria": {
         "summary": "不漏電、耐壓通過",
         "details": [
-          "測試棒不得接觸到危險電壓部件、通過耐壓測試、外殼無永久變形導致間距不足 (Section 60.1.1)"
+          "測試棒不得接觸到危險電壓部件、通過耐壓測試、金屬外殼無永久變形導致間距不足 (metallic enclosure distortion) (Section 60.1.1)"
         ]
       },
       "exemptions": [],
