@@ -98,7 +98,8 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂"
+          "無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂",
+          "必須符合 Table 12.1 中所有規範 (包含 P: 保護控制正常)"
         ]
       },
       "exemptions": [],
@@ -136,7 +137,8 @@
         "summary": "無起火、無爆炸",
         "details": [
           "若無內部短路保護的模組，允收標準僅要求無起火爆炸 (無 E, F)",
-          "整體系統: 無起火、無爆炸、無洩漏、無破裂、無毒氣"
+          "整體系統: 無起火、無爆炸、無洩漏、無破裂、無毒氣",
+          "必須符合 Table 12.1 中所有規範 (包含 C: 無可燃氣體, S: 無電擊危險, P: 保護控制正常)"
         ]
       },
       "exemptions": [],
@@ -173,7 +175,8 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "無起火、無爆炸、無可燃/有毒氣體、無洩漏破裂"
+          "無起火、無爆炸、無可燃/有毒氣體、無洩漏破裂",
+          "必須符合 Table 12.1 中所有規範 (包含 S: 無電擊危險, P: 保護控制正常)"
         ]
       },
       "exemptions": [],
@@ -207,7 +210,8 @@
         "summary": "保護裝置應啟動，無起火、無爆炸",
         "details": [
           "保護裝置必須啟動防止電池電壓低於截止電壓",
-          "無起火、無爆炸"
+          "無起火、無爆炸",
+          "必須符合 Table 12.1 中所有規範 (包含 C, V, S, L, R, P)"
         ]
       },
       "exemptions": [],
@@ -229,8 +233,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "最高/最低工作溫度",
-          "detail": "在製造商規定的最高及最低額定環境溫度下運行。"
+          "value": "上限充電與放電溫度",
+          "detail": "在製造商規定的上限充電溫度及上限放電溫度下運行。"
         },
         "operation": {
           "value": "多次充放電",
@@ -241,13 +245,14 @@
         "summary": "不超出規定的極限值",
         "details": [
           "電壓、電流、溫度不得超出製造商規格限值",
-          "元件溫度不得超出其額定規格"
+          "元件溫度不得超出其額定規格",
+          "符合 Table 12.1 規範 (無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊危險、無洩漏、無破裂、無保護失效)"
         ]
       },
       "exemptions": [],
       "related_tests": [],
       "source_reference": "Section 20",
-      "original_text_snippet": "The DUT is operated at maximum/minimum ambient temperatures through charge/discharge cycles. Manufacturer limits shall not be exceeded."
+      "original_text_snippet": "The DUT is operated at upper limit charging and upper limit discharging temperatures through charge/discharge cycles. Manufacturer limits shall not be exceeded."
     },
     {
       "id": "UL1973-24",
@@ -274,7 +279,8 @@
       "acceptance_criteria": {
         "summary": "安全關閉或無起火/爆炸",
         "details": [
-          "系統應安全關閉或不產生危險(無起火、無爆炸)"
+          "系統應安全關閉或不產生危險(無起火、無爆炸)",
+          "必須符合 Table 12.1 中所有規範 (包含 C, V, S, L, R, P)"
         ]
       },
       "exemptions": [
@@ -309,7 +315,8 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "無起火、爆炸、破裂、洩漏，保護控制維持正常。"
+          "無起火、爆炸、破裂、洩漏，保護控制維持正常。",
+          "必須符合 Table 12.1 中所有規範 (包含 C: 無可燃氣體, V: 無有毒氣體, S: 無電擊危險)"
         ]
       },
       "exemptions": [
@@ -344,7 +351,8 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸",
         "details": [
-          "無起火、無爆炸、無洩漏、無破裂。"
+          "無起火、無爆炸、無洩漏、無破裂。",
+          "必須符合 Table 12.1 中所有規範 (包含 C, V, S, P)"
         ]
       },
       "exemptions": [
@@ -414,7 +422,8 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "無起火、爆炸、電擊、洩漏、破裂。"
+          "無起火、爆炸、電擊、洩漏、破裂。",
+          "必須符合 Table 12.1 中所有規範 (包含 C: 無可燃氣體, P: 保護控制正常)"
         ]
       },
       "exemptions": [
@@ -698,6 +707,66 @@
       "related_tests": [],
       "source_reference": "Annex E8",
       "original_text_snippet": "The discharged cells are subjected to a forced discharge at a constant current 1.0 ItA for 90 min."
+    },
+    {
+      "id": "UL1973-21",
+      "normalized_id": "ELEC-CC",
+      "name_zh": "不平衡充電測試 (Imbalanced Charging)",
+      "name_en": "Imbalanced Charging Test",
+      "section": "21",
+      "category": "ELEC",
+      "subcategory": "不平衡充電 (Imbalanced Charging)",
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "不平衡狀態",
+          "detail": "部分電芯完全放電，其餘電芯處於 50% SOC，然後對系統進行充電。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏等",
+        "details": [
+          "符合 Table 12.1 規範 (E, F, C, V, S, L, R, P)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "Section 21",
+      "original_text_snippet": "The sample is subjected to an imbalanced charging condition."
+    },
+    {
+      "id": "UL1973-38",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "溫度循環測試 (Thermal Cycling)",
+      "name_en": "Thermal Cycling Test",
+      "section": "38",
+      "category": "THERM",
+      "subcategory": "溫度循環 (Thermal Cycling)",
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "profile": {
+          "value": "極端溫度循環",
+          "detail": "在規定的最高與最低溫度之間進行多次溫度循環。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸等",
+        "details": [
+          "符合 Table 12.1 規範 (E, F, C, V, S, L, R, P)"
+        ]
+      },
+      "exemptions": [
+        "靜止式儲能 (Stationary applications) 豁免此測試 (見 GE-02)"
+      ],
+      "related_tests": [],
+      "source_reference": "Section 38",
+      "original_text_snippet": "The sample is subjected to thermal cycling between extreme temperatures."
     }
   ],
   "test_sequence": {},
