@@ -92,8 +92,8 @@
           "detail": "試驗對象按 7.1.1 方法進行標準充電"
         },
         "current": {
-          "value": "≥ I1",
-          "detail": "以製造商規定且不小於 I1 的電流恆流充電"
+          "value": "≥ 1 I3",
+          "detail": "以製造商規定且不小於 1 I3 的電流恆流充電"
         },
         "termination": {
           "value": "1.1倍電壓 或 115% SOC",
@@ -313,6 +313,10 @@
         "applicability": {
           "value": "快充單體",
           "detail": "試驗對象為從 20% SOC 充電至 80% SOC 總充電時間不超過 15 min 的電池單體"
+        },
+        "cycles": {
+          "value": "300 次循環 (20%~80% SOC)",
+          "detail": "進行 300 次連續快充循環（20%~80% SOC），每次充放電間靜置 30 分鐘，循環後需進行 8.1.4 外部短路試驗。"
         }
       },
       "acceptance_criteria": {
@@ -344,6 +348,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試 (6.1.10)"
+        },
+        "vibration_params": {
+          "value": "隨機振動 12h + 正弦定頻 1h",
+          "detail": "包含隨機振動（依重量及安裝位置參考表2、表3的 RMS 值如 0.52g, 0.57g, 0.73g 等）測試 12 小時，以及正弦定頻振動測試 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -376,6 +384,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "shock_params": {
+          "value": "半正弦衝擊波, 7g, 6ms, 12次",
+          "detail": "施加半正弦衝擊波，加速度 7g，脈衝時間 6 ms，在 ±z 方向各進行 6 次衝擊，共計 12 次。"
         }
       },
       "acceptance_criteria": {
@@ -440,6 +452,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "crush_params": {
+          "value": "100 kN 或 30% 變形量",
+          "detail": "使用半圓柱體（半徑 75 mm）以不大於 2 mm/s 的速度擠壓，直到擠壓力達到 100 kN 或變形量達到 30%，並保持 10 分鐘。"
         }
       },
       "acceptance_criteria": {
@@ -473,6 +489,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "cycle_params": {
+          "value": "最高 60 ℃，5 次循環",
+          "detail": "在最高溫度 60 ℃（或更高，依製造商規定）及高濕度下，進行 5 次濕熱循環。"
         }
       },
       "acceptance_criteria": {
@@ -513,6 +533,10 @@
         "option_2": {
           "value": "方式二",
           "detail": "符合 GB/T 4208-2017 IPX7 要求"
+        },
+        "temperature_diff": {
+          "value": "溫差 ≤ 5 ℃",
+          "detail": "（方式二）浸水時，水溫與試驗對象的溫差不得大於 5 ℃。"
         }
       },
       "acceptance_criteria": {
@@ -574,6 +598,10 @@
         "soc": {
           "value": "SOC ≥ 90% 或 95%",
           "detail": "視具體觸發要求"
+        },
+        "ambient_temp": {
+          "value": "22 ℃ ± 5 ℃",
+          "detail": "試驗前需將環境與試驗對象溫度調整至 22 ℃ ± 5 ℃。"
         }
       },
       "acceptance_criteria": {
@@ -608,6 +636,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "shock_params": {
+          "value": "-40 ℃ ~ 60 ℃，5 次循環",
+          "detail": "溫度範圍為 -40 ℃ 到 60 ℃，極端溫度轉換時間不超過 30 分鐘，各極端溫度保持 8 小時，共進行 5 次循環。"
         }
       },
       "acceptance_criteria": {
@@ -640,6 +672,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "salt_params": {
+          "value": "濃度 (50±5) g/L，6 個循環",
+          "detail": "使用濃度 (50±5) g/L、pH 6.5~7.2 的鹽溶液。在 35 ℃ 下噴霧 8 小時，然後靜置 16 小時，共進行 6 個循環。"
         }
       },
       "acceptance_criteria": {
@@ -674,6 +710,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "altitude_params": {
+          "value": "61.2 kPa，保持 5h",
+          "detail": "在 61.2 kPa (模擬海拔 4000 m) 的氣壓下保持 5 小時，然後以不小於 1 I3 的電流放電。"
         }
       },
       "acceptance_criteria": {
@@ -706,6 +746,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "ambient_temp": {
+          "value": "20 ℃ ± 10 ℃",
+          "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
         }
       },
       "acceptance_criteria": {
@@ -738,6 +782,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "ambient_temp": {
+          "value": "20 ℃ ± 10 ℃",
+          "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
         }
       },
       "acceptance_criteria": {
@@ -770,6 +818,14 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "ambient_temp": {
+          "value": "20 ℃ ± 10 ℃",
+          "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
+        },
+        "short_circuit_res": {
+          "value": "≤ 5 mΩ",
+          "detail": "外部短路電阻不超過 5 mΩ。"
         }
       },
       "acceptance_criteria": {
@@ -802,6 +858,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "ambient_temp": {
+          "value": "20 ℃ ± 10 ℃",
+          "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
         }
       },
       "acceptance_criteria": {
@@ -834,6 +894,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "ambient_temp": {
+          "value": "20 ℃ ± 10 ℃",
+          "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
         }
       },
       "acceptance_criteria": {
@@ -866,6 +930,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "impact_params": {
+          "value": "直徑 30 mm，150 J ± 3 J",
+          "detail": "撞擊頭為直徑 30 mm 的半球形，質量 10 kg，撞擊能量為 150 J ± 3 J。"
         }
       },
       "acceptance_criteria": {
