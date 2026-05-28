@@ -9,7 +9,11 @@
     "publication_date": "July 2017",
     "type": "guidance",
     "scope": "定義可充電儲能系統 (RESS) 用於電動車應用 (EV、PHEV、HEV) 之濫用測試推薦程序與實踐。目的在於了解 RESS 在正常使用範圍以外之條件或事件下的濫用耐受性與潛在弱點，供製造商於開發早期設計及實施必要之危害緩解措施。本文件不定義合格/不合格標準。",
-    "applicable_objects": ["CELL", "MODULE", "PACK_SYSTEM"],
+    "applicable_objects": [
+      "CELL",
+      "MODULE",
+      "PACK_SYSTEM"
+    ],
     "source_pdf": "SAND2017-6925.pdf",
     "source_gemini_md": "SAND2017-6925_zh-TW_standardized.md"
   },
@@ -124,7 +128,9 @@
       "section": "3.1.1.1",
       "category": "MECH",
       "subcategory": "控制壓壞 (Controlled Crush)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "crush_speed": {
           "value": "1 mm/min",
@@ -165,7 +171,10 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["SAND2017-T01b", "SAND2017-T01c"],
+      "related_tests": [
+        "SAND2017-T01b",
+        "SAND2017-T01c"
+      ],
       "source_reference": "Section 3.1.1.1, Table 2, Table 5",
       "original_text_snippet": "DUT is crushed continuously at a speed of 1 mm/min along the transverse axis of the cell using a cylindrical impactor. The crush should continue until one of the following end conditions has been met: (1) the applied force has reached the limit of 25 kN, or (2) failure of the DUT (HSL ≥5) or (3) the impactor has reached 100% practical displacement into the DUT. The DUT should be monitored for at least 30 minutes after the end of the test."
     },
@@ -177,15 +186,17 @@
       "section": "3.1.1.2",
       "category": "MECH",
       "subcategory": "控制壓壞 (Controlled Crush)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "crush_speed": {
           "value": "1 mm/min",
           "detail": "使用矩形鋼製壓頭以 1 mm/min 速度持續壓壞。(DUT is crushed continuously at a speed of 1 mm/min using a rectangular steel impactor.)"
         },
         "impactor": {
-          "value": "半圓形鋼製壓頭，半徑依電芯寬度縮放",
-          "detail": "壓頭為鋼製半圓形（矩形底座），半圓半徑與壓壞面寬度對應：20mm→寬度≤32mm；30mm→32-60mm；60mm→60-150mm；150mm→>150mm。(Table 6, Figure 3)"
+          "value": "半圓形鋼製壓頭，直徑依電芯寬度縮放",
+          "detail": "壓頭為鋼製半圓形（矩形底座），半圓直徑與壓壞面寬度對應：20mm→寬度≤32mm；30mm→32-60mm；60mm→60-150mm；150mm→>150mm。(Table 6, Figure 3)"
         },
         "orientation": {
           "value": "y 方向或 z 方向壓壞",
@@ -225,7 +236,10 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["SAND2017-T01a", "SAND2017-T01c"],
+      "related_tests": [
+        "SAND2017-T01a",
+        "SAND2017-T01c"
+      ],
       "source_reference": "Section 3.1.1.2, Table 2, Table 6, Figure 1-3",
       "original_text_snippet": "DUT is crushed in a robust constraint fixture designed to mechanically support the DUT during the test and to mimic a constrained cell in a module or pack. DUT is crushed continuously at a speed of 1 mm/min using a rectangular steel impactor. The crush should continue until one of the following end conditions has been met: (1) the applied force has reached the limit of 25 kN, or (2) failure of the DUT (HSL ≥5), or (3) the impactor has reached 100% practical displacement into the DUT."
     },
@@ -237,7 +251,10 @@
       "section": "3.1.1.3",
       "category": "MECH",
       "subcategory": "控制壓壞 (Controlled Crush)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "crush_speed": {
           "value": "1 mm/min",
@@ -282,7 +299,10 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["SAND2017-T01a", "SAND2017-T01b"],
+      "related_tests": [
+        "SAND2017-T01a",
+        "SAND2017-T01b"
+      ],
       "source_reference": "Section 3.1.1.3, Table 2, Figure 4",
       "original_text_snippet": "DUT is crushed between a flat and a textured platen. The textured platen shall have a single semi-cylindrical impactor with a 75 mm radius in the center of the platen. DUT is crushed continuously at a speed of 1 mm/min. The crush should continue until one of the following end conditions has been met: (2) failure of the DUT (HSL ≥5), or (3) the impactor has reached 100% practical displacement into the DUT. It is important to note that achieving 100% practical displacement could require >500 kN of applied force depending on module construction."
     },
@@ -294,7 +314,9 @@
       "section": "3.1.2",
       "category": "MECH",
       "subcategory": "穿刺 (Penetration)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "rod_specification": {
           "value": "Ø3 ± 0.2 mm 導電桿，端部半徑 1.5 ± 0.1 mm",
@@ -313,7 +335,7 @@
           "detail": "Table 7 提供穿刺測試矩陣，依溫度與 SOC 百分比組合。建議從最嚴苛條件（右下角：100% SOC / 55°C）向左上角測試，直至達到可接受之 HSL 等級。(Test matrix Table 7: Temperature rows vs. %SOC columns 60-100%. Recommended to test from bottom right to top left.)"
         },
         "end_conditions": {
-          "value": "完全穿透 / 電壓降 ≥ 100 mV / HSL ≥ 5",
+          "value": "完全穿透 / 電壓降 ≥ 100 ± 10 mV / HSL ≥ 5",
           "detail": "穿刺持續至滿足以下任一終止條件：(1) 完全穿透 DUT（穿透最後一層電極）；(2) 量測電壓降 ≥ 100 ± 10 mV；(3) DUT 失效 (HSL ≥ 5)。(End conditions: (1) complete penetration, (2) voltage drop ≥100 ± 10 mV, (3) failure HSL ≥5.)"
         },
         "monitoring_period": {
@@ -346,7 +368,10 @@
       "section": "3.2.1",
       "category": "THERM",
       "subcategory": "熱濫用 (Thermal Abuse)",
-      "test_objects": ["CELL", "MODULE"],
+      "test_objects": [
+        "CELL",
+        "MODULE"
+      ],
       "conditions": {
         "heating_rate": {
           "value": "2-5°C/min (±0.5°C/min)",
@@ -384,7 +409,9 @@
       "exemptions": [
         "電池包 (Pack) 等級因測試之實際限制不建議執行整包熱升溫測試。(Thermal ramp testing at the pack level is not recommended due to practical limitations — Table 2 footnote a.)"
       ],
-      "related_tests": ["SAND2017-T04"],
+      "related_tests": [
+        "SAND2017-T04"
+      ],
       "source_reference": "Section 3.2.1, Table 2",
       "original_text_snippet": "Starting from the normal operating temperature and a DUT at 100% SOC, the DUT is heated at a nominal, constant heating rate of 2-5°C/min rate (±0.5°C/min). The end conditions for the test are (1) the DUT temperature reaches 250°C and is held at 250°C for 15 minutes without any measured DUT self-heating (dT/dt > 0.1°C/min) or (2) failure of the DUT (HSL ≥5). The DUT should be monitored for at least 30 minutes after the end of the test."
     },
@@ -396,7 +423,9 @@
       "section": "3.2.2",
       "category": "THERM",
       "subcategory": "熱穩定性 (Thermal Stability)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "method": {
           "value": "絕熱加速量熱法 (ARC)",
@@ -441,7 +470,9 @@
       "exemptions": [
         "模組及電池包級因測試之實際限制不建議執行 ARC 測試。(ARC at module and pack levels not recommended due to practical limitations — Table 2 footnote b.)"
       ],
-      "related_tests": ["SAND2017-T03"],
+      "related_tests": [
+        "SAND2017-T03"
+      ],
       "source_reference": "Section 3.2.2, Table 2",
       "original_text_snippet": "The intent of this test is to measure the total heat generation and heating rate from a DUT. A DUT is placed in an adiabatic accelerating rate calorimeter (ARC) without being in direct contact with the heating elements but suspending it from the top jacket. Starting from the normal operating temperature of the DUT, the DUT is heated in 5°C steps with a 30-minute wait step following each heating step."
     },
@@ -453,7 +484,11 @@
       "section": "3.3.1",
       "category": "ELEC",
       "subcategory": "過充電 (Overcharge)",
-      "test_objects": ["CELL", "MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "initial_state": {
           "value": "100% SOC，正常工作溫度",
@@ -469,7 +504,7 @@
         },
         "charge_current_large": {
           "value": ">40 Ah：1C / 2C / 80A",
-          "detail": "DUT 容量 >40 Ah：建議充電電流為 1C、2C 及 80A。80A 來自 SAE J1772 (2009) 標準之 Level 2 充電站最大電流。(Table 8: >40 Ah → 1C, 2C, 80A)"
+          "detail": "DUT 容量 >40 Ah：建議充電電流為 1C、2C 及 80A。80A 來自 SAE J1772 (2009) 標準之 Level 2 充電站最大電流。(Table 8: >40 Ah → 1C, 2C, 80A) 如果 2C 和 32/80 A 充電電流條件彼此接近（在 10% 以內），建議僅執行其中 2 個條件。"
         },
         "voltage_limit_cell": {
           "value": "電芯：20V",
@@ -520,7 +555,11 @@
       "section": "3.3.3",
       "category": "ELEC",
       "subcategory": "過放電 (Overdischarge)",
-      "test_objects": ["CELL", "MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "initial_state": {
           "value": "100% SOC，正常工作溫度",
@@ -572,7 +611,11 @@
       "section": "3.3.5",
       "category": "ELEC",
       "subcategory": "外部短路 (External Short Circuit)",
-      "test_objects": ["CELL", "MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "short_circuit_resistance": {
           "value": "硬短路 ≈ 1/10-1× DUT DC 電阻；中等短路 ≈ 5-10× DUT DC 電阻",
@@ -636,7 +679,10 @@
       "section": "3.4",
       "category": "THERM",
       "subcategory": "熱蔓延 (Thermal Propagation)",
-      "test_objects": ["MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "initiation_trigger": {
           "value": "單電芯熱失控觸發，需事先在電芯級實驗驗證",
@@ -677,7 +723,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["SAND2017-T03"],
+      "related_tests": [
+        "SAND2017-T03"
+      ],
       "source_reference": "Section 3.4",
       "original_text_snippet": "The intent of this test is to initiate a single cell thermal runaway under otherwise normal battery operating conditions and evaluate how that failure propagates from cell-to-cell within a battery module or pack. At a minimum, it is recommended that the cell failure be initiated at 100% state-of-charge (SOC) and 25°C. If thermal runaway does not propagate (HSL ≤ 4), monitor for at least 60 minutes after initiation. If thermal runaway does propagate, monitor for an additional 60 minutes from the end of the last failure event (HSL 5-7)."
     },
@@ -689,7 +737,9 @@
       "section": "4.1",
       "category": "THERM",
       "subcategory": "排氣可燃性 (Vent Flammability)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "method": {
           "value": "熱升溫 + 外部點火源",
@@ -729,7 +779,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["SAND2017-T03"],
+      "related_tests": [
+        "SAND2017-T03"
+      ],
       "source_reference": "Section 4.1, Figure 5",
       "original_text_snippet": "The Cell Vent Flammability Test is a variant of the Thermal Ramp Test (Section 3.2.1) with the use of an ignition source to determine vent gas flammability. For a DUT with a clearly identified vent path, one ignition source should be placed along the vent path location at a distance of 40 ± 5 mm away. Follow the Section 3.2.1 Thermal Ramp procedure to heat the DUT at a nominal, constant 5°C/min rate. If ignition and sustained fire occurs after the cell vent, cell heating is stopped."
     },
@@ -741,7 +793,11 @@
       "section": "4.4",
       "category": "THERM",
       "subcategory": "水浸 (Water Immersion)",
-      "test_objects": ["CELL", "MODULE", "PACK_SYSTEM"],
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "immersion_medium": {
           "value": "鹽水，約 3.5% 氯化鈉（模擬海水）",
@@ -795,13 +851,27 @@
     "sequences": [
       {
         "group": "核心測試 (Recommended Core Test Procedures)",
-        "tests": ["SAND2017-T01a", "SAND2017-T01b", "SAND2017-T01c", "SAND2017-T02", "SAND2017-T03", "SAND2017-T04", "SAND2017-T05", "SAND2017-T06", "SAND2017-T07", "SAND2017-T08"],
+        "tests": [
+          "SAND2017-T01a",
+          "SAND2017-T01b",
+          "SAND2017-T01c",
+          "SAND2017-T02",
+          "SAND2017-T03",
+          "SAND2017-T04",
+          "SAND2017-T05",
+          "SAND2017-T06",
+          "SAND2017-T07",
+          "SAND2017-T08"
+        ],
         "rule": "核心測試涵蓋機械 (3.1)、熱 (3.2) 及電氣 (3.3) 濫用，以及失效蔓延 (3.4)。測試順序及排列由測試計畫決定，非強制依序執行。(Section 3)",
         "source_reference": "Section 3"
       },
       {
         "group": "補充測試 (Supplemental Test Procedures)",
-        "tests": ["SAND2017-T09", "SAND2017-T10"],
+        "tests": [
+          "SAND2017-T09",
+          "SAND2017-T10"
+        ],
         "rule": "補充測試包括電芯排氣可燃性 (4.1)、停機隔膜完整性 (4.2)、水浸 (4.4)、燃油火災 (4.5) 及模擬燃油火災 (4.6)。本 JSON 僅納入具有詳細獨立程序之安全測試項目。(Section 4)",
         "source_reference": "Section 4"
       }
@@ -811,32 +881,46 @@
     {
       "id": "GE-01",
       "description": "本文件不定義合格/不合格標準。所有測試結果以 HSL 0-7 級記錄，具體通過標準由製造商或整合商自行決定。(The intent of this manual is not to define acceptance criteria. Pass/fail criteria are outside the scope of this document.)",
-      "applicable_tests": ["SAND2017-T01a", "SAND2017-T01b", "SAND2017-T01c", "SAND2017-T02", "SAND2017-T03", "SAND2017-T04", "SAND2017-T05", "SAND2017-T06", "SAND2017-T07", "SAND2017-T08", "SAND2017-T09", "SAND2017-T10"],
+      "applicable_tests": [
+        "SAND2017-T01a",
+        "SAND2017-T01b",
+        "SAND2017-T01c",
+        "SAND2017-T02",
+        "SAND2017-T03",
+        "SAND2017-T04",
+        "SAND2017-T05",
+        "SAND2017-T06",
+        "SAND2017-T07",
+        "SAND2017-T08",
+        "SAND2017-T09",
+        "SAND2017-T10"
+      ],
       "source_reference": "Section 1.1"
     },
     {
       "id": "GE-02",
       "description": "電池包 (Pack) 層級因實際限制不建議執行熱升溫測試。(Thermal ramp testing at the pack level is not recommended due to practical limitations.)",
-      "applicable_tests": ["SAND2017-T03"],
+      "applicable_tests": [
+        "SAND2017-T03"
+      ],
       "source_reference": "Table 2, footnote a"
     },
     {
       "id": "GE-03",
       "description": "模組及電池包層級因實際限制不建議執行 ARC 測試。(ARC at module and pack levels is not recommended due to practical limitations.)",
-      "applicable_tests": ["SAND2017-T04"],
+      "applicable_tests": [
+        "SAND2017-T04"
+      ],
       "source_reference": "Table 2, footnote b"
     },
     {
       "id": "GE-04",
       "description": "電化學電容器 (Capacitors) 應執行過電壓測試 (Overvoltage, Section 3.3.2) 及電壓反轉測試 (Voltage Reversal, Section 3.3.4) 取代電池用之過充電/過放電測試。(Overvoltage and Voltage Reversal tests are intended for electrochemical capacitors only.)",
-      "applicable_tests": ["SAND2017-T05", "SAND2017-T06"],
+      "applicable_tests": [
+        "SAND2017-T05",
+        "SAND2017-T06"
+      ],
       "source_reference": "Table 2, footnotes c/d; Section 3.3.2, 3.3.4"
-    },
-    {
-      "id": "GE-05",
-      "description": "若充電系統最大能力低於 RESS 之最大容許電流，可豁免該過充電流條件測試。(If the charging system's maximum capability is lower than the RESS's maximum allowable current, the overcharge test at that current condition may be exempted.)",
-      "applicable_tests": ["SAND2017-T05"],
-      "source_reference": "Gemini MD Section 4 (豁免與特殊情況)"
     }
   ],
   "metadata": {
