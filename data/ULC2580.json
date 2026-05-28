@@ -97,6 +97,10 @@
         "repeat_test": {
           "value": "Yes",
           "detail": "Testing is repeated at a load that draws a maximum current no less than 15% below the operation of the short circuit protection."
+        },
+        "single_fault": {
+          "value": true,
+          "detail": "若樣品配有保護裝置，應在放電條件下可能發生的任何單一元件故障下進行測試。"
         }
       },
       "acceptance_criteria": {
@@ -222,7 +226,19 @@
           "模組最大電壓限值不得超出",
           "應無起火、無爆炸",
           "最小絕緣電阻 100 Ω/V"
-        ]
+        ],
+        "no_venting": {
+          "value": true,
+          "detail": "無排氣"
+        },
+        "no_rupture": {
+          "value": true,
+          "detail": "無破裂"
+        },
+        "no_leakage": {
+          "value": true,
+          "detail": "無洩漏"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -291,8 +307,8 @@
           "detail": "分別在接收狀態與 IEC 60068-2-30 濕熱調節（55 ± 2°C，6次循環）後進行。"
         },
         "voltage": {
-          "value": "500 Vdc",
-          "detail": "使用兆歐表施加 DC 電壓 1 分鐘後測量。"
+          "value": "高於待測電路的直流電壓",
+          "detail": "施加高於待測電路的直流電壓（至少為高壓直流母線的工作電壓）。"
         }
       },
       "acceptance_criteria": {
@@ -326,6 +342,14 @@
         "charge_discharge": {
           "value": "最大速率充放電",
           "detail": "在冷卻禁用的情況下，以最大速率進行充電與放電測試。"
+        },
+        "conditioning": {
+          "value": "最高工作環境溫度下 7 小時",
+          "detail": "將樣品置於最高規定的工作環境溫度下 7 小時。"
+        },
+        "repetition": {
+          "value": "在最低工作環境溫度下重複測試",
+          "detail": "整個試驗應在最低規定的工作環境溫度下重複進行。"
         }
       },
       "acceptance_criteria": {
@@ -942,6 +966,32 @@
       "related_tests": [],
       "source_reference": "Annex B2.9",
       "original_text_snippet": "The cell shall be subjected to the Forced Discharge, Electrical Test as outlined in IEC 62660-2."
+    },
+    {
+      "id": "ULC2580-B2-10",
+      "normalized_id": "MECH-PENETRATION-BULLET",
+      "test_name_en": "Projectile Test",
+      "test_name_zh": "拋射體測試",
+      "applies_to": [
+        "CELL"
+      ],
+      "conditions": {
+        "projectile": {
+          "value": "子彈或其他拋射體",
+          "detail": "按標準執行拋射體穿透。"
+        }
+      },
+      "acceptance_criteria": {
+        "no_fire": {
+          "value": true,
+          "detail": "不起火"
+        },
+        "no_explosion": {
+          "value": true,
+          "detail": "不爆炸"
+        }
+      },
+      "source_reference": "Section B2.10"
     }
   ],
   "test_sequence": {
