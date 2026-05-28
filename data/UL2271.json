@@ -278,7 +278,39 @@
           "電壓、電流、溫度不得超出製造商限值",
           "熱保護和過流保護裝置不應啟動",
           "表面溫度符合表 28.2 限值，且元件溫度不得超出表 28.1 規格限值"
-        ]
+        ],
+        "no_explosion": {
+          "value": true,
+          "detail": "無爆炸"
+        },
+        "no_fire": {
+          "value": true,
+          "detail": "無起火"
+        },
+        "no_combustible_gas": {
+          "value": true,
+          "detail": "無可燃濃度氣體"
+        },
+        "no_rupture": {
+          "value": true,
+          "detail": "無破裂"
+        },
+        "no_leakage": {
+          "value": true,
+          "detail": "無電解液漏液"
+        },
+        "no_venting": {
+          "value": true,
+          "detail": "無排氣"
+        },
+        "no_electric_shock": {
+          "value": true,
+          "detail": "無電擊危險"
+        },
+        "no_loss_of_protection": {
+          "value": true,
+          "detail": "無保護控制失效"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -316,7 +348,19 @@
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
           "電池最大電壓限值不得超出"
-        ]
+        ],
+        "no_combustible_gas": {
+          "value": true,
+          "detail": "無可燃濃度氣體"
+        },
+        "no_electric_shock": {
+          "value": true,
+          "detail": "無電擊危險"
+        },
+        "no_loss_of_protection": {
+          "value": true,
+          "detail": "無保護控制失效"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -461,7 +505,19 @@
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
           "測試後能完成 1 次充放電"
-        ]
+        ],
+        "no_combustible_gas": {
+          "value": true,
+          "detail": "無可燃濃度氣體"
+        },
+        "no_electric_shock": {
+          "value": true,
+          "detail": "無電擊危險"
+        },
+        "no_loss_of_protection": {
+          "value": true,
+          "detail": "無保護控制失效"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -524,6 +580,10 @@
         "force": {
           "value": "1000倍重量或 100 kN",
           "detail": "使用半徑 75mm 肋狀壓板擠壓，施加至 1000倍 DUT 重量或 100 kN（取較早者），或 50% 變形。"
+        },
+        "speed": {
+          "value": "約 1.5 cm/s",
+          "detail": "以大約 1.5 cm/s 的速度進行擠壓"
         }
       },
       "acceptance_criteria": {
@@ -532,7 +592,15 @@
           "無起火 (No fire)",
           "無爆炸 (No explosion)",
           "無洩漏 (No leakage)"
-        ]
+        ],
+        "no_combustible_gas": {
+          "value": true,
+          "detail": "無可燃濃度氣體"
+        },
+        "no_electric_shock": {
+          "value": true,
+          "detail": "無電擊危險"
+        }
       },
       "exemptions": [
         "非道路用 LEV 免測",
@@ -618,7 +686,15 @@
           "無起火 (No fire)",
           "無爆炸 (No explosion)",
           "無洩漏 (No leakage)"
-        ]
+        ],
+        "no_combustible_gas": {
+          "value": true,
+          "detail": "無可燃濃度氣體"
+        },
+        "no_electric_shock": {
+          "value": true,
+          "detail": "無電擊危險"
+        }
       },
       "exemptions": [],
       "related_tests": [
@@ -722,7 +798,19 @@
           "無排氣 (No venting)",
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)"
-        ]
+        ],
+        "no_combustible_gas": {
+          "value": true,
+          "detail": "無可燃濃度氣體"
+        },
+        "no_electric_shock": {
+          "value": true,
+          "detail": "無電擊危險"
+        },
+        "no_loss_of_protection": {
+          "value": true,
+          "detail": "無保護控制失效"
+        }
       },
       "exemptions": [
         "可安裝在代表車輛應用的固定裝置內測試"
@@ -875,7 +963,15 @@
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
           "保護控制正常"
-        ]
+        ],
+        "no_combustible_gas": {
+          "value": true,
+          "detail": "無可燃濃度氣體"
+        },
+        "no_electric_shock": {
+          "value": true,
+          "detail": "無電擊危險"
+        }
       },
       "exemptions": [
         "可在模組層級測試"
