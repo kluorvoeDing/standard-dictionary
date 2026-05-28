@@ -9,7 +9,10 @@
     "publication_date": "2024-07-24",
     "type": "standard",
     "scope": "電能存儲系統用鋰電池與電池組。涵蓋電信、緊急照明、發動機啟動、光伏、家用儲能 (HESS) 及大容量併網/離網系統。",
-    "applicable_objects": ["CELL", "PACK_SYSTEM"],
+    "applicable_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
     "source_pdf": "GB44240-2024.pdf",
     "source_gemini_md": "GB44240-2024_zh-TW_standardized.md"
   },
@@ -23,7 +26,9 @@
       "section": "6.1",
       "category": "ELEC",
       "subcategory": "外部短路",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "temperature": {
           "value": "57 ± 4°C",
@@ -40,7 +45,9 @@
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
-        "details": ["試驗終止後觀察 1 h，電池應不起火、不爆炸。"]
+        "details": [
+          "試驗終止後觀察 1 h，電池應不起火、不爆炸。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -55,7 +62,9 @@
       "section": "6.2",
       "category": "ELEC",
       "subcategory": "過充電",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "charging_current": {
           "value": "最大充電電流",
@@ -68,7 +77,9 @@
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
-        "details": ["電池應不起火、不爆炸。"]
+        "details": [
+          "電池應不起火、不爆炸。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -83,7 +94,9 @@
       "section": "6.3",
       "category": "ELEC",
       "subcategory": "強制放電",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "current": {
           "value": "1 It 反向充電",
@@ -96,7 +109,9 @@
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
-        "details": ["電池應不起火、不爆炸。"]
+        "details": [
+          "電池應不起火、不爆炸。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -111,7 +126,9 @@
       "section": "7.1",
       "category": "THERM",
       "subcategory": "低壓模擬",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "pressure": {
           "value": "11.6 kPa",
@@ -128,7 +145,9 @@
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸、不漏液",
-        "details": ["電池應不起火、不爆炸、不漏液。"]
+        "details": [
+          "電池應不起火、不爆炸、不漏液。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -143,7 +162,9 @@
       "section": "7.2",
       "category": "THERM",
       "subcategory": "溫度循環",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "cycle_count": {
           "value": "10 次",
@@ -160,7 +181,9 @@
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸、不漏液",
-        "details": ["電池應不起火、不爆炸、不漏液。大型電池暴露極端溫度時間至少 12h。"]
+        "details": [
+          "電池應不起火、不爆炸、不漏液。大型電池暴露極端溫度時間至少 12h。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -175,7 +198,9 @@
       "section": "7.3",
       "category": "MECH",
       "subcategory": "振動",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "frequency": {
           "value": "7 Hz ~ 200 Hz",
@@ -188,7 +213,9 @@
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸、不漏液",
-        "details": ["電池應不起火、不爆炸、不漏液。"]
+        "details": [
+          "電池應不起火、不爆炸、不漏液。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -203,7 +230,9 @@
       "section": "7.4",
       "category": "MECH",
       "subcategory": "機械衝擊",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "acceleration": {
           "value": "150 gn (大型 50 gn)",
@@ -216,7 +245,9 @@
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸、不漏液",
-        "details": ["電池應不起火、不爆炸、不漏液。"]
+        "details": [
+          "電池應不起火、不爆炸、不漏液。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -231,7 +262,9 @@
       "section": "7.5",
       "category": "MECH",
       "subcategory": "衝擊",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "mass": {
           "value": "9.1 ± 0.1 kg",
@@ -244,11 +277,21 @@
         "bar": {
           "value": "直徑 15.8 mm 金屬棒",
           "detail": "橫置於電池幾何中心表面。"
+        },
+        "soc": {
+          "value": "放電至額定容量的 50%",
+          "detail": "試驗前需將樣品放電至額定容量的 50%。"
+        },
+        "impactor": {
+          "value": "鋼棒直徑 15.8 mm ± 0.1 mm",
+          "detail": "金屬棒直徑為 15.8 mm ± 0.1 mm。方形和軟包電池僅對其寬面進行衝擊。"
         }
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
-        "details": ["觀察 6 h。電池應不起火、不爆炸。"]
+        "details": [
+          "觀察 6 h。電池應不起火、不爆炸。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -263,7 +306,9 @@
       "section": "7.6",
       "category": "MECH",
       "subcategory": "擠壓",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "force": {
           "value": "50 kN",
@@ -276,11 +321,21 @@
         "termination": {
           "value": "達最大力或電壓降 1/3",
           "detail": "壓力達最大值或電池電壓下降 1/3 時停止。"
+        },
+        "crush_params": {
+          "value": "半圓柱體長度大於電池尺寸",
+          "detail": "擠壓工具半圓柱體的長度必須大於電池尺寸。"
+        },
+        "response_time": {
+          "value": "反應時間 ≤ 100 ms",
+          "detail": "達到停止條件後至設備實際停止的間隔時間應 ≤ 100 ms。"
         }
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
-        "details": ["試驗後觀察 1 h。電池應不起火、不爆炸。"]
+        "details": [
+          "試驗後觀察 1 h。電池應不起火、不爆炸。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -295,7 +350,9 @@
       "section": "7.7",
       "category": "ELEC",
       "subcategory": "內部短路",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "apparatus": {
           "value": "Φ 5 mm 鋼針",
@@ -307,12 +364,14 @@
         },
         "depth": {
           "value": "10 mm 或 30% 厚度",
-          "detail": "刺入 10 mm 深度或電池厚的 30% 取較大值。鋼針停留在電池中。"
+          "detail": "針刺深度應扣除外殼厚度，如果外殼厚度 ≤ 10 mm，則針刺深度為 10 mm。"
         }
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
-        "details": ["觀察 1 h。電池應不起火、不爆炸。"]
+        "details": [
+          "觀察 1 h。電池應不起火、不爆炸。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -327,7 +386,9 @@
       "section": "7.8",
       "category": "THERM",
       "subcategory": "熱濫用",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "temperature": {
           "value": "130 ± 2°C",
@@ -340,7 +401,9 @@
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
-        "details": ["電池應不起火、不爆炸。"]
+        "details": [
+          "電池應不起火、不爆炸。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -355,7 +418,10 @@
       "section": "7.9",
       "category": "MECH",
       "subcategory": "跌落",
-      "test_objects": ["CELL", "PACK_SYSTEM"],
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "height": {
           "value": "視質量而定 (2.5 ~ 100 cm)",
@@ -364,11 +430,21 @@
         "surface": {
           "value": "混凝土板或金屬板",
           "detail": "自由落體跌落於混凝土板或金屬板上。"
+        },
+        "soc": {
+          "value": "以 0.2It 放電至安裝/維護 SOC",
+          "detail": "跌落前，需以 0.2It 的電流將樣品放電至安裝或維護狀態下的 SOC。"
+        },
+        "orientation": {
+          "value": "質量 ≥ 50kg 需包含邊和角跌落",
+          "detail": "針對質量 ≥ 50kg 的樣品，需測試邊和角方向，且重複 2 次。"
         }
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
-        "details": ["觀察 1 h。樣品應不起火、不爆炸。"]
+        "details": [
+          "觀察 1 h。樣品應不起火、不爆炸。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -383,16 +459,40 @@
       "section": "8.3",
       "category": "ELEC",
       "subcategory": "過充電",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "control": {
           "value": "BMS 控制",
           "detail": "BMS 應控制充電電壓不超過充電上限電壓。"
+        },
+        "voltage": {
+          "value": "≥ 1.1倍上限電壓",
+          "detail": "充電電壓設定為大於等於上限電壓的 1.1 倍。"
+        },
+        "cycles": {
+          "value": "循環 3 次",
+          "detail": "重複試驗 3 次。"
+        },
+        "observation": {
+          "value": "觀察 1 h",
+          "detail": "每次試驗後觀察 1 小時。"
+        },
+        "fallback": {
+          "value": "電壓達 103% 或時間達 1 min 停止",
+          "detail": "如果電壓超過 103% 或過充時間達到 1 分鐘，則停止。"
         }
       },
       "acceptance_criteria": {
         "summary": "BMS 動作，不起火、不爆炸",
-        "details": ["BMS 應能發現過充並進行保護。"]
+        "details": [
+          "BMS 應能發現過充並進行保護。"
+        ],
+        "circuit_nuance": {
+          "value": true,
+          "detail": "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -407,16 +507,36 @@
       "section": "8.4",
       "category": "ELEC",
       "subcategory": "過電流",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "control": {
           "value": "BMS 控制",
           "detail": "BMS 應控制充電電流不超過最大充電電流。"
+        },
+        "current": {
+          "value": "最大充電電流的 1.2 倍",
+          "detail": "以比最大充電電流大 20% 的電流進行充電。"
+        },
+        "cycles": {
+          "value": "循環 3 次",
+          "detail": "重複試驗 3 次。"
+        },
+        "observation": {
+          "value": "觀察 1 h",
+          "detail": "每次試驗後觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
         "summary": "BMS 動作，不起火、不爆炸",
-        "details": ["BMS 應能發現過流並進行保護。"]
+        "details": [
+          "BMS 應能發現過流並進行保護。"
+        ],
+        "circuit_nuance": {
+          "value": true,
+          "detail": "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -431,16 +551,36 @@
       "section": "8.5",
       "category": "ELEC",
       "subcategory": "過放電",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "control": {
           "value": "BMS 控制",
           "detail": "BMS 應控制放電電壓不低於放電截止電壓。"
+        },
+        "precondition": {
+          "value": "以 0.2It 放電至 30% SOC",
+          "detail": "試驗前以 0.2It 放電至 30% SOC。"
+        },
+        "current": {
+          "value": "最大放電電流",
+          "detail": "使用最大放電電流進行測試。"
+        },
+        "cycles": {
+          "value": "循環 3 次",
+          "detail": "重複試驗 3 次。"
+        },
+        "observation": {
+          "value": "觀察 1 h",
+          "detail": "每次試驗後觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
         "summary": "BMS 動作，不起火、不爆炸",
-        "details": ["BMS 應能發現過放並進行保護。"]
+        "details": [
+          "BMS 應能發現過放並進行保護。"
+        ]
       },
       "exemptions": [
         "如果電池製造商與用戶達成協議，過放切斷並不是強制性的。"
@@ -457,16 +597,32 @@
       "section": "8.6",
       "category": "THERM",
       "subcategory": "過熱",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "control": {
           "value": "BMS 控制",
           "detail": "BMS 應控制溫度不超過上限充放電溫度。"
+        },
+        "soc": {
+          "value": "50% SOC",
+          "detail": "試驗前預先充電至 50% SOC。"
+        },
+        "temp": {
+          "value": "最高工作溫度 + 5 °C",
+          "detail": "將環境溫度升高至高於最高工作溫度 5 °C。"
+        },
+        "observation": {
+          "value": "觀察 1 h",
+          "detail": "觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
         "summary": "BMS 動作，不起火、不爆炸",
-        "details": ["BMS 應能發現過熱並進行保護。"]
+        "details": [
+          "BMS 應能發現過熱並進行保護。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -481,16 +637,32 @@
       "section": "9.7.1",
       "category": "THERM",
       "subcategory": "熱擴散",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "trigger": {
           "value": "激光照射或其他",
           "detail": "按照附錄 B 進行電池熱失控試驗程序。"
+        },
+        "stop_condition": {
+          "value": "加熱至 300 °C 停止",
+          "detail": "當溫度達到 300 °C 時停止加熱。"
         }
       },
       "acceptance_criteria": {
         "summary": "無熱擴散",
-        "details": ["評估電池熱失控特性。"]
+        "details": [
+          "評估電池熱失控特性。"
+        ],
+        "no_fire": {
+          "value": true,
+          "detail": "單體電池不起火。"
+        },
+        "no_explosion": {
+          "value": true,
+          "detail": "單體電池不爆炸。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -505,7 +677,9 @@
       "section": "9.7.2",
       "category": "THERM",
       "subcategory": "熱擴散",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "trigger": {
           "value": "激光或其他觸發單體",
@@ -514,7 +688,9 @@
       },
       "acceptance_criteria": {
         "summary": "無熱擴散、無外部火焰",
-        "details": ["觀察 24h。合格要求為：電池間無熱擴散、無外部火焰、外殼不破裂（目標電池本身的損壞不計）。"]
+        "details": [
+          "觀察 24h。合格要求為：電池間無熱擴散、無外部火焰、外殼不破裂（目標電池本身的損壞不計）。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -536,7 +712,9 @@
     {
       "id": "GE-02",
       "description": "跌落樣品不進行靜電放電 (ESD) 預處理。",
-      "applicable_tests": ["GB44240-7.9"],
+      "applicable_tests": [
+        "GB44240-7.9"
+      ],
       "source_reference": "4.6.4"
     }
   ],
