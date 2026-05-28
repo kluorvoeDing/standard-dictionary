@@ -82,6 +82,10 @@
         "termination_criteria": {
           "value": "溫度較峰值下降 20% 或 24h",
           "detail": "短路持續至電池溫度較峰值下降 20% 或短路持續 24 小時。"
+        },
+        "soaking": {
+          "value": "待電池表面溫度達到 57 ℃±4 ℃後，再放置 30 min",
+          "detail": "在短路試驗前，必須讓電池表面溫度達到目標溫度後，再持續保溫 30 分鐘。"
         }
       },
       "acceptance_criteria": {
@@ -119,8 +123,8 @@
           "detail": "Ucl < 4.25V 時，Ut = Ucl + 0.4V；4.25V ≤ Ucl < 4.45V 時，Ut = 4.65V；Ucl ≥ 4.45V 時，Ut = Ucl + 0.2V。"
         },
         "duration": {
-          "value": "7h 或溫度下降 20%",
-          "detail": "充電持續 7 小時或直到電池溫度下降 20%。"
+          "value": "7h 或製造商定義時間中較大者",
+          "detail": "電池持續充電時間達到 7 h 或製造商定義充電時間中較大值。"
         }
       },
       "acceptance_criteria": {
@@ -150,8 +154,8 @@
       ],
       "conditions": {
         "current": {
-          "value": "1.0 It A",
-          "detail": "以 1.0 It A 恆流放電。"
+          "value": "反向充電至 -Uup，總計 90 min",
+          "detail": "以 1It A 的電流進行反向充電至負的充電上限電壓 (-Uup)。如果電壓達到負的充電上限電壓，應通過減小電流保持該電壓繼續進行反向充電，反向充電共計 90 min。"
         },
         "duration": {
           "value": "90 分鐘",
@@ -237,6 +241,10 @@
         "cycle_count": {
           "value": "10 循環",
           "detail": "重複 10 次循環。"
+        },
+        "post_rest": {
+          "value": "室溫 20 ℃±5 ℃ 下至少保存 6 h",
+          "detail": "溫度循環結束後，需在室溫 20 ℃±5 ℃ 下至少保存 6 h。"
         }
       },
       "acceptance_criteria": {
@@ -269,6 +277,10 @@
         "crush_force": {
           "value": "13.0 ± 0.78 kN",
           "detail": "施加壓力達到 13.0 ± 0.78 kN。"
+        },
+        "speed": {
+          "value": "0.1 mm/s",
+          "detail": "擠壓電池的速度為 0.1 mm/s。"
         }
       },
       "acceptance_criteria": {
@@ -397,7 +409,11 @@
           "不漏液",
           "不起火",
           "不爆炸"
-        ]
+        ],
+        "no_deformation": {
+          "value": true,
+          "detail": "樣品不應發生導致內部組成暴露或影響安全的物理形變。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -427,6 +443,14 @@
         "process": {
           "value": "浸泡、攪拌、脫水、烘乾",
           "detail": "經過浸泡、攪拌、脫水、烘乾的循環洗滌程序。"
+        },
+        "washing_params": {
+          "value": "攪拌 60 r/min，脫水 800 r/min",
+          "detail": "攪拌時轉速為 60 r/min，脫水時轉速為 800 r/min。"
+        },
+        "post_test": {
+          "value": "充放電循環 1 次",
+          "detail": "若樣品還能繼續充放電，則按照規定的充放電方法繼續進行一次放電充電循環。"
         }
       },
       "acceptance_criteria": {
@@ -456,8 +480,8 @@
       ],
       "conditions": {
         "voltage": {
-          "value": "n × 6.0V (n ≥ 1)",
-          "detail": "單節電池 n=1 試驗電壓為 6.0V；多節串聯 n≥2 試驗電壓為 n × 6.0V。"
+          "value": "上限 1.2 倍或最高可承受電壓取高者",
+          "detail": "設定為 n 倍的充電上限電壓（串聯數量 n）乘以 1.2 倍，或可能承受的最高電壓值（兩者取較高者）。"
         }
       },
       "acceptance_criteria": {
@@ -491,6 +515,10 @@
         "resistance": {
           "value": "80 ± 20 mΩ",
           "detail": "使用外部電阻為 80 ± 20 mΩ 的線路進行短路。"
+        },
+        "duration": {
+          "value": "保護電路動作，或移除保護電路短路 24 h",
+          "detail": "直到電池組的保護電路動作；對於移除保護電路的電池組，需短路 24 h。"
         }
       },
       "acceptance_criteria": {
@@ -531,7 +559,11 @@
         "details": [
           "保護功能正常",
           "樣品無起火爆炸"
-        ]
+        ],
+        "functional": {
+          "value": true,
+          "detail": "每次循環時電池組的保護電路都應正確動作。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
