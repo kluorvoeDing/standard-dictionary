@@ -52,7 +52,7 @@
         },
         "special_condition_1": {
           "value": "起司布與紙巾覆蓋測試",
-          "detail": "20°C 下 1 個樣品需以 20 mΩ 負載在鋪有紙巾的軟木表面進行測試，並覆蓋單層起司布 (Cheesecloth)。"
+          "detail": "20 ± 5°C 下 1 個樣品需以 20 mΩ 負載在鋪有紙巾的軟木表面進行測試，並覆蓋單層起司布 (Cheesecloth)。"
         },
         "special_condition_2": {
           "value": "邊充邊放測試",
@@ -92,7 +92,7 @@
       "conditions": {
         "soc": {
           "value": "放電至終止電壓",
-          "detail": "樣品先以 0.2C 恆流放電至製造商規定的終止電壓。"
+          "detail": "樣品先以 0.2C/1 h 恆流放電至製造商規定的終止電壓。"
         },
         "charging_current": {
           "value": "3 倍最大充電電流",
@@ -115,8 +115,12 @@
           "detail": "1 個樣品需繞過輸入電壓轉換電路，放電至低於終止電壓 10% 深度，直到爆炸、排氣或 BMS 動作。"
         },
         "special_condition_2": {
-          "value": "直接過充 (僅限鋰電池)",
-          "detail": "1 個樣品需繞過輸入電壓轉換電路，以 1.2 倍最大充電電流充電，直到爆炸、排氣或 BMS 動作。"
+          "value": "直接過充 (僅限鋰電池)，直到達到規定的最大充電電壓",
+          "detail": "1 個樣品需繞過輸入電壓轉換電路，以 1.2 倍最大充電電流充電，直到爆炸、排氣或 BMS 動作。，直到達到內置電池規定的最大充電電壓。"
+        },
+        "ambient": {
+          "value": "20 ± 5°C",
+          "detail": "在 20 ± 5°C 的環境下進行測試。"
         }
       },
       "acceptance_criteria": {
@@ -146,8 +150,8 @@
       ],
       "conditions": {
         "soc": {
-          "value": "放電至終止電壓",
-          "detail": "樣品先以 0.2C 恆流放電至終止電壓。"
+          "value": "使用製造商規定的電流放電",
+          "detail": "試驗前使用製造商規定的電流進行放電。"
         },
         "charging_current": {
           "value": "10 倍 C5 速率電流",
@@ -164,6 +168,10 @@
         "special_condition_1": {
           "value": "過充電壓測試 (僅限鋰電池)",
           "detail": "1 個樣品需繞過輸入電壓轉換電路，以最大充電電流與 1.1 倍上限充電電壓充電，直到爆炸、排氣或 BMS 動作。"
+        },
+        "ambient": {
+          "value": "20 ± 5°C",
+          "detail": "在 20 ± 5°C 的環境下進行測試。"
         }
       },
       "acceptance_criteria": {
@@ -214,6 +222,10 @@
         "fault_condition": {
           "value": "放電電路單一故障",
           "detail": "在放電電路中施加單一故障。"
+        },
+        "ambient": {
+          "value": "20 ± 5°C",
+          "detail": "在 20 ± 5°C 的環境下進行測試。"
         }
       },
       "acceptance_criteria": {
@@ -320,8 +332,8 @@
           "detail": "行動電源覆蓋單層起司布，並放置在鋪有單層紙巾的軟木板上。"
         },
         "load": {
-          "value": "最大功率過載",
-          "detail": "每個輸出引腳均負載至剛好不會觸發過流保護的最大功率。"
+          "value": "最大功率",
+          "detail": "每個輸出引腳均負載至最大功率。"
         },
         "duration": {
           "value": "1 小時或最大運行時間",
@@ -427,6 +439,10 @@
         "post_test": {
           "value": "6 小時觀察",
           "detail": "測試後繼續觀察 6 小時。"
+        },
+        "ambient": {
+          "value": "20 ± 5°C",
+          "detail": "在 20 ± 5°C 的環境下進行測試。"
         }
       },
       "acceptance_criteria": {
@@ -478,6 +494,10 @@
         "post_test": {
           "value": "6 小時觀察",
           "detail": "測試後繼續觀察 6 小時。使用 2 個樣品，第二個樣品需翻轉 180° 測試。"
+        },
+        "ambient": {
+          "value": "20 ± 5°C",
+          "detail": "在 20 ± 5°C 的環境下進行測試。"
         }
       },
       "acceptance_criteria": {
@@ -570,6 +590,10 @@
         "post_test": {
           "value": "6 小時觀察",
           "detail": "測試後繼續觀察 6 小時。"
+        },
+        "ambient": {
+          "value": "20 ± 5°C",
+          "detail": "在 20 ± 5°C 的環境下進行測試。"
         }
       },
       "acceptance_criteria": {
