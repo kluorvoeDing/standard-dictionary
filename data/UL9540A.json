@@ -58,8 +58,8 @@
       ],
       "conditions": {
         "soc": {
-          "value": "MOSOC",
-          "detail": "依製造商規格充電至最大運行狀態 (Maximum Operating State of Charge)。"
+          "value": "100% SOC 或依製造商規格滿充",
+          "detail": "充電至 100 % SOC 或依製造商規格之滿充最高電壓。"
         },
         "rest_time": {
           "value": "≥ 1 小時",
@@ -71,11 +71,15 @@
         },
         "thermal_ramp": {
           "value": "可選連續熱斜坡",
-          "detail": "可選連續熱斜坡直到發生熱失控 (2025年版新增, 7.3.1.5)。"
+          "detail": "可選連續熱斜坡直到發生熱失控 (2025年版新增, 7.3.1.5)。 加熱斜率需嚴格控制在每分鐘 4 °C 至 7 °C (7.2 °F 至 12.6 °F)。"
         },
         "measurements": {
           "value": "T_vent, 氣體成分與壓力",
           "detail": "測量排氣溫度 (T_vent)、熱失控表面溫度、排氣成分（包括氫氣，FTIR可選）、排氣體積、爆炸下限 (LFL) 及燃燒速度。"
+        },
+        "ambient": {
+          "value": "25 ±5 °C, 50 ±25 % RH",
+          "detail": "室內實驗室環境應為 25 ±5 °C (77 ±9 °F) 及 50 ±25 % RH。"
         }
       },
       "acceptance_criteria": {
@@ -108,8 +112,8 @@
       ],
       "conditions": {
         "soc": {
-          "value": "MOSOC",
-          "detail": "按製造商規格充電至 100% SOC (MOSOC)。"
+          "value": "100% SOC 或依製造商規格滿充",
+          "detail": "充電至 100 % SOC 或依製造商規格之滿充最高電壓。"
         },
         "rest_time": {
           "value": "≥ 1 小時",
@@ -126,6 +130,10 @@
         "measurements": {
           "value": "HRR, 溫度, 排氣",
           "detail": "測量化學與對流熱釋放速率 (HRR)、煙霧釋放速率、最高溫度、排氣成分、模組外殼完整性與火焰傳播情況。"
+        },
+        "ambient": {
+          "value": "25 ±5 °C, 50 ±25 % RH",
+          "detail": "室內實驗室環境應為 25 ±5 °C (77 ±9 °F) 及 50 ±25 % RH。"
         }
       },
       "acceptance_criteria": {
@@ -162,16 +170,20 @@
           "detail": "室內/室外、落地/壁掛、屋頂/停車場等。包含一個啟動 BESS 單元與相鄰目標 BESS 單元 (9.1)。"
         },
         "wall_setup": {
-          "value": "儀器化牆段",
-          "detail": "安裝漆平黑的儀器化石膏牆板，並配備熱通量量規 (Schmidt-Boelter 或 Gardon) 及 Type-K 熱電偶。"
+          "value": "儀器化牆段 (至少 13 mm 厚)",
+          "detail": "安裝漆平黑的儀器化石膏牆板，並配備熱通量量規 (Schmidt-Boelter 或 Gardon) 及 Type-K 熱電偶。。石膏牆板厚度至少需為 13 mm (1/2 英吋)。"
         },
         "residential_indicator": {
           "value": "單層粗棉布",
-          "detail": "住宅用 BESS 需覆蓋單層粗棉布 (Cheesecloth) 作為點火指示器 (9.2.21)。"
+          "detail": "住宅用 BESS 需覆蓋單層粗棉布 (Cheesecloth) 作為點火指示器 (9.2.21)。。所用粗棉布需為未處理棉布，密度 26-28 m²/kg，每 6.45 cm² (1 in²) 雙向各有 28-32 根紗線。"
         },
         "termination": {
           "value": "溫度下降或危害發生",
           "detail": "連續 3 次(每15分鐘)溫度下降、或低於 60°C、或火災傳播至目標單元/牆壁時終止測試 (9.2.25)。"
+        },
+        "ambient": {
+          "value": "10 °C 至 32 °C",
+          "detail": "室內環境溫度應不低於 10 °C (50 °F) 且不高於 32 °C (90 °F)。"
         }
       },
       "acceptance_criteria": {
@@ -182,7 +194,11 @@
           "無爆炸/爆燃/爆轟危險",
           "逃生路徑測得之熱通量 ≤ 1.3 kW/m²",
           "室內安裝應無火焰蔓延至單元外"
-        ]
+        ],
+        "residential_gas_limit": {
+          "value": true,
+          "detail": "對於住宅安裝，空氣中的可燃氣體濃度不得超過最小規定房間安裝尺寸的 25 % LFL。"
+        }
       },
       "exemptions": [
         "若符合表 9.1 規定的性能標準，可豁免安裝級測試 (9.8)。",
@@ -209,7 +225,7 @@
       "conditions": {
         "method_1": {
           "value": "噴水滅火系統",
-          "detail": "預設 6.10×6.10×3.05 m 測試室，部署 4 個噴頭（間距 3.05 m），K 係數 5.6，啟動溫度 93°C (10.3)。"
+          "detail": "預設 6.10×6.10×3.05 m 測試室，部署 4 個噴頭（間距 3.05 m），K 係數 5.6，啟動溫度 93°C (10.3)。 灑水器水密度需為 12.22 L/m²/min (0.3 gpm/ft²)。"
         },
         "method_2": {
           "value": "其他火災防護計畫",
@@ -269,7 +285,8 @@
         "UL9540A-UNIT",
         "UL9540A-INSTALL"
       ],
-      "source_reference": "7.8"
+      "source_reference": "7.8",
+      "condition": "undefined且根據 ASTM E918 在環境溫度與排氣溫度下均無可燃性危險。"
     },
     {
       "id": "GE-02",
@@ -278,7 +295,8 @@
         "UL9540A-UNIT",
         "UL9540A-INSTALL"
       ],
-      "source_reference": "8.5"
+      "source_reference": "8.5",
+      "condition": "undefined，並且 (c) 模組外部表面溫度不超過單體電池排氣溫度。"
     },
     {
       "id": "GE-03",
@@ -294,7 +312,8 @@
       "applicable_tests": [
         "UL9540A-INSTALL"
       ],
-      "source_reference": "10.1.1"
+      "source_reference": "10.1.1",
+      "condition": "除獨立的單戶/雙戶住宅與聯排別墅外，預定安裝於其他住宅的系統，『允許』執行安裝級測試以確認灑水器的有效性，而非強制豁免或禁止。"
     },
     {
       "id": "GE-05",
