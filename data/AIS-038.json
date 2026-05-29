@@ -61,7 +61,11 @@
           "無破裂 (Rupture，僅適用於高壓 REESS)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)"
-        ]
+        ],
+        "no_venting": {
+          "value": true,
+          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        }
       },
       "exemptions": [
         "可使用車輛製造商確認並經同意之振動輪廓替代 (但僅限特定車型)"
@@ -114,7 +118,11 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)"
-        ]
+        ],
+        "no_venting": {
+          "value": true,
+          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -306,7 +314,11 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)"
-        ]
+        ],
+        "no_venting": {
+          "value": true,
+          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -358,7 +370,11 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)"
-        ]
+        ],
+        "no_venting": {
+          "value": true,
+          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -390,12 +406,12 @@
           "detail": "以外部充放電設備進行放電，使用製造商規定的最大放電電流。"
         },
         "termination": {
-          "value": "保護啟動或達截止電壓後 30 分鐘",
-          "detail": "持續放電直到過放保護功能切斷電流。若失效，則持續至達到製造商規定的放電截止電壓後再等待 30 分鐘。"
+          "value": "放電至額定電壓的 25% 或保護觸發",
+          "detail": "持續放電直到保護裝置中斷放電，或（若保護裝置未作動）直到 REESS 放電至其額定電壓水平的 25%。"
         },
         "post_test": {
-          "value": "標準充電與 1 小時觀察",
-          "detail": "終止放電後進行一次標準充電 (Standard charge)，並觀察 1 小時。"
+          "value": "標準充放電",
+          "detail": "試驗後，直接進行一次標準充電，隨後進行一次標準放電。"
         }
       },
       "acceptance_criteria": {
@@ -406,7 +422,11 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)"
-        ]
+        ],
+        "no_venting": {
+          "value": true,
+          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -439,7 +459,7 @@
         },
         "termination": {
           "value": "保護啟動",
-          "detail": "持續測試直到過溫保護功能（如冷卻啟動或電流限制/切斷）成功啟動。"
+          "detail": "持續測試直到過溫保護功能（如冷卻啟動或電流限制/切斷）成功啟動。 若保護裝置未動作，則持續直到受測設備溫度穩定（2小時內溫度梯度變化小於 4°C）。"
         },
         "observation": {
           "value": "1 小時",
@@ -454,7 +474,11 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)"
-        ]
+        ],
+        "no_venting": {
+          "value": true,
+          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -483,7 +507,7 @@
         },
         "termination": {
           "value": "保護啟動",
-          "detail": "持續過電流直到過電流保護功能啟動並切斷或限制電流。"
+          "detail": "持續過電流直到過電流保護功能啟動並切斷或限制電流。 若保護裝置未動作，則持續直到受測設備溫度穩定（2小時內溫度梯度變化小於 4°C）。"
         },
         "post_test": {
           "value": "標準循環與 1 小時觀察",
@@ -498,7 +522,11 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)"
-        ]
+        ],
+        "no_venting": {
+          "value": true,
+          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -522,8 +550,8 @@
           "detail": "測試前 SOC 應調整至滿充狀態。"
         },
         "trigger_method": {
-          "value": "加熱、壓痕、釘刺等",
-          "detail": "使用內部加熱器、外部加熱、外部壓痕、釘刺等方法觸發單一電芯熱失控。"
+          "value": "加熱、針刺或過充",
+          "detail": "觸發熱失控的候選方法僅為：加熱 (Heating)、針刺 (Nail penetration) 或過充 (Overcharge)。"
         },
         "trigger_location": {
           "value": "REESS 內部任意位置",
