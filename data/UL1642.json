@@ -546,7 +546,7 @@
       "conditions": {
         "pressure": {
           "value": "11.6 kPa (1.68 psi) 絕對壓力",
-          "detail": "模擬約 15,240 公尺 (50,000 呎) 高空之低氣壓環境，絕對壓力 11.6 kPa (Section 19.1)。"
+          "detail": "絕對壓力 11.6 kPa (1.68 psi) (Section 19.1)。"
         },
         "temperature": {
           "value": "20±3°C",
