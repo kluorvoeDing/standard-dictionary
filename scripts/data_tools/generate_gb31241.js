@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 const data = {
   "schema_version": "2.0",
@@ -495,5 +496,5 @@ const data = {
   }
 };
 
-fs.writeFileSync('/Users/Openclaw/Documents/Standard-dictionary/data/GB31241.json', JSON.stringify(data, null, 2));
+fs.writeFileSync(path.join(__dirname, '../../data/GB31241.json'), JSON.stringify(data, null, 2));
 console.log('JSON saved successfully.');

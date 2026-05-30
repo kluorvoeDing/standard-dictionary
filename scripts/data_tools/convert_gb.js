@@ -14,7 +14,7 @@ function translateJsonFile(filePath) {
   console.log(`Translated ${filePath}`);
 }
 
-const dataDir = __dirname;
+const dataDir = path.join(__dirname, '../../data');
 const files = fs.readdirSync(dataDir);
 
 files.forEach(file => {

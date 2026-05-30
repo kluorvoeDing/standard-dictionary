@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const dataDir = path.join(__dirname, 'data');
+const dataDir = path.join(__dirname, '../../data');
 const catalogPath = path.join(dataDir, 'catalog.json');
 
 const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
@@ -9,7 +9,7 @@ let updatedCount = 0;
 
 for (const entry of catalog) {
   if (entry.schema_v2_json) {
-    const jsonPath = path.join(__dirname, entry.schema_v2_json);
+    const jsonPath = path.join(__dirname, '../../', entry.schema_v2_json);
     if (fs.existsSync(jsonPath)) {
       const v2Data = JSON.parse(fs.readFileSync(jsonPath, 'utf8'));
       const testObjectsSet = new Set();

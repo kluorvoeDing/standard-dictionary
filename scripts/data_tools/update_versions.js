@@ -1,6 +1,7 @@
 const fs = require('fs');
+const path = require('path');
 
-const catalogPath = './data/catalog.json';
+const catalogPath = path.join(__dirname, '../../data/catalog.json');
 const catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
 
 // Version data as of 2026

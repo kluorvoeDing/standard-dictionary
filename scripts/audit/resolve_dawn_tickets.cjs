@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const dataDir = path.join(__dirname, 'data');
+const dataDir = path.join(__dirname, '../../data');
 
 // Helper to load, modify and save
 function updateJSON(filename, updater) {
