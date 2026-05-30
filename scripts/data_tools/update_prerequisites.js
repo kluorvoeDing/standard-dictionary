@@ -1,6 +1,7 @@
 const fs = require('fs');
+const path = require('path');
 
-const catalogPath = './catalog.json';
+const catalogPath = path.join(__dirname, '../../data/catalog.json');
 let catalog = JSON.parse(fs.readFileSync(catalogPath, 'utf8'));
 
 // Define the prerequisites mapping
