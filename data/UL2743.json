@@ -9,7 +9,9 @@
     "publication_date": "2025-09-24",
     "type": "standard",
     "scope": "涵蓋內建電池或電容的攜帶式或移動式電源包 (Portable Power Packs)，包含提供給車輛緊急啟動的升壓功能 (Booster function)、USB輸出、AC插座等。不涵蓋容量大於 70kWh (鉛酸) 或 20kWh (鋰電池) 的儲能系統 (UL 9540)。",
-    "applicable_objects": ["PACK_SYSTEM"],
+    "applicable_objects": [
+      "PACK_SYSTEM"
+    ],
     "source_pdf": "s2743_3.pdf",
     "source_gemini_md": ""
   },
@@ -30,7 +32,9 @@
       "section": "55.2",
       "category": "ELEC",
       "subcategory": "外部短路",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "active_supply": {
           "value": "Connected to rated voltage",
@@ -41,8 +45,16 @@
           "detail": "輸出端子以不超過 10 mΩ 的阻抗進行短路。 如果提供升壓電纜(booster cable)，短路也必須發生在電纜末端。"
         },
         "termination": {
-          "value": "直到保護裝置斷開或溫度穩定",
-          "detail": "持續短路直到內部保護裝置斷開，或達到穩定的恆溫狀態。"
+          "value": "直到保護裝置斷開或溫度穩定 (自動復位需7小時/手動需10次循環)",
+          "detail": "持續短路直到內部保護裝置斷開，或達到穩定的恆溫狀態。 若自動復位保護器作動，測試需持續 7 小時；若手動復位保護器作動，需操作 10 次循環。"
+        },
+        "switch_status": {
+          "value": "開關分別處於開啟與關閉狀態",
+          "detail": "若行動電源配有控制輸出的開關，則測試應在開關開啟與關閉兩種狀態下分別進行。"
+        },
+        "branch_protection": {
+          "value": "125% 分支過流保護",
+          "detail": "供電電路必須具備額定輸入電流 125% (最小 20 A) 的分支電路過流保護。"
         }
       },
       "acceptance_criteria": {
@@ -64,11 +76,13 @@
       "section": "55.9",
       "category": "ELEC",
       "subcategory": "異常充電",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "charging_current": {
           "value": "3倍最大充電電流或外部充電器最大輸出",
-          "detail": "通用充電接口：以最大充電電壓及3倍最大充電電流進行充電。非通用充電接口：以外部充電器可提供的最大電壓與電流輸出進行充電。 測試需在充電保護電路無單一故障或有單一故障的情況下進行 (with or without a single fault condition)。"
+          "detail": "通用充電接口：以最大充電電壓及3倍最大充電電流進行充電。非通用充電接口：以外部充電器可提供的最大電壓與電流輸出進行充電。 測試需在充電保護電路無單一故障或有單一故障的情況下進行 (with or without a single fault condition)。或電池內部提供的充電電路。"
         },
         "duration": {
           "value": "1.25 小時",
@@ -81,7 +95,11 @@
           "不得發生爆炸，且覆蓋的醫療紗布或衛生紙不得有燒焦或燃燒現象 (Section 55.9.2)",
           "測試後需通過 Section 55.1.2 的耐壓測試 (Dielectric Voltage Withstand Test)。",
           "允許電池排氣 (Venting of the cells is acceptable)。"
-        ]
+        ],
+        "no_general_hazard": {
+          "value": true,
+          "detail": "設備不得噴出火焰或熔融金屬，且不得造成起火、觸電或人身傷害的風險 (適用於所有異常測試)。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -95,11 +113,13 @@
       "section": "60.3",
       "category": "MECH",
       "subcategory": "落下",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "temperature": {
-          "value": "低溫 0°C",
-          "detail": "其中一組樣品需在 0°C (32°F) 或製造商規定的最低工作溫度（若低於 0°C）下放置 4 小時後立即進行衝擊。"
+          "value": "室溫 (樣品1) 與 0°C (樣品2)",
+          "detail": "共需兩個樣品進行測試：第一個樣品在接收狀態 (室溫) 下進行測試；第二個樣品需在 0°C 放置 4 小時後測試。"
         },
         "drop_height": {
           "value": "0.9 m (3 ft)",
