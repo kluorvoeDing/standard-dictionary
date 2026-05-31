@@ -42,7 +42,7 @@
         },
         "fault_condition": {
           "value": "充電電路單一故障",
-          "detail": "引入可能導致過充的充電電路單一故障 (Single fault condition)。若有多級保護，故障最強大的主動保護裝置。"
+          "detail": "Single fault condition in the charging protection/control circuit."
         },
         "termination": {
           "value": "充電至 110% 或保護啟動",
@@ -309,7 +309,7 @@
         },
         "profile": {
           "value": "車輛振動輪廓",
-          "detail": "根據預期的車輛或輕軌應用環境的振動頻譜。"
+          "detail": "根據預期的車輛或輕軌應用環境的振動頻譜。 Specific compliance with IEC 61373 for LER, and explicitly UL/ULC 2271 or UL/ULC 2580 for VAP applications."
         }
       },
       "acceptance_criteria": {
@@ -345,7 +345,7 @@
         },
         "waveform": {
           "value": "半正弦波或其他",
-          "detail": "按標準規定的機械衝擊參數（多個方向）。"
+          "detail": "Both positive and negative direction shocks shall be applied in each of 3 mutually perpendicular directions for a total of 18 shocks."
         }
       },
       "acceptance_criteria": {
@@ -381,7 +381,7 @@
         },
         "force": {
           "value": "100 ±6 kN",
-          "detail": "Apply maximum force of 100 ±6 kN."
+          "detail": "Crush between a fixed surface and a ribbed test platen in accordance with the test fixture described in SAE J2464, applied in 3 mutually perpendicular directions of press (or 2 directions for systems with 2 axes of symmetry like cylindrical designs)."
         }
       },
       "acceptance_criteria": {
@@ -488,7 +488,7 @@
         },
         "trigger": {
           "value": "誘發熱失控",
-          "detail": "在最大額定操作溫度下，於最嚴苛位置使用內部短路或加熱器觸發單一電芯熱失控。"
+          "detail": "在最大額定操作溫度下，於最嚴苛位置使用內部短路或加熱器觸發單一電芯熱失控。 Cells must be within ±10 °C (±18 °F) of the max specified temperature just before inducing the mechanism, and once thermal runaway is shut off/stopped, the DUT is subjected to a 24-h observation period."
         }
       },
       "acceptance_criteria": {
@@ -627,7 +627,7 @@
       "conditions": {
         "temperature": {
           "value": "130°C",
-          "detail": "Rate of 5 ±2 °C per minute to a temperature of 130 ±2 °C."
+          "detail": "Rate of 5 ±2 °C per minute to a temperature of 130 ±2 °C. Temperature remain for 10 min. Exception for cells > 500 g to be held for 30 min rather than 10 min. Cells with Tmax > 100°C to be tested at 30 ±2 °C above the manufacturers maximum specified temperature."
         }
       },
       "acceptance_criteria": {
@@ -693,7 +693,7 @@
         },
         "duration": {
           "value": "90分鐘",
-          "detail": "以 1.0 ItA 強制放電 90 分鐘。"
+          "detail": "Discharge voltage limit not to exceed the numerical value of the upper limit charging voltage specified for the cell. If the discharge voltage limit is reached before the 90 min, the cell shall be discharged at a constant voltage discharge equal to the manufacturer’s determined low voltage cutoff."
         }
       },
       "acceptance_criteria": {
@@ -723,7 +723,7 @@
       "conditions": {
         "soc": {
           "value": "不平衡狀態",
-          "detail": "部分電芯完全放電，其餘電芯處於 50% SOC，然後對系統進行充電。"
+          "detail": "All of its modules/cells with the exception of one discharged to its specified fully discharged condition. The undischarged module/cell shall be discharged to approximately 50%."
         }
       },
       "acceptance_criteria": {
@@ -752,7 +752,7 @@
       "conditions": {
         "profile": {
           "value": "極端溫度循環",
-          "detail": "在規定的最高與最低溫度之間進行多次溫度循環。"
+          "detail": "Strict temperature profile: +75 ±2 °C for 6h, 20 ±2 °C for 2h, -40 ±2 °C for 6h, and 20 ±2 °C, repeated for a total of 10 cycles."
         }
       },
       "acceptance_criteria": {
