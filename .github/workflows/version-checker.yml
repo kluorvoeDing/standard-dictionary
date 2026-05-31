@@ -1,0 +1,42 @@
+name: Standard Version Checker
+
+on:
+  schedule:
+    - cron: '0 0 1 * *' # Runs at 00:00 on the first day of every month
+  workflow_dispatch: # Allows manual trigger from the GitHub Actions UI
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check-versions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Run Version Checker
+        run: node scripts/crawler/check_standard_versions.cjs
+
+      - name: Create Issue if new versions found
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if [ -f scripts/crawler/version_alerts.md ]; then
+            gh issue create \
+              --title "[Version Check] 發現可能發布了新版本的標準" \
+              --body-file scripts/crawler/version_alerts.md \
+              --assignee "@me"
+          else
+            echo "No version_alerts.md found. All standards seem up to date."
+          fi
