@@ -36,7 +36,7 @@ jobs:
             gh issue create \
               --title "[Version Check] 發現可能發布了新版本的標準" \
               --body-file scripts/crawler/version_alerts.md \
-              --assignee "@me"
+              --assignee "kluorvoeDing"
           else
             echo "No version_alerts.md found. All standards seem up to date."
           fi
