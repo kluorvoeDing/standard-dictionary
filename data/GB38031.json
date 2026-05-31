@@ -47,7 +47,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "調整至放電終止電壓狀態",
+          "value": "放电终止电压",
           "detail": "將試驗對象荷電狀態調整至放電終止電壓狀態"
         },
         "current": {
@@ -350,8 +350,8 @@
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試 (6.1.10)"
         },
         "vibration_params": {
-          "value": "隨機振動 12h + 正弦定頻 1h",
-          "detail": "包含隨機振動（依重量及安裝位置參考表2、表3的 RMS 值如 0.52g, 0.57g, 0.73g 等）測試 12 小時，以及正弦定頻振動測試 1 小時。"
+          "value": "随机振动 12h + 正弦定频 1~2h",
+          "detail": "包含随机振动（依重量及安装位置参考表2、表3的 RMS 值如 0.52g, 0.57g, 0.73g 等）测试 12 小时，以及正弦定频振动测试 1~2 小时。"
         }
       },
       "acceptance_criteria": {
@@ -527,11 +527,11 @@
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
         },
         "option_1": {
-          "value": "方式一",
+          "value": "3.5% NaCl / 2h",
           "detail": "3.5% NaCl 水溶液 2h"
         },
         "option_2": {
-          "value": "方式二",
+          "value": "IPX7 浸水",
           "detail": "符合 GB/T 4208-2017 IPX7 要求"
         },
         "temperature_diff": {
@@ -566,6 +566,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "fire_stages": {
+          "value": "4 阶段火烧",
+          "detail": "包含：预热 60s (Preheat)，直接燃烧 70s (Direct flame)，间接燃烧 60s (Indirect flame)，和离开火源观察 2h (Observation)。"
         }
       },
       "acceptance_criteria": {
@@ -597,7 +601,7 @@
       "conditions": {
         "soc": {
           "value": "SOC ≥ 90% 或 95%",
-          "detail": "視具體觸發要求"
+          "detail": "外部充电电池包调至 95% SOC；仅通过车辆能源充电的电池包调至 90% SOC"
         },
         "ambient_temp": {
           "value": "22 ℃ ± 5 ℃",
@@ -750,6 +754,10 @@
         "ambient_temp": {
           "value": "20 ℃ ± 10 ℃",
           "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
+        },
+        "termination": {
+          "value": "动作或温度稳定 2h",
+          "detail": "以连续上升的温度加热。当保护功能自动停止、发出信号，或温度变化小于 4°C/2h 时终止测试。"
         }
       },
       "acceptance_criteria": {
@@ -786,6 +794,14 @@
         "ambient_temp": {
           "value": "20 ℃ ± 10 ℃",
           "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
+        },
+        "current_step": {
+          "value": "5s 内升至过流",
+          "detail": "电流在 5s 内上升至过流保护触发值。"
+        },
+        "termination": {
+          "value": "动作或温度稳定 2h",
+          "detail": "当保护功能自动停止、发出信号，或温度变化小于 4°C/2h 时终止测试。"
         }
       },
       "acceptance_criteria": {
@@ -826,6 +842,10 @@
         "short_circuit_res": {
           "value": "≤ 5 mΩ",
           "detail": "外部短路電阻不超過 5 mΩ。"
+        },
+        "termination": {
+          "value": "动作或短路保持 1h",
+          "detail": "保护触发或在温度稳定后短路状态继续保持 1 小时。"
         }
       },
       "acceptance_criteria": {
@@ -862,6 +882,10 @@
         "ambient_temp": {
           "value": "20 ℃ ± 10 ℃",
           "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
+        },
+        "termination": {
+          "value": "动作或持续充电 12h",
+          "detail": "若未起作用且温度未超最高工作温度10℃，则持续充电 12h；若超出10℃则结束。"
         }
       },
       "acceptance_criteria": {
@@ -898,6 +922,10 @@
         "ambient_temp": {
           "value": "20 ℃ ± 10 ℃",
           "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
+        },
+        "termination": {
+          "value": "动作或放电至 25%",
+          "detail": "若保护功能未起作用，放电至额定电压的 25% 为止。"
         }
       },
       "acceptance_criteria": {
@@ -934,6 +962,10 @@
         "impact_params": {
           "value": "直徑 30 mm，150 J ± 3 J",
           "detail": "撞擊頭為直徑 30 mm 的半球形，質量 10 kg，撞擊能量為 150 J ± 3 J。"
+        },
+        "impact_spots": {
+          "value": "涵盖前中后 3 处",
+          "detail": "需对电池底部的 3 个脆弱点进行撞击测试（涵盖前部、中部、后部）。"
         }
       },
       "acceptance_criteria": {
