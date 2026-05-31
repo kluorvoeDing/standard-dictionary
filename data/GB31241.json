@@ -123,8 +123,8 @@
           "detail": "Ucl < 4.25V 時，Ut = Ucl + 0.4V；4.25V ≤ Ucl < 4.45V 時，Ut = 4.65V；Ucl ≥ 4.45V 時，Ut = Ucl + 0.2V。"
         },
         "duration": {
-          "value": "7h 或製造商定義時間中較大者",
-          "detail": "電池持續充電時間達到 7 h 或製造商定義充電時間中較大值。"
+          "value": "7h 或降溫 20%",
+          "detail": "電池持續充電時間達到 7 h，或製造商定義充電時間中較大值，或電池溫度下降值達到溫度最大值的 20%。"
         }
       },
       "acceptance_criteria": {
@@ -275,12 +275,16 @@
       ],
       "conditions": {
         "crush_force": {
-          "value": "13.0 ± 0.78 kN",
-          "detail": "施加壓力達到 13.0 ± 0.78 kN。"
+          "value": "13.0kN 或電壓降 1/3",
+          "detail": "施加壓力達到 13.0 ± 0.78 kN，或電池的電壓下降三分之一。"
         },
         "speed": {
           "value": "0.1 mm/s",
           "detail": "擠壓電池的速度為 0.1 mm/s。"
+        },
+        "termination": {
+          "value": "13.0 kN 或電壓降 1/3",
+          "detail": "施加壓力達到 13.0 ± 0.78 kN，或電池的電壓下降三分之一。"
         }
       },
       "acceptance_criteria": {
@@ -321,12 +325,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無洩漏、外殼破裂、起火或爆炸",
+        "summary": "不起火、不爆炸、不漏液",
         "details": [
-          "不漏液",
-          "外殼不破裂",
           "不起火",
-          "不爆炸"
+          "不爆炸",
+          "不漏液"
         ]
       },
       "exemptions": [],
@@ -334,7 +337,7 @@
         "GB31241-7.1"
       ],
       "source_reference": "8.1",
-      "original_text_snippet": "8.1 低氣壓：電池組按照 8.1 進行低氣壓試驗，應無洩漏、外殼破裂、起火或爆炸現象。"
+      "original_text_snippet": "8.1 低氣壓：電池組按照 8.1 進行低氣壓試驗，應不起火、不爆炸、不漏液。"
     },
     {
       "id": "GB31241-8.2",
@@ -366,12 +369,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無洩漏、外殼破裂、起火或爆炸",
+        "summary": "不起火、不爆炸、不漏液",
         "details": [
-          "不漏液",
-          "外殼不破裂",
           "不起火",
-          "不爆炸"
+          "不爆炸",
+          "不漏液"
         ]
       },
       "exemptions": [],
@@ -379,7 +381,7 @@
         "GB31241-7.2"
       ],
       "source_reference": "8.2",
-      "original_text_snippet": "8.2 溫度循環：電池組按照 8.2 進行溫度循環試驗，應無洩漏、外殼破裂、起火或爆炸現象。"
+      "original_text_snippet": "8.2 溫度循環：電池組按照 8.2 進行溫度循環試驗，應不起火、不爆炸、不漏液。"
     },
     {
       "id": "GB31241-8.6",
@@ -403,22 +405,15 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無導致危險的變形或破裂，不漏液、不起火、不爆炸",
+        "summary": "無導致危險的形變",
         "details": [
-          "不發生導致危險的變形或破裂",
-          "不漏液",
-          "不起火",
-          "不爆炸"
-        ],
-        "no_deformation": {
-          "value": true,
-          "detail": "樣品不應發生導致內部組成暴露或影響安全的物理形變。"
-        }
+          "不發生導致內部組成暴露或影響安全的物理形變"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
       "source_reference": "8.6",
-      "original_text_snippet": "8.6 應力消除：電池組按照 8.6 進行應力消除試驗，應無洩漏、外殼破裂、起火或爆炸現象。"
+      "original_text_snippet": "8.6 應力消除：電池組按照 8.6 進行應力消除試驗，樣品不應發生導致內部組成暴露或影響安全的物理形變。"
     },
     {
       "id": "GB31241-8.8",
@@ -480,8 +475,12 @@
       ],
       "conditions": {
         "voltage": {
-          "value": "取較高者",
-          "detail": "設定為 n 倍的充電上限電壓（串聯數量 n）乘以 1.2 倍，或可能承受的最高電壓值（兩者取較高者）。"
+          "value": "n=1 時 6V，n≥2 時 n×6.0V",
+          "detail": "當串聯數量 n=1 時，規定的試驗電壓為 6 V；當 n≥2 時，規定的試驗電壓為 (n×6.0)V。"
+        },
+        "current": {
+          "value": "Icm",
+          "detail": "以最大充電電流 (Icm) 進行恆流充電。"
         }
       },
       "acceptance_criteria": {
@@ -555,10 +554,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "承受 500 次保護動作循環而不發生危險；不起火、不爆炸",
+        "summary": "承受 500 次保護動作循環而不失效",
         "details": [
-          "保護功能正常",
-          "樣品無起火爆炸"
+          "保護功能正常"
         ],
         "functional": {
           "value": true,
