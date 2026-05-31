@@ -364,7 +364,7 @@
         },
         "depth": {
           "value": "10 mm 或 30% 厚度",
-          "detail": "針刺深度應扣除外殼厚度，如果外殼厚度 ≤ 10 mm，則針刺深度為 10 mm。"
+          "detail": "針刺深度應扣除外殼厚度，對於電池外殼厚度小於或等於 10 mm 的，按 10 mm 計入。"
         }
       },
       "acceptance_criteria": {
@@ -580,7 +580,11 @@
         "summary": "BMS 動作，不起火、不爆炸",
         "details": [
           "BMS 應能發現過放並進行保護。"
-        ]
+        ],
+        "circuit_nuance": {
+          "value": true,
+          "detail": "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
+        }
       },
       "exemptions": [
         "如果電池製造商與用戶達成協議，過放切斷並不是強制性的。"
@@ -622,7 +626,11 @@
         "summary": "BMS 動作，不起火、不爆炸",
         "details": [
           "BMS 應能發現過熱並進行保護。"
-        ]
+        ],
+        "circuit_nuance": {
+          "value": true,
+          "detail": "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
+        }
       },
       "exemptions": [],
       "related_tests": [],
@@ -651,7 +659,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無熱擴散",
+        "summary": "不起火、不爆炸",
         "details": [
           "評估電池熱失控特性。"
         ],
