@@ -150,7 +150,7 @@
           "detail": "使用直徑 15.8 mm ± 0.1 mm、長度至少 60 mm（或電芯最長尺寸，取較大值）之 Type 316 不鏽鋼棒，置於樣品中央 (A type 316 stainless steel bar with a diameter of 15.8 mm ± 0.1 mm and at least 60 mm in length or the longest dimension of the cell, whichever is greater, is placed across the centre of the cell)。"
         },
         "drop_mass": {
-          "value": "9.1 kg",
+          "value": "9.1 kg 重物",
           "detail": "9.1 kg 剛性質量 (A 9.1 kg rigid mass)。"
         },
         "drop_height": {

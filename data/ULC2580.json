@@ -533,7 +533,7 @@
           "detail": "Exception 1 strictly sets the force at 100 ±6 kN."
         },
         "direction": {
-          "value": "3 mutually perpendicular directions",
+          "value": "3 軸互相垂直",
           "detail": "3 mutually perpendicular directions of press (or 2 for cylindrical)."
         }
       },

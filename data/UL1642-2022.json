@@ -228,7 +228,7 @@
           "detail": "5 顆電芯在室溫下完全放電 (Section 12.2)。"
         },
         "sample_size": {
-          "value": "10 顆 (5顆完全充電，5顆放電至50%容量)",
+          "value": "10 顆樣品",
           "detail": "10 顆 (5顆完全充電，5顆放電至50%容量) - 5+5 samples based on conditioning"
         },
         "protective_device": {
@@ -392,7 +392,7 @@
           "detail": "當電芯變形量達到預壓厚度之 13±1% 時，或擠壓力達到 Table 14A.1 規定力值 (1~13kN 依寬度而定) 時停止，並保持 30 秒。"
         },
         "sample_size": {
-          "value": "10 顆 (5顆完全充電，5顆放電至50%容量)",
+          "value": "10 顆樣品",
           "detail": "10 顆 (5顆完全充電，5顆放電至50%容量) - 5+5 sample distribution"
         },
         "orientation": {
