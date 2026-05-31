@@ -91,7 +91,7 @@
           "detail": "20% greater than the maximum specified charging rate."
         },
         "fault_condition": {
-          "value": "充電電路單一故障",
+          "value": "單一故障",
           "detail": "充電電路單一故障（可能導致高倍率充電）。"
         }
       },

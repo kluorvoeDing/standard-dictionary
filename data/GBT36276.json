@@ -421,23 +421,23 @@
       ],
       "conditions": {
         "pre_condition": {
-          "value": "初始化充電",
+          "value": "滿電狀態",
           "detail": "初始化充電"
         },
         "vibration_profile": {
-          "value": "X、Y、Z軸三個方向隨機振動，每軸 18",
+          "value": "三軸隨機振動",
           "detail": "X、Y、Z軸三個方向隨機振動，每軸 180 min"
         },
         "vibration_rms": {
           "value": "0.51 g",
-          "detail": "0.51 g"
+          "detail": "振動加速度均方根值為 0.51 g。"
         },
         "observation_time": {
-          "value": "1 h",
+          "value": "觀察 1 h",
           "detail": "1 h"
         },
         "post_test": {
-          "value": "絕緣性能試驗與耐壓性能試驗",
+          "value": "絕緣與耐壓",
           "detail": "絕緣性能試驗與耐壓性能試驗"
         }
       },
@@ -471,16 +471,16 @@
       ],
       "conditions": {
         "pre_condition": {
-          "value": "初始化放電",
+          "value": "空電狀態",
           "detail": "初始化放電"
         },
         "pressure": {
-          "value": "1.2倍最大工作壓強",
+          "value": "1.2倍工作壓強",
           "detail": "1.2倍最大工作壓強"
         },
         "hold_time": {
           "value": "靜置 1 min",
-          "detail": "靜置 1 min"
+          "detail": "測試後靜置 1 分鐘觀察管路壓力。"
         }
       },
       "acceptance_criteria": {
@@ -509,35 +509,35 @@
       ],
       "conditions": {
         "pre_condition": {
-          "value": "初始化充電",
+          "value": "滿電狀態",
           "detail": "初始化充電"
         },
         "salt_solution": {
-          "value": "(5±1)% 氯化鈉溶液",
+          "value": "5% NaCl",
           "detail": "(5±1)% 氯化鈉溶液"
         },
         "spray_cycle": {
-          "value": "35±2 °C 噴霧 2 h，然後 40",
+          "value": "噴霧 2h / 貯存 22h",
           "detail": "35±2 °C 噴霧 2 h，然後 40±2 °C / 93±3% RH 貯存 22 h"
         },
         "spray_storage_cycles": {
           "value": "循環 4 次",
-          "detail": "循環 4 次"
+          "detail": "重複上述噴霧與貯存步驟，共計循環 4 次。"
         },
         "ambient_storage": {
-          "value": "23±2 °C / 50±3% RH 貯",
+          "value": "常溫貯存 3d",
           "detail": "23±2 °C / 50±3% RH 貯存 3 d"
         },
         "total_macro_cycles": {
-          "value": "大循環 4 次 (共 28 天)",
+          "value": "共計四次大循環",
           "detail": "大循環 4 次 (共 28 天)"
         },
         "observation_time": {
-          "value": "1 h",
+          "value": "觀察 1 h",
           "detail": "1 h"
         },
         "post_test": {
-          "value": "30 min 內進行絕緣與耐壓試驗",
+          "value": "絕緣與耐壓",
           "detail": "30 min 內進行絕緣與耐壓試驗"
         }
       },
@@ -570,35 +570,35 @@
       ],
       "conditions": {
         "pre_condition": {
-          "value": "初始化充電",
+          "value": "滿電狀態",
           "detail": "初始化充電"
         },
         "high_temp_phase": {
-          "value": "50±2 °C, 95±3% RH 保持",
+          "value": "高溫高濕 6h",
           "detail": "50±2 °C, 95±3% RH 保持 6 h"
         },
         "low_temp_phase": {
-          "value": "25±2 °C, 95±3% RH 保持",
+          "value": "低溫高濕 6h",
           "detail": "25±2 °C, 95±3% RH 保持 6 h"
         },
         "temp_ramp_rate": {
-          "value": "12.5 °C/h",
+          "value": "斜率 12.5 °C/h",
           "detail": "12.5 °C/h"
         },
         "cycles": {
-          "value": "6 次循環",
+          "value": "循環 6 次",
           "detail": "6 次循環"
         },
         "post_cycle_storage": {
-          "value": "25±2 °C, 70±3% RH",
+          "value": "常溫靜置",
           "detail": "25±2 °C, 70±3% RH"
         },
         "observation_time": {
-          "value": "1 h",
+          "value": "觀察 1 h",
           "detail": "1 h"
         },
         "post_test": {
-          "value": "30 min 內進行絕緣與耐壓試驗",
+          "value": "絕緣與耐壓",
           "detail": "30 min 內進行絕緣與耐壓試驗"
         }
       },
@@ -632,23 +632,23 @@
       ],
       "conditions": {
         "pre_condition": {
-          "value": "初始化充電",
+          "value": "滿電狀態",
           "detail": "初始化充電"
         },
         "pressure": {
-          "value": "62 kPa (海拔 ≤4000m) 或",
+          "value": "62 kPa / 54 kPa",
           "detail": "62 kPa (海拔 ≤4000m) 或 54 kPa (海拔 >4000m)"
         },
         "temperature": {
           "value": "25±2 °C",
-          "detail": "25±2 °C"
+          "detail": "試驗環境溫度維持在 25±2 °C。"
         },
         "hold_time": {
-          "value": "6 h",
+          "value": "維持 6 h",
           "detail": "6 h"
         },
         "test_voltage": {
-          "value": "施加試驗電壓 1 min",
+          "value": "施加 1 min",
           "detail": "施加試驗電壓 1 min"
         }
       },
@@ -677,27 +677,27 @@
       ],
       "conditions": {
         "pre_condition": {
-          "value": "初始化充電",
+          "value": "滿電狀態",
           "detail": "初始化充電"
         },
         "pressure": {
-          "value": "62 kPa (海拔 ≤4000m) 或",
+          "value": "62 kPa / 54 kPa",
           "detail": "62 kPa (海拔 ≤4000m) 或 54 kPa (海拔 >4000m)"
         },
         "temperature": {
           "value": "25±2 °C",
-          "detail": "25±2 °C"
+          "detail": "試驗環境溫度維持在 25±2 °C。"
         },
         "hold_time": {
-          "value": "6 h",
+          "value": "維持 6 h",
           "detail": "6 h"
         },
         "dc_voltage": {
-          "value": "施加直流電壓 60 s",
+          "value": "直流 60s",
           "detail": "施加直流電壓 60 s"
         },
         "ac_voltage": {
-          "value": "施加交流電壓 45-62 Hz 保持 6",
+          "value": "交流 60s",
           "detail": "施加交流電壓 45-62 Hz 保持 60 s"
         }
       },
@@ -726,31 +726,31 @@
       ],
       "conditions": {
         "pre_condition": {
-          "value": "初始化充電",
+          "value": "滿電狀態",
           "detail": "初始化充電"
         },
         "start_temp": {
-          "value": "40 °C",
+          "value": "起始 40 °C",
           "detail": "40 °C"
         },
         "temp_step": {
-          "value": "5 °C",
+          "value": "階躍 5 °C",
           "detail": "5 °C"
         },
         "end_temp": {
-          "value": "130 °C",
+          "value": "終止 130 °C",
           "detail": "130 °C"
         },
         "hold_time_initial": {
-          "value": "40 °C 下保持 5 h",
+          "value": "首階保持 5h",
           "detail": "40 °C 下保持 5 h"
         },
         "hold_time_subsequent": {
-          "value": "後續每階保持 1 h",
+          "value": "後續保持 1h",
           "detail": "後續每階保持 1 h"
         },
         "measurement_period": {
-          "value": "恆定溫度 20 min 用於計算溫升速率",
+          "value": "計算區間 20m",
           "detail": "恆定溫度 20 min 用於計算溫升速率"
         }
       },
@@ -782,10 +782,10 @@
       "conditions": {
         "pre_condition": {
           "value": "運行中",
-          "detail": "運行中"
+          "detail": "樣品處於正常運行狀態下進行測試。"
         },
         "test_method": {
-          "value": "依次觸發電壓、電流、溫度、極差、絕緣電阻",
+          "value": "各級報警觸發",
           "detail": "依次觸發電壓、電流、溫度、極差、絕緣電阻等一、二、三級報警設定值"
         }
       },

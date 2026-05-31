@@ -9,7 +9,9 @@
     "publication_date": "2018-09-18 (First Edition, Reaffirmed 2024-08-30)",
     "type": "standard",
     "scope": "商業用途 UAS (重量 < 25 kg, 電壓 ≤ 100 V dc) 的電氣系統安全要求",
-    "applicable_objects": ["PACK_SYSTEM"],
+    "applicable_objects": [
+      "PACK_SYSTEM"
+    ],
     "source_pdf": "s3030_1.pdf",
     "source_gemini_md": "UL3030_zh-TW_standardized.md"
   },
@@ -23,7 +25,9 @@
       "section": "32.6",
       "category": "ELEC",
       "subcategory": "過充電 (Overcharge)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "discharge": {
           "value": "0.2C 或更高放電率至 EODV",
@@ -80,7 +84,9 @@
       "section": "32.7",
       "category": "ELEC",
       "subcategory": "外部短路 (External Short Circuit)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "resistance": {
           "value": "≤ 20 mΩ",
@@ -132,7 +138,9 @@
       "section": "32.8",
       "category": "ELEC",
       "subcategory": "過充電 (Overcharge)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "preparation": {
           "value": "除 1 個電芯外全部完放，剩餘 1 個電芯保持 50% SOC",
@@ -176,7 +184,9 @@
       "section": "32.9",
       "category": "MECH",
       "subcategory": "機械衝擊 (Mechanical Shock)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "light_uas": {
           "value": "≤ 12kg：50g 半正弦波, 11ms, 6 方向",
@@ -191,7 +201,7 @@
           "detail": "若系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
         },
         "observation": {
-          "value": "觀察 1 小時",
+          "value": "觀察期 1h",
           "detail": "觀察 1 小時 (24.7)。"
         }
       },
@@ -220,7 +230,9 @@
       "section": "32.10",
       "category": "THERM",
       "subcategory": "溫度循環 (Temperature Cycling)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "temperatures": {
           "value": "製造商建議之操作環境極端值（或儲存溫度）",
@@ -272,7 +284,9 @@
       "section": "33.1",
       "category": "MECH",
       "subcategory": "振動 (Vibration)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "standard": {
           "value": "IEC 60068-2-64 / ISO 12405-1",
@@ -291,7 +305,7 @@
           "detail": "若電池組可運作，須執行至少 1 次充放電循環。"
         },
         "observation": {
-          "value": "觀察 1 小時",
+          "value": "觀察期 1h",
           "detail": "觀察 1 小時 (24.7)。"
         }
       },
@@ -308,7 +322,9 @@
       "exemptions": [
         "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
       ],
-      "related_tests": ["UL3030-33.2"],
+      "related_tests": [
+        "UL3030-33.2"
+      ],
       "source_reference": "33.1",
       "original_text_snippet": "The sample shall be subjected to the vibration in each axis for 21 h. For each axis the frequency shall be varied from 5 Hz to 200 Hz with power spectral density (PSD) ... as outlined in ISO 12405-1."
     },
@@ -320,7 +336,9 @@
       "section": "33.2",
       "category": "MECH",
       "subcategory": "振動 (Vibration)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "frequency": {
           "value": "10-55-10 Hz 掃頻",
@@ -343,7 +361,7 @@
           "detail": "測試後須執行至少 1 次充放電循環。"
         },
         "observation": {
-          "value": "觀察 1 小時",
+          "value": "觀察期 1h",
           "detail": "觀察 1 小時 (24.7)。"
         }
       },
@@ -358,7 +376,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["UL3030-33.1"],
+      "related_tests": [
+        "UL3030-33.1"
+      ],
       "source_reference": "33.2",
       "original_text_snippet": "The vibration test shall consist of vibration for 1 h at a frequency of 10 to 55 Hz and back to 10 Hz, with a linear sweep having a sweep time of 2 min per sweep cycle."
     },
@@ -370,7 +390,9 @@
       "section": "34.1",
       "category": "MECH",
       "subcategory": "撞擊 (Impact)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "impact_energy": {
           "value": "6.78 N-m",
@@ -393,7 +415,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["UL3030-34.2"],
+      "related_tests": [
+        "UL3030-34.2"
+      ],
       "source_reference": "34.1",
       "original_text_snippet": "An enclosure, guard, or cover is to be subjected to an impact of 6.78 N-m (5 foot-pounds) on any surface that may be subjected to an impact during intended use or storage."
     },
@@ -405,7 +429,9 @@
       "section": "34.2",
       "category": "MECH",
       "subcategory": "跌落 (Drop/Free Fall)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "height": {
           "value": "1.0 ± 0.01 m",
@@ -432,7 +458,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["UL3030-34.1"],
+      "related_tests": [
+        "UL3030-34.1"
+      ],
       "source_reference": "34.2",
       "original_text_snippet": "A UAS that contain hazardous operating voltage... is to be dropped three times from a height of 1.0 ± 0.01 m (40 ± 0.4 inches) to strike a concrete surface"
     },
@@ -444,7 +472,9 @@
       "section": "35",
       "category": "MECH",
       "subcategory": "外殼/模具應力 (Case/Mold Stress)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "temperature": {
           "value": "外殼最高溫度 + 10°C，或 80°C（取高者）",
@@ -481,7 +511,9 @@
       "section": "36.1",
       "category": "THERM",
       "subcategory": "水浸/水暴露 (Water Exposure/Immersion)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "standard": {
           "value": "IEC 60529 IPX4 或更高",
@@ -509,7 +541,9 @@
       "exemptions": [
         "標示為僅限室內使用 (Indoor Use) 之 UAS 豁免此測試"
       ],
-      "related_tests": ["UL3030-36.2"],
+      "related_tests": [
+        "UL3030-36.2"
+      ],
       "source_reference": "36.1",
       "original_text_snippet": "A fully charged UAS shall be subjected to a water exposure test in accordance with the Standard for Degrees of Protection Provided by Enclosures (IP Code), IEC 60529, Tests for Protection Against Water Indicated by the Second Characteristic Numeral 4 (IPX4)"
     },
@@ -521,7 +555,9 @@
       "section": "36.2",
       "category": "THERM",
       "subcategory": "水浸/水暴露 (Water Exposure/Immersion)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "depth": {
           "value": "水面高於最高點 76 mm",
@@ -550,7 +586,9 @@
       "exemptions": [
         "標示為僅限室內使用 (Indoor Use) 之 UAS 豁免此測試"
       ],
-      "related_tests": ["UL3030-36.1"],
+      "related_tests": [
+        "UL3030-36.1"
+      ],
       "source_reference": "36.2",
       "original_text_snippet": "The UAS is subjected to complete immersion to a depth that covers the highest point of the UAS with 76 mm (3 inches) of water. The UAS is subjected to this immersion for 5 min."
     }
