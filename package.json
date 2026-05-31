@@ -2,5 +2,8 @@
   "name": "standard-dictionary-root",
   "version": "1.0.0",
   "description": "Standard Dictionary Vercel Root",
-  "type": "module"
+  "type": "module",
+  "devDependencies": {
+    "cheerio": "^1.2.0"
+  }
 }
