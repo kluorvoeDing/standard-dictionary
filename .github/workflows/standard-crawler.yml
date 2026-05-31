@@ -36,7 +36,6 @@ jobs:
             gh issue create \
               --title "[Crawler] 發現過期標準潛在新版本 PDF" \
               --body-file scripts/crawler/crawler_results.md \
-              --label "crawler" \
               --assignee "@me"
           else
             echo "No crawler_results.md found. No new links to report."
