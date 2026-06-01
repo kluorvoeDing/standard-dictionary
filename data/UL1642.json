@@ -6,10 +6,12 @@
     "full_name_zh": "UL 鋰電池安全標準，UL 1642，第六版",
     "short_name": "UL 1642",
     "publisher": "UL (Underwriters Laboratories)",
-    "publication_date": "2020-09-29",
+    "publication_date": "2020-09-29 (Revision 2022-10-12)",
     "type": "standard",
     "scope": "涵蓋用作產品電源的一次（不可充電）和二次（可充電）鋰電池。含金屬鋰、鋰合金或鋰離子電池，目的在於降低鋰電池在使用中發生火災或爆炸的風險。電池視為「組件」(Component)，最終可接受性取決於其在最終產品中的使用。涵蓋技術人員可更換電池（鋰含量 ≤5.0g）及使用者可更換電池（總鋰含量 ≤4.0g，每電芯 ≤1.0g）。",
-    "applicable_objects": ["CELL"],
+    "applicable_objects": [
+      "CELL"
+    ],
     "source_pdf": "UL 1642-2020.pdf",
     "source_gemini_md": "UL1642-2020_zh-TW_standardized.md"
   },
@@ -102,7 +104,9 @@
       "section": "10",
       "category": "ELEC",
       "subcategory": "外部短路",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "resistance": {
           "value": "80±20 mΩ",
@@ -136,7 +140,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["UL1642-T12"],
+      "related_tests": [
+        "UL1642-T12"
+      ],
       "source_reference": "Section 10.1–10.5",
       "original_text_snippet": "Each test sample battery, in turn, is to be short-circuited by connecting the positive and negative terminals of the battery with a circuit load having a resistance load of 80±20 mΩ. The temperature of the battery case is to be recorded during the test. The battery is to discharge until a fire or explosion is obtained, or until it has reached a completely discharged state of less than 0.2V and the battery case temperature has returned to ±10°C (±18°F) of ambient temperature."
     },
@@ -148,7 +154,9 @@
       "section": "11",
       "category": "ELEC",
       "subcategory": "異常充電",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "temperature": {
           "value": "20±5°C",
@@ -195,7 +203,9 @@
       "section": "12",
       "category": "ELEC",
       "subcategory": "強制放電",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "applicability": {
           "value": "僅適用於串聯多電芯應用",
@@ -235,7 +245,9 @@
       "exemptions": [
         "不適用於非串聯多電芯應用之電芯 (Section 12.1)"
       ],
-      "related_tests": ["UL1642-T10"],
+      "related_tests": [
+        "UL1642-T10"
+      ],
       "source_reference": "Section 12.1–12.6",
       "original_text_snippet": "This test is intended for cells that are to be used in series-connected, multicell applications, such as battery packs. A fully discharged cell is to be force-discharged by connecting it in series with fully charged cells of the same kind. The number of fully charged cells to be connected in series with the discharged cell is to equal the maximum number less one of the cells to be covered for series use."
     },
@@ -247,7 +259,9 @@
       "section": "13",
       "category": "MECH",
       "subcategory": "擠壓",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "force": {
           "value": "13±1 kN (3000±224 lbs)",
@@ -279,7 +293,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["UL1642-T14"],
+      "related_tests": [
+        "UL1642-T14"
+      ],
       "source_reference": "Section 13.1–13.4",
       "original_text_snippet": "A battery is to be crushed between two flat surfaces. The force for the crushing is to be applied by a hydraulic ram or similar force mechanism. The flat surfaces are to be brought in contact with the cells and the crushing is to be continued until an applied force of 13±1 kN (3000±224 lbs) is reached. Once the maximum force has been obtained it is to be released."
     },
@@ -291,7 +307,9 @@
       "section": "14",
       "category": "MECH",
       "subcategory": "衝擊",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "bar_diameter": {
           "value": "15.8±0.1 mm",
@@ -334,10 +352,66 @@
           "技術人員可更換電池：若起火或爆炸，使用須限制於受保護應用 (Section 5.1.2)"
         ]
       },
-      "exemptions": [],
-      "related_tests": ["UL1642-T13"],
+      "exemptions": [
+        "未依本測試評估，且容量大於 300 mAh 的軟包電芯，須符合 Section 14A 之圓柱擠壓測試 (Round Bar Crush Test) (Section 14.2 Exception No. 2)。"
+      ],
+      "related_tests": [
+        "UL1642-T13"
+      ],
       "source_reference": "Section 14.1–14.4",
       "original_text_snippet": "A test sample battery is to be placed on a flat surface. A 15.8±0.1-mm (5/8±0.004-in) diameter bar is to be placed across the center of the sample. A 9.1±0.46-kg (20±1-lb) weight is to be dropped from a height of 610±25 mm (24±1 in) onto the sample."
+    },
+    {
+      "id": "UL1642-T14A",
+      "normalized_id": "MECH-CRUSH-ROUND",
+      "name_zh": "圓柱擠壓測試 (Round Bar Crush Test)",
+      "name_en": "Round Bar Crush Test",
+      "section": "14A",
+      "category": "MECH",
+      "subcategory": "圓柱擠壓",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "applicability": {
+          "value": "容量 >300mAh 之軟包電芯",
+          "detail": "適用於未進行衝擊測試 (Section 14) 且容量大於 300 mAh 的軟包電芯 (Section 14A.1)。"
+        },
+        "bar_diameter": {
+          "value": "25±1 mm 鋼製圓柱",
+          "detail": "將直徑 25±1 mm (1±0.039 in) 的鋼製圓柱置於平放的樣品上，邊緣與電芯主體上緣對齊，長軸垂直於極耳，且兩側各超出樣品至少 5 mm (Section 14A.3)。"
+        },
+        "preload": {
+          "value": "0.4–0.6 N/cm²",
+          "detail": "施加擠壓力前，須先施加 0.4–0.6 N/cm² (0.58–0.87 psi) 的預載壓力，隨後測量樣品厚度 (公差 ±0.1 mm) (Section 14A.3, 14A.5)。"
+        },
+        "crush_speed": {
+          "value": "≤0.1 mm/s",
+          "detail": "擠壓板的移動速度不得大於 0.1 mm/s (0.004 in/s) (Section 14A.6)。"
+        },
+        "termination": {
+          "value": "變形 13±1% 或達規定壓力",
+          "detail": "當電芯變形量達厚度的 13±1% (相對於預載後厚度)，或擠壓力達到 Table 14A.1 規定的力值 (依電芯寬度從 1 kN 至 13 kN 不等) 時，停止擠壓並保持 30 秒 (Section 14A.6)。"
+        },
+        "sample_size": {
+          "value": "5 顆（雙極耳需 10 顆）",
+          "detail": "一次電池：滿充 5 + 半放電 5。二次電池：滿充 5 + 循環後 5。若正負極耳在兩側，兩側均須測試，每側使用不同樣品 (Section 14A.4)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "所有樣品不得爆炸或起火 (Section 14A.7)",
+          "技術人員可更換電池：若起火或爆炸，使用須限制於受保護應用 (Section 5.1.2)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "UL1642-T13",
+        "UL1642-T14"
+      ],
+      "source_reference": "Section 14A.1–14A.7",
+      "original_text_snippet": "The sample shall be positioned on a flat surface with a 25 ±1 mm (1 ±0.039 in) diameter steel round bar placed on top of the sample. ... The displacement of the crush plate shall be stopped and held for 30 s once the cell deformation reaches 13 ±1% of the cell thickness... or the crush force reaches the force value in Table 14A.1, whichever comes first."
     },
     {
       "id": "UL1642-T15",
@@ -347,7 +421,9 @@
       "section": "15",
       "category": "MECH",
       "subcategory": "機械衝擊",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "mounting": {
           "value": "剛性安裝，支撐所有安裝面",
@@ -394,7 +470,9 @@
       "section": "16",
       "category": "MECH",
       "subcategory": "振動",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "motion_type": {
           "value": "簡諧運動 (Simple Harmonic Motion)",
@@ -441,7 +519,9 @@
       "section": "17",
       "category": "THERM",
       "subcategory": "加熱濫用",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "oven_type": {
           "value": "重力對流或循環空氣烘箱",
@@ -491,7 +571,9 @@
       "section": "18",
       "category": "THERM",
       "subcategory": "溫度循環",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "cycle_count": {
           "value": "10 次循環",
@@ -542,7 +624,9 @@
       "section": "19",
       "category": "THERM",
       "subcategory": "海拔模擬",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "pressure": {
           "value": "11.6 kPa (1.68 psi) 絕對壓力",
@@ -581,7 +665,9 @@
       "section": "20",
       "category": "THERM",
       "subcategory": "火焰暴露",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "platform_screen": {
           "value": "鋼絲網覆蓋 102 mm 孔",
@@ -625,23 +711,53 @@
     "groups": [
       {
         "group_name": "電氣測試 (Electrical Tests)",
-        "sections": ["10", "11", "12"],
-        "tests": ["UL1642-T10", "UL1642-T11", "UL1642-T12"]
+        "sections": [
+          "10",
+          "11",
+          "12"
+        ],
+        "tests": [
+          "UL1642-T10",
+          "UL1642-T11",
+          "UL1642-T12"
+        ]
       },
       {
         "group_name": "機械測試 (Mechanical Tests)",
-        "sections": ["13", "14", "15", "16"],
-        "tests": ["UL1642-T13", "UL1642-T14", "UL1642-T15", "UL1642-T16"]
+        "sections": [
+          "13",
+          "14",
+          "15",
+          "16"
+        ],
+        "tests": [
+          "UL1642-T13",
+          "UL1642-T14",
+          "UL1642-T15",
+          "UL1642-T16"
+        ]
       },
       {
         "group_name": "環境測試 (Environmental Tests)",
-        "sections": ["17", "18", "19"],
-        "tests": ["UL1642-T17", "UL1642-T18", "UL1642-T19"]
+        "sections": [
+          "17",
+          "18",
+          "19"
+        ],
+        "tests": [
+          "UL1642-T17",
+          "UL1642-T18",
+          "UL1642-T19"
+        ]
       },
       {
         "group_name": "火焰暴露測試 (Fire Exposure Test)",
-        "sections": ["20"],
-        "tests": ["UL1642-T20"]
+        "sections": [
+          "20"
+        ],
+        "tests": [
+          "UL1642-T20"
+        ]
       }
     ]
   },
@@ -649,13 +765,17 @@
     {
       "id": "GE-01",
       "description": "強制放電測試 (Section 12) 僅適用於設計用於串聯多電芯應用之電芯。",
-      "applicable_tests": ["UL1642-T12"],
+      "applicable_tests": [
+        "UL1642-T12"
+      ],
       "source_reference": "Section 12.1"
     },
     {
       "id": "GE-02",
       "description": "拋射體測試 (Section 20) 可免除僅用於技術人員更換之一次電池（液態陰極型），如氯化亞碲或二氧化硫型電池。",
-      "applicable_tests": ["UL1642-T20"],
+      "applicable_tests": [
+        "UL1642-T20"
+      ],
       "source_reference": "Table 6.1 footnote d"
     },
     {
@@ -666,8 +786,13 @@
     },
     {
       "id": "GE-04",
-      "description": "技術人員可更換電池在擠壓或衝擊測試中起火/爆炸時，使用須限制於受保護應用 (Section 5.1.2)。",
-      "applicable_tests": ["UL1642-T13", "UL1642-T14", "UL1642-T20"],
+      "description": "技術人員可更換電池在擠壓、衝擊或圓柱擠壓測試中起火/爆炸時，使用須限制於受保護應用 (Section 5.1.2)。",
+      "applicable_tests": [
+        "UL1642-T13",
+        "UL1642-T14",
+        "UL1642-T20",
+        "UL1642-T14A"
+      ],
       "source_reference": "Section 5.1.2"
     }
   ],
@@ -687,7 +812,12 @@
         "max_mass_loss_percent": 0.1
       }
     ],
-    "applicable_tests": ["UL1642-T15", "UL1642-T16", "UL1642-T18", "UL1642-T19"],
+    "applicable_tests": [
+      "UL1642-T15",
+      "UL1642-T16",
+      "UL1642-T18",
+      "UL1642-T19"
+    ],
     "source_reference": "Section 5.1.3, Table 5.1"
   },
   "sample_conditioning": {
