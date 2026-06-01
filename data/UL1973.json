@@ -59,7 +59,8 @@
           "無電擊危險 (No shock hazard)",
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
-          "保護控制正常 (Protection maintained)"
+          "保護控制正常 (Protection maintained)",
+          "電芯或模組上測得的最大充電電壓不得超過其正常工作範圍 (Section 15.7)。"
         ]
       },
       "exemptions": [
@@ -99,7 +100,8 @@
         "summary": "無起火、無爆炸、無洩漏",
         "details": [
           "無起火、無爆炸、無可燃氣體、無有毒氣體、無電擊、無洩漏、無破裂",
-          "必須符合 Table 12.1 中所有規範 (包含 P: 保護控制正常)"
+          "必須符合 Table 12.1 中所有規範 (包含 P: 保護控制正常)",
+          "電池保護電路 (如 BMS) 應檢測過充電流，並防止電池充電超過最大電池充電電流 (Section 16.7)。"
         ]
       },
       "exemptions": [],
@@ -138,7 +140,8 @@
         "details": [
           "若無內部短路保護的模組，允收標準僅要求無起火爆炸 (無 E, F)",
           "整體系統: 無起火、無爆炸、無洩漏、無破裂、無毒氣",
-          "必須符合 Table 12.1 中所有規範 (包含 C: 無可燃氣體, S: 無電擊危險, P: 保護控制正常)"
+          "必須符合 Table 12.1 中所有規範 (包含 C: 無可燃氣體, S: 無電擊危險, P: 保護控制正常)",
+          "對於電池系統，測得的最大短路電流及在該最大值下的持續時間不得大於 44.4 規定的值 (Section 17.11)。"
         ]
       },
       "exemptions": [],
@@ -345,7 +348,7 @@
         },
         "waveform": {
           "value": "半正弦波或其他",
-          "detail": "Both positive and negative direction shocks shall be applied in each of 3 mutually perpendicular directions for a total of 18 shocks."
+          "detail": "Both positive and negative direction shocks shall be applied in each of 3 mutually perpendicular directions for a total of 18 shocks. 測試應符合 IEC 61373，或對於 VAP 應用符合 UL/ULC 2271 或 UL/ULC 2580 (Section 29.3)。"
         }
       },
       "acceptance_criteria": {
@@ -724,6 +727,10 @@
         "soc": {
           "value": "不平衡狀態",
           "detail": "All of its modules/cells with the exception of one discharged to its specified fully discharged condition. The undischarged module/cell shall be discharged to approximately 50%."
+        },
+        "fault_condition": {
+          "value": "單一故障條件",
+          "detail": "主動保護裝置應處於單一故障條件下 (Section 21.3)。"
         }
       },
       "acceptance_criteria": {
