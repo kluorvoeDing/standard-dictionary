@@ -66,23 +66,23 @@
           "detail": "施加壓力上限為 13 ± 1 kN。達到此壓力時應立即釋放。(Maximum applied force: 13 ± 1 kN. Pressure shall be released immediately upon reaching this force.)"
         },
         "test_temperature": {
-          "value": "上限 45°C / 下限 10°C（各溫度分別進行）",
+          "value": "45°C 與 10°C",
           "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
         },
         "sample_quantity": {
-          "value": "每溫度 5 個；方型電芯長/短側各 5 個",
+          "value": "各溫5個 (方型10個)",
           "detail": "每個溫度條件下 5 個樣品。方型電芯 (Prismatic cells) 須分別針對長側 (long side) 與短側 (short side) 各進行 5 個樣品測試。"
         },
         "termination_voltage_drop": {
-          "value": "電壓降至初始電壓的 1/3 以下",
+          "value": "電壓降至 1/3",
           "detail": "壓壞過程中若電壓降至初始電壓的 1/3 以下，應立即釋放壓力。(If voltage drops below 1/3 of initial voltage, pressure shall be released immediately.)"
         },
         "termination_deformation": {
-          "value": "電池高度變形量達 10%",
+          "value": "變形達 10%",
           "detail": "壓壞過程中若電池高度變形量達到 10%，應立即釋放壓力。(If cell height deformation reaches 10%, pressure shall be released immediately.)"
         },
         "termination_logic": {
-          "value": "最大壓力 / 電壓驟降 / 變形量 — 三者先到者停止",
+          "value": "三條件先達者",
           "detail": "滿足以下任一條件時，應立即釋放壓力：(1) 達到 13 ± 1 kN 最大壓力；(2) 電壓降至初始電壓的 1/3 以下；(3) 電池高度變形量達到 10%。"
         }
       },
@@ -121,7 +121,7 @@
           "detail": "外部短絡電阻為 80 ± 20 mΩ。(External short circuit resistance: 80 ± 20 mΩ.)"
         },
         "test_temperature": {
-          "value": "上限 45°C / 下限 10°C（各溫度分別進行）",
+          "value": "45°C 與 10°C",
           "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
         },
         "sample_quantity": {
@@ -129,7 +129,7 @@
           "detail": "每個溫度條件下 5 個樣品。(5 samples per temperature condition.)"
         },
         "duration": {
-          "value": "24 hours or temp difference ≤ 20%",
+          "value": "24h 或 溫降 20%",
           "detail": "持續 24 小時，或直到電芯表面溫度與環境溫度的差值降至其最大值的 20% 以下，以較短者為準。(Maintained for 24 hours or until the difference between cell surface temp and ambient drops to 20% or less of its maximum value, whichever is shorter.)"
         }
       },
@@ -174,7 +174,7 @@
           "detail": "達到目標溫度後保持 10 分鐘。(Hold at target temperature for 10 minutes.)"
         },
         "test_temperature": {
-          "value": "上限 45°C / 下限 10°C（各溫度分別進行）",
+          "value": "45°C 與 10°C",
           "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
         },
         "sample_quantity": {
@@ -210,7 +210,7 @@
       ],
       "conditions": {
         "method": {
-          "value": "插入鎳片誘發內部短路",
+          "value": "插入鎳片",
           "detail": "將鎳片 (Nickel piece) 插入電芯內部，以誘發內部短路。(Insert a nickel piece into the cell interior to induce internal short circuit.)"
         },
         "pressing_speed": {
@@ -218,43 +218,43 @@
           "detail": "加壓速度為 0.1 mm/s。(Pressing speed is 0.1 mm/s.)"
         },
         "pressure_jig": {
-          "value": "10x10mm 丁腈橡膠 + 5x5mm 壓克力板",
+          "value": "橡膠 (+ 壓克力板)",
           "detail": "使用包含 10x10mm 丁腈橡膠與 5x5mm 壓克力板的加壓治具。(Pressure jig specifics: 10x10mm nitrile rubber, plus 5x5mm acrylic plate.)"
         },
         "force_cylindrical": {
-          "value": "800 N（圓柱形電芯）",
+          "value": "800 N (圓柱)",
           "detail": "圓柱形電芯 (Cylindrical cells) 之壓力上限為 800 N。(Upper limit pressure for cylindrical cells: 800 N.)"
         },
         "force_prismatic": {
-          "value": "400 N（方型電芯）",
+          "value": "400 N (方型)",
           "detail": "方型電芯 (Prismatic cells) 之壓力上限為 400 N。(Upper limit pressure for prismatic cells: 400 N.)"
         },
         "environment_dew_point": {
-          "value": "露點溫度 ≤ -25°C",
+          "value": "露點 ≤ -25°C",
           "detail": "操作環境之露點溫度須 ≤ -25°C。(Operating environment dew point must be ≤ -25°C.)"
         },
         "disassembly_time_limit": {
-          "value": "解體至密封需在 30 分鐘內完成",
+          "value": "30 分鐘內完成",
           "detail": "從電芯解體至重新密封的過程須在 30 分鐘內完成。(The process from cell disassembly to resealing must be completed within 30 minutes.)"
         },
         "voltage_drop_stop_condition": {
-          "value": "偵測到電壓降 ≥ 50 mV 時停止加壓，30 秒後釋放",
+          "value": "壓降 ≥50mV / 30s釋放",
           "detail": "若偵測到電壓降 ≥ 50 mV：停止加壓 (stop pressurizing)，30 秒後釋放壓力。(If voltage drop ≥ 50 mV detected: stop pressurizing, release after 30 seconds.)"
         },
         "force_limit_stop_condition": {
-          "value": "壓力達上限 (800N/400N) 時停止加壓並釋放",
+          "value": "達壓力上限釋放",
           "detail": "若壓力達到上限值（圓柱形 800N / 方型 400N）：停止加壓並釋放壓力。(If force reaches upper limit (800N cylindrical / 400N prismatic): stop pressurizing and release.)"
         },
         "extended_sampling": {
-          "value": "若達上限壓力仍未短絡，可追加至最多 10 個樣品",
+          "value": "最多追加至 10 個",
           "detail": "若達到上限壓力仍未發生短絡，樣品數量可追加至最多 10 個。(If short circuit does not occur at upper limit pressure, sample count may be extended up to 10.)"
         },
         "test_temperature": {
-          "value": "上限 45°C / 下限 10°C（各溫度分別進行）",
+          "value": "45°C 與 10°C",
           "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
         },
         "sample_quantity": {
-          "value": "每溫度 5 個（可追加至 10 個）",
+          "value": "各溫5至10個",
           "detail": "每個溫度條件下 5 個樣品。若達到上限壓力仍未發生短絡，可追加至最多 10 個。(5 samples per temperature, extendable up to 10 if no short circuit at upper limit pressure.)"
         },
         "ambient_temp": {
@@ -290,11 +290,11 @@
       ],
       "conditions": {
         "drop_height": {
-          "value": "依 JIS C 6950 / JIS C 6065 規定",
+          "value": "依 JIS C 6950/6065",
           "detail": "跌落高度依照 JIS C 6950（資訊科技設備）或 JIS C 6065（音訊/視訊設備）規定。具體高度取決於設備類別與重量。(Drop height per JIS C 6950 or JIS C 6065 specifications. Actual height depends on device class and weight.)"
         },
         "drop_surface": {
-          "value": "混凝土面或鋼板面",
+          "value": "混凝土或鋼板",
           "detail": "跌落面為混凝土面或鋼板面 (concrete or steel plate surface)。"
         },
         "drop_count": {
@@ -302,7 +302,7 @@
           "detail": "每個樣品跌落 1 次。(Each sample is dropped once.)"
         },
         "sample_quantity": {
-          "value": "3 個（總量）",
+          "value": "3 個",
           "detail": "組電池跌落測試共需 3 個樣品（不分溫度）。(3 assembled battery samples total.)"
         }
       },
@@ -341,11 +341,11 @@
           "detail": "外部短絡電阻為 80 ± 20 mΩ，與電芯層級相同。(External short circuit resistance: 80 ± 20 mΩ, same as cell level.)"
         },
         "sample_quantity": {
-          "value": "上限 45°C / 下限 10°C 充電各 5 個，共 10 個",
+          "value": "45C/10C 各5個",
           "detail": "需要經過雙溫度充電條件（45°C 及 10°C），各 5 個樣品，共 10 個樣品。(Requires dual-temperature charging requirement at 45°C and 10°C, 5 samples each, total 10 samples.)"
         },
         "duration_and_observation": {
-          "value": "24h 或溫差降至 20%",
+          "value": "24h 或 溫降 20%",
           "detail": "Maintain short circuit for 24 hours OR until the temperature difference drops to 20% of its maximum value. Only if current is interrupted by a protection device, observe for 1 hour after current interruption."
         }
       },
@@ -377,23 +377,23 @@
       ],
       "conditions": {
         "voltage_limit": {
-          "value": "不超過上限充電電壓（通常 4.25V）",
+          "value": "不超上限電壓 (4.25V)",
           "detail": "驗證組電池內的單電芯或電池塊在充電過程中不得超過上限充電電壓（通常為 4.25V）。(Verify that individual cells or battery blocks within the assembled battery do not exceed the upper limit charge voltage, typically 4.25V, during charging.)"
         },
         "method_single_stage": {
-          "value": "直接測量充電電壓",
+          "value": "測量充電電壓",
           "detail": "單級電池（單電芯/單電池塊組成的組電池）：直接測量充電電壓。(Single-stage battery: directly measure the charging voltage.)"
         },
         "method_series_A": {
-          "value": "方法 A：強制放電其中一個電池塊，測量其餘電壓",
+          "value": "強制放電並測量其餘",
           "detail": "串聯電池 (2 級以上) 方法 A：充電時強制放電其中一個電池塊，測量其餘電池塊電壓是否超過上限。(Series battery Method A: during charging, force discharge one battery block and measure remaining blocks' voltage.)"
         },
         "method_series_B": {
-          "value": "方法 B：對單電芯施加超過上限電壓，測量停止時電壓",
+          "value": "施加超壓測停止電壓",
           "detail": "串聯電池 (2 級以上) 方法 B：對單電芯施加超過上限充電電壓的電壓，測量充電停止時的電壓。(Series battery Method B: apply voltage exceeding upper limit to a single cell and measure voltage when charging stops.)"
         },
         "sample_quantity": {
-          "value": "1 個（總量）",
+          "value": "1 個",
           "detail": "過充電保護確認測試僅需 1 個組電池樣品。(Only 1 assembled battery sample required.)"
         },
         "ambient_temp": {
