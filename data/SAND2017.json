@@ -540,9 +540,7 @@
           "建議另報告電芯失效時之 SOC 值"
         ]
       },
-      "exemptions": [
-        "若充電系統最大能力低於 RESS 之最大容許電流，可豁免該過充電流條件測試。(Gemini MD: 若充電系統的最大能力低於 RESS 的最大容許電流，可豁免該測試。)"
-      ],
+      "exemptions": [],
       "related_tests": [],
       "source_reference": "Section 3.3.1, Table 2, Table 8",
       "original_text_snippet": "Starting with a test article at its normal operating temperature and 100% SOC, the DUT is overcharged at a constant current. The end conditions for the overcharge test are (1) failure of the DUT (HSL ≥5) or (2) 250% SOC. The DUT should be monitored for at least 30 minutes at the end of the test."
