@@ -121,6 +121,10 @@
         "fault_condition": {
           "value": "單一故障與 PTC 復位測試",
           "detail": "對充電電路中任何單一組件施加故障。若 PTC 或可復位保護裝置作動，測試期間必須重置至少 10 次。若保護裝置作動，需使用不會使保護裝置作動的最大負載重複測試。"
+        },
+        "ambient_temperature": {
+          "value": "20 ± 5°C",
+          "detail": "測試環境溫度需維持在 20 ± 5°C。"
         }
       },
       "acceptance_criteria": {
@@ -168,6 +172,10 @@
         "additional_test": {
           "value": "5倍 C5 測試",
           "detail": "五個樣品中至少有一個需以 5 倍的 C5 速率進行相同測試。"
+        },
+        "ambient_temperature": {
+          "value": "20 ± 5°C",
+          "detail": "測試環境溫度需維持在 20 ± 5°C。"
         }
       },
       "acceptance_criteria": {
@@ -458,9 +466,13 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無翹曲、無融化、無破裂",
+        "summary": "無翹曲、無融化、無破裂、無爆炸、無起火、無排氣、無漏液",
         "details": [
-          "外殼不應有導致內部電芯或保護電路暴露的翹曲、融化或破裂。"
+          "外殼不應有導致內部電芯或保護電路暴露的翹曲、融化或破裂。",
+          "無爆炸",
+          "無起火",
+          "無排氣",
+          "無漏液"
         ]
       },
       "exemptions": [
@@ -532,7 +544,7 @@
         },
         "cage": {
           "value": "覆蓋鋁網籠 (610x305 mm, 16-18 wires/inch)",
-          "detail": "測試電池用 610x305 mm 的八角形鋁質金屬絲籠覆蓋，網格密度為每英吋 16-18 根金屬絲。"
+          "detail": "測試電池用 610x305 mm 的八角形鋁質金屬絲籠覆蓋，網格密度為每英吋 16-18 根金屬絲。 鋁線直徑為 0.25 mm。"
         }
       },
       "acceptance_criteria": {
@@ -630,7 +642,7 @@
     },
     {
       "id": "GE-02",
-      "description": "含有活性物質小於 0.04g 的電芯豁免外殼強度開啟測試。",
+      "description": "含有活性物質小於 0.04g 的電芯豁免外殼強度開啟測試。 此外，此要求不適用於鋰離子聚合物或鋰聚合物電池（即軟包電池）。",
       "applicable_tests": [],
       "source_reference": "6.1.2 Exception 1"
     },
