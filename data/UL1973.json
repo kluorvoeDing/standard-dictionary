@@ -207,6 +207,10 @@
         "discharge_rate": {
           "value": "最大放電速率",
           "detail": "以製造商規定的最大放電速率進行放電。"
+        },
+        "fault_condition": {
+          "value": "單一故障條件",
+          "detail": "測試期間，主動保護裝置必須承受單一故障條件。"
         }
       },
       "acceptance_criteria": {
@@ -631,6 +635,10 @@
         "temperature": {
           "value": "130°C",
           "detail": "Rate of 5 ±2 °C per minute to a temperature of 130 ±2 °C. Temperature remain for 10 min. Exception for cells > 500 g to be held for 30 min rather than 10 min. Cells with Tmax > 100°C to be tested at 30 ±2 °C above the manufacturers maximum specified temperature."
+        },
+        "soc": {
+          "value": "完全充電",
+          "detail": "單電池在加熱測試前必須完全充電 (100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -664,6 +672,10 @@
         "termination": {
           "value": "120% 電壓或 130% SOC",
           "detail": "充電至 120% 最大規定電壓或 130% SOC。"
+        },
+        "soc": {
+          "value": "完全放電",
+          "detail": "在過充測試之前，單電池必須放電至指定的終止電壓 (0% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -760,6 +772,10 @@
         "profile": {
           "value": "極端溫度循環",
           "detail": "Strict temperature profile: +75 ±2 °C for 6h, 20 ±2 °C for 2h, -40 ±2 °C for 6h, and 20 ±2 °C, repeated for a total of 10 cycles."
+        },
+        "soc": {
+          "value": "完全充電",
+          "detail": "在開始溫度循環之前，電池系統必須完全充電 (100% SOC)。"
         }
       },
       "acceptance_criteria": {

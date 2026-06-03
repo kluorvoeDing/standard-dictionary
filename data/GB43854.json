@@ -495,7 +495,7 @@
           "電池組正負極同外殼之間的絕緣阻值應大於或等於 20 MΩ"
         ],
         "functional": {
-          "value": true,
+          "value": "功能正常",
           "detail": "電池組保證功能正常。"
         }
       },
@@ -541,7 +541,7 @@
           "detail": "之後撤除擠壓力，並觀察 1 h"
         },
         "length": {
-          "value": "大於被擠壓電池尺寸，不大於 1 m",
+          "value": "長度 > 電池，≤ 1m",
           "detail": "半圓柱體的長度大於被擠壓電池的尺寸，但不超過 1 m。"
         }
       },
@@ -721,7 +721,7 @@
       ],
       "related_tests": [],
       "source_reference": "6.4.2.5",
-      "original_text_snippet": "在電池組提把中心位置至少25 mm長度均勻施加按表4規定的力,並保持 1 min。"
+      "original_text_snippet": "针对带有提把的电池组，在电池组提把中间 75 mm 的长度上，10 s 内均匀施加至 4 倍电池组重量的力，保持位置不动，持续 1 min。"
     },
     {
       "id": "GB43854-T17",
@@ -1003,12 +1003,12 @@
           "detail": "推薦加熱或過充作為熱擴散試驗的可選方法"
         },
         "heating_power": {
-          "value": "30-200W (<80Wh) 或 100-300W (≥80Wh)",
-          "detail": "根據單體能量選擇加熱功率"
+          "value": "依單體能量 30-300W",
+          "detail": "依單體能量選擇加熱功率：<80Wh 為 30-200W，≥80Wh 為 100-300W。"
         },
         "termination_for_trigger": {
-          "value": "電壓降>25% 或 達最高工作溫度 或 dT/dt>1°C/s 持續3s",
-          "detail": "判定條件達到認為觸發熱失控"
+          "value": "(a且c) 或 (b且c)",
+          "detail": "電壓降>25% (a) 或 達最高工作溫度 (b)；並且 dT/dt>1°C/s 持續3s (c)。滿足 (a且c) 或 (b且c) 判定為觸發熱失控。"
         }
       },
       "acceptance_criteria": {
@@ -1045,7 +1045,7 @@
       "applicable_tests": [
         "GB43854-T16"
       ],
-      "source_reference": "3.1 結構與環境豁免 (標準化 Markdown)"
+      "source_reference": "6.4.2.5"
     }
   ],
   "metadata": {
