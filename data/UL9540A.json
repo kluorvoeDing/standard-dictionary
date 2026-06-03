@@ -193,12 +193,13 @@
           "目標牆壁或屋簷表面溫升 ≤ 97°C (175°F)",
           "無爆炸/爆燃/爆轟危險",
           "逃生路徑測得之熱通量 ≤ 1.3 kW/m²",
-          "室內安裝應無火焰蔓延至單元外"
-        ],
-        "residential_gas_limit": {
-          "value": true,
-          "detail": "對於住宅安裝，空氣中的可燃氣體濃度不得超過最小規定房間安裝尺寸的 25 % LFL。"
-        }
+          "室內安裝應無火焰蔓延至單元外",
+          {
+            "id": "AC-GAS-1",
+            "rule_en": "For residential installations, the airborne combustible gas concentration shall not exceed 25 % of the LFL for the minimum prescribed room installation size.",
+            "rule_zh": "對於住宅安裝，空氣中的可燃氣體濃度不得超過最小規定房間安裝尺寸的 25 % LFL。"
+          }
+        ]
       },
       "exemptions": [
         "若符合表 9.1 規定的性能標準，可豁免安裝級測試 (9.8)。",
@@ -286,7 +287,7 @@
         "UL9540A-INSTALL"
       ],
       "source_reference": "7.8",
-      "condition": "undefined且根據 ASTM E918 在環境溫度與排氣溫度下均無可燃性危險。"
+      "condition": "且根據 ASTM E918 在環境溫度與排氣溫度下均無可燃性危險。"
     },
     {
       "id": "GE-02",
@@ -296,7 +297,7 @@
         "UL9540A-INSTALL"
       ],
       "source_reference": "8.5",
-      "condition": "undefined，並且 (c) 模組外部表面溫度不超過單體電池排氣溫度。"
+      "condition": "並且 (c) 模組外部表面溫度不超過單體電池排氣溫度。"
     },
     {
       "id": "GE-03",

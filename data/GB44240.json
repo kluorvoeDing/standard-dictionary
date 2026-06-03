@@ -650,8 +650,8 @@
       ],
       "conditions": {
         "trigger": {
-          "value": "激光照射或其他",
-          "detail": "按照附錄 B 進行電池熱失控試驗程序。"
+          "value": "加熱裝置",
+          "detail": "按照附錄B，使用平面狀或者棒狀加熱裝置（最大功率不低於600W），加熱至300°C或發生熱失控。"
         },
         "stop_condition": {
           "value": "加熱至 300 °C 停止",
@@ -691,7 +691,7 @@
       "conditions": {
         "trigger": {
           "value": "激光或其他觸發單體",
-          "detail": "按照附錄 B、C、D 進行熱擴散試驗程序。激光加熱為首選。"
+          "detail": "按照附錄 C、D 進行熱擴散試驗程序。激光加熱為首選。"
         }
       },
       "acceptance_criteria": {
@@ -704,6 +704,108 @@
       "related_tests": [],
       "source_reference": "9.7.2",
       "original_text_snippet": "Conduct battery system thermal propagation test according to Appendix B, C, D."
+    },
+    {
+      "id": "GB44240-9.4",
+      "section": "9.4",
+      "category": "ELEC",
+      "subcategory": "SHORT_CIRCUIT",
+      "name_en": "Short circuit protection during transport and installation",
+      "name_zh": "運輸和安裝過程中的短路保護",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "exemptions": [],
+      "conditions": {
+        "resistance": {
+          "value": "≤ 100 mΩ",
+          "detail": "使用阻值不超過 100 mΩ 的外部電阻進行短路。"
+        },
+        "termination": {
+          "value": "降溫或 6h",
+          "detail": "持續測試直到電池溫度下降到峰值的 80% 或是持續 6 小時為止。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          {
+            "id": "AC-FIRE-1",
+            "rule_en": "No fire",
+            "rule_zh": "不起火"
+          },
+          {
+            "id": "AC-EXPL-1",
+            "rule_en": "No explosion",
+            "rule_zh": "不爆炸"
+          }
+        ]
+      }
+    },
+    {
+      "id": "GB44240-9.5",
+      "section": "9.5",
+      "category": "ELEC",
+      "subcategory": "BMS",
+      "name_en": "Reverse connection protection",
+      "name_zh": "反向連接保護",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "exemptions": [],
+      "conditions": {
+        "duration": {
+          "value": "充電 1h",
+          "detail": "反向連接系統中的一個模組或單電池，並充電 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          {
+            "id": "AC-FIRE-1",
+            "rule_en": "No fire",
+            "rule_zh": "不起火"
+          },
+          {
+            "id": "AC-EXPL-1",
+            "rule_en": "No explosion",
+            "rule_zh": "不爆炸"
+          }
+        ]
+      }
+    },
+    {
+      "id": "GB44240-9.6",
+      "section": "9.6",
+      "category": "ELEC",
+      "subcategory": "DIELECTRIC",
+      "name_en": "Battery system dielectric strength",
+      "name_zh": "電池組系統抗電強度",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "exemptions": [],
+      "conditions": {
+        "pretreatment": {
+          "value": "濕熱處理",
+          "detail": "在進行抗電強度測試前，需先進行濕熱處理。"
+        },
+        "standard": {
+          "value": "依 GB 4943.1",
+          "detail": "抗電強度測試依據 GB 4943.1—2022 進行。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不擊穿、無飛弧",
+        "details": [
+          {
+            "id": "AC-BD-1",
+            "rule_en": "No breakdown or flashover",
+            "rule_zh": "不應發生擊穿或飛弧。"
+          }
+        ]
+      }
     }
   ],
   "test_sequence": {

@@ -116,7 +116,7 @@
       "conditions": {
         "charge_current": {
           "value": "Icm (最大充電電流)",
-          "detail": "以製造商規定的最大充電電流 (Icm) 進行恆流充電。"
+          "detail": "先用最大充電電流(Icm)恆流充電至試驗電壓，然後以該電壓恆壓充電。"
         },
         "charge_voltage": {
           "value": "根據 Ucl 決定",
@@ -154,7 +154,7 @@
       ],
       "conditions": {
         "current": {
-          "value": "-Uup / 90min",
+          "value": "1It A",
           "detail": "以 1It A 的電流進行反向充電至負的充電上限電壓 (-Uup)。如果電壓達到負的充電上限電壓，應通過減小電流保持該電壓繼續進行反向充電，反向充電共計 90 min。"
         },
         "duration": {
@@ -437,7 +437,7 @@
         },
         "process": {
           "value": "浸泡、攪拌、脫水、烘乾",
-          "detail": "經過浸泡、攪拌、脫水、烘乾的循環洗滌程序。"
+          "detail": "包含浸泡(0.5h)、攪拌(0.5h, 60r/min)、脫水(10min, 800r/min)及烘乾(0.5h, 45°C)等步驟。"
         },
         "washing_params": {
           "value": "攪拌 / 脫水",
@@ -481,6 +481,10 @@
         "current": {
           "value": "Icm",
           "detail": "以最大充電電流 (Icm) 進行恆流充電。"
+        },
+        "duration": {
+          "value": "動作或取大值",
+          "detail": "對於移除保護電路的電池組充電 1 h 或(C/Icm)h，兩者取較大值。對於保留保護電路的電池組充電至保護電路動作。"
         }
       },
       "acceptance_criteria": {
