@@ -88,6 +88,10 @@
         "charging_rate": {
           "value": "高於最大充電速率 20%",
           "detail": "以高於規定的最大充電速率 20% (20 % greater) 進行充電。"
+        },
+        "fault_condition": {
+          "value": "單一故障條件",
+          "detail": "過充電流保護裝置或控制器需處於單一故障條件下。"
         }
       },
       "acceptance_criteria": {
@@ -229,6 +233,10 @@
         "fault_condition": {
           "value": "單一故障",
           "detail": "放電電路單一故障。"
+        },
+        "termination": {
+          "value": "放電至零或保護動作",
+          "detail": "持續測試直到完全放電至接近零電壓狀態，或保護裝置作動。"
         }
       },
       "acceptance_criteria": {
@@ -584,6 +592,10 @@
         "speed": {
           "value": "約 1.5 cm/s",
           "detail": "以大約 1.5 cm/s 的速度進行擠壓"
+        },
+        "soc": {
+          "value": "完全充電",
+          "detail": "測試前樣品需處於完全充電狀態。"
         }
       },
       "acceptance_criteria": {
@@ -634,6 +646,10 @@
         "cold_condition": {
           "value": "低溫預處理",
           "detail": "若外殼為塑膠且預期用於 0 °C 環境 (intended for use in 0 °C temperatures)，需在 0°C 下調節 3 小時。"
+        },
+        "soc": {
+          "value": "完全充電",
+          "detail": "測試前樣品需處於完全充電狀態。"
         }
       },
       "acceptance_criteria": {
@@ -678,6 +694,10 @@
         "count": {
           "value": "依平放與非平放邏輯",
           "detail": "根據平放與非平放跌落的條件邏輯進行跌落測試。"
+        },
+        "soc": {
+          "value": "完全充電",
+          "detail": "測試前樣品需處於完全充電狀態。"
         }
       },
       "acceptance_criteria": {
@@ -723,6 +743,10 @@
         "duration": {
           "value": "7 小時",
           "detail": "持續 7 小時。"
+        },
+        "soc": {
+          "value": "完全放電",
+          "detail": "在進行溫度調節前，樣品需處於完全放電狀態。"
         }
       },
       "acceptance_criteria": {
@@ -788,6 +812,10 @@
         "rotation": {
           "value": "90°/15秒，360°旋轉",
           "detail": "在 3 個互相垂直方向各以每 15 秒 90° 的速度旋轉 360°。"
+        },
+        "soc": {
+          "value": "完全充電",
+          "detail": "測試前樣品需處於完全充電狀態。"
         }
       },
       "acceptance_criteria": {
@@ -876,6 +904,10 @@
         "duration": {
           "value": "≥ 2 小時",
           "detail": "完全淹沒至少 2 小時，或直到可見反應停止。"
+        },
+        "soc": {
+          "value": "完全充電",
+          "detail": "測試前樣品需處於完全充電狀態。"
         }
       },
       "acceptance_criteria": {
@@ -912,6 +944,10 @@
         "standard": {
           "value": "IPX3 或更高",
           "detail": "按 IEC 60529 進行 IPX3 噴水測試（或按製造商宣稱之更高防護等級）。"
+        },
+        "soc": {
+          "value": "完全充電",
+          "detail": "測試前樣品需處於完全充電狀態。"
         }
       },
       "acceptance_criteria": {
@@ -952,6 +988,10 @@
         "range": {
           "value": "85°C 至 -40°C",
           "detail": "在 85 ± 2°C 與 -40 ± 2°C 之間進行 5 次循環（參考 Gemini md 記載的 5 次）。"
+        },
+        "soc": {
+          "value": "完全充電",
+          "detail": "測試前樣品需處於完全充電狀態。"
         }
       },
       "acceptance_criteria": {
