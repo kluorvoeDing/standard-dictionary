@@ -216,7 +216,7 @@
     },
     {
       "id": "GBT36276-6.7.1.6",
-      "normalized_id": "ELEC-IR",
+      "normalized_id": "ELEC-WV",
       "name_zh": "耐壓性能試驗 (Withstand Voltage)",
       "name_en": "Withstand Voltage Test",
       "section": "6.7.1.6",
@@ -337,10 +337,10 @@
       "original_text_snippet": "電池單體1.5m、電池模塊2.0m自由跌落至水泥地面，正極或負極朝下，觀察1h。"
     },
     {
-      "id": "GBT36276-6.7.4.2",
+      "id": "GBT36276-6.7.4.2.1",
       "normalized_id": "THERM-ABUSE",
-      "name_zh": "熱失控性能試驗 (Thermal Runaway)",
-      "name_en": "Thermal Runaway Test",
+      "name_zh": "初始熱失控性能試驗",
+      "name_en": "Initial Thermal Runaway Test",
       "section": "6.7.4.2",
       "category": "THERM",
       "subcategory": "熱失控 (Thermal Runaway)",
@@ -359,6 +359,48 @@
         "observation": {
           "value": "觀察 1 h",
           "detail": "測試後觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "表面大於90℃，不起火爆炸",
+        "details": [
+          "表面溫度應大於 90 ℃",
+          "不應起火、爆炸",
+          "不應在防爆閥或泄壓點之外的位置發生破裂"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.7.4.2",
+      "original_text_snippet": "連續監測到三個溫升速率值均≥3℃/s或起火或爆炸為發生熱失控的判定條件...觸發或溫度達到300℃或試驗時間達到4h時停止充電和加熱。"
+    },
+    {
+      "id": "GBT36276-6.7.4.2.2",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "循環後熱失控性能試驗",
+      "name_en": "Post-cycle Thermal Runaway Test",
+      "section": "6.7.4.2.2",
+      "category": "THERM",
+      "subcategory": "熱失控 (Thermal Runaway)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "heating": {
+          "value": "加熱觸發",
+          "detail": "使用加熱部件對單體進行加熱，同時以 I = P_rc / U_nom 的特定電流進行恆流充電觸發。"
+        },
+        "trigger": {
+          "value": "dT/dt ≥ 3°C/s 或 起火/爆炸 或 300°C",
+          "detail": "監測溫度速率，當連續三個溫升速率 ≥ 3°C/s，或起火爆炸，或達到 300°C，或時間達到 4h 時停止加熱。"
+        },
+        "observation": {
+          "value": "觀察 1 h",
+          "detail": "測試後觀察 1 小時。"
+        },
+        "preconditioning": {
+          "value": "完成循環壽命試驗",
+          "detail": "單體電池在完成規定的循環壽命試驗後進行本測試。"
         }
       },
       "acceptance_criteria": {
@@ -476,7 +518,7 @@
         },
         "pressure": {
           "value": "1.2倍工作壓強",
-          "detail": "1.2倍最大工作壓強"
+          "detail": "向液冷管路增壓至壓強達到最大工作壓強的 1.2 倍，並穩壓 2 min。"
         },
         "hold_time": {
           "value": "靜置 1 min",

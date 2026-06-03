@@ -146,8 +146,8 @@
           "detail": "測試應在 20 ± 10°C 環境溫度下進行。"
         },
         "pulse_type": {
-          "value": "半正弦波或後峰鋸齒波",
-          "detail": "受測設備需承受依據車輛類別 (M1/N1 或 M2/N2 或 M3/N3) 規定之加速度脈衝。"
+          "value": "依車型加速度",
+          "detail": "測試依據 M1/N1/M2/M3 車型規定的時間與加速度 (g) 範圍進行，並無強制指定半正弦或鋸齒波。"
         },
         "acceleration_M1_N1": {
           "value": "縱向 20-28g, 橫向 8-15g",
@@ -168,7 +168,12 @@
           "測試期間無電解液洩漏 (Electrolyte leakage)",
           "無破裂 (Rupture)",
           "無起火 (Fire)",
-          "無爆炸 (Explosion)"
+          "無爆炸 (Explosion)",
+          {
+            "id": "AC-RET-1",
+            "rule_en": "Tested-Device shall be retained by its mounting and its components shall remain inside its boundaries.",
+            "rule_zh": "受測設備應保持在安裝位置上，且其組件不得脫出邊界外。"
+          }
         ]
       },
       "exemptions": [
@@ -225,7 +230,12 @@
           "測試期間無電解液洩漏 (Electrolyte leakage)",
           "無破裂 (Rupture)",
           "無起火 (Fire)",
-          "無爆炸 (Explosion)"
+          "無爆炸 (Explosion)",
+          {
+            "id": "AC-RET-1",
+            "rule_en": "Tested-Device shall be retained by its mounting and its components shall remain inside its boundaries.",
+            "rule_zh": "受測設備應保持在安裝位置上，且其組件不得脫出邊界外。"
+          }
         ]
       },
       "exemptions": [
@@ -503,7 +513,7 @@
         },
         "current": {
           "value": "大於最大允許電流",
-          "detail": "施加高於製造商規定的最大允許充/放電電流之電流 (例如 1.1 倍)。"
+          "detail": "過電流的大小與等級應透過與製造商協商來決定。"
         },
         "termination": {
           "value": "保護啟動",
