@@ -34,7 +34,7 @@
           "detail": "系統按製造商規格在最大負載下進行正常充放電循環測試（至少 2 次循環）。"
         },
         "thermal_equilibrium": {
-          "value": "±2 °C over 3 measurements at 10% elapsed time min 15min",
+          "value": "±2°C (連續3次測量)",
           "detail": "熱平衡標準：在10%的經過時間（至少15分鐘）內，3次測量的溫度變化在±2 °C內"
         }
       },
@@ -64,12 +64,16 @@
       ],
       "conditions": {
         "test_voltage": {
-          "value": "參考 UL 62368-1 / CSA C22.2 No. 62368-1 決定耐受電壓 (Determining clearances using required withstand voltage)",
+          "value": "依 UL 62368-1 決定",
           "detail": "參考 UL 62368-1 / CSA C22.2 No. 62368-1 決定耐受電壓於危險電壓電路與非載流導電部件之間。"
         },
         "duration": {
           "value": "1 分鐘",
           "detail": "持續施加 1 分鐘（生產測試可減至 1 秒）。"
+        },
+        "transformer_capacity": {
+          "value": "≥ 500 VA",
+          "detail": "變壓器容量應 ≥ 500 VA。"
         }
       },
       "acceptance_criteria": {
@@ -102,8 +106,12 @@
           "detail": "施加 1.2/50 µs 衝擊電壓波形（模擬浪湧）。"
         },
         "count": {
-          "value": "正負極各3次；對於超過1000V的電路，正負極各施加5次脈衝 (For circuits over 1000 V, 5 pulses at each polarity)",
+          "value": "正負極各 3 至 5 次",
           "detail": "正負極各施加 3 次脈衝。對於超過 1000V 的電路，正負極各施加 5 次脈衝。"
+        },
+        "interval": {
+          "value": "≥ 1 秒",
+          "detail": "脈衝之間的間隔應大於或等於 1 秒。"
         }
       },
       "acceptance_criteria": {
@@ -133,6 +141,10 @@
         "measurement": {
           "value": "端子與金屬件間阻抗",
           "detail": "測量接地端子與待接地金屬零件間（或任意兩點之間）的阻抗。"
+        },
+        "test_current": {
+          "value": "10 A 測試電流",
+          "detail": "應使用 10 A 的測試電流進行測試。"
         }
       },
       "acceptance_criteria": {
@@ -231,8 +243,12 @@
           "detail": "使用 535g 鋼球從 1.29m 高度跌落，產生 6.8J 的衝擊能量。"
         },
         "impact_count": {
-          "value": "至少 3 次衝擊 (Minimum of 3 impacts)",
+          "value": "至少 3 次",
           "detail": "對外殼進行至少 3 次衝擊。"
+        },
+        "dut_state": {
+          "value": "完全充電",
+          "detail": "測試樣品 (DUT) 應處於完全充電狀態 (Fully charged)。"
         }
       },
       "acceptance_criteria": {
@@ -269,6 +285,10 @@
         "duration": {
           "value": "5 秒",
           "detail": "持續 5 秒。"
+        },
+        "dut_state": {
+          "value": "完全充電",
+          "detail": "測試樣品 (DUT) 應處於完全充電狀態 (Fully charged)。"
         }
       },
       "acceptance_criteria": {
@@ -304,6 +324,10 @@
         "duration": {
           "value": "7 小時",
           "detail": "持續 7 小時。"
+        },
+        "dut_state": {
+          "value": "完全放電",
+          "detail": "測試樣品 (DUT) 應處於完全放電狀態 (Fully discharged)。"
         }
       },
       "acceptance_criteria": {
