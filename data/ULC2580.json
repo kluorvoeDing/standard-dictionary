@@ -228,11 +228,11 @@
           "最小絕緣電阻 100 Ω/V"
         ],
         "no_venting": {
-          "value": true,
+          "value": "無排氣",
           "detail": "無排氣"
         },
         "no_rupture": {
-          "value": true,
+          "value": "無破裂",
           "detail": "無破裂"
         },
         "no_leakage": {
@@ -323,6 +323,29 @@
       "original_text_snippet": "31 Isolation Resistance Test: The electric energy storage assembly shall be subjected to Isolation resistance test of Clause 6.1.3 of ISO 6469-1. The isolation resistance divided by the maximum working voltage shall be at least 100 Ω/V for dc and 500 Ω/V for ac."
     },
     {
+      "id": "ULC2580-T32",
+      "section": "32",
+      "category": "ELEC",
+      "subcategory": "BMS",
+      "name_en": "Continuity Test",
+      "name_zh": "導通性測試",
+      "test_objects": [
+        "PACK"
+      ],
+      "exemptions": [],
+      "conditions": {},
+      "acceptance_criteria": {
+        "summary": "維持電氣連續性",
+        "details": [
+          {
+            "id": "AC-CONT-1",
+            "rule_en": "Electrical continuity shall be maintained.",
+            "rule_zh": "必須維持電氣連續性。"
+          }
+        ]
+      }
+    },
+    {
       "id": "ULC2580-T33",
       "normalized_id": "THERM-ABUSE",
       "name_zh": "冷卻/熱管理系統失效測試 (Failure of Cooling System)",
@@ -394,7 +417,17 @@
         "details": [
           "應無起火、無爆炸",
           "無有毒氣體釋放 (低於 ERPG-2)",
-          "絕緣電阻 ≥ 100 Ω/V"
+          "絕緣電阻 ≥ 100 Ω/V",
+          {
+            "id": "AC-RUP-1",
+            "rule_en": "No Rupture",
+            "rule_zh": "無破裂"
+          },
+          {
+            "id": "AC-LEAK-1",
+            "rule_en": "No Leakage",
+            "rule_zh": "無漏液"
+          }
         ]
       },
       "exemptions": [
@@ -565,7 +598,7 @@
       "conditions": {
         "profile": {
           "value": "85°C 至 -40°C",
-          "detail": "按照製造商規定的溫度循環輪廓，或使用 SAE J2464 / J2380 流程，通常為 85°C 至 -40°C。"
+          "detail": "按照製造商規定的溫度循環輪廓，或使用 SAE J2464 流程，通常為 85°C 至 -40°C。"
         },
         "method": {
           "value": "SAE J2464 (modified)",
@@ -969,29 +1002,37 @@
     },
     {
       "id": "ULC2580-B2-10",
-      "normalized_id": "MECH-PENETRATION-BULLET",
-      "test_name_en": "Projectile Test",
-      "test_name_zh": "拋射體測試",
-      "applies_to": [
+      "section": "B2.10",
+      "category": "THERM",
+      "subcategory": "FIRE",
+      "name_en": "Heating (Projectile) Test",
+      "name_zh": "加熱拋射測試",
+      "test_objects": [
         "CELL"
       ],
+      "exemptions": [],
       "conditions": {
-        "projectile": {
-          "value": "子彈或其他拋射體",
-          "detail": "按標準執行拋射體穿透。"
+        "heat_source": {
+          "value": "Meker 本生燈",
+          "detail": "將單電池置於金屬網上，使用 Meker 本生燈加熱，直到單電池爆炸或燃燒殆盡。"
         }
       },
       "acceptance_criteria": {
-        "no_fire": {
-          "value": true,
-          "detail": "不起火"
-        },
-        "no_explosion": {
-          "value": true,
-          "detail": "不爆炸"
-        }
+        "summary": "無碎片穿透或飛出界外",
+        "details": [
+          {
+            "id": "AC-PROJ-1",
+            "rule_en": "No projectile from cell penetrates the wire screen.",
+            "rule_zh": "單電池爆炸產生的碎片不得穿透金屬網。"
+          },
+          {
+            "id": "AC-PROJ-2",
+            "rule_en": "No projectile falls outside a 0.5-m perimeter.",
+            "rule_zh": "單電池碎片不得飛出測試區域外 0.5 公尺的範圍。"
+          }
+        ]
       },
-      "source_reference": "Section B2.10"
+      "original_text_snippet": "Heating test (placing the cell on a wire mesh over a Meker burner) until it explodes or burns out."
     }
   ],
   "test_sequence": {

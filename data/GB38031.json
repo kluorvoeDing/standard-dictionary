@@ -47,7 +47,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "放电终止电压",
+          "value": "放電終止電壓",
           "detail": "將試驗對象荷電狀態調整至放電終止電壓狀態"
         },
         "current": {
@@ -350,8 +350,12 @@
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試 (6.1.10)"
         },
         "vibration_params": {
-          "value": "随机振动 12h + 正弦定频 1~2h",
-          "detail": "包含随机振动（依重量及安装位置参考表2、表3的 RMS 值如 0.52g, 0.57g, 0.73g 等）测试 12 小时，以及正弦定频振动测试 1~2 小时。"
+          "value": "隨機振動 12h + 正弦定頻 1~2h",
+          "detail": "包含隨機振動（依重量及安裝位置參考表2、表3的 RMS 值如 0.52g, 0.57g, 0.73g 等）測試 12 小時，以及正弦定頻振動測試 1~2 小時。"
+        },
+        "observation": {
+          "value": "觀察 2h",
+          "detail": "測試後在試驗環境溫度下觀察 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -388,6 +392,10 @@
         "shock_params": {
           "value": "半正弦衝擊波, 7g, 6ms, 12次",
           "detail": "施加半正弦衝擊波，加速度 7g，脈衝時間 6 ms，在 ±z 方向各進行 6 次衝擊，共計 12 次。"
+        },
+        "observation": {
+          "value": "觀察 2h",
+          "detail": "測試後在試驗環境溫度下觀察 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -420,6 +428,10 @@
         "soc": {
           "value": "最高工作荷電狀態",
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+        },
+        "observation": {
+          "value": "觀察 2h",
+          "detail": "測試後在試驗環境溫度下觀察 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -456,6 +468,10 @@
         "crush_params": {
           "value": "100 kN 或 30% 變形量",
           "detail": "使用半圓柱體（半徑 75 mm）以不大於 2 mm/s 的速度擠壓，直到擠壓力達到 100 kN 或變形量達到 30%，並保持 10 分鐘。"
+        },
+        "observation": {
+          "value": "觀察 2h",
+          "detail": "測試後在試驗環境溫度下觀察 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -493,6 +509,10 @@
         "cycle_params": {
           "value": "最高 60 ℃，5 次循環",
           "detail": "在最高溫度 60 ℃（或更高，依製造商規定）及高濕度下，進行 5 次濕熱循環。"
+        },
+        "observation": {
+          "value": "觀察 2h",
+          "detail": "測試後在試驗環境溫度下觀察 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -537,6 +557,10 @@
         "temperature_diff": {
           "value": "溫差 ≤ 5 ℃",
           "detail": "（方式二）浸水時，水溫與試驗對象的溫差不得大於 5 ℃。"
+        },
+        "observation": {
+          "value": "觀察 2h",
+          "detail": "測試後在試驗環境溫度下觀察 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -568,8 +592,8 @@
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
         },
         "fire_stages": {
-          "value": "4 阶段火烧",
-          "detail": "包含：预热 60s (Preheat)，直接燃烧 70s (Direct flame)，间接燃烧 60s (Indirect flame)，和离开火源观察 2h (Observation)。"
+          "value": "4 階段火燒",
+          "detail": "包含：預熱 60s (Preheat)，直接燃燒 70s (Direct flame)，間接燃燒 60s (Indirect flame)，和離開火源觀察 2h (Observation)。"
         }
       },
       "acceptance_criteria": {
@@ -601,7 +625,7 @@
       "conditions": {
         "soc": {
           "value": "SOC ≥ 90% 或 95%",
-          "detail": "外部充电电池包调至 95% SOC；仅通过车辆能源充电的电池包调至 90% SOC"
+          "detail": "外部充電電池包調至 95% SOC；僅通過車輛能源充電的電池包調至 90% SOC"
         },
         "ambient_temp": {
           "value": "22 ℃ ± 5 ℃",
@@ -644,6 +668,10 @@
         "shock_params": {
           "value": "-40 ℃ ~ 60 ℃，5 次循環",
           "detail": "溫度範圍為 -40 ℃ 到 60 ℃，極端溫度轉換時間不超過 30 分鐘，各極端溫度保持 8 小時，共進行 5 次循環。"
+        },
+        "observation": {
+          "value": "觀察 2h",
+          "detail": "測試後在試驗環境溫度下觀察 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -680,6 +708,10 @@
         "salt_params": {
           "value": "濃度 (50±5) g/L，6 個循環",
           "detail": "使用濃度 (50±5) g/L、pH 6.5~7.2 的鹽溶液。在 35 ℃ 下噴霧 8 小時，然後靜置 16 小時，共進行 6 個循環。"
+        },
+        "power_on_monitoring": {
+          "value": "低壓上電監控",
+          "detail": "在一個循環的第4個小時和第5個小時之間進行低壓上電監控。"
         }
       },
       "acceptance_criteria": {
@@ -718,6 +750,10 @@
         "altitude_params": {
           "value": "61.2 kPa，保持 5h",
           "detail": "在 61.2 kPa (模擬海拔 4000 m) 的氣壓下保持 5 小時，然後以不小於 1 I3 的電流放電。"
+        },
+        "observation": {
+          "value": "觀察 2h",
+          "detail": "測試後在試驗環境溫度下觀察 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -756,8 +792,12 @@
           "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
         },
         "termination": {
-          "value": "动作或温度稳定 2h",
-          "detail": "以连续上升的温度加热。当保护功能自动停止、发出信号，或温度变化小于 4°C/2h 时终止测试。"
+          "value": "動作或溫度穩定 2h",
+          "detail": "以連續上升的溫度加熱。當保護功能自動停止、發出信號，或溫度變化小於 4°C/2h 時終止測試。"
+        },
+        "observation": {
+          "value": "觀察 1h",
+          "detail": "測試後在試驗環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -796,12 +836,16 @@
           "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
         },
         "current_step": {
-          "value": "5s 内升至过流",
-          "detail": "电流在 5s 内上升至过流保护触发值。"
+          "value": "5s 內升至過流",
+          "detail": "電流在 5s 內上升至過流保護觸發值。"
         },
         "termination": {
-          "value": "动作或温度稳定 2h",
-          "detail": "当保护功能自动停止、发出信号，或温度变化小于 4°C/2h 时终止测试。"
+          "value": "動作或溫度穩定 2h",
+          "detail": "當保護功能自動停止、發出信號，或溫度變化小於 4°C/2h 時終止測試。"
+        },
+        "observation": {
+          "value": "觀察 1h",
+          "detail": "測試後在試驗環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -844,8 +888,12 @@
           "detail": "外部短路電阻不超過 5 mΩ。"
         },
         "termination": {
-          "value": "动作或短路保持 1h",
-          "detail": "保护触发或在温度稳定后短路状态继续保持 1 小时。"
+          "value": "動作或短路保持 1h",
+          "detail": "保護觸發或在溫度穩定後短路狀態繼續保持 1 小時。"
+        },
+        "observation": {
+          "value": "觀察 1h",
+          "detail": "測試後在試驗環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -884,8 +932,12 @@
           "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
         },
         "termination": {
-          "value": "动作或持续充电 12h",
-          "detail": "若未起作用且温度未超最高工作温度10℃，则持续充电 12h；若超出10℃则结束。"
+          "value": "動作或持續充電 12h",
+          "detail": "若未起作用且溫度未超最高工作溫度10℃，則持續充電 12h；若超出10℃則結束。"
+        },
+        "observation": {
+          "value": "觀察 1h",
+          "detail": "測試後在試驗環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -924,8 +976,12 @@
           "detail": "試驗環境溫度為 20 ℃ ± 10 ℃。"
         },
         "termination": {
-          "value": "动作或放电至 25%",
-          "detail": "若保护功能未起作用，放电至额定电压的 25% 为止。"
+          "value": "動作或放電至 25%",
+          "detail": "若保護功能未起作用，放電至額定電壓的 25% 為止。"
+        },
+        "observation": {
+          "value": "觀察 1h",
+          "detail": "測試後在試驗環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -964,8 +1020,12 @@
           "detail": "撞擊頭為直徑 30 mm 的半球形，質量 10 kg，撞擊能量為 150 J ± 3 J。"
         },
         "impact_spots": {
-          "value": "涵盖前中后 3 处",
-          "detail": "需对电池底部的 3 个脆弱点进行撞击测试（涵盖前部、中部、后部）。"
+          "value": "涵蓋前中後 3 處",
+          "detail": "需對電池底部的 3 個脆弱點進行撞擊測試（涵蓋前部、中部、後部）。"
+        },
+        "observation": {
+          "value": "觀察 2h",
+          "detail": "測試後在試驗環境溫度下觀察 2 小時。"
         }
       },
       "acceptance_criteria": {
