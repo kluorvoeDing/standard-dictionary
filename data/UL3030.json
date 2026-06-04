@@ -43,7 +43,7 @@
         },
         "retry_condition": {
           "value": "在觸發點的 90% 重複測試",
-          "detail": "若保護裝置觸發，應在觸發點的 90% 或允許充電/放電至少 10 分鐘的百分比下重複測試"
+          "detail": "若保護裝置觸發，應在觸發點的 90% 或允許充電至少 10 分鐘的百分比下重複測試"
         },
         "termination": {
           "value": "電壓達上限 110% 或溫度回穩後再加 2 小時，或起火/爆炸",
@@ -98,7 +98,7 @@
         },
         "retry_condition": {
           "value": "在觸發點的 90% 重複測試",
-          "detail": "若保護裝置觸發，應在觸發點的 90% 或允許充電/放電至少 10 分鐘的百分比下重複測試"
+          "detail": "若保護裝置觸發，應在觸發點的 90% 或允許放電至少 10 分鐘的百分比下重複測試"
         },
         "duration": {
           "value": "至溫度降回環境溫度，或起火/爆炸",
@@ -591,6 +591,71 @@
       ],
       "source_reference": "36.2",
       "original_text_snippet": "The UAS is subjected to complete immersion to a depth that covers the highest point of the UAS with 76 mm (3 inches) of water. The UAS is subjected to this immersion for 5 min."
+    },
+    {
+      "id": "UL3030-32.5",
+      "section": "32.5",
+      "category": "ELEC",
+      "subcategory": "BMS",
+      "name_en": "Internal battery reverse polarity",
+      "name_zh": "內部電池極性反接",
+      "test_objects": [
+        "PACK"
+      ],
+      "exemptions": [],
+      "conditions": {
+        "connection": {
+          "value": "極性反接",
+          "detail": "以相反的極性連接無人機電氣系統與電池模組。"
+        },
+        "duration": {
+          "value": "直到穩定",
+          "detail": "維持反接狀態直到系統穩定或保護機制觸發。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          {
+            "id": "AC-FIRE-1",
+            "rule_en": "No fire",
+            "rule_zh": "不起火"
+          },
+          {
+            "id": "AC-EXPL-1",
+            "rule_en": "No explosion",
+            "rule_zh": "不爆炸"
+          }
+        ]
+      }
+    },
+    {
+      "id": "UL3030-28",
+      "section": "28",
+      "category": "THERM",
+      "subcategory": "ENV",
+      "name_en": "Temperature Test (Charging and Flying)",
+      "name_zh": "溫度測試 (充電與飛行)",
+      "test_objects": [
+        "PACK"
+      ],
+      "exemptions": [],
+      "conditions": {
+        "monitoring": {
+          "value": "監控參數",
+          "detail": "充電與飛行過程中必須監控單電池的電壓、電流與溫度。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "維持在操作極限內",
+        "details": [
+          {
+            "id": "AC-LIMIT-1",
+            "rule_en": "Cell voltage, current, and temperatures remain within the cell manufacturer's specified operating limits.",
+            "rule_zh": "單電池的電壓、電流與溫度應維持在製造商規定的操作極限內。"
+          }
+        ]
+      }
     }
   ],
   "test_sequence": {
@@ -614,7 +679,7 @@
   "global_exemptions": [
     {
       "id": "GE-01",
-      "description": "若電池組已符合 UL 2580 或 UL 2271 (如 17.3.2(a) 或 17.3.2(b) 規定)，則豁免短路 (32.7)、不平衡充電 (32.8)、衝擊 (32.9)、熱循環 (32.10) 及電池組振動 (33.1) 等測試。注意：UL 62133 電池必須進行這些測試。",
+      "description": "若電池組已符合 UL 2580 或 UL 2271 (如 17.3.2(a) 或 17.3.2(b) 規定)，則豁免短路 (32.7)、不平衡充電 (32.8)、衝擊 (32.9)、熱循環 (32.10) 及電池組振動 (33.1) 等測試。注意：UL 62133 電池必須進行這些測試。 以及 Overcharge (32.6)",
       "applicable_tests": [
         "UL3030-32.7",
         "UL3030-32.8",
