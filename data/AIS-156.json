@@ -43,11 +43,11 @@
           "detail": "垂直安裝方向進行 12 次循環，總計 3 小時。"
         },
         "profile_lt_12kg": {
-          "value": "隨機震動配置 (總質量 < 12 kg)",
+          "value": "正弦掃頻配置",
           "detail": "7-18 Hz：10 m/s²；18-~50 Hz：漸增至 80 m/s²；50-200 Hz：80 m/s²。 在頻率增加期間，振幅保持在 0.8 mm（總偏移量 1.6 mm）。"
         },
         "profile_ge_12kg": {
-          "value": "隨機震動配置 (總質量 ≥ 12 kg)",
+          "value": "正弦掃頻配置",
           "detail": "7-18 Hz：10 m/s²；18-~25 Hz：漸增至 20 m/s²；25-200 Hz：20 m/s²。 在頻率增加期間，振幅保持在 0.8 mm（總偏移量 1.6 mm）。"
         },
         "post_test": {
@@ -484,6 +484,43 @@
       "related_tests": [],
       "source_reference": "6.9.1, 6.9.2, Annex 8I",
       "original_text_snippet": "The tested-device shall be continuously charged and discharged with a steady current that will increase the temperature of cells as rapidly as possible within the normal operation range... The tested-device shall be placed in a convective oven or climatic chamber... chamber temperature shall be gradually increased."
+    },
+    {
+      "id": "AIS-156-H2",
+      "section": "6.10",
+      "category": "ENV",
+      "subcategory": "GAS",
+      "name_en": "Hydrogen Emission Test",
+      "name_zh": "氫氣排放測試",
+      "test_objects": [
+        "REESS"
+      ],
+      "exemptions": [
+        {
+          "id": "EX-H2-1",
+          "condition_zh": "具備封閉化學系統之水性電解質電池或非水性電解質電池（如鋰離子電池）",
+          "exempt_from": [
+            "AIS-156-H2"
+          ],
+          "source_reference": "6.10"
+        }
+      ],
+      "conditions": {
+        "procedure": {
+          "value": "密閉空間量測",
+          "detail": "依照 Annex 7 的程序在密閉空間中測量氫氣排放量。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不超過排放限值",
+        "details": [
+          {
+            "id": "AC-H2-1",
+            "rule_en": "Hydrogen emissions shall not exceed the limit specified in the standard.",
+            "rule_zh": "氫氣排放量不得超過標準中規定的限值。"
+          }
+        ]
+      }
     }
   ],
   "test_sequence": {

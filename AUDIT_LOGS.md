@@ -4,6 +4,16 @@
 
 ## 稽核紀錄
 
+## 2026-06-04 (Cron Audit Iteration 1 & 2 - AIS-156, UL 9540)
+- 事件：背景自動巡邏系統 (Cron Task - 4h) 觸發雙盲稽核
+- 背景：系統自動抽取 `AIS-156.json` (Iteration 1) 與 `UL9540.json` (Iteration 2) 進行抽驗。
+- 內容：
+  - **UL 9540 (Iteration 2)**：完美過關！100% Perfect。所有高度複雜的絕緣參數、衝擊電壓波形、測試電壓與允收標準，皆與 2025 修訂版的原文精準吻合。
+  - **AIS-156 (Iteration 1)**：
+    - **修復幻覺參數**：在振動測試 (VIB) 中，原 JSON 幻覺出「隨機震動配置」，但 PDF 規定必須是「正弦掃頻配置 (Sinusoidal waveform with logarithmic sweep)」。已修正。
+    - **補齊遺漏測試**：補齊了原先被漏掉的「氫氣排放測試 (Hydrogen Emission Test, 6.10)」，雖然大部分鋰電池都能豁免，但此測試依舊是標準的正式環節，必須列入。
+- 影響：確認 `UL 9540` 的高度準確，並成功消除 `AIS-156` 的測試漏缺與參數幻覺。
+
 ## 2026-06-04 (Cron Audit Iteration 34 & 35 - UL 2056, UL 3030)
 - 事件：背景自動巡邏系統 (Cron Task) 觸發雙盲稽核
 - 背景：系統自動抽取 `UL2056.json` (Iteration 34) 與 `UL3030.json` (Iteration 35) 進行抽驗。
