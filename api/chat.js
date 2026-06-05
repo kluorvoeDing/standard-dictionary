@@ -23,20 +23,22 @@ export default async function handler(req) {
 
     const engines = [];
 
-    // Engine 0: Gemini Key 1
+    // Engine 0: Key 1 — Gemma 4 (primary)
     if (process.env.GEMINI_API_KEY_1) {
       engines.push({
         type: 'gemini',
-        name: 'Gemini Primary',
+        name: 'Gemma Primary',
+        model: 'gemma-4-31b-it',
         key: process.env.GEMINI_API_KEY_1
       });
     }
 
-    // Engine 1: Gemini Key 2 (Fallback 1)
+    // Engine 1: Key 2 — Gemini Flash-Lite (fallback)
     if (process.env.GEMINI_API_KEY_2) {
       engines.push({
         type: 'gemini',
-        name: 'Gemini Backup',
+        name: 'Gemini Flash-Lite Backup',
+        model: 'gemini-3.1-flash-lite',
         key: process.env.GEMINI_API_KEY_2
       });
     }
@@ -59,7 +61,7 @@ export default async function handler(req) {
       const engine = engines[i];
       try {
         if (engine.type === 'gemini') {
-          const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash:streamGenerateContent?key=${engine.key}&alt=sse`;
+          const url = `https://generativelanguage.googleapis.com/v1beta/models/${engine.model}:streamGenerateContent?key=${engine.key}&alt=sse`;
           finalRes = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
