@@ -82,6 +82,27 @@ standard-dictionary/
 
 ---
 
+## 🔐 環境變數與機密管理 (Environment & Secrets)
+
+> ⚠️ **本 repo 為公開（public）。任何含真實值的 `.env` / 金鑰都不可 commit。**
+
+AI 小幫手後端 (`api/chat.js`) 需要 Gemini API 金鑰，透過環境變數提供：
+
+| 變數 | 用途 | 設定位置 |
+|---|---|---|
+| `GEMINI_API_KEY_1` | Gemini 主金鑰 | Vercel 環境變數 / 本地 `.env` |
+| `GEMINI_API_KEY_2` | Gemini 備援金鑰（429 時 fallback） | Vercel 環境變數 / 本地 `.env` |
+
+設定方式：
+
+- **正式環境**：在 Vercel → Project → Settings → Environment Variables 設定，**不要**寫進任何檔案。
+- **本地開發**：複製範本 `cp .env.example .env`，把值填進 `.env`（此檔已被 `.gitignore` 忽略，不會進版控）。
+- **切勿**為金鑰加上 `VITE_` 前綴 —— 那會被打包進前端 JS 而外洩；金鑰只能在伺服器端 `api/` 以 `process.env` 讀取。
+
+> 若金鑰不慎外洩到公開 repo，Google 會自動停用該金鑰（通常不到一天）。處理方式：立即作廢金鑰 → 用 `git filter-repo` 清除歷史 → force-push → 重新產生新金鑰並只放進 Vercel 環境變數。詳見 [`AGENTS.md`](./AGENTS.md) 頂部的「版控安全鐵律」。
+
+---
+
 ## 🛠️ 本地開發與部署
 
 ### 本地執行 (Local Development)
@@ -91,6 +112,8 @@ cd frontend
 npm install
 npm run dev
 ```
+
+> 首次執行前，請依上方「環境變數」說明設定 `GEMINI_API_KEY_1`（否則 AI 小幫手會回傳 `No API keys configured`）。
 
 ### 部署至 Vercel (Deployment)
 

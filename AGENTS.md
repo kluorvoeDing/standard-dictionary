@@ -1,5 +1,20 @@
 # AGENTS
 
+> ## ⛔ 鐵律：版控安全（所有維護 / 定時 agent 務必先讀，再動手）
+>
+> **這個 GitHub repo 是 _公開（public）_ 的。** 任何 commit 進來的內容，全世界（含 Google、GitHub、各種掃描機器人）都看得到。曾發生 Gemini API key 與 Vercel OIDC token 外洩、key 被 Google 自動停用「不到一天就失效」的事故，已於 2026-06-06 清除歷史。請嚴守以下規則：
+>
+> 1. **絕對不要 commit 任何機密。** 包含但不限於：`.env`、`.env.*`（如 `.env.production.local`）、API 金鑰、`*.pem`、`*.key`、token、密碼。
+>    - 金鑰一律設定在 **Vercel 環境變數**（Project → Settings → Environment Variables）或本地 `.env`（已被 `.gitignore` 忽略）。
+>    - 前端會用到的金鑰也**不可**加 `VITE_` 前綴 —— 那會被打包進瀏覽器端 JS 而外洩。金鑰只能在伺服器端（`api/`）透過 `process.env` 讀取。
+> 2. **絕對不要 commit 依賴或垃圾檔。** 包含 `node_modules/`（任何層級）、`dist/`、`build/`、`.DS_Store`、`*.log`。這些都已在 `.gitignore` 中。
+> 3. **commit 前一定要檢查 `git status`**，確認沒有把上述檔案加進去。新增環境變數時，只更新 `.env.example`（放變數名稱、不放值）。
+> 4. **若不小心提交了機密：** 立刻（a）到對應平台作廢該金鑰／token，（b）用 `git filter-repo` 從歷史中清除，（c）force-push。光是刪檔再 commit **沒有用**，舊 commit 仍讀得到。
+>
+> 完整的環境設定說明見 [`README.md`](./README.md)。
+
+---
+
 用來記錄這個專案的重要事件、決策與里程碑。
 
 ## 使用方式
@@ -22,6 +37,18 @@
 ## 紀錄
 
 > **[提示]** 關於 21 份標準的詳細交叉稽核與修復歷史 (破曉大隊)，已歸檔至 [`AUDIT_LOGS.md`](./AUDIT_LOGS.md) 備查。
+
+## 2026-06-06 (Security)
+- 事件：清除外洩機密、重寫 git 歷史並建立版控安全防線
+- 背景：AI 小幫手的 Gemini API key「不到一天就失效」，追查發現 key 曾以 `VITE_` 前綴與 `.env` 形式 commit 進 _公開_ repo，被 Google 自動停用；另發現 `.env.production.local`（含 `VERCEL_OIDC_TOKEN`）、`data/node_modules/`、多個 `.DS_Store` 也被誤上傳。
+- 內容：
+  - 使用者於 Google AI Studio 作廢所有舊金鑰。
+  - 以 `git filter-repo` 從**整個歷史**抹除 `.env` 與 `.env.production.local`，並 redact 殘留的 `AIza` 字串；force-push 覆寫遠端（備份 bundle 已另存）。
+  - 取消追蹤 `data/node_modules/` 與 `.DS_Store`（保留磁碟檔，不入版控）。
+  - 重寫 `.gitignore` 為完整版（涵蓋 `.env*`、`node_modules/`、`.DS_Store`、build 產物等）。
+  - 新增 `.env.example` 範本；於本檔頂部新增「版控安全鐵律」、`README.md` 新增環境變數與機密管理章節。
+- 影響：repo 不再含任何外洩機密；新金鑰只放 Vercel 環境變數，杜絕再次被自動停用。
+- 後續：維護 / 定時 agent commit 前務必遵守頂部鐵律，並檢查 `git status`。
 
 ## 2026-05-26 (Bug Fix)
 - 事件：將 AI 小幫手的 Gemini 預設模型升級至 `gemini-3.1-flash`
