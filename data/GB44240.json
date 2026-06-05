@@ -650,8 +650,8 @@
       ],
       "conditions": {
         "trigger": {
-          "value": "加熱裝置",
-          "detail": "按照附錄B，使用平面狀或者棒狀加熱裝置（最大功率不低於600W），加熱至300°C或發生熱失控。"
+          "value": "依單電池能量決定",
+          "detail": "加熱功率依據 Appendix B (Table B.1) 的單電池能量進行縮放（範圍從 30W 至大於 600W 不等）。"
         },
         "stop_condition": {
           "value": "加熱至 300 °C 停止",
@@ -718,8 +718,8 @@
       "exemptions": [],
       "conditions": {
         "resistance": {
-          "value": "≤ 100 mΩ",
-          "detail": "使用阻值不超過 100 mΩ 的外部電阻進行短路。"
+          "value": "依結構係數計算",
+          "detail": "短路電阻應為 (30 mΩ ± 10 mΩ) × 模組結構係數，或 ≤ 5 mΩ，以較高者為準，但最高不超過 100 mΩ。"
         },
         "termination": {
           "value": "降溫或 6h",
@@ -727,7 +727,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "不起火、不爆炸、無破裂",
         "details": [
           {
             "id": "AC-FIRE-1",
@@ -738,6 +738,11 @@
             "id": "AC-EXPL-1",
             "rule_en": "No explosion",
             "rule_zh": "不爆炸"
+          },
+          {
+            "id": "AC-RUPT-1",
+            "rule_en": "No rupture",
+            "rule_zh": "不破裂"
           }
         ]
       }
@@ -757,10 +762,14 @@
         "duration": {
           "value": "充電 1h",
           "detail": "反向連接系統中的一個模組或單電池，並充電 1 小時。"
+        },
+        "procedure": {
+          "value": "依標準充放電程序",
+          "detail": "將電池放電至運輸 SOC，以反向極性連接並充電至滿電或保護，靜置 1 小時後，以最大電流放電至截止條件，再靜置 1 小時。"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "不起火、不爆炸、無破裂",
         "details": [
           {
             "id": "AC-FIRE-1",
@@ -771,6 +780,11 @@
             "id": "AC-EXPL-1",
             "rule_en": "No explosion",
             "rule_zh": "不爆炸"
+          },
+          {
+            "id": "AC-RUPT-1",
+            "rule_en": "No rupture",
+            "rule_zh": "不破裂"
           }
         ]
       }
