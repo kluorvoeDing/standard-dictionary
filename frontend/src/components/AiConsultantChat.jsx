@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsData }) {
   const [messages, setMessages] = useState([
@@ -12,10 +13,40 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
   const scrollRef = useRef(null);
 
   // Draggable window state
-  const [pos, setPos] = useState({ x: window.innerWidth - 450, y: 80 }); 
+  const [pos, setPos] = useState({ x: window.innerWidth - 520, y: 80 });
   const [dragging, setDragging] = useState(false);
   const [rel, setRel] = useState({ x: 0, y: 0 });
   const [isMinimized, setIsMinimized] = useState(false);
+
+  // Resizable window state
+  const [size, setSize] = useState({ w: 480, h: 680 });
+  const [resizing, setResizing] = useState(false);
+  const [resizeStart, setResizeStart] = useState({ x: 0, y: 0, w: 0, h: 0 });
+
+  const onResizeMouseDown = (e) => {
+    if (e.button !== 0) return;
+    setResizing(true);
+    setResizeStart({ x: e.clientX, y: e.clientY, w: size.w, h: size.h });
+    e.stopPropagation();
+    e.preventDefault();
+  };
+
+  useEffect(() => {
+    if (!resizing) return;
+    const onMove = (e) => {
+      const newW = Math.max(320, Math.min(resizeStart.w + (e.clientX - resizeStart.x), window.innerWidth - 20));
+      const newH = Math.max(360, Math.min(resizeStart.h + (e.clientY - resizeStart.y), window.innerHeight - 20));
+      setSize({ w: newW, h: newH });
+      e.preventDefault();
+    };
+    const onUp = () => setResizing(false);
+    document.addEventListener('mousemove', onMove);
+    document.addEventListener('mouseup', onUp);
+    return () => {
+      document.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseup', onUp);
+    };
+  }, [resizing, resizeStart]);
 
   // Draggable logic
   const onMouseDown = (e) => {
@@ -244,8 +275,8 @@ ${JSON.stringify(contextData)}
       backgroundColor: 'var(--bg-panel)',
       border: '1px solid var(--border-color)',
       borderRadius: 'var(--radius-lg)',
-      width: '400px', height: '600px',
-      maxWidth: '90vw', maxHeight: '90vh',
+      width: `${size.w}px`, height: `${size.h}px`,
+      maxWidth: '95vw', maxHeight: '92vh',
       display: 'flex', flexDirection: 'column',
       boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2)',
       overflow: 'hidden'
@@ -311,13 +342,25 @@ ${JSON.stringify(contextData)}
                 {isSys || isUser ? (
                   <span style={{ whiteSpace: 'pre-wrap' }}>{msg.text}</span>
                 ) : (
-                  <ReactMarkdown components={{
+                  <ReactMarkdown remarkPlugins={[remarkGfm]} components={{
                     p: ({node, ...props}) => <p style={{ margin: '0 0 0.75rem 0' }} {...props} />,
                     ul: ({node, ...props}) => <ul style={{ margin: '0 0 0.75rem 0', paddingLeft: '1.5rem' }} {...props} />,
                     ol: ({node, ...props}) => <ol style={{ margin: '0 0 0.75rem 0', paddingLeft: '1.5rem' }} {...props} />,
                     li: ({node, ...props}) => <li style={{ marginBottom: '0.25rem' }} {...props} />,
                     strong: ({node, ...props}) => <strong style={{ fontWeight: '700' }} {...props} />,
-                    a: ({node, ...props}) => <a style={{ color: 'var(--accent-color)', textDecoration: 'underline' }} {...props} />
+                    a: ({node, ...props}) => <a style={{ color: 'var(--accent-color)', textDecoration: 'underline' }} {...props} />,
+                    // 表格包一層可水平捲動的外框，窄視窗也不會爆版
+                    table: ({node, ...props}) => (
+                      <div style={{ overflowX: 'auto', margin: '0 0 0.75rem 0', WebkitOverflowScrolling: 'touch' }}>
+                        <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '0.82rem' }} {...props} />
+                      </div>
+                    ),
+                    thead: ({node, ...props}) => <thead style={{ backgroundColor: 'var(--bg-color)' }} {...props} />,
+                    th: ({node, ...props}) => <th style={{ border: '1px solid var(--border-color)', padding: '0.4rem 0.6rem', textAlign: 'left', fontWeight: '700', whiteSpace: 'nowrap' }} {...props} />,
+                    td: ({node, ...props}) => <td style={{ border: '1px solid var(--border-color)', padding: '0.4rem 0.6rem', verticalAlign: 'top' }} {...props} />,
+                    code: ({node, inline, ...props}) => inline
+                      ? <code style={{ backgroundColor: 'var(--bg-color)', padding: '0.1rem 0.3rem', borderRadius: '4px', fontSize: '0.85em' }} {...props} />
+                      : <code style={{ display: 'block', backgroundColor: 'var(--bg-color)', padding: '0.6rem', borderRadius: '8px', overflowX: 'auto', fontSize: '0.85em' }} {...props} />
                   }}>
                     {msg.text}
                   </ReactMarkdown>
@@ -372,6 +415,18 @@ ${JSON.stringify(contextData)}
           </div>
         )}
       </div>
+
+      {/* Resize handle (bottom-right) */}
+      <div
+        onMouseDown={onResizeMouseDown}
+        title="拖曳以調整視窗大小"
+        style={{
+          position: 'absolute', right: 0, bottom: 0,
+          width: '18px', height: '18px',
+          cursor: 'nwse-resize', zIndex: 10,
+          background: 'linear-gradient(135deg, transparent 50%, var(--border-color) 50%, var(--border-color) 60%, transparent 60%, transparent 70%, var(--border-color) 70%, var(--border-color) 80%, transparent 80%)'
+        }}
+      />
     </div>
   );
 }
