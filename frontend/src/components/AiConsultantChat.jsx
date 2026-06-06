@@ -110,8 +110,8 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
     if (!input.trim() || isTyping) return;
     
     const now = Date.now();
-    if (now - lastRequestTime < 10000) {
-      const remaining = Math.ceil((10000 - (now - lastRequestTime)) / 1000);
+    if (now - lastRequestTime < 5000) {
+      const remaining = Math.ceil((5000 - (now - lastRequestTime)) / 1000);
       setMessages(prev => [...prev, { sender: 'System', text: `⏳ 請稍候 ${remaining} 秒後再發問，以避免 API 超載。` }]);
       return;
     }
@@ -121,7 +121,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
     setMessages(prev => [...prev, { sender: 'User', text: userMsg }]);
     setIsTyping(true);
     setLastRequestTime(now);
-    setCooldown(10);
+    setCooldown(5);
 
     const contextData = {};
     selectedDocs.forEach(id => {
@@ -430,7 +430,7 @@ ${JSON.stringify(contextData)}
         </div>
         {cooldown > 0 && (
           <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textAlign: 'right' }}>
-            為保護額度，發問間隔需等待 10 秒
+            為保護額度，發問間隔需等待 5 秒
           </div>
         )}
       </div>
