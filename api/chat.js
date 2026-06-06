@@ -23,12 +23,12 @@ export default async function handler(req) {
 
     const engines = [];
 
-    // Engine 0: Key 1 — Gemma 4 (primary)
+    // Engine 0: Key 1 — Gemini 3.5 Flash (primary)
     if (process.env.GEMINI_API_KEY_1) {
       engines.push({
         type: 'gemini',
-        name: 'Gemma Primary',
-        model: 'gemma-4-31b-it',
+        name: 'Gemini 3.5 Flash Primary',
+        model: 'gemini-3.5-flash',
         key: process.env.GEMINI_API_KEY_1
       });
     }
