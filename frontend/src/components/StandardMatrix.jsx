@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react';
+import useIsMobile from '../hooks/useIsMobile';
 
 // Application Category Helper
 const getApplication = (docId) => {
@@ -27,6 +28,7 @@ const MAJOR_LEVELS = ['Cell', 'Module', 'Pack', 'System', 'Other'];
 
 export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, setIsComparing, setSelectedDocs }) {
   const [activeInfoNode, setActiveInfoNode] = useState(null);
+  const isMobile = useIsMobile();
 
   const { applications, matrix } = useMemo(() => {
     // 1. Get unique latest standards
@@ -98,7 +100,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
   };
 
   return (
-    <div style={{ padding: '2rem', paddingTop: '1.5rem', height: '100%', overflowY: 'auto', backgroundColor: 'var(--bg-color)', color: 'var(--text-primary)', position: 'relative' }}>
+    <div style={{ padding: isMobile ? '1rem 0.75rem' : '2rem', paddingTop: isMobile ? '3.5rem' : '1.5rem', height: '100%', overflowY: 'auto', backgroundColor: 'var(--bg-color)', color: 'var(--text-primary)', position: 'relative' }}>
       <div style={{ marginBottom: '1.5rem', paddingLeft: '3.5rem' }}>
         <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--accent-color)' }}>
           標準應用領域導覽
@@ -197,16 +199,15 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
       {activeInfoNode && (
         <div style={{
           position: 'fixed',
-          bottom: selectedDocs.length >= 2 ? '100px' : '2rem',
-          right: '2rem',
-          width: '320px',
           backgroundColor: 'var(--bg-panel)',
           border: '1px solid var(--border-color)',
-          borderRadius: 'var(--radius-lg)',
           padding: '1.5rem',
           boxShadow: 'var(--shadow-lg)',
           zIndex: 10,
-          animation: 'slideIn 0.3s ease-out'
+          animation: 'slideIn 0.3s ease-out',
+          ...(isMobile
+            ? { left: 0, right: 0, bottom: selectedDocs.length >= 2 ? '88px' : 0, width: 'auto', borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0' }
+            : { bottom: selectedDocs.length >= 2 ? '100px' : '2rem', right: '2rem', width: '320px', borderRadius: 'var(--radius-lg)' })
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
             <h3 style={{ margin: 0, color: activeInfoNode.colors.solid, fontSize: '1.25rem' }}>{activeInfoNode.baseId}</h3>

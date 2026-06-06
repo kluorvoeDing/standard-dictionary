@@ -1,12 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import useIsMobile from '../hooks/useIsMobile';
 
 export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsData }) {
   const [messages, setMessages] = useState([
     { sender: 'AI', text: '您好！我是您的 **AI 小幫手**。\n您可以詢問我任何關於「目前已選取標準」的問題。\n\n💡 *提示：請先在左側選單勾選您想了解的標準。*' }
   ]);
   const [input, setInput] = useState('');
+  const isMobile = useIsMobile();
   const [isTyping, setIsTyping] = useState(false);
   const [lastRequestTime, setLastRequestTime] = useState(0);
   const [cooldown, setCooldown] = useState(0);
@@ -275,25 +277,24 @@ ${JSON.stringify(contextData)}
 
   return (
     <div style={{
-      position: 'fixed', left: pos.x, top: pos.y, zIndex: 9999,
+      position: 'fixed', zIndex: 9999,
       backgroundColor: 'var(--bg-panel)',
-      border: '1px solid var(--border-color)',
-      borderRadius: 'var(--radius-lg)',
-      width: `${size.w}px`, height: `${size.h}px`,
-      maxWidth: '95vw', maxHeight: '92vh',
       display: 'flex', flexDirection: 'column',
+      overflow: 'hidden',
       boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.2)',
-      overflow: 'hidden'
+      ...(isMobile
+        ? { left: 0, top: 0, width: '100vw', height: '100dvh', borderRadius: 0, border: 'none' }
+        : { left: pos.x, top: pos.y, width: `${size.w}px`, height: `${size.h}px`, maxWidth: '95vw', maxHeight: '92vh', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' })
     }}>
       
-      {/* Draggable Header */}
-      <div 
-        onMouseDown={onMouseDown}
-        style={{ 
-        padding: '1rem', borderBottom: '1px solid var(--border-color)', 
+      {/* Draggable Header (drag disabled on mobile) */}
+      <div
+        onMouseDown={isMobile ? undefined : onMouseDown}
+        style={{
+        padding: '1rem', borderBottom: '1px solid var(--border-color)',
         backgroundColor: 'var(--accent-color)', color: '#fff',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-        cursor: dragging ? 'grabbing' : 'grab',
+        cursor: isMobile ? 'default' : (dragging ? 'grabbing' : 'grab'),
         userSelect: 'none'
       }}>
         <h3 style={{ margin: 0, fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -435,17 +436,19 @@ ${JSON.stringify(contextData)}
         )}
       </div>
 
-      {/* Resize handle (bottom-right) */}
-      <div
-        onMouseDown={onResizeMouseDown}
-        title="拖曳以調整視窗大小"
-        style={{
-          position: 'absolute', right: 0, bottom: 0,
-          width: '18px', height: '18px',
-          cursor: 'nwse-resize', zIndex: 10,
-          background: 'linear-gradient(135deg, transparent 50%, var(--border-color) 50%, var(--border-color) 60%, transparent 60%, transparent 70%, var(--border-color) 70%, var(--border-color) 80%, transparent 80%)'
-        }}
-      />
+      {/* Resize handle (bottom-right, desktop only) */}
+      {!isMobile && (
+        <div
+          onMouseDown={onResizeMouseDown}
+          title="拖曳以調整視窗大小"
+          style={{
+            position: 'absolute', right: 0, bottom: 0,
+            width: '18px', height: '18px',
+            cursor: 'nwse-resize', zIndex: 10,
+            background: 'linear-gradient(135deg, transparent 50%, var(--border-color) 50%, var(--border-color) 60%, transparent 60%, transparent 70%, var(--border-color) 70%, var(--border-color) 80%, transparent 80%)'
+          }}
+        />
+      )}
 
       {/* Fullscreen table zoom overlay */}
       {zoomContent && (

@@ -1,10 +1,12 @@
 import React, { useMemo, useState } from 'react';
 import StandardColumn from './StandardColumn';
+import useIsMobile from '../hooks/useIsMobile';
 
 export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, setIsComparing }) {
   const [filterCategory, setFilterCategory] = useState('ALL');
-  const [infoModalDocId, setInfoModalDocId] = useState(null); 
+  const [infoModalDocId, setInfoModalDocId] = useState(null);
   const [activeVersions, setActiveVersions] = useState({});
+  const isMobile = useIsMobile();
   
   const objectTypes = [
     { id: 'CELL', label: 'Cell (電芯)' },
@@ -303,11 +305,13 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
           </div>
         </div>
 
-      <div className="scrollable" style={{ flexGrow: 1, padding: '1rem' }}>
-        <div style={{ 
-          display: 'grid', 
-          gridTemplateColumns: `minmax(180px, 220px) repeat(${selectedDocIds.length}, minmax(280px, 1fr))`,
-          gap: '1rem'
+      <div className="scrollable" style={{ flexGrow: 1, padding: isMobile ? '0.75rem' : '1rem', overflowX: 'auto' }}>
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: isMobile
+            ? `minmax(120px, 140px) repeat(${selectedDocIds.length}, minmax(220px, 1fr))`
+            : `minmax(180px, 220px) repeat(${selectedDocIds.length}, minmax(280px, 1fr))`,
+          gap: isMobile ? '0.6rem' : '1rem'
         }}>
           {/* Header Row */}
           <div style={{ position: 'sticky', top: 0, zIndex: 5, backgroundColor: 'var(--bg-color)', paddingBottom: '0.5rem' }}>
