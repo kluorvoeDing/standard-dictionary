@@ -1100,5 +1100,31 @@
     "latest_version": "Third Edition (2025)",
     "versions_behind": 0,
     "prerequisites": {}
+  },
+  {
+    "document_id": "JISC8714",
+    "document_type": "standard",
+    "document_strength": "standard",
+    "comparison_ready": true,
+    "display_name": "JIS C 8714",
+    "full_name": "JIS C 8714:2007 Safety Tests for Portable Lithium Ion Secondary Cells and Batteries for Use in Portable Electronic Applications",
+    "publisher": "Japanese Standards Association (JSA)",
+    "publication_date": "2007",
+    "li_applicable": true,
+    "item_count": 7,
+    "available_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
+    "test_type": null,
+    "normativity": "normative",
+    "important_note": null,
+    "schema_v2_json": "data/JISC8714.json",
+    "test_count_v2": 7,
+    "is_latest": true,
+    "latest_version": "JIS C 8714:2007",
+    "versions_behind": 0,
+    "base_standard_id": "JISC8714",
+    "prerequisites": {}
   }
 ]
