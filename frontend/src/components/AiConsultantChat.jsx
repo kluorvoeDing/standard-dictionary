@@ -1,6 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeKatex from 'rehype-katex';
+import 'katex/dist/katex.min.css';
 import useIsMobile from '../hooks/useIsMobile';
 
 export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsData }) {
@@ -325,7 +328,10 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
                 {isSys || isUser ? (
                   <span style={{ whiteSpace: 'pre-wrap' }}>{msg.text}</span>
                 ) : (
-                  <ReactMarkdown remarkPlugins={[remarkGfm]} components={{
+                  <ReactMarkdown
+                    remarkPlugins={[remarkGfm, remarkMath]}
+                    rehypePlugins={[[rehypeKatex, { throwOnError: false, errorColor: '#cc3333' }]]}
+                    components={{
                     p: ({node, ...props}) => <p style={{ margin: '0 0 0.75rem 0' }} {...props} />,
                     ul: ({node, ...props}) => <ul style={{ margin: '0 0 0.75rem 0', paddingLeft: '1.5rem' }} {...props} />,
                     ol: ({node, ...props}) => <ol style={{ margin: '0 0 0.75rem 0', paddingLeft: '1.5rem' }} {...props} />,

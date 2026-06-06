@@ -243,27 +243,28 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
       {selectedDocs.length >= 2 && (
         <div style={{
           position: 'fixed',
-          bottom: '1.5rem',
+          bottom: isMobile ? '1rem' : '1.5rem',
           left: '50%',
           transform: 'translateX(-50%)',
           backgroundColor: 'var(--bg-panel)',
           border: '1px solid var(--accent-color)',
-          borderRadius: '50px',
-          padding: '0.75rem 1.5rem',
+          borderRadius: isMobile ? '16px' : '50px',
+          padding: isMobile ? '0.5rem 0.75rem' : '0.75rem 1.5rem',
+          maxWidth: 'calc(100vw - 1.5rem)',
           display: 'flex',
           alignItems: 'center',
-          gap: '1.5rem',
+          gap: isMobile ? '0.5rem' : '1.5rem',
           boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
           zIndex: 20,
           animation: 'slideUp 0.3s ease-out'
         }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: '500' }}>已選取:</span>
-            <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', minWidth: 0, flexShrink: 1 }}>
+            {!isMobile && <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: '500' }}>已選取:</span>}
+            <div style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto', minWidth: 0 }}>
               {selectedDocs.map(id => {
                 const colors = getOrgColor(id);
                 return (
-                  <span key={id} style={{ backgroundColor: colors.solid, color: '#fff', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '0.85rem', fontWeight: 'bold', boxShadow: '0 2px 5px rgba(0,0,0,0.1)' }}>
+                  <span key={id} style={{ backgroundColor: colors.solid, color: '#fff', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '0.85rem', fontWeight: 'bold', boxShadow: '0 2px 5px rgba(0,0,0,0.1)', whiteSpace: 'nowrap', flexShrink: 0 }}>
                     {id}
                   </span>
                 )
@@ -281,6 +282,8 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                 fontWeight: 'bold',
                 cursor: 'pointer',
                 marginLeft: '0.5rem',
+                whiteSpace: 'nowrap',
+                flexShrink: 0,
                 transition: 'all 0.2s'
               }}
               onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#ef4444'; e.currentTarget.style.color = 'white'; }}
@@ -295,11 +298,13 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
               backgroundColor: 'var(--accent-color)',
               color: 'white',
               border: 'none',
-              padding: '0.6rem 1.25rem',
+              padding: isMobile ? '0.5rem 0.9rem' : '0.6rem 1.25rem',
               borderRadius: '20px',
-              fontSize: '1rem',
+              fontSize: isMobile ? '0.9rem' : '1rem',
               fontWeight: 'bold',
               cursor: 'pointer',
+              whiteSpace: 'nowrap',
+              flexShrink: 0,
               boxShadow: '0 4px 10px rgba(59, 130, 246, 0.4)',
               transition: 'transform 0.1s'
             }}
