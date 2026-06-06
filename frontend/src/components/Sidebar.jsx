@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useRef, useMemo } from 'react';
+import useIsMobile from '../hooks/useIsMobile';
 
 export default function Sidebar({ catalog, selectedDocs, toggleDocument, theme, toggleTheme, isMinimized, setIsMinimized }) {
+  const isMobile = useIsMobile();
   const [searchTerm, setSearchTerm] = useState('');
   const [pos, setPos] = useState({ x: 20, y: 20 });
   const [dragging, setDragging] = useState(false);
@@ -171,21 +173,21 @@ export default function Sidebar({ catalog, selectedDocs, toggleDocument, theme, 
           backgroundColor: 'rgba(0,0,0,0.4)', backdropFilter: 'blur(2px)'
         }}
       />
-      <div 
+      <div
         style={{
-          position: 'fixed', left: pos.x, top: pos.y, zIndex: 1000,
-          width: '95vw', maxWidth: '1500px', maxHeight: '85vh', display: 'flex', flexDirection: 'column',
-          backgroundColor: 'var(--bg-panel)', border: '1px solid var(--border-color)',
-          borderRadius: 'var(--radius-lg)', boxShadow: 'var(--shadow-lg)',
-          overflow: 'hidden'
+          position: 'fixed', zIndex: 1000, display: 'flex', flexDirection: 'column',
+          backgroundColor: 'var(--bg-panel)', boxShadow: 'var(--shadow-lg)', overflow: 'hidden',
+          ...(isMobile
+            ? { left: 0, top: 0, width: '100vw', height: '100dvh', borderRadius: 0, border: 'none' }
+            : { left: pos.x, top: pos.y, width: '95vw', maxWidth: '1500px', maxHeight: '85vh', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)' })
         }}
       >
-      {/* Draggable Header */}
-      <div 
-        onMouseDown={onMouseDown}
+      {/* Draggable Header (drag disabled on mobile) */}
+      <div
+        onMouseDown={isMobile ? undefined : onMouseDown}
         style={{
           padding: '1rem', backgroundColor: 'var(--bg-color)', borderBottom: '1px solid var(--border-color)',
-          cursor: dragging ? 'grabbing' : 'grab', display: 'flex', justifyContent: 'space-between', alignItems: 'center'
+          cursor: isMobile ? 'default' : (dragging ? 'grabbing' : 'grab'), display: 'flex', justifyContent: 'space-between', alignItems: 'center'
         }}
       >
         <div style={{ fontWeight: '600', color: 'var(--text-primary)', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -213,8 +215,8 @@ export default function Sidebar({ catalog, selectedDocs, toggleDocument, theme, 
         <div style={{ marginTop: '0.5rem', fontSize: '0.8rem', color: 'var(--text-muted)' }}>已選取: {selectedDocs.length} / 5</div>
       </div>
 
-      <div className="scrollable" style={{ flexGrow: 1, padding: '1.5rem', overflowY: 'auto' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: '1.5rem', alignItems: 'start' }}>
+      <div className="scrollable" style={{ flexGrow: 1, padding: isMobile ? '1rem' : '1.5rem', overflowY: 'auto' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(4, 1fr)', gap: isMobile ? '1rem' : '1.5rem', alignItems: 'start' }}>
           {groupedCatalog.map(group => (
             <div key={group.id} style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
               <h4 style={{ margin: '0 0 0.5rem 0', color: 'var(--accent-color)', borderBottom: '2px solid var(--border-color)', paddingBottom: '0.25rem', fontSize: '1rem' }}>
