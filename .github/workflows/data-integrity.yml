@@ -1,0 +1,31 @@
+name: Data Integrity Check
+
+# 在每次改動資料或驗證器時，自動檢查 data/ 的結構完整性。
+# 目的：防止自動維護 (cron audit) 或人工編輯把標準 JSON / catalog 改壞。
+on:
+  push:
+    paths:
+      - 'data/**'
+      - 'scripts/validate_data.mjs'
+      - '.github/workflows/data-integrity.yml'
+  pull_request:
+    paths:
+      - 'data/**'
+      - 'scripts/validate_data.mjs'
+  workflow_dispatch: # 允許從 Actions UI 手動觸發
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # 驗證器只用 Node 內建模組，無需安裝相依套件
+      - name: Validate data integrity
+        run: node scripts/validate_data.mjs
