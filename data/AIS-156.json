@@ -53,6 +53,10 @@
         "post_test": {
           "value": "標準循環 + 1 小時觀察",
           "detail": "測試後進行一次標準充放電循環，並觀察 1 小時。"
+        },
+        "temperature": {
+          "value": "20 ± 10 °C",
+          "detail": "The test shall be conducted at an ambient temperature of 20 ± 10 °C."
         }
       },
       "acceptance_criteria": {
@@ -275,17 +279,22 @@
         "phase_d": {
           "value": "觀察冷卻",
           "detail": "D階段：移除火源，觀察直至測試設備溫度降至環境溫度，或確認溫度已持續下降至少 3 小時。"
+        },
+        "temperature": {
+          "value": "≥ 0 °C",
+          "detail": "The test shall be conducted at a temperature of at least 0 °C."
         }
       },
       "acceptance_criteria": {
-        "summary": "測試期間及觀察期內無爆炸",
+        "summary": "測試期間無爆炸",
         "details": [
           "測試期間測試設備不得有爆炸的跡象 (shall exhibit no evidence of explosion)"
         ]
       },
       "exemptions": [
         "僅適用於包含可燃電解液的 REESS。",
-        "製造商可選擇以車輛層級或組件層級執行此測試。"
+        "製造商可選擇以車輛層級或組件層級執行此測試。",
+        "僅適用於配備乘客艙的車輛 (applies for vehicles with a passenger compartment only)。"
       ],
       "related_tests": [],
       "source_reference": "6.5, Annex 8E",

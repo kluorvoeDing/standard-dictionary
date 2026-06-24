@@ -449,7 +449,7 @@
         },
         "soc": {
           "value": "100% SOC",
-          "detail": "應在建議濫用測試前先執行熱濫用測試以判定 DUT 在熱濫用下之失效模式是否可能損壞 ARC 系統。(A thermal abuse test should be performed on a DUT prior to an ARC experiment.)"
+          "detail": "測試必須在電池達到 100% SOC 時進行。"
         },
         "post_test": {
           "value": "在 ARC 內冷卻至環境溫度",
@@ -458,6 +458,10 @@
         "sample_quantity": {
           "value": "建議 4 個電芯；模組/包不建議",
           "detail": "依 Table 2 建議：電芯級 4 個。模組及電池包因測試之實際限制不建議執行。(Table 2: Cell = 4. Module and pack not recommended due to practical limitations.)"
+        },
+        "pre_test_requirement": {
+          "value": "預先熱濫用測試",
+          "detail": "應在建議濫用測試前先執行熱濫用測試以判定 DUT 在熱濫用下之失效模式是否可能損壞 ARC 系統。(A thermal abuse test should be performed on a DUT prior to an ARC experiment.)"
         }
       },
       "acceptance_criteria": {

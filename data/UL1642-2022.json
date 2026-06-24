@@ -229,7 +229,7 @@
         },
         "sample_size": {
           "value": "10 顆樣品",
-          "detail": "10 顆 (5顆完全充電，5顆放電至50%容量) - 5+5 samples based on conditioning"
+          "detail": "目標受測電芯必須預先完全放電 (fully discharged)。"
         },
         "protective_device": {
           "value": "動作後須以不觸發之最大負載重新測試",
@@ -393,11 +393,15 @@
         },
         "sample_size": {
           "value": "10 顆樣品",
-          "detail": "10 顆 (5顆完全充電，5顆放電至50%容量) - 5+5 sample distribution"
+          "detail": "依據製造商建議的方法將樣本完全充電 (fully charged)。"
         },
         "orientation": {
           "value": "正負極耳在兩側時，每側各用不同樣品測",
           "detail": "若正負極耳在相反兩側，圓棒放置與擠壓需分別在極耳附近進行（每側使用不同樣品）。"
+        },
+        "direction": {
+          "value": "90±1° 垂直擠壓",
+          "detail": "擠壓方向必須與圓棒的幾何方向呈現 90±1° 的角度進行施力。"
         }
       },
       "acceptance_criteria": {
@@ -879,10 +883,10 @@
       "UL1642_structured.json (batch1 existing JSON)"
     ],
     "cross_validation": "所有參數已在三個來源間交叉驗證。OCR markdown 為權威來源。發現差異已記錄於 cross_validation_notes。",
-    "total_tests": 11,
+    "total_tests": 12,
     "test_categories": {
       "ELEC": 3,
-      "MECH": 4,
+      "MECH": 5,
       "THERM": 4
     }
   }

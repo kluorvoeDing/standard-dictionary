@@ -1,0 +1,871 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "GB47741",
+    "full_name": "Safety technical specification for batteries used in electrically powered wheelchair",
+    "full_name_zh": "電動輪椅車用電池安全技術規範",
+    "short_name": "GB 47741",
+    "publisher": "國家市場監督管理總局 / 國家標準化管理委員會",
+    "publication_date": "2026-05-25",
+    "type": "standard",
+    "scope": "適用於電動輪椅車用鉛酸蓄電池、鎳系電池、鋰離子電池和鈉離子電池以及電池組。也適用於手動輪椅車電動助力裝置用電池和電池組。",
+    "applicable_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
+    "source_pdf": "GB47741-2026.pdf"
+  },
+  "terms": [
+    {
+      "term_zh": "充電限制電壓",
+      "term_en": "limited charging voltage",
+      "definition": "製造商規定的電池或電池組的額定最大充電電壓。"
+    },
+    {
+      "term_zh": "熱失控",
+      "term_en": "thermal runaway",
+      "definition": "電池內部發生放熱連鎖反應，導致溫度急劇上升的現象。"
+    }
+  ],
+  "tests": [
+    {
+      "id": "GB47741-6.1",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "高溫外部短路 (鋰/鈉電池)",
+      "name_en": "High temperature external short circuit (Li/Na Cell)",
+      "section": "6.1",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "57 ± 4℃"
+        },
+        "external_resistance": {
+          "value": "20 mΩ ± 5 mΩ"
+        },
+        "duration": {
+          "value": "降溫後維持 1 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不破裂、不解體",
+        "details": [
+          "電池表面溫度應不超過 170 ℃",
+          "電池應不解體、不破裂、不起火"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-6.2",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電 (鋰/鈉電池)",
+      "name_en": "Overcharge (Li/Na Cell)",
+      "section": "6.2",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "charge_current": {
+          "value": "最大充電電流"
+        },
+        "voltage": {
+          "value": "1.5 倍充電限制電壓"
+        },
+        "duration": {
+          "value": "1 h 或總 1.5 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-6.3",
+      "normalized_id": "ELEC-FD",
+      "name_zh": "強制放電 (鋰/鈉電池)",
+      "name_en": "Forced discharge (Li/Na Cell)",
+      "section": "6.3",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "discharge_current": {
+          "value": "1It 反向充電"
+        },
+        "duration": {
+          "value": "共計 90 min"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-7.1",
+      "normalized_id": "THERM-ALT",
+      "name_zh": "低氣壓 (鋰/鈉電池)",
+      "name_en": "Low pressure (Li/Na Cell)",
+      "section": "7.1",
+      "category": "THERM",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "pressure": {
+          "value": "≤ 11.6 kPa"
+        },
+        "temperature": {
+          "value": "20 ℃ ± 5 ℃"
+        },
+        "duration": {
+          "value": "≥ 6 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不破裂",
+        "details": [
+          "電池應不起火、不洩氣、不解體、不破裂、不漏液",
+          "試驗後開路電壓不低於該項試驗前的 90%"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-7.2",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "溫度循環 (鋰/鈉電池)",
+      "name_en": "Temperature cycling (Li/Na Cell)",
+      "section": "7.2",
+      "category": "THERM",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "high_temperature": {
+          "value": "72 ℃ ± 2 ℃, 6 h"
+        },
+        "low_temperature": {
+          "value": "-40 ℃ ± 2 ℃, 6 h"
+        },
+        "cycles": {
+          "value": "10 次循環"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不破裂",
+        "details": [
+          "電池應不起火、不洩氣、不解體、不破裂、不漏液",
+          "試驗後開路電壓不低於該項試驗前的 90%"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-7.3",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動 (鋰/鈉電池)",
+      "name_en": "Vibration (Li/Na Cell)",
+      "section": "7.3",
+      "category": "MECH",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "frequency": {
+          "value": "7 Hz~200 Hz"
+        },
+        "acceleration": {
+          "value": "8gn"
+        },
+        "duration": {
+          "value": "每方向 3 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不破裂",
+        "details": [
+          "電池應不起火、不洩氣、不解體、不破裂、不漏液",
+          "開路電壓應不低於該項試驗前的 90%"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-7.4",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "加速度衝擊 (鋰/鈉電池)",
+      "name_en": "Acceleration shock (Li/Na Cell)",
+      "section": "7.4",
+      "category": "MECH",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "acceleration": {
+          "value": "150gn (大電池50gn)"
+        },
+        "duration": {
+          "value": "6 ms (大電池11ms)"
+        },
+        "shocks": {
+          "value": "每個方向 3 次"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不破裂",
+        "details": [
+          "電池應不起火、不洩氣、不解體、不破裂、不漏液",
+          "開路電壓應不低於試驗前的 90%"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-7.5",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落 (鋰/鈉電池)",
+      "name_en": "Drop (Li/Na Cell)",
+      "section": "7.5",
+      "category": "MECH",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "drop_height": {
+          "value": "1 m"
+        },
+        "surface": {
+          "value": "混凝土板"
+        },
+        "drops": {
+          "value": "4 或 6 次"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-7.6",
+      "normalized_id": "MECH-IMPACT",
+      "name_zh": "重物衝擊 (鋰/鈉電池)",
+      "name_en": "Heavy impact (Li/Na Cell)",
+      "section": "7.6",
+      "category": "MECH",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "mass": {
+          "value": "9.1 kg ± 0.1 kg"
+        },
+        "height": {
+          "value": "610 mm ± 25 mm"
+        },
+        "bar_diameter": {
+          "value": "15.8 mm ± 0.1 mm"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-7.7",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓 (鋰/鈉電池)",
+      "name_en": "Crush (Li/Na Cell)",
+      "section": "7.7",
+      "category": "MECH",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "force": {
+          "value": "26 kN ± 1.56 kN"
+        },
+        "crush_speed": {
+          "value": "0.1 mm/s"
+        },
+        "stop_condition": {
+          "value": "最大力或電壓降三分之一"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-7.8",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "熱濫用 (鋰/鈉電池)",
+      "name_en": "Thermal abuse (Li/Na Cell)",
+      "section": "7.8",
+      "category": "THERM",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "135 ℃ ± 2 ℃"
+        },
+        "heating_rate": {
+          "value": "5 ℃/min"
+        },
+        "duration": {
+          "value": "恆溫 60 min"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-7.9",
+      "normalized_id": "MECH-NAIL",
+      "name_zh": "針刺 (鋰/鈉電池)",
+      "name_en": "Nail penetration (Li/Na Cell)",
+      "section": "7.9",
+      "category": "MECH",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "needle": {
+          "value": "Φ5 mm 鋼針"
+        },
+        "speed": {
+          "value": "25 mm/s ± 5 mm/s"
+        },
+        "duration": {
+          "value": "停留觀察 1 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-7.11",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "熱失控 (鋰/鈉電池)",
+      "name_en": "Thermal runaway (Li/Na Cell)",
+      "section": "7.11",
+      "category": "THERM",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "heating": {
+          "value": "最大功率持續加熱"
+        },
+        "stop_condition": {
+          "value": "降壓25%或達300℃"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-8.1",
+      "normalized_id": "THERM-ALT",
+      "name_zh": "低氣壓 (鋰/鈉電池組)",
+      "name_en": "Low pressure (Li/Na Pack)",
+      "section": "8.1",
+      "category": "THERM",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "pressure": {
+          "value": "≤ 11.6 kPa"
+        },
+        "duration": {
+          "value": "至少 6 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不破裂",
+        "details": [
+          "樣品應不起火、不洩氣、不解體、不破裂、不漏液",
+          "試驗後開路電壓不低於試驗前的 90%"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-8.2",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "溫度循環 (鋰/鈉電池組)",
+      "name_en": "Temperature cycling (Li/Na Pack)",
+      "section": "8.2",
+      "category": "THERM",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "high_temperature": {
+          "value": "72 ℃, 6 h"
+        },
+        "low_temperature": {
+          "value": "-40 ℃, 6 h"
+        },
+        "cycles": {
+          "value": "10 次循環"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不破裂",
+        "details": [
+          "樣品應不起火、不洩氣、不解體、不破裂、不漏液",
+          "試驗後開路電壓不低於試驗前的 90%"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-8.3",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動 (鋰/鈉電池組)",
+      "name_en": "Vibration (Li/Na Pack)",
+      "section": "8.3",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "acceleration": {
+          "value": "8gn 或 2gn"
+        },
+        "duration": {
+          "value": "每個方向 3 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不破裂",
+        "details": [
+          "電池組應不起火、不洩氣、不解體、不破裂、不漏液",
+          "開路電壓不低於試驗前的 90%"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-8.4",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "加速度衝擊 (鋰/鈉電池組)",
+      "name_en": "Acceleration shock (Li/Na Pack)",
+      "section": "8.4",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "acceleration": {
+          "value": "150gn 或 50gn"
+        },
+        "duration": {
+          "value": "6 ms 或 11 ms"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不破裂",
+        "details": [
+          "樣品應不起火、不洩氣、不解體、不破裂、不漏液",
+          "開路電壓不低於試驗前的 90%"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-8.5",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落 (鋰/鈉電池組)",
+      "name_en": "Drop (Li/Na Pack)",
+      "section": "8.5",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "drop_height": {
+          "value": "1 m"
+        },
+        "surface": {
+          "value": "混凝土板"
+        },
+        "drops": {
+          "value": "6 次"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不爆炸",
+        "details": [
+          "樣品應不起火、不爆炸、不漏液"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-8.6",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "應力消除 (鋰/鈉電池組)",
+      "name_en": "Stress relief (Li/Na Pack)",
+      "section": "8.6",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "70 ℃ ± 2 ℃"
+        },
+        "duration": {
+          "value": "7 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無形變暴露",
+        "details": [
+          "樣品外殼不應發生導致內部組成暴露或影響安全的物理形變"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-8.7",
+      "normalized_id": "THERM-WATER",
+      "name_zh": "浸水 (鋰/鈉電池組)",
+      "name_en": "Water immersion (Li/Na Pack)",
+      "section": "8.7",
+      "category": "THERM",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "liquid": {
+          "value": "3.5% NaCl 水溶液"
+        },
+        "depth": {
+          "value": "最高點以上 1 cm"
+        },
+        "duration": {
+          "value": "至少 30 min"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "樣品應不起火、不爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-8.8",
+      "normalized_id": "THERM-FIRE",
+      "name_zh": "阻燃要求 (鋰/鈉電池組)",
+      "name_en": "Flame retardance (Li/Na Pack)",
+      "section": "8.8",
+      "category": "THERM",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "enclosure": {
+          "value": "不低於 V-0 級"
+        },
+        "pcb_and_materials": {
+          "value": "不低於 V-1 級"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "符合阻燃要求",
+        "details": [
+          "電池組外殼應不低於 V-0 級",
+          "印製板及封裝材料不低於 V-1 級"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-9.2",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過壓充電保護 (鋰/鈉電池組)",
+      "name_en": "Over voltage charge protection (Li/Na Pack)",
+      "section": "9.2",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "voltage": {
+          "value": "1.2 倍過壓充電"
+        },
+        "stop_condition": {
+          "value": "觸發保護或達到 1.2 倍電壓"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不爆炸",
+        "details": [
+          "電池組應不起火、不爆炸、不漏液",
+          "能觸發過電壓保護，電池不應超過充電上限電壓"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-9.3",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "過流充電 (鋰/鈉電池組)",
+      "name_en": "Over current charge (Li/Na Pack)",
+      "section": "9.3",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "current": {
+          "value": "1.5 倍過流充電保護電流"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不爆炸",
+        "details": [
+          "電池組應採取保護動作",
+          "電池組應不起火、不爆炸、不漏液"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-9.5",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "欠壓保護 (鋰/鈉電池組)",
+      "name_en": "Under voltage protection (Li/Na Pack)",
+      "section": "9.5",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "discharge_current": {
+          "value": "推薦放電電流 (Idr)"
+        },
+        "stop_condition": {
+          "value": "放電至保護電路動作"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不爆炸",
+        "details": [
+          "動作時電壓不應低於 n 倍放電截止電壓",
+          "電池組應不起火、不爆炸、不漏液"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-9.6",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "過流放電 (鋰/鈉電池組)",
+      "name_en": "Over current discharge (Li/Na Pack)",
+      "section": "9.6",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "current": {
+          "value": "1.5 倍過流放電保護電流"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不爆炸",
+        "details": [
+          "保護電路應採取保護動作",
+          "電池組應不起火、不爆炸、不漏液"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-9.7",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短路 (鋰/鈉電池組)",
+      "name_en": "External short circuit (Li/Na Pack)",
+      "section": "9.7",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "external_resistance": {
+          "value": "20 mΩ ± 5 mΩ"
+        },
+        "stop_condition": {
+          "value": "電壓 < 0.2 V 或 1 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不漏液、不爆炸",
+        "details": [
+          "電池組應不起火、不爆炸、不漏液"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-10.2",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動測試 (鉛酸電池)",
+      "name_en": "Vibration test (Lead-acid)",
+      "section": "10.2",
+      "category": "MECH",
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "amplitude": {
+          "value": "振幅 0.8 mm"
+        },
+        "frequency": {
+          "value": "10 Hz~55 Hz"
+        },
+        "duration": {
+          "value": "往返移動 95 min"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無機械損傷、無漏液",
+        "details": [
+          "表面應無機械損傷，且無電解液滲漏等現象"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-10.3",
+      "normalized_id": "THERM-ALT",
+      "name_zh": "壓差測試 (鉛酸電池)",
+      "name_en": "Pressure difference test (Lead-acid)",
+      "section": "10.3",
+      "category": "THERM",
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "pressure_diff": {
+          "value": "至少 88 kPa"
+        },
+        "temperature": {
+          "value": "24 ℃ ± 4 ℃"
+        },
+        "duration": {
+          "value": "存儲 6 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無機械損傷、無漏液",
+        "details": [
+          "表面應無機械損傷，且無電解液滲漏等現象"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-11.2",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "電池短路 (鎳系電池)",
+      "name_en": "Cell short circuit (Nickel system)",
+      "section": "11.2",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "57 ℃ ± 4 ℃"
+        },
+        "external_resistance": {
+          "value": "80 mΩ ± 20 mΩ"
+        },
+        "stop_condition": {
+          "value": "短接 24 h 或溫度下降"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-11.3",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "電池過充 (鎳系電池)",
+      "name_en": "Cell overcharge (Nickel system)",
+      "section": "11.3",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "current": {
+          "value": "2.5 倍充電電流"
+        },
+        "capacity": {
+          "value": "充入 250% 額定容量"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-11.4",
+      "normalized_id": "MECH-NAIL",
+      "name_zh": "電池針刺 (鎳系電池)",
+      "name_en": "Cell nail penetration (Nickel system)",
+      "section": "11.4",
+      "category": "MECH",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "needle": {
+          "value": "Φ5 mm 鋼針"
+        },
+        "speed": {
+          "value": "25 mm/s ± 5 mm/s"
+        },
+        "duration": {
+          "value": "停留觀察 1 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      }
+    }
+  ]
+}

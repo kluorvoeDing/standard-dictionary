@@ -91,15 +91,15 @@
           "detail": "測試在室溫環境下進行 (conducted at room ambient)。"
         },
         "duration": {
-          "value": "7 h",
-          "detail": "Until fully discharged or 7 hours after stabilization, or a fire or explosion has occurred."
+          "value": "7 小時",
+          "detail": "測試持續至完全放電，或溫度穩定後 7 小時，或發生起火/爆炸為止。"
         },
         "repeat_test": {
-          "value": "Yes",
-          "detail": "Testing is repeated at a load that draws a maximum current no less than 15% below the operation of the short circuit protection."
+          "value": "重複測試",
+          "detail": "在低於短路保護動作電流最大值 15% 的負載下重複測試。"
         },
         "single_fault": {
-          "value": true,
+          "value": "單一故障",
           "detail": "若樣品配有保護裝置，應在放電條件下可能發生的任何單一元件故障下進行測試。"
         }
       },
@@ -182,8 +182,8 @@
           "detail": "在最大充電與放電條件下，重複執行總共 5 次完整循環。"
         },
         "stabilization": {
-          "value": "1 h",
-          "detail": "All cell temperatures are estimated to be within ±10°C (±18°F) of the chamber temperature for 1 h before testing."
+          "value": "靜置 1 小時",
+          "detail": "在測試前，預估所有電芯溫度需達到腔室溫度 ±10°C (±18°F) 內，並靜置 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -225,20 +225,11 @@
         "details": [
           "模組最大電壓限值不得超出",
           "應無起火、無爆炸",
-          "最小絕緣電阻 100 Ω/V"
-        ],
-        "no_venting": {
-          "value": "無排氣",
-          "detail": "無排氣"
-        },
-        "no_rupture": {
-          "value": "無破裂",
-          "detail": "無破裂"
-        },
-        "no_leakage": {
-          "value": true,
-          "detail": "無洩漏"
-        }
+          "最小絕緣電阻 100 Ω/V",
+          "無排氣現象。",
+          "無破裂。",
+          "無洩漏。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -307,7 +298,7 @@
           "detail": "分別在接收狀態與 IEC 60068-2-30 濕熱調節（55 ± 2°C，6次循環）後進行。"
         },
         "voltage": {
-          "value": "高於待測電路的直流電壓",
+          "value": "高於待測電壓",
           "detail": "施加高於待測電路的直流電壓（至少為高壓直流母線的工作電壓）。"
         }
       },
@@ -330,19 +321,32 @@
       "name_en": "Continuity Test",
       "name_zh": "導通性測試",
       "test_objects": [
-        "PACK"
+        "PACK_SYSTEM"
       ],
       "exemptions": [],
-      "conditions": {},
+      "conditions": {
+        "test_current": {
+          "value": "150% 或 25A",
+          "detail": "施加最大額定電流的 150% 或 25A (取較大者) 維持 5 秒。"
+        }
+      },
       "acceptance_criteria": {
-        "summary": "維持電氣連續性",
+        "summary": "連續性維持且電阻 ≤ 0.1 Ω",
         "details": [
           {
             "id": "AC-CONT-1",
             "rule_en": "Electrical continuity shall be maintained.",
             "rule_zh": "必須維持電氣連續性。"
-          }
+          },
+          "電阻不大於 0.1 Ω。"
         ]
+      },
+      "normalized_id": "ELEC-CONTINUITY",
+      "source_reference": "Section 32",
+      "original_text_snippet": "The protective grounding circuit of the DUT shall be evaluated to determine that the resistance between the equipment grounding terminal/connection and any dead metal part required to be grounded is not more than 0.1-Ω.",
+      "taxonomy": {
+        "category": "ELEC",
+        "subcategory": "Continuity"
       }
     },
     {
@@ -367,11 +371,11 @@
           "detail": "在冷卻禁用的情況下，以最大速率進行充電與放電測試。"
         },
         "conditioning": {
-          "value": "最高工作環境溫度下 7 小時",
+          "value": "高溫環境 7 小時",
           "detail": "將樣品置於最高規定的工作環境溫度下 7 小時。"
         },
         "repetition": {
-          "value": "在最低工作環境溫度下重複測試",
+          "value": "最低溫重複測試",
           "detail": "整個試驗應在最低規定的工作環境溫度下重複進行。"
         }
       },
@@ -538,7 +542,9 @@
         "details": [
           "應無起火、無爆炸",
           "無有毒氣體釋放",
-          "絕緣電阻 ≥ 100 Ω/V"
+          "絕緣電阻 ≥ 100 Ω/V",
+          "無破裂現象。",
+          "無漏液現象。"
         ]
       },
       "exemptions": [
@@ -563,11 +569,15 @@
       "conditions": {
         "force": {
           "value": "100 ±6 kN",
-          "detail": "Exception 1 strictly sets the force at 100 ±6 kN."
+          "detail": "依據豁免條款 1，施加力量嚴格設定為 100 ±6 kN。"
         },
         "direction": {
           "value": "3 軸互相垂直",
-          "detail": "3 mutually perpendicular directions of press (or 2 for cylindrical)."
+          "detail": "在 3 個相互垂直的方向進行擠壓 (圓柱型為 2 個方向)。"
+        },
+        "crush_tool": {
+          "value": "SAE J2464 肋條壓板",
+          "detail": "必須使用符合 SAE J2464 規範的肋條狀測試壓板 (ribbed test platen) 與固定平面進行擠壓。"
         }
       },
       "acceptance_criteria": {
@@ -578,7 +588,12 @@
           "絕緣電阻 ≥ 100 Ω/V"
         ]
       },
-      "exemptions": [],
+      "exemptions": [
+        {
+          "value": "車輛防護框架",
+          "detail": "受測設備可安裝於能代表車輛結構的防護框架中進行測試。"
+        }
+      ],
       "related_tests": [],
       "source_reference": "38",
       "original_text_snippet": "The DUT shall be subjected to a crush force of 100 ±6 kN."
@@ -602,7 +617,7 @@
         },
         "method": {
           "value": "SAE J2464 (modified)",
-          "detail": "Thermal shock test of SAE J2464, except that the temperature extremes are from 85 ±2°C to −40 ±2°C."
+          "detail": "採用 SAE J2464 的熱衝擊測試方法，但極限溫度修改為 85 ±2°C 至 -40 ±2°C。"
         }
       },
       "acceptance_criteria": {
@@ -613,7 +628,12 @@
           "絕緣電阻 ≥ 100 Ω/V"
         ]
       },
-      "exemptions": [],
+      "exemptions": [
+        {
+          "value": "模組級替代測試",
+          "detail": "允許在代表性的子組件或模組級別上進行測試。"
+        }
+      ],
       "related_tests": [],
       "source_reference": "39",
       "original_text_snippet": "The DUT is to be subjected to the thermal shock test of SAE J2464, except that the temperature extremes are from 85 ±2°C to −40 ±2°C."
@@ -633,7 +653,7 @@
       "conditions": {
         "method": {
           "value": "IEC 60068-2-52",
-          "detail": "依據 IEC 60068-2-52 或等效標準進行鹽霧暴露。 with a severity level of 6."
+          "detail": "依據 IEC 60068-2-52 或等效標準進行鹽霧暴露。 並採用嚴酷等級 6 進行測試."
         }
       },
       "acceptance_criteria": {
@@ -644,7 +664,20 @@
           "絕緣電阻 ≥ 100 Ω/V"
         ]
       },
-      "exemptions": [],
+      "exemptions": [
+        {
+          "value": "非海洋環境豁免",
+          "detail": "若系統不適用於海洋、路鹽或融雪劑環境，則可豁免。"
+        },
+        {
+          "value": "IP67 / UL50E 防護豁免",
+          "detail": "若外殼已通過 IP67 浸水測試或符合 UL 50E 室外防護規範，則可豁免。"
+        },
+        {
+          "value": "模組級替代測試",
+          "detail": "允許在代表性的子組件或模組級別上進行測試。"
+        }
+      ],
       "related_tests": [],
       "source_reference": "40",
       "original_text_snippet": "40 Salt Spray Test: The sample is to be subjected to salt spray testing in accordance with IEC 60068-2-52 or equivalent standard."
@@ -667,25 +700,29 @@
           "detail": "在 5% 鹽水中完全浸沒 1 小時，或滿足 NEMA 60529 / UL 50E 的 IP 等級要求。"
         },
         "temperature": {
-          "value": "Room temperature",
-          "detail": "Immersion at room temperature."
+          "value": "室溫",
+          "detail": "於室溫下進行浸水測試。"
         },
         "duration": {
-          "value": "1 h",
-          "detail": "1 hour or until any visible reactions have stopped."
+          "value": "1 小時",
+          "detail": "浸泡 1 小時或直到所有可見的化學反應停止。"
         }
       },
       "acceptance_criteria": {
-        "summary": "無起火、無爆炸",
+        "summary": "應無起火、無爆炸",
         "details": [
-          "應無起火、無爆炸",
-          "絕緣電阻 ≥ 100 Ω/V"
+          "應無起火、無爆炸"
         ]
       },
-      "exemptions": [],
+      "exemptions": [
+        {
+          "value": "模組級替代測試",
+          "detail": "允許在代表性的子組件或模組級別上進行測試。"
+        }
+      ],
       "related_tests": [],
       "source_reference": "41",
-      "original_text_snippet": "41 Immersion Test: The energy storage assembly shall comply with its IP rating for ingress of fluids and other foreign materials as determined by NEMA 60529."
+      "original_text_snippet": "The DUT shall be completely immersed in water containing approximately 5 % NaCl by weight..."
     },
     {
       "id": "ULC2580-T42",
@@ -706,14 +743,18 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無爆炸；碎片飛散 ≤ 1.5m",
+        "summary": "無爆炸、無飛散碎片",
         "details": [
           "起火可能發生但不得爆炸 (No explosion)",
-          "碎片飛散距離不得超過 1.5m",
-          "無有毒氣體危險釋放"
+          "碎片與爆炸物不得飛散至內部警戒線之外。"
         ]
       },
-      "exemptions": [],
+      "exemptions": [
+        {
+          "value": "電芯拋射體豁免",
+          "detail": "若所使用的電芯已經通過 Annex B 拋射體測試，則整個系統可豁免外部火燒測試。"
+        }
+      ],
       "related_tests": [],
       "source_reference": "42",
       "original_text_snippet": "42 External Fire Exposure Test: The sample is to be subjected to external fire exposure in accordance with the anticipated fire exposure conditions for the vehicle application."
@@ -737,13 +778,18 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無起火/爆炸蔓延至外殼外部",
+        "summary": "熱失控不得蔓延至外殼外",
         "details": [
-          "單電池失效不應導致相鄰電池熱失控傳播 (No fire/explosion propagation)",
+          "允許內部熱失控蔓延，但不得蔓延至受測設備 (DUT) 外殼之外。",
           "危害不得蔓延至受測設備外部"
         ]
       },
-      "exemptions": [],
+      "exemptions": [
+        {
+          "value": "代表性模組替代測試",
+          "detail": "允許在代表性的子組件或模組級別上進行測試。"
+        }
+      ],
       "related_tests": [],
       "source_reference": "43.2",
       "original_text_snippet": "43.2 Single cell failure design tolerance (lithium ion): The EESA shall be evaluated for its ability to tolerate a single cell failure without resulting in a hazardous condition. A trigger cell shall be used to initiate an internal short circuit."
@@ -768,7 +814,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏、無破裂",
         "details": [
-          "No venting, leakage, rupture, fire, or explosion"
+          "無排氣、無漏液、無破裂、不起火、不爆炸"
         ]
       },
       "exemptions": [],
@@ -796,7 +842,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏、無破裂",
         "details": [
-          "No venting, leakage, rupture, fire, or explosion"
+          "無排氣、無漏液、無破裂、不起火、不爆炸"
         ]
       },
       "exemptions": [],
@@ -824,7 +870,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "No venting, leakage, rupture, fire, or explosion"
+          "無排氣、無漏液、無破裂、不起火、不爆炸"
         ]
       },
       "exemptions": [],
@@ -880,7 +926,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無破裂",
         "details": [
-          "No rupture, fire or explosion"
+          "無破裂、不起火、不爆炸"
         ]
       },
       "exemptions": [],
@@ -908,7 +954,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "No venting, leakage, rupture, fire, or explosion"
+          "無排氣、無漏液、無破裂、不起火、不爆炸"
         ]
       },
       "exemptions": [],
@@ -936,7 +982,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無破裂",
         "details": [
-          "No rupture, fire or explosion"
+          "無破裂、不起火、不爆炸"
         ]
       },
       "exemptions": [],
@@ -964,7 +1010,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無破裂",
         "details": [
-          "No rupture, fire or explosion"
+          "無破裂、不起火、不爆炸"
         ]
       },
       "exemptions": [],
@@ -992,7 +1038,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無破裂",
         "details": [
-          "No rupture, fire or explosion"
+          "無破裂、不起火、不爆炸"
         ]
       },
       "exemptions": [],
@@ -1032,7 +1078,8 @@
           }
         ]
       },
-      "original_text_snippet": "Heating test (placing the cell on a wire mesh over a Meker burner) until it explodes or burns out."
+      "original_text_snippet": "Heating test (placing the cell on a wire mesh over a Meker burner) until it explodes or burns out.",
+      "normalized_id": "THERM-PROJECTILE"
     }
   ],
   "test_sequence": {

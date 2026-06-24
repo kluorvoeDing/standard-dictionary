@@ -115,10 +115,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無擊穿、飛弧或閃絡",
+        "summary": "絕緣無擊穿或飛弧",
         "details": [
-          "系統應無損壞",
-          "功能應正常運作"
+          "絕緣體無擊穿",
+          "無飛弧或閃絡現象發生"
         ]
       },
       "exemptions": [],
@@ -295,7 +295,8 @@
         "summary": "無損壞，不暴露帶電件",
         "details": [
           "無損壞",
-          "無危險帶電件暴露"
+          "無危險帶電件暴露",
+          "測試後設備必須通過介電耐壓測試 (Dielectric Voltage Withstand Test)。"
         ]
       },
       "exemptions": [

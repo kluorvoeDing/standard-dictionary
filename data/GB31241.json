@@ -284,7 +284,7 @@
         },
         "termination": {
           "value": "13.0 kN 或電壓降 1/3",
-          "detail": "施加壓力達到 13.0 ± 0.78 kN，或電池的電壓下降三分之一。"
+          "detail": "擠壓達到截止條件（電壓降達三分之一或擠壓力達13.0 kN）和擠壓裝置停止的時間間隔應不大於 100 ms。"
         }
       },
       "acceptance_criteria": {
@@ -366,6 +366,10 @@
         "cycle_count": {
           "value": "10 循環",
           "detail": "重複 10 次循環。"
+        },
+        "post_rest": {
+          "value": "室溫靜置 6h",
+          "detail": "試驗結束後，在室溫下靜置 6 h。"
         }
       },
       "acceptance_criteria": {
@@ -488,9 +492,8 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "保護電路應動作；不起火、不爆炸、不漏液",
+        "summary": "不起火、不爆炸、不漏液",
         "details": [
-          "保護電路應動作",
           "不起火",
           "不爆炸",
           "不漏液"
@@ -501,7 +504,7 @@
         "GB31241-6.2"
       ],
       "source_reference": "9.2",
-      "original_text_snippet": "9.2 過壓充電：保護電路應動作；不起火、不爆炸、不漏液。"
+      "original_text_snippet": "9.2 過壓充電：不起火、不爆炸、不漏液。"
     },
     {
       "id": "GB31241-9.6",
@@ -525,9 +528,8 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "保護電路應動作；不起火、不爆炸、不漏液",
+        "summary": "不起火、不爆炸、不漏液",
         "details": [
-          "保護電路應動作",
           "不起火",
           "不爆炸",
           "不漏液"
@@ -538,7 +540,7 @@
         "GB31241-6.1"
       ],
       "source_reference": "9.6",
-      "original_text_snippet": "9.6 外部短路：保護電路應動作；不起火、不爆炸、不漏液。"
+      "original_text_snippet": "9.6 外部短路：不起火、不爆炸、不漏液。"
     },
     {
       "id": "GB31241-10",

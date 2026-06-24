@@ -30,7 +30,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "依 Annexure IX Appendix 2 調整",
+          "value": "依附錄 2 調整",
           "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 調整。"
         },
         "temperature": {
@@ -55,12 +55,17 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無洩漏、無破裂、無起火、無爆炸",
+        "summary": "無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
           "測試期間無電解液洩漏 (Electrolyte leakage)",
           "無破裂 (Rupture，僅適用於高壓 REESS)",
           "無起火 (Fire)",
-          "無爆炸 (Explosion)"
+          "無爆炸 (Explosion)",
+          {
+            "id": "AC-IR",
+            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
+            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
+          }
         ],
         "no_venting": {
           "value": true,
@@ -87,7 +92,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "依 Annexure IX Appendix 2 調整",
+          "value": "依附錄 2 調整",
           "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 調整。"
         },
         "temperature_profile": {
@@ -112,12 +117,17 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無洩漏、無破裂、無起火、無爆炸",
+        "summary": "無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
           "測試期間無電解液洩漏 (Electrolyte leakage)",
           "無破裂 (Rupture)",
           "無起火 (Fire)",
-          "無爆炸 (Explosion)"
+          "無爆炸 (Explosion)",
+          {
+            "id": "AC-IR",
+            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
+            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
+          }
         ],
         "no_venting": {
           "value": true,
@@ -160,19 +170,27 @@
         "observation": {
           "value": "1 小時",
           "detail": "測試結束後在測試環境下觀察 1 小時。"
+        },
+        "soc": {
+          "value": "SOC 調整",
+          "detail": "依照 Annexure IX 的一般測試條件調整 SOC。"
         }
       },
       "acceptance_criteria": {
-        "summary": "無洩漏、無破裂、無起火、無爆炸",
+        "summary": "無洩漏、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
           "測試期間無電解液洩漏 (Electrolyte leakage)",
-          "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
           {
             "id": "AC-RET-1",
             "rule_en": "Tested-Device shall be retained by its mounting and its components shall remain inside its boundaries.",
             "rule_zh": "受測設備應保持在安裝位置上，且其組件不得脫出邊界外。"
+          },
+          {
+            "id": "AC-IR",
+            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
+            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
           }
         ]
       },
@@ -222,19 +240,22 @@
         "observation": {
           "value": "1 小時",
           "detail": "測試結束後在測試環境下觀察 1 小時。"
+        },
+        "soc": {
+          "value": "SOC 調整",
+          "detail": "依照 Annexure IX 的一般測試條件調整 SOC。"
         }
       },
       "acceptance_criteria": {
-        "summary": "無洩漏、無破裂、無起火、無爆炸",
+        "summary": "無洩漏、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
           "測試期間無電解液洩漏 (Electrolyte leakage)",
-          "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
           {
-            "id": "AC-RET-1",
-            "rule_en": "Tested-Device shall be retained by its mounting and its components shall remain inside its boundaries.",
-            "rule_zh": "受測設備應保持在安裝位置上，且其組件不得脫出邊界外。"
+            "id": "AC-IR",
+            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
+            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
           }
         ]
       },
@@ -272,6 +293,10 @@
         "lpg_burner_fire": {
           "value": "800~1100°C 燃燒 2 分鐘",
           "detail": "LPG 火焰平均溫度 30 秒內達 800°C，維持在 800-1100°C，受測設備暴露於火焰中 2 分鐘。測試後觀察 3 小時。"
+        },
+        "soc": {
+          "value": "SOC 調整",
+          "detail": "依照 Annexure IX 的一般測試條件調整 SOC。"
         }
       },
       "acceptance_criteria": {
@@ -314,16 +339,24 @@
         "post_test": {
           "value": "標準循環與 1 小時觀察",
           "detail": "短路終止後直接進行一次標準循環，並觀察 1 小時。"
+        },
+        "soc": {
+          "value": "SOC 調整",
+          "detail": "依照 Annexure IX 的一般測試條件調整 SOC。"
         }
       },
       "acceptance_criteria": {
-        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸",
+        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "短路保護功能應作動",
           "無電解液洩漏 (Electrolyte leakage)",
           "無破裂 (Rupture)",
           "無起火 (Fire)",
-          "無爆炸 (Explosion)"
+          "無爆炸 (Explosion)",
+          {
+            "id": "AC-IR",
+            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
+            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
+          }
         ],
         "no_venting": {
           "value": true,
@@ -373,13 +406,17 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸",
+        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "過充保護功能應正常啟動",
           "無電解液洩漏 (Electrolyte leakage)",
           "無破裂 (Rupture)",
           "無起火 (Fire)",
-          "無爆炸 (Explosion)"
+          "無爆炸 (Explosion)",
+          {
+            "id": "AC-IR",
+            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
+            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
+          }
         ],
         "no_venting": {
           "value": true,
@@ -425,13 +462,17 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸",
+        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "過放保護功能應正常啟動",
           "無電解液洩漏 (Electrolyte leakage)",
           "無破裂 (Rupture)",
           "無起火 (Fire)",
-          "無爆炸 (Explosion)"
+          "無爆炸 (Explosion)",
+          {
+            "id": "AC-IR",
+            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
+            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
+          }
         ],
         "no_venting": {
           "value": true,
@@ -455,10 +496,6 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
-        "soc": {
-          "value": "正常範圍",
-          "detail": "測試前 SOC 調整至正常操作範圍內。"
-        },
         "temperature": {
           "value": "高於最高工作溫度",
           "detail": "測試環境溫度應設定為確保 REESS 溫度能持續上升的程度，或將 REESS 加熱至過溫保護預期作動之溫度。"
@@ -477,13 +514,17 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸",
+        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "過溫保護功能應正常啟動",
           "無電解液洩漏 (Electrolyte leakage)",
           "無破裂 (Rupture)",
           "無起火 (Fire)",
-          "無爆炸 (Explosion)"
+          "無爆炸 (Explosion)",
+          {
+            "id": "AC-IR",
+            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
+            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
+          }
         ],
         "no_venting": {
           "value": true,
@@ -522,16 +563,24 @@
         "post_test": {
           "value": "標準循環與 1 小時觀察",
           "detail": "終止後進行一次標準循環，並觀察 1 小時。"
+        },
+        "soc": {
+          "value": "SOC 調整",
+          "detail": "依照 Annexure IX 的一般測試條件調整 SOC。"
         }
       },
       "acceptance_criteria": {
-        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸",
+        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "過電流保護功能應正常啟動",
           "無電解液洩漏 (Electrolyte leakage)",
           "無破裂 (Rupture)",
           "無起火 (Fire)",
-          "無爆炸 (Explosion)"
+          "無爆炸 (Explosion)",
+          {
+            "id": "AC-IR",
+            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
+            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
+          }
         ],
         "no_venting": {
           "value": true,
@@ -564,12 +613,12 @@
           "detail": "觸發熱失控的候選方法僅為：加熱 (Heating)、針刺 (Nail penetration) 或過充 (Overcharge)。"
         },
         "trigger_location": {
-          "value": "REESS 內部任意位置",
-          "detail": "觸發位置由製造商指定或測試機構選擇。"
+          "value": "選擇最易傳導熱量之電芯",
+          "detail": "選擇最靠近中心，其熱失控產生的熱量最容易傳導至相鄰電芯的單體電芯。"
         },
-        "observation": {
-          "value": "1 小時或直至溫度穩定",
-          "detail": "觸發熱失控後持續觀察至少 1 小時，或直至溫度穩定下降。"
+        "temperature": {
+          "value": "25 ± 2 °C",
+          "detail": "The test shall be conducted at 25 ± 2 °C."
         }
       },
       "acceptance_criteria": {
@@ -582,7 +631,7 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "Annexure X, 6.15.1",
-      "original_text_snippet": "A single cell in the REESS shall be triggered into thermal runaway. The test evaluates whether thermal runaway propagates to adjacent cells. Acceptance criteria: No propagation or safe propagation with ≥5 min warning time for occupant escape."
+      "original_text_snippet": "Select an initiation cell whose heat generated by thermal runaway is most easily conducted to adjacent cells. For example, select the cell that is the nearest to the centre of the REESS."
     }
   ],
   "test_sequence": {

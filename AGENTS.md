@@ -38,6 +38,17 @@
 
 > **[提示]** 關於 21 份標準的詳細交叉稽核與修復歷史 (破曉大隊)，已歸檔至 [`AUDIT_LOGS.md`](./AUDIT_LOGS.md) 備查。
 
+## 2026-06-25 (Feature & Recovery)
+- 事件：大量匯入 5 份新版 GB 國標並重啟背景稽核
+- 背景：使用者新增了 5 份 GB 國標文件。同時，系統發現背景排程曾因伺服器重啟而中斷。
+- 內容：
+  - 依照 `SOP_NEW_STANDARD.md`，派遣 5 名萃取子代理人平行解析 PDF，將 `GB31241.4`, `GB40165`, `GB40559`, `GB47372`, `GB47741` 成功結構化為 Schema v2.0 JSON 格式。
+  - 將這 5 份新標準註冊入 `catalog.json`，完成前端資料綁定，並將它們加入 `audit_state.json` 待查核清單。
+  - 成功驗證了前端專案的建置 (Vite Build)。
+  - 重新排程了每 3 小時一次的 Dawn Audit 稽核機制（接續 Iteration 46），確保背景品質監控不間斷。
+- 影響：資料庫新增了大量新國標，且系統排程恢復正常運作。
+- 後續：觀察新標準在前端的呈現是否正常，並讓 Dawn Audit 自動抽測新成員。
+
 ## 2026-06-06 (Security)
 - 事件：清除外洩機密、重寫 git 歷史並建立版控安全防線
 - 背景：AI 小幫手的 Gemini API key「不到一天就失效」，追查發現 key 曾以 `VITE_` 前綴與 `.env` 形式 commit 進 _公開_ repo，被 Google 自動停用；另發現 `.env.production.local`（含 `VERCEL_OIDC_TOKEN`）、`data/node_modules/`、多個 `.DS_Store` 也被誤上傳。

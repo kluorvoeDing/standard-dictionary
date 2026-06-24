@@ -1,0 +1,580 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "GB47372",
+    "full_name": "GB 47372-2026 Safety technical specification for power bank",
+    "full_name_zh": "GB 47372—2026 移動電源安全技術規範",
+    "short_name": "GB 47372-2026",
+    "publisher": "國家市場監督管理總局、國家標準化管理委員會",
+    "publication_date": "2026-03-31發佈 2027-04-01實施",
+    "type": "standard",
+    "scope": "規定了移動電源的安全要求，描述了相應的試驗方法。適用於額定輸入電壓為交流 220 V 和/或直流不大於 250 V，輸出電壓為直流和/或交流的移動電源。",
+    "applicable_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
+    "source_pdf": "GB47372-2026.pdf",
+    "source_gemini_md": ""
+  },
+  "terms": [
+    {
+      "term_en": "power bank",
+      "term_zh": "移動電源",
+      "definition": "預定能由使用人員攜帶的，由電池或電池組、相應的電路及外殼組成，能提供穩定直流和/或交流輸出，且質量不超過 18 kg 的電源系統。"
+    },
+    {
+      "term_en": "portable power bank",
+      "term_zh": "便攜式移動電源",
+      "definition": "所含的電池或電池組總額定能量不大於 160 Wh 的移動電源。"
+    },
+    {
+      "term_en": "portable energy storage",
+      "term_zh": "便攜式儲能電源",
+      "definition": "所含的電池或電池組總額定能量大於 160 Wh 的移動電源。"
+    },
+    {
+      "term_en": "thermal runaway",
+      "term_zh": "熱失控",
+      "definition": "由放熱反應引起的電池發生不可控溫升的現象。"
+    }
+  ],
+  "tests": [
+    {
+      "id": "GB47372-6.1",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "充電電壓控制 (移動電源)",
+      "name_en": "Charging Voltage Control (Power Bank)",
+      "section": "6.1",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電後",
+          "detail": "按4.2規定充滿電後進行試驗"
+        },
+        "voltage": {
+          "value": "1.2倍過壓",
+          "detail": "施加電壓為 1.2 × n × Uup (電池充電上限電壓)"
+        },
+        "protection": {
+          "value": "正常與單一故障",
+          "detail": "在保護電路正常條件下以及單一故障條件下分別進行"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不漏液",
+        "details": [
+          "觸發過電壓保護，任意一節電池電壓不超過充電上限電壓",
+          "不起火、不爆炸、不漏液"
+        ]
+      },
+      "exemptions": [
+        "使用鎳系電池(鎳氫電池、鎳鎘電池、鋅鎳電池等)的移動電源不適用"
+      ],
+      "related_tests": [],
+      "source_reference": "6.1"
+    },
+    {
+      "id": "GB47372-6.2",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "充電電流控制 (移動電源)",
+      "name_en": "Charging Current Control (Power Bank)",
+      "section": "6.2",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "放完電後",
+          "detail": "按4.3規定放完電後進行試驗"
+        },
+        "condition": {
+          "value": "正常與單一故障",
+          "detail": "在正常工作條件及單一故障條件下分別測量"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不超最大充電電流",
+        "details": [
+          "輸入的充電電流最大值不應超過電池(或電池模塊)的最大充電電流 Icm (或 m × Icm)"
+        ]
+      },
+      "exemptions": [
+        "使用鎳系電池(鎳氫電池、鎳鎘電池、鋅鎳電池等)的移動電源不適用"
+      ],
+      "related_tests": [],
+      "source_reference": "6.2"
+    },
+    {
+      "id": "GB47372-6.3",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "放電電壓控制 (移動電源)",
+      "name_en": "Discharging Voltage Control (Power Bank)",
+      "section": "6.3",
+      "category": "ELEC",
+      "subcategory": "過放電 (Over-discharge)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "放完電後",
+          "detail": "按4.3規定放完電後進行試驗"
+        },
+        "condition": {
+          "value": "正常與單一故障",
+          "detail": "在正常工作條件及單一故障條件下分別測量"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不低於截止電壓",
+        "details": [
+          "電池放電的最低電壓值不應低於電池的放電截止電壓 (Udo)"
+        ]
+      },
+      "exemptions": [
+        "使用鎳系電池(鎳氫電池、鎳鎘電池、鋅鎳電池等)的移動電源不適用"
+      ],
+      "related_tests": [],
+      "source_reference": "6.3"
+    },
+    {
+      "id": "GB47372-6.4",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "放電電流控制 (移動電源)",
+      "name_en": "Discharging Current Control (Power Bank)",
+      "section": "6.4",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電後",
+          "detail": "按4.2規定充滿電後進行試驗"
+        },
+        "condition": {
+          "value": "正常與單一故障",
+          "detail": "在正常工作條件及單一故障條件下分別測量"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不超最大放電電流",
+        "details": [
+          "放電電流最大值不應超過電池(或電池模塊)的最大放電電流 Idm (或 m × Idm)"
+        ]
+      },
+      "exemptions": [
+        "使用鎳系電池(鎳氫電池、鎳鎘電池、鋅鎳電池等)的移動電源不適用"
+      ],
+      "related_tests": [],
+      "source_reference": "6.4"
+    },
+    {
+      "id": "GB47372-6.5",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "充放電溫度控制 (移動電源)",
+      "name_en": "Charge/Discharge Temperature Control (Power Bank)",
+      "section": "6.5",
+      "category": "THERM",
+      "subcategory": "過溫保護 (Over-temperature Protection)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "charge_high": {
+          "value": "Tcm + 4 ℃",
+          "detail": "將空電樣品置於 Tcm + 4 ℃ 中充電"
+        },
+        "charge_low": {
+          "value": "Tcl - 4 ℃",
+          "detail": "將空電樣品置於 Tcl - 4 ℃ 中充電"
+        },
+        "discharge_high": {
+          "value": "Tdm + 4 ℃",
+          "detail": "將滿電樣品置於 Tdm + 4 ℃ 中放電"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "啟動保護並停止充放電",
+        "details": [
+          "在樣品溫度達到設定溫度前，移動電源應啟動溫度保護並停止充電或放電"
+        ]
+      },
+      "exemptions": [
+        "使用鎳系電池(鎳氫電池、鎳鎘電池、鋅鎳電池等)的移動電源不適用"
+      ],
+      "related_tests": [],
+      "source_reference": "6.5"
+    },
+    {
+      "id": "GB47372-6.6",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "端口短路保護 (移動電源)",
+      "name_en": "Port Short Circuit Protection (Power Bank)",
+      "section": "6.6",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電後",
+          "detail": "按4.2規定充滿電後進行試驗"
+        },
+        "resistance": {
+          "value": "80 ± 20 mΩ",
+          "detail": "輸出端口正負極之間、相線零線之間施加 (80±20) mΩ 的短路總電阻"
+        },
+        "duration": {
+          "value": "2 h",
+          "detail": "持續 2 h 後斷開"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不漏液",
+        "details": [
+          "電池最不利位置的最高溫升不應超過 10 K",
+          "移動電源應不起火、不爆炸、不漏液"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.6"
+    },
+    {
+      "id": "GB47372-6.7",
+      "normalized_id": "ELEC-CC",
+      "name_zh": "端口誤操作 (移動電源)",
+      "name_en": "Port Misoperation (Power Bank)",
+      "section": "6.7",
+      "category": "ELEC",
+      "subcategory": "異常充電 (Abnormal Charging)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電後",
+          "detail": "按4.2規定充滿電後進行試驗"
+        },
+        "operation_1": {
+          "value": "反向充電 1 h",
+          "detail": "單向輸出接口如與輸入接口一致，用直流電源按該端口最大輸出施加到輸出端口充電 1 h"
+        },
+        "operation_2": {
+          "value": "端口互連 1 h",
+          "detail": "任一輸出端口與任一輸入端口用連接線連接，持續 1 h"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸、不漏液",
+        "details": [
+          "移動電源應不起火、不爆炸、不漏液"
+        ]
+      },
+      "exemptions": [
+        "交流端口不適用"
+      ],
+      "related_tests": [],
+      "source_reference": "6.7"
+    },
+    {
+      "id": "GB47372-6.10",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "異常禁用 (移動電源)",
+      "name_en": "Abnormal Disable (Power Bank)",
+      "section": "6.10",
+      "category": "ELEC",
+      "subcategory": "欠壓與過壓禁用 (Under/Over-voltage Disable)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "undervoltage": {
+          "value": "0.4 × Udo",
+          "detail": "電池調整至 0.4 × Udo 保持 10 s，維持該電壓進行充放電"
+        },
+        "overvoltage": {
+          "value": "Uup + 0.3 V",
+          "detail": "電池調整至 Uup + 0.3 V 保持 2 s，維持該電壓進行充放電"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不能充放電",
+        "details": [
+          "移動電源應不能充電和放電",
+          "允許短暫或瞬間的單次充電"
+        ]
+      },
+      "exemptions": [
+        "過壓禁用不適用於鈉離子電池"
+      ],
+      "related_tests": [],
+      "source_reference": "6.10"
+    },
+    {
+      "id": "GB47372-7.1",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電 (電池)",
+      "name_en": "Overcharge (Battery)",
+      "section": "7.1",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電後",
+          "detail": "按照標準方法充滿電後"
+        },
+        "current": {
+          "value": "0.2 It",
+          "detail": "用 0.2 It 恆流充電"
+        },
+        "voltage": {
+          "value": "1.3 × Ucl",
+          "detail": "充電至 1.3 × Ucl (充電限制電壓)"
+        },
+        "duration": {
+          "value": "1 h 或 7 h",
+          "detail": "繼續恆壓充電 1 h 停止，或總充電時間達到 7 h 停止試驗"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      },
+      "exemptions": [
+        "不適用於鎳系電池(鎳氫電池、鎳鎘電池、鋅鎳電池等)"
+      ],
+      "related_tests": [],
+      "source_reference": "7.1"
+    },
+    {
+      "id": "GB47372-7.2",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓 (電池)",
+      "name_en": "Crush (Battery)",
+      "section": "7.2",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電後",
+          "detail": "按照標準方法充滿電後"
+        },
+        "apparatus": {
+          "value": "25 mm 半圓柱體",
+          "detail": "直徑 25 mm 的鋼質半圓柱體"
+        },
+        "speed": {
+          "value": "0.1 mm/s",
+          "detail": "擠壓速度為 0.1 mm/s"
+        },
+        "force_hard": {
+          "value": "20 kN",
+          "detail": "硬殼方型電池和圓柱型電池擠壓力為 20 kN ± 1.2 kN"
+        },
+        "force_soft": {
+          "value": "按表5規定",
+          "detail": "軟包方型電池根據寬度按照表5規定的擠壓力進行"
+        },
+        "termination": {
+          "value": "最大壓力或電壓降1/3",
+          "detail": "壓力達到最大值或電池電壓下降三分之一"
+        },
+        "observation": {
+          "value": "5 min",
+          "detail": "停止擠壓並觀察 5 min"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "7.2"
+    },
+    {
+      "id": "GB47372-7.3",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "熱濫用 (電池)",
+      "name_en": "Thermal Abuse (Battery)",
+      "section": "7.3",
+      "category": "THERM",
+      "subcategory": "熱濫用 (Thermal Abuse)",
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電後",
+          "detail": "按照標準方法充滿電後"
+        },
+        "ramp_rate": {
+          "value": "5 ± 2 ℃/min",
+          "detail": "以 (5 ± 2) ℃/min 的溫升速率進行升溫"
+        },
+        "target_temp": {
+          "value": "135 ℃",
+          "detail": "箱內溫度達到 135 ℃ ± 2 ℃"
+        },
+        "duration": {
+          "value": "60 min",
+          "detail": "恆溫並持續 60 min"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "7.3"
+    },
+    {
+      "id": "GB47372-7.4",
+      "normalized_id": "MECH-NAIL",
+      "name_zh": "針刺 (電池)",
+      "name_en": "Nail Penetration (Battery)",
+      "section": "7.4",
+      "category": "MECH",
+      "subcategory": "針刺 (Nail Penetration)",
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電後",
+          "detail": "按照標準方法充滿電後"
+        },
+        "nail": {
+          "value": "4 mm 鋼針",
+          "detail": "直徑為 4 mm 的耐高溫鋼針（如鎢鋼），針尖圓錐角為 14°"
+        },
+        "speed": {
+          "value": "20 ± 1 mm/s",
+          "detail": "以 (20 ± 1) mm/s 的速度貫穿電池"
+        },
+        "observation": {
+          "value": "5 min",
+          "detail": "鋼針停留在電池中，觀察 5 min"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "7.4"
+    },
+    {
+      "id": "GB47372-7.5",
+      "normalized_id": "ELEC-CC",
+      "name_zh": "析鋰 (電池)",
+      "name_en": "Lithium Plating (Battery)",
+      "section": "7.5",
+      "category": "ELEC",
+      "subcategory": "析鋰循環 (Lithium Plating Cycle)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "temp": {
+          "value": "25 ± 5 ℃",
+          "detail": "環境溫度下進行"
+        },
+        "charge": {
+          "value": "0.8 × Icm",
+          "detail": "以 0.8 × Icm 恆流充電至 (Ucl - 0.1 V)"
+        },
+        "discharge": {
+          "value": "1 It",
+          "detail": "以 1 It 恆流放電至 Ude"
+        },
+        "cycles": {
+          "value": "300 次",
+          "detail": "進行 300 次充放電循環，間隔 10 min"
+        },
+        "teardown": {
+          "value": "拆解檢查",
+          "detail": "滿電狀態下進行拆解檢查負極析鋰情況"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無嚴重析鋰",
+        "details": [
+          "尺寸 ≥ 0.2 mm² 的析鋰點數量不超過 5 個",
+          "總析鋰面積不超過 1 mm²"
+        ]
+      },
+      "exemptions": [
+        "僅適用於鋰離子電池",
+        "固態電池等無法分離負極片的電池不適用"
+      ],
+      "related_tests": [],
+      "source_reference": "7.5"
+    },
+    {
+      "id": "GB47372-7.6",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "熱失控 (電池)",
+      "name_en": "Thermal Runaway (Battery)",
+      "section": "7.6",
+      "category": "THERM",
+      "subcategory": "熱失控 (Thermal Runaway)",
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "充滿電後",
+          "detail": "按照標準方法充滿電後"
+        },
+        "trigger": {
+          "value": "加熱觸發",
+          "detail": "啟動加熱裝置，以最大功率持續加熱（表B.1），直至發生熱失控或溫度達到 300 ℃"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "不起火、不爆炸",
+        "details": [
+          "電池應不起火、不爆炸"
+        ]
+      },
+      "exemptions": [
+        "僅適用於便攜式儲能電源用電池",
+        "不適用於鎳系電池"
+      ],
+      "related_tests": [],
+      "source_reference": "7.6, 附錄B"
+    }
+  ]
+}

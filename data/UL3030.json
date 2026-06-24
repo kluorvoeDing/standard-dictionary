@@ -206,7 +206,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無起火、無爆炸、無破裂、無洩漏、結構未鬆脫",
+        "summary": "無起火、無爆炸、無破裂、無洩漏",
         "details": [
           "不得發生爆炸 (E)",
           "不得發生持續燃燒 (F)",
@@ -396,7 +396,7 @@
       "conditions": {
         "impact_energy": {
           "value": "6.78 N-m",
-          "detail": "使用重約 0.535 kg、直徑 50.8 mm 的鋼球，從 1.30 m 高度落下產生 6.78 N-m 之衝擊能量。"
+          "detail": "使用重約 0.535 kg、直徑 50.8 mm 的鋼球，從 1.30 m 高度落下產生 6.78 N-m 之衝擊能量。 對於非頂部表面，鋼球應以繩索懸掛並作為鐘擺擺動，自 1.30 公尺的垂直距離落下撞擊。"
         },
         "surfaces": {
           "value": "所有可能受擊表面 1 次",
@@ -414,7 +414,12 @@
           "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
         ]
       },
-      "exemptions": [],
+      "exemptions": [
+        {
+          "value": "非危險電壓豁免",
+          "detail": "若無人機內部未包含危險操作電壓 (≤ 60V dc) 則可豁免此外殼測試。"
+        }
+      ],
       "related_tests": [
         "UL3030-34.2"
       ],
@@ -457,7 +462,12 @@
           "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
         ]
       },
-      "exemptions": [],
+      "exemptions": [
+        {
+          "value": "非危險電壓豁免",
+          "detail": "若無人機內部未包含危險操作電壓 (≤ 60V dc) 則可豁免此外殼測試。"
+        }
+      ],
       "related_tests": [
         "UL3030-34.1"
       ],
@@ -602,7 +612,12 @@
       "test_objects": [
         "PACK"
       ],
-      "exemptions": [],
+      "exemptions": [
+        {
+          "value": "固定式或防呆電池",
+          "detail": "若電池為固定式（不可拆卸），或具備防止反向連接的防呆設計，則豁免此測試。"
+        }
+      ],
       "conditions": {
         "connection": {
           "value": "極性反接",
@@ -625,7 +640,8 @@
             "id": "AC-EXPL-1",
             "rule_en": "No explosion",
             "rule_zh": "不爆炸"
-          }
+          },
+          "不得釋放火焰或熔融金屬，或產生火災、觸電或人員受傷的危險。"
         ]
       }
     },
@@ -644,6 +660,14 @@
         "monitoring": {
           "value": "監控參數",
           "detail": "充電與飛行過程中必須監控單電池的電壓、電流與溫度。"
+        },
+        "thermal_stabilization": {
+          "value": "充放電至穩定",
+          "detail": "需進行充放電循環直至溫度穩定 (Section 28.4)。"
+        },
+        "removable_batteries": {
+          "value": "備用電池組替換",
+          "detail": "可拆卸電池組需準備兩套，視需要交替使用 (Section 28.5)。"
         }
       },
       "acceptance_criteria": {
@@ -653,7 +677,9 @@
             "id": "AC-LIMIT-1",
             "rule_en": "Cell voltage, current, and temperatures remain within the cell manufacturer's specified operating limits.",
             "rule_zh": "單電池的電壓、電流與溫度應維持在製造商規定的操作極限內。"
-          }
+          },
+          "不得超過 Table 28.1 規定的零組件最高溫度限制。",
+          "使用者可觸及之外部表面不得超過 Table 28.2 規定的溫度限制（例如 70°C）。"
         ]
       }
     }

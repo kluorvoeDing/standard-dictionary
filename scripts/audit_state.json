@@ -1,0 +1,114 @@
+{
+  "SAND2017-6925": {
+    "consecutive_perfect": 2,
+    "graduated": false
+  },
+  "AIS-038": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "AIS-156": {
+    "consecutive_perfect": 0,
+    "graduated": false
+  },
+  "GB-43854": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "GB31241": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "GB38031": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "GB44240": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "GBT-36276": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "IEC62133-2": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "IEC62619": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "UL-1973": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "UL-2054": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "UL-2056": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "UL-2271": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "UL-3030": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "UL-9540": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "UL1642": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "ULC-2580": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "UN38.3": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "UL-9540A": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "UL1642-2022": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "UL2743": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "JISC8714": {
+    "consecutive_perfect": 1,
+    "graduated": false
+  },
+  "GB31241.4": {
+    "consecutive_perfect": 0,
+    "graduated": false
+  },
+  "GB40165": {
+    "consecutive_perfect": 0,
+    "graduated": false
+  },
+  "GB40559": {
+    "consecutive_perfect": 0,
+    "graduated": false
+  },
+  "GB47372": {
+    "consecutive_perfect": 0,
+    "graduated": false
+  },
+  "GB47741": {
+    "consecutive_perfect": 0,
+    "graduated": false
+  }
+}

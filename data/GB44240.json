@@ -177,12 +177,16 @@
         "transition_time": {
           "value": "≤ 30 min",
           "detail": "每兩個溫度之間的轉換時間應不大於 30 min。"
+        },
+        "large_battery_duration": {
+          "value": "大型電池暴露 ≥ 12h",
+          "detail": "大型電池暴露極端溫度時間至少 12 h。"
         }
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸、不漏液",
         "details": [
-          "電池應不起火、不爆炸、不漏液。大型電池暴露極端溫度時間至少 12h。"
+          "不起火、不爆炸、不漏液。"
         ]
       },
       "exemptions": [],
@@ -324,7 +328,7 @@
         },
         "crush_params": {
           "value": "半圓柱體長度大於電池尺寸",
-          "detail": "擠壓工具半圓柱體的長度必須大於電池尺寸。"
+          "detail": "擠壓工具半圓柱體的長度必須大於電池尺寸。 半圓柱體縱軸須經過寬面幾何中心且與電池極耳方向垂直。"
         },
         "response_time": {
           "value": "反應時間 ≤ 100 ms",
@@ -487,12 +491,9 @@
       "acceptance_criteria": {
         "summary": "BMS 動作，不起火、不爆炸",
         "details": [
-          "BMS 應能發現過充並進行保護。"
-        ],
-        "circuit_nuance": {
-          "value": true,
-          "detail": "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
-        }
+          "BMS 應能發現過充並進行保護。",
+          "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -531,12 +532,9 @@
       "acceptance_criteria": {
         "summary": "BMS 動作，不起火、不爆炸",
         "details": [
-          "BMS 應能發現過流並進行保護。"
-        ],
-        "circuit_nuance": {
-          "value": true,
-          "detail": "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
-        }
+          "BMS 應能發現過流並進行保護。",
+          "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -579,12 +577,9 @@
       "acceptance_criteria": {
         "summary": "BMS 動作，不起火、不爆炸",
         "details": [
-          "BMS 應能發現過放並進行保護。"
-        ],
-        "circuit_nuance": {
-          "value": true,
-          "detail": "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
-        }
+          "BMS 應能發現過放並進行保護。",
+          "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
+        ]
       },
       "exemptions": [
         "如果電池製造商與用戶達成協議，過放切斷並不是強制性的。"
@@ -625,12 +620,9 @@
       "acceptance_criteria": {
         "summary": "BMS 動作，不起火、不爆炸",
         "details": [
-          "BMS 應能發現過熱並進行保護。"
-        ],
-        "circuit_nuance": {
-          "value": true,
-          "detail": "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
-        }
+          "BMS 應能發現過熱並進行保護。",
+          "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -662,15 +654,7 @@
         "summary": "不起火、不爆炸",
         "details": [
           "評估電池熱失控特性。"
-        ],
-        "no_fire": {
-          "value": true,
-          "detail": "單體電池不起火。"
-        },
-        "no_explosion": {
-          "value": true,
-          "detail": "單體電池不爆炸。"
-        }
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -729,21 +713,9 @@
       "acceptance_criteria": {
         "summary": "不起火、不爆炸、無破裂",
         "details": [
-          {
-            "id": "AC-FIRE-1",
-            "rule_en": "No fire",
-            "rule_zh": "不起火"
-          },
-          {
-            "id": "AC-EXPL-1",
-            "rule_en": "No explosion",
-            "rule_zh": "不爆炸"
-          },
-          {
-            "id": "AC-RUPT-1",
-            "rule_en": "No rupture",
-            "rule_zh": "不破裂"
-          }
+          "不起火",
+          "不爆炸",
+          "不破裂"
         ]
       }
     },
@@ -760,8 +732,8 @@
       "exemptions": [],
       "conditions": {
         "duration": {
-          "value": "充電 1h",
-          "detail": "反向連接系統中的一個模組或單電池，並充電 1 小時。"
+          "value": "靜置 1h",
+          "detail": "電池組系統應放置 1 h。"
         },
         "procedure": {
           "value": "依標準充放電程序",
@@ -771,21 +743,9 @@
       "acceptance_criteria": {
         "summary": "不起火、不爆炸、無破裂",
         "details": [
-          {
-            "id": "AC-FIRE-1",
-            "rule_en": "No fire",
-            "rule_zh": "不起火"
-          },
-          {
-            "id": "AC-EXPL-1",
-            "rule_en": "No explosion",
-            "rule_zh": "不爆炸"
-          },
-          {
-            "id": "AC-RUPT-1",
-            "rule_en": "No rupture",
-            "rule_zh": "不破裂"
-          }
+          "不起火",
+          "不爆炸",
+          "不破裂"
         ]
       }
     },
@@ -813,11 +773,7 @@
       "acceptance_criteria": {
         "summary": "不擊穿、無飛弧",
         "details": [
-          {
-            "id": "AC-BD-1",
-            "rule_en": "No breakdown or flashover",
-            "rule_zh": "不應發生擊穿或飛弧。"
-          }
+          "不應發生擊穿或飛弧。"
         ]
       }
     }
@@ -851,6 +807,6 @@
       "All test parameters mapped directly from authoritative OCR text and verified with standardized summary.",
       "Identified 18 major test entries covering electrical, environmental, and thermal requirements."
     ],
-    "total_test_entries": 18
+    "total_test_entries": 21
   }
 }

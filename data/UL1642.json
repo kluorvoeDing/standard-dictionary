@@ -352,66 +352,12 @@
           "技術人員可更換電池：若起火或爆炸，使用須限制於受保護應用 (Section 5.1.2)"
         ]
       },
-      "exemptions": [
-        "未依本測試評估，且容量大於 300 mAh 的軟包電芯，須符合 Section 14A 之圓柱擠壓測試 (Round Bar Crush Test) (Section 14.2 Exception No. 2)。"
-      ],
+      "exemptions": [],
       "related_tests": [
         "UL1642-T13"
       ],
       "source_reference": "Section 14.1–14.4",
       "original_text_snippet": "A test sample battery is to be placed on a flat surface. A 15.8±0.1-mm (5/8±0.004-in) diameter bar is to be placed across the center of the sample. A 9.1±0.46-kg (20±1-lb) weight is to be dropped from a height of 610±25 mm (24±1 in) onto the sample."
-    },
-    {
-      "id": "UL1642-T14A",
-      "normalized_id": "MECH-CRUSH-ROUND",
-      "name_zh": "圓柱擠壓測試 (Round Bar Crush Test)",
-      "name_en": "Round Bar Crush Test",
-      "section": "14A",
-      "category": "MECH",
-      "subcategory": "圓柱擠壓",
-      "test_objects": [
-        "CELL"
-      ],
-      "conditions": {
-        "applicability": {
-          "value": "容量 >300mAh 之軟包電芯",
-          "detail": "適用於未進行衝擊測試 (Section 14) 且容量大於 300 mAh 的軟包電芯 (Section 14A.1)。"
-        },
-        "bar_diameter": {
-          "value": "25±1 mm 鋼製圓柱",
-          "detail": "將直徑 25±1 mm (1±0.039 in) 的鋼製圓柱置於平放的樣品上，邊緣與電芯主體上緣對齊，長軸垂直於極耳，且兩側各超出樣品至少 5 mm (Section 14A.3)。"
-        },
-        "preload": {
-          "value": "0.4–0.6 N/cm²",
-          "detail": "施加擠壓力前，須先施加 0.4–0.6 N/cm² (0.58–0.87 psi) 的預載壓力，隨後測量樣品厚度 (公差 ±0.1 mm) (Section 14A.3, 14A.5)。"
-        },
-        "crush_speed": {
-          "value": "≤0.1 mm/s",
-          "detail": "擠壓板的移動速度不得大於 0.1 mm/s (0.004 in/s) (Section 14A.6)。"
-        },
-        "termination": {
-          "value": "變形 13±1% 或達規定壓力",
-          "detail": "當電芯變形量達厚度的 13±1% (相對於預載後厚度)，或擠壓力達到 Table 14A.1 規定的力值 (依電芯寬度從 1 kN 至 13 kN 不等) 時，停止擠壓並保持 30 秒 (Section 14A.6)。"
-        },
-        "sample_size": {
-          "value": "5 顆（雙極耳需 10 顆）",
-          "detail": "一次電池：滿充 5 + 半放電 5。二次電池：滿充 5 + 循環後 5。若正負極耳在兩側，兩側均須測試，每側使用不同樣品 (Section 14A.4)。"
-        }
-      },
-      "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
-        "details": [
-          "所有樣品不得爆炸或起火 (Section 14A.7)",
-          "技術人員可更換電池：若起火或爆炸，使用須限制於受保護應用 (Section 5.1.2)"
-        ]
-      },
-      "exemptions": [],
-      "related_tests": [
-        "UL1642-T13",
-        "UL1642-T14"
-      ],
-      "source_reference": "Section 14A.1–14A.7",
-      "original_text_snippet": "The sample shall be positioned on a flat surface with a 25 ±1 mm (1 ±0.039 in) diameter steel round bar placed on top of the sample. ... The displacement of the crush plate shall be stopped and held for 30 s once the cell deformation reaches 13 ±1% of the cell thickness... or the crush force reaches the force value in Table 14A.1, whichever comes first."
     },
     {
       "id": "UL1642-T15",
