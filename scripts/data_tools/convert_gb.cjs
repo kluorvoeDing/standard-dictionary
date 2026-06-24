@@ -31,7 +31,7 @@ if (fs.existsSync(catalogPath)) {
   catalog.forEach(doc => {
     if (doc.document_id.startsWith('GB')) {
       if (doc.display_name) doc.display_name = converter(doc.display_name);
-      if (doc.full_name_zh) doc.full_name_zh = converter(doc.full_name_zh);
+      if (doc.full_name) doc.full_name = converter(doc.full_name);
       if (doc.publisher) doc.publisher = converter(doc.publisher);
       if (doc.scope) doc.scope = converter(doc.scope);
       modified = true;
