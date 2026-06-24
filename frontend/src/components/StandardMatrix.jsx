@@ -5,10 +5,10 @@ import useIsMobile from '../hooks/useIsMobile';
 const getApplication = (docId) => {
   if (docId === 'GB38031' || docId === 'ULC-2580' || docId === 'AIS-038') return '電動汽車 (EV)';
   if (docId === 'GB43854') return '電動自行車 (E-Bike)';
-  if (docId === 'GB31241' || docId === 'IEC62133-2') return '便攜式電子 (Portable)';
-  if (docId === 'UL-2271' || docId === 'AIS-156') return '輕型電動車 (LEV)';
+  if (docId === 'GB31241' || docId === 'GB31241.4' || docId === 'GB47372' || docId === 'IEC62133-2') return '便攜式電子 (Portable)';
+  if (docId === 'UL-2271' || docId === 'AIS-156' || docId === 'GB40559' || docId === 'GB47741') return '輕型電動車 (LEV)';
   if (docId === 'GB44240' || docId === 'GBT-36276' || docId === 'UL-9540A' || docId === 'SAND2017-6925' || docId === 'UL-1973') return '儲能系統 (ESS)';
-  if (docId === 'IEC62619') return '工業應用 (Industrial)';
+  if (docId === 'IEC62619' || docId === 'GB40165') return '工業應用 (Industrial)';
   if (docId === 'UL-3030') return '無人機 (UAS)';
   if (docId === 'UN38.3') return '運輸安全 (Transport)';
   return '一般應用 (General)';
