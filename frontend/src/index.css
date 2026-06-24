@@ -283,23 +283,60 @@ button {
   background: rgba(30, 41, 59, 0.7);
 }
 
-/* ───────── Standard Matrix (應用領域導覽) ───────── */
-.sm-chip {
-  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+/* ───────── Standard Domain Browser (應用領域導覽) ───────── */
+.sm-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 0.9rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
-.sm-chip:hover {
-  border-color: var(--c-solid);
-  transform: translateY(-1px);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+.sm-card:hover { border-color: var(--border-hover); box-shadow: var(--shadow-md); }
+
+.sm-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  width: 100%;
+  text-align: left;
+  padding: 0.45rem 0.5rem;
+  border-radius: 8px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, transform 0.1s ease;
 }
-.sm-chip:active { transform: translateY(0); }
-.sm-chip:focus-visible {
-  outline: 2px solid var(--c-solid);
-  outline-offset: 2px;
+.sm-row:hover { background: var(--row-hover); }
+.sm-row.is-selected { background: var(--c-fill); border-color: var(--c-solid); }
+.sm-row:active { transform: translateY(1px); }
+.sm-row:focus-visible { outline: 2px solid var(--c-solid); outline-offset: 2px; }
+
+.sm-filter {
+  padding: 0.32rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-panel);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
-.sm-table tbody tr:hover td { background: var(--row-hover); }
+.sm-filter:hover { border-color: var(--accent-color); color: var(--text-primary); }
+.sm-filter.is-active {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+  font-weight: 600;
+}
+.sm-filter:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
 
 @media (prefers-reduced-motion: reduce) {
-  .sm-chip { transition: none; }
-  .sm-chip:hover { transform: none; }
+  .sm-card, .sm-row, .sm-filter { transition: none; }
+  .sm-row:active { transform: none; }
 }

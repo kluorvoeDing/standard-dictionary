@@ -14,7 +14,7 @@ const getApplication = (docId) => {
   return '一般應用 (General)';
 };
 
-// Map raw objects to major rows
+// Map raw objects to major sample levels
 const getMajorLevel = (raw) => {
   const upper = raw.toUpperCase();
   if (upper.includes('CELL')) return 'Cell';
@@ -26,77 +26,29 @@ const getMajorLevel = (raw) => {
 
 const MAJOR_LEVELS = ['Cell', 'Module', 'Pack', 'System', 'Other'];
 
+// Domain display order (most specific applications first, General last)
+const APP_ORDER = [
+  '運輸安全 (Transport)',
+  '便攜式電子 (Portable)',
+  '電動自行車 (E-Bike)',
+  '輕型電動車 (LEV)',
+  '電動汽車 (EV)',
+  '無人機 (UAS)',
+  '儲能系統 (ESS)',
+  '工業應用 (Industrial)',
+  '一般應用 (General)',
+];
+
 export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, setIsComparing, setSelectedDocs }) {
   const [activeInfoNode, setActiveInfoNode] = useState(null);
+  const [levelFilter, setLevelFilter] = useState('ALL');
   const isMobile = useIsMobile();
 
-  const { applications, matrix, count } = useMemo(() => {
-    // 1. Get unique latest standards
-    const baseMap = new Map();
-    catalog.forEach(doc => {
-      const baseId = doc.base_standard_id || doc.document_id;
-      if (!baseMap.has(baseId)) {
-        baseMap.set(baseId, doc);
-      } else {
-        const existing = baseMap.get(baseId);
-        if (doc.is_latest && !existing.is_latest) {
-          baseMap.set(baseId, doc);
-        } else if (doc.publication_date > existing.publication_date) {
-          baseMap.set(baseId, doc);
-        }
-      }
-    });
-
-    const uniqueDocs = Array.from(baseMap.values());
-    
-    // 2. Find all applications
-    const appsSet = new Set();
-    uniqueDocs.forEach(doc => {
-      const baseId = doc.base_standard_id || doc.document_id;
-      appsSet.add(getApplication(baseId));
-    });
-    // Sort applications to put General last, and others alphabetically or logically
-    const appOrder = ['運輸安全 (Transport)', '一般應用 (General)', '便攜式電子 (Portable)', '無人機 (UAS)', '輕型電動車 (LEV)', '電動自行車 (E-Bike)', '工業應用 (Industrial)', '電動汽車 (EV)', '儲能系統 (ESS)'];
-    const applications = Array.from(appsSet).sort((a, b) => {
-      const indexA = appOrder.indexOf(a);
-      const indexB = appOrder.indexOf(b);
-      if (indexA !== -1 && indexB !== -1) return indexA - indexB;
-      if (indexA !== -1) return -1;
-      if (indexB !== -1) return 1;
-      return a.localeCompare(b);
-    });
-
-    // 3. Build Matrix: level -> app -> docs[]
-    const mat = {};
-    MAJOR_LEVELS.forEach(lvl => {
-      mat[lvl] = {};
-      applications.forEach(app => {
-        mat[lvl][app] = [];
-      });
-    });
-
-    uniqueDocs.forEach(doc => {
-      const baseId = doc.base_standard_id || doc.document_id;
-      const app = getApplication(baseId);
-      const levels = doc.available_objects || [];
-      
-      const distinctLevels = new Set(levels.map(getMajorLevel));
-      
-      distinctLevels.forEach(lvl => {
-        if (mat[lvl] && mat[lvl][app]) {
-          mat[lvl][app].push(doc);
-        }
-      });
-    });
-
-    return { applications, matrix: mat, count: uniqueDocs.length };
-  }, [catalog]);
-
   const getOrgColor = (baseId) => {
-    if (baseId.startsWith('GB')) return { key: 'gb', label: '中國 GB', solid: 'var(--org-gb-solid)', text: 'var(--org-gb-text)', fill: 'var(--org-gb-fill)', border: 'var(--org-gb-border)' };
-    if (baseId.startsWith('UL')) return { key: 'ul', label: '北美 UL', solid: 'var(--org-ul-solid)', text: 'var(--org-ul-text)', fill: 'var(--org-ul-fill)', border: 'var(--org-ul-border)' };
-    if (baseId.startsWith('IEC') || baseId.startsWith('UN')) return { key: 'intl', label: '國際 IEC · UN', solid: 'var(--org-intl-solid)', text: 'var(--org-intl-text)', fill: 'var(--org-intl-fill)', border: 'var(--org-intl-border)' };
-    return { key: 'other', label: '其他', solid: 'var(--org-other-solid)', text: 'var(--org-other-text)', fill: 'var(--org-other-fill)', border: 'var(--org-other-border)' };
+    if (baseId.startsWith('GB')) return { solid: 'var(--org-gb-solid)', text: 'var(--org-gb-text)', fill: 'var(--org-gb-fill)', border: 'var(--org-gb-border)' };
+    if (baseId.startsWith('UL')) return { solid: 'var(--org-ul-solid)', text: 'var(--org-ul-text)', fill: 'var(--org-ul-fill)', border: 'var(--org-ul-border)' };
+    if (baseId.startsWith('IEC') || baseId.startsWith('UN')) return { solid: 'var(--org-intl-solid)', text: 'var(--org-intl-text)', fill: 'var(--org-intl-fill)', border: 'var(--org-intl-border)' };
+    return { solid: 'var(--org-other-solid)', text: 'var(--org-other-text)', fill: 'var(--org-other-fill)', border: 'var(--org-other-border)' };
   };
 
   const LEGEND = [
@@ -106,101 +58,143 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
     { label: '其他', solid: 'var(--org-other-solid)' },
   ];
 
+  // Group unique (latest) standards by application domain
+  const { domains, levels, count } = useMemo(() => {
+    const baseMap = new Map();
+    catalog.forEach(doc => {
+      const baseId = doc.base_standard_id || doc.document_id;
+      if (!baseMap.has(baseId)) {
+        baseMap.set(baseId, doc);
+      } else {
+        const existing = baseMap.get(baseId);
+        if (doc.is_latest && !existing.is_latest) baseMap.set(baseId, doc);
+        else if (doc.publication_date > existing.publication_date) baseMap.set(baseId, doc);
+      }
+    });
+
+    const uniqueDocs = Array.from(baseMap.values());
+    const levelsPresent = new Set();
+    const groupMap = new Map();
+
+    uniqueDocs.forEach(doc => {
+      const baseId = doc.base_standard_id || doc.document_id;
+      const app = getApplication(baseId);
+      const docLevelSet = new Set((doc.available_objects || []).map(getMajorLevel));
+      const lvls = MAJOR_LEVELS.filter(l => docLevelSet.has(l));
+      lvls.forEach(l => levelsPresent.add(l));
+      if (!groupMap.has(app)) groupMap.set(app, []);
+      groupMap.get(app).push({ doc, baseId, levels: lvls });
+    });
+
+    const domains = Array.from(groupMap.entries())
+      .map(([app, items]) => ({ app, items: items.sort((a, b) => a.baseId.localeCompare(b.baseId)) }))
+      .sort((a, b) => {
+        const ia = APP_ORDER.indexOf(a.app);
+        const ib = APP_ORDER.indexOf(b.app);
+        if (ia !== -1 && ib !== -1) return ia - ib;
+        if (ia !== -1) return -1;
+        if (ib !== -1) return 1;
+        return a.app.localeCompare(b.app);
+      });
+
+    const levels = MAJOR_LEVELS.filter(l => levelsPresent.has(l));
+    return { domains, levels, count: uniqueDocs.length };
+  }, [catalog]);
+
   return (
-    <div style={{ padding: isMobile ? '1rem 0.75rem' : '2rem', paddingTop: isMobile ? '3.5rem' : '1.5rem', height: '100%', overflowY: 'auto', backgroundColor: 'var(--bg-color)', color: 'var(--text-primary)', position: 'relative' }}>
-      <div style={{ marginBottom: '1.25rem', display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem' }}>
-        <div>
-          <h2 style={{ fontSize: isMobile ? '1.5rem' : '1.85rem', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: '0.45rem', color: 'var(--text-primary)' }}>
-            標準應用領域導覽
-          </h2>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', margin: 0 }}>
-            點擊標準加入比對，選滿 2 份開始橫向對比。
-            <span style={{ color: 'var(--text-muted)', marginLeft: '0.5rem' }}>共 {count} 份標準</span>
-          </p>
+    <div style={{ padding: isMobile ? '1rem 0.85rem' : '2rem 2.25rem', paddingTop: isMobile ? '3.5rem' : '1.75rem', height: '100%', overflowY: 'auto', backgroundColor: 'var(--bg-color)', color: 'var(--text-primary)', position: 'relative' }}>
+      {/* Heading + legend */}
+      <div style={{ maxWidth: '1320px', margin: '0 auto' }}>
+        <div style={{ marginBottom: '1.1rem', display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem' }}>
+          <div>
+            <h2 style={{ fontSize: isMobile ? '1.5rem' : '1.9rem', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: '0.45rem', color: 'var(--text-primary)' }}>
+              標準應用領域導覽
+            </h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', margin: 0 }}>
+              依應用領域瀏覽，點擊標準加入比對，選滿 2 份開始橫向對比。
+              <span style={{ color: 'var(--text-muted)', marginLeft: '0.5rem' }}>共 {count} 份標準</span>
+            </p>
+          </div>
+          <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.9rem', alignItems: 'center' }}>
+            {LEGEND.map(l => (
+              <span key={l.label} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}>
+                <span style={{ width: '9px', height: '9px', borderRadius: '3px', backgroundColor: l.solid, flexShrink: 0 }} />
+                {l.label}
+              </span>
+            ))}
+          </div>
         </div>
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.9rem', alignItems: 'center' }}>
-          {LEGEND.map(l => (
-            <span key={l.label} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}>
-              <span style={{ width: '9px', height: '9px', borderRadius: '3px', backgroundColor: l.solid, flexShrink: 0 }} />
-              {l.label}
-            </span>
+
+        {/* Level filter */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center', marginBottom: '1.4rem' }}>
+          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginRight: '0.2rem' }}>樣品層級</span>
+          {['ALL', ...levels].map(lv => (
+            <button
+              key={lv}
+              className={`sm-filter${levelFilter === lv ? ' is-active' : ''}`}
+              onClick={() => setLevelFilter(lv)}
+            >
+              {lv === 'ALL' ? '全部' : lv}
+            </button>
           ))}
         </div>
-      </div>
 
-      <div style={{ overflowX: 'auto', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-panel)', boxShadow: 'var(--shadow-sm)', paddingBottom: selectedDocs.length >= 2 ? '88px' : '0' }}>
-        <table className="sm-table" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
-          <thead>
-            <tr>
-              <th style={{ padding: '0.8rem 0.9rem', borderBottom: '1px solid var(--border-color)', borderRight: '1px solid var(--border-color)', position: 'sticky', top: 0, left: 0, zIndex: 10, backgroundColor: 'var(--bg-panel)', minWidth: '84px', fontSize: '0.74rem', fontWeight: 600, color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>
-                層級 \ 應用
-              </th>
-              {applications.map(app => (
-                <th key={app} style={{ padding: '0.8rem 0.9rem', borderBottom: '1px solid var(--border-color)', position: 'sticky', top: 0, zIndex: 5, backgroundColor: 'var(--bg-panel)', fontWeight: 600, color: 'var(--text-secondary)', whiteSpace: 'nowrap', fontSize: '0.82rem' }}>
-                  {app}
-                </th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>
-            {MAJOR_LEVELS.map((lvl) => {
-              const isRowEmpty = applications.every(app => matrix[lvl][app].length === 0);
-              if (isRowEmpty) return null;
+        {/* Domain cards */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
+          gap: '1rem',
+          alignItems: 'start',
+          paddingBottom: selectedDocs.length >= 2 ? '92px' : '0.5rem',
+        }}>
+          {domains.map(({ app, items }) => {
+            const visible = levelFilter === 'ALL' ? items : items.filter(it => it.levels.includes(levelFilter));
+            if (visible.length === 0) return null;
+            return (
+              <section key={app} className="sm-card">
+                <header style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '0.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.6rem', marginBottom: '0.35rem' }}>
+                  <h3 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)' }}>{app}</h3>
+                  <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)', whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums' }}>{visible.length} 份</span>
+                </header>
 
-              return (
-                <tr key={lvl}>
-                  <th style={{ padding: '0.85rem 0.9rem', borderBottom: '1px solid var(--border-color)', borderRight: '1px solid var(--border-color)', position: 'sticky', left: 0, zIndex: 5, backgroundColor: 'var(--bg-panel)', color: 'var(--text-primary)', fontWeight: 600, fontSize: '0.85rem', whiteSpace: 'nowrap', verticalAlign: 'top' }}>
-                    {lvl}
-                  </th>
-                  {applications.map(app => (
-                    <td key={app} style={{ padding: '0.6rem 0.65rem', borderBottom: '1px solid var(--border-color)', borderRight: '1px solid var(--border-color)', verticalAlign: 'top' }}>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
-                        {matrix[lvl][app].map(doc => {
-                          const baseId = doc.base_standard_id || doc.document_id;
-                          const isSelected = selectedDocs.includes(baseId);
-                          const colors = getOrgColor(baseId);
-
-                          return (
-                            <button
-                              key={baseId}
-                              className="sm-chip"
-                              onClick={() => {
-                                toggleDocument(baseId);
-                                setActiveInfoNode({ ...doc, baseId, colors });
-                              }}
-                              title={doc.display_name || doc.full_name}
-                              style={{
-                                '--c-solid': colors.solid,
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '0.28rem',
-                                padding: '0.3rem 0.6rem',
-                                borderRadius: '8px',
-                                border: `1px solid ${isSelected ? colors.solid : colors.border}`,
-                                background: isSelected ? colors.solid : colors.fill,
-                                color: isSelected ? '#fff' : colors.text,
-                                fontSize: '0.78rem',
-                                fontWeight: isSelected ? 700 : 600,
-                                letterSpacing: '0.01em',
-                                fontVariantNumeric: 'tabular-nums',
-                                cursor: 'pointer',
-                                whiteSpace: 'nowrap',
-                                boxShadow: isSelected ? '0 1px 6px rgba(0,0,0,0.16)' : 'none',
-                              }}
-                            >
-                              {isSelected && <span style={{ fontSize: '0.7rem', lineHeight: 1 }}>✓</span>}
-                              {baseId}
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </td>
-                  ))}
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+                {visible.map(({ doc, baseId, levels: docLevels }) => {
+                  const isSelected = selectedDocs.includes(baseId);
+                  const colors = getOrgColor(baseId);
+                  return (
+                    <button
+                      key={baseId}
+                      className={`sm-row${isSelected ? ' is-selected' : ''}`}
+                      style={{ '--c-solid': colors.solid, '--c-fill': colors.fill }}
+                      title={doc.display_name || doc.full_name}
+                      onClick={() => {
+                        toggleDocument(baseId);
+                        setActiveInfoNode({ ...doc, baseId, colors });
+                      }}
+                    >
+                      <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0 }}>
+                        <span style={{ width: '8px', height: '8px', borderRadius: '2.5px', backgroundColor: colors.solid, flexShrink: 0 }} />
+                        <span style={{ fontSize: '0.84rem', fontWeight: 600, letterSpacing: '0.01em', fontVariantNumeric: 'tabular-nums', color: isSelected ? colors.solid : 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          {baseId}
+                        </span>
+                      </span>
+                      <span style={{ display: 'flex', gap: '0.25rem', flexShrink: 0 }}>
+                        {isSelected ? (
+                          <span style={{ color: colors.solid, fontWeight: 700, fontSize: '0.85rem', lineHeight: 1 }}>✓</span>
+                        ) : (
+                          docLevels.map(lv => (
+                            <span key={lv} style={{ fontSize: '0.62rem', padding: '0.1rem 0.34rem', borderRadius: '4px', backgroundColor: 'var(--bg-color)', color: 'var(--text-muted)', border: '1px solid var(--border-color)', fontWeight: 500, whiteSpace: 'nowrap' }}>
+                              {lv}
+                            </span>
+                          ))
+                        )}
+                      </span>
+                    </button>
+                  );
+                })}
+              </section>
+            );
+          })}
+        </div>
       </div>
 
       {/* Info Panel Overlay */}
@@ -339,6 +333,9 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
         @keyframes slideUp {
           from { transform: translate(-50%, 50px); opacity: 0; }
           to { transform: translate(-50%, 0); opacity: 1; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          [style*="slideIn"], [style*="slideUp"] { animation: none !important; }
         }
       `}</style>
     </div>
