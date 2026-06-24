@@ -160,16 +160,17 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                 {visible.map(({ doc, baseId, levels: docLevels }) => {
                   const isSelected = selectedDocs.includes(baseId);
                   const colors = getOrgColor(baseId);
+                  const select = () => toggleDocument(baseId);
                   return (
-                    <button
+                    <div
                       key={baseId}
                       className={`sm-row${isSelected ? ' is-selected' : ''}`}
                       style={{ '--c-solid': colors.solid, '--c-fill': colors.fill }}
                       title={doc.display_name || doc.full_name}
-                      onClick={() => {
-                        toggleDocument(baseId);
-                        setActiveInfoNode({ ...doc, baseId, colors });
-                      }}
+                      role="button"
+                      tabIndex={0}
+                      onClick={select}
+                      onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(); } }}
                     >
                       <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0 }}>
                         <span style={{ width: '8px', height: '8px', borderRadius: '2.5px', backgroundColor: colors.solid, flexShrink: 0 }} />
@@ -177,7 +178,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                           {baseId}
                         </span>
                       </span>
-                      <span style={{ display: 'flex', gap: '0.25rem', flexShrink: 0 }}>
+                      <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', flexShrink: 0 }}>
                         {isSelected ? (
                           <span style={{ color: colors.solid, fontWeight: 700, fontSize: '0.85rem', lineHeight: 1 }}>✓</span>
                         ) : (
@@ -187,8 +188,18 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                             </span>
                           ))
                         )}
+                        <button
+                          type="button"
+                          className="sm-info"
+                          style={{ '--c-solid': colors.solid, '--c-fill': colors.fill }}
+                          aria-label={`查看 ${baseId} 詳細資訊`}
+                          title="查看詳細資訊"
+                          onClick={(e) => { e.stopPropagation(); setActiveInfoNode({ ...doc, baseId, colors }); }}
+                        >
+                          ⓘ
+                        </button>
                       </span>
-                    </button>
+                    </div>
                   );
                 })}
               </section>
@@ -197,19 +208,33 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
         </div>
       </div>
 
-      {/* Info Panel Overlay */}
+      {/* Info Modal */}
       {activeInfoNode && (
-        <div style={{
-          position: 'fixed',
-          backgroundColor: 'var(--bg-panel)',
-          border: '1px solid var(--border-color)',
-          padding: '1.5rem',
-          boxShadow: 'var(--shadow-lg)',
-          zIndex: 10,
-          animation: 'slideIn 0.3s ease-out',
-          ...(isMobile
-            ? { left: 0, right: 0, bottom: selectedDocs.length >= 2 ? '88px' : 0, width: 'auto', borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0' }
-            : { bottom: selectedDocs.length >= 2 ? '100px' : '2rem', right: '2rem', width: '320px', borderRadius: 'var(--radius-lg)' })
+        <div
+          onClick={() => setActiveInfoNode(null)}
+          style={{
+            position: 'fixed', inset: 0,
+            backgroundColor: 'rgba(0,0,0,0.45)',
+            backdropFilter: 'blur(3px)',
+            zIndex: 1000,
+            display: 'flex',
+            alignItems: isMobile ? 'flex-end' : 'center',
+            justifyContent: 'center',
+            padding: isMobile ? 0 : '2rem',
+            animation: 'fadeIn 0.2s ease-out'
+          }}
+        >
+        <div
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            backgroundColor: 'var(--bg-panel)',
+            border: '1px solid var(--border-color)',
+            padding: '1.5rem',
+            boxShadow: 'var(--shadow-lg)',
+            animation: 'slideIn 0.25s ease-out',
+            ...(isMobile
+              ? { width: '100%', borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0' }
+              : { width: '360px', maxWidth: '100%', borderRadius: 'var(--radius-lg)' })
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <h3 style={{ margin: 0, color: 'var(--text-primary)', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -245,6 +270,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
               </div>
             )}
           </div>
+        </div>
         </div>
       )}
 
@@ -330,12 +356,16 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
           from { transform: translateY(20px); opacity: 0; }
           to { transform: translateY(0); opacity: 1; }
         }
+        @keyframes fadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
+        }
         @keyframes slideUp {
           from { transform: translate(-50%, 50px); opacity: 0; }
           to { transform: translate(-50%, 0); opacity: 1; }
         }
         @media (prefers-reduced-motion: reduce) {
-          [style*="slideIn"], [style*="slideUp"] { animation: none !important; }
+          [style*="slideIn"], [style*="slideUp"], [style*="fadeIn"] { animation: none !important; }
         }
       `}</style>
     </div>

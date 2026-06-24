@@ -1,5 +1,19 @@
 import React, { useState } from 'react';
 
+// Data is not always clean: some standards (AIS-038, ULC2580, UL3030, …) carry
+// structured objects like { id, rule_zh, rule_en } inside arrays/values that are
+// otherwise strings. Rendering an object as a React child throws and blanks the
+// whole app, so coerce anything non-primitive into readable text.
+function toText(v) {
+  if (v == null) return '';
+  if (typeof v === 'string' || typeof v === 'number') return String(v);
+  if (Array.isArray(v)) return v.map(toText).filter(Boolean).join('；');
+  if (typeof v === 'object') {
+    return v.rule_zh || v.rule_en || v.value || v.detail || v.text || v.name_zh || '';
+  }
+  return String(v);
+}
+
 function SingleCard({ testRecord }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -75,7 +89,7 @@ function SingleCard({ testRecord }) {
             }}>
               {Object.entries(conditions).map(([key, item]) => (
                 <li key={key}>
-                  {item.value}
+                  {toText(item && typeof item === 'object' ? item.value : item)}
                 </li>
               ))}
             </ul>
@@ -86,12 +100,12 @@ function SingleCard({ testRecord }) {
         {acceptance_criteria && (
           <div style={{ borderTop: '1px dashed var(--border-color)', paddingTop: '0.5rem', marginTop: '0.25rem' }}>
             <strong style={{ color: 'var(--success-color)', fontSize: '0.75rem' }}>判定</strong>
-            <div style={{ 
-              color: 'var(--text-primary)', fontSize: '0.8rem', marginTop: '0.25rem', 
+            <div style={{
+              color: 'var(--text-primary)', fontSize: '0.8rem', marginTop: '0.25rem',
               display: '-webkit-box', WebkitLineClamp: 3, WebkitBoxOrient: 'vertical', overflow: 'hidden',
               wordBreak: 'break-word', whiteSpace: 'normal', lineHeight: '1.4'
             }}>
-              {acceptance_criteria.summary}
+              {toText(acceptance_criteria.summary)}
             </div>
           </div>
         )}
@@ -170,8 +184,8 @@ function SingleCard({ testRecord }) {
                   <ul style={{ paddingLeft: '1.5rem', color: 'var(--text-primary)', display: 'flex', flexDirection: 'column', gap: '0.75rem', wordBreak: 'break-word' }}>
                     {Object.entries(conditions).map(([key, item]) => (
                       <li key={key}>
-                        <strong>{item.value}</strong>
-                        {item.detail && <div style={{ color: 'var(--text-secondary)', marginTop: '0.25rem', lineHeight: '1.6' }}>{item.detail}</div>}
+                        <strong>{toText(item && typeof item === 'object' ? item.value : item)}</strong>
+                        {item && typeof item === 'object' && item.detail && <div style={{ color: 'var(--text-secondary)', marginTop: '0.25rem', lineHeight: '1.6' }}>{toText(item.detail)}</div>}
                       </li>
                     ))}
                   </ul>
@@ -183,11 +197,11 @@ function SingleCard({ testRecord }) {
                 <div>
                   <strong style={{ color: 'var(--success-color)', fontSize: '1rem', display: 'block', marginBottom: '0.5rem' }}>判定標準 (Criteria)</strong>
                   <div style={{ backgroundColor: 'var(--success-bg)', padding: '1rem', borderRadius: 'var(--radius-md)', color: 'var(--text-primary)' }}>
-                    <div style={{ fontWeight: '600', marginBottom: '0.5rem' }}>{acceptance_criteria.summary}</div>
+                    <div style={{ fontWeight: '600', marginBottom: '0.5rem' }}>{toText(acceptance_criteria.summary)}</div>
                     {acceptance_criteria.details && acceptance_criteria.details.length > 0 && (
                       <ul style={{ paddingLeft: '1.5rem', color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '0.25rem', wordBreak: 'break-word' }}>
                         {acceptance_criteria.details.map((detail, idx) => (
-                          <li key={idx}>{detail}</li>
+                          <li key={idx}>{toText(detail)}</li>
                         ))}
                       </ul>
                     )}
@@ -202,7 +216,7 @@ function SingleCard({ testRecord }) {
                   <div style={{ backgroundColor: 'var(--warning-bg)', padding: '1rem', borderRadius: 'var(--radius-md)' }}>
                     <ul style={{ paddingLeft: '1.5rem', margin: 0, color: 'var(--text-secondary)', wordBreak: 'break-word' }}>
                       {exemptions.map((ex, idx) => (
-                        <li key={idx} style={{ marginBottom: '0.25rem' }}>{ex}</li>
+                        <li key={idx} style={{ marginBottom: '0.25rem' }}>{toText(ex)}</li>
                       ))}
                     </ul>
                   </div>

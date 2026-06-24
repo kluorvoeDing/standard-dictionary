@@ -4,6 +4,33 @@ import StandardMatrix from './components/StandardMatrix';
 import AiConsultantChat from './components/AiConsultantChat';
 import './index.css';
 
+// Some data files still use the legacy schema (`test_items` / `document_info`).
+// Normalize them to the current schema (`tests` / `document`) so every consumer
+// can rely on a single shape regardless of when the file was generated.
+function normalizeStandardData(data) {
+  if (!data || typeof data !== 'object') return data;
+  const out = { ...data };
+
+  if (!Array.isArray(out.tests) && Array.isArray(out.test_items)) {
+    out.tests = out.test_items;
+  }
+
+  if (!out.document && out.document_info) {
+    const di = out.document_info;
+    out.document = {
+      id: di.standard_id,
+      short_name: di.standard_id,
+      full_name_zh: di.title_zh,
+      full_name: di.title_en,
+      scope: di.scope,
+      publication_date: di.release_date,
+      publisher: di.publisher,
+    };
+  }
+
+  return out;
+}
+
 function App() {
   const [catalog, setCatalog] = useState([]);
   const [selectedDocs, setSelectedDocs] = useState([]);
@@ -47,7 +74,7 @@ function App() {
             .then(data => {
               setTestsData(prev => ({
                 ...prev,
-                [doc.document_id]: data
+                [doc.document_id]: normalizeStandardData(data)
               }));
             })
             .catch(err => console.error("Error loading JSON for", doc.document_id, err));
