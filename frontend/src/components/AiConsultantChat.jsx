@@ -6,10 +6,14 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import useIsMobile from '../hooks/useIsMobile';
 
+const GREETING = {
+  sender: 'AI',
+  isGreeting: true,
+  text: '您好，我是您的 **AI 小幫手**。\n可以針對「目前已選取的標準」回答比較與法規問題。',
+};
+
 export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsData }) {
-  const [messages, setMessages] = useState([
-    { sender: 'AI', text: '您好！我是您的 **AI 小幫手**。\n您可以詢問我任何關於「目前已選取標準」的問題。\n\n💡 *提示：請先在左側選單勾選您想了解的標準。*' }
-  ]);
+  const [messages, setMessages] = useState([GREETING]);
   const [input, setInput] = useState('');
   const isMobile = useIsMobile();
   const [isTyping, setIsTyping] = useState(false);
@@ -111,9 +115,15 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
 
   if (!isOpen) return null;
 
-  const handleSend = async () => {
-    if (!input.trim() || isTyping) return;
-    
+  const resetChat = () => {
+    setMessages([GREETING]);
+    setInput('');
+  };
+
+  const handleSend = async (overrideText) => {
+    const userMsg = (typeof overrideText === 'string' ? overrideText : input).trim();
+    if (!userMsg || isTyping) return;
+
     const now = Date.now();
     if (now - lastRequestTime < 5000) {
       const remaining = Math.ceil((5000 - (now - lastRequestTime)) / 1000);
@@ -121,7 +131,6 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
       return;
     }
 
-    const userMsg = input.trim();
     setInput('');
     setMessages(prev => [...prev, { sender: 'User', text: userMsg }]);
     setIsTyping(true);
@@ -131,7 +140,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
     // 只送「標準代號 + 對話」，context 與系統指令改由後端組裝
     // （好處：上傳量小、回應快、系統指令前端無法竄改）
     const history = messages
-      .filter(m => m.sender === 'User' || (m.sender === 'AI' && m.text))
+      .filter(m => !m.isGreeting && (m.sender === 'User' || (m.sender === 'AI' && m.text)))
       .map(m => ({ role: m.sender === 'User' ? 'user' : 'model', text: m.text }));
     history.push({ role: 'user', text: userMsg });
 
@@ -175,9 +184,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
       
       let prefixMsg = '';
       if (usedEngineIndex === '1') {
-        prefixMsg = `【系統提示】Gemini 主線路忙碌中，自動切換至備援線路...\n\n`;
-      } else if (usedEngineIndex === '2') {
-        prefixMsg = `【系統提示】Google API 負載過高，自動切換至 DeepSeek 備援引擎...\n\n`;
+        prefixMsg = `*（主線路忙碌，已自動切換備援模型）*\n\n`;
       }
       
       if (prefixMsg) updateLastMessage(prefixMsg);
@@ -272,29 +279,35 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
       <div
         onMouseDown={isMobile ? undefined : onMouseDown}
         style={{
-        padding: '1rem', borderBottom: '1px solid var(--border-color)',
+        padding: '0.8rem 0.9rem 0.8rem 1rem', borderBottom: '1px solid rgba(255,255,255,0.15)',
         backgroundColor: 'var(--accent-color)', color: '#fff',
-        display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+        display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem',
         cursor: isMobile ? 'default' : (dragging ? 'grabbing' : 'grab'),
-        userSelect: 'none'
+        userSelect: 'none', flexShrink: 0
       }}>
-        <h3 style={{ margin: 0, fontSize: '1.1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', minWidth: 0 }}>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
             <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/>
             <path d="M5 3v4"/><path d="M3 5h4"/>
           </svg>
-          AI 小幫手
-        </h3>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-          <span style={{ fontSize: '0.8rem', opacity: 0.8 }}>
-            已載入 {selectedDocs.length} 份標準
-          </span>
-          <button onClick={() => setIsMinimized(true)} style={{
-            background: 'none', border: 'none', color: '#fff', fontSize: '1rem', cursor: 'pointer', padding: '0 4px'
-          }} title="縮小為浮動按鈕">➖</button>
-          <button onClick={onClose} style={{
-            background: 'none', border: 'none', color: '#fff', fontSize: '1.25rem', cursor: 'pointer', padding: '0'
-          }} title="關閉">✕</button>
+          <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2, minWidth: 0 }}>
+            <span style={{ fontWeight: 700, fontSize: '1rem' }}>AI 小幫手</span>
+            <span style={{ fontSize: '0.72rem', opacity: 0.85, whiteSpace: 'nowrap' }}>
+              {selectedDocs.length > 0 ? `已載入 ${selectedDocs.length} 份標準` : '尚未選取標準'}
+            </span>
+          </div>
+        </div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.1rem', flexShrink: 0 }}>
+          {[
+            { key: 'reset', label: '↺', title: '開新對話', onClick: resetChat, size: '1.05rem' },
+            { key: 'min', label: '➖', title: '縮小為浮動按鈕', onClick: () => setIsMinimized(true), size: '0.95rem' },
+            { key: 'close', label: '✕', title: '關閉', onClick: onClose, size: '1.1rem' },
+          ].map(b => (
+            <button key={b.key} className="chat-iconbtn" onClick={b.onClick} title={b.title} aria-label={b.title}
+              style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', width: '30px', height: '30px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: b.size }}>
+              {b.label}
+            </button>
+          ))}
         </div>
       </div>
 
@@ -373,10 +386,37 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
             </div>
           );
         })}
+
+        {messages.length === 1 && !isTyping && (() => {
+          const suggestions = selectedDocs.length >= 2
+            ? ['總結這幾份標準的核心差異', '比較它們的熱濫用測試條件', '外部短路測試有什麼不同？']
+            : selectedDocs.length === 1
+              ? [`${selectedDocs[0]} 涵蓋哪些測試項目？`, `${selectedDocs[0]} 的適用範圍是什麼？`, '常見的鋰電池安全測試有哪些？']
+              : ['鋰電池常見的安全測試有哪些？', '什麼是 UN 38.3？', 'GB 與 UL 標準有何不同？'];
+          return (
+            <div style={{ alignSelf: 'stretch', display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.25rem' }}>
+              <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+                {selectedDocs.length > 0 ? '試試這些問題：' : '可先回矩陣選取標準，或先問問看：'}
+              </span>
+              {suggestions.map((s, i) => (
+                <button
+                  key={i}
+                  className="chat-suggest"
+                  onClick={() => handleSend(s)}
+                  style={{ textAlign: 'left', padding: '0.6rem 0.8rem', borderRadius: '10px', border: '1px solid var(--border-color)', background: 'var(--bg-panel)', color: 'var(--text-primary)', fontSize: '0.85rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.55rem' }}
+                >
+                  <span style={{ color: 'var(--accent-color)', flexShrink: 0 }} aria-hidden="true">✦</span>
+                  {s}
+                </button>
+              ))}
+            </div>
+          );
+        })()}
+
         {isTyping && (
-           <div style={{ alignSelf: 'flex-start', color: 'var(--text-muted)', fontSize: '0.85rem', padding: '0.5rem', animation: 'pulse 1.5s infinite' }}>
-             顧問正在思考中...
-           </div>
+          <div style={{ alignSelf: 'flex-start', display: 'flex', alignItems: 'center', backgroundColor: 'var(--bg-panel)', border: '1px solid var(--border-color)', borderRadius: '12px', borderTopLeftRadius: '2px', padding: '0.7rem 0.9rem', boxShadow: 'var(--shadow-sm)' }}>
+            <span className="chat-dots" aria-label="AI 正在回覆"><span></span><span></span><span></span></span>
+          </div>
         )}
       </div>
 
@@ -386,28 +426,31 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
         display: 'flex', flexDirection: 'column', gap: '0.5rem'
       }}>
         <div style={{ display: 'flex', gap: '0.5rem' }}>
-          <input 
-            type="text" 
+          <input
+            type="text"
+            className="chat-input"
             value={input}
             onChange={e => setInput(e.target.value)}
-            onKeyDown={e => e.key === 'Enter' && handleSend()}
-            placeholder={cooldown > 0 ? `冷卻中... (${cooldown}s)` : "詢問法規細節..."}
+            onKeyDown={e => { if (e.key === 'Enter') handleSend(); }}
+            placeholder={cooldown > 0 ? `冷卻中… (${cooldown}s)` : '輸入你的問題…'}
             disabled={isTyping || cooldown > 0}
             style={{
-              flexGrow: 1, padding: '0.75rem', borderRadius: '8px', 
+              flexGrow: 1, padding: '0.7rem 0.85rem', borderRadius: '10px',
               border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-color)',
-              color: 'var(--text-primary)', outline: 'none'
+              color: 'var(--text-primary)', outline: 'none', fontSize: '0.9rem', minWidth: 0
             }}
           />
-          <button 
-            onClick={handleSend}
+          <button
+            className="chat-send"
+            onClick={() => handleSend()}
             disabled={isTyping || !input.trim() || cooldown > 0}
             style={{
-              padding: '0 1rem', borderRadius: '8px', cursor: (isTyping || !input.trim() || cooldown > 0) ? 'not-allowed' : 'pointer',
+              padding: '0 1.1rem', borderRadius: '10px', flexShrink: 0,
+              cursor: (isTyping || !input.trim() || cooldown > 0) ? 'not-allowed' : 'pointer',
               backgroundColor: (isTyping || !input.trim() || cooldown > 0) ? 'var(--bg-color)' : 'var(--accent-color)',
               color: (isTyping || !input.trim() || cooldown > 0) ? 'var(--text-muted)' : '#fff',
-              border: '1px solid var(--border-color)', fontWeight: 'bold',
-              transition: 'all var(--transition-fast)'
+              border: `1px solid ${(isTyping || !input.trim() || cooldown > 0) ? 'var(--border-color)' : 'var(--accent-color)'}`,
+              fontWeight: 700, fontSize: '0.9rem', whiteSpace: 'nowrap'
             }}
           >
             送出
