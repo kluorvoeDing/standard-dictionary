@@ -52,7 +52,14 @@
   --cat-mech-text: #7e22ce;
   --cat-therm: #ffedd5;
   --cat-therm-text: #c2410c;
-  
+
+  /* Standard-body org colors (matrix chips + legend) — light */
+  --org-gb-solid: #dc2626;   --org-gb-text: #c81e1e;   --org-gb-fill: rgba(220,38,38,0.09);   --org-gb-border: rgba(220,38,38,0.30);
+  --org-ul-solid: #059669;   --org-ul-text: #047857;   --org-ul-fill: rgba(5,150,105,0.10);   --org-ul-border: rgba(5,150,105,0.30);
+  --org-intl-solid: #d97706; --org-intl-text: #b45309; --org-intl-fill: rgba(217,119,6,0.11); --org-intl-border: rgba(217,119,6,0.32);
+  --org-other-solid: #2563eb;--org-other-text: #2563eb;--org-other-fill: rgba(37,99,235,0.09);--org-other-border: rgba(37,99,235,0.30);
+  --row-hover: rgba(0,0,0,0.022);
+
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -93,7 +100,14 @@
   --cat-mech-text: #c084fc;
   --cat-therm: rgba(255, 237, 213, 0.1);
   --cat-therm-text: #fb923c;
-  
+
+  /* Standard-body org colors (matrix chips + legend) — dark (brighter text for contrast) */
+  --org-gb-solid: #ef4444;   --org-gb-text: #fca5a5;   --org-gb-fill: rgba(248,113,113,0.14);   --org-gb-border: rgba(248,113,113,0.32);
+  --org-ul-solid: #10b981;   --org-ul-text: #6ee7b7;   --org-ul-fill: rgba(16,185,129,0.14);   --org-ul-border: rgba(16,185,129,0.32);
+  --org-intl-solid: #f59e0b; --org-intl-text: #fcd34d; --org-intl-fill: rgba(245,158,11,0.14); --org-intl-border: rgba(245,158,11,0.32);
+  --org-other-solid: #3b82f6;--org-other-text: #93c5fd;--org-other-fill: rgba(59,130,246,0.16);--org-other-border: rgba(59,130,246,0.34);
+  --row-hover: rgba(255,255,255,0.035);
+
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
@@ -267,4 +281,25 @@ button {
 }
 [data-theme='dark'] .glass {
   background: rgba(30, 41, 59, 0.7);
+}
+
+/* ───────── Standard Matrix (應用領域導覽) ───────── */
+.sm-chip {
+  transition: transform 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+.sm-chip:hover {
+  border-color: var(--c-solid);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.10);
+}
+.sm-chip:active { transform: translateY(0); }
+.sm-chip:focus-visible {
+  outline: 2px solid var(--c-solid);
+  outline-offset: 2px;
+}
+.sm-table tbody tr:hover td { background: var(--row-hover); }
+
+@media (prefers-reduced-motion: reduce) {
+  .sm-chip { transition: none; }
+  .sm-chip:hover { transform: none; }
 }

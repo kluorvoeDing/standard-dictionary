@@ -30,7 +30,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
   const [activeInfoNode, setActiveInfoNode] = useState(null);
   const isMobile = useIsMobile();
 
-  const { applications, matrix } = useMemo(() => {
+  const { applications, matrix, count } = useMemo(() => {
     // 1. Get unique latest standards
     const baseMap = new Map();
     catalog.forEach(doc => {
@@ -89,36 +89,54 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
       });
     });
 
-    return { applications, matrix: mat };
+    return { applications, matrix: mat, count: uniqueDocs.length };
   }, [catalog]);
 
   const getOrgColor = (baseId) => {
-    if (baseId.startsWith('GB')) return { solid: '#ef4444', light: 'rgba(239, 68, 68, 0.15)' };
-    if (baseId.startsWith('UL')) return { solid: '#10b981', light: 'rgba(16, 185, 129, 0.15)' };
-    if (baseId.startsWith('IEC') || baseId.startsWith('UN')) return { solid: '#f59e0b', light: 'rgba(245, 158, 11, 0.15)' };
-    return { solid: '#3b82f6', light: 'rgba(59, 130, 246, 0.15)' };
+    if (baseId.startsWith('GB')) return { key: 'gb', label: '中國 GB', solid: 'var(--org-gb-solid)', text: 'var(--org-gb-text)', fill: 'var(--org-gb-fill)', border: 'var(--org-gb-border)' };
+    if (baseId.startsWith('UL')) return { key: 'ul', label: '北美 UL', solid: 'var(--org-ul-solid)', text: 'var(--org-ul-text)', fill: 'var(--org-ul-fill)', border: 'var(--org-ul-border)' };
+    if (baseId.startsWith('IEC') || baseId.startsWith('UN')) return { key: 'intl', label: '國際 IEC · UN', solid: 'var(--org-intl-solid)', text: 'var(--org-intl-text)', fill: 'var(--org-intl-fill)', border: 'var(--org-intl-border)' };
+    return { key: 'other', label: '其他', solid: 'var(--org-other-solid)', text: 'var(--org-other-text)', fill: 'var(--org-other-fill)', border: 'var(--org-other-border)' };
   };
+
+  const LEGEND = [
+    { label: '中國 GB', solid: 'var(--org-gb-solid)' },
+    { label: '北美 UL', solid: 'var(--org-ul-solid)' },
+    { label: '國際 IEC · UN', solid: 'var(--org-intl-solid)' },
+    { label: '其他', solid: 'var(--org-other-solid)' },
+  ];
 
   return (
     <div style={{ padding: isMobile ? '1rem 0.75rem' : '2rem', paddingTop: isMobile ? '3.5rem' : '1.5rem', height: '100%', overflowY: 'auto', backgroundColor: 'var(--bg-color)', color: 'var(--text-primary)', position: 'relative' }}>
-      <div style={{ marginBottom: '1.5rem', paddingLeft: '3.5rem' }}>
-        <h2 style={{ fontSize: '1.75rem', marginBottom: '0.5rem', color: 'var(--accent-color)' }}>
-          標準應用領域導覽
-        </h2>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem' }}>
-          從下方矩陣點擊您感興趣的標準，將自動加入比對清單。
-        </p>
+      <div style={{ marginBottom: '1.25rem', display: 'flex', flexWrap: 'wrap', alignItems: 'flex-end', justifyContent: 'space-between', gap: '1rem' }}>
+        <div>
+          <h2 style={{ fontSize: isMobile ? '1.5rem' : '1.85rem', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: '0.45rem', color: 'var(--text-primary)' }}>
+            標準應用領域導覽
+          </h2>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', margin: 0 }}>
+            點擊標準加入比對，選滿 2 份開始橫向對比。
+            <span style={{ color: 'var(--text-muted)', marginLeft: '0.5rem' }}>共 {count} 份標準</span>
+          </p>
+        </div>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.9rem', alignItems: 'center' }}>
+          {LEGEND.map(l => (
+            <span key={l.label} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}>
+              <span style={{ width: '9px', height: '9px', borderRadius: '3px', backgroundColor: l.solid, flexShrink: 0 }} />
+              {l.label}
+            </span>
+          ))}
+        </div>
       </div>
 
-      <div style={{ overflowX: 'auto', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-panel)', paddingBottom: selectedDocs.length >= 2 ? '80px' : '0' }}>
-        <table style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
+      <div style={{ overflowX: 'auto', borderRadius: 'var(--radius-lg)', border: '1px solid var(--border-color)', backgroundColor: 'var(--bg-panel)', boxShadow: 'var(--shadow-sm)', paddingBottom: selectedDocs.length >= 2 ? '88px' : '0' }}>
+        <table className="sm-table" style={{ width: '100%', borderCollapse: 'collapse', textAlign: 'left' }}>
           <thead>
             <tr>
-              <th style={{ padding: '0.75rem 0.5rem', borderBottom: '2px solid var(--border-color)', borderRight: '2px solid var(--border-color)', position: 'sticky', top: 0, left: 0, zIndex: 10, backgroundColor: 'var(--bg-panel)', minWidth: '90px', fontSize: '0.9rem' }}>
+              <th style={{ padding: '0.8rem 0.9rem', borderBottom: '1px solid var(--border-color)', borderRight: '1px solid var(--border-color)', position: 'sticky', top: 0, left: 0, zIndex: 10, backgroundColor: 'var(--bg-panel)', minWidth: '84px', fontSize: '0.74rem', fontWeight: 600, color: 'var(--text-muted)', whiteSpace: 'nowrap' }}>
                 層級 \ 應用
               </th>
               {applications.map(app => (
-                <th key={app} style={{ padding: '0.75rem 0.5rem', borderBottom: '2px solid var(--border-color)', borderRight: '1px solid var(--border-color)', position: 'sticky', top: 0, zIndex: 5, backgroundColor: 'var(--bg-panel)', fontWeight: '600', color: 'var(--text-primary)', whiteSpace: 'nowrap', fontSize: '0.9rem' }}>
+                <th key={app} style={{ padding: '0.8rem 0.9rem', borderBottom: '1px solid var(--border-color)', position: 'sticky', top: 0, zIndex: 5, backgroundColor: 'var(--bg-panel)', fontWeight: 600, color: 'var(--text-secondary)', whiteSpace: 'nowrap', fontSize: '0.82rem' }}>
                   {app}
                 </th>
               ))}
@@ -126,61 +144,51 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
           </thead>
           <tbody>
             {MAJOR_LEVELS.map((lvl) => {
-              // Check if row is completely empty
               const isRowEmpty = applications.every(app => matrix[lvl][app].length === 0);
               if (isRowEmpty) return null;
 
               return (
                 <tr key={lvl}>
-                  <th style={{ padding: '1rem 0.5rem', borderBottom: '1px solid var(--border-color)', borderRight: '2px solid var(--border-color)', position: 'sticky', left: 0, zIndex: 5, backgroundColor: 'var(--bg-panel)', color: 'var(--accent-color)', fontWeight: 'bold', fontSize: '0.9rem' }}>
+                  <th style={{ padding: '0.85rem 0.9rem', borderBottom: '1px solid var(--border-color)', borderRight: '1px solid var(--border-color)', position: 'sticky', left: 0, zIndex: 5, backgroundColor: 'var(--bg-panel)', color: 'var(--text-primary)', fontWeight: 600, fontSize: '0.85rem', whiteSpace: 'nowrap', verticalAlign: 'top' }}>
                     {lvl}
                   </th>
                   {applications.map(app => (
-                    <td key={app} style={{ padding: '0.75rem 0.5rem', borderBottom: '1px solid var(--border-color)', borderRight: '1px solid var(--border-color)', verticalAlign: 'top' }}>
-                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                    <td key={app} style={{ padding: '0.6rem 0.65rem', borderBottom: '1px solid var(--border-color)', borderRight: '1px solid var(--border-color)', verticalAlign: 'top' }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
                         {matrix[lvl][app].map(doc => {
                           const baseId = doc.base_standard_id || doc.document_id;
                           const isSelected = selectedDocs.includes(baseId);
                           const colors = getOrgColor(baseId);
-                          
+
                           return (
                             <button
                               key={baseId}
+                              className="sm-chip"
                               onClick={() => {
                                 toggleDocument(baseId);
                                 setActiveInfoNode({ ...doc, baseId, colors });
                               }}
                               title={doc.display_name || doc.full_name}
                               style={{
-                                width: '100%',
-                                maxWidth: '105px',
-                                padding: '0.25rem 0.5rem',
-                                borderRadius: '15px',
-                                border: `1px solid ${colors.solid}`,
-                                backgroundColor: isSelected ? colors.solid : colors.light,
-                                color: isSelected ? '#fff' : 'var(--text-primary)',
-                                fontSize: '0.75rem',
-                                fontWeight: isSelected ? 'bold' : '500',
+                                '--c-solid': colors.solid,
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.28rem',
+                                padding: '0.3rem 0.6rem',
+                                borderRadius: '8px',
+                                border: `1px solid ${isSelected ? colors.solid : colors.border}`,
+                                background: isSelected ? colors.solid : colors.fill,
+                                color: isSelected ? '#fff' : colors.text,
+                                fontSize: '0.78rem',
+                                fontWeight: isSelected ? 700 : 600,
+                                letterSpacing: '0.01em',
+                                fontVariantNumeric: 'tabular-nums',
                                 cursor: 'pointer',
-                                transition: 'all 0.2s',
                                 whiteSpace: 'nowrap',
-                                boxShadow: isSelected ? `0 0 10px ${colors.solid}66` : 'none',
-                                flexGrow: 1,
-                                textAlign: 'center'
-                              }}
-                              onMouseEnter={(e) => {
-                                if (!isSelected) {
-                                  e.currentTarget.style.backgroundColor = colors.solid;
-                                  e.currentTarget.style.color = '#fff';
-                                }
-                              }}
-                              onMouseLeave={(e) => {
-                                if (!isSelected) {
-                                  e.currentTarget.style.backgroundColor = colors.light;
-                                  e.currentTarget.style.color = 'var(--text-primary)';
-                                }
+                                boxShadow: isSelected ? '0 1px 6px rgba(0,0,0,0.16)' : 'none',
                               }}
                             >
+                              {isSelected && <span style={{ fontSize: '0.7rem', lineHeight: 1 }}>✓</span>}
                               {baseId}
                             </button>
                           );
@@ -209,15 +217,22 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
             ? { left: 0, right: 0, bottom: selectedDocs.length >= 2 ? '88px' : 0, width: 'auto', borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0' }
             : { bottom: selectedDocs.length >= 2 ? '100px' : '2rem', right: '2rem', width: '320px', borderRadius: 'var(--radius-lg)' })
         }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
-            <h3 style={{ margin: 0, color: activeInfoNode.colors.solid, fontSize: '1.25rem' }}>{activeInfoNode.baseId}</h3>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+            <h3 style={{ margin: 0, color: 'var(--text-primary)', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <span style={{ width: '10px', height: '10px', borderRadius: '3px', backgroundColor: activeInfoNode.colors.solid, flexShrink: 0 }} />
+              {activeInfoNode.baseId}
+            </h3>
             <button onClick={() => setActiveInfoNode(null)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '1.2rem' }}>✕</button>
           </div>
-          
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem' }}>
             <div>
               <strong style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '0.25rem' }}>全名</strong>
               <span style={{ color: 'var(--text-primary)' }}>{activeInfoNode.full_name || activeInfoNode.display_name}</span>
+            </div>
+            <div>
+              <strong style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '0.25rem' }}>應用領域</strong>
+              <span style={{ color: 'var(--text-primary)' }}>{getApplication(activeInfoNode.baseId)}</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
               <div>
@@ -264,7 +279,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
               {selectedDocs.map(id => {
                 const colors = getOrgColor(id);
                 return (
-                  <span key={id} style={{ backgroundColor: colors.solid, color: '#fff', padding: '0.25rem 0.75rem', borderRadius: '15px', fontSize: '0.85rem', fontWeight: 'bold', boxShadow: '0 2px 5px rgba(0,0,0,0.1)', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                  <span key={id} style={{ backgroundColor: colors.solid, color: '#fff', padding: '0.25rem 0.7rem', borderRadius: '8px', fontSize: '0.85rem', fontWeight: 'bold', boxShadow: '0 2px 5px rgba(0,0,0,0.1)', whiteSpace: 'nowrap', flexShrink: 0 }}>
                     {id}
                   </span>
                 )
