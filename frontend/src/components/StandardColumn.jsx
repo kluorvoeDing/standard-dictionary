@@ -8,7 +8,8 @@ function SingleCard({ testRecord }) {
 
   return (
     <>
-      <div 
+      <div
+        className="cmp-cell"
         onClick={() => setIsModalOpen(true)}
         style={{
           padding: '0.75rem',
@@ -20,12 +21,9 @@ function SingleCard({ testRecord }) {
           gap: '0.5rem',
           fontSize: '0.85rem',
           cursor: 'pointer',
-          transition: 'all var(--transition-fast)',
           position: 'relative',
           flexGrow: 1
         }}
-        onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-color)'}
-        onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-color)'}
       >
         <div style={{ position: 'absolute', top: '0.25rem', right: '0.25rem', display: 'flex', gap: '0.25rem' }}>
           {hasExemptions && (
@@ -56,8 +54,8 @@ function SingleCard({ testRecord }) {
                 backgroundColor: 'var(--bg-color)',
                 border: '1px solid var(--border-color)',
                 color: 'var(--text-secondary)',
-                padding: '0.1rem 0.3rem',
-                borderRadius: '9999px',
+                padding: '0.1rem 0.34rem',
+                borderRadius: '5px',
                 fontSize: '0.6rem'
               }}>
                 {displayObj}

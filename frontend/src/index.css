@@ -336,7 +336,32 @@ button {
 }
 .sm-filter:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
 
+/* ───────── Comparison view (橫向對比視圖) ───────── */
+.cmp-back {
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.cmp-back:hover { border-color: var(--accent-color); color: var(--accent-color); }
+.cmp-back:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+
+.cmp-colhead {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+.cmp-colhead:hover { border-color: var(--c-solid); box-shadow: var(--shadow-md); }
+.cmp-colhead:focus-visible { outline: 2px solid var(--c-solid); outline-offset: 2px; }
+
+.cmp-cell {
+  transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.1s ease;
+}
+.cmp-cell:hover { border-color: var(--accent-color); box-shadow: var(--shadow-sm); }
+.cmp-cell:active { transform: translateY(1px); }
+
+.cmp-ver {
+  transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+.cmp-ver:hover:not(.is-active) { border-color: var(--accent-color); color: var(--text-primary); }
+
 @media (prefers-reduced-motion: reduce) {
-  .sm-card, .sm-row, .sm-filter { transition: none; }
-  .sm-row:active { transform: none; }
+  .sm-card, .sm-row, .sm-filter,
+  .cmp-back, .cmp-colhead, .cmp-cell, .cmp-ver { transition: none; }
+  .sm-row:active, .cmp-cell:active { transform: none; }
 }

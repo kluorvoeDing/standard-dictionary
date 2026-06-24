@@ -7,6 +7,13 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
   const [infoModalDocId, setInfoModalDocId] = useState(null);
   const [activeVersions, setActiveVersions] = useState({});
   const isMobile = useIsMobile();
+
+  const getOrgColor = (baseId = '') => {
+    if (baseId.startsWith('GB')) return { solid: 'var(--org-gb-solid)', text: 'var(--org-gb-text)', fill: 'var(--org-gb-fill)' };
+    if (baseId.startsWith('UL')) return { solid: 'var(--org-ul-solid)', text: 'var(--org-ul-text)', fill: 'var(--org-ul-fill)' };
+    if (baseId.startsWith('IEC') || baseId.startsWith('UN')) return { solid: 'var(--org-intl-solid)', text: 'var(--org-intl-text)', fill: 'var(--org-intl-fill)' };
+    return { solid: 'var(--org-other-solid)', text: 'var(--org-other-text)', fill: 'var(--org-other-fill)' };
+  };
   
   const objectTypes = [
     { id: 'CELL', label: 'Cell (電芯)' },
@@ -154,7 +161,8 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
             ✕
           </button>
 
-          <h2 style={{ color: 'var(--accent-color)', marginBottom: '0.25rem', fontSize: '1.5rem' }}>
+          <h2 style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', color: 'var(--text-primary)', marginBottom: '0.25rem', fontSize: '1.5rem', fontWeight: 700, letterSpacing: '-0.01em' }}>
+            <span style={{ width: '12px', height: '12px', borderRadius: '3px', backgroundColor: getOrgColor(docData.id || '').solid, flexShrink: 0 }} />
             {docData.id || docData.short_name}
           </h2>
 
@@ -184,7 +192,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '1.5rem' }}>
             
             <div>
-              <strong style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.8rem', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>標準名稱 (中/英)</strong>
+              <strong style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.8rem', marginBottom: '0.3rem' }}>標準名稱 (中/英)</strong>
               <div style={{ color: 'var(--text-primary)', fontSize: '1.1rem', fontWeight: '500', marginBottom: '0.25rem' }}>
                 {docData.full_name_zh || '無中文名稱'}
               </div>
@@ -195,18 +203,18 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
 
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <div>
-                <strong style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.8rem', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>發布機構</strong>
+                <strong style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.8rem', marginBottom: '0.3rem' }}>發布機構</strong>
                 <div style={{ color: 'var(--text-primary)' }}>{docData.publisher || '未知'}</div>
               </div>
               <div>
-                <strong style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.8rem', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '1px' }}>發布日期</strong>
+                <strong style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.8rem', marginBottom: '0.3rem' }}>發布日期</strong>
                 <div style={{ color: 'var(--text-primary)' }}>{docData.publication_date || '未知'}</div>
               </div>
             </div>
 
             {docData.scope && (
               <div>
-                <strong style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.8rem', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>簡介與適用範圍 (Scope)</strong>
+                <strong style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.8rem', marginBottom: '0.5rem' }}>簡介與適用範圍 (Scope)</strong>
                 <div style={{ 
                   backgroundColor: 'var(--bg-color)', 
                   padding: '1.25rem', 
@@ -223,7 +231,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
             
             {docData.applicable_objects && (
               <div>
-                <strong style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.8rem', marginBottom: '0.5rem', textTransform: 'uppercase', letterSpacing: '1px' }}>適用測試層級</strong>
+                <strong style={{ color: 'var(--text-secondary)', display: 'block', fontSize: '0.8rem', marginBottom: '0.5rem' }}>適用測試層級</strong>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                   {docData.applicable_objects.map(obj => (
                     <span key={obj} style={{ backgroundColor: 'var(--accent-bg)', color: 'var(--accent-hover)', border: '1px solid rgba(59, 130, 246, 0.2)', padding: '0.2rem 0.6rem', borderRadius: '4px', fontSize: '0.8rem', fontWeight: '500' }}>
@@ -242,61 +250,47 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
-      <div style={{ padding: '1rem', borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--bg-panel)', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0.75rem', justifyContent: 'space-between' }}>
-        <button 
+      <div style={{ padding: isMobile ? '0.75rem 0.85rem' : '0.9rem 1.5rem', borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--bg-panel)', display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '0.9rem' }}>
+        <button
+          className="cmp-back"
           onClick={() => setIsComparing && setIsComparing(false)}
-          style={{ padding: '0.5rem 1rem', display: 'flex', alignItems: 'center', gap: '0.5rem', background: 'transparent', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', color: 'var(--text-primary)', cursor: 'pointer', transition: 'all 0.2s', fontWeight: '500' }}
-          onMouseEnter={(e) => { e.currentTarget.style.borderColor = 'var(--accent-color)'; e.currentTarget.style.color = 'var(--accent-color)'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.color = 'var(--text-primary)'; }}
+          style={{ padding: '0.45rem 0.9rem', display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'transparent', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', color: 'var(--text-primary)', cursor: 'pointer', fontWeight: 500, fontSize: '0.88rem', whiteSpace: 'nowrap', flexShrink: 0 }}
         >
-          <span>←</span> 返回標準矩陣
+          <span aria-hidden="true">←</span>{isMobile ? '' : ' 返回'}
         </button>
-        <h2 style={{ margin: '0', display: 'flex', alignItems: 'center', gap: '0.5rem', justifyContent: 'center', flex: 1, marginRight: '120px' }}>
-          橫向對比視圖
-          <span style={{ fontSize: '0.8rem', fontWeight: 'normal', color: 'var(--text-muted)' }}>
-            ({groupedTests.length} 項測試)
+        <h2 style={{ margin: 0, display: 'flex', alignItems: 'baseline', gap: '0.55rem', fontSize: isMobile ? '1.05rem' : '1.25rem', fontWeight: 700, letterSpacing: '-0.01em', color: 'var(--text-primary)' }}>
+          橫向對比
+          <span style={{ fontSize: '0.82rem', fontWeight: 500, color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
+            {selectedDocIds.length} 份標準 · {groupedTests.length} 項測試
           </span>
         </h2>
       </div>
         
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center', justifyContent: 'center', padding: '1rem' }}>
-          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem 1.5rem', alignItems: 'center', padding: isMobile ? '0.85rem' : '0.85rem 1.5rem', borderBottom: '1px solid var(--border-color)' }}>
+          <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap', alignItems: 'center' }}>
+            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginRight: '0.1rem' }}>測試類別</span>
             {categories.map(cat => (
               <button
                 key={cat}
+                className={`sm-filter${filterCategory === cat ? ' is-active' : ''}`}
                 onClick={() => setFilterCategory(cat)}
-                style={{
-                  padding: '0.25rem 0.75rem',
-                  borderRadius: '9999px',
-                  fontSize: '0.8rem',
-                  border: '1px solid var(--border-color)',
-                  backgroundColor: filterCategory === cat ? 'var(--accent-color)' : 'var(--bg-color)',
-                  color: filterCategory === cat ? 'white' : 'var(--text-secondary)',
-                }}
               >
                 {categoryLabels[cat]}
               </button>
             ))}
           </div>
 
-          <div style={{ width: '1px', height: '1.5rem', backgroundColor: 'var(--border-color)' }}></div>
+          <div style={{ width: '1px', height: '1.4rem', backgroundColor: 'var(--border-color)' }}></div>
 
-          <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>樣品篩選:</span>
+          <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap', alignItems: 'center' }}>
+            <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginRight: '0.1rem' }}>樣品層級</span>
             {objectTypes.map(obj => {
               const isActive = filterObjects.includes(obj.id);
               return (
                 <button
                   key={obj.id}
+                  className={`sm-filter${isActive ? ' is-active' : ''}`}
                   onClick={() => toggleObjectFilter(obj.id)}
-                  style={{
-                    padding: '0.2rem 0.6rem',
-                    borderRadius: '4px',
-                    fontSize: '0.75rem',
-                    border: `1px solid ${isActive ? 'var(--success-color)' : 'var(--border-color)'}`,
-                    backgroundColor: isActive ? 'var(--success-bg)' : 'transparent',
-                    color: isActive ? 'var(--success-color)' : 'var(--text-muted)',
-                  }}
                 >
                   {isActive ? '✓ ' : ''}{obj.label}
                 </button>
@@ -322,51 +316,58 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
                                    .sort((a, b) => new Date(b.publication_date) - new Date(a.publication_date));
             const activeDocId = activeVersions[baseId] || (versions[0] ? versions[0].document_id : baseId);
             const doc = versions.find(v => v.document_id === activeDocId) || {};
+            const colors = getOrgColor(baseId);
 
             return (
-              <div 
-                key={baseId} 
-                style={{ 
+              <div
+                key={baseId}
+                style={{
                   position: 'sticky', top: 0, zIndex: 5, backgroundColor: 'var(--bg-color)', paddingBottom: '0.5rem',
-                  minWidth: 0 
+                  minWidth: 0
                 }}
               >
-                <div 
+                <div
+                  className="cmp-colhead"
                   onClick={() => setInfoModalDocId(activeDocId)}
-                  style={{ 
-                    backgroundColor: 'var(--bg-panel)', 
+                  title={`查看 ${doc.display_name} 詳細資訊`}
+                  style={{
+                    '--c-solid': colors.solid,
+                    backgroundColor: 'var(--bg-panel)',
                     border: '1px solid var(--border-color)',
+                    borderLeft: `3px solid ${colors.solid}`,
                     borderRadius: 'var(--radius-md)',
-                    padding: '0.75rem',
+                    padding: '0.7rem 0.8rem',
                     boxShadow: 'var(--shadow-sm)',
-                    cursor: 'pointer',
-                    transition: 'border-color var(--transition-fast)'
+                    cursor: 'pointer'
                   }}
-                  onMouseEnter={(e) => e.currentTarget.style.borderColor = 'var(--accent-color)'}
-                  onMouseLeave={(e) => e.currentTarget.style.borderColor = 'var(--border-color)'}
                 >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                    <div style={{ fontWeight: '600', color: 'var(--accent-color)', fontSize: '0.95rem', wordBreak: 'break-word', flexShrink: 1, paddingRight: '0.5rem' }}>
-                      {doc.display_name}
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', minWidth: 0 }}>
+                      <span style={{ width: '8px', height: '8px', borderRadius: '2.5px', backgroundColor: colors.solid, flexShrink: 0 }} />
+                      <span style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.92rem', letterSpacing: '0.01em', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        {doc.display_name}
+                      </span>
                     </div>
-                    
+
                     {versions.length > 1 && (
                       <div style={{ display: 'flex', gap: '0.25rem', flexShrink: 0 }} onClick={e => e.stopPropagation()}>
                         {versions.map((ver) => {
                           const isActive = ver.document_id === activeDocId;
-                          let yearLabel = new Date(ver.publication_date).getFullYear() + '年';
+                          const yearLabel = String(new Date(ver.publication_date).getFullYear());
                           return (
                             <button
                               key={ver.document_id}
+                              className={`cmp-ver${isActive ? ' is-active' : ''}`}
                               onClick={() => setActiveVersions(prev => ({...prev, [baseId]: ver.document_id}))}
                               style={{
-                                padding: '0.15rem 0.4rem',
+                                padding: '0.15rem 0.45rem',
                                 fontSize: '0.7rem',
-                                borderRadius: '4px',
+                                borderRadius: '6px',
                                 whiteSpace: 'nowrap',
-                                backgroundColor: isActive ? 'var(--accent-color)' : 'transparent',
-                                color: isActive ? 'white' : 'var(--text-secondary)',
-                                border: `1px solid ${isActive ? 'var(--accent-color)' : 'var(--border-color)'}`,
+                                fontVariantNumeric: 'tabular-nums',
+                                backgroundColor: isActive ? colors.solid : 'transparent',
+                                color: isActive ? '#fff' : 'var(--text-secondary)',
+                                border: `1px solid ${isActive ? colors.solid : 'var(--border-color)'}`,
                                 cursor: 'pointer'
                               }}
                             >
