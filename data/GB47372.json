@@ -65,10 +65,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "觸發過電壓保護，任意一節電池電壓不超過充電上限電壓",
-          "不起火、不爆炸、不漏液"
+          "觸發過電壓保護，任意一節電池電壓不超過充電上限電壓，電池模塊總電壓不超過 n×電池充電上限電壓",
+          "無起火、無爆炸、無洩漏"
         ]
       },
       "exemptions": [
@@ -189,16 +189,16 @@
       ],
       "conditions": {
         "charge_high": {
-          "value": "Tcm + 4 ℃",
-          "detail": "將空電樣品置於 Tcm + 4 ℃ 中充電"
+          "value": "Tcm + 4 °C",
+          "detail": "將空電樣品置於 Tcm + 4 °C 中充電"
         },
         "charge_low": {
-          "value": "Tcl - 4 ℃",
-          "detail": "將空電樣品置於 Tcl - 4 ℃ 中充電"
+          "value": "Tcl - 4 °C",
+          "detail": "將空電樣品置於 Tcl - 4 °C 中充電"
         },
         "discharge_high": {
-          "value": "Tdm + 4 ℃",
-          "detail": "將滿電樣品置於 Tdm + 4 ℃ 中放電"
+          "value": "Tdm + 4 °C",
+          "detail": "將滿電樣品置於 Tdm + 4 °C 中放電"
         }
       },
       "acceptance_criteria": {
@@ -234,15 +234,15 @@
           "detail": "輸出端口正負極之間、相線零線之間施加 (80±20) mΩ 的短路總電阻"
         },
         "duration": {
-          "value": "2 h",
-          "detail": "持續 2 h 後斷開"
+          "value": "2 小時",
+          "detail": "持續 2 小時 後斷開"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
           "電池最不利位置的最高溫升不應超過 10 K",
-          "移動電源應不起火、不爆炸、不漏液"
+          "移動電源應無起火、無爆炸、無洩漏"
         ]
       },
       "exemptions": [],
@@ -266,18 +266,18 @@
           "detail": "按4.2規定充滿電後進行試驗"
         },
         "operation_1": {
-          "value": "反向充電 1 h",
-          "detail": "單向輸出接口如與輸入接口一致，用直流電源按該端口最大輸出施加到輸出端口充電 1 h"
+          "value": "反向充電 1 小時",
+          "detail": "單向輸出接口如與輸入接口一致，用直流電源按該端口最大輸出施加到輸出端口充電 1 小時"
         },
         "operation_2": {
-          "value": "端口互連 1 h",
-          "detail": "任一輸出端口與任一輸入端口用連接線連接，持續 1 h"
+          "value": "端口互連 1 小時",
+          "detail": "任一輸出端口與任一輸入端口用連接線連接，持續 1 小時"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "移動電源應不起火、不爆炸、不漏液"
+          "移動電源應無起火、無爆炸、無洩漏"
         ]
       },
       "exemptions": [
@@ -285,6 +285,60 @@
       ],
       "related_tests": [],
       "source_reference": "6.7"
+    },
+    {
+      "id": "GB47372-6.8",
+      "normalized_id": "ELEC-BMS",
+      "name_zh": "智能管理 (移動電源)",
+      "name_en": "Intelligent Management (Power Bank)",
+      "section": "6.8",
+      "category": "ELEC",
+      "subcategory": "智能管理 (Intelligent Management)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "monitoring": {
+          "value": "監測與存儲",
+          "detail": "監測並存儲電壓、溫度、歷史異常等狀態"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "能記錄並提示異常",
+        "details": [
+          "能記錄電壓、溫度等狀態及歷史異常信息"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.8"
+    },
+    {
+      "id": "GB47372-6.9",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "電壓調節 (移動電源)",
+      "name_en": "Voltage Regulation (Power Bank)",
+      "section": "6.9",
+      "category": "ELEC",
+      "subcategory": "充電電壓調節 (Charging Voltage Regulation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "regulation": {
+          "value": "依時間或循環次數調節",
+          "detail": "根據運行時間或循環次數調節最大充電電壓"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "能下調最大充電電壓",
+        "details": [
+          "具備根據時間或循環次數下調最大充電電壓的功能"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "6.9"
     },
     {
       "id": "GB47372-6.10",
@@ -300,11 +354,11 @@
       "conditions": {
         "undervoltage": {
           "value": "0.4 × Udo",
-          "detail": "電池調整至 0.4 × Udo 保持 10 s，維持該電壓進行充放電"
+          "detail": "電池調整至 0.4 × Udo 保持 10 秒，維持該電壓進行充放電"
         },
         "overvoltage": {
           "value": "Uup + 0.3 V",
-          "detail": "電池調整至 Uup + 0.3 V 保持 2 s，維持該電壓進行充放電"
+          "detail": "電池調整至 Uup + 0.3 V 保持 2 秒，維持該電壓進行充放電"
         }
       },
       "acceptance_criteria": {
@@ -315,7 +369,7 @@
         ]
       },
       "exemptions": [
-        "過壓禁用不適用於鈉離子電池"
+        "欠壓禁用不適用於鈉離子電池"
       ],
       "related_tests": [],
       "source_reference": "6.10"
@@ -346,14 +400,14 @@
           "detail": "充電至 1.3 × Ucl (充電限制電壓)"
         },
         "duration": {
-          "value": "1 h 或 7 h",
-          "detail": "繼續恆壓充電 1 h 停止，或總充電時間達到 7 h 停止試驗"
+          "value": "1 小時 或 7 小時",
+          "detail": "繼續恆壓充電 1 小時 停止，或總充電時間達到 7 小時 停止試驗"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "電池應不起火、不爆炸"
+          "電池應無起火、無爆炸"
         ]
       },
       "exemptions": [
@@ -400,14 +454,14 @@
           "detail": "壓力達到最大值或電池電壓下降三分之一"
         },
         "observation": {
-          "value": "5 min",
-          "detail": "停止擠壓並觀察 5 min"
+          "value": "5 分鐘",
+          "detail": "停止擠壓並觀察 5 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "電池應不起火、不爆炸"
+          "電池應無起火、無爆炸"
         ]
       },
       "exemptions": [],
@@ -432,22 +486,22 @@
           "detail": "按照標準方法充滿電後"
         },
         "ramp_rate": {
-          "value": "5 ± 2 ℃/min",
-          "detail": "以 (5 ± 2) ℃/min 的溫升速率進行升溫"
+          "value": "5 ± 2 °C/min",
+          "detail": "以 (5 ± 2) °C/min 的溫升速率進行升溫"
         },
         "target_temp": {
-          "value": "135 ℃",
-          "detail": "箱內溫度達到 135 ℃ ± 2 ℃"
+          "value": "135 °C",
+          "detail": "箱內溫度達到 135 °C ± 2 °C"
         },
         "duration": {
-          "value": "60 min",
-          "detail": "恆溫並持續 60 min"
+          "value": "60 分鐘",
+          "detail": "恆溫並持續 60 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "電池應不起火、不爆炸"
+          "電池應無起火、無爆炸"
         ]
       },
       "exemptions": [],
@@ -480,14 +534,14 @@
           "detail": "以 (20 ± 1) mm/s 的速度貫穿電池"
         },
         "observation": {
-          "value": "5 min",
-          "detail": "鋼針停留在電池中，觀察 5 min"
+          "value": "5 分鐘",
+          "detail": "鋼針停留在電池中，觀察 5 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "電池應不起火、不爆炸"
+          "電池應無起火、無爆炸"
         ]
       },
       "exemptions": [],
@@ -507,7 +561,7 @@
       ],
       "conditions": {
         "temp": {
-          "value": "25 ± 5 ℃",
+          "value": "25 ± 5 °C",
           "detail": "環境溫度下進行"
         },
         "charge": {
@@ -520,7 +574,7 @@
         },
         "cycles": {
           "value": "300 次",
-          "detail": "進行 300 次充放電循環，間隔 10 min"
+          "detail": "進行 300 次充放電循環，間隔 10 分鐘"
         },
         "teardown": {
           "value": "拆解檢查",
@@ -560,13 +614,13 @@
         },
         "trigger": {
           "value": "加熱觸發",
-          "detail": "啟動加熱裝置，以最大功率持續加熱（表B.1），直至發生熱失控或溫度達到 300 ℃"
+          "detail": "啟動加熱裝置，以最大功率持續加熱（表B.1），直至發生熱失控或溫度達到 300 °C"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "電池應不起火、不爆炸"
+          "電池應無起火、無爆炸"
         ]
       },
       "exemptions": [

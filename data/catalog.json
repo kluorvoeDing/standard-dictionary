@@ -1233,7 +1233,10 @@
     "batch": "batch_new",
     "li_applicable": true,
     "item_count": 0,
-    "available_objects": [],
+    "available_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
     "test_type": null,
     "normativity": "normative",
     "important_note": null,

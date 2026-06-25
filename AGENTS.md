@@ -49,6 +49,15 @@
 >
 > CI（`data-integrity.yml`）會以 `normalize:check` 把關：只要有檔案未正規化就會 fail。正規化器預設會**略過 git-dirty 檔**以免干擾進行中的工作；要全部處理加 `--all`。標準形：時間用繁中（小時／分鐘／秒）、溫度用 `°C`。
 
+## 2026-06-26 (Data Normalization 收尾 + GB40559 schema 修復)
+- 事件：確認 Dawn Audit cron 已停擺（最後活動 6/25 03:03，排程清單已無此任務），收尾其留下的孤兒改動並補齊資料一致性。
+- 變更：
+  - 將 cron 最後一輪未提交的 4 個檔（GB31241.4 / GB40165 / GB40559 / GB47372，含其新增的 6.8/6.9 測試等內容）一併正規化後落地。
+  - **`GB40559.json` 轉新 schema**：`test_items`→`tests`、由 `document_info` 重建 `document` 區塊（含 `applicable_objects`）；validator 由 2 硬錯誤 → **0 錯誤**。
+  - 修 `catalog.json` 中 GB40559 的 `available_objects`（原為 `[]`，導致導覽頁無層級標籤）→ `[CELL, PACK_SYSTEM]`。
+  - 全 28 檔現已正規化，`normalize:check` 通過、CI 轉綠。
+- 後續行動：若 Dawn Audit 之後重啟，務必遵守上方「資料維護鐵律」：產生資料後跑 `npm run normalize`。
+
 ## 2026-06-25 (Data Normalization)
 - 事件：建立確定性資料格式正規化器，全面收斂橫向比對內容的格式不一致
 - 背景：不同 batch / AI agent 處理的標準，在「單位、記法、結構」上各寫各的——時間混用 `h`/`小時`/`min`/`分鐘`、溫度混用 `°C`/`℃`/`度`、`acceptance_criteria.details` 陣列混入 `{id,rule_zh,rule_en}` 物件、還有 UI 從不渲染的孤兒判定鍵（`no_venting` 等），導致同一測試在不同標準間看起來格式雜亂。

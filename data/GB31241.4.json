@@ -51,23 +51,23 @@
           "detail": "將電池按照 4.5.1 規定的試驗方法充滿電後"
         },
         "temperature": {
-          "value": "57 ℃ ± 4 ℃",
-          "detail": "放置在 57 ℃ ± 4 ℃ 的環境中至少 30 min"
+          "value": "57 °C ± 4 °C",
+          "detail": "放置在 57 °C ± 4 °C 的環境中至少 30 分鐘"
         },
         "resistance": {
           "value": "80 mΩ ± 10 mΩ",
           "detail": "用導線連接正負極，全部外部電阻為 80 mΩ ± 10 mΩ"
         },
         "termination": {
-          "value": "溫度降至 20% 或 24h",
-          "detail": "電池溫度下降值達到溫度最大值的 20% 或 短接時間達到 24 h"
+          "value": "溫度降至 20% 或 24 小時",
+          "detail": "電池溫度下降值達到溫度最大值的 20% 或 短接時間達到 24 小時"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [],
@@ -99,15 +99,15 @@
           "detail": "至 1.3 × Ucl (充電限制電壓)。額定能量高於 50 Wh 電池組的組成電池過充試驗電壓為 1.5 × Ucl。"
         },
         "termination": {
-          "value": "恆壓 1h 或 總 7h",
-          "detail": "繼續恆壓充電 1 h 停止試驗，或總充電時間達到 7 h 停止試驗"
+          "value": "恆壓 1 小時 或 總 7 小時",
+          "detail": "繼續恆壓充電 1 小時 停止試驗，或總充電時間達到 7 小時 停止試驗"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [],
@@ -139,15 +139,15 @@
           "detail": "反向充電至負的充電上限電壓 (-Uup)"
         },
         "duration": {
-          "value": "90 min",
-          "detail": "反向充電時間共計 90 min"
+          "value": "90 分鐘",
+          "detail": "反向充電時間共計 90 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [],
@@ -172,24 +172,24 @@
           "detail": "將樣品按照 4.5.1 規定的試驗方法充滿電後"
         },
         "temperature": {
-          "value": "20 ℃ ± 5 ℃",
-          "detail": "放置於 20 ℃ ± 5 ℃ 的真空箱中"
+          "value": "20 °C ± 5 °C",
+          "detail": "放置於 20 °C ± 5 °C 的真空箱中"
         },
         "pressure": {
           "value": "11.6 kPa",
           "detail": "抽真空將箱內壓強降低至 11.6 kPa (模擬海拔 15240 m)"
         },
         "duration": {
-          "value": "6 h",
-          "detail": "保持 6 h"
+          "value": "6 小時",
+          "detail": "保持 6 小時"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -214,24 +214,24 @@
           "detail": "將充滿電的樣品放置在試驗箱內"
         },
         "temperatures": {
-          "value": "-40 ℃ ~ 72 ℃",
-          "detail": "在 72 ℃ ± 2 ℃ 保持 6 h，在 -40 ℃ ± 2 ℃ 保持 6 h，轉換時間不大於 30 min"
+          "value": "-40 °C ~ 72 °C",
+          "detail": "在 72 °C ± 2 °C 保持 6 小時，在 -40 °C ± 2 °C 保持 6 小時，轉換時間不大於 30 分鐘"
         },
         "cycle_count": {
           "value": "10 次循環",
           "detail": "共循環 10 次"
         },
         "observation": {
-          "value": "6 h",
-          "detail": "在 25 ℃ ± 5 ℃ 的環境溫度下保存至少 6 h"
+          "value": "6 小時",
+          "detail": "在 25 °C ± 5 °C 的環境溫度下保存至少 6 小時"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -257,19 +257,19 @@
         },
         "frequency": {
           "value": "7 Hz ~ 200 Hz",
-          "detail": "對數掃頻循環 7 Hz ~ 200 Hz ~ 7 Hz，時間 15 min，加速度幅值 1gn 至 8gn，位移幅值 0.8 mm"
+          "detail": "對數掃頻循環 7 Hz ~ 200 Hz ~ 7 Hz，時間 15 分鐘，加速度幅值 1gn 至 8gn，位移幅值 0.8 mm"
         },
         "cycles": {
           "value": "每個方向 12 次",
-          "detail": "每個方向進行 12 個循環，共計 3h。圓柱型/扣式 2 個方向，方型/軟包 3 個方向。"
+          "detail": "每個方向進行 12 個循環，共計 3 小時。圓柱型/扣式 2 個方向，方型/軟包 3 個方向。"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -307,12 +307,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液；電池組能充放電",
+        "summary": "無起火、無爆炸、無洩漏；電池組能充放電",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不漏液",
-          "試驗後電池組應能進行 1 次充放電循環"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -346,11 +345,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、電池組不漏液",
+        "summary": "無起火、無爆炸、電池組無洩漏",
         "details": [
-          "電池: 不起火、不爆炸",
-          "電池組: 不起火、不爆炸、不漏液",
-          "試驗後電池組應能進行 1 次充放電循環"
+          "電池: 無起火、無爆炸",
+          "電池組: 無起火、無爆炸、無洩漏"
         ]
       },
       "exemptions": [],
@@ -387,14 +385,14 @@
         },
         "termination": {
           "value": "最大力或電壓降1/3",
-          "detail": "壓力達到最大值或電壓下降三分之一，停止並觀察 5 min"
+          "detail": "壓力達到最大值或電壓下降三分之一，停止並觀察 5 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [],
@@ -430,15 +428,15 @@
           "detail": "從 610 mm ± 25 mm 高處自由落體"
         },
         "observation": {
-          "value": "6 h",
-          "detail": "試驗後觀察 6 h"
+          "value": "6 小時",
+          "detail": "試驗後觀察 6 小時"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [
@@ -464,23 +462,23 @@
           "detail": "將電池充滿電後放入室溫試驗箱中"
         },
         "ramp_rate": {
-          "value": "5 ℃/min",
-          "detail": "以 5 ℃/min ± 2 ℃/min 的速率升溫"
+          "value": "5 °C/min",
+          "detail": "以 5 °C/min ± 2 °C/min 的速率升溫"
         },
         "temperature": {
-          "value": "135 ℃ ± 2 ℃",
-          "detail": "升溫至 135 ℃ ± 2 ℃ 後恆溫"
+          "value": "135 °C ± 2 °C",
+          "detail": "升溫至 135 °C ± 2 °C 後恆溫"
         },
         "duration": {
-          "value": "60 min",
-          "detail": "持續 60 min"
+          "value": "60 分鐘",
+          "detail": "持續 60 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [],
@@ -516,15 +514,15 @@
           "detail": "從垂直於極板方向貫穿幾何中心，針尖完全穿過電池"
         },
         "observation": {
-          "value": "5 min",
-          "detail": "鋼針停留在電池中觀察 5 min"
+          "value": "5 分鐘",
+          "detail": "鋼針停留在電池中觀察 5 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [],
@@ -552,8 +550,8 @@
           "detail": "用火焰加熱電池"
         },
         "termination": {
-          "value": "爆炸、完全燃燒或 30min",
-          "detail": "電池爆炸、完全燃燒或持續加熱 30 min 未起火未爆炸時停止"
+          "value": "爆炸、完全燃燒或 30 分鐘",
+          "detail": "電池爆炸、完全燃燒或持續加熱 30 分鐘 未起火未爆炸時停止"
         }
       },
       "acceptance_criteria": {
@@ -615,20 +613,20 @@
           "detail": "室溫下在水中浸泡，水深沒過樣品 5 cm ~ 10 cm"
         },
         "duration": {
-          "value": "24 h",
-          "detail": "浸泡 24 h"
+          "value": "24 小時",
+          "detail": "浸泡 24 小時"
         },
         "observation": {
-          "value": "8 h",
-          "detail": "取出後在實驗室環境放置 8 h"
+          "value": "8 小時",
+          "detail": "取出後在實驗室環境放置 8 小時"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不冒煙",
+        "summary": "無起火、無爆炸、無冒煙",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不冒煙"
+          "無起火",
+          "無爆炸",
+          "無冒煙"
         ]
       },
       "exemptions": [],
@@ -651,12 +649,12 @@
           "detail": "電池組充滿電後"
         },
         "temperature": {
-          "value": "70 ℃ ± 2 ℃",
-          "detail": "放在 70 ℃ ± 2 ℃ 的鼓風恆溫箱中"
+          "value": "70 °C ± 2 °C",
+          "detail": "放在 70 °C ± 2 °C 的鼓風恆溫箱中"
         },
         "duration": {
-          "value": "7 h",
-          "detail": "擱置 7 h 後取出恢復至室溫"
+          "value": "7 小時",
+          "detail": "擱置 7 小時 後取出恢復至室溫"
         }
       },
       "acceptance_criteria": {
@@ -714,12 +712,12 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "25 ℃ ± 5 ℃",
-          "detail": "在 25 ℃ ± 5 ℃ 下循環"
+          "value": "25 °C ± 5 °C",
+          "detail": "在 25 °C ± 5 °C 下循環"
         },
         "cycle_params": {
           "value": "0.8 Icm 充, 1 It 放",
-          "detail": "0.8 倍最大充電電流恆流充電，1 It 恆流放電"
+          "detail": "0.8 倍最大充電電流恆流充電至(Ucl-0.1 V)，1 It 恆流放電"
         },
         "cycle_count": {
           "value": "300 次",
@@ -769,20 +767,20 @@
         },
         "voltage": {
           "value": "(n × 6.0) V",
-          "detail": "充電電壓為 (n × 6.0) V 或製造商規定的可能承受的最高電壓值"
+          "detail": "充電電壓為 (n × 6.0) V 或製造商規定的可能承受的最高電壓值(取兩者較高值)"
         },
         "termination": {
-          "value": "保護動作後 1 min",
-          "detail": "保護裝置動作後靜置 1 min"
+          "value": "保護動作後 1 分鐘",
+          "detail": "保護裝置動作後靜置 1 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
           "保護電路應在要求電壓值前動作",
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -811,20 +809,20 @@
         },
         "voltage": {
           "value": "(n × 6.0) V",
-          "detail": "充電電壓為 (n × 6.0) V 或是最高電壓值"
+          "detail": "充電電壓為 (n × 6.0) V 或是最高電壓值(取兩者較高值)"
         },
         "termination": {
-          "value": "保護動作後 1 min",
-          "detail": "每次保護裝置動作後靜置 1 min"
+          "value": "保護動作後 1 分鐘",
+          "detail": "每次保護裝置動作後靜置 1 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
           "每次循環過流充電保護電路都應動作",
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -852,18 +850,18 @@
           "detail": "放電電流為推薦放電電流"
         },
         "termination": {
-          "value": "保護動作後 1 min",
-          "detail": "每次保護裝置動作後靜置 1 min"
+          "value": "保護動作後 1 分鐘",
+          "detail": "每次保護裝置動作後靜置 1 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "最低電壓要求；不起火、不爆炸、不漏液",
+        "summary": "最低電壓要求；無起火、無爆炸、無洩漏",
         "details": [
           "每次循環欠壓放電保護電路都應動作",
-          "最低電壓不應低於 n 倍放電截止電壓",
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "最低電壓不應低於 n 倍放電截止電壓或電池組的放電截止電壓中的較小者",
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -891,17 +889,17 @@
           "detail": "放電電流為 1.5 倍過流放電保護電流"
         },
         "termination": {
-          "value": "保護動作後 1 min",
-          "detail": "每次保護裝置動作後靜置 1 min"
+          "value": "保護動作後 1 分鐘",
+          "detail": "每次保護裝置動作後靜置 1 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
           "每次循環保護裝置都應動作",
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -929,17 +927,17 @@
           "detail": "外部短路總電阻為 (80 ± 10) mΩ"
         },
         "termination": {
-          "value": "保護動作後 1 min",
-          "detail": "短路正負極或輸出端子，保護裝置動作後靜置 1 min"
+          "value": "保護動作後 1 分鐘",
+          "detail": "短路正負極或輸出端子，保護裝置動作後靜置 1 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
           "外部短路保護電路應動作",
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -976,13 +974,13 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "切斷電流；不起火、不爆炸、不漏液",
+        "summary": "切斷電流；無起火、無爆炸、無洩漏",
         "details": [
           "保護電路應發現反向充電並切斷電流",
           "設計不能造成反向連接",
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -1006,25 +1004,25 @@
           "detail": "電池組放完電後"
         },
         "high_temp": {
-          "value": "最高充電溫度 + 5 ℃",
-          "detail": "在高溫 (最高充電溫度或 55 ℃ 取高者加 5 ℃) 環境放置 6h 後充電"
+          "value": "最高充電溫度 + 5 °C",
+          "detail": "在高溫 (最高充電溫度或 55 °C 取高者加 5 °C) 環境放置 6 小時 後充電"
         },
         "low_temp": {
-          "value": "最低充電溫度 - 5 ℃",
-          "detail": "在低溫 (最低充電溫度或 0 ℃ 取低者減 5 ℃) 環境放置 16h 後充電"
+          "value": "最低充電溫度 - 5 °C",
+          "detail": "在低溫 (最低充電溫度或 0 °C 取低者減 5 °C) 環境放置 16 小時 後充電"
         },
         "charge": {
-          "value": "10 min",
-          "detail": "用推薦充電電流進行充電，保持 10 min"
+          "value": "10 分鐘",
+          "detail": "用推薦充電電流進行充電，保持 10 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "不能充電；不起火、不爆炸、不漏液",
+        "summary": "不能充電；無起火、無爆炸、無洩漏",
         "details": [
           "不能充電",
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -1048,21 +1046,21 @@
           "detail": "將電池組充滿電後"
         },
         "temperature": {
-          "value": "最高放電溫度 + 5 ℃",
-          "detail": "最高放電溫度或 45 ℃ (取大者) 加 5 ℃ 的環境中放置 8 h"
+          "value": "最高放電溫度 + 5 °C",
+          "detail": "最高放電溫度或 45 °C (取大者) 加 5 °C 的環境中放置 8 小時"
         },
         "discharge": {
-          "value": "10 min",
-          "detail": "按放電程序進行放電，保持 10 min"
+          "value": "10 分鐘",
+          "detail": "按放電程序進行放電，保持 10 分鐘"
         }
       },
       "acceptance_criteria": {
-        "summary": "1min內切斷；不起火、不爆炸、不漏液",
+        "summary": "1 分鐘內切斷；無起火、無爆炸、無洩漏",
         "details": [
-          "應在 1 min 內切斷電路",
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "應在 1 分鐘 內切斷電路",
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -1087,7 +1085,7 @@
         },
         "preparation": {
           "value": "單體放電",
-          "detail": "使用負載對任意一個電池以 Idr 放電至容量低 x% (優先值為 10，不大於 50)"
+          "detail": "使用負載對樣品中任意(n-1)個電池或電池並聯塊以 Idr 放電至容量低 x% (優先值為 10，不大於 50)"
         },
         "charge": {
           "value": "推薦充電電流",
