@@ -183,7 +183,7 @@
         },
         "stabilization": {
           "value": "靜置 1 小時",
-          "detail": "在測試前，預估所有電芯溫度需達到腔室溫度 ±10°C (±18°F) 內，並靜置 1 小時。"
+          "detail": "在測試前，預估所有電芯溫度需達到腔室溫度 ±10 °C (±18°F) 內，並靜置 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -295,7 +295,7 @@
         },
         "conditioning": {
           "value": "濕熱循環後 (可選)",
-          "detail": "分別在接收狀態與 IEC 60068-2-30 濕熱調節（55 ± 2°C，6次循環）後進行。"
+          "detail": "分別在接收狀態與 IEC 60068-2-30 濕熱調節（55 ± 2 °C，6次循環）後進行。"
         },
         "voltage": {
           "value": "高於待測電壓",
@@ -333,11 +333,7 @@
       "acceptance_criteria": {
         "summary": "連續性維持且電阻 ≤ 0.1 Ω",
         "details": [
-          {
-            "id": "AC-CONT-1",
-            "rule_en": "Electrical continuity shall be maintained.",
-            "rule_zh": "必須維持電氣連續性。"
-          },
+          "必須維持電氣連續性。",
           "電阻不大於 0.1 Ω。"
         ]
       },
@@ -409,7 +405,7 @@
       "conditions": {
         "rotation": {
           "value": "360° 旋轉",
-          "detail": "模擬車輛翻覆，以 90°/15秒 的速率連續旋轉 360°。"
+          "detail": "模擬車輛翻覆，以 90°/15 秒 的速率連續旋轉 360°。"
         },
         "axes": {
           "value": "3 軸向",
@@ -422,16 +418,8 @@
           "應無起火、無爆炸",
           "無有毒氣體釋放 (低於 ERPG-2)",
           "絕緣電阻 ≥ 100 Ω/V",
-          {
-            "id": "AC-RUP-1",
-            "rule_en": "No Rupture",
-            "rule_zh": "無破裂"
-          },
-          {
-            "id": "AC-LEAK-1",
-            "rule_en": "No Leakage",
-            "rule_zh": "無漏液"
-          }
+          "無破裂",
+          "無漏液"
         ]
       },
       "exemptions": [
@@ -589,10 +577,7 @@
         ]
       },
       "exemptions": [
-        {
-          "value": "車輛防護框架",
-          "detail": "受測設備可安裝於能代表車輛結構的防護框架中進行測試。"
-        }
+        "車輛防護框架"
       ],
       "related_tests": [],
       "source_reference": "38",
@@ -612,12 +597,12 @@
       ],
       "conditions": {
         "profile": {
-          "value": "85°C 至 -40°C",
-          "detail": "按照製造商規定的溫度循環輪廓，或使用 SAE J2464 流程，通常為 85°C 至 -40°C。"
+          "value": "85 °C 至 -40 °C",
+          "detail": "按照製造商規定的溫度循環輪廓，或使用 SAE J2464 流程，通常為 85 °C 至 -40 °C。"
         },
         "method": {
           "value": "SAE J2464 (modified)",
-          "detail": "採用 SAE J2464 的熱衝擊測試方法，但極限溫度修改為 85 ±2°C 至 -40 ±2°C。"
+          "detail": "採用 SAE J2464 的熱衝擊測試方法，但極限溫度修改為 85 ±2 °C 至 -40 ±2 °C。"
         }
       },
       "acceptance_criteria": {
@@ -629,10 +614,7 @@
         ]
       },
       "exemptions": [
-        {
-          "value": "模組級替代測試",
-          "detail": "允許在代表性的子組件或模組級別上進行測試。"
-        }
+        "模組級替代測試"
       ],
       "related_tests": [],
       "source_reference": "39",
@@ -665,18 +647,9 @@
         ]
       },
       "exemptions": [
-        {
-          "value": "非海洋環境豁免",
-          "detail": "若系統不適用於海洋、路鹽或融雪劑環境，則可豁免。"
-        },
-        {
-          "value": "IP67 / UL50E 防護豁免",
-          "detail": "若外殼已通過 IP67 浸水測試或符合 UL 50E 室外防護規範，則可豁免。"
-        },
-        {
-          "value": "模組級替代測試",
-          "detail": "允許在代表性的子組件或模組級別上進行測試。"
-        }
+        "非海洋環境豁免",
+        "IP67 / UL50E 防護豁免",
+        "模組級替代測試"
       ],
       "related_tests": [],
       "source_reference": "40",
@@ -715,10 +688,7 @@
         ]
       },
       "exemptions": [
-        {
-          "value": "模組級替代測試",
-          "detail": "允許在代表性的子組件或模組級別上進行測試。"
-        }
+        "模組級替代測試"
       ],
       "related_tests": [],
       "source_reference": "41",
@@ -738,8 +708,8 @@
       ],
       "conditions": {
         "fire_exposure": {
-          "value": "590°C 火焰 20 分鐘",
-          "detail": "暴露於 590°C 以上之火焰中持續 20 分鐘，或按車輛預期的火災暴露條件進行。"
+          "value": "590 °C 火焰 20 分鐘",
+          "detail": "暴露於 590 °C 以上之火焰中持續 20 分鐘，或按車輛預期的火災暴露條件進行。"
         }
       },
       "acceptance_criteria": {
@@ -750,10 +720,7 @@
         ]
       },
       "exemptions": [
-        {
-          "value": "電芯拋射體豁免",
-          "detail": "若所使用的電芯已經通過 Annex B 拋射體測試，則整個系統可豁免外部火燒測試。"
-        }
+        "電芯拋射體豁免"
       ],
       "related_tests": [],
       "source_reference": "42",
@@ -785,10 +752,7 @@
         ]
       },
       "exemptions": [
-        {
-          "value": "代表性模組替代測試",
-          "detail": "允許在代表性的子組件或模組級別上進行測試。"
-        }
+        "代表性模組替代測試"
       ],
       "related_tests": [],
       "source_reference": "43.2",
@@ -1066,16 +1030,8 @@
       "acceptance_criteria": {
         "summary": "無碎片穿透或飛出界外",
         "details": [
-          {
-            "id": "AC-PROJ-1",
-            "rule_en": "No projectile from cell penetrates the wire screen.",
-            "rule_zh": "單電池爆炸產生的碎片不得穿透金屬網。"
-          },
-          {
-            "id": "AC-PROJ-2",
-            "rule_en": "No projectile falls outside a 0.5-m perimeter.",
-            "rule_zh": "單電池碎片不得飛出測試區域外 0.5 公尺的範圍。"
-          }
+          "單電池爆炸產生的碎片不得穿透金屬網。",
+          "單電池碎片不得飛出測試區域外 0.5 公尺的範圍。"
         ]
       },
       "original_text_snippet": "Heating test (placing the cell on a wire mesh over a Meker burner) until it explodes or burns out.",

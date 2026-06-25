@@ -66,8 +66,8 @@
           "detail": "施加壓力上限為 13 ± 1 kN。達到此壓力時應立即釋放。(Maximum applied force: 13 ± 1 kN. Pressure shall be released immediately upon reaching this force.)"
         },
         "test_temperature": {
-          "value": "45°C 與 10°C",
-          "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
+          "value": "45 °C 與 10 °C",
+          "detail": "所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。"
         },
         "sample_quantity": {
           "value": "各溫5個 (方型10個)",
@@ -113,23 +113,23 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "55 ± 5°C",
-          "detail": "電芯外部短絡測試在 55 ± 5°C 環境溫度條件下進行。(Cell-level external short circuit test conducted at 55 ± 5°C ambient temperature.)"
+          "value": "55 ± 5 °C",
+          "detail": "電芯外部短絡測試在 55 ± 5 °C 環境溫度條件下進行。(Cell-level external short circuit test conducted at 55 ± 5 °C ambient temperature.)"
         },
         "external_resistance": {
           "value": "80 ± 20 mΩ",
           "detail": "外部短絡電阻為 80 ± 20 mΩ。(External short circuit resistance: 80 ± 20 mΩ.)"
         },
         "test_temperature": {
-          "value": "45°C 與 10°C",
-          "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
+          "value": "45 °C 與 10 °C",
+          "detail": "所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。"
         },
         "sample_quantity": {
           "value": "每溫度 5 個",
           "detail": "每個溫度條件下 5 個樣品。(5 samples per temperature condition.)"
         },
         "duration": {
-          "value": "24h 或 溫降 20%",
+          "value": "24 小時 或 溫降 20%",
           "detail": "持續 24 小時，或直到電芯表面溫度與環境溫度的差值降至其最大值的 20% 以下，以較短者為準。(Maintained for 24 hours or until the difference between cell surface temp and ambient drops to 20% or less of its maximum value, whichever is shorter.)"
         }
       },
@@ -162,20 +162,20 @@
       ],
       "conditions": {
         "heating_rate": {
-          "value": "5 ± 2°C/min",
-          "detail": "加熱速率為 5 ± 2°C/min。(Heating rate: 5 ± 2°C/min.)"
+          "value": "5 ± 2 °C/min",
+          "detail": "加熱速率為 5 ± 2 °C/min。(Heating rate: 5 ± 2 °C/min.)"
         },
         "target_temperature": {
-          "value": "130 ± 2°C",
-          "detail": "升溫至 130 ± 2°C。(Heat up to 130 ± 2°C.)"
+          "value": "130 ± 2 °C",
+          "detail": "升溫至 130 ± 2 °C。(Heat up to 130 ± 2 °C.)"
         },
         "hold_duration": {
           "value": "保持 10 分鐘",
           "detail": "達到目標溫度後保持 10 分鐘。(Hold at target temperature for 10 minutes.)"
         },
         "test_temperature": {
-          "value": "45°C 與 10°C",
-          "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
+          "value": "45 °C 與 10 °C",
+          "detail": "所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。"
         },
         "sample_quantity": {
           "value": "每溫度 5 個",
@@ -230,15 +230,15 @@
           "detail": "方型電芯 (Prismatic cells) 之壓力上限為 400 N。(Upper limit pressure for prismatic cells: 400 N.)"
         },
         "environment_dew_point": {
-          "value": "露點 ≤ -25°C",
-          "detail": "操作環境之露點溫度須 ≤ -25°C。(Operating environment dew point must be ≤ -25°C.)"
+          "value": "露點 ≤ -25 °C",
+          "detail": "操作環境之露點溫度須 ≤ -25 °C。(Operating environment dew point must be ≤ -25 °C.)"
         },
         "disassembly_time_limit": {
           "value": "30 分鐘內完成",
           "detail": "從電芯解體至重新密封的過程須在 30 分鐘內完成。(The process from cell disassembly to resealing must be completed within 30 minutes.)"
         },
         "voltage_drop_stop_condition": {
-          "value": "壓降 ≥50mV / 30s釋放",
+          "value": "壓降 ≥50mV / 30 秒釋放",
           "detail": "若偵測到電壓降 ≥ 50 mV：停止加壓 (stop pressurizing)，30 秒後釋放壓力。(If voltage drop ≥ 50 mV detected: stop pressurizing, release after 30 seconds.)"
         },
         "force_limit_stop_condition": {
@@ -250,8 +250,8 @@
           "detail": "若達到上限壓力仍未發生短絡，樣品數量可追加至最多 10 個。(If short circuit does not occur at upper limit pressure, sample count may be extended up to 10.)"
         },
         "test_temperature": {
-          "value": "45°C 與 10°C",
-          "detail": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。"
+          "value": "45 °C 與 10 °C",
+          "detail": "所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。"
         },
         "sample_quantity": {
           "value": "各溫5至10個",
@@ -333,8 +333,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "20 ± 5°C",
-          "detail": "組電池外部短絡測試在 20 ± 5°C（室溫）環境溫度條件下進行。與電芯層級 (55 ± 5°C) 不同。(Battery-level external short circuit test conducted at 20 ± 5°C room temperature, different from cell-level 55 ± 5°C.)"
+          "value": "20 ± 5 °C",
+          "detail": "組電池外部短絡測試在 20 ± 5 °C（室溫）環境溫度條件下進行。與電芯層級 (55 ± 5 °C) 不同。(Battery-level external short circuit test conducted at 20 ± 5 °C room temperature, different from cell-level 55 ± 5 °C.)"
         },
         "external_resistance": {
           "value": "80 ± 20 mΩ",
@@ -342,10 +342,10 @@
         },
         "sample_quantity": {
           "value": "45C/10C 各5個",
-          "detail": "需要經過雙溫度充電條件（45°C 及 10°C），各 5 個樣品，共 10 個樣品。(Requires dual-temperature charging requirement at 45°C and 10°C, 5 samples each, total 10 samples.)"
+          "detail": "需要經過雙溫度充電條件（45 °C 及 10 °C），各 5 個樣品，共 10 個樣品。(Requires dual-temperature charging requirement at 45 °C and 10 °C, 5 samples each, total 10 samples.)"
         },
         "duration_and_observation": {
-          "value": "24h 或 溫降 20%",
+          "value": "24 小時 或 溫降 20%",
           "detail": "Maintain short circuit for 24 hours OR until the temperature difference drops to 20% of its maximum value. Only if current is interrupted by a protection device, observe for 1 hour after current interruption."
         }
       },

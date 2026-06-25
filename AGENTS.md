@@ -38,6 +38,28 @@
 
 > **[提示]** 關於 21 份標準的詳細交叉稽核與修復歷史 (破曉大隊)，已歸檔至 [`AUDIT_LOGS.md`](./AUDIT_LOGS.md) 備查。
 
+> ## 📐 資料維護鐵律：產生資料後一定要正規化
+>
+> 不同 batch / agent 產出的標準 JSON 容易在格式上分歧（h vs 小時、℃ vs °C、`acceptance_criteria.details` 混入物件、孤兒判定鍵…）。**Dawn Audit / 任何會改 `data/*.json` 的維護流程，在寫入資料後務必執行：**
+>
+> ```bash
+> npm run normalize       # = node scripts/normalize_data.mjs --write（冪等、只動格式、絕不改數值）
+> npm run validate        # 結構完整性驗證
+> ```
+>
+> CI（`data-integrity.yml`）會以 `normalize:check` 把關：只要有檔案未正規化就會 fail。正規化器預設會**略過 git-dirty 檔**以免干擾進行中的工作；要全部處理加 `--all`。標準形：時間用繁中（小時／分鐘／秒）、溫度用 `°C`。
+
+## 2026-06-25 (Data Normalization)
+- 事件：建立確定性資料格式正規化器，全面收斂橫向比對內容的格式不一致
+- 背景：不同 batch / AI agent 處理的標準，在「單位、記法、結構」上各寫各的——時間混用 `h`/`小時`/`min`/`分鐘`、溫度混用 `°C`/`℃`/`度`、`acceptance_criteria.details` 陣列混入 `{id,rule_zh,rule_en}` 物件、還有 UI 從不渲染的孤兒判定鍵（`no_venting` 等），導致同一測試在不同標準間看起來格式雜亂。
+- 變更：
+  - 新增 `scripts/normalize_data.mjs`：以「數字緊鄰」為錨的單位正規化（標準形＝繁中時間單位＋`°C`），攤平 details 物件、把孤兒判定鍵折進 `details`。**冪等、語意安全（經 5219 條字串驗證：0 數值變動、0 動到 mAh/Wh/mm·s⁻¹/ms 等受保護單位）**。
+  - 對 24 個 clean 檔套用（238 筆測試項目）；4 個 cron 進行中的 git-dirty 檔暫時略過。
+  - `package.json` 加 `normalize` / `normalize:check` / `validate` scripts；CI 加 `normalize:check` 把關。
+- 後續行動：
+  - ⚠️ `data/GB40559.json` 仍是舊 schema（`test_items`/`document_info`），validator 會報硬錯誤；前端已能容錯，但正解是重新產生為新 schema（`tests`/`document`）。
+  - Phase 2：Haiku 跨標準用語/顆粒度稽核（唯讀，產出待審清單）已執行，建議統一寫法待人工複核後再批次套用。
+
 ## 2026-06-25 (UI Polish & Bug Fix)
 - 事件：移除首頁冗餘的側邊選擇器、新增 5 份國標分類並修復繁體中文化轉換 Bug
 - 背景：

@@ -93,12 +93,12 @@
           "detail": "正常操作 SOC 範圍的上半部 (Upper 50 per cent of the normal operating SOC range)。"
         },
         "temp_high": {
-          "value": "60 ± 2°C",
-          "detail": "最高溫度 60 ± 2°C (或製造商要求之更高溫度)。"
+          "value": "60 ± 2 °C",
+          "detail": "最高溫度 60 ± 2 °C (或製造商要求之更高溫度)。"
         },
         "temp_low": {
-          "value": "-40 ± 2°C",
-          "detail": "最低溫度 -40 ± 2°C (或製造商要求之更低溫度)。"
+          "value": "-40 ± 2 °C",
+          "detail": "最低溫度 -40 ± 2 °C (或製造商要求之更低溫度)。"
         },
         "dwell_time": {
           "value": "≥ 6 小時",
@@ -114,7 +114,7 @@
         },
         "post_storage": {
           "value": "24 小時",
-          "detail": "循環完成後於 20 ± 10°C 靜置 24 小時。"
+          "detail": "循環完成後於 20 ± 10 °C 靜置 24 小時。"
         },
         "post_test": {
           "value": "標準循環 + 1 小時觀察",
@@ -153,8 +153,8 @@
           "detail": "SOC 至少為額定容量的 90%。"
         },
         "temperature": {
-          "value": "20 ± 10°C",
-          "detail": "測試在環境溫度 20 ± 10°C 下進行。"
+          "value": "20 ± 10 °C",
+          "detail": "測試在環境溫度 20 ± 10 °C 下進行。"
         },
         "drop_height": {
           "value": "1.0 m",
@@ -207,8 +207,8 @@
           "detail": "正常操作 SOC 範圍的上半部 (Upper 50 per cent of the normal operating SOC range)。"
         },
         "temperature": {
-          "value": "20 ± 10°C",
-          "detail": "測試在環境溫度 20 ± 10°C 下進行。"
+          "value": "20 ± 10 °C",
+          "detail": "測試在環境溫度 20 ± 10 °C 下進行。"
         },
         "shock_lt_12kg": {
           "value": "半正弦波，峰值 1500 m/s², 6 ms (質量 < 12 kg)",
@@ -317,8 +317,8 @@
           "detail": "正常操作 SOC 範圍的上半部 (Upper 50 per cent of the normal operating SOC range)。"
         },
         "temperature": {
-          "value": "20 ± 10°C",
-          "detail": "測試在環境溫度 20 ± 10°C 下進行 (或製造商要求之更高溫度)。"
+          "value": "20 ± 10 °C",
+          "detail": "測試在環境溫度 20 ± 10 °C 下進行 (或製造商要求之更高溫度)。"
         },
         "contactors": {
           "value": "主接觸器閉合",
@@ -330,7 +330,7 @@
         },
         "duration": {
           "value": "保護介入或溫度穩定",
-          "detail": "持續短路直至保護功能中斷或限制電流，或在外殼溫度穩定 (1 小時內溫度梯度小於 4°C) 後至少持續 1 小時。"
+          "detail": "持續短路直至保護功能中斷或限制電流，或在外殼溫度穩定 (1 小時內溫度梯度小於 4 °C) 後至少持續 1 小時。"
         },
         "post_test": {
           "value": "標準循環 + 1 小時觀察",
@@ -365,8 +365,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "20 ± 10°C",
-          "detail": "測試在環境溫度 20 ± 10°C 下進行 (或製造商要求之更高溫度)。"
+          "value": "20 ± 10 °C",
+          "detail": "測試在環境溫度 20 ± 10 °C 下進行 (或製造商要求之更高溫度)。"
         },
         "charge_current": {
           "value": "≥ 1/3 C",
@@ -413,8 +413,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "20 ± 10°C",
-          "detail": "測試在環境溫度 20 ± 10°C 下進行 (或製造商要求之更高溫度)。"
+          "value": "20 ± 10 °C",
+          "detail": "測試在環境溫度 20 ± 10 °C 下進行 (或製造商要求之更高溫度)。"
         },
         "discharge_current": {
           "value": "≥ 1/3 C",
@@ -474,7 +474,7 @@
         },
         "end_condition": {
           "value": "保護介入或溫度穩定",
-          "detail": "測試持續直至 REESS 抑制或限制充放電，或溫度穩定 (2 小時內溫度梯度小於 4°C)。"
+          "detail": "測試持續直至 REESS 抑制或限制充放電，或溫度穩定 (2 小時內溫度梯度小於 4 °C)。"
         }
       },
       "acceptance_criteria": {
@@ -505,14 +505,7 @@
         "REESS"
       ],
       "exemptions": [
-        {
-          "id": "EX-H2-1",
-          "condition_zh": "具備封閉化學系統之水性電解質電池或非水性電解質電池（如鋰離子電池）",
-          "exempt_from": [
-            "AIS-156-H2"
-          ],
-          "source_reference": "6.10"
-        }
+        "{\"id\":\"EX-H2-1\",\"condition_zh\":\"具備封閉化學系統之水性電解質電池或非水性電解質電池（如鋰離子電池）\",\"exempt_from\":[\"AIS-156-H2\"],\"source_reference\":\"6.10\"}"
       ],
       "conditions": {
         "procedure": {
@@ -523,11 +516,7 @@
       "acceptance_criteria": {
         "summary": "不超過排放限值",
         "details": [
-          {
-            "id": "AC-H2-1",
-            "rule_en": "Hydrogen emissions shall not exceed the limit specified in the standard.",
-            "rule_zh": "氫氣排放量不得超過標準中規定的限值。"
-          }
+          "氫氣排放量不得超過標準中規定的限值。"
         ]
       }
     }

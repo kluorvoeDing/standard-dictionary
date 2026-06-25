@@ -37,12 +37,12 @@
           "detail": "以 I = P_rc / U_nom 的恆定電流進行充電。"
         },
         "termination": {
-          "value": "1.5倍截止電壓或1h",
-          "detail": "充電至任一電池單體電壓達到電池單體充電截止電壓的1.5倍，或時間達到1小時停止充電。"
+          "value": "1.5倍截止電壓或1 小時",
+          "detail": "充電至任一電池單體電壓達到電池單體充電截止電壓的1.5倍，或時間達到1 小時停止充電。"
         },
         "observation": {
-          "value": "1小時",
-          "detail": "停止充電後觀察1小時。"
+          "value": "1 小時",
+          "detail": "停止充電後觀察1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -76,12 +76,12 @@
           "detail": "以 I = P_rd / U_nom 的恆定電流進行放電。"
         },
         "termination": {
-          "value": "0V或1h",
-          "detail": "放電至電壓達到0V，或時間達到1小時停止放電。"
+          "value": "0V或1 小時",
+          "detail": "放電至電壓達到0V，或時間達到1 小時停止放電。"
         },
         "observation": {
-          "value": "1小時",
-          "detail": "停止放電後觀察1小時。"
+          "value": "1 小時",
+          "detail": "停止放電後觀察1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -114,15 +114,15 @@
       "conditions": {
         "charge": {
           "value": "4×P_rc 至截止電壓",
-          "detail": "以 4倍 P_rc 恆功率充電至充電截止電壓，靜置10分鐘。"
+          "detail": "以 4倍 P_rc 恆功率充電至充電截止電壓，靜置10 分鐘。"
         },
         "discharge": {
           "value": "4×P_rd 至截止電壓",
           "detail": "以 4倍 P_rd 恆功率放電至放電截止電壓。"
         },
         "observation": {
-          "value": "1小時",
-          "detail": "放電結束後觀察1小時。"
+          "value": "1 小時",
+          "detail": "放電結束後觀察1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -158,12 +158,12 @@
           "detail": "單體外部線路總電阻應在 [0.8, 1.0] mΩ，保持 10 分鐘。"
         },
         "resistance_module": {
-          "value": "雙重短路：[0.8, 1.0]mΩ (10min) 及 [27.0, 32.8]mΩ (30min)",
+          "value": "雙重短路：[0.8, 1.0]mΩ (10 分鐘) 及 [27.0, 32.8]mΩ (30 分鐘)",
           "detail": "模塊先在 [0.8, 1.0] mΩ 下短路 10 分鐘；更換樣品後，在 [27.0, 32.8] mΩ 下短路 30 分鐘。"
         },
         "observation": {
-          "value": "1小時",
-          "detail": "斷開短路後觀察1小時。"
+          "value": "1 小時",
+          "detail": "斷開短路後觀察1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -197,7 +197,7 @@
           "detail": "根據截止電壓不同，施加 500V、1000V 或 2500V 試驗電壓。"
         },
         "duration": {
-          "value": "1 min",
+          "value": "1 分鐘",
           "detail": "持續 1 分鐘，測量絕緣電阻。"
         }
       },
@@ -229,11 +229,11 @@
       "conditions": {
         "dc_voltage": {
           "value": "1530V~5370V DC",
-          "detail": "根據額定電壓，施加相應的直流試驗電壓 60s。"
+          "detail": "根據額定電壓，施加相應的直流試驗電壓 60 秒。"
         },
         "ac_voltage": {
           "value": "1080V~3800V AC",
-          "detail": "施加相應的交流試驗電壓 60s (45Hz~62Hz)。"
+          "detail": "施加相應的交流試驗電壓 60 秒 (45Hz~62Hz)。"
         }
       },
       "acceptance_criteria": {
@@ -274,10 +274,10 @@
         },
         "force": {
           "value": "50 kN",
-          "detail": "擠壓力達到 50 kN 時保持該擠壓力 10 min。"
+          "detail": "擠壓力達到 50 kN 時保持該擠壓力 10 分鐘。"
         },
         "observation": {
-          "value": "1小時",
+          "value": "1 小時",
           "detail": "停止擠壓後觀察 1 小時。"
         }
       },
@@ -318,7 +318,7 @@
           "detail": "正極或負極朝下跌落。"
         },
         "observation": {
-          "value": "1小時",
+          "value": "1 小時",
           "detail": "跌落後觀察 1 小時。"
         }
       },
@@ -353,18 +353,18 @@
           "detail": "使用加熱部件對單體進行加熱，同時以 I = P_rc / U_nom 的特定電流進行恆流充電觸發。"
         },
         "trigger": {
-          "value": "dT/dt ≥ 3°C/s 或 起火/爆炸 或 300°C",
-          "detail": "監測溫度速率，當連續三個溫升速率 ≥ 3°C/s，或起火爆炸，或達到 300°C，或時間達到 4h 時停止加熱。"
+          "value": "dT/dt ≥ 3 °C/s 或 起火/爆炸 或 300 °C",
+          "detail": "監測溫度速率，當連續三個溫升速率 ≥ 3 °C/s，或起火爆炸，或達到 300 °C，或時間達到 4 小時 時停止加熱。"
         },
         "observation": {
-          "value": "觀察 1 h",
+          "value": "觀察 1 小時",
           "detail": "測試後觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
-        "summary": "表面大於90℃，不起火爆炸",
+        "summary": "表面大於90 °C，不起火爆炸",
         "details": [
-          "表面溫度應大於 90 ℃",
+          "表面溫度應大於 90 °C",
           "不應起火、爆炸",
           "不應在防爆閥或洩壓點之外的位置發生破裂"
         ]
@@ -391,11 +391,11 @@
           "detail": "使用加熱部件對單體進行加熱，同時以 I = P_rc / U_nom 的特定電流進行恆流充電觸發。"
         },
         "trigger": {
-          "value": "dT/dt ≥ 3°C/s 或 起火/爆炸 或 300°C",
-          "detail": "監測溫度速率，當連續三個溫升速率 ≥ 3°C/s，或起火爆炸，或達到 300°C，或時間達到 4h 時停止加熱。"
+          "value": "dT/dt ≥ 3 °C/s 或 起火/爆炸 或 300 °C",
+          "detail": "監測溫度速率，當連續三個溫升速率 ≥ 3 °C/s，或起火爆炸，或達到 300 °C，或時間達到 4 小時 時停止加熱。"
         },
         "observation": {
-          "value": "觀察 1 h",
+          "value": "觀察 1 小時",
           "detail": "測試後觀察 1 小時。"
         },
         "preconditioning": {
@@ -404,9 +404,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "表面大於90℃，不起火爆炸",
+        "summary": "表面大於90 °C，不起火爆炸",
         "details": [
-          "表面溫度應大於 90 ℃",
+          "表面溫度應大於 90 °C",
           "不應起火、爆炸",
           "不應在防爆閥或洩壓點之外的位置發生破裂"
         ]
@@ -433,7 +433,7 @@
           "detail": "對模塊內的中心單體或最小並聯單元觸發熱失控，採用恆流充電，以觸發對象的額定功率與其標稱電壓的比值作為電流值。"
         },
         "observation": {
-          "value": "觀察 1 h",
+          "value": "觀察 1 小時",
           "detail": "測試後觀察 1 小時，監測相鄰單體是否發生熱失控。"
         }
       },
@@ -468,15 +468,15 @@
         },
         "vibration_profile": {
           "value": "三軸隨機振動",
-          "detail": "X、Y、Z軸三個方向隨機振動，每軸 180 min"
+          "detail": "X、Y、Z軸三個方向隨機振動，每軸 180 分鐘"
         },
         "vibration_rms": {
           "value": "0.51 g",
           "detail": "振動加速度均方根值為 0.51 g。"
         },
         "observation_time": {
-          "value": "觀察 1 h",
-          "detail": "1 h"
+          "value": "觀察 1 小時",
+          "detail": "1 小時"
         },
         "post_test": {
           "value": "絕緣與耐壓",
@@ -518,10 +518,10 @@
         },
         "pressure": {
           "value": "1.2倍工作壓強",
-          "detail": "向液冷管路增壓至壓強達到最大工作壓強的 1.2 倍，並穩壓 2 min。"
+          "detail": "向液冷管路增壓至壓強達到最大工作壓強的 1.2 倍，並穩壓 2 分鐘。"
         },
         "hold_time": {
-          "value": "靜置 1 min",
+          "value": "靜置 1 分鐘",
           "detail": "測試後靜置 1 分鐘觀察管路壓力。"
         }
       },
@@ -559,8 +559,8 @@
           "detail": "(5±1)% 氯化鈉溶液"
         },
         "spray_cycle": {
-          "value": "噴霧 2h / 貯存 22h",
-          "detail": "35±2 °C 噴霧 2 h，然後 40±2 °C / 93±3% RH 貯存 22 h"
+          "value": "噴霧 2 小時 / 貯存 22 小時",
+          "detail": "35±2 °C 噴霧 2 小時，然後 40±2 °C / 93±3% RH 貯存 22 小時"
         },
         "spray_storage_cycles": {
           "value": "循環 4 次",
@@ -575,12 +575,12 @@
           "detail": "大循環 4 次 (共 28 天)"
         },
         "observation_time": {
-          "value": "觀察 1 h",
-          "detail": "1 h"
+          "value": "觀察 1 小時",
+          "detail": "1 小時"
         },
         "post_test": {
           "value": "絕緣與耐壓",
-          "detail": "30 min 內進行絕緣與耐壓試驗"
+          "detail": "30 分鐘 內進行絕緣與耐壓試驗"
         }
       },
       "acceptance_criteria": {
@@ -616,12 +616,12 @@
           "detail": "初始化充電"
         },
         "high_temp_phase": {
-          "value": "高溫高濕 6h",
-          "detail": "50±2 °C, 95±3% RH 保持 6 h"
+          "value": "高溫高濕 6 小時",
+          "detail": "50±2 °C, 95±3% RH 保持 6 小時"
         },
         "low_temp_phase": {
-          "value": "低溫高濕 6h",
-          "detail": "25±2 °C, 95±3% RH 保持 6 h"
+          "value": "低溫高濕 6 小時",
+          "detail": "25±2 °C, 95±3% RH 保持 6 小時"
         },
         "temp_ramp_rate": {
           "value": "斜率 12.5 °C/h",
@@ -636,12 +636,12 @@
           "detail": "25±2 °C, 70±3% RH"
         },
         "observation_time": {
-          "value": "觀察 1 h",
-          "detail": "1 h"
+          "value": "觀察 1 小時",
+          "detail": "1 小時"
         },
         "post_test": {
           "value": "絕緣與耐壓",
-          "detail": "30 min 內進行絕緣與耐壓試驗"
+          "detail": "30 分鐘 內進行絕緣與耐壓試驗"
         }
       },
       "acceptance_criteria": {
@@ -686,12 +686,12 @@
           "detail": "試驗環境溫度維持在 25±2 °C。"
         },
         "hold_time": {
-          "value": "維持 6 h",
-          "detail": "6 h"
+          "value": "維持 6 小時",
+          "detail": "6 小時"
         },
         "test_voltage": {
-          "value": "施加 1 min",
-          "detail": "施加試驗電壓 1 min"
+          "value": "施加 1 分鐘",
+          "detail": "施加試驗電壓 1 分鐘"
         }
       },
       "acceptance_criteria": {
@@ -731,16 +731,16 @@
           "detail": "試驗環境溫度維持在 25±2 °C。"
         },
         "hold_time": {
-          "value": "維持 6 h",
-          "detail": "6 h"
+          "value": "維持 6 小時",
+          "detail": "6 小時"
         },
         "dc_voltage": {
-          "value": "直流 60s",
-          "detail": "施加直流電壓 60 s"
+          "value": "直流 60 秒",
+          "detail": "施加直流電壓 60 秒"
         },
         "ac_voltage": {
-          "value": "交流 60s",
-          "detail": "施加交流電壓 45-62 Hz 保持 60 s"
+          "value": "交流 60 秒",
+          "detail": "施加交流電壓 45-62 Hz 保持 60 秒"
         }
       },
       "acceptance_criteria": {
@@ -784,16 +784,16 @@
           "detail": "130 °C"
         },
         "hold_time_initial": {
-          "value": "首階保持 5h",
-          "detail": "40 °C 下保持 5 h"
+          "value": "首階保持 5 小時",
+          "detail": "40 °C 下保持 5 小時"
         },
         "hold_time_subsequent": {
-          "value": "後續保持 1h",
-          "detail": "後續每階保持 1 h"
+          "value": "後續保持 1 小時",
+          "detail": "後續每階保持 1 小時"
         },
         "measurement_period": {
           "value": "計算區間 20m",
-          "detail": "恆定溫度 20 min 用於計算溫升速率"
+          "detail": "恆定溫度 20 分鐘 用於計算溫升速率"
         }
       },
       "acceptance_criteria": {

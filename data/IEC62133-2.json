@@ -9,7 +9,10 @@
     "publication_date": "2021-07 (Edition 1.1 Consolidated, base Edition 1.0: 2017-02, Amendment 1: 2021-07)",
     "type": "standard",
     "scope": "本標準規定了可攜式密封二次鋰電池（含非酸性電解質）在預期使用及合理可預見誤用條件下安全操作的要求和測試方法。",
-    "applicable_objects": ["CELL", "PACK_SYSTEM"],
+    "applicable_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
     "source_pdf": "IEC 62133-2-2017 Amd 1-2021.pdf",
     "source_gemini_md": "IEC62133-2_zh-TW_standardized.md"
   },
@@ -168,7 +171,9 @@
       "section": "7.2.1",
       "category": "ELEC",
       "subcategory": "持續充電 (Continuous Charging)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序一 (Procedure 1, 7.1.1)",
@@ -218,7 +223,9 @@
       "section": "7.2.2",
       "category": "THERM",
       "subcategory": "外殼應力 (Case/Mold Stress)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序一 (Procedure 1, 7.1.1)",
@@ -266,7 +273,9 @@
       "section": "7.3.1",
       "category": "ELEC",
       "subcategory": "外部短路 (External Short Circuit)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序二 (Procedure 2, 7.1.2) — 安全充電程序",
@@ -282,7 +291,7 @@
         },
         "stabilization_time": {
           "value": "1-4 小時",
-          "detail": "在 55 °C ± 5 °C 環境下穩定 1 至 4 小時 (After stabilization for 1 h to 4 h)"
+          "detail": "在 55 °C ± 5 °C 環境下穩定 1 至 4 小時 (After stabilization for 1 小時 to 4 小時)"
         },
         "external_resistance": {
           "value": "80 ± 20 mΩ",
@@ -307,7 +316,9 @@
       "exemptions": [
         "內阻 > 3 Ω 的鈕扣電池豁免 (Coin cells with internal resistance > 3 Ω are exempt per 5.1)"
       ],
-      "related_tests": ["IEC62133-2-7.3.2"],
+      "related_tests": [
+        "IEC62133-2-7.3.2"
+      ],
       "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.1",
       "original_text_snippet": "Fully charge each cell according to the second procedure in 7.1.2. Store in an ambient temperature of 55 °C ± 5 °C. After stabilization for 1 h to 4 h and while still in an ambient temperature of 55 °C ± 5 °C, the cell is short-circuited by connecting the positive and negative terminals with a total external resistance of 80 mΩ ± 20 mΩ. The cell remains on test for 24 h or until the surface temperature declines by 20 % of the maximum temperature rise, whichever is the sooner. Acceptance criteria: No fire, no explosion."
     },
@@ -319,7 +330,9 @@
       "section": "7.3.2",
       "category": "ELEC",
       "subcategory": "外部短路 (External Short Circuit)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序一 (Procedure 1, 7.1.1)",
@@ -358,7 +371,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["IEC62133-2-7.3.1"],
+      "related_tests": [
+        "IEC62133-2-7.3.1"
+      ],
       "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.2",
       "original_text_snippet": "A fully charged battery according to the procedure in 7.1.1 is stored in an ambient temperature of 20 °C ± 5 °C. The battery is then short-circuited by connecting the positive and negative terminals with a total external resistance of 80 mΩ ± 20 mΩ. The battery remains on test for 24 h or until the case temperature of battery declines by 20 % of the maximum temperature rise, whichever is the sooner. A single fault in the discharge protection circuit should be conducted on one to four of the five samples. Acceptance criteria: No fire, no explosion."
     },
@@ -370,7 +385,10 @@
       "section": "7.3.3",
       "category": "MECH",
       "subcategory": "跌落 (Drop / Free Fall)",
-      "test_objects": ["CELL", "PACK_SYSTEM"],
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序一 (Procedure 1, 7.1.1)",
@@ -394,7 +412,7 @@
         },
         "observation": {
           "value": "靜置 ≥ 1 小時後目視檢查",
-          "detail": "測試後靜置至少 1 小時，然後進行目視檢查 (put on rest for a minimum of 1 h and then a visual inspection shall be performed)"
+          "detail": "測試後靜置至少 1 小時，然後進行目視檢查 (put on rest for a minimum of 1 小時 and then a visual inspection shall be performed)"
         },
         "temperature": {
           "value": "20 ± 5 °C",
@@ -427,7 +445,9 @@
       "section": "7.3.4",
       "category": "THERM",
       "subcategory": "熱濫用 (Thermal Abuse / Heating)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序二 (Procedure 2, 7.1.2) — 安全充電程序",
@@ -439,7 +459,7 @@
         },
         "initial_condition": {
           "value": "20 ± 5 °C，放入烤箱 1 小時",
-          "detail": "完全充電的單電池在 20 °C ± 5 °C 環境下放入重力或循環空氣對流烤箱中 1 小時 (placed in a gravity or circulating air-convection oven, in an ambient temperature of 20 °C ± 5 °C, for 1 h)"
+          "detail": "完全充電的單電池在 20 °C ± 5 °C 環境下放入重力或循環空氣對流烤箱中 1 小時 (placed in a gravity or circulating air-convection oven, in an ambient temperature of 20 °C ± 5 °C, for 1 小時)"
         },
         "ramp_rate": {
           "value": "5 ± 2 °C/min",
@@ -451,7 +471,7 @@
         },
         "hold_time": {
           "value": "30 分鐘",
-          "detail": "電池在 130 °C 下維持 30 分鐘後結束測試 (cell remains at this temperature for 30 min before the test is terminated)"
+          "detail": "電池在 130 °C 下維持 30 分鐘後結束測試 (cell remains at this temperature for 30 分鐘 before the test is terminated)"
         },
         "oven_type": {
           "value": "重力或空氣對流烤箱",
@@ -484,7 +504,9 @@
       "section": "7.3.5",
       "category": "MECH",
       "subcategory": "擠壓 (Crush)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序二 (Procedure 2, 7.1.2) — 安全充電程序（在上限充電溫度下充電）",
@@ -542,7 +564,9 @@
       "section": "7.3.6",
       "category": "ELEC",
       "subcategory": "過充電 (Overcharge)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序一 (Procedure 1, 7.1.1) — 先放電至終止電壓",
@@ -601,7 +625,9 @@
       "section": "7.3.7",
       "category": "ELEC",
       "subcategory": "強制放電 (Forced Discharge)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序一 (Procedure 1, 7.1.1) — 先放電至下限",
@@ -651,7 +677,9 @@
       "section": "7.3.8.1",
       "category": "MECH",
       "subcategory": "振動 (Vibration)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序一 (Procedure 1, 7.1.1)",
@@ -701,7 +729,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["IEC62133-2-7.3.8.2"],
+      "related_tests": [
+        "IEC62133-2-7.3.8.2"
+      ],
       "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.8.1, Table 3",
       "original_text_snippet": "Test batteries, fully charged in accordance with the charging procedure of 7.1.1, shall be firmly secured to the platform of the vibration machine. Test batteries shall be subjected to sinusoidal vibration according to Table 3. This cycle shall be repeated 12 times for a total of approximately 3 h for each of three mutually perpendicular mounting positions. One of the directions shall be perpendicular to the terminal face. Acceptance criteria: No fire, no explosion, no rupture, no leakage or venting."
     },
@@ -713,7 +743,9 @@
       "section": "7.3.8.2",
       "category": "MECH",
       "subcategory": "機械衝擊 (Mechanical Shock)",
-      "test_objects": ["PACK_SYSTEM"],
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序一 (Procedure 1, 7.1.1)",
@@ -755,7 +787,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": ["IEC62133-2-7.3.8.1"],
+      "related_tests": [
+        "IEC62133-2-7.3.8.1"
+      ],
       "source_reference": "IEC 62133-2:2017+AMD1:2021, Clause 7.3.8.2, Table 4",
       "original_text_snippet": "Each test battery shall be subjected to three shocks in each direction of three mutually perpendicular mounting positions of the battery for a total of 18 shocks. Waveform: Half sine, Peak acceleration: 150 gn, Pulse duration: 6 ms, Number of shocks per half axis: 3. Acceptance criteria: No leakage, no venting, no rupture, no explosion and no fire."
     },
@@ -767,7 +801,9 @@
       "section": "7.3.9",
       "category": "ELEC",
       "subcategory": "強制內部短路 (Forced Internal Short Circuit)",
-      "test_objects": ["CELL"],
+      "test_objects": [
+        "CELL"
+      ],
       "conditions": {
         "charging_procedure": {
           "value": "程序二 (Procedure 2, 7.1.2) — 含特殊預處理",
@@ -807,7 +843,7 @@
         },
         "hold_after_short": {
           "value": "保持 30 秒",
-          "detail": "偵測到短路後保持壓裝具位置 30 秒後釋放 (keep the pressing jig in the position for 30 s, and then release the pressure)"
+          "detail": "偵測到短路後保持壓裝具位置 30 秒後釋放 (keep the pressing jig in the position for 30 秒, and then release the pressure)"
         },
         "sample_size": {
           "value": "5 個/每溫度",
@@ -836,7 +872,16 @@
       "id": "7.1.1",
       "name_zh": "第一程序 (First Procedure)",
       "name_en": "First Procedure",
-      "applies_to": ["7.2.1", "7.2.2", "7.3.2", "7.3.3", "7.3.6", "7.3.7", "7.3.8.1", "7.3.8.2"],
+      "applies_to": [
+        "7.2.1",
+        "7.2.2",
+        "7.3.2",
+        "7.3.3",
+        "7.3.6",
+        "7.3.7",
+        "7.3.8.1",
+        "7.3.8.2"
+      ],
       "description": "適用於 7.1.2 未指定的所有條款。在 20 °C ± 5 °C 環境下，依製造商宣告的方法充電。充電前先在 20 °C ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。",
       "original_text_snippet": "This charging procedure applies to subclauses other than those specified in 7.1.2. Unless otherwise stated, the charging procedure for test purposes is carried out in an ambient temperature of 20 °C ± 5 °C, using the method declared by the manufacturer. Prior to charging, the battery shall have been discharged at 20 °C ± 5 °C at a constant current of 0,2 It A down to a specified final voltage."
     },
@@ -844,7 +889,12 @@
       "id": "7.1.2",
       "name_zh": "第二程序 — 安全充電程序 (Second Procedure — Safety Charging)",
       "name_en": "Second Procedure (Safety Charging)",
-      "applies_to": ["7.3.1", "7.3.4", "7.3.5", "7.3.9"],
+      "applies_to": [
+        "7.3.1",
+        "7.3.4",
+        "7.3.5",
+        "7.3.9"
+      ],
       "description": "適用於 7.3.1, 7.3.4, 7.3.5, 7.3.9。在最高及最低測試溫度 (Table 2) 下穩定 1-4 小時後，使用上限充電電壓及最大充電電流以 CC-CV 方式充電，直到充電電流降至 0.05 It A。穩定時間應盡可能達到熱平衡。電壓和電流可能因溫度範圍不同而變化。",
       "charging_parameters": {
         "upper_limit_charging_voltage": "由製造商指定 (Specified by the manufacturer of cells)",
@@ -871,26 +921,45 @@
       "id": "EXEMPT-COIN-3OHM",
       "description": "內阻大於 3 Ω 的鈕扣型電池豁免於 5.2 至 5.7 節的要求及 Table 1 所有測試",
       "detail": "Conformity with 5.2 to 5.7 for cells and batteries other than coin cells, with an internal resistance greater than 3 Ω, is checked by inspection, by the tests of Clauses 7, and in accordance with the appropriate standard. 鈕扣電池的內阻依據 Annex D 測量。",
-      "applicable_sections": ["5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "7.2.1", "7.3.1", "7.3.3 (cell)", "7.3.4", "7.3.5", "7.3.7"],
+      "applicable_sections": [
+        "5.2",
+        "5.3",
+        "5.4",
+        "5.5",
+        "5.6",
+        "5.7",
+        "7.2.1",
+        "7.3.1",
+        "7.3.3 (cell)",
+        "7.3.4",
+        "7.3.5",
+        "7.3.7"
+      ],
       "measurement_method": "Annex D (AC resistance at 1.0 kHz ± 0.1 kHz, sample size: 3)"
     },
     {
       "id": "EXEMPT-7.3.9-COUNTRY",
       "description": "7.3.9 強制內部短路測試僅法國、日本、韓國、瑞士要求",
       "detail": "7.3.9: Design evaluation – Forced internal short-circuit test only applies to Korea, Japan, Switzerland and France.",
-      "applicable_sections": ["7.3.9"]
+      "applicable_sections": [
+        "7.3.9"
+      ]
     },
     {
       "id": "EXEMPT-7.3.9-POLYMER-COIN",
       "description": "7.3.9 不適用於鋰離子聚合物電池和鈕扣電池",
       "detail": "Not required on lithium ion polymer cells. Not applicable to coin cells.",
-      "applicable_sections": ["7.3.9"]
+      "applicable_sections": [
+        "7.3.9"
+      ]
     },
     {
       "id": "EXEMPT-7.2.2-MOULD",
       "description": "7.2.2 外殼應力測試僅適用於模塑外殼的電池組",
       "detail": "This requirement only applies to batteries with a moulded case.",
-      "applicable_sections": ["7.2.2"]
+      "applicable_sections": [
+        "7.2.2"
+      ]
     }
   ],
   "annex_d_coin_cell_measurement": {

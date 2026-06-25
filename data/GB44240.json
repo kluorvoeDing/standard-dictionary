@@ -31,22 +31,22 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "57 ± 4°C",
-          "detail": "放置在 57 ± 4°C 的環境中，待電池達到溫度後再放置 30 min。"
+          "value": "57 ± 4 °C",
+          "detail": "放置在 57 ± 4 °C 的環境中，待電池達到溫度後再放置 30 分鐘。"
         },
         "resistance": {
           "value": "≤ 5 mΩ",
           "detail": "用導線連接電池正負極端，確保全部外部電阻不高於 5 mΩ。"
         },
         "termination": {
-          "value": "溫度下降至峰值溫升 80% 或達 6 h",
-          "detail": "當電池溫度下降值達到峰值溫升的 80% 或短接時間達到 6 h 時終止（選較嚴者）。"
+          "value": "溫度下降至峰值溫升 80% 或達 6 小時",
+          "detail": "當電池溫度下降值達到峰值溫升的 80% 或短接時間達到 6 小時 時終止（選較嚴者）。"
         }
       },
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
         "details": [
-          "試驗終止後觀察 1 h，電池應不起火、不爆炸。"
+          "試驗終止後觀察 1 小時，電池應不起火、不爆炸。"
         ]
       },
       "exemptions": [],
@@ -71,8 +71,8 @@
           "detail": "用製造商規定的最大充電電流充電。"
         },
         "termination": {
-          "value": "1.5 倍電壓恆壓 1h 或 總計 1.5h",
-          "detail": "充電至 1.5 倍的充電限制電壓後持續恆壓充電 1 h，或總充電時間達到 1.5 h。"
+          "value": "1.5 倍電壓恆壓 1 小時 或 總計 1.5 小時",
+          "detail": "充電至 1.5 倍的充電限制電壓後持續恆壓充電 1 小時，或總充電時間達到 1.5 小時。"
         }
       },
       "acceptance_criteria": {
@@ -103,8 +103,8 @@
           "detail": "以 1 It 的電流進行反向充電至負的充電上限電壓（-Uup）。"
         },
         "duration": {
-          "value": "90 min",
-          "detail": "反向充電時間共計 90 min。若最大放電電流小於 1 It，則以最大放電電流反向充電，時間 t = (1It / Im) * 90。"
+          "value": "90 分鐘",
+          "detail": "反向充電時間共計 90 分鐘。若最大放電電流小於 1 It，則以最大放電電流反向充電，時間 t = (1It / Im) * 90。"
         }
       },
       "acceptance_criteria": {
@@ -135,12 +135,12 @@
           "detail": "抽真空將箱內壓強降低至 11.6 kPa。"
         },
         "temperature": {
-          "value": "20 ± 5°C",
-          "detail": "放置於 20 ± 5°C 的真空箱中。"
+          "value": "20 ± 5 °C",
+          "detail": "放置於 20 ± 5 °C 的真空箱中。"
         },
         "duration": {
-          "value": "6 h",
-          "detail": "保持 6 h。"
+          "value": "6 小時",
+          "detail": "保持 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -171,16 +171,16 @@
           "detail": "重複 10 次循環。"
         },
         "temperatures": {
-          "value": "72 ± 2°C / -40 ± 2°C",
-          "detail": "72 ± 2°C 保持 6 h，然後 -40 ± 2°C 保持 6 h。"
+          "value": "72 ± 2 °C / -40 ± 2 °C",
+          "detail": "72 ± 2 °C 保持 6 小時，然後 -40 ± 2 °C 保持 6 小時。"
         },
         "transition_time": {
-          "value": "≤ 30 min",
-          "detail": "每兩個溫度之間的轉換時間應不大於 30 min。"
+          "value": "≤ 30 分鐘",
+          "detail": "每兩個溫度之間的轉換時間應不大於 30 分鐘。"
         },
         "large_battery_duration": {
-          "value": "大型電池暴露 ≥ 12h",
-          "detail": "大型電池暴露極端溫度時間至少 12 h。"
+          "value": "大型電池暴露 ≥ 12 小時",
+          "detail": "大型電池暴露極端溫度時間至少 12 小時。"
         }
       },
       "acceptance_criteria": {
@@ -211,8 +211,8 @@
           "detail": "正弦振動測試，頻率 7 Hz ~ 200 Hz ~ 7 Hz。"
         },
         "duration": {
-          "value": "12 循環 / 方向 (共 3 h)",
-          "detail": "每個方向進行 12 個循環，每個方向循環時間共計 3 h。圓柱形 2 個方向，方型和軟包 3 個方向。"
+          "value": "12 循環 / 方向 (共 3 小時)",
+          "detail": "每個方向進行 12 個循環，每個方向循環時間共計 3 小時。圓柱形 2 個方向，方型和軟包 3 個方向。"
         }
       },
       "acceptance_criteria": {
@@ -294,7 +294,7 @@
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
         "details": [
-          "觀察 6 h。電池應不起火、不爆炸。"
+          "觀察 6 小時。電池應不起火、不爆炸。"
         ]
       },
       "exemptions": [],
@@ -338,7 +338,7 @@
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
         "details": [
-          "試驗後觀察 1 h。電池應不起火、不爆炸。"
+          "試驗後觀察 1 小時。電池應不起火、不爆炸。"
         ]
       },
       "exemptions": [],
@@ -374,7 +374,7 @@
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
         "details": [
-          "觀察 1 h。電池應不起火、不爆炸。"
+          "觀察 1 小時。電池應不起火、不爆炸。"
         ]
       },
       "exemptions": [],
@@ -395,12 +395,12 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "130 ± 2°C",
-          "detail": "升溫速率 5 ± 2°C/min，達 130 ± 2°C 後恆溫。"
+          "value": "130 ± 2 °C",
+          "detail": "升溫速率 5 ± 2 °C/min，達 130 ± 2 °C 後恆溫。"
         },
         "duration": {
-          "value": "1 h",
-          "detail": "持續 1 h。"
+          "value": "1 小時",
+          "detail": "持續 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -447,7 +447,7 @@
       "acceptance_criteria": {
         "summary": "不起火、不爆炸",
         "details": [
-          "觀察 1 h。樣品應不起火、不爆炸。"
+          "觀察 1 小時。樣品應不起火、不爆炸。"
         ]
       },
       "exemptions": [],
@@ -480,11 +480,11 @@
           "detail": "重複試驗 3 次。"
         },
         "observation": {
-          "value": "觀察 1 h",
+          "value": "觀察 1 小時",
           "detail": "每次試驗後觀察 1 小時。"
         },
         "fallback": {
-          "value": "電壓達 103% 或時間達 1 min 停止",
+          "value": "電壓達 103% 或時間達 1 分鐘 停止",
           "detail": "如果電壓超過 103% 或過充時間達到 1 分鐘，則停止。"
         }
       },
@@ -525,7 +525,7 @@
           "detail": "重複試驗 3 次。"
         },
         "observation": {
-          "value": "觀察 1 h",
+          "value": "觀察 1 小時",
           "detail": "每次試驗後觀察 1 小時。"
         }
       },
@@ -570,7 +570,7 @@
           "detail": "重複試驗 3 次。"
         },
         "observation": {
-          "value": "觀察 1 h",
+          "value": "觀察 1 小時",
           "detail": "每次試驗後觀察 1 小時。"
         }
       },
@@ -613,7 +613,7 @@
           "detail": "將環境溫度升高至高於最高工作溫度 5 °C。"
         },
         "observation": {
-          "value": "觀察 1 h",
+          "value": "觀察 1 小時",
           "detail": "觀察 1 小時。"
         }
       },
@@ -681,7 +681,7 @@
       "acceptance_criteria": {
         "summary": "無熱擴散、無外部火焰",
         "details": [
-          "觀察 24h。合格要求為：電池間無熱擴散、無外部火焰、外殼不破裂（目標電池本身的損壞不計）。"
+          "觀察 24 小時。合格要求為：電池間無熱擴散、無外部火焰、外殼不破裂（目標電池本身的損壞不計）。"
         ]
       },
       "exemptions": [],
@@ -706,7 +706,7 @@
           "detail": "短路電阻應為 (30 mΩ ± 10 mΩ) × 模組結構係數，或 ≤ 5 mΩ，以較高者為準，但最高不超過 100 mΩ。"
         },
         "termination": {
-          "value": "降溫或 6h",
+          "value": "降溫或 6 小時",
           "detail": "持續測試直到電池溫度下降到峰值的 80% 或是持續 6 小時為止。"
         }
       },
@@ -732,8 +732,8 @@
       "exemptions": [],
       "conditions": {
         "duration": {
-          "value": "靜置 1h",
-          "detail": "電池組系統應放置 1 h。"
+          "value": "靜置 1 小時",
+          "detail": "電池組系統應放置 1 小時。"
         },
         "procedure": {
           "value": "依標準充放電程序",

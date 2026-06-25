@@ -113,7 +113,7 @@
         },
         "duration": {
           "value": "6 小時或溫度下降 80%（取先到者）",
-          "detail": "電芯維持測試狀態 6 小時，或直到外殼溫度從最大溫升下降 80%，以先到者為準 (6 h or until the case temperature declines by 80 % of the maximum temperature rise, whichever is the sooner)。"
+          "detail": "電芯維持測試狀態 6 小時，或直到外殼溫度從最大溫升下降 80%，以先到者為準 (6 小時 or until the case temperature declines by 80 % of the maximum temperature rise, whichever is the sooner)。"
         }
       },
       "acceptance_criteria": {
@@ -226,7 +226,7 @@
         },
         "rest_time": {
           "value": "測試後靜置 ≥ 1 小時",
-          "detail": "測試後靜置至少 1 小時，然後進行目視檢查 (put on rest for a minimum of 1 h, and then a visual inspection shall be performed)。"
+          "detail": "測試後靜置至少 1 小時，然後進行目視檢查 (put on rest for a minimum of 1 小時, and then a visual inspection shall be performed)。"
         },
         "subdivision_note": {
           "value": "可測試代表性子單元",
@@ -280,7 +280,7 @@
         },
         "hold_time": {
           "value": "3 小時",
-          "detail": "電芯在此溫度下維持 3 小時後結束測試 (The cell remains at this temperature for 3 h before the test is discontinued)。"
+          "detail": "電芯在此溫度下維持 3 小時後結束測試 (The cell remains at this temperature for 3 小時 before the test is discontinued)。"
         }
       },
       "acceptance_criteria": {
@@ -372,11 +372,11 @@
         },
         "forced_discharge_current": {
           "value": "1.0 It A",
-          "detail": "已放電電芯以 1.0 It A 恆流進行強制放電 (A discharged cell is subjected to a forced discharge at a constant current of 1.0 It A)。若電芯最大放電電流 < 1.0 It A，則按公式調整：t = (1 It / Im) × 90 min（Im = 最大放電電流）。"
+          "detail": "已放電電芯以 1.0 It A 恆流進行強制放電 (A discharged cell is subjected to a forced discharge at a constant current of 1.0 It A)。若電芯最大放電電流 < 1.0 It A，則按公式調整：t = (1 It / Im) × 90 分鐘（Im = 最大放電電流）。"
         },
         "duration": {
           "value": "90 分鐘",
-          "detail": "強制放電持續 90 分鐘 (for a test period of 90 min)。測試結束後進行目視檢查。"
+          "detail": "強制放電持續 90 分鐘 (for a test period of 90 分鐘)。測試結束後進行目視檢查。"
         },
         "target_voltage_case_1": {
           "value": "-(上限充電電壓)",
@@ -445,7 +445,7 @@
         },
         "stop_criteria_voltage": {
           "value": "偵測到電壓降 > 50 mV 時立即停止，保持 30 秒",
-          "detail": "偵測到內部短路時立即停止下壓，保持壓裝具位置 30 秒後釋放壓力 (stop the descent immediately and keep the pressing jig in the position for 30 s, and then release the pressure)。"
+          "detail": "偵測到內部短路時立即停止下壓，保持壓裝具位置 30 秒後釋放壓力 (stop the descent immediately and keep the pressing jig in the position for 30 秒, and then release the pressure)。"
         },
         "stop_criteria_force_cylindrical": {
           "value": "800 N",
@@ -507,7 +507,7 @@
         },
         "observation_time": {
           "value": "8 小時",
-          "detail": "關閉觸發源後觀察電池系統 8 小時 (battery system is observed for 8 h)。"
+          "detail": "關閉觸發源後觀察電池系統 8 小時 (battery system is observed for 8 小時)。"
         },
         "modification_note": {
           "value": "可最小化修改電池系統以利測試",
@@ -570,11 +570,11 @@
         },
         "post_test_monitoring": {
           "value": "BMS 終止充電後 1 小時",
-          "detail": "數據擷取/監測在充電停止後繼續 1 小時 (Data acquisition/monitoring shall be continued for 1 h after charging is stopped)。"
+          "detail": "數據擷取/監測在充電停止後繼續 1 小時 (Data acquisition/monitoring shall be continued for 1 小時 after charging is stopped)。"
         },
         "safety_stop": {
           "value": "BMS 失效時：電芯電壓達 103% 上限或超過上限 1 分鐘後停止",
-          "detail": "若 BMS 未能終止充電，應在適當時機出於安全原因停止測試，例如電芯電壓達到上限充電電壓的 103% 或超過上限充電電壓 1 分鐘後 (If the BMS fails to terminate the charging, the test should be stopped at the proper timing for safety reasons, for example when the cell voltage reaches 103 % of the upper limit charging voltage or 1 min after having exceeded the upper limit charging voltage)。"
+          "detail": "若 BMS 未能終止充電，應在適當時機出於安全原因停止測試，例如電芯電壓達到上限充電電壓的 103% 或超過上限充電電壓 1 分鐘後 (If the BMS fails to terminate the charging, the test should be stopped at the proper timing for safety reasons, for example when the cell voltage reaches 103 % of the upper limit charging voltage or 1 分鐘 after having exceeded the upper limit charging voltage)。"
         }
       },
       "acceptance_criteria": {
@@ -625,7 +625,7 @@
         },
         "post_test_monitoring": {
           "value": "充電停止後 1 小時",
-          "detail": "數據擷取和/或監測在充電停止後繼續 1 小時 (Data acquisition and/or monitoring shall be continued for 1 h after charging is stopped)。"
+          "detail": "數據擷取和/或監測在充電停止後繼續 1 小時 (Data acquisition and/or monitoring shall be continued for 1 小時 after charging is stopped)。"
         },
         "full_operation": {
           "value": "所有 BMS 功能須完全運作",

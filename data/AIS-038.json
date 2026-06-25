@@ -34,8 +34,8 @@
           "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 調整。"
         },
         "temperature": {
-          "value": "22 ± 5°C",
-          "detail": "測試應在環境溫度 22 ± 5°C 下進行。"
+          "value": "22 ± 5 °C",
+          "detail": "測試應在環境溫度 22 ± 5 °C 下進行。"
         },
         "waveform": {
           "value": "正弦波對數掃頻",
@@ -61,16 +61,9 @@
           "無破裂 (Rupture，僅適用於高壓 REESS)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
-          {
-            "id": "AC-IR",
-            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
-            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
-          }
-        ],
-        "no_venting": {
-          "value": true,
-          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
-        }
+          "測試後的高壓隔離電阻應至少為 100 Ω/V。",
+          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        ]
       },
       "exemptions": [
         "可使用車輛製造商確認並經同意之振動輪廓替代 (但僅限特定車型)"
@@ -96,8 +89,8 @@
           "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 調整。"
         },
         "temperature_profile": {
-          "value": "60 ± 2°C (≥ 6h) 與 -40 ± 2°C (≥ 6h)",
-          "detail": "在 60 ± 2°C 下存放至少 6 小時，隨後在 -40 ± 2°C 下存放至少 6 小時。"
+          "value": "60 ± 2 °C (≥ 6 小時) 與 -40 ± 2 °C (≥ 6 小時)",
+          "detail": "在 60 ± 2 °C 下存放至少 6 小時，隨後在 -40 ± 2 °C 下存放至少 6 小時。"
         },
         "transition_time": {
           "value": "≤ 30 分鐘",
@@ -108,8 +101,8 @@
           "detail": "重複上述程序，直到完成至少 5 次總循環。"
         },
         "post_storage": {
-          "value": "22 ± 5°C, 24 小時",
-          "detail": "循環完成後，樣品在 22 ± 5°C 環境溫度下存放 24 小時。"
+          "value": "22 ± 5 °C, 24 小時",
+          "detail": "循環完成後，樣品在 22 ± 5 °C 環境溫度下存放 24 小時。"
         },
         "post_test": {
           "value": "標準循環與 1 小時觀察",
@@ -123,16 +116,9 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
-          {
-            "id": "AC-IR",
-            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
-            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
-          }
-        ],
-        "no_venting": {
-          "value": true,
-          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
-        }
+          "測試後的高壓隔離電阻應至少為 100 Ω/V。",
+          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -152,8 +138,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "20 ± 10°C",
-          "detail": "測試應在 20 ± 10°C 環境溫度下進行。"
+          "value": "20 ± 10 °C",
+          "detail": "測試應在 20 ± 10 °C 環境溫度下進行。"
         },
         "pulse_type": {
           "value": "依車型加速度",
@@ -182,16 +168,8 @@
           "測試期間無電解液洩漏 (Electrolyte leakage)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
-          {
-            "id": "AC-RET-1",
-            "rule_en": "Tested-Device shall be retained by its mounting and its components shall remain inside its boundaries.",
-            "rule_zh": "受測設備應保持在安裝位置上，且其組件不得脫出邊界外。"
-          },
-          {
-            "id": "AC-IR",
-            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
-            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
-          }
+          "受測設備應保持在安裝位置上，且其組件不得脫出邊界外。",
+          "測試後的高壓隔離電阻應至少為 100 Ω/V。"
         ]
       },
       "exemptions": [
@@ -214,8 +192,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "20 ± 10°C",
-          "detail": "測試應在 20 ± 10°C 環境溫度下進行。"
+          "value": "20 ± 10 °C",
+          "detail": "測試應在 20 ± 10 °C 環境溫度下進行。"
         },
         "crush_force": {
           "value": "100 kN ~ 105 kN",
@@ -226,7 +204,7 @@
           "detail": "施加力至目標值的時間應小於 3 分鐘。"
         },
         "hold_time": {
-          "value": "100 ms ~ 10 s",
+          "value": "100 ms ~ 10 秒",
           "detail": "達到目標力後保持時間為至少 100 毫秒且不超過 10 秒。"
         },
         "direction": {
@@ -252,11 +230,7 @@
           "測試期間無電解液洩漏 (Electrolyte leakage)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
-          {
-            "id": "AC-IR",
-            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
-            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
-          }
+          "測試後的高壓隔離電阻應至少為 100 Ω/V。"
         ]
       },
       "exemptions": [
@@ -279,20 +253,20 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "≥ 0°C",
-          "detail": "測試應在至少 0°C 的環境溫度下進行。"
+          "value": "≥ 0 °C",
+          "detail": "測試應在至少 0 °C 的環境溫度下進行。"
         },
         "test_type": {
           "value": "汽油池火或 LPG 噴嘴",
           "detail": "可選擇車輛級別或組件級別測試。組件級別可選用 Gasoline pool fire 或 LPG burner。"
         },
         "gasoline_pool_fire": {
-          "value": "A:60s, B:70s, C:60s, D:3h",
+          "value": "A:60 秒, B:70 秒, C:60 秒, D:3 小時",
           "detail": "Phase A (預熱) 60 秒；Phase B (直接火焰) 70 秒；Phase C (耐火磚阻隔間接火焰) 60 秒 (或延長 B 階段 60 秒)；Phase D (觀察) 3 小時。"
         },
         "lpg_burner_fire": {
-          "value": "800~1100°C 燃燒 2 分鐘",
-          "detail": "LPG 火焰平均溫度 30 秒內達 800°C，維持在 800-1100°C，受測設備暴露於火焰中 2 分鐘。測試後觀察 3 小時。"
+          "value": "800~1100 °C 燃燒 2 分鐘",
+          "detail": "LPG 火焰平均溫度 30 秒內達 800 °C，維持在 800-1100 °C，受測設備暴露於火焰中 2 分鐘。測試後觀察 3 小時。"
         },
         "soc": {
           "value": "SOC 調整",
@@ -325,8 +299,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "20 ± 10°C",
-          "detail": "測試在 20 ± 10°C 或應製造商要求在更高溫度下進行。"
+          "value": "20 ± 10 °C",
+          "detail": "測試在 20 ± 10 °C 或應製造商要求在更高溫度下進行。"
         },
         "resistance": {
           "value": "≤ 5 mΩ",
@@ -334,7 +308,7 @@
         },
         "duration": {
           "value": "至保護啟動或溫度穩定後 1 小時",
-          "detail": "持續短路直到 REESS 保護功能切斷電流，或在測試設備外殼溫度穩定 (2 小時內溫度梯度變化 < 4°C) 後至少持續 1 小時。"
+          "detail": "持續短路直到 REESS 保護功能切斷電流，或在測試設備外殼溫度穩定 (2 小時內溫度梯度變化 < 4 °C) 後至少持續 1 小時。"
         },
         "post_test": {
           "value": "標準循環與 1 小時觀察",
@@ -352,16 +326,9 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
-          {
-            "id": "AC-IR",
-            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
-            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
-          }
-        ],
-        "no_venting": {
-          "value": true,
-          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
-        }
+          "測試後的高壓隔離電阻應至少為 100 Ω/V。",
+          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -381,8 +348,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "20 ± 10°C",
-          "detail": "測試在 20 ± 10°C 或應製造商要求在更高溫度下進行。"
+          "value": "20 ± 10 °C",
+          "detail": "測試在 20 ± 10 °C 或應製造商要求在更高溫度下進行。"
         },
         "soc": {
           "value": "中間工作範圍",
@@ -397,8 +364,8 @@
           "detail": "外部充放電設備的跳脫電壓設定應至少高於受測設備電壓限制的 10%。"
         },
         "termination": {
-          "value": "保護啟動或溫度超限/12小時",
-          "detail": "持續充電直到過充保護功能啟動。若失效，則持續至 REESS 溫度達到最高工作溫度以上 10°C。若電流未中斷且溫度未超限，則在開始充電後 12 小時終止。"
+          "value": "保護啟動或溫度超限/12 小時",
+          "detail": "持續充電直到過充保護功能啟動。若失效，則持續至 REESS 溫度達到最高工作溫度以上 10 °C。若電流未中斷且溫度未超限，則在開始充電後 12 小時終止。"
         },
         "post_test": {
           "value": "標準循環與 1 小時觀察",
@@ -412,16 +379,9 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
-          {
-            "id": "AC-IR",
-            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
-            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
-          }
-        ],
-        "no_venting": {
-          "value": true,
-          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
-        }
+          "測試後的高壓隔離電阻應至少為 100 Ω/V。",
+          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -441,8 +401,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "20 ± 10°C",
-          "detail": "測試在 20 ± 10°C 或應製造商要求在更高溫度下進行。"
+          "value": "20 ± 10 °C",
+          "detail": "測試在 20 ± 10 °C 或應製造商要求在更高溫度下進行。"
         },
         "soc": {
           "value": "較低水準",
@@ -468,16 +428,9 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
-          {
-            "id": "AC-IR",
-            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
-            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
-          }
-        ],
-        "no_venting": {
-          "value": true,
-          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
-        }
+          "測試後的高壓隔離電阻應至少為 100 Ω/V。",
+          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -506,7 +459,7 @@
         },
         "termination": {
           "value": "保護啟動",
-          "detail": "持續測試直到過溫保護功能（如冷卻啟動或電流限制/切斷）成功啟動。 若保護裝置未動作，則持續直到受測設備溫度穩定（2小時內溫度梯度變化小於 4°C）。"
+          "detail": "持續測試直到過溫保護功能（如冷卻啟動或電流限制/切斷）成功啟動。 若保護裝置未動作，則持續直到受測設備溫度穩定（2 小時內溫度梯度變化小於 4 °C）。"
         },
         "observation": {
           "value": "1 小時",
@@ -520,16 +473,9 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
-          {
-            "id": "AC-IR",
-            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
-            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
-          }
-        ],
-        "no_venting": {
-          "value": true,
-          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
-        }
+          "測試後的高壓隔離電阻應至少為 100 Ω/V。",
+          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -549,8 +495,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "20 ± 10°C",
-          "detail": "測試在 20 ± 10°C 下進行。"
+          "value": "20 ± 10 °C",
+          "detail": "測試在 20 ± 10 °C 下進行。"
         },
         "current": {
           "value": "大於最大允許電流",
@@ -558,7 +504,7 @@
         },
         "termination": {
           "value": "保護啟動",
-          "detail": "持續過電流直到過電流保護功能啟動並切斷或限制電流。 若保護裝置未動作，則持續直到受測設備溫度穩定（2小時內溫度梯度變化小於 4°C）。"
+          "detail": "持續過電流直到過電流保護功能啟動並切斷或限制電流。 若保護裝置未動作，則持續直到受測設備溫度穩定（2 小時內溫度梯度變化小於 4 °C）。"
         },
         "post_test": {
           "value": "標準循環與 1 小時觀察",
@@ -576,16 +522,9 @@
           "無破裂 (Rupture)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
-          {
-            "id": "AC-IR",
-            "rule_en": "Isolation resistance after the test shall be at least 100 Ω/V.",
-            "rule_zh": "測試後的高壓隔離電阻應至少為 100 Ω/V。"
-          }
-        ],
-        "no_venting": {
-          "value": true,
-          "detail": "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
-        }
+          "測試後的高壓隔離電阻應至少為 100 Ω/V。",
+          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],

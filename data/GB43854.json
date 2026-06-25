@@ -60,12 +60,12 @@
           "detail": "用直流電源以 I2 (A) 電流充電"
         },
         "termination": {
-          "value": "1.5倍充電限制電壓或1.5小時",
-          "detail": "充電至 1.5 倍充電限制電壓或總充電時間達到 1.5 h，停止充電"
+          "value": "1.5倍充電限制電壓或1.5 小時",
+          "detail": "充電至 1.5 倍充電限制電壓或總充電時間達到 1.5 小時，停止充電"
         },
         "observation": {
-          "value": "靜置 6 h",
-          "detail": "停止充電後，靜置 6 h"
+          "value": "靜置 6 小時",
+          "detail": "停止充電後，靜置 6 小時"
         }
       },
       "acceptance_criteria": {
@@ -101,12 +101,12 @@
           "detail": "對電池以 2 I2(A) 電流放電"
         },
         "duration": {
-          "value": "90 min",
-          "detail": "共持續 90 min"
+          "value": "90 分鐘",
+          "detail": "共持續 90 分鐘"
         },
         "observation": {
-          "value": "靜置 1 h",
-          "detail": "然後靜置 1 h"
+          "value": "靜置 1 小時",
+          "detail": "然後靜置 1 小時"
         }
       },
       "acceptance_criteria": {
@@ -142,12 +142,12 @@
           "detail": "用外部電阻為 (20±5) mΩ 的導體連接電池正負極端"
         },
         "duration": {
-          "value": "1 h",
-          "detail": "保持 1 h"
+          "value": "1 小時",
+          "detail": "保持 1 小時"
         },
         "observation": {
-          "value": "靜置 6 h",
-          "detail": "然後靜置 6 h"
+          "value": "靜置 6 小時",
+          "detail": "然後靜置 6 小時"
         }
       },
       "acceptance_criteria": {
@@ -187,8 +187,8 @@
           "detail": "當箱內溫度達到 (130±2) °C 後恆溫"
         },
         "duration": {
-          "value": "60 min",
-          "detail": "保持 60 min"
+          "value": "60 分鐘",
+          "detail": "保持 60 分鐘"
         }
       },
       "acceptance_criteria": {
@@ -232,8 +232,8 @@
           "detail": "從垂直於電池極板的方向貫穿電池的幾何中心"
         },
         "observation": {
-          "value": "停留在內 1 h",
-          "detail": "鋼針停留在電池中，並觀察 1 h"
+          "value": "停留在內 1 小時",
+          "detail": "鋼針停留在電池中，並觀察 1 小時"
         }
       },
       "acceptance_criteria": {
@@ -269,8 +269,8 @@
           "detail": "用直流電源以製造商規定的最大充電電流充電"
         },
         "duration": {
-          "value": "2 h",
-          "detail": "共持續 2 h"
+          "value": "2 小時",
+          "detail": "共持續 2 小時"
         },
         "fault_condition": {
           "value": "正常和單一故障條件",
@@ -312,12 +312,12 @@
           "detail": "對電池組以 2 I2(A) 電流放電"
         },
         "duration": {
-          "value": "90 min",
-          "detail": "共持續 90 min"
+          "value": "90 分鐘",
+          "detail": "共持續 90 分鐘"
         },
         "observation": {
-          "value": "靜置 1 h",
-          "detail": "然後靜置 1 h"
+          "value": "靜置 1 小時",
+          "detail": "然後靜置 1 小時"
         }
       },
       "acceptance_criteria": {
@@ -355,12 +355,12 @@
           "detail": "用外部電阻為 (20±5) mΩ 的導體連接電池組正負極端"
         },
         "termination": {
-          "value": "1 h 或電壓 < 0.2 V",
-          "detail": "當電池組電壓低於 0.2 V 或者短路時間達到 1 h，停止試驗"
+          "value": "1 小時 或電壓 < 0.2 V",
+          "detail": "當電池組電壓低於 0.2 V 或者短路時間達到 1 小時，停止試驗"
         },
         "observation": {
-          "value": "靜置 6 h",
-          "detail": "然後靜置 6 h"
+          "value": "靜置 6 小時",
+          "detail": "然後靜置 6 小時"
         },
         "fault_condition": {
           "value": "正常和單一故障條件",
@@ -402,8 +402,8 @@
           "detail": "用製造商規定的最大放電電流的 1.5 倍放電"
         },
         "duration": {
-          "value": "2 h",
-          "detail": "共持續 2 h"
+          "value": "2 小時",
+          "detail": "共持續 2 小時"
         },
         "fault_condition": {
           "value": "正常和單一故障條件",
@@ -441,12 +441,12 @@
           "detail": "按照 6.2.2.2 的試驗方法放完電"
         },
         "high_temp_condition": {
-          "value": "最高充電溫度 +5 °C, 8 h",
-          "detail": "在製造商規定的最高充電溫度或 55 °C(取兩者較高的溫度)加 5 °C的環境下放置 8 h,然後用製造商規定的最大充電電流進行充電,並保持 10 min, 然後靜置 6 h。"
+          "value": "最高充電溫度 +5 °C, 8 小時",
+          "detail": "在製造商規定的最高充電溫度或 55 °C(取兩者較高的溫度)加 5 °C的環境下放置 8 小時,然後用製造商規定的最大充電電流進行充電,並保持 10 分鐘, 然後靜置 6 小時。"
         },
         "low_temp_condition": {
-          "value": "最低充電溫度 -5 °C, 16 h",
-          "detail": "在製造商規定的最低充電溫度或 0 °C(取兩者較低的溫度)再降 5 °C的環境下放置 16 h,然後用製造商規定的最大充電電流進行充電,並保持 10 min,然後靜置 6 h。"
+          "value": "最低充電溫度 -5 °C, 16 小時",
+          "detail": "在製造商規定的最低充電溫度或 0 °C(取兩者較低的溫度)再降 5 °C的環境下放置 16 小時,然後用製造商規定的最大充電電流進行充電,並保持 10 分鐘,然後靜置 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -492,12 +492,9 @@
       "acceptance_criteria": {
         "summary": "絕緣阻值 ≥ 20 MΩ",
         "details": [
-          "電池組正負極同外殼之間的絕緣阻值應大於或等於 20 MΩ"
-        ],
-        "functional": {
-          "value": "功能正常",
-          "detail": "電池組保證功能正常。"
-        }
+          "電池組正負極同外殼之間的絕緣阻值應大於或等於 20 MΩ",
+          "電池組保證功能正常。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -534,11 +531,11 @@
         },
         "termination": {
           "value": "形變 70% 或 30 kN",
-          "detail": "當擠壓至電池組原尺寸的 70%，或擠壓力達到 30 kN 時保持 5 min"
+          "detail": "當擠壓至電池組原尺寸的 70%，或擠壓力達到 30 kN 時保持 5 分鐘"
         },
         "observation": {
-          "value": "觀察 1 h",
-          "detail": "之後撤除擠壓力，並觀察 1 h"
+          "value": "觀察 1 小時",
+          "detail": "之後撤除擠壓力，並觀察 1 小時"
         },
         "length": {
           "value": "長度 > 電池，≤ 1m",
@@ -583,7 +580,7 @@
         },
         "post_test": {
           "value": "標準充放電 1 次",
-          "detail": "測試結束靜置 1 h 後，進行 1 次標準放電和標準充電。"
+          "detail": "測試結束靜置 1 小時 後，進行 1 次標準放電和標準充電。"
         }
       },
       "acceptance_criteria": {
@@ -621,12 +618,12 @@
           "detail": "按表 1 規定振動譜進行隨機振動測試，X 軸功率譜密度均方根為 1.09g，Y 軸為 0.68g，Z 軸為 2.53g"
         },
         "duration": {
-          "value": "各 12 h",
-          "detail": "X 軸、Y 軸和 Z 軸方向各進行 12 h 振動，振動順序為 Z-Y-X"
+          "value": "各 12 小時",
+          "detail": "X 軸、Y 軸和 Z 軸方向各進行 12 小時 振動，振動順序為 Z-Y-X"
         },
         "post_test": {
           "value": "標準充放電 1 次",
-          "detail": "測試結束靜置 1 h 後，進行 1 次標準放電和標準充電。"
+          "detail": "測試結束靜置 1 小時 後，進行 1 次標準放電和標準充電。"
         }
       },
       "acceptance_criteria": {
@@ -672,8 +669,8 @@
           "detail": "跌落至混凝土地面上"
         },
         "interval": {
-          "value": "間隔 (3±1) min，靜置 4 h",
-          "detail": "每兩次之間的時間間隔為 (3±1) min，測試結束靜置 4 h。"
+          "value": "間隔 (3±1) min，靜置 4 小時",
+          "detail": "每兩次之間的時間間隔為 (3±1) min，測試結束靜置 4 小時。"
         }
       },
       "acceptance_criteria": {
@@ -701,12 +698,12 @@
       ],
       "conditions": {
         "force": {
-          "value": "4 倍重量，均勻施加 10s",
-          "detail": "在電池組提把中間 75 mm 的長度上，10 s 內均勻施加至 4 倍電池組重量的力。"
+          "value": "4 倍重量，均勻施加 10 秒",
+          "detail": "在電池組提把中間 75 mm 的長度上，10 秒 內均勻施加至 4 倍電池組重量的力。"
         },
         "duration": {
-          "value": "1 min",
-          "detail": "保持 1 min"
+          "value": "1 分鐘",
+          "detail": "保持 1 分鐘"
         }
       },
       "acceptance_criteria": {
@@ -744,8 +741,8 @@
           "detail": "放置在真空箱中，逐漸降低箱內氣壓至不大於 11.6 kPa"
         },
         "duration": {
-          "value": "6 h",
-          "detail": "保持 6 h"
+          "value": "6 小時",
+          "detail": "保持 6 小時"
         }
       },
       "acceptance_criteria": {
@@ -780,23 +777,23 @@
         },
         "high_temp": {
           "value": "72 ± 2 °C",
-          "detail": "在溫度為(72±2)°C的環境下存放 6 h"
+          "detail": "在溫度為(72±2)°C的環境下存放 6 小時"
         },
         "low_temp": {
           "value": "-40 ± 2 °C",
-          "detail": "在溫度為(-40±2)°C的環境下存放 6 h"
+          "detail": "在溫度為(-40±2)°C的環境下存放 6 小時"
         },
         "transition": {
-          "value": "≤ 30 min",
-          "detail": "兩個溫度之間的轉換時間不超過 30 min"
+          "value": "≤ 30 分鐘",
+          "detail": "兩個溫度之間的轉換時間不超過 30 分鐘"
         },
         "cycles": {
           "value": "10 次",
           "detail": "共循環 10 次"
         },
         "post_test": {
-          "value": "20 ± 5 °C 存放 24 h",
-          "detail": "將電池組在溫度為(20±5)°C的環境下存放 24 h"
+          "value": "20 ± 5 °C 存放 24 小時",
+          "detail": "將電池組在溫度為(20±5)°C的環境下存放 24 小時"
         }
       },
       "acceptance_criteria": {
@@ -834,12 +831,12 @@
           "detail": "浸沒在溫度為(20±5)°C的水槽中(以水淹沒電池組最上端為準)"
         },
         "duration": {
-          "value": "48 h",
-          "detail": "浸水 48 h"
+          "value": "48 小時",
+          "detail": "浸水 48 小時"
         },
         "post_test": {
-          "value": "靜置 4 h",
-          "detail": "然後取出靜置 4 h"
+          "value": "靜置 4 小時",
+          "detail": "然後取出靜置 4 小時"
         }
       },
       "acceptance_criteria": {
@@ -877,8 +874,8 @@
           "detail": "按照 GB/T 2423.18—2021 中試驗方法 3 進行測試"
         },
         "post_test": {
-          "value": "觀察 2 h，標準充放電 1 次，測絕緣",
-          "detail": "試驗後觀察 2 h，進行 1 次標準放電和標準充電。然後用直流電壓 500 V，測試絕緣電阻值。"
+          "value": "觀察 2 小時，標準充放電 1 次，測絕緣",
+          "detail": "試驗後觀察 2 小時，進行 1 次標準放電和標準充電。然後用直流電壓 500 V，測試絕緣電阻值。"
         }
       },
       "acceptance_criteria": {
@@ -913,7 +910,7 @@
           "detail": "按照 6.2.2.1 的試驗方法充滿電"
         },
         "standard": {
-          "value": "GB/T 2423.4 試驗方法 2, 65°C",
+          "value": "GB/T 2423.4 試驗方法 2, 65 °C",
           "detail": "按照 GB/T 2423.4—2008 執行試驗方法 2，最高溫度為 65 °C"
         },
         "cycles": {
@@ -921,8 +918,8 @@
           "detail": "循環 5 次"
         },
         "post_test": {
-          "value": "觀察 2 h，標準充放電 1 次，測絕緣",
-          "detail": "試驗後觀察 2 h，進行 1 次標準放電和標準充電。然後用 500 V 測試絕緣電阻。"
+          "value": "觀察 2 小時，標準充放電 1 次，測絕緣",
+          "detail": "試驗後觀察 2 小時，進行 1 次標準放電和標準充電。然後用 500 V 測試絕緣電阻。"
         }
       },
       "acceptance_criteria": {
@@ -1008,14 +1005,14 @@
         },
         "termination_for_trigger": {
           "value": "(a且c) 或 (b且c)",
-          "detail": "電壓降>25% (a) 或 達最高工作溫度 (b)；並且 dT/dt>1°C/s 持續3s (c)。滿足 (a且c) 或 (b且c) 判定為觸發熱失控。"
+          "detail": "電壓降>25% (a) 或 達最高工作溫度 (b)；並且 dT/dt>1 °C/s 持續3 秒 (c)。滿足 (a且c) 或 (b且c) 判定為觸發熱失控。"
         }
       },
       "acceptance_criteria": {
-        "summary": "報警後 5min 內不起火、不爆炸",
+        "summary": "報警後 5 分鐘 內不起火、不爆炸",
         "details": [
           "應提供熱事件報警信號",
-          "在發出熱失控報警後 5min 內，電池組應不起火、不爆炸"
+          "在發出熱失控報警後 5 分鐘 內，電池組應不起火、不爆炸"
         ]
       },
       "exemptions": [],

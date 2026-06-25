@@ -132,8 +132,8 @@
           "detail": "受測電芯及電池須存放於壓力 11.6 kPa 或以下之環境中。此壓力模擬約 15,000 公尺 (49,000 英尺) 之高空環境。"
         },
         "temperature": {
-          "value": "20 ± 5°C",
-          "detail": "環境溫度維持於 20 ± 5°C (Ambient temperature)。"
+          "value": "20 ± 5 °C",
+          "detail": "環境溫度維持於 20 ± 5 °C (Ambient temperature)。"
         },
         "duration": {
           "value": "≥ 6 小時",
@@ -186,19 +186,19 @@
       ],
       "conditions": {
         "high_temperature": {
-          "value": "72 ± 2°C",
-          "detail": "高溫段存放溫度為 72 ± 2°C。注意：第六版原文為 75±2°C，已由 2016 年 2 月勘誤 (Corrigendum 1) 更正為 72±2°C。"
+          "value": "72 ± 2 °C",
+          "detail": "高溫段存放溫度為 72 ± 2 °C。注意：第六版原文為 75±2 °C，已由 2016 年 2 月勘誤 (Corrigendum 1) 更正為 72±2 °C。"
         },
         "high_temp_duration": {
-          "value": "小型 ≥ 6h / 大型 ≥ 12h",
+          "value": "小型 ≥ 6 小時 / 大型 ≥ 12 小時",
           "detail": "小型電芯及電池在高溫段存放至少 6 小時；大型電芯及電池 (Large cells and batteries) 存放至少 12 小時。"
         },
         "low_temperature": {
-          "value": "-40 ± 2°C",
-          "detail": "低溫段存放溫度為 -40 ± 2°C。"
+          "value": "-40 ± 2 °C",
+          "detail": "低溫段存放溫度為 -40 ± 2 °C。"
         },
         "low_temp_duration": {
-          "value": "小型 ≥ 6h / 大型 ≥ 12h",
+          "value": "小型 ≥ 6 小時 / 大型 ≥ 12 小時",
           "detail": "小型電芯及電池在低溫段存放至少 6 小時；大型電芯及電池存放至少 12 小時。"
         },
         "transition_time": {
@@ -210,8 +210,8 @@
           "detail": "完整執行 10 次高低溫循環。"
         },
         "post_test_storage": {
-          "value": "24 小時, 20 ± 5°C",
-          "detail": "所有循環完成後，樣品須在環境溫度 (20 ± 5°C) 下存放 24 小時。"
+          "value": "24 小時, 20 ± 5 °C",
+          "detail": "所有循環完成後，樣品須在環境溫度 (20 ± 5 °C) 下存放 24 小時。"
         },
         "sample_quantity": {
           "value": "同 T.1 (依 38.3.3)",
@@ -388,8 +388,8 @@
       ],
       "conditions": {
         "preconditioning_temperature": {
-          "value": "57 ± 4°C",
-          "detail": "受測電芯或電池須加熱至外殼達到均勻穩定溫度 57 ± 4°C。加熱時間視電芯/電池尺寸及設計而定，需評估並記錄。若無法評估，小型電芯/電池至少 6 小時，大型電芯/電池至少 12 小時。"
+          "value": "57 ± 4 °C",
+          "detail": "受測電芯或電池須加熱至外殼達到均勻穩定溫度 57 ± 4 °C。加熱時間視電芯/電池尺寸及設計而定，需評估並記錄。若無法評估，小型電芯/電池至少 6 小時，大型電芯/電池至少 12 小時。"
         },
         "external_resistance": {
           "value": "< 0.1 Ω",
@@ -397,7 +397,7 @@
         },
         "short_circuit_duration": {
           "value": "至溫度回落後 ≥ 1 小時",
-          "detail": "短路條件持續至電芯/電池外殼溫度回落至 57 ± 4°C 後至少 1 小時；或對大型電池，持續至溫度下降幅度達最大溫升之一半且維持低於該值後至少 1 小時。"
+          "detail": "短路條件持續至電芯/電池外殼溫度回落至 57 ± 4 °C 後至少 1 小時；或對大型電池，持續至溫度下降幅度達最大溫升之一半且維持低於該值後至少 1 小時。"
         },
         "ambient_condition": {
           "value": "短路及冷卻階段至少在環境溫度下進行",
@@ -409,9 +409,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "外部溫度 ≤ 170°C；測試期間及測試後 6 小時內無解體、無破裂、無起火",
+        "summary": "外部溫度 ≤ 170 °C；測試期間及測試後 6 小時內無解體、無破裂、無起火",
         "details": [
-          "外部溫度不超過 170°C (External temperature ≤ 170°C)",
+          "外部溫度不超過 170 °C (External temperature ≤ 170 °C)",
           "無解體 (No disassembly)",
           "無破裂 (No rupture)",
           "無起火 (No fire)",
@@ -476,9 +476,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "外部溫度 ≤ 170°C；測試期間及測試後 6 小時內無解體、無起火",
+        "summary": "外部溫度 ≤ 170 °C；測試期間及測試後 6 小時內無解體、無起火",
         "details": [
-          "外部溫度不超過 170°C (External temperature ≤ 170°C)",
+          "外部溫度不超過 170 °C (External temperature ≤ 170 °C)",
           "無解體 (No disassembly)",
           "無起火 (No fire)",
           "觀察期間為測試期間及測試後 6 小時內"
@@ -537,7 +537,7 @@
         },
         "observation_period": {
           "value": "測試後觀察 6 小時",
-          "detail": "擠壓完成後繼續觀察 6 小時 (observed for a further 6 h)。"
+          "detail": "擠壓完成後繼續觀察 6 小時 (observed for a further 6 小時)。"
         },
         "sample_state": {
           "value": "原電芯：5 未放電 + 5 完放；充電電芯：5 個 50% 設計容量",
@@ -549,9 +549,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "外部溫度 ≤ 170°C；測試期間及測試後 6 小時內無解體、無起火",
+        "summary": "外部溫度 ≤ 170 °C；測試期間及測試後 6 小時內無解體、無起火",
         "details": [
-          "外部溫度不超過 170°C (External temperature ≤ 170°C)",
+          "外部溫度不超過 170 °C (External temperature ≤ 170 °C)",
           "無解體 (No disassembly)",
           "無起火 (No fire)",
           "觀察期間為測試期間及測試後 6 小時內"

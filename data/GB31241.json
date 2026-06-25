@@ -72,19 +72,19 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "57 ± 4°C",
-          "detail": "環境溫度維持於 57 ± 4°C。"
+          "value": "57 ± 4 °C",
+          "detail": "環境溫度維持於 57 ± 4 °C。"
         },
         "resistance": {
           "value": "80 ± 20 mΩ",
           "detail": "使用外部電阻為 80 ± 20 mΩ 的線路進行短路。"
         },
         "termination_criteria": {
-          "value": "溫度較峰值下降 20% 或 24h",
+          "value": "溫度較峰值下降 20% 或 24 小時",
           "detail": "短路持續至電池溫度較峰值下降 20% 或短路持續 24 小時。"
         },
         "soaking": {
-          "value": "達溫後保溫 30min",
+          "value": "達溫後保溫 30 分鐘",
           "detail": "在短路試驗前，必須讓電池表面溫度達到目標溫度後，再持續保溫 30 分鐘。"
         }
       },
@@ -123,8 +123,8 @@
           "detail": "Ucl < 4.25V 時，Ut = Ucl + 0.4V；4.25V ≤ Ucl < 4.45V 時，Ut = 4.65V；Ucl ≥ 4.45V 時，Ut = Ucl + 0.2V。"
         },
         "duration": {
-          "value": "7h 或降溫 20%",
-          "detail": "電池持續充電時間達到 7 h，或製造商定義充電時間中較大值，或電池溫度下降值達到溫度最大值的 20%。"
+          "value": "7 小時 或降溫 20%",
+          "detail": "電池持續充電時間達到 7 小時，或製造商定義充電時間中較大值，或電池溫度下降值達到溫度最大值的 20%。"
         }
       },
       "acceptance_criteria": {
@@ -155,7 +155,7 @@
       "conditions": {
         "current": {
           "value": "1It A",
-          "detail": "以 1It A 的電流進行反向充電至負的充電上限電壓 (-Uup)。如果電壓達到負的充電上限電壓，應通過減小電流保持該電壓繼續進行反向充電，反向充電共計 90 min。"
+          "detail": "以 1It A 的電流進行反向充電至負的充電上限電壓 (-Uup)。如果電壓達到負的充電上限電壓，應通過減小電流保持該電壓繼續進行反向充電，反向充電共計 90 分鐘。"
         },
         "duration": {
           "value": "90 分鐘",
@@ -191,11 +191,11 @@
           "detail": "壓強降至 11.6 kPa 或更低（模擬海拔 15240 m）。"
         },
         "temperature": {
-          "value": "20 ± 5°C",
-          "detail": "環境溫度維持於 20 ± 5°C。"
+          "value": "20 ± 5 °C",
+          "detail": "環境溫度維持於 20 ± 5 °C。"
         },
         "duration": {
-          "value": "6h",
+          "value": "6 小時",
           "detail": "保持 6 小時。"
         }
       },
@@ -227,12 +227,12 @@
       ],
       "conditions": {
         "high_temp": {
-          "value": "72 ± 2°C",
-          "detail": "高溫 72 ± 2°C，保持 6h。"
+          "value": "72 ± 2 °C",
+          "detail": "高溫 72 ± 2 °C，保持 6 小時。"
         },
         "low_temp": {
-          "value": "-40 ± 2°C",
-          "detail": "低溫 -40 ± 2°C，保持 6h。"
+          "value": "-40 ± 2 °C",
+          "detail": "低溫 -40 ± 2 °C，保持 6 小時。"
         },
         "transition_time": {
           "value": "≤ 30 分鐘",
@@ -243,8 +243,8 @@
           "detail": "重複 10 次循環。"
         },
         "post_rest": {
-          "value": "室溫靜置 6h",
-          "detail": "溫度循環結束後，需在室溫 20 ℃±5 ℃ 下至少保存 6 h。"
+          "value": "室溫靜置 6 小時",
+          "detail": "溫度循環結束後，需在室溫 20 °C±5 °C 下至少保存 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -316,11 +316,11 @@
           "detail": "壓強降至 11.6 kPa 或更低。"
         },
         "temperature": {
-          "value": "20 ± 5°C",
-          "detail": "環境溫度維持於 20 ± 5°C。"
+          "value": "20 ± 5 °C",
+          "detail": "環境溫度維持於 20 ± 5 °C。"
         },
         "duration": {
-          "value": "6h",
+          "value": "6 小時",
           "detail": "保持 6 小時。"
         }
       },
@@ -352,12 +352,12 @@
       ],
       "conditions": {
         "high_temp": {
-          "value": "72 ± 2°C",
-          "detail": "高溫 72 ± 2°C，保持 6h。"
+          "value": "72 ± 2 °C",
+          "detail": "高溫 72 ± 2 °C，保持 6 小時。"
         },
         "low_temp": {
-          "value": "-40 ± 2°C",
-          "detail": "低溫 -40 ± 2°C，保持 6h。"
+          "value": "-40 ± 2 °C",
+          "detail": "低溫 -40 ± 2 °C，保持 6 小時。"
         },
         "transition_time": {
           "value": "≤ 30 分鐘",
@@ -368,8 +368,8 @@
           "detail": "重複 10 次循環。"
         },
         "post_rest": {
-          "value": "室溫靜置 6h",
-          "detail": "試驗結束後，在室溫下靜置 6 h。"
+          "value": "室溫靜置 6 小時",
+          "detail": "試驗結束後，在室溫下靜置 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -400,11 +400,11 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "70 ± 2°C",
-          "detail": "環境溫度維持於 70 ± 2°C。"
+          "value": "70 ± 2 °C",
+          "detail": "環境溫度維持於 70 ± 2 °C。"
         },
         "duration": {
-          "value": "7h",
+          "value": "7 小時",
           "detail": "保持 7 小時。"
         }
       },
@@ -436,12 +436,12 @@
           "detail": "配製 pH 11.0 ± 0.1 的溶液。"
         },
         "temperature": {
-          "value": "45 ± 2°C",
-          "detail": "加熱至 45 ± 2°C。"
+          "value": "45 ± 2 °C",
+          "detail": "加熱至 45 ± 2 °C。"
         },
         "process": {
           "value": "浸泡、攪拌、脫水、烘乾",
-          "detail": "包含浸泡(0.5h)、攪拌(0.5h, 60r/min)、脫水(10min, 800r/min)及烘乾(0.5h, 45°C)等步驟。"
+          "detail": "包含浸泡(0.5 小時)、攪拌(0.5 小時, 60r/min)、脫水(10 分鐘, 800r/min)及烘乾(0.5 小時, 45 °C)等步驟。"
         },
         "washing_params": {
           "value": "攪拌 / 脫水",
@@ -488,7 +488,7 @@
         },
         "duration": {
           "value": "動作或取大值",
-          "detail": "對於移除保護電路的電池組充電 1 h 或(C/Icm)h，兩者取較大值。對於保留保護電路的電池組充電至保護電路動作。"
+          "detail": "對於移除保護電路的電池組充電 1 小時 或(C/Icm)h，兩者取較大值。對於保留保護電路的電池組充電至保護電路動作。"
         }
       },
       "acceptance_criteria": {
@@ -523,8 +523,8 @@
           "detail": "使用外部電阻為 80 ± 20 mΩ 的線路進行短路。"
         },
         "duration": {
-          "value": "保護動作或短路 24h",
-          "detail": "直到電池組的保護電路動作；對於移除保護電路的電池組，需短路 24 h。"
+          "value": "保護動作或短路 24 小時",
+          "detail": "直到電池組的保護電路動作；對於移除保護電路的電池組，需短路 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -562,12 +562,9 @@
       "acceptance_criteria": {
         "summary": "承受 500 次保護動作循環而不失效",
         "details": [
-          "保護功能正常"
-        ],
-        "functional": {
-          "value": true,
-          "detail": "每次循環時電池組的保護電路都應正確動作。"
-        }
+          "保護功能正常",
+          "每次循環時電池組的保護電路都應正確動作。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],

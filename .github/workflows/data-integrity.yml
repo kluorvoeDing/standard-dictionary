@@ -7,11 +7,13 @@ on:
     paths:
       - 'data/**'
       - 'scripts/validate_data.mjs'
+      - 'scripts/normalize_data.mjs'
       - '.github/workflows/data-integrity.yml'
   pull_request:
     paths:
       - 'data/**'
       - 'scripts/validate_data.mjs'
+      - 'scripts/normalize_data.mjs'
   workflow_dispatch: # 允許從 Actions UI 手動觸發
 
 jobs:
@@ -26,6 +28,11 @@ jobs:
         with:
           node-version: '20'
 
-      # 驗證器只用 Node 內建模組，無需安裝相依套件
+      # 驗證器與正規化器只用 Node 內建模組，無需安裝相依套件
       - name: Validate data integrity
         run: node scripts/validate_data.mjs
+
+      # 格式正規化把關：data/ 必須維持正規化狀態（單位/結構一致）。
+      # 若有檔案待正規化，cron 應在生成資料後執行 `npm run normalize`。
+      - name: Check data is normalized
+        run: node scripts/normalize_data.mjs --check

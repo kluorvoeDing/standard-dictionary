@@ -459,7 +459,7 @@
           "detail": "未充電狀態。"
         },
         "temperature": {
-          "value": "最高測得溫度 + 10°C (≥70°C)",
+          "value": "最高測得溫度 + 10 °C (≥70 °C)",
           "detail": "在烤箱中維持該溫度持續 7 小時。"
         }
       },
@@ -538,8 +538,8 @@
           "detail": "Test ambient temperature."
         },
         "duration": {
-          "value": "7 h",
-          "detail": "Apply the short for 7 h or until temperatures on the cell cool to within ±10 °C."
+          "value": "7 小時",
+          "detail": "Apply the short for 7 小時 or until temperatures on the cell cool to within ±10 °C."
         }
       },
       "acceptance_criteria": {
@@ -633,8 +633,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "130°C",
-          "detail": "Rate of 5 ±2 °C per minute to a temperature of 130 ±2 °C. Temperature remain for 10 min. Exception for cells > 500 g to be held for 30 min rather than 10 min. Cells with Tmax > 100°C to be tested at 30 ±2 °C above the manufacturers maximum specified temperature."
+          "value": "130 °C",
+          "detail": "Rate of 5 ±2 °C per minute to a temperature of 130 ±2 °C. Temperature remain for 10 分鐘. Exception for cells > 500 g to be held for 30 分鐘 rather than 10 分鐘. Cells with Tmax > 100 °C to be tested at 30 ±2 °C above the manufacturers maximum specified temperature."
         },
         "soc": {
           "value": "完全充電",
@@ -707,8 +707,8 @@
           "detail": "放電至截止電壓。"
         },
         "duration": {
-          "value": "90分鐘",
-          "detail": "Discharge voltage limit not to exceed the numerical value of the upper limit charging voltage specified for the cell. If the discharge voltage limit is reached before the 90 min, the cell shall be discharged at a constant voltage discharge equal to the manufacturer’s determined low voltage cutoff."
+          "value": "90 分鐘",
+          "detail": "Discharge voltage limit not to exceed the numerical value of the upper limit charging voltage specified for the cell. If the discharge voltage limit is reached before the 90 分鐘, the cell shall be discharged at a constant voltage discharge equal to the manufacturer’s determined low voltage cutoff."
         }
       },
       "acceptance_criteria": {
@@ -771,7 +771,7 @@
       "conditions": {
         "profile": {
           "value": "極端溫度循環",
-          "detail": "Strict temperature profile: +75 ±2 °C for 6h, 20 ±2 °C for 2h, -40 ±2 °C for 6h, and 20 ±2 °C, repeated for a total of 10 cycles."
+          "detail": "Strict temperature profile: +75 ±2 °C for 6 小時, 20 ±2 °C for 2 小時, -40 ±2 °C for 6 小時, and 20 ±2 °C, repeated for a total of 10 cycles."
         },
         "soc": {
           "value": "完全充電",

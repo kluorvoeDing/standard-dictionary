@@ -149,8 +149,8 @@
           "detail": "除另行說明外，所有濫用測試應在 100% SOC 下執行。(Abuse tests should be conducted at 100% SOC unless specifically noted otherwise — Section 2.1.3.)"
         },
         "temperature": {
-          "value": "10-30°C (±2°C)",
-          "detail": "環境溫度應在 10-30°C 範圍內（定義環境值±2°C 容差），RESS 環境應於測試開始前穩定至此溫度。(Section 2.1.4)"
+          "value": "10-30 °C (±2 °C)",
+          "detail": "環境溫度應在 10-30 °C 範圍內（定義環境值±2 °C 容差），RESS 環境應於測試開始前穩定至此溫度。(Section 2.1.4)"
         },
         "monitoring_period": {
           "value": "測試後至少 30 分鐘",
@@ -215,8 +215,8 @@
           "detail": "除另行說明外，所有濫用測試應在 100% SOC 下執行。(Section 2.1.3)"
         },
         "temperature": {
-          "value": "10-30°C (±2°C)",
-          "detail": "環境溫度應在 10-30°C 範圍內。(Section 2.1.4)"
+          "value": "10-30 °C (±2 °C)",
+          "detail": "環境溫度應在 10-30 °C 範圍內。(Section 2.1.4)"
         },
         "monitoring_period": {
           "value": "測試後至少 30 分鐘",
@@ -277,8 +277,8 @@
           "detail": "除另行說明外，所有濫用測試應在 100% SOC 下執行。(Section 2.1.3)"
         },
         "temperature": {
-          "value": "10-30°C (±2°C)",
-          "detail": "環境溫度應在 10-30°C 範圍內。(Section 2.1.4)"
+          "value": "10-30 °C (±2 °C)",
+          "detail": "環境溫度應在 10-30 °C 範圍內。(Section 2.1.4)"
         },
         "monitoring_period": {
           "value": "測試後至少 30 分鐘",
@@ -327,12 +327,12 @@
           "detail": "桿之線速度為 0.1 mm/s。(The linear speed of the rod shall be 0.1 mm/s.)"
         },
         "initial_test_conditions": {
-          "value": "100% SOC / 55°C（最嚴苛條件）",
-          "detail": "首次測試應在 100% SOC 及 55°C 下執行（DUT 及測試設備均為 55°C），代表測試矩陣中最嚴苛條件。(The first test should be performed at 100% SOC and at 55°C — the most aggressive test conditions described in the test matrix.)"
+          "value": "100% SOC / 55 °C（最嚴苛條件）",
+          "detail": "首次測試應在 100% SOC 及 55 °C 下執行（DUT 及測試設備均為 55 °C），代表測試矩陣中最嚴苛條件。(The first test should be performed at 100% SOC and at 55 °C — the most aggressive test conditions described in the test matrix.)"
         },
         "test_matrix": {
           "value": "溫度 vs SOC 矩陣：溫度列 / SOC 行 (60-100%)",
-          "detail": "Table 7 提供穿刺測試矩陣，依溫度與 SOC 百分比組合。建議從最嚴苛條件（右下角：100% SOC / 55°C）向左上角測試，直至達到可接受之 HSL 等級。(Test matrix Table 7: Temperature rows vs. %SOC columns 60-100%. Recommended to test from bottom right to top left.)"
+          "detail": "Table 7 提供穿刺測試矩陣，依溫度與 SOC 百分比組合。建議從最嚴苛條件（右下角：100% SOC / 55 °C）向左上角測試，直至達到可接受之 HSL 等級。(Test matrix Table 7: Temperature rows vs. %SOC columns 60-100%. Recommended to test from bottom right to top left.)"
         },
         "end_conditions": {
           "value": "完全穿透 / 電壓降 ≥ 100 ± 10 mV / HSL ≥ 5",
@@ -374,19 +374,19 @@
       ],
       "conditions": {
         "heating_rate": {
-          "value": "2-5°C/min (±0.5°C/min)",
-          "detail": "從正常工作溫度開始，以標稱恆定加熱速率 2-5°C/min（±0.5°C/min）加熱 DUT。DUT 以適當數量之熱電偶量測、包覆一層隔熱材料、放置於加熱夾具中。加熱夾具範例：圓柱電芯用黃銅塊、軟包電芯用平行黃銅板、大型軟包電芯用加熱墊。(DUT is heated at a nominal, constant heating rate of 2-5°C/min rate (±0.5°C/min).)"
+          "value": "2-5 °C/min (±0.5 °C/min)",
+          "detail": "從正常工作溫度開始，以標稱恆定加熱速率 2-5 °C/min（±0.5 °C/min）加熱 DUT。DUT 以適當數量之熱電偶量測、包覆一層隔熱材料、放置於加熱夾具中。加熱夾具範例：圓柱電芯用黃銅塊、軟包電芯用平行黃銅板、大型軟包電芯用加熱墊。(DUT is heated at a nominal, constant heating rate of 2-5 °C/min rate (±0.5 °C/min).)"
         },
         "soc": {
           "value": "100% SOC（起始）",
           "detail": "DUT 從正常工作溫度、100% SOC 開始。若有額外測試物件，建議在較低 SOC 下額外執行測試以了解失效隨 SOC 之變化。(Starting from normal operating temperature and 100% SOC.)"
         },
         "end_conditions": {
-          "value": "250°C 保持 15 分鐘（無自發熱）/ HSL ≥ 5",
-          "detail": "測試終止條件：(1) DUT 溫度達 250°C 並在 250°C 保持 15 分鐘，無量測到之 DUT 自發熱 (dT/dt > 0.1°C/min)；或 (2) DUT 失效 (HSL ≥ 5)。(End conditions: (1) DUT reaches 250°C, held for 15 min without self-heating dT/dt > 0.1°C/min, or (2) failure HSL ≥5.)"
+          "value": "250 °C 保持 15 分鐘（無自發熱）/ HSL ≥ 5",
+          "detail": "測試終止條件：(1) DUT 溫度達 250 °C 並在 250 °C 保持 15 分鐘，無量測到之 DUT 自發熱 (dT/dt > 0.1 °C/min)；或 (2) DUT 失效 (HSL ≥ 5)。(End conditions: (1) DUT reaches 250 °C, held for 15 分鐘 without self-heating dT/dt > 0.1 °C/min, or (2) failure HSL ≥5.)"
         },
         "temperature": {
-          "value": "10-30°C 起始",
+          "value": "10-30 °C 起始",
           "detail": "從正常工作溫度開始加熱。(Starting from the normal operating temperature.)"
         },
         "monitoring_period": {
@@ -432,8 +432,8 @@
           "detail": "DUT 置於絕熱加速量熱儀 (ARC) 中，不與加熱元件（側壁、頂部、底部）直接接觸，而從頂部護套懸掛。(DUT is placed in an adiabatic accelerating rate calorimeter without being in direct contact with the heating elements, suspending it from the top jacket.)"
         },
         "heating_profile": {
-          "value": "5°C 步階加熱，30 分鐘等待步驟",
-          "detail": "從 DUT 正常工作溫度開始，以 5°C 步階加熱，每個加熱步驟後等待 30 分鐘。在等待步驟中分析放熱閥值。(Starting from normal operating temperature, the DUT is heated in 5°C steps with a 30-minute wait step following each heating step.)"
+          "value": "5 °C 步階加熱，30 分鐘等待步驟",
+          "detail": "從 DUT 正常工作溫度開始，以 5 °C 步階加熱，每個加熱步驟後等待 30 分鐘。在等待步驟中分析放熱閥值。(Starting from normal operating temperature, the DUT is heated in 5 °C steps with a 30-minute wait step following each heating step.)"
         },
         "thermocouple_placement": {
           "value": "金屬包裝：電芯表面 / 軟包：負極耳",
@@ -444,8 +444,8 @@
           "detail": "可撓包裝之軟包電芯應物理約束以防止 ARC 實驗中膨脹，降低排氣後短路失效之可能。(Pouch cells in a flexible package should be physically constrained to prevent swelling.)"
         },
         "exotherm_threshold_example": {
-          "value": "範例：0.02°C/min；最高溫度 405°C",
-          "detail": "放熱閥值及實驗最高溫度取決於 DUT 及客戶所需數據價值。範例：2.0 Ah 圓柱鋰電芯，放熱閥值 0.02°C/min，最高溫度 405°C。(Example: exotherm threshold of 0.02°C/min, maximum temperature of 405°C for a 2.0 Ah cylindrical lithium-ion cell.)"
+          "value": "範例：0.02 °C/min；最高溫度 405 °C",
+          "detail": "放熱閥值及實驗最高溫度取決於 DUT 及客戶所需數據價值。範例：2.0 Ah 圓柱鋰電芯，放熱閥值 0.02 °C/min，最高溫度 405 °C。(Example: exotherm threshold of 0.02 °C/min, maximum temperature of 405 °C for a 2.0 Ah cylindrical lithium-ion cell.)"
         },
         "soc": {
           "value": "100% SOC",
@@ -644,8 +644,8 @@
           "detail": "除另行說明外，所有濫用測試應在 100% SOC 下執行。(Section 2.1.3)"
         },
         "temperature": {
-          "value": "10-30°C (±2°C)",
-          "detail": "環境溫度應在 10-30°C 範圍內。(Section 2.1.4)"
+          "value": "10-30 °C (±2 °C)",
+          "detail": "環境溫度應在 10-30 °C 範圍內。(Section 2.1.4)"
         },
         "data_collection_rate": {
           "value": "前 5 秒 1 kHz，其後 1 Hz",
@@ -691,8 +691,8 @@
           "detail": "第一步為實驗性確定熱失控起始觸發方式。本手冊中之濫用測試可作為觸發技術，但也應考慮其他能產生典型且可重複之給定電芯類型熱失控條件之技術。建議在模組或電池包測試前，先在電芯級實驗評估並記錄此觸發方式。觸發方式應可在電池模組或電池包內多個位置應用，同時保持單電芯熱失控觸發特性而不實質損害或改變其他電芯。(The first step is to experimentally determine a thermal runaway initiation trigger prior to module/pack-level test, evaluated and documented at the cell-level.)"
         },
         "soc": {
-          "value": "最低建議 100% SOC / 25°C",
-          "detail": "最低建議在 100% SOC 及 25°C 下起始電芯失效。(Minimum: initiated at 100% SOC and 25°C.)"
+          "value": "最低建議 100% SOC / 25 °C",
+          "detail": "最低建議在 100% SOC 及 25 °C 下起始電芯失效。(Minimum: initiated at 100% SOC and 25 °C.)"
         },
         "initiation_location": {
           "value": "最脆弱位置，由熱模擬、測試經驗或其他數據指引",
@@ -748,8 +748,8 @@
           "detail": "本試驗為熱升溫試驗 (Section 3.2.1) 之變體，使用外部點火源判定排氣氣體可燃性。DUT 置於加熱夾具中（同 Section 3.2.1）。(A variant of the Thermal Ramp Test with the use of an ignition source to determine vent gas flammability.)"
         },
         "heating_rate": {
-          "value": "5°C/min",
-          "detail": "依熱升溫程序以標稱恆定 5°C/min 速率加熱 DUT。(Follow the Thermal Ramp procedure to heat the DUT at a nominal, constant 5°C/min rate.)"
+          "value": "5 °C/min",
+          "detail": "依熱升溫程序以標稱恆定 5 °C/min 速率加熱 DUT。(Follow the Thermal Ramp procedure to heat the DUT at a nominal, constant 5 °C/min rate.)"
         },
         "ignition_source_defined_vent": {
           "value": "1 個點火源，距排氣路徑 40 ± 5 mm",
@@ -760,8 +760,8 @@
           "detail": "無明確排氣路徑之 DUT（如軟包電芯）可使用多個點火源以捕捉排氣路徑。軟包電芯常見排氣路徑為電極耳之間，應考慮在此放置一個點火源。替代方案為使用電芯周圍之圍封物定義排氣路徑並在出口處放置單一點火源。(Multiple ignition sources or an enclosure with defined vent path — Figure 5.)"
         },
         "end_conditions": {
-          "value": "排氣後持續燃燒自熄 / 250°C 保持 15 分鐘",
-          "detail": "若排氣後點燃並持續燃燒，停止加熱，測試於火焰自熄後結束。若未點燃或未持續燃燒，繼續以 5°C/min 加熱至 250°C 並保持 15 分鐘。(If sustained fire occurs after vent: stop heating, test ends when fire self-extinguishes. If no sustained fire: heat to 250°C and hold 15 minutes.)"
+          "value": "排氣後持續燃燒自熄 / 250 °C 保持 15 分鐘",
+          "detail": "若排氣後點燃並持續燃燒，停止加熱，測試於火焰自熄後結束。若未點燃或未持續燃燒，繼續以 5 °C/min 加熱至 250 °C 並保持 15 分鐘。(If sustained fire occurs after vent: stop heating, test ends when fire self-extinguishes. If no sustained fire: heat to 250 °C and hold 15 minutes.)"
         },
         "soc": {
           "value": "100% SOC",

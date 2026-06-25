@@ -103,12 +103,9 @@
         "details": [
           "不得發生爆炸，且覆蓋的醫療紗布或衛生紙不得有燒焦或燃燒現象 (Section 55.9.2)",
           "測試後需通過 Section 55.1.2 的耐壓測試 (Dielectric Voltage Withstand Test)。",
-          "允許電池排氣 (Venting of the cells is acceptable)。"
-        ],
-        "no_general_hazard": {
-          "value": true,
-          "detail": "設備不得噴出火焰或熔融金屬，且不得造成起火、觸電或人身傷害的風險 (適用於所有異常測試)。"
-        }
+          "允許電池排氣 (Venting of the cells is acceptable)。",
+          "設備不得噴出火焰或熔融金屬，且不得造成起火、觸電或人身傷害的風險 (適用於所有異常測試)。"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -127,7 +124,7 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "室溫 (樣品1) 與 0°C (樣品2)",
+          "value": "室溫 (樣品1) 與 0 °C (樣品2)",
           "detail": "第二個樣品需在 0 °C 進行調節。如果製造商規定的最低工作溫度低於 0 °C，則採用該最低溫度。"
         },
         "drop_height": {

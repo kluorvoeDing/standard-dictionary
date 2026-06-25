@@ -277,7 +277,7 @@
         },
         "cycles": {
           "value": "≥ 2 次循環",
-          "detail": "至少 2 次完整充放電循環，直到連續循環電池溫度增加不超過 2°C。"
+          "detail": "至少 2 次完整充放電循環，直到連續循環電池溫度增加不超過 2 °C。"
         }
       },
       "acceptance_criteria": {
@@ -285,40 +285,16 @@
         "details": [
           "電壓、電流、溫度不得超出製造商限值",
           "熱保護和過流保護裝置不應啟動",
-          "表面溫度符合表 28.2 限值，且元件溫度不得超出表 28.1 規格限值"
-        ],
-        "no_explosion": {
-          "value": true,
-          "detail": "無爆炸"
-        },
-        "no_fire": {
-          "value": true,
-          "detail": "無起火"
-        },
-        "no_combustible_gas": {
-          "value": true,
-          "detail": "無可燃濃度氣體"
-        },
-        "no_rupture": {
-          "value": true,
-          "detail": "無破裂"
-        },
-        "no_leakage": {
-          "value": true,
-          "detail": "無電解液漏液"
-        },
-        "no_venting": {
-          "value": true,
-          "detail": "無排氣"
-        },
-        "no_electric_shock": {
-          "value": true,
-          "detail": "無電擊危險"
-        },
-        "no_loss_of_protection": {
-          "value": true,
-          "detail": "無保護控制失效"
-        }
+          "表面溫度符合表 28.2 限值，且元件溫度不得超出表 28.1 規格限值",
+          "無爆炸",
+          "無起火",
+          "無可燃濃度氣體",
+          "無破裂",
+          "無電解液漏液",
+          "無排氣",
+          "無電擊危險",
+          "無保護控制失效"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -355,20 +331,11 @@
           "無排氣 (No venting)",
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
-          "電池最大電壓限值不得超出"
-        ],
-        "no_combustible_gas": {
-          "value": true,
-          "detail": "無可燃濃度氣體"
-        },
-        "no_electric_shock": {
-          "value": true,
-          "detail": "無電擊危險"
-        },
-        "no_loss_of_protection": {
-          "value": true,
-          "detail": "無保護控制失效"
-        }
+          "電池最大電壓限值不得超出",
+          "無可燃濃度氣體",
+          "無電擊危險",
+          "無保護控制失效"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -512,20 +479,11 @@
           "無排氣 (No venting)",
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
-          "測試後能完成 1 次充放電"
-        ],
-        "no_combustible_gas": {
-          "value": true,
-          "detail": "無可燃濃度氣體"
-        },
-        "no_electric_shock": {
-          "value": true,
-          "detail": "無電擊危險"
-        },
-        "no_loss_of_protection": {
-          "value": true,
-          "detail": "無保護控制失效"
-        }
+          "測試後能完成 1 次充放電",
+          "無可燃濃度氣體",
+          "無電擊危險",
+          "無保護控制失效"
+        ]
       },
       "exemptions": [],
       "related_tests": [],
@@ -603,16 +561,10 @@
         "details": [
           "無起火 (No fire)",
           "無爆炸 (No explosion)",
-          "無洩漏 (No leakage)"
-        ],
-        "no_combustible_gas": {
-          "value": true,
-          "detail": "無可燃濃度氣體"
-        },
-        "no_electric_shock": {
-          "value": true,
-          "detail": "無電擊危險"
-        }
+          "無洩漏 (No leakage)",
+          "無可燃濃度氣體",
+          "無電擊危險"
+        ]
       },
       "exemptions": [
         "非道路用 LEV 免測",
@@ -645,7 +597,7 @@
         },
         "cold_condition": {
           "value": "低溫預處理",
-          "detail": "若外殼為塑膠且預期用於 0 °C 環境 (intended for use in 0 °C temperatures)，需在 0°C 下調節 3 小時。"
+          "detail": "若外殼為塑膠且預期用於 0 °C 環境 (intended for use in 0 °C temperatures)，需在 0 °C 下調節 3 小時。"
         },
         "soc": {
           "value": "完全充電",
@@ -705,16 +657,10 @@
         "details": [
           "無起火 (No fire)",
           "無爆炸 (No explosion)",
-          "無洩漏 (No leakage)"
-        ],
-        "no_combustible_gas": {
-          "value": true,
-          "detail": "無可燃濃度氣體"
-        },
-        "no_electric_shock": {
-          "value": true,
-          "detail": "無電擊危險"
-        }
+          "無洩漏 (No leakage)",
+          "無可燃濃度氣體",
+          "無電擊危險"
+        ]
       },
       "exemptions": [],
       "related_tests": [
@@ -737,8 +683,8 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "70°C 或 T_max + 10°C",
-          "detail": "放置於 70°C 烤箱中（若最高工作溫度超過 60°C，則為 T_max + 10°C）。"
+          "value": "70 °C 或 T_max + 10 °C",
+          "detail": "放置於 70 °C 烤箱中（若最高工作溫度超過 60 °C，則為 T_max + 10 °C）。"
         },
         "duration": {
           "value": "7 小時",
@@ -810,7 +756,7 @@
       ],
       "conditions": {
         "rotation": {
-          "value": "90°/15秒，360°旋轉",
+          "value": "90°/15 秒，360°旋轉",
           "detail": "在 3 個互相垂直方向各以每 15 秒 90° 的速度旋轉 360°。"
         },
         "soc": {
@@ -825,20 +771,11 @@
           "無爆炸 (No explosion)",
           "無排氣 (No venting)",
           "無洩漏 (No leakage)",
-          "無破裂 (No rupture)"
-        ],
-        "no_combustible_gas": {
-          "value": true,
-          "detail": "無可燃濃度氣體"
-        },
-        "no_electric_shock": {
-          "value": true,
-          "detail": "無電擊危險"
-        },
-        "no_loss_of_protection": {
-          "value": true,
-          "detail": "無保護控制失效"
-        }
+          "無破裂 (No rupture)",
+          "無可燃濃度氣體",
+          "無電擊危險",
+          "無保護控制失效"
+        ]
       },
       "exemptions": [
         "可安裝在代表車輛應用的固定裝置內測試"
@@ -986,8 +923,8 @@
           "detail": "按 SAE J2464 熱衝擊測試程序。"
         },
         "range": {
-          "value": "85°C 至 -40°C",
-          "detail": "在 85 ± 2°C 與 -40 ± 2°C 之間進行 5 次循環（參考 Gemini md 記載的 5 次）。"
+          "value": "85 °C 至 -40 °C",
+          "detail": "在 85 ± 2 °C 與 -40 ± 2 °C 之間進行 5 次循環（參考 Gemini md 記載的 5 次）。"
         },
         "soc": {
           "value": "完全充電",
@@ -1002,16 +939,10 @@
           "無排氣 (No venting)",
           "無洩漏 (No leakage)",
           "無破裂 (No rupture)",
-          "保護控制正常"
-        ],
-        "no_combustible_gas": {
-          "value": true,
-          "detail": "無可燃濃度氣體"
-        },
-        "no_electric_shock": {
-          "value": true,
-          "detail": "無電擊危險"
-        }
+          "保護控制正常",
+          "無可燃濃度氣體",
+          "無電擊危險"
+        ]
       },
       "exemptions": [
         "可在模組層級測試"

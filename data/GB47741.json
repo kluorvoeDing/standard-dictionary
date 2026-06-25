@@ -40,19 +40,19 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "57 ± 4℃"
+          "value": "57 ± 4 °C"
         },
         "external_resistance": {
           "value": "20 mΩ ± 5 mΩ"
         },
         "duration": {
-          "value": "降溫後維持 1 h"
+          "value": "降溫後維持 1 小時"
         }
       },
       "acceptance_criteria": {
         "summary": "不起火、不破裂、不解體",
         "details": [
-          "電池表面溫度應不超過 170 ℃",
+          "電池表面溫度應不超過 170 °C",
           "電池應不解體、不破裂、不起火"
         ]
       }
@@ -75,7 +75,7 @@
           "value": "1.5 倍充電限制電壓"
         },
         "duration": {
-          "value": "1 h 或總 1.5 h"
+          "value": "1 小時 或總 1.5 小時"
         }
       },
       "acceptance_criteria": {
@@ -100,7 +100,7 @@
           "value": "1It 反向充電"
         },
         "duration": {
-          "value": "共計 90 min"
+          "value": "共計 90 分鐘"
         }
       },
       "acceptance_criteria": {
@@ -125,10 +125,10 @@
           "value": "≤ 11.6 kPa"
         },
         "temperature": {
-          "value": "20 ℃ ± 5 ℃"
+          "value": "20 °C ± 5 °C"
         },
         "duration": {
-          "value": "≥ 6 h"
+          "value": "≥ 6 小時"
         }
       },
       "acceptance_criteria": {
@@ -151,10 +151,10 @@
       ],
       "conditions": {
         "high_temperature": {
-          "value": "72 ℃ ± 2 ℃, 6 h"
+          "value": "72 °C ± 2 °C, 6 小時"
         },
         "low_temperature": {
-          "value": "-40 ℃ ± 2 ℃, 6 h"
+          "value": "-40 °C ± 2 °C, 6 小時"
         },
         "cycles": {
           "value": "10 次循環"
@@ -186,7 +186,7 @@
           "value": "8gn"
         },
         "duration": {
-          "value": "每方向 3 h"
+          "value": "每方向 3 小時"
         }
       },
       "acceptance_criteria": {
@@ -322,13 +322,13 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "135 ℃ ± 2 ℃"
+          "value": "135 °C ± 2 °C"
         },
         "heating_rate": {
-          "value": "5 ℃/min"
+          "value": "5 °C/min"
         },
         "duration": {
-          "value": "恆溫 60 min"
+          "value": "恆溫 60 分鐘"
         }
       },
       "acceptance_criteria": {
@@ -356,7 +356,7 @@
           "value": "25 mm/s ± 5 mm/s"
         },
         "duration": {
-          "value": "停留觀察 1 h"
+          "value": "停留觀察 1 小時"
         }
       },
       "acceptance_criteria": {
@@ -381,7 +381,7 @@
           "value": "最大功率持續加熱"
         },
         "stop_condition": {
-          "value": "降壓25%或達300℃"
+          "value": "降壓25%或達300 °C"
         }
       },
       "acceptance_criteria": {
@@ -406,7 +406,7 @@
           "value": "≤ 11.6 kPa"
         },
         "duration": {
-          "value": "至少 6 h"
+          "value": "至少 6 小時"
         }
       },
       "acceptance_criteria": {
@@ -429,10 +429,10 @@
       ],
       "conditions": {
         "high_temperature": {
-          "value": "72 ℃, 6 h"
+          "value": "72 °C, 6 小時"
         },
         "low_temperature": {
-          "value": "-40 ℃, 6 h"
+          "value": "-40 °C, 6 小時"
         },
         "cycles": {
           "value": "10 次循環"
@@ -461,7 +461,7 @@
           "value": "8gn 或 2gn"
         },
         "duration": {
-          "value": "每個方向 3 h"
+          "value": "每個方向 3 小時"
         }
       },
       "acceptance_criteria": {
@@ -538,10 +538,10 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "70 ℃ ± 2 ℃"
+          "value": "70 °C ± 2 °C"
         },
         "duration": {
-          "value": "7 h"
+          "value": "7 小時"
         }
       },
       "acceptance_criteria": {
@@ -569,7 +569,7 @@
           "value": "最高點以上 1 cm"
         },
         "duration": {
-          "value": "至少 30 min"
+          "value": "至少 30 分鐘"
         }
       },
       "acceptance_criteria": {
@@ -718,7 +718,7 @@
           "value": "20 mΩ ± 5 mΩ"
         },
         "stop_condition": {
-          "value": "電壓 < 0.2 V 或 1 h"
+          "value": "電壓 < 0.2 V 或 1 小時"
         }
       },
       "acceptance_criteria": {
@@ -747,7 +747,7 @@
           "value": "10 Hz~55 Hz"
         },
         "duration": {
-          "value": "往返移動 95 min"
+          "value": "往返移動 95 分鐘"
         }
       },
       "acceptance_criteria": {
@@ -773,10 +773,10 @@
           "value": "至少 88 kPa"
         },
         "temperature": {
-          "value": "24 ℃ ± 4 ℃"
+          "value": "24 °C ± 4 °C"
         },
         "duration": {
-          "value": "存儲 6 h"
+          "value": "存儲 6 小時"
         }
       },
       "acceptance_criteria": {
@@ -798,13 +798,13 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "57 ℃ ± 4 ℃"
+          "value": "57 °C ± 4 °C"
         },
         "external_resistance": {
           "value": "80 mΩ ± 20 mΩ"
         },
         "stop_condition": {
-          "value": "短接 24 h 或溫度下降"
+          "value": "短接 24 小時 或溫度下降"
         }
       },
       "acceptance_criteria": {
@@ -857,7 +857,7 @@
           "value": "25 mm/s ± 5 mm/s"
         },
         "duration": {
-          "value": "停留觀察 1 h"
+          "value": "停留觀察 1 小時"
         }
       },
       "acceptance_criteria": {

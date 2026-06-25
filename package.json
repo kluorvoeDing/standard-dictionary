@@ -3,6 +3,11 @@
   "version": "1.0.0",
   "description": "Standard Dictionary Vercel Root",
   "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate_data.mjs",
+    "normalize": "node scripts/normalize_data.mjs --write",
+    "normalize:check": "node scripts/normalize_data.mjs --check"
+  },
   "devDependencies": {
     "cheerio": "^1.2.0"
   },
