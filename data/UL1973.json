@@ -499,7 +499,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "外部無火焰蔓延，無爆炸",
+        "summary": "外部無火焰蔓延、無爆炸",
         "details": [
           "外部無火焰蔓延 (No fire propagation outside enclosure)",
           "無爆炸 (No explosion)",

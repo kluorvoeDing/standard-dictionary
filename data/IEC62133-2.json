@@ -201,11 +201,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無起火、無爆炸、無漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
           "無起火 (No fire)",
           "無爆炸 (No explosion)",
-          "無漏液 (No leakage)"
+          "無洩漏 (No leakage)"
         ]
       },
       "exemptions": [
@@ -719,12 +719,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無起火、無爆炸、無破裂、無漏液、無排氣",
+        "summary": "無起火、無爆炸、無破裂、無洩漏、無排氣",
         "details": [
           "無起火 (No fire)",
           "無爆炸 (No explosion)",
           "無破裂 (No rupture)",
-          "無漏液 (No leakage)",
+          "無洩漏 (No leakage)",
           "無排氣 (No venting)"
         ]
       },
@@ -777,9 +777,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無漏液、無排氣、無破裂、無爆炸、無起火",
+        "summary": "無洩漏、無排氣、無破裂、無爆炸、無起火",
         "details": [
-          "無漏液 (No leakage)",
+          "無洩漏 (No leakage)",
           "無排氣 (No venting)",
           "無破裂 (No rupture)",
           "無爆炸 (No explosion)",

@@ -134,7 +134,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
           "所有樣品不得爆炸或起火 (Section 10.5)"
         ]
@@ -184,7 +184,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
           "一次電池樣品不得爆炸或起火 (Section 11.5)",
           "二次電池樣品不得爆炸或起火 (Section 11.10)"
@@ -237,7 +237,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
           "所有樣品不得爆炸或起火 (Section 12.6)"
         ]
@@ -285,7 +285,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
           "所有樣品不得爆炸或起火 (Section 13.4)",
           "使用者可更換電池：絕對不得起火或爆炸 (Section 5.2.1)",
@@ -345,7 +345,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
           "所有樣品不得爆炸或起火 (Section 14.4)",
           "使用者可更換電池：絕對不得起火或爆炸 (Section 5.2.1)",
@@ -397,10 +397,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不排氣、不漏液",
+        "summary": "無起火、無爆炸、不排氣、無洩漏",
         "details": [
           "所有樣品不得爆炸或起火 (Section 15.2)",
-          "不得排氣或漏液，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
+          "不得排氣或洩漏，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
         ]
       },
       "exemptions": [],
@@ -446,10 +446,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不排氣、不漏液",
+        "summary": "無起火、無爆炸、不排氣、無洩漏",
         "details": [
           "所有樣品不得爆炸或起火 (Section 16.3)",
-          "不得排氣或漏液，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
+          "不得排氣或洩漏，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
         ]
       },
       "exemptions": [],
@@ -499,7 +499,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
           "所有樣品不得爆炸或起火 (Section 17.2)"
         ]
@@ -551,10 +551,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不排氣、不漏液",
+        "summary": "無起火、無爆炸、不排氣、無洩漏",
         "details": [
           "所有樣品不得爆炸或起火 (Section 18.2)",
-          "不得排氣或漏液，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
+          "不得排氣或洩漏，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
         ]
       },
       "exemptions": [],
@@ -592,10 +592,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不排氣、不漏液",
+        "summary": "無起火、無爆炸、不排氣、無洩漏",
         "details": [
           "所有樣品不得爆炸或起火 (Section 19.2)",
-          "不得排氣或漏液，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
+          "不得排氣或洩漏，質量損失不得超過 Table 5.1 之規定 (Section 5.1.3)"
         ]
       },
       "exemptions": [],

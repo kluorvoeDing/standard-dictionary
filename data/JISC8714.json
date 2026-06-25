@@ -87,10 +87,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不發火、不破裂",
+        "summary": "不發火、無破裂",
         "details": [
           "不發火 (No fire)：測試過程中不得出現燃燒現象",
-          "不破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
+          "無破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
         ]
       },
       "exemptions": [],
@@ -134,10 +134,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不發火、不破裂",
+        "summary": "不發火、無破裂",
         "details": [
           "不發火 (No fire)：測試過程中不得出現燃燒現象",
-          "不破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
+          "無破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
         ]
       },
       "exemptions": [],
@@ -183,10 +183,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不發火、不破裂",
+        "summary": "不發火、無破裂",
         "details": [
           "不發火 (No fire)：測試過程中不得出現燃燒現象",
-          "不破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
+          "無破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
         ]
       },
       "exemptions": [],
@@ -350,10 +350,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不發火、不破裂",
+        "summary": "不發火、無破裂",
         "details": [
           "不發火 (No fire)：測試過程中不得出現燃燒現象",
-          "不破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
+          "無破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
         ]
       },
       "exemptions": [],

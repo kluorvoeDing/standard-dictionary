@@ -69,6 +69,34 @@ function normStr(s) {
   return out;
 }
 
+// ── 判定用語正規化（編輯層，經使用者核定）────────────────────────────
+// 否定詞統一用「無」（國際標準慣例），洩漏統一用「無洩漏」。
+// 只比對**明確的危害短語白名單**，故 不超過/不能/不應/不可恢復 等功能性「不」字
+// 完全不受影響。僅套用於 acceptance_criteria 的 summary / details。
+const HAZARD_MAP = [
+  [/不起火/g, '無起火'],
+  [/不爆炸/g, '無爆炸'],
+  [/不破裂/g, '無破裂'],
+  [/不解體/g, '無解體'],
+  [/不冒煙/g, '無冒煙'],
+  [/不燃燒/g, '無燃燒'],
+  [/不脹氣/g, '無脹氣'],
+  [/不變形/g, '無變形'],
+  // 洩漏：不漏液 / 無漏液 / 不洩漏 → 無洩漏；其餘殘留「漏液」→「洩漏」（同義詞統一）
+  [/[不無]漏液/g, '無洩漏'],
+  [/不洩漏/g, '無洩漏'],
+  [/漏液/g, '洩漏'],
+];
+
+function normCriteria(s) {
+  if (typeof s !== 'string') return s;
+  let out = s;
+  for (const [re, rep] of HAZARD_MAP) out = out.replace(re, rep);
+  // 危害列舉的標點：相鄰兩個「無X」之間的逗號 → 頓號（lookahead 限定下一項仍是危害否定）
+  out = out.replace(/(無[^，、；。]{1,6})，(?=無[起爆破解冒燃脹變洩])/g, '$1、');
+  return out;
+}
+
 // 把 {id, rule_zh, rule_en} 之類的物件壓成可讀字串（優先繁中）
 function objToText(o) {
   if (o == null) return '';
@@ -93,12 +121,14 @@ function normalizeTest(t) {
   // 2) acceptance_criteria
   const ac = t.acceptance_criteria;
   if (ac && typeof ac === 'object') {
-    if ('summary' in ac) ac.summary = normStr(ac.summary);
+    const normC = (x) => normCriteria(normStr(x)); // 單位 + 判定用語
 
-    // 2a) details: 攤平物件 + 單位正規化
+    if ('summary' in ac) ac.summary = normC(ac.summary);
+
+    // 2a) details: 攤平物件 + 單位 + 判定用語正規化
     if (Array.isArray(ac.details)) {
       ac.details = ac.details.map((d) =>
-        d && typeof d === 'object' ? normStr(objToText(d)) : normStr(d)
+        d && typeof d === 'object' ? normC(objToText(d)) : normC(d)
       );
     } else if (!ac.details) {
       ac.details = [];
@@ -110,8 +140,8 @@ function normalizeTest(t) {
       if (AC_CORE.has(k)) continue;
       const v = ac[k];
       let text = '';
-      if (v && typeof v === 'object') text = normStr(v.detail || objToText(v));
-      else if (typeof v === 'string') text = normStr(v);
+      if (v && typeof v === 'object') text = normC(v.detail || objToText(v));
+      else if (typeof v === 'string') text = normC(v);
       if (text && !ac.details.includes(text)) ac.details.push(text);
       delete ac[k];
     }

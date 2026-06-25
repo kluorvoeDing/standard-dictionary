@@ -58,7 +58,8 @@
   - `package.json` 加 `normalize` / `normalize:check` / `validate` scripts；CI 加 `normalize:check` 把關。
 - 後續行動：
   - ⚠️ `data/GB40559.json` 仍是舊 schema（`test_items`/`document_info`），validator 會報硬錯誤；前端已能容錯，但正解是重新產生為新 schema（`tests`/`document`）。
-  - Phase 2：Haiku 跨標準用語/顆粒度稽核（唯讀，產出待審清單）已執行，建議統一寫法待人工複核後再批次套用。
+  - Phase 2：Haiku 跨標準用語稽核（24 組 normalized_id，唯讀）完成，確認 GB 用「不」、UL/IEC/AIS 用「無」的系統性分裂。**經使用者核定，判定用語統一為「無」**（無起火、無爆炸、無洩漏），已加入 normalizer 的 `HAZARD_MAP`（白名單式，功能性「不」如不超過/不能/不應一律不動）並套用於 24 個 clean 檔。
+  - 顆粒度落差與中英混雜屬「內容深度」，未機械式拉平，留作日後人工補強。
 
 ## 2026-06-25 (UI Polish & Bug Fix)
 - 事件：移除首頁冗餘的側邊選擇器、新增 5 份國標分類並修復繁體中文化轉換 Bug

@@ -44,9 +44,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "試驗終止後觀察 1 小時，電池應不起火、不爆炸。"
+          "試驗終止後觀察 1 小時，電池應無起火、無爆炸。"
         ]
       },
       "exemptions": [],
@@ -76,9 +76,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "電池應不起火、不爆炸。"
+          "電池應無起火、無爆炸。"
         ]
       },
       "exemptions": [],
@@ -108,9 +108,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "電池應不起火、不爆炸。"
+          "電池應無起火、無爆炸。"
         ]
       },
       "exemptions": [],
@@ -144,9 +144,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "電池應不起火、不爆炸、不漏液。"
+          "電池應無起火、無爆炸、無洩漏。"
         ]
       },
       "exemptions": [],
@@ -184,9 +184,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不起火、不爆炸、不漏液。"
+          "無起火、無爆炸、無洩漏。"
         ]
       },
       "exemptions": [],
@@ -216,9 +216,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "電池應不起火、不爆炸、不漏液。"
+          "電池應無起火、無爆炸、無洩漏。"
         ]
       },
       "exemptions": [],
@@ -248,9 +248,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "電池應不起火、不爆炸、不漏液。"
+          "電池應無起火、無爆炸、無洩漏。"
         ]
       },
       "exemptions": [],
@@ -292,9 +292,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "觀察 6 小時。電池應不起火、不爆炸。"
+          "觀察 6 小時。電池應無起火、無爆炸。"
         ]
       },
       "exemptions": [],
@@ -336,9 +336,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "試驗後觀察 1 小時。電池應不起火、不爆炸。"
+          "試驗後觀察 1 小時。電池應無起火、無爆炸。"
         ]
       },
       "exemptions": [],
@@ -372,9 +372,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "觀察 1 小時。電池應不起火、不爆炸。"
+          "觀察 1 小時。電池應無起火、無爆炸。"
         ]
       },
       "exemptions": [],
@@ -404,9 +404,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "電池應不起火、不爆炸。"
+          "電池應無起火、無爆炸。"
         ]
       },
       "exemptions": [],
@@ -445,9 +445,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "觀察 1 小時。樣品應不起火、不爆炸。"
+          "觀察 1 小時。樣品應無起火、無爆炸。"
         ]
       },
       "exemptions": [],
@@ -489,7 +489,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "BMS 動作，不起火、不爆炸",
+        "summary": "BMS 動作，無起火、無爆炸",
         "details": [
           "BMS 應能發現過充並進行保護。",
           "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
@@ -530,7 +530,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "BMS 動作，不起火、不爆炸",
+        "summary": "BMS 動作，無起火、無爆炸",
         "details": [
           "BMS 應能發現過流並進行保護。",
           "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
@@ -575,7 +575,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "BMS 動作，不起火、不爆炸",
+        "summary": "BMS 動作，無起火、無爆炸",
         "details": [
           "BMS 應能發現過放並進行保護。",
           "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
@@ -618,7 +618,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "BMS 動作，不起火、不爆炸",
+        "summary": "BMS 動作，無起火、無爆炸",
         "details": [
           "BMS 應能發現過熱並進行保護。",
           "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
@@ -651,7 +651,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
           "評估電池熱失控特性。"
         ]
@@ -681,7 +681,7 @@
       "acceptance_criteria": {
         "summary": "無熱擴散、無外部火焰",
         "details": [
-          "觀察 24 小時。合格要求為：電池間無熱擴散、無外部火焰、外殼不破裂（目標電池本身的損壞不計）。"
+          "觀察 24 小時。合格要求為：電池間無熱擴散、無外部火焰、外殼無破裂（目標電池本身的損壞不計）。"
         ]
       },
       "exemptions": [],
@@ -711,11 +711,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、無破裂",
+        "summary": "無起火、無爆炸、無破裂",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不破裂"
+          "無起火",
+          "無爆炸",
+          "無破裂"
         ]
       }
     },
@@ -741,11 +741,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、無破裂",
+        "summary": "無起火、無爆炸、無破裂",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不破裂"
+          "無起火",
+          "無爆炸",
+          "無破裂"
         ]
       }
     },

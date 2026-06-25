@@ -62,7 +62,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不觸電",
+        "summary": "無起火、不觸電",
         "details": [
           "不得噴出火焰或熔融金屬，不得產生起火、觸電或人員受傷之風險 (Section 55.1.1)",
           "測試後需通過 Section 55.1.2 的耐壓測試 (Dielectric Voltage Withstand Test)。",
@@ -99,7 +99,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不爆炸、不燒焦",
+        "summary": "無爆炸、不燒焦",
         "details": [
           "不得發生爆炸，且覆蓋的醫療紗布或衛生紙不得有燒焦或燃燒現象 (Section 55.9.2)",
           "測試後需通過 Section 55.1.2 的耐壓測試 (Dielectric Voltage Withstand Test)。",

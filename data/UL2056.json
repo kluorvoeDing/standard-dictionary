@@ -446,12 +446,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無爆炸、無起火、無排氣、無漏液；外殼不分離、不破裂",
+        "summary": "無爆炸、無起火、無排氣、無洩漏；外殼不分離、無破裂",
         "details": [
           "無爆炸 (no explosion)、無起火 (no fire)",
           "外殼不應破裂至電芯或保護裝置暴露",
           "外殼不應分離 (no separation)",
-          "無排氣 (no vent)、無漏液 (no leak，質量損失不超過 0.1%)"
+          "無排氣 (no vent)、無洩漏 (no leak，質量損失不超過 0.1%)"
         ]
       },
       "exemptions": [],
@@ -501,11 +501,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無爆炸、無起火、無排氣、無漏液；外殼不破裂",
+        "summary": "無爆炸、無起火、無排氣、無洩漏；外殼無破裂",
         "details": [
           "無爆炸 (no explosion)、無起火 (no fire)",
           "外殼不應破裂至電芯或保護裝置暴露",
-          "無排氣 (no vent)、無漏液 (no leak，質量損失不超過 0.1%)"
+          "無排氣 (no vent)、無洩漏 (no leak，質量損失不超過 0.1%)"
         ]
       },
       "exemptions": [
@@ -545,7 +545,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無機械損壞；外殼不翹曲、不融化、不破裂",
+        "summary": "無機械損壞；外殼不翹曲、不融化、無破裂",
         "details": [
           "外殼不應破裂 (no crack)、翹曲 (no warp) 或融化 (no melt)，導致電芯或保護裝置暴露"
         ]
@@ -597,10 +597,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無排氣、無爆炸、無起火、無漏液；保護裝置完整；外殼不破裂/不分離",
+        "summary": "無排氣、無爆炸、無起火、無洩漏；保護裝置完整；外殼無破裂/不分離",
         "details": [
           "無排氣 (no vent)、無爆炸 (no explosion)、無起火 (no fire)",
-          "無漏液 (no leak，質量損失不超過 0.1%)",
+          "無洩漏 (no leak，質量損失不超過 0.1%)",
           "保護裝置的完整性必須維持 (protection maintained)",
           "外殼不應破裂，蓋子不應分離 (no crack, no separation)"
         ]

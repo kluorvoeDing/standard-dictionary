@@ -89,10 +89,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [],
@@ -128,10 +128,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [],
@@ -163,10 +163,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [],
@@ -200,11 +200,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -248,11 +248,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -288,10 +288,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [],
@@ -325,11 +325,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -373,11 +373,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -453,10 +453,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "不起火",
-          "不爆炸"
+          "無起火",
+          "無爆炸"
         ]
       },
       "exemptions": [
@@ -492,11 +492,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
@@ -528,11 +528,11 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不起火、不爆炸、不漏液",
+        "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不起火",
-          "不爆炸",
-          "不漏液"
+          "無起火",
+          "無爆炸",
+          "無洩漏"
         ]
       },
       "exemptions": [],
