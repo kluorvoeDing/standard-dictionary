@@ -1,0 +1,426 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "IEC62660-3",
+    "full_name": "IEC 62660-3:2022 Edition 2.0 - Secondary lithium-ion cells for the propulsion of electric road vehicles - Part 3: Safety requirements",
+    "full_name_zh": "電動道路車輛推進用二次鋰離子電芯 - 第 3 部：安全要求",
+    "short_name": "IEC 62660-3",
+    "publisher": "IEC (International Electrotechnical Commission)",
+    "publication_date": "2022-03 (Edition 2.0)",
+    "type": "standard",
+    "scope": "本標準規定電動車輛（EV，含 BEV 與 HEV）推進用二次鋰離子電芯及電芯組（cell block）之安全性能試驗程序與合格判定。以電芯在製造商規定的電壓、電流與溫度限制（電芯操作區域）內正確用於電池包及系統為前提，驗證預期使用及合理可預見誤用下的基本安全性能。不涵蓋運輸與儲存安全（見 IEC 62281）；電池包與系統層級安全要求見 ISO 6469-1。第二版新增替代內部短路試驗（6.4.4.2.2 與附錄 C）、刪除振動試驗，並部分修訂過充電試驗條件。",
+    "applicable_objects": [
+      "CELL"
+    ],
+    "source_pdf": "IEC62660-3_2022.pdf (未取得原始 PDF，僅 OCR 文字)",
+    "source_gemini_md": "IEC62660-3_2022_Department_Reading_zh-TW_v3.html"
+  },
+  "terms": [
+    { "id": "3.4", "term_en": "explosion", "term_zh": "爆炸", "definition_zh": "電芯容器劇烈開啟，且其固體內容物被強制拋出的失效。" },
+    { "id": "3.5", "term_en": "fire", "term_zh": "起火", "definition_zh": "電芯或電芯組持續產生火焰超過 1 秒；火花及電弧不視為火焰。" },
+    { "id": "3.8", "term_en": "leakage", "term_zh": "洩漏", "definition_zh": "液態電解液從電芯外殼、封口部及／或端子等部位可見地逸出；設計用途的洩壓口除外。" },
+    { "id": "3.14", "term_en": "rupture", "term_zh": "破裂", "definition_zh": "由內部或外部原因導致電芯容器外殼發生機械失效，使內容物暴露或溢出，但未發生材料拋出。" },
+    { "id": "3.18", "term_en": "venting", "term_zh": "洩壓", "definition_zh": "依設計方式釋放電芯內部過高壓力，以避免發生破裂或爆炸。" },
+    { "id": "3.12", "term_en": "rated capacity (Cn)", "term_zh": "額定容量", "definition_zh": "在規定條件下測得並由製造商宣告的電芯容量值（Ah）；下標 n 為時間基準（h），BEV 應用 n = 3，HEV 應用 n = 1。" },
+    { "id": "3.13", "term_en": "reference test current (It)", "term_zh": "參考試驗電流", "definition_zh": "以安培（A）表示的參考試驗電流，It = Cn / 1；式中 1 具有時間維度（h）。" },
+    { "id": "3.2", "term_en": "cell block", "term_zh": "電芯組", "definition_zh": "由多顆電芯以並聯方式連接，可含保險絲或 PTC 等保護元件，但尚未裝入最終外殼、端子配置或電子控制裝置的電芯群組。" }
+  ],
+  "tests": [
+    {
+      "id": "IEC62660-3-6.2.1",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "機械衝擊 (Mechanical Shock)",
+      "name_en": "Mechanical Shock (Cell)",
+      "section": "6.2.1",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "BEV 100% / HEV 80%",
+          "detail": "依 5.3 調整 SOC：BEV 應用 100%，HEV 應用 80%。PHEV 用電芯可由製造商選擇 BEV 或 HEV 條件。"
+        },
+        "method": {
+          "value": "依 IEC 62660-2:2018 6.2.2.2",
+          "detail": "本試驗依 IEC 62660-2:2018 的 6.2.2.2 執行（依 ISO 16750-3）；衝擊加速度方向應與車輛使用時可能發生的方向一致，若無法確認實際作用方向，應對電芯六個空間方向全部試驗。"
+        },
+        "pulse": {
+          "value": "半正弦波 500 m/s²、6 ms",
+          "detail": "脈衝波形為半正弦波，加速度 500 m/s²，持續時間 6 ms（IEC 62660-2:2018 表 3）。"
+        },
+        "shocks": {
+          "value": "每方向 10 次",
+          "detail": "每一試驗方向施加 10 次衝擊。"
+        },
+        "observation": {
+          "value": "試驗後觀察 1 小時",
+          "detail": "依 6.1，除非另有規定，各試驗結束後均應進行 1 小時觀察。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無洩壓、無破裂、無起火、無爆炸",
+        "details": [
+          "無洩漏 (No leakage)",
+          "無洩壓 (No venting)",
+          "無破裂 (No rupture)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62660-3:2022, 6.2.1；引用 IEC 62660-2:2018, 6.2.2.2",
+      "original_text_snippet": "The test shall be performed in accordance with 6.2.2.2 of IEC 62660-2:2018. During the test, the cell shall exhibit no evidence of leakage, venting, rupture, fire or explosion."
+    },
+    {
+      "id": "IEC62660-3-6.2.2",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓 (Crush)",
+      "name_en": "Crush (Cell)",
+      "section": "6.2.2",
+      "category": "MECH",
+      "subcategory": "擠壓 (Crush)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "BEV 100% / HEV 80%",
+          "detail": "依 5.3 調整 SOC：BEV 應用 100%，HEV 應用 80%。"
+        },
+        "tool": {
+          "value": "圓棒／半圓棒或直徑 150 mm 球體／半球體",
+          "detail": "電芯置於絕緣、剛性且平坦的支撐面；擠壓工具為實心材料，採圓棒、半圓棒，或直徑 150 mm 的球體／半球體。圓棒可用於圓柱型電芯，球體可用於方形硬殼或軟包電芯。"
+        },
+        "direction": {
+          "value": "垂直於電極層疊面較大側、電芯約略中心",
+          "detail": "施力方向應近似垂直於電芯內正、負極層疊面的較大側面，並作用於電芯約略中心位置。"
+        },
+        "speed": {
+          "value": "≤ 6 mm/min",
+          "detail": "擠壓速度應小於或等於 6 mm/min。"
+        },
+        "termination": {
+          "value": "電壓突降 1/3、變形 ≥ 15% 或力達電芯重量 1000 倍（取先到者）",
+          "detail": "下列任一條件先發生時解除施力：電芯電壓相較原始值突降三分之一；相較初始尺寸的變形量達 15% 以上；施力達電芯重量的 1000 倍。"
+        },
+        "observation": {
+          "value": "24 小時或溫降達最大溫升 80%（取先到者）",
+          "detail": "觀察 24 小時，或直到電芯溫度已下降最大溫升的 80%，兩者取較早發生者。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62660-3:2022, 6.2.2",
+      "original_text_snippet": "The force shall be released when an abrupt voltage drop of one-third of the original cell voltage occurs, or a deformation of 15 % or more of the initial cell dimension occurs, or a force of 1 000 times the weight of the cell is applied, whichever comes first."
+    },
+    {
+      "id": "IEC62660-3-6.3.1",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "高溫耐受 (High Temperature Endurance)",
+      "name_en": "High Temperature Endurance (Cell)",
+      "section": "6.3.1",
+      "category": "THERM",
+      "subcategory": "熱濫用 (Thermal Abuse)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "BEV 100% / HEV 80%",
+          "detail": "依 5.3 調整 SOC：BEV 應用 100%，HEV 應用 80%。"
+        },
+        "oven": {
+          "value": "自然對流或循環風烘箱",
+          "detail": "將已在室溫穩定的電芯置於自然對流（gravity）或循環風（circulating air convection）烘箱。"
+        },
+        "ramp": {
+          "value": "5 K/min 升溫至 130 °C ± 2 K",
+          "detail": "烘箱以 5 K/min 的速率升溫至 130 °C ± 2 K。"
+        },
+        "hold": {
+          "value": "保持 30 分鐘",
+          "detail": "電芯於該溫度保持 30 分鐘。"
+        },
+        "observation": {
+          "value": "關閉加熱器後爐內觀察 1 小時",
+          "detail": "關閉加熱器後，電芯留在烘箱內觀察 1 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62660-3:2022, 6.3.1",
+      "original_text_snippet": "The oven temperature shall be raised at a rate of 5 K/min to 130 °C ± 2 K. The cell shall remain at this temperature for 30 min. Then, after the heater is turned off, the cell shall be observed for 1 h in the oven."
+    },
+    {
+      "id": "IEC62660-3-6.3.2",
+      "normalized_id": "THERM-CYCLE",
+      "name_zh": "溫度循環 (Temperature Cycling)",
+      "name_en": "Temperature Cycling (Cell)",
+      "section": "6.3.2",
+      "category": "THERM",
+      "subcategory": "溫度循環 (Temperature Cycling)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "BEV 100% / HEV 80%",
+          "detail": "依 5.3 調整 SOC：BEV 應用 100%，HEV 應用 80%。"
+        },
+        "method": {
+          "value": "依 IEC 62660-2:2018 6.3.2.2",
+          "detail": "本試驗依 IEC 62660-2:2018 的 6.3.2.2 執行（依 ISO 16750-4 及表 4）。"
+        },
+        "temperature_range": {
+          "value": "-40 °C（或 Tmin）～ 85 °C（或 Tmax）",
+          "detail": "最低操作溫度為 -40 °C 或製造商規定的 Tmin；最高操作溫度為 85 °C 或製造商規定的 Tmax。"
+        },
+        "cycles": {
+          "value": "30 循環（每循環 480 分鐘）",
+          "detail": "依 IEC 62660-2:2018 表 4 完成 30 個循環：0 分鐘 20 °C → 60 分鐘 Tmin → 150 分鐘 Tmin 保持結束 → 210 分鐘 20 °C → 300 分鐘 Tmax → 410 分鐘 Tmax 保持結束 → 480 分鐘回到 20 °C。"
+        },
+        "recording": {
+          "value": "每循環連續記錄電壓與溫度",
+          "detail": "每一循環期間應連續記錄電芯電壓與溫度；並記錄試驗前後的電芯電壓與容量。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無洩壓、無破裂、無起火、無爆炸",
+        "details": [
+          "無洩漏 (No leakage)",
+          "無洩壓 (No venting)",
+          "無破裂 (No rupture)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62660-3:2022, 6.3.2；引用 IEC 62660-2:2018, 6.3.2.2",
+      "original_text_snippet": "The test shall be performed in accordance with 6.3.2.2 of IEC 62660-2:2018. During the test, the cell shall exhibit no evidence of leakage, venting, rupture, fire or explosion."
+    },
+    {
+      "id": "IEC62660-3-6.4.1",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "外部短路 (External Short-Circuit)",
+      "name_en": "External Short-Circuit (Cell)",
+      "section": "6.4.1",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "100%",
+          "detail": "依 5.3 將電芯 SOC 調整至 100%，並在室溫下存放。"
+        },
+        "method": {
+          "value": "依 IEC 62660-2:2018 6.4.1.2",
+          "detail": "本試驗依 IEC 62660-2:2018 的 6.4.1.2 執行。"
+        },
+        "resistance": {
+          "value": "總外部電阻 ≤ 5 mΩ",
+          "detail": "以外部電阻連接電芯正、負端子；總外部電阻應由客戶與電芯製造商協議，且應小於或等於 5 mΩ。"
+        },
+        "duration": {
+          "value": "短路 10 分鐘",
+          "detail": "使電芯短路 10 分鐘。"
+        },
+        "sampling": {
+          "value": "取樣間隔 ≤ 10 ms",
+          "detail": "電壓與電流的記錄取樣間隔應小於或等於 10 ms；並記錄電芯溫度與總外部電阻值。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62660-3:2022, 6.4.1；引用 IEC 62660-2:2018, 6.4.1.2",
+      "original_text_snippet": "The cell ... shall be stored at room temperature, and then be short-circuited by connecting the positive and negative terminals with an external resistance for 10 min. The total external resistance shall be equal to or less than 5 mΩ as agreed between the customer and the cell manufacturer."
+    },
+    {
+      "id": "IEC62660-3-6.4.2",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電 (Overcharge)",
+      "name_en": "Overcharge (Cell)",
+      "section": "6.4.2",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "100%",
+          "detail": "依 5.3 將電芯 SOC 調整至 100%。"
+        },
+        "current": {
+          "value": "BEV：1 It 或 1/3 It；HEV：5 It 或 1 It",
+          "detail": "在室溫下，使用足以維持定電流的電源，於 100% SOC 之後持續充電：BEV 應用以 1 It 或 1/3 It；HEV 應用以 5 It 或 1 It。"
+        },
+        "termination": {
+          "value": "電壓達最大電壓 120% 或電量達等效 130% SOC（取先到者）",
+          "detail": "下列任一條件先發生時停止試驗：電芯電壓達到或超過製造商規定最大電壓的 120%；施加至電芯的電量達到或超過等效 130% SOC。"
+        },
+        "agreement": {
+          "value": "條件可依雙方協議",
+          "detail": "試驗條件可依電芯製造商與客戶協議決定。"
+        },
+        "observation": {
+          "value": "試驗後觀察 1 小時",
+          "detail": "依 6.1，除非另有規定，各試驗結束後均應進行 1 小時觀察。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62660-3:2022, 6.4.2",
+      "original_text_snippet": "The overcharge test shall be discontinued when the voltage of the cell reaches or exceeds 120 % of the maximum voltage specified by the cell manufacturer, or the quantity of electricity applied to the cell reaches or exceeds the equivalent of 130 % SOC, whichever comes first."
+    },
+    {
+      "id": "IEC62660-3-6.4.3",
+      "normalized_id": "ELEC-FD",
+      "name_zh": "強制放電 (Forced Discharge)",
+      "name_en": "Forced Discharge (Cell)",
+      "section": "6.4.3",
+      "category": "ELEC",
+      "subcategory": "強制放電 (Forced Discharge)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "0%",
+          "detail": "依 5.3 將電芯 SOC 調整至 0%。"
+        },
+        "current": {
+          "value": "1 It 持續放電",
+          "detail": "在室溫下，以 1 It 放電電流持續放電至 0% SOC 以下。"
+        },
+        "termination": {
+          "value": "電壓絕對值 ≤ 標稱電壓 25% 或放電 30 分鐘（取先到者）",
+          "detail": "下列任一條件先發生時停止試驗：電芯電壓絕對值降至製造商規定標稱電壓的 25% 以下；放電時間達 30 分鐘。"
+        },
+        "observation": {
+          "value": "試驗後觀察 1 小時",
+          "detail": "依 6.1，除非另有規定，各試驗結束後均應進行 1 小時觀察。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無洩漏、無洩壓、無破裂、無起火、無爆炸",
+        "details": [
+          "無洩漏 (No leakage)",
+          "無洩壓 (No venting)",
+          "無破裂 (No rupture)",
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "IEC 62660-3:2022, 6.4.3",
+      "original_text_snippet": "The forced discharge test shall be discontinued when the absolute value of the voltage of the cell reaches 25 % or less of the nominal voltage specified by the cell manufacturer, or the cell is discharged for 30 min, whichever occurs sooner."
+    },
+    {
+      "id": "IEC62660-3-6.4.4",
+      "normalized_id": "ELEC-SC-INT",
+      "name_zh": "內部短路 (Internal Short-Circuit)",
+      "name_en": "Internal Short-Circuit (Cell)",
+      "section": "6.4.4",
+      "category": "ELEC",
+      "subcategory": "內部短路 (Internal Short Circuit)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "method_a": {
+          "value": "強制內部短路（FISC，依 IEC 62619 7.3.2 b)）",
+          "detail": "6.4.4.2.1：依 IEC 62619 的 7.3.2 b) 以鎳粒子執行強制內部短路；鎳粒子置於正、負極活性物質塗佈區之間時應確認形成單層內部短路。可修改加壓力、治具形狀等條件以模擬單層短路，但不得壓潰電芯外殼及電極，任何修改均應記錄。鎳粒子可經外殼切口插入而不取出電極芯體。"
+        },
+        "method_b": {
+          "value": "替代法（附錄 C，壓頭針刺至微短路）",
+          "detail": "6.4.4.2.2／附錄 C（規範性）：經雙方協議可採替代內部短路試驗，適用方形硬殼與軟包電芯，以 5 顆電芯進行。壓頭為直徑 1 mm～3 mm 的鋼製或不鏽鋼針（尖角宜 20°～45°），以 0.01 mm/s 定速壓入，偵測到預先決定的電壓突降（對應一至二層內部短路）時立即停止並保持壓頭位置，觀察 1 小時。試驗溫度 25 °C ± 5 K，電壓取樣率 ≥ 1000 Hz。"
+        },
+        "voltage_state": {
+          "value": "充電上限電壓",
+          "detail": "替代法試驗前，電芯電壓調整至充電上限電壓（upper limit charging voltage）。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "停止壓入後觀察 1 小時；壓頭於觀察期間保持在停止位置（X、Y、Z 方向穩定於 ± 0.02 mm 內）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火 (No fire)",
+          "無爆炸 (No explosion)"
+        ]
+      },
+      "exemptions": [
+        "經電芯製造商與客戶協議，可以附錄 C 的替代內部短路試驗取代 6.4.4.2.1 的強制內部短路試驗（兩者擇一）"
+      ],
+      "related_tests": [],
+      "source_reference": "IEC 62660-3:2022, 6.4.4 與附錄 C；引用 IEC 62619, 7.3.2 b)",
+      "original_text_snippet": "The test shall be performed on the cell in accordance with 7.3.2 b) of IEC 62619, except as follows... If agreed between the cell manufacturer and the customer, the internal short-circuit test in Annex C may be conducted as an alternative to the forced internal short-circuit test in 6.4.4.2.1."
+    }
+  ],
+  "test_sequence": {
+    "description": "第 6 章各試驗為獨立試驗，無規定執行順序。共通前提：室溫為 25 °C ± 2 K（4.1）；試驗電芯製造時間不得超過 6 個月（6.1）；除非另有規定，各試驗結束後均應進行 1 小時觀察（6.1）；SOC 調整依 5.3（BEV 以 1/3 It、HEV 以 1 It 放電換算）。經製造商與客戶協議，電芯組（cell block，並聯電芯群組）可取代單顆電芯受試；Module／Pack 層級不屬本標準範圍（見 ISO 6469-1）。",
+    "groups": [
+      {
+        "group": "6.2 機械試驗",
+        "tests": ["IEC62660-3-6.2.1", "IEC62660-3-6.2.2"]
+      },
+      {
+        "group": "6.3 熱試驗",
+        "tests": ["IEC62660-3-6.3.1", "IEC62660-3-6.3.2"]
+      },
+      {
+        "group": "6.4 電氣試驗",
+        "tests": ["IEC62660-3-6.4.1", "IEC62660-3-6.4.2", "IEC62660-3-6.4.3", "IEC62660-3-6.4.4"]
+      }
+    ]
+  },
+  "global_exemptions": [],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Claude (Fable 5) - manual structured extraction",
+    "created_date": "2026-07-15",
+    "extraction_method": "雙來源交叉驗證：OCR 全文（IEC62660-3_2022_OCR.txt，權威）與部門中文閱讀版 HTML（含 IEC 62660-2:2018 引用條件整合）",
+    "source_files": [
+      "docs/source_pdfs/2026-07-15/IEC62660-3_2022_OCR.txt",
+      "docs/source_pdfs/2026-07-15/IEC62660-3_2022_Department_Reading_zh-TW_v3.html"
+    ],
+    "notes": "原始 PDF 未取得，數值以 OCR 文字為準並經 HTML 版核對。機械衝擊、溫度循環、外部短路三項之詳細條件（500 m/s²/6 ms/10 次、表 4 溫度循環程序、5 mΩ/10 分鐘）引自 IEC 62660-2:2018（HTML 版已整合）。第二版（2022）相對第一版（2016）：新增替代內部短路試驗、刪除振動試驗、修訂過充電條件。"
+  }
+}

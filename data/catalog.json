@@ -1353,5 +1353,30 @@
     "versions_behind": 0,
     "base_standard_id": "GB47741",
     "prerequisites": {}
+  },
+  {
+    "document_id": "IEC62660-3",
+    "document_type": "standard",
+    "document_strength": "standard",
+    "comparison_ready": true,
+    "display_name": "IEC 62660-3",
+    "full_name": "IEC 62660-3:2022 Secondary lithium-ion cells for the propulsion of electric road vehicles - Part 3: Safety requirements",
+    "publisher": "IEC (International Electrotechnical Commission)",
+    "publication_date": "2022-03",
+    "li_applicable": true,
+    "item_count": 8,
+    "available_objects": [
+      "CELL"
+    ],
+    "test_type": null,
+    "normativity": "normative",
+    "important_note": null,
+    "schema_v2_json": "data/IEC62660-3.json",
+    "test_count_v2": 8,
+    "is_latest": true,
+    "latest_version": "2022版 (Edition 2.0)",
+    "versions_behind": 0,
+    "base_standard_id": "IEC62660-3",
+    "prerequisites": {}
   }
 ]

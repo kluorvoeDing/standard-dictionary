@@ -3,7 +3,7 @@ import useIsMobile from '../hooks/useIsMobile';
 
 // Application Category Helper
 const getApplication = (docId) => {
-  if (docId === 'GB38031' || docId === 'ULC-2580' || docId === 'AIS-038') return '電動汽車 (EV)';
+  if (docId === 'GB38031' || docId === 'ULC-2580' || docId === 'AIS-038' || docId === 'IEC62660-3') return '電動汽車 (EV)';
   if (docId === 'GB43854') return '電動自行車 (E-Bike)';
   if (docId === 'GB31241' || docId === 'GB31241.4' || docId === 'GB47372' || docId === 'IEC62133-2') return '便攜式電子 (Portable)';
   if (docId === 'UL-2271' || docId === 'AIS-156' || docId === 'GB40559' || docId === 'GB47741') return '輕型電動車 (LEV)';

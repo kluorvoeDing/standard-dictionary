@@ -1,0 +1,1236 @@
+IEC 62660-3:2022 - OCR TEXT
+OCR-generated from image-only PDF. Verify critical values and symbols against the source PDF.
+
+================== PDF PAGE 1 ==================
+IEC 62660-3
+
+Edition 2.0 2022-03
+
+INTERNATIONAL
+STANDARD
+
+NORME
+INTERNATIONALE
+
+colour
+inside
+
+Secondary lithium-ion cells for the propulsion of electric road vehicles —
+Part 3: Safety requirements
+
+Eléments d’accumulateurs lithium-ion pour la propulsion des véhicules routiers
+électriques —
+Partie 3: Exigences de sécurité
+
+INTERNATIONAL
+ELECTROTECHNICAL
+COMMISSION
+
+COMMISSION
+ELECTROTECHNIQUE
+INTERNATIONALE
+
+ICS 29,220.20; 43.120 ISBN 978-2-8322-1083-3
+
+Warning! Make sure that you obtained this publication from an authorized distributor.
+Attention! Veuillez vous assurer que vous avez obtenu cette publication via un distributeur agréé.
+
+® Registered trademark of the International Electrotechnical Commission
+Marque déposée de la Commission Electrotechnique Internationale
+
+================== PDF PAGE 2 ==================
+CONTENTS
+1 SCOP sese vs svceesceccecereeneeerersiaveceeoreesrvesecewsnve re ceseussreereeepencsenessseesseasiesevseeneerieesssmseaecrecuerere
+2 Normative references ............ccccceeecceeeeeeeeeseeeeeeeeeeseeeuueeeeseseueeeecessssaueeeeeeessasneeeeseesteeeeeesee®
+3: ‘Terms ald GetinitiOns .q.......0. ccc cccccwecscccreierecennsccnveeweesseeuewecesoueesversreseseeevessessstenessesveseereeress OB
+4. VOSUCONCINONS sinisscsscvsvecacccnssnccrssvecsuescssvesnensexssvevnevexeucueseuvennnssyexiugensaancaniswensesweavessieasaxeie
+4.1 GOMGT A siiicaisssscessceisisaecasciscarvecessvissssssescacescaivncssacsaisacaswansccustavecseassaieaceseessssasieoerinian
+4.2 MOSSUFING INSTFUMGING ci cvciescscoceccsrsiessseusssvesnuexeesvescueesunsssysuseneecstersvessvessosveseuaversceas
+4.2.1 Range of measuring deViCeS............cccccecccccceeeeeeeeeceeeeesueeeeeeeetunneeeceesessneeeeeeeene®
+4.2.2 VOIAGS MEASUlOMEN bss sscvcrvisersecesssisssersnnssensussessesisenssieoncassusepcenqssnverssernsensiesO
+4.2.3 Current MEASUFEMENE ............ cc eeceeeeeeeteeeeeeeeeeeeeeeeeeeeeseneeeeeceeeeeseeeeseeeeteteseeeeeeeeeee
+4.2.4 Temperature: MeasUreMeMtS -e.cscsceseseses ceecesssesrsesresvessessceeernevsmeseesseerrneeenD
+4.2.5 Other MeaSureMeENts ............ccccccccccccecesueeeceeeeuseeeecceeeesueeeeceesseeeeeeeeesteseseesereeee 10
+4.3 TONG ANCS eave cncessveciccccesscssuscccesers sees cetecevevevessveespcctyessisseseseuesdscecoosseviseceneuyesisexenscasseil 0
+4.4 Thermal stabiliZation .............cccccceeeeeseeeeeeeeeesseeueeeeeesssseeeeeeeessssseeeeeeesssseeetsessaeeeeees TO
+5 Electrical Measuramont wvssccsscssvssssccccessessarecssnsscistcsecsvasissssusnnsevseerrscnsevetssisstessassnrsexevenssond
+5.1 General charge Conditions ..............ccccccceeeeeseeeeeeeeeeeeeseeeeeeesssseeeeeeseseeesereeeeeseseeeeeeees TO
+5.2 CODOGHY wicccvssesscicessessvessuceessessseccesvesveuceorsssesseceesusavivvceassuarcessuseeusrsriseseeesecurereressaeee 1
+5.3 SOC adjustment... cee cece ee eeeeeeaeseeeeeeeeesueeeeeesssseseseeeeesesesseeeeeeeeesseeeeeeee 11
+GB Salty leste ecsicsccccscsccscec css cccsencnvsesesessesessesivceusneversseeueostevesccevscassesisweoeeessicecwesasexeececsesexeed 1
+6.1 GOMES Al... cece ecceeecccceeeeeeeecceeeeeeueeeeeeeueeceeseeeueeeeeeessseeeeeeesssseeeeceesssseeeeecesssseeeeees 11
+6.2 Mechanical tests ii csssssisccvvssxssexveecesvivsessoannesiesscereresersceunm svi aerereninvasressvirmnceeer Ne
+6.2.1 Mechanical SHOCK 0.0.0.0... 0.0. ee cece cecceeeeeeeeeeeeeeeeeeeeueeeeeeesaseeeeeeeeessseeeeeesessateeeeeees D2
+6.3 Thermal teSt..........ccccccccssssseeeseceueeeeeeseceeueeeeesseseueeeesseesueeeeesssssseeecesesssseeceseesseeeeesee TO
+6.3.1 High temperature ONndUrance .e.iicccessesiisesccesessescuccsccccsvearecossssvestsecessssveuseceessess(1e
+6.3.2 TGEMPGFature: CYCUNG .cccccc ee cccccc cece sies cceecesen cece seesesvscoceseewsscuccisssssestanvesssvessssel O
+6.4 EISCUICAl TOSS sisiissiccasceessavsvecssscisssiseodsessnseisdsacsessestaedcoadsssesseissnaueessesieasasstbisiestenaeve d+
+6.4.1 External SHOMm+CICUIt.....ccc:csccccececscccsressnesensevscrscecnessveervenasersvecvsceneeeisecseoncessseer@
+6.4.2 OVErCNAIGE..........cccceeceessseeeeeeeesusneeeeeesessneeeceeeessuneeeeeeeseueeeseesetsesesssesereesssseeees T4
+6.4.3 FOrCOd CISCHAMDC wasscciscevesssercssvevesessanseversvesesiecvevesssusssssievosesevensvevensasnsserssescvere 1
+6.4.4 Internal short-circuit test... cece cece eeeeeeeeeeeeeeeeeeeseeeseeeeseseeseeeeeeeeseseeeeeees TD
+Annex A (informative) Operating region of cells for Safe USC .............ssceeeeeeeeesseeeeeeeeesaneeeeeeeee TD
+A.1 GOMGI EN iiiissicncesssacicctsccessssciesvoosnacsscssssesusenssecssosavssensiscsadeusesliesessstscissstesssisisisiiesseean
+A.2 Charging Conditions for Sale US6 .:.:<cccccsccccciccscorsececesesneceserseenceese ne veeseceereerssvecseerere AT
+A.2.1 GMP] «0.0... cece ceecceeeeeeeseeeeeeeecenaeeeeeeeessaueeeeeeeesaueeeeeeeseaeeeseeenstueeessesteseeeseseeee DD
+A.2.2 Consideration on charging Voltage. ...........cssccscccccsessssescscessssssssecessessssssseseeees DE
+A.2.3 Consideration on temperature............ccccccc cece eeeeeeeeeeeeeeeeeeeeeeeeteeeeseestteesseeeeteeee 18
+A.3 Example of operating reglon sssississvessisssvsseisvenessserersssnecesosvestsescsusiscsnssenscsveversnscsesve lO
+Annex B (informative) Explanation for the internal short-circuit test... cceeeeeeeeereeeeee 20
+B.1 GOnelal CONCEP E sisiscecessscssscivcoseveveveisosessvanecvevcssversvevenevexsevsereseesusvesveedersesveveiveessesiv 20
+B.2 Internal short-circuit caused by the particle contamination .................ccceeeeeeeeeeeeeee 20
+Annex C (normative) Alternative internal short-circuit test (6.4.4.2.2) .......cccccccceeeeeesssseeseeen 22
+Ca GON GI EN scree s cscs ccccncesszecvenevassnescunsvesoussacyacsstesensesavsaunasadeusiseeenaassuiventesseassasacseassess Oe
+C.2 Test preparation anid test Sete 22..:..cccc0icccieccccssccevsecccscersscecesesescerreecccereserieceneesvers ee
+C.2.1 Preparation of cell before the test ...........sseesesteetetestesssstetttstteteressesseeeeeeees 22
+
+================== PDF PAGE 3 ==================
+C.2.2 TQ@StSQUUD cis ceiscccnesessvcsverssarsccseescensseesncsieesseesscstecetusarsesateesesssensssevaseuess cesvessiess 24
+C.2.3 Preliminary test ............ccccccceceeceeceeeeeeeeeeeeeeneenensaseaeeaeauneeeeeeeeeeseeeeeeeeteeeeeerereres 25
+
+C.3 TSE PLOCODUIC re sscnissesisescosssnccnsnernecnessyasansnsvesndeaseantacensesanerdsesteeaanreriassnnedsseynedexenves 26
+C.4 ACCEPtance Criteria ......... eee ecccceceeeeeecueeeeeeeeeeeueeeeeeesauueeeeeeeeauueeeeeeeeeuneeeeeeuaneesssenenes 26
+BIDNO QT ADDY isisisscccssisesssicssscscsaiaasscseseseisssvevensnessossanssscersvenersvarsaconsacensiicersnsasveceectensesstaaietoususys 27
+Figure 1 — Example of temperature measurement Of Cell ..............cccccccssesseeeeeesseeeeeeseeneneeeeeeees 10
+Figure: 2 = Example Of Crush) t6S tessccsisccsascsscscicsecensssacasensessnesvecensenanessanneceuseveshsexsananesancateanapss 13
+Figure A.1 — An example of operating region for charging of typical lithium-ion cells............. 19
+Figure A.2 — An example of operating region for discharging of typical lithium-ion cells ........ 19
+Figure C.1 = Example of Case thinning: sisss.scincencassccessnscescssssessensecssssexesuscnsssssesusscevesseecenenqess 22
+Figure C.2:— Example of thinning t00N sisisisicisccccservecscaccsescivececcocecenssceveceserssensaceeresevereesecuens 23
+Figure C.3 — Example of removing hard CaSe...........:ccsccccessseeseeeeeeeneeeeseeseeueeeesseeeeeeeeeserenaeeeres 23
+Figure C.4 — Example of hard case removal method during cell manufacturing ..............0000 23
+Figure C.5= Example of fixation: of Coll cesicccvcirscccciisserssewsstrsniesmesaeniiinesssearcvmcranieean 24
+Figure C.6 — Test setup image for voltage MeasureMent...............ccccccsseesessssesseeeeeeeseneeeeeeeeees 24
+Figure C.7 — Example of abrupt voltage drop ............ccscccccesecssseesseecessscsscessessssecoesesseaseseeeees 25
+
+Table B.1 — Examples of the internal short-circuit Of Cell 0.0.0... cece ccccceseeeeeeeeeeuueeeeeeeees 20
+
+================== PDF PAGE 4 ==================
+INTERNATIONAL ELECTROTECHNICAL COMMISSION
+SECONDARY LITHIUM-ION CELLS FOR THE PROPULSION
+OF ELECTRIC ROAD VEHICLES -
+Part 3: Safety requirements
+FOREWORD
+
+1) The International Electrotechnical Commission (IEC) is a worldwide organization for standardization comprising
+all national electrotechnical committees (IEC National Committees). The object of IEC is to promote international
+co-operation on all questions concerning standardization in the electrical and electronic fields. To this end and
+in addition to other activities, IEC publishes International Standards, Technical Specifications, Technical Reports,
+Publicly Available Specifications (PAS) and Guides (hereafter referred to as “IEC Publication(s)"). Their
+preparation is entrusted to technical committees; any IEC National Committee interested in the subject dealt with
+may participate in this preparatory work. International, governmental and non-governmental organizations liaising
+with the IEC also participate in this preparation. IEC collaborates closely with the International Organization for
+Standardization (ISO) in accordance with conditions determined by agreement between the two organizations.
+
+2) The formal decisions or agreements of IEC on technical matters express, as nearly as possible, an international
+consensus of opinion on the relevant subjects since each technical committee has representation from all
+interested IEC National Committees.
+
+3) IEC Publications have the form of recommendations for international use and are accepted by IEC National
+Committees in that sense. While all reasonable efforts are made to ensure that the technical content of IEC
+Publications is accurate, IEC cannot be held responsible for the way in which they are used or for any
+misinterpretation by any end user.
+
+4) In order to promote international uniformity, IEC National Committees undertake to apply IEC Publications
+transparently to the maximum extent possible in their national and regional publications. Any divergence between
+any IEC Publication and the corresponding national or regional publication shall be clearly indicated in the latter.
+
+5) IEC itself does not provide any attestation of conformity. Independent certification bodies provide conformity
+assessment services and, in some areas, access to IEC marks of conformity. IEC is not responsible for any
+services carried out by independent certification bodies.
+
+6) All users should ensure that they have the latest edition of this publication.
+
+7) No liability shall attach to IEC or its directors, employees, servants or agents including individual experts and
+members of its technical committees and IEC National Committees for any personal injury, property damage or
+other damage of any nature whatsoever, whether direct or indirect, or for costs (including legal fees) and
+expenses arising out of the publication, use of, or reliance upon, this IEC Publication or any other IEC
+Publications.
+
+8) Attention is drawn to the Normative references cited in this publication. Use of the referenced publications is
+indispensable for the correct application of this publication.
+
+9) Attention is drawn to the possibility that some of the elements of this IEC Publication may be the subject of patent
+rights. IEC shall not be held responsible for identifying any or all such patent rights.
+
+IEC 62660-3 has been prepared by IEC technical committee 21: Secondary cells and batteries.
+
+It is an International Standard.
+
+This second edition cancels and replaces the first edition published in 2016. This edition
+
+constitutes a technical revision.
+
+This edition includes the following significant technical changes with respect to the previous
+
+edition:
+
+a) The new method for the internal short-circuit test has been added in 6.4.4.2.2 and Annex C,
+as an alternative option to the test in 6.4.4.2.1.
+
+b) The vibration test has been deleted.
+
+c) The test conditions of overcharge (6.4.2.2) have been partially revised.
+
+================== PDF PAGE 5 ==================
+The text of this International Standard is based on the following documents:
+
+Draft Report on voting
+21/1133/FDIS 21/1137/RVD
+
+Full information on the voting for its approval can be found in the report on voting indicated in
+the above table.
+
+The language used for the development of this International Standard is English.
+
+This document was drafted in accordance with ISO/IEC Directives, Part 2, and developed in
+accordance with ISO/IEC Directives, Part 1 and ISO/IEC Directives, IEC Supplement, available
+at www.iec.ch/members_experts/refdocs. The main document types developed by IEC are
+described in greater detail at www.iec.ch/standardsdev/publications.
+
+A list of all parts in the IEC 62660 series, published under the general title Secondary lithium-ion
+cells for the propulsion of electric road vehicles, can be found on the IEC website.
+
+The committee has decided that the contents of this document will remain unchanged until the
+stability date indicated on the IEC website under webstore.iec.ch in the data related to the
+specific document. At this date, the document will be
+
+e reconfirmed,
+
+e withdrawn,
+
+e replaced by a revised edition, or
+
+* amended.
+
+IMPORTANT -— The "colour inside" logo on the cover page of this document indicates
+that it contains colours which are considered to be useful for the correct understanding
+of its contents. Users should therefore print this document using a colour printer.
+
+================== PDF PAGE 6 ==================
+SECONDARY LITHIUM-ION CELLS FOR THE PROPULSION
+OF ELECTRIC ROAD VEHICLES -
+
+Part 3: Safety requirements
+
+1 Scope
+
+This part of IEC 62660 specifies test procedures and acceptance criteria for safety performance
+of secondary lithium-ion cells and cell blocks used for propulsion of electric vehicles (EV)
+including battery electric vehicles (BEV) and hybrid electric vehicles (HEV).
+
+This document determines the basic safety performance of cells used in a battery pack and
+system under intended use and reasonably foreseeable misuse or incident, during the normal
+operation of the EV. The safety requirements of the cell in this document are based on the
+premise that the cells are properly used in a battery pack and system within the limits for voltage,
+current and temperature as specified by the cell manufacturer (cell operating region).
+
+The evaluation of the safety of cells during transport and storage is not covered by this
+document.
+
+NOTE 1 The safety performance requirements for lithium-ion battery packs and systems are defined in ISO 6469-1.
+The specifications and safety requirements for lithium-ion battery packs and systems of electrically propelled mopeds
+and motorcycles are defined in ISO 18243. IEC 62619 covers the safety requirements for the lithium-ion cells and
+batteries for industrial applications, including, for example, forklift trucks, golf carts, and automated guided vehicles.
+
+NOTE 2 Lithium cells, modules, battery packs, and battery systems are regulated by International Air Transport
+
+Association (IATA) and International Maritime Organization (IMO) for air and sea transport, and, regionally, by other
+authorities, mainly for land transport. Refer to IEC 62281 for additional information.
+
+2 Normative references
+
+The following documents are referred to in the text in such a way that some or all of their content
+constitutes requirements of this document. For dated references, only the edition cited applies.
+For undated references, the latest edition of the referenced document (including any
+amendments) applies.
+
+IEC 62619:—1, Secondary cells and batteries containing alkaline or other non-acid electrolytes
+— Safety requirements for secondary lithium cells and batteries, for use in industrial applications
+
+IEC 62660-2:2018, Secondary lithium-ion cells for the propulsion of electric road vehicles —
+Part 2: Reliability and abuse testing
+
+ISO/TR 8713, Electrically propelled road vehicles — Vocabulary
+
+3 Terms and definitions
+
+For the purposes of this document, the terms and definitions given in ISO/TR 8713 and the
+following apply.
+
+1 Second edition under preparation. Stage at the time of publication: IEC FDIS 62619:2021.
+
+================== PDF PAGE 7 ==================
+T
+
+ISO and IEC maintain terminological databases for use in standardization at the following
+addresses:
+
+e EC Electropedia: available at http://www.electropedia.org/
+e ISO Online browsing platform: available at http://www.iso.org/obp
+
+3.1
+
+BEV
+
+battery electric vehicle
+
+electric vehicle with only a traction battery as power source for vehicle propulsion
+
+3.2
+
+cell block
+
+group of cells connected together in parallel configuration with or without protective devices
+(e.g. fuse or positive temperature coefficient resistor (PTC)) and not yet fitted with its final
+housing, terminal arrangement or electronic control device
+
+3.3
+cylindrical cell
+cell with a cylindrical shape in which the overall height is equal to or greater than the diameter
+
+[SOURCE: IEC 60050-482:2004, 482-02-39]
+
+3.4
+
+explosion
+
+failure that occurs when a cell container opens violently and its solid contents are forcibly
+expelled
+
+3.5
+fire
+emission of flames from a cell or cell block for more than 1s
+
+Note 1 to entry: Sparks and arcing are not considered as flames.
+
+3.6
+
+HEV
+
+hybrid electric vehicle
+
+vehicle with both a rechargeable energy storage system and a fuelled power source for
+propulsion
+
+3.7
+internal short-circuit
+unintentional electrical connection between the negative and positive electrodes inside a cell
+
+3.8
+
+leakage
+
+visible escape of liquid electrolyte from a part, except for a vent, such as the case, sealing part,
+and/or terminals of the cell
+
+3.9
+nominal voltage
+suitable approximate value of the voltage used to designate or identify a cell
+
+[SOURCE: IEC 60050-482:2004, 482-03-31, modified -— Deletion of "a battery or an
+electrochemical system" at the end of the definition.]
+
+================== PDF PAGE 8 ==================
+3.10
+pouch cell
+cell having the shape of a parallelepiped whose faces are rectangular and with a prismatic
+flexible laminate film case
+3.11
+prismatic cell
+cell having the shape of a parallelepiped whose faces are rectangular and with a prismatic hard
+case
+[SOURCE: IEC 60050-482:2004, 482-02-38, modified - The word "cell" has been added to the
+term, "qualifies a cell or a battery" has been replaced with "cell" in the definition, and "and with
+a prismatic hard case housing" has been added.]
+3.12
+rated capacity
+C,
+capacity value of a cell in ampere hours (Ah) determined under specified conditions and
+declared by the cell manufacturer
+Note 1 to entry: The subscript nin C, is the time base in hours (h). In this document, n = 3 for BEV application and
+n = 1 for HEV application unless otherwise specified.
+Note 2 to entry: Term and definition based on IEC 60050-482:2004, 482-03-15.
+3.13
+reference test current
+I
+reference test current in amperes (A) which is expressed as
+=C,/1
+Note 1 to entry: 1 has a dimension of time in hours (h).
+Note 2 to entry: See IEC 61434:1996, Clause 2.
+3.14
+rupture
+mechanical failure of a container case of a cell induced by an internal or external cause,
+resulting in exposure or spillage but not ejection of materials
+3.15
+secondary lithium-ion cell
+secondary single cell whose electrical energy is derived from the insertion/extraction reactions
+of lithium-ions between the negative electrode and the positive electrode
+Note 1 to entry: A secondary cell is a manufactured unit providing a source of electrical energy by direct conversion
+of chemical energy. The cell consists of electrodes, electrolyte, container, terminals and, if any, separators. The
+electrode can be monopolar or bipolar; the current collector of the former has active material of single polarity and
+the latter has positive and negative electrode active materials. The electrolyte includes an ionic conductive liquid or
+solid, or a mixture of them. The cell is designed to be charged electrically.
+Note 2 to entry: Where the term "cell" is used alone in this document, it refers to a secondary lithium-ion cell.
+3.16
+soc
+state of charge
+quantity of electricity stored in a cell expressed as a percentage of rated capacity
+
+================== PDF PAGE 9 ==================
+3.17
+
+upper limit charging voltage
+
+highest charging voltage in the cell operating region, which is specified by the cell manufacturer
+Note 1 to entry: Information on the cell operating region is provided in Annex A.
+
+[SOURCE: IEC 62133-2:2017, 3.19, modified - Note to entry added.]
+
+3.18
+
+venting
+
+release of excessive internal pressure from a cell in a manner intended by design to preclude
+rupture or explosion
+
+4 Test conditions
+
+4.1. General
+
+Unless otherwise stated in this document, cells shall be tested at room temperature. For the
+purposes of this document, room temperature is 25 °C ± 2 K.
+
+The details of the instrumentation used shall be provided in any report of results.
+
+Cell blocks can be tested as an alternative to cells in accordance with the agreement between
+the cell manufacturer and the customer.
+
+Concerning the cell for plug-in hybrid electric vehicles (PHEV), the cell manufacturer can select
+either the test condition of BEV application or of HEV application.
+
+NOTE Test and measurement can be conducted in a fixture as recommended by the cell manufacturer.
+
+4.2 Measuring instruments
+
+4.2.1 Range of measuring devices
+
+The instruments used shall enable the values of voltage and current to be measured. The range
+of these instruments and measuring methods shall be chosen so as to ensure the accuracy
+specified for each test.
+
+For analogue instruments, this implies that the readings shall be taken in the last third of the
+graduated scale.
+
+Any other measuring instruments may be used provided they give an equivalent accuracy.
+4.2.2 Voltage measurement
+
+The resistance of the voltmeters used shall be at least 1 MQ/V.
+
+4.2.3 Current measurement
+
+The entire assembly of ammeter, shunt and leads shall be of an accuracy class of 0,5 or better.
+4.2.4 Temperature measurements
+
+The cell temperature shall be measured by use of a surface temperature measuring device
+capable of an equivalent scale definition and accuracy of calibration as specified in 4.2.1. The
+temperature should be measured at a location which most closely reflects the cell or cell block
+temperature. The temperature may be measured at additional appropriate locations, if
+necessary.
+
+================== PDF PAGE 10 ==================
+The examples for temperature measurement are shown in Figure 1. The instructions for
+temperature measurement specified by the cell manufacturer shall be followed.
+Prismatic or pouch cell Cylindrical cell
+Temperature measuring device (0)
+=
+nw
+=
+Thermal insulating material
+IEC
+Figure 1 — Example of temperature measurement of cell
+
+4.2.5 Other measurements
+Other values may be measured by use of a measuring device, provided it complies with 4.3.
+4.3. Tolerance
+The overall accuracy of controlled or measured values, relative to the specified or actual values,
+shall be within the following tolerances:
+a) +0,1 % for voltage;
+b) +1 % for current;
+c) +2 K for temperature;
+d) +0,1 % for time;
+e) +0,1 % for mass;
+f) +0,1 % for dimensions.
+These tolerances comprise the combined accuracy of the measuring instruments, the
+measurement technique used, and all other sources of error in the test procedure.
+4.4 Thermal stabilization
+For the stabilization of cell temperature, the cell shall be soaked to a specified ambient
+temperature for a minimum of 12h. This period may be reduced if thermal stabilization is
+reached. Thermal stabilization is considered to be reached if after one interval of 1h, the
+change of cell temperature is lower than 1 K.
+5 Electrical measurement
+5.1. General charge conditions
+Unless otherwise stated in this document, prior to the electrical measurement, the cell shall be
+charged as follows.
+
+================== PDF PAGE 11 ==================
+Prior to charging, the cell shall be discharged at room temperature at a constant current of
+
+1/3 I_t (A) for BEV application and 1 I_t (A) for HEV application down to an end-of-discharge
+
+voltage specified by the cell manufacturer. Then, the cell shall be charged at room temperature
+
+according to the charging method declared by the cell manufacturer.
+
+5.2 Capacity
+
+Before the SOC adjustment in 5.3, the capacity of the test cell shall be confirmed to be the
+
+rated value in accordance with the following phases.
+
+1) Phase 1 —- The cell shall be charged in accordance with 5.1. After charge, the cell
+temperature shall be stabilized in accordance with 4.4.
+
+2) Phase 2 — The cell shall be discharged at room temperature at a constant current of
+1/3 I_t (A) for BEV application and at 1 I_t (A) for HEV application to the end-of-discharge
+voltage that is specified by the cell manufacturer.
+
+3) Phase 3 — Measure the discharge duration until the specified end-of-discharge voltage is
+reached, and calculate the capacity of the cell expressed in Ah up to three significant
+figures.
+
+5.3. SOC adjustment
+
+The test cells shall be charged as specified in the following list. The SOC adjustment is the
+
+procedure to be followed for preparing cells to the various SOCs for the tests in this document.
+
+1) Phase 1 — The cell shall be charged in accordance with 5.1.
+
+2) Phase 2 — The cell shall be left at rest at room temperature in accordance with 4.4.
+
+3) Phase 3 — The cell shall be discharged at a constant current of 1/3 I_t (A) for BEV application
+and of 1I_t(A) for HEV application for (100 —1)/100 x 3h for BEV application and
+(100 — n)/100 x 1 h for HEV application, where n is SOC (%) to be adjusted for each test.
+
+6 Safety tests
+
+6.1 General
+
+For all the tests specified in this Clause 6, the test installation shall be reported, including the
+
+method used for fixing and wiring of the cell. If necessary, to prevent deformation, the cell may
+
+be maintained during the test in a manner that complies with the test purpose.
+
+The tests shall be performed on cells that are not more than six months old. The number of
+
+cells under each test can be determined according to the agreement between the cell
+
+manufacturer and the customer. A cell block may be used for testing in place of a single cell in
+accordance with the agreement between the cell manufacturer and the customer.
+
+The number and type of test samples (cell or cell block) shall be provided in a test report.
+
+Each test shall end with the one-hour observation period, unless otherwise specified in this
+
+document.
+
+Warning: THE TESTS USE PROCEDURES WHICH MAY RESULT IN HARM IF ADEQUATE
+PRECAUTIONS ARE NOT TAKEN. TESTS SHOULD ONLY BE PERFORMED BY
+QUALIFIED AND EXPERIENCED TECHNICIANS USING ADEQUATE PROTECTION. TO
+PREVENT BURNS, CAUTION SHOULD BE TAKEN FOR THOSE CELLS WHOSE CASES
+MAY EXCEED 75 °C AS A RESULT OF TESTING.
+
+================== PDF PAGE 12 ==================
+6.2 Mechanical tests
+
+6.2.1 Mechanical shock
+
+6.2.1.1 Purpose
+
+This test is performed to simulate mechanical shocks to a cell that may occur during the normal
+
+operation of the vehicle, and to verify the safety performance of the cell under such conditions.
+
+6.2.1.2 Test
+
+The test shall be performed in accordance with 6.2.2.2 of IEC 62660-2:2018.
+
+6.2.1.3 Acceptance criteria
+
+During the test, the cell shall exhibit no evidence of leakage, venting, rupture, fire or explosion.
+
+6.2.2 Crush
+
+6.2.2.1 Purpose
+
+This test is performed to simulate external load forces that may cause deformation of a cell,
+
+and to verify the safety performance of the cell under such conditions.
+
+6.2.2.2 Test
+
+The test shall be performed as follows:
+
+a) adjust the SOC of cell to 100 % for BEV application and to 80 % for HEV application in
+accordance with 5.3;
+
+b) the cell shall be placed on an insulated rigid flat supporting surface, and a force shall be
+applied to it with a crushing tool made of a solid material in the shape of a round or
+semicircular bar, or in the shape of a sphere or hemisphere with a 150 mm diameter. The
+force for the crushing shall be applied in a direction nearly perpendicular to a larger side of
+the layered face of the positive and negative electrodes inside the cell. The force shall be
+applied to the approximate centre of the cell as shown in Figure 2. The crush speed shall
+be less than or equal to 6 mm/min;
+
+NOTE The round bar can be used to crush a cylindrical cell, and the sphere can be used to crush a prismatic
+cell or pouch cell.
+
+c) the force shall be released when an abrupt voltage drop of one-third of the original cell
+voltage occurs, or a deformation of 15 % or more of the initial cell dimension occurs, or a
+force of 1 000 times the weight of the cell is applied, whichever comes first. The cells shall
+be under observation for 24 h or until the cell temperature declines by 80 % of the maximum
+temperature rise, whichever occurs sooner.
+
+================== PDF PAGE 13 ==================
+—
+
+Crushing tool: Crushing tool:
+
+semicircular bar oouepnece
+
+Cylindrical cell Prismatic cell
+IEC
+— © Crushing direction
+IEC
+a) Example for cylindrical cell b) Example for prismatic cell
+Figure 2 — Example of crush test
+
+6.2.2.3 Acceptance criteria
+
+During the test, the cell shall exhibit no evidence of fire or explosion.
+
+6.3. Thermal test
+
+6.3.1 High temperature endurance
+
+6.3.1.1 Purpose
+
+This test is performed to simulate a high-temperature environment that the cell may experience
+
+during the reasonably foreseeable misuse or incident of the vehicle, and to verify the safety
+
+performance of the cell under such conditions.
+
+6.3.1.2 Test
+
+The test shall be performed as follows:
+
+a) adjust the SOC of the cell to 100 % for BEV applications, and to 80 % for HEV applications
+in accordance with 5.3;
+
+b) the cell, stabilized at room temperature, shall be placed in a gravity or circulating air
+convection oven. The oven temperature shall be raised at a rate of 5 K/min to 130 °C ± 2 K.
+The cell shall remain at this temperature for 30 min. Then, after the heater is turned off, the
+cell shall be observed for 1 h in the oven.
+
+6.3.1.3 Acceptance criteria
+
+During the test, the cell shall exhibit no evidence of fire or explosion.
+
+6.3.2 Temperature cycling
+
+6.3.2.1 Purpose
+
+This test is performed to simulate the anticipated exposure to low and high environmental
+
+temperature variations which can result in expansion and contraction of cell components, and
+
+to verify the safety performance of the cell under such conditions.
+
+================== PDF PAGE 14 ==================
+6.3.2.2 Test
+
+The test shall be performed in accordance with 6.3.2.2 of IEC 62660-2:2018.
+
+6.3.2.3 Acceptance criteria
+
+During the test, the cell shall exhibit no evidence of leakage, venting, rupture, fire or explosion.
+
+6.4 Electrical tests
+
+6.4.1 External short-circuit
+
+6.4.1.1 Purpose
+
+This test is performed to simulate an external short-circuit of a cell, and to verify the safety
+
+performance of the cell under such conditions.
+
+6.4.1.2 Test
+
+The test shall be performed in accordance with 6.4.1.2 of IEC 62660-2:2018.
+
+6.4.1.3 Acceptance criteria
+
+During the test, the cell shall exhibit no evidence of fire or explosion.
+
+6.4.2. Overcharge
+
+6.4.2.1 Purpose
+
+This test is performed to simulate an overcharge of a cell, and to verify the safety performance
+
+of the cell under such conditions.
+
+6.4.2.2 Test
+
+The test shall be performed as follows:
+
+a) adjust the SOC of the cell to 100 % in accordance with 5.3;
+
+b) continue charging the cell beyond the 100 % SOC with a charging current 1 I_t or 1/3 I_t for
+BEV application and 5I_t or 1 I_t for HEV application at room temperature using a power
+supply sufficient to provide the constant charging current. The overcharge test shall be
+discontinued when the voltage of the cell reaches or exceeds 120 % of the maximum voltage
+specified by the cell manufacturer, or the quantity of electricity applied to the cell reaches
+or exceeds the equivalent of 130 % SOC, whichever comes first.
+
+c) the test conditions may be according to the agreement between the cell manufacturer and
+the customer.
+
+6.4.2.3 Acceptance criteria
+
+During the test, the cell shall exhibit no evidence of fire or explosion.
+
+6.4.3. Forced discharge
+
+6.4.3.1 Purpose
+
+This test is performed to simulate an overdischarge of a cell, and to verify the safety
+
+performance of the cell under such conditions.
+
+================== PDF PAGE 15 ==================
+6.4.3.2 Test
+
+The test shall be performed as follows:
+
+a) adjust the SOC of the cell to 0 % in accordance with 5.3;
+
+b) continue discharging the cell beyond the 0 % SOC with a 1 I_t discharging current at room
+temperature. The forced discharge test shall be discontinued when the absolute value of
+the voltage of the cell reaches 25 % or less of the nominal voltage specified by the cell
+manufacturer, or the cell is discharged for 30 min, whichever occurs sooner.
+
+6.4.3.3 Acceptance criteria
+During the test, the cell shall exhibit no evidence of leakage, venting, rupture, fire or explosion.
+6.4.4 Internal short-circuit test
+6.4.4.1 Purpose
+This test is performed to simulate an internal short-circuit of a cell which is caused by its
+contamination with a conductive particle, etc., and to verify the safety performance of the cell
+under such conditions.
+NOTE Annex B provides the informative explanation on the internal short-circuit test
+6.4.4.2 Test
+6.4.4.2.1 Forced internal short-circuit test
+The test shall be performed on the cell in accordance with 7.3.2 b) of IEC 62619:—2, except as
+follows.
+When the nickel particle is placed between the positive active material coated area and the
+negative active material coated area, the internal short-circuit of single layer shall be confirmed.
+The specified test conditions, such as the pressing force and the shape of jig, may be modified,
+if necessary in order to simulate the internal short-circuit of single layer. The case and
+electrodes of the cell shall not be crushed. Any modification shall be reported.
+The nickel particle may be inserted through an incision in the cell case, without extracting the
+electrode core (winding, stacking or folding type) from the cell case. In such a case, the position
+of the nickel particle may not be the centre of cell, to the extent that the test result is not
+influenced.
+NOTE The internal short-circuit of a single layer is usually indicated by a voltage drop of a few mV.
+In cases where the aluminium foil of positive electrode is exposed at the outer turn, and that it
+faces the negative active material, the nickel particle is placed at the centre of the cell between
+the negative active material coated area and the positive aluminium foil which is at the end of
+the positive active material coated area in the winding direction. The other area where the
+positive aluminium foil faces the negative active material, if any, may be checked by the design
+review, failure mode and effects analysis (FMEA), etc. according to the agreement between the
+cell manufacturer and the customer.
+
+6.4.4.2.2 Alternative internal short-circuit test
+
+If agreed between the cell manufacturer and the customer, the internal short-circuit test in
+
+Annex C may be conducted as an alternative to the forced internal short-circuit test in 6.4.4.2.1.
+
+2 Second edition under preparation. Stage at the time of publication: IEC FDIS 62619:2021.
+
+================== PDF PAGE 16 ==================
+6.4.4.3 Acceptance criteria
+During the test, the cell shall exhibit no evidence of fire or explosion.
+
+================== PDF PAGE 17 ==================
+Annex A
+(informative)
+Operating region of cells for safe use
+A.1_ General
+This annex explains how to determine the operating region of the cell to ensure the safe use of
+the cell. The operating region is specified by the charging conditions such as the upper limit of
+charging voltage and cell temperature, which ensure the safety of cells.
+The cell manufacturers should stipulate the information on the operating region in the
+specification of the cell, as part of the guidance on safety precautions to be provided to their
+customers, such as the manufacturers of battery packs and systems. A suitable protection
+device and function should also be provided in the battery control system, for possible failure
+of the charge control.
+The limits of the operating region are specified for the minimum safety and are different from
+the charging voltage and temperature specified to optimize the performance of the cell (such
+as cycle life).
+A.2 Charging conditions for safe use
+A.2.1 General
+In order to ensure the safe use of cells, the cell manufacturers should set the upper limit of the
+voltage and the temperature of cell to be applied during charging. The cell should be charged
+within a predefined temperature range (standard temperature range) at the voltage not
+exceeding the upper limit. The cell manufacturer may also set a temperature range higher or
+lower than the standard temperature range, provided that the safety measures, such as lowered
+charging voltage, are taken. The operating region means such range of voltage and temperature
+where the cell can be used safely. The maximum charging current and the lower limit of the
+discharging voltage may also be set for the operating region.
+A newly developed cell can apply the same operating region as the original cell, if it has the
+same electrode material, thickness, design, and separator as the original cell, and less than
+120 % of the capacity of the original cell. The new cell can be considered as the same product
+series cell.
+A.2.2 Consideration on charging voltage
+The charging voltage is applied for cells so as to promote the chemical reaction during charging.
+However, if the charging voltage is too high, excessive chemical reactions or side reactions
+occur, and the cell becomes thermally unstable. Consequently, it is essential that the charging
+voltage never exceeds the value specified by the cell manufacturer (i.e. the upper limit of
+charging voltage). When a cell is charged at a higher voltage than the upper limit charging
+voltage, excess amount of lithium-ion is deintercalated from the positive electrode active
+material, and its crystalline structure tends to collapse. In these conditions, when an internal
+short-circuit occurs, thermal runaway can occur more easily than it does for cells charged in
+the predefined operating region. Consequently, the cells should never be charged at a higher
+voltage than the upper limit charging voltage.
+
+================== PDF PAGE 18 ==================
+The upper limit charging voltage should be set by the cell manufacturer based on the verification
+
+tests, and showing the results, for example, as follows:
+
+e test results which verify the stability of the crystalline structure of the positive material;
+
+* test results which verify the acceptance of lithium-ion into the negative active electrode
+material when the cell is charged at the upper limit charging voltage;
+
+« test results which verify that the cells charged at the upper limit charging voltage are tested
+in accordance with the safety test in Clause 6 at the upper limit of the standard temperature
+range, and the acceptance criteria of each test are met.
+
+A.2.3 Consideration on temperature
+A.2.3.1 General
+Charging produces a chemical reaction and is affected by temperature. The number of side
+reactions or the condition of the reaction products during charging is dependent on temperature.
+Charging in the low or high temperature range is considered to cause more side reactions, and
+is a more severe risk from a safety viewpoint than when it is done in the standard temperature
+range where the upper limit charging voltage is safely applicable. Consequently, the charging
+voltage and/or the charging current should be reduced from the upper limit charging voltage
+and/or the maximum charging current in both the low temperature range and the high
+temperature range.
+
+A.2.3.2 High temperature range
+
+When a cell is charged at a higher temperature than the standard temperature range, the safety
+
+performance of the cell tends to decrease due to lower stability of the crystalline structure. Also,
+
+in the high temperature range, the thermal runaway tends to occur following a relatively small
+change in temperature.
+
+As a result, the charging of cells in the high temperature range should be controlled as follows:
+
+e when the surface temperature of the cell is within the high temperature range specified by
+the cell manufacturer, specific charging conditions, such as lower charging voltage and
+current, are applied;
+
+e when the surface temperature of the cell is higher than the upper limit of the high
+temperature range, the cell shall never be charged under any charging current.
+
+A.2.3.3 Low temperature range
+
+When a Cell is charged in the low temperature range, the mass transfer rate decreases and the
+
+lithium-ion insertion rate into the negative material becomes low. Consequently, metallic lithium
+
+is easily deposited on the carbon surface. In this condition, the cell becomes thermally unstable
+and liable to become overheated and to cause the thermal runaway. Also, in the low
+
+temperature range, the acceptance of lithium-ions is highly dependent on the temperature. In a
+
+lithium battery system that consists of multi-cells in a series connection, the lithium-ion
+
+acceptability of each cell differs depending on the cell temperature, which reduces the safety
+of the battery system.
+
+As a result, the charging of cells in the low temperature range should be controlled as follows:
+
+« when the surface temperature of the cell is within the low temperature range specified by
+the cell manufacturer, specific charging conditions, such as lower charging voltage and
+current, are applied;
+
+e when the surface temperature of the cell is below the lower limit of the lower temperature
+range, the cell shall never be charged under any charging current.
+
+================== PDF PAGE 19 ==================
+A.3 Example of operating region
+Figure A.1 illustrates a typical example of an operating region for charging. In a temperature
+range higher or lower than the standard temperature range, it is permissible to charge the cell
+provided that a lower charging voltage and/or current are used. The operating range can be
+specified with a step shape which is shown in Figure A.1, or with diagonal lines. Figure A.2
+illustrates an example of an operating region for discharging.
+| Maximum charging current
+i
+T, to T2: low temperature range
+72 to T;: standard temperature range
+i pier wo ra vena T3to Ts; high temperature range
+f ar
+TY, Tz T; 1s Ts
+Cell temperature (surface)
+JEC
+Figure A.1 —- An example of operating region
+for charging of typical lithium-ion cells
+T; to Tp: low temperature range
+T> to T3: standard temperature range
+5 Maden asctiarging eurtant T, to Ty: high temperature range
+>
+£
+>
+&
+2 $_______!_____,,
+$
+=
+i
+qt; Ty T; T%,
+Cell temperature (surface) iz
+Figure A.2 — An example of operating region for
+discharging of typical lithium-ion cells
+
+================== PDF PAGE 20 ==================
+Annex B
+(informative)
+Explanation for the internal short-circuit test
+B.1 General concept
+The internal short-circuit tests in this document verify the cell behaviour in some specific cases
+of the internal short-circuit. The internal short-circuit test according to 6.4.4.2.1 demonstrates
+the ability of the cell to withstand the presence of a particle in the cell without fire or explosion.
+It represents the demonstration of the risk mitigation linked to that particular case.
+None of the internal short-circuit tests, however, demonstrates that the possibility of thermal
+runaway in the cell is reduced to zero. Accordingly, the risk linked to the thermal runaway of
+one cell should be mitigated in the scale-up level leading to the overall system (cell block,
+module, battery pack or vehicle). It is important to note that the comprehensive mitigation of the
+risk needs to be shared between the various levels of the structure from the cell to the vehicle
+in order to ensure the safe use of lithium-ion technology in vehicles.
+B.2 Internal short-circuit caused by the particle contamination
+The internal short-circuit of the cell is likely to have various causes from the production process
+through to the use in the vehicle. The different safety tests in this document are intended to
+verify the basic safety of the cell against the various short-circuit causes (see Table B.1).
+The internal short-circuit test in 6.4.4 is specially intended to simulate the contamination of a
+cell by a conductive particle, which potentially occurs during the manufacturing process. Particle
+contamination is especially critical, because the fire incidents of the portable lithium-ion
+batteries on the market are attributed in part to particle contamination.
+Table B.1 —- Examples of the internal short-circuit of cell
+[weds | Gavse | Countermessure tet —*|
+Excessive environmental | Abnormal temperature Specify the operating 6.3.1 High temperature
+condition condition endurance
+Excessive shock (drop or 6.2.1 Mechanical shock
+impact)
+Dendrite Improper charging Specify the operating
+conditions (low region
+temperature or high
+current)
+Improper
+positive/negative material
+balance
+Production process Contamination with a Process control 6.4.4 Internal short-circuit
+conductive particle test
+[=
+[=
+® The internal short-circuit test in 6.4.4 can also cover the internal short-circuit resulting from these causes
+because of its smaller or similar short-circuit area.
+
+================== PDF PAGE 21 ==================
+The test in 6.4.4.2.1 refers to the forced internal short-circuit (FISC) test as specified in
+IEC 62619. The detailed procedure of the FISC test is also defined in IEC 62133-2. The FISC
+test is conducted with a test cell in which a nickel particle is inserted, and to simulate the worst-
+case condition of the internal short-circuit. The specified size of the nickel particle represents
+the largest contaminant potentially contained in a cell, and generates the maximum heat
+between the electrodes. The particle contamination causes a one- to two-layer internal short-
+circuit between the positive electrode and the negative electrode, which can be simulated by
+the short-circuit test in 6.4.4.2. It is verified that the thermal, chemical and electrical conditions
+of the processed test cell are equivalent to those of the unprocessed cell, and have no influence
+on the test result.
+
+NOTE 1 The thermal condition of the processed test cell is equivalent to or more severe than that of the unprocessed
+cell, because of the small heat conductance of the polyethylene bag to be used for the test cell. The press jig made
+of acrylic resin or nitrile rubber has small heat conductance, and does not affect the heat release from the test cell
+and the rapid heat generation at the short-circuited area.
+
+NOTE 2 The evaporation of electrolyte during the preparation of the test cell is almost entirely prevented according
+to the specified test procedure, so that there is no influence on the test result. The processed cell has almost the
+same performance as it has in its unprocessed state in terms of both capacity and resistance.
+
+================== PDF PAGE 22 ==================
+Annex C
+(normative)
+Alternative internal short-circuit test (6.4.4.2.2)
+
+C.1 General
+
+This annex provides the test specifications for the alternative internal short-circuit test set out
+
+in 6.4.4.2.2.
+
+This test is applicable to prismatic and pouch cells.
+
+The test shall be made with 5 cells. The number of cells may be changed according to the
+
+agreement between the cell manufacturer and the customer.
+
+C.2 Test preparation and test set-up
+
+C.2.1 Preparation of cell before the test
+
+For a prismatic cell, the case may be thinned or removed by an appropriate method
+
+recommended by the cell manufacturer, if necessary, in order to avoid the effect of case
+
+deformation on the internal short-circuit event.
+
+For a prismatic cell with the case connected to either the positive electrode or negative
+
+electrode, the case shall be removed by an appropriate method recommended by the cell
+
+manufacturer.
+
+The case of a pouch cell shall not be thinned or removed.
+
+Thinning or removal of the case should be conducted before charging and the voltage
+
+adjustment of the cell. This operation should be conducted taking all the safety measures
+
+needed.
+
+The following is a recommended method of removing a piece of the hard case for the indenter
+
+press.
+
+1) Step 1 - Thin the surface of the cell case partially up to 90 % of the case thickness.
+Figure C.1 shows an example of case thinning. The thinning tool shall be designed in order
+that the edge of cutting head enters into 90 % of the case thickness. Figure C.2 shows an
+example of a simplified manual thinning tool. A milling machine or other tools can also be
+used.
+
+Dimensions in millimetres
+Cutting head of
+thinning tool
+= ‘ /f
+ma. f/
+Ss \ j
+ey cal cae 4
+" IEC
+Figure C.1 —- Example of case thinning
+
+================== PDF PAGE 23 ==================
+Cutting head
+(replaceable)
+yp Handle
+|
+JEC
+Figure C.2 —- Example of thinning tool
+
+2) Step 2 - Apply glue to the attachment surface of a removal pin, then attach the removal pin
+
+to the thinned part of case. The attachment surface of the removal pin shall be the same
+
+size as the thinned case hole. Glue of tensile strength above 20 MPa is recommended (for
+
+example, glue gun or epoxy glue). After glue hardening, pull the removal pin out. The hole
+
+of removed part should be sealed with insulation tape before the test. Figure C.3 shows an
+
+example of the case removal process.
+
+> => ie
+Case thinning Bonding Removal
+Attachment Pull out Hole sealing
+IEC
+Figure C.3 - Example of removing hard case
+
+Figure C.4 also shows an example of hard case removal during the cell manufacturing process
+as follows:
+1) Step 1 - Prepare the weak area for example by welding an additional vent during the cell
+
+manufacturing process.
+2) Step 2 - Mix the AB glue using a ratio of (1:1). Bond the pull-tab with glue on the vent piece,
+
+and wait for 10 min to ensure the glue has cured. Use the pull-tab to remove the vent piece.
+
+F 4 eg. welding Py ring-pull removed
+additional vent
+lec
+Figure C.4 - Example of hard case removal method during cell manufacturing
+
+================== PDF PAGE 24 ==================
+C.2.2 Test setup
+C.2.2.1 Fixation of cell
+The cell shall be held in a manner to prevent movement during the test using a fixation device.
+The cell shall be electrically isolated from the test bench. Figure C.5 shows an example of a
+fixation device.
+(6) (e)
+e
+9 (9)
+] Rubber sheet |
+a a,
+I
+1eC
+Figure C.5 — Example of fixation of cell
+C.2.2.2 Voltage measurement
+In order to detect the targeted internal short-circuit, the voltage shall be measured between the
+negative or positive terminal of the cell and an indenter according to the cell design. The voltage
+line shall not be connected to a terminal of the outermost electrode. Figure C.6 shows an image
+of the test setup.
+Cell design Test setup image
+Indenter
+Case Case
+Negative electrode LFA
+terminal \
+eC \ terminal
+Voltmeter lec
+a) Outermost electrode: Negative
+Indenter
+Case Case
+postive cectcde LZ
+Negative electrode yg _
+ec \ terminal —_ terminal
+Voltmeter
+lec
+b) Outermost electrode: Positive
+Figure C.6 — Test setup image for voltage measurement
+
+================== PDF PAGE 25 ==================
+C.2.2.3 Indenter device
+
+The indenter shall be a steel or SUS nail, for example, SKD-11, SUS 440C, SUS 300 series,
+
+having a diameter of between 1 mm and 3 mm.
+
+The angle of the nail tip should be between 20° and 45°.
+
+C.2.3 Preliminary test
+
+The condition of the indenter stop, i.e. the value of the voltage drop, which corresponds to a
+
+one- or two-layer short-circuit of the cell under test, shall be determined before the test as
+
+follows:
+
+a) Prepare the cell in accordance with C.2.1, if applicable.
+
+b) Adjust the voltage of the cell to the upper limit charging voltage.
+
+c) Fix the cell to the test setup in accordance with C.2.2. The indenter shall be placed
+perpendicular to the electrode layers of the cell. The cell or the indenter shall move along
+this perpendicular axis. The indentation location shall be the same as that described in
+6.4.4.2.1.
+
+d) The preliminary test shall be conducted at the test temperature of 25 °C ± 5 K. During the
+test, the voltage shall be recorded with sampling rate of 1 000 Hz or more.
+
+e) Press the indenter to the cell, or press the cell up to the indenter, with a constant velocity
+of 0,01 mm/s. The press speed may be faster than 0,01 mm/s if a one- to two-layer internal
+short-circuit can be achieved. The press should be stopped when a visible abrupt voltage
+drop is detected after the voltage between the indenter and the terminal reaches the voltage
+between negative and positive terminals. After the stop of the press, release the indenter
+from the cell within 10 s. Figure C.7 shows an example of the voltage drop.
+
+=
+& 41 0,12
+& =
+4 0,08 &
+S
+3,95 0,06 2
+.
+39 0,04 =
+Abrupt
+3,85 voltage drop 0,02 S
+38 o &
+i=)
++ 3,75 0,02
+10 5 Cy) 5
+Time (s) Y
+—— Cell voltage
+—— Voltage between the indenter and the terminal
+—— Displacement of the indenter
+lec
+Figure C.7 — Example of abrupt voltage drop
+
+f) Discharge the cell to a safety voltage, and then disassemble the cell to check the number
+of shorted layer. Repeat steps a) to e) until a one- to two-layer internal short-circuit is
+achieved, and the voltage drop parameter for the indenter stop is determined. The number
+of short-circuit layers is equal to the number of shorted points between the positive and
+negative electrode. The shorted point where the indenter did not touch is not counted as
+shorted layer.
+
+================== PDF PAGE 26 ==================
+C.3. Test procedure
+
+The test shall be conducted as follows:
+
+a) Prepare the cell in accordance with C.2.1, if applicable.
+
+b) Adjust the voltage of the cell to the upper limit charging voltage.
+
+c) Fix the cell to the test setup in accordance with C.2.2. The indenter shall be placed
+perpendicular to the electrode layers of the cell. The cell or the indenter shall move along
+this perpendicular axis. The indentation location shall be the same as described in 6.4.4.2.1.
+
+d) The test shall be conducted at the test temperature of 25 °C ± 5 K. During the test, the
+voltage shall be recorded with a sampling rate of 1 000 Hz or more. The temperature of the
+cell may be recorded with a sampling rate of 1 Hz or more. The temperature measuring
+device should be set on the surface of the cell, at a distance of less than 25 mm from the
+centre of the indentation.
+
+NOTE After the press is stopped, the measuring frequency can be more than 1 Hz.
+
+e) Press the indenter to the cell, or press the cell up to the indenter, with a constant velocity
+of 0,01 mm/s. The press speed may be faster than 0,01 mm/s if a one- to two-layer internal
+short-circuit can be achieved. The press shall be stopped immediately when the voltage
+drop as determined in C.2.3 is detected.
+
+f) After stopping the press, the cell shall be observed for 1h. The indenter shall remain in
+place at the stop, and be kept stable within + 0,02 mm in the X, Y and Z directions until the
+end of the test including the observation period.
+
+NOTE After the end of the observation period, the cell can be disassembled to check the number of shorted layers.
+
+C.4 Acceptance criteria
+
+See 6.4.4.3.
+
+================== PDF PAGE 27 ==================
+Bibliography
+IEC 60050-482, International Electrotechnical Vocabulary — Part 482: Primary and secondary
+cells and batteries
+IEC 61434, Secondary cells and batteries containing alkaline or other non-acid electrolytes —
+Guide to designation of current in alkaline secondary cell and battery standards
+IEC 62133-2, Secondary cells and batteries containing alkaline or other non-acid electrolytes —
+Safety requirements for portable sealed secondary lithium cells, and for batteries made from
+them, for use in portable applications — Part 2: Lithium systems
+IEC 62660-1, Secondary lithium-ion cells for the propulsion of electric road vehicles — Part 1:
+Performance testing
+IEC TR 62914, Secondary cells and batteries containing alkaline or other non-acid electrolytes
+— Experimental procedure for the forced internal short-circuit test of IEC 62133:2012
+ISO 6469-1, Electrically propelled road vehicles — Safety specifications — Part 1: Rechargeable
+energy storage system (RESS)
+ISO 12405-4, Electrically propelled road vehicles — Test specification for lithium-ion traction
+battery packs and systems — Part 4: Performance testing
+ISO 18243, Electrically propelled mopeds and motorcycles — Test specifications and safety
+requirements for lithium-ion battery systems
+UN ECE Regulation No.100 (UN ECE R100), Uniform provisions concerning the approval of
+vehicles with regard to specific requirements for the electric power train (02 series of
+amendment or later)
