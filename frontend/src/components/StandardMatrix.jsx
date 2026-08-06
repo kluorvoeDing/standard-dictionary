@@ -1,19 +1,6 @@
 import React, { useMemo, useState } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
 
-// Application Category Helper
-const getApplication = (docId) => {
-  if (docId === 'GB38031' || docId === 'ULC-2580' || docId === 'AIS-038' || docId === 'IEC62660-3') return '電動汽車 (EV)';
-  if (docId === 'GB43854') return '電動自行車 (E-Bike)';
-  if (docId === 'GB31241' || docId === 'GB31241.4' || docId === 'GB47372' || docId === 'IEC62133-2') return '便攜式電子 (Portable)';
-  if (docId === 'UL-2271' || docId === 'AIS-156' || docId === 'GB40559' || docId === 'GB47741') return '輕型電動車 (LEV)';
-  if (docId === 'GB44240' || docId === 'GBT-36276' || docId === 'UL-9540A' || docId === 'SAND2017-6925' || docId === 'UL-1973') return '儲能系統 (ESS)';
-  if (docId === 'IEC62619' || docId === 'GB40165') return '工業應用 (Industrial)';
-  if (docId === 'UL-3030') return '無人機 (UAS)';
-  if (docId === 'UN38.3') return '運輸安全 (Transport)';
-  return '一般應用 (General)';
-};
-
 // Map raw objects to major sample levels
 const getMajorLevel = (raw) => {
   const upper = raw.toUpperCase();
@@ -78,7 +65,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
 
     uniqueDocs.forEach(doc => {
       const baseId = doc.base_standard_id || doc.document_id;
-      const app = getApplication(baseId);
+      const app = doc.application || '一般應用 (General)';
       const docLevelSet = new Set((doc.available_objects || []).map(getMajorLevel));
       const lvls = MAJOR_LEVELS.filter(l => docLevelSet.has(l));
       lvls.forEach(l => levelsPresent.add(l));
@@ -251,7 +238,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
             </div>
             <div>
               <strong style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '0.25rem' }}>應用領域</strong>
-              <span style={{ color: 'var(--text-primary)' }}>{getApplication(activeInfoNode.baseId)}</span>
+              <span style={{ color: 'var(--text-primary)' }}>{activeInfoNode.application || '一般應用 (General)'}</span>
             </div>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
               <div>

@@ -55,14 +55,14 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
+        "summary": "無洩漏、無排氣、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "測試期間無電解液洩漏 (Electrolyte leakage)",
+          "無洩漏 (Electrolyte leakage)",
           "無破裂 (Rupture，僅適用於高壓 REESS)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
           "測試後的高壓隔離電阻應至少為 100 Ω/V。",
-          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+          "無排氣 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
         ]
       },
       "exemptions": [
@@ -110,14 +110,14 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
+        "summary": "無洩漏、無排氣、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "測試期間無電解液洩漏 (Electrolyte leakage)",
-          "無破裂 (Rupture)",
+          "無洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture，僅適用於高壓 REESS)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
           "測試後的高壓隔離電阻應至少為 100 Ω/V。",
-          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+          "無排氣 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
         ]
       },
       "exemptions": [],
@@ -165,11 +165,11 @@
       "acceptance_criteria": {
         "summary": "無洩漏、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "測試期間無電解液洩漏 (Electrolyte leakage)",
+          "無洩漏 (Electrolyte leakage)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
           "受測設備應保持在安裝位置上，且其組件不得脫出邊界外。",
-          "測試後的高壓隔離電阻應至少為 100 Ω/V。"
+          "高壓隔離電阻應至少為 100 Ω/V，或者測試設備必須滿足 IPXXB 防護等級。"
         ]
       },
       "exemptions": [
@@ -227,10 +227,10 @@
       "acceptance_criteria": {
         "summary": "無洩漏、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "測試期間無電解液洩漏 (Electrolyte leakage)",
+          "無洩漏 (Electrolyte leakage)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
-          "測試後的高壓隔離電阻應至少為 100 Ω/V。"
+          "高壓隔離電阻應至少為 100 Ω/V，或者測試設備必須滿足 IPXXB 防護等級。"
         ]
       },
       "exemptions": [
@@ -320,14 +320,14 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
+        "summary": "無洩漏、無排氣、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "無電解液洩漏 (Electrolyte leakage)",
-          "無破裂 (Rupture)",
+          "無洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture，僅適用於高壓 REESS)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
           "測試後的高壓隔離電阻應至少為 100 Ω/V。",
-          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+          "無排氣 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
         ]
       },
       "exemptions": [],
@@ -373,14 +373,14 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
+        "summary": "無洩漏、無排氣、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "無電解液洩漏 (Electrolyte leakage)",
-          "無破裂 (Rupture)",
+          "無洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture，僅適用於高壓 REESS)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
           "測試後的高壓隔離電阻應至少為 100 Ω/V。",
-          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+          "無排氣 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
         ]
       },
       "exemptions": [],
@@ -409,27 +409,27 @@
           "detail": "測試前 SOC 調整至正常操作範圍內的較低水準。"
         },
         "discharge_current": {
-          "value": "製造商規定的最大放電電流",
-          "detail": "以外部充放電設備進行放電，使用製造商規定的最大放電電流。"
+          "value": "正常操作範圍內的穩定電流",
+          "detail": "以外部充放電設備進行放電，使用製造商規定的正常操作範圍內的穩定電流。"
         },
         "termination": {
-          "value": "放電至額定電壓的 25% 或保護觸發",
-          "detail": "持續放電直到保護裝置中斷放電，或（若保護裝置未作動）直到 REESS 放電至其額定電壓水平的 25%。"
+          "value": "至25%或保護或溫度穩定",
+          "detail": "放電至額定電壓的 25% 或保護觸發，或測試設備溫度穩定（2 小時內溫度梯度小於 4 °C）。"
         },
         "post_test": {
-          "value": "標準充放電",
-          "detail": "試驗後，直接進行一次標準充電，隨後進行一次標準放電。"
+          "value": "標準循環並觀察 1 小時",
+          "detail": "試驗後，直接進行一次標準充電，隨後進行一次標準放電，並在測試環境下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
-        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
+        "summary": "無洩漏、無排氣、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "無電解液洩漏 (Electrolyte leakage)",
-          "無破裂 (Rupture)",
+          "無洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture，僅適用於高壓 REESS)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
           "測試後的高壓隔離電阻應至少為 100 Ω/V。",
-          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+          "無排氣 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
         ]
       },
       "exemptions": [],
@@ -454,27 +454,23 @@
           "detail": "測試環境溫度應設定為確保 REESS 溫度能持續上升的程度，或將 REESS 加熱至過溫保護預期作動之溫度。"
         },
         "operation": {
-          "value": "連續充放電",
-          "detail": "在提高的環境溫度下，以製造商規定的最大電流進行連續充放電操作，促使內部溫度上升。"
+          "value": "快速升溫之正常電流",
+          "detail": "在提高的環境溫度下，以正常操作範圍內能使電芯溫度盡可能快速上升的電流進行連續充放電操作。"
         },
         "termination": {
           "value": "保護啟動",
           "detail": "持續測試直到過溫保護功能（如冷卻啟動或電流限制/切斷）成功啟動。 若保護裝置未動作，則持續直到受測設備溫度穩定（2 小時內溫度梯度變化小於 4 °C）。"
-        },
-        "observation": {
-          "value": "1 小時",
-          "detail": "測試結束後在測試環境下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
-        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
+        "summary": "無洩漏、無排氣、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "無電解液洩漏 (Electrolyte leakage)",
-          "無破裂 (Rupture)",
+          "無洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture，僅適用於高壓 REESS)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
           "測試後的高壓隔離電阻應至少為 100 Ω/V。",
-          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+          "無排氣 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
         ]
       },
       "exemptions": [],
@@ -511,19 +507,19 @@
           "detail": "終止後進行一次標準循環，並觀察 1 小時。"
         },
         "soc": {
-          "value": "SOC 調整",
-          "detail": "依照 Annexure IX 的一般測試條件調整 SOC。"
+          "value": "正常操作範圍的中間值",
+          "detail": "測試前將 REESS 的 SOC 調整至正常操作範圍的中間值。"
         }
       },
       "acceptance_criteria": {
-        "summary": "保護裝置啟動；無洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
+        "summary": "無洩漏、無排氣、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "無電解液洩漏 (Electrolyte leakage)",
-          "無破裂 (Rupture)",
+          "無洩漏 (Electrolyte leakage)",
+          "無破裂 (Rupture，僅適用於高壓 REESS)",
           "無起火 (Fire)",
           "無爆炸 (Explosion)",
           "測試後的高壓隔離電阻應至少為 100 Ω/V。",
-          "試驗後無排氣現象 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
+          "無排氣 (Venting) (不適用於開放型牽引電池 open-type traction battery)。"
         ]
       },
       "exemptions": [],
@@ -557,7 +553,7 @@
         },
         "temperature": {
           "value": "25 ± 2 °C",
-          "detail": "The test shall be conducted at 25 ± 2 °C."
+          "detail": "測試應在 25 ± 2 °C 下進行。"
         }
       },
       "acceptance_criteria": {

@@ -534,8 +534,8 @@
           "detail": "按照 4.5.1 規定的試驗方法充滿電後"
         },
         "vibration": {
-          "value": "表 6 正弦振動",
-          "detail": "按表 6 中的參數進行正弦振動測試 (7Hz~200Hz~7Hz)"
+          "value": "依據設備類型 (表4/表6)",
+          "detail": "標準電池組依據 7.3 (表 4)；僅大型電池組依據表 6 進行正弦振動。"
         },
         "duration": {
           "value": "每方向 3 小時",
@@ -614,8 +614,8 @@
           "detail": "按照 4.5.1 的試驗方法充滿電後"
         },
         "drop": {
-          "value": "同 7.5",
-          "detail": "根據樣品質量,按照表 5 選擇進行跌落試驗,試驗方法見 7.5。非懸掛式最大平面向下落於混凝土板上"
+          "value": "依據質量/表5進行跌落",
+          "detail": "根據樣品質量，按照表 5 選擇對整體或角和邊進行跌落試驗。對於非懸掛式大型電池組，最大平面向下跌落於混凝土板上，且採用最不利的跌落高度。"
         }
       },
       "acceptance_criteria": {
@@ -652,8 +652,12 @@
           "detail": "用推薦充電器的最大持續充電電流充電至超過上限電壓 10%"
         },
         "termination": {
-          "value": "BMS 終止充電",
-          "detail": "充電至 BMU/BMS 終止充電，保持 1 小時"
+          "value": "110%充電上限電壓或之前",
+          "detail": "充電至 BMU/BMS 終止充電，終止動作必須在充電電壓達到 110%充電上限電壓時或之前出現，並保持 1 小時。"
+        },
+        "repetition": {
+          "value": "測試 3 次",
+          "detail": "將樣品進行 3 次測試。"
         }
       },
       "acceptance_criteria": {
@@ -692,6 +696,10 @@
         "termination": {
           "value": "BMS 控制過流",
           "detail": "BMU/BMS 應發現過流並將充電電流控制在最大持續充電電流以下，保持 1 小時"
+        },
+        "repetition": {
+          "value": "測試 3 次",
+          "detail": "將樣品進行 3 次測試。"
         }
       },
       "acceptance_criteria": {
@@ -730,6 +738,10 @@
         "termination": {
           "value": "BMS 終止放電",
           "detail": "放電至 BMU/BMS 終止放電,這一動作應在放電電壓低於 90% 放電截止電壓時或之前出現，保持 1 小時"
+        },
+        "repetition": {
+          "value": "測試 3 次",
+          "detail": "將樣品進行 3 次測試。"
         }
       },
       "acceptance_criteria": {
@@ -768,6 +780,10 @@
         "termination": {
           "value": "BMS 控制放電",
           "detail": "BMU/BMS 應發現過流放電並將放電電流控制在最大放電電流以下，保持 1 小時"
+        },
+        "repetition": {
+          "value": "測試 3 次",
+          "detail": "將樣品進行 3 次測試。"
         }
       },
       "acceptance_criteria": {
@@ -806,6 +822,10 @@
         "termination": {
           "value": "BMS 切斷電路",
           "detail": "BMU/BMS 應發現短路並動作切斷電路，保持 1 小時"
+        },
+        "repetition": {
+          "value": "測試 3 次",
+          "detail": "將樣品進行 3 次測試。"
         }
       },
       "acceptance_criteria": {
@@ -844,6 +864,10 @@
         "termination": {
           "value": "BMS 切斷電流",
           "detail": "BMU/BMS 應發現反向充電並動作切斷充電電流，保持 1 小時"
+        },
+        "repetition": {
+          "value": "測試 3 次",
+          "detail": "將樣品進行 3 次測試。"
         }
       },
       "acceptance_criteria": {
@@ -886,6 +910,10 @@
         "termination": {
           "value": "保持 1 小時",
           "detail": "試驗結束後保持 1 小時"
+        },
+        "repetition": {
+          "value": "測試 3 次",
+          "detail": "將樣品進行 3 次測試。"
         }
       },
       "acceptance_criteria": {

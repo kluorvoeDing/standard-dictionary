@@ -615,7 +615,7 @@
         },
         "acceleration": {
           "value": "依質量公式",
-          "detail": "質量 ≤ 12kg 為 150gn 和 100850/m (取小者)；質量 > 12kg 為 50gn 和 30000/m (取小者)"
+          "detail": "質量 ≤ 12kg 為 150gn 和 √(100850/m) (取小者)；質量 > 12kg 為 50gn 和 √(30000/m) (取小者)"
         },
         "pulse_duration": {
           "value": "6 ms 或 11 ms",
@@ -813,9 +813,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "其餘單體不發生起火爆炸",
+        "summary": "其餘單體無起火、無爆炸",
         "details": [
-          "除觸發電池外的其他單體電池應不發生起火、爆炸"
+          "除觸發電池外的其他單體電池應無起火、無爆炸"
         ]
       },
       "exemptions": [],
@@ -968,6 +968,7 @@
       "acceptance_criteria": {
         "summary": "BMS動作，無起火爆炸洩漏",
         "details": [
+          "BMS應起保護作用",
           "樣品應無起火",
           "無爆炸",
           "無洩漏"
@@ -1034,7 +1035,7 @@
           "detail": "按照 4.5.1 規定的試驗方法充滿電"
         },
         "ext_res": {
-          "value": "≤ 20 mΩ",
+          "value": "20 mΩ ± 5 mΩ",
           "detail": "短路正負極端子或 BMS 中的輸出端子，外部電阻 20 mΩ ± 5 mΩ"
         },
         "cycles": {
@@ -1178,6 +1179,6 @@
       "Mapped thermal protection tests (9.8, 9.9) to THERM-ABUSE (熱濫用 / 高溫測試) as they verify BMS functionality at extreme temperatures.",
       "Identified and accurately mapped 29 test types covering Cell and Battery System layers."
     ],
-    "total_test_entries": 29
+    "total_test_entries": 30
   }
 }

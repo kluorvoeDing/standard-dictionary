@@ -272,7 +272,7 @@
           "detail": "每個軸向重複 12 次掃頻，每軸合計 3 小時。"
         },
         "axes": {
-          "value": "3 個互相垂直軸向，其中一軸須垂直於端子面",
+          "value": "3 軸向 (含垂直端子面)",
           "detail": "在三個互相垂直的安裝方向 (mutually perpendicular mounting positions) 上分別執行，其中一個方向必須垂直於端子面 (terminal face)。總計 9 小時。"
         },
         "small_cell_battery_profile": {
@@ -400,7 +400,7 @@
           "detail": "短路條件持續至電芯/電池外殼溫度回落至 57 ± 4 °C 後至少 1 小時；或對大型電池，持續至溫度下降幅度達最大溫升之一半且維持低於該值後至少 1 小時。"
         },
         "ambient_condition": {
-          "value": "短路及冷卻階段至少在環境溫度下進行",
+          "value": "環境溫度 (Ambient)",
           "detail": "短路及冷卻降溫階段須至少在環境溫度 (ambient temperature) 條件下進行。"
         },
         "sample_quantity": {
@@ -463,7 +463,7 @@
           "detail": "受測樣品之縱軸 (longitudinal axis) 平行於平面，且垂直於 15.8 mm 鋼棒之縱軸。"
         },
         "impact_count": {
-          "value": "每個樣品僅 1 次撞擊",
+          "value": "單次撞擊",
           "detail": "每個受測樣品僅承受 1 次撞擊 (single impact)。"
         },
         "sample_state": {
@@ -471,7 +471,7 @@
           "detail": "原電芯 (Primary)：5 個未放電 + 5 個完全放電。充電電芯 (Rechargeable)：5 個第 1 循環 50% 設計額定容量。組件電芯同上數量。(依 38.3.3(c))"
         },
         "sample_requirement": {
-          "value": "使用未經其他測試的新樣品",
+          "value": "全新樣品",
           "detail": "受測電芯/組件電芯不得為先前已接受其他測試之樣品 (38.3.4)。"
         }
       },
@@ -532,11 +532,11 @@
           "detail": "圓柱形電芯 (<18mm)：擠壓力垂直於縱軸 (perpendicular to the longitudinal axis)。"
         },
         "crush_count": {
-          "value": "每個樣品僅 1 次擠壓",
+          "value": "單次擠壓",
           "detail": "每個受測電芯或組件電芯僅承受 1 次擠壓 (one crush only)。"
         },
         "observation_period": {
-          "value": "測試後觀察 6 小時",
+          "value": "6 小時",
           "detail": "擠壓完成後繼續觀察 6 小時 (observed for a further 6 小時)。"
         },
         "sample_state": {
@@ -544,7 +544,7 @@
           "detail": "原電芯 (Primary)：5 個未放電 + 5 個完全放電。充電電芯 (Rechargeable)：5 個第 1 循環 50% 設計額定容量。組件電芯同上數量。(依 38.3.3(c))"
         },
         "sample_requirement": {
-          "value": "使用未經其他測試的新樣品",
+          "value": "全新樣品",
           "detail": "受測電芯/組件電芯不得為先前已接受其他測試之樣品 (38.3.4)。"
         }
       },
@@ -654,7 +654,7 @@
           "detail": "依 38.3.3(e)：原電芯 10 個完全放電 + 10 個原組件電芯完全放電；充電電芯 10 個第 1 循環完全放電 + 10 個充電組件電芯第 1 循環完全放電 + 10 個 50 循環後完全放電 + 10 個充電組件電芯 50 循環後完全放電。"
         },
         "sample_requirement": {
-          "value": "使用未經其他測試的新樣品",
+          "value": "全新樣品",
           "detail": "受測電芯須為未經其他測試之樣品 (38.3.4)。"
         }
       },

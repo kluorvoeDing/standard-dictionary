@@ -35,21 +35,20 @@
         },
         "thermal_equilibrium": {
           "value": "±2 °C (連續3次測量)",
-          "detail": "熱平衡標準：在10%的經過時間（至少15 分鐘）內，3次測量的溫度變化在±2 °C內"
+          "detail": "以至少 15 分鐘或 10% 已流逝測試時間（取大者）為間隔，連續 3 次測量的溫度變化在 ±2 °C 內"
         }
       },
       "acceptance_criteria": {
         "summary": "系統應在規定限值內運行且保護功能正常",
         "details": [
           "電壓、電流、溫度不超限",
-          "表面溫度合格",
-          "保護功能正常"
+          "表面溫度合格"
         ]
       },
       "exemptions": [],
       "related_tests": [],
       "source_reference": "30",
-      "original_text_snippet": "The ESS is operated under normal conditions. System shall operate within specified limits."
+      "original_text_snippet": ""
     },
     {
       "id": "UL9540-32",
@@ -87,7 +86,7 @@
       ],
       "related_tests": [],
       "source_reference": "32",
-      "original_text_snippet": "Hazardous voltage circuits are subjected to dielectric withstand voltage. No dielectric breakdown shall occur."
+      "original_text_snippet": ""
     },
     {
       "id": "UL9540-33",
@@ -124,7 +123,7 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "33",
-      "original_text_snippet": "The system is subjected to impulse voltages. No damage shall occur."
+      "original_text_snippet": ""
     },
     {
       "id": "UL9540-34",
@@ -143,8 +142,8 @@
           "detail": "測量接地端子與待接地金屬零件間（或任意兩點之間）的阻抗。"
         },
         "test_current": {
-          "value": "10 A 測試電流",
-          "detail": "應使用 10 A 的測試電流進行測試。"
+          "value": "依據四種方法之一測試",
+          "detail": "允許使用四種方法之一：阻抗計、10A (NFPA 79)、依據 UL 62368-1 保護額定電流、或 IEC 60364-4-41。"
         }
       },
       "acceptance_criteria": {
@@ -156,7 +155,7 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "34",
-      "original_text_snippet": "Grounding and bonding system resistance shall not exceed 0.1 Ω."
+      "original_text_snippet": ""
     },
     {
       "id": "UL9540-35",
@@ -190,7 +189,7 @@
       ],
       "related_tests": [],
       "source_reference": "35",
-      "original_text_snippet": "Insulation resistance between hazardous voltage circuits and accessible conductive parts shall meet specified limits."
+      "original_text_snippet": ""
     },
     {
       "id": "UL9540-40.1",
@@ -216,7 +215,7 @@
       "acceptance_criteria": {
         "summary": "固定裝置無損壞/脫落",
         "details": [
-          "壁掛固定裝置不應出現導致危險的損壞或脫落"
+          "安裝設備及其固定裝置無損壞 (there shall be no damage to the mounting apparatus and its securement means)。"
         ]
       },
       "exemptions": [
@@ -224,7 +223,7 @@
       ],
       "related_tests": [],
       "source_reference": "40.1",
-      "original_text_snippet": "Includes wall mount fixture test (3x weight). No damage leading to hazard shall occur."
+      "original_text_snippet": ""
     },
     {
       "id": "UL9540-40.2",
@@ -256,7 +255,7 @@
         "details": [
           "無損壞",
           "通過測試後的耐壓測試",
-          "不暴露危險帶電部件"
+          "無危險帶電件暴露"
         ]
       },
       "exemptions": [
@@ -264,7 +263,7 @@
       ],
       "related_tests": [],
       "source_reference": "40.2",
-      "original_text_snippet": "Enclosure impact (6.8 J). No damage leading to hazard shall occur."
+      "original_text_snippet": ""
     },
     {
       "id": "UL9540-40.3",
@@ -304,7 +303,7 @@
       ],
       "related_tests": [],
       "source_reference": "40.3",
-      "original_text_snippet": "Enclosure steady force (250 N). No damage leading to hazard shall occur."
+      "original_text_snippet": ""
     },
     {
       "id": "UL9540-40.4",
@@ -341,7 +340,7 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "40.4",
-      "original_text_snippet": "Mold stress (70°C for 7 h). No damage leading to hazard shall occur."
+      "original_text_snippet": ""
     },
     {
       "id": "UL9540-38",
@@ -371,7 +370,7 @@
       ],
       "related_tests": [],
       "source_reference": "38",
-      "original_text_snippet": "Fluid-containing parts and connections are subjected to 1.5x max operating pressure (liquid) or 1.1x (air). No leaks shall occur."
+      "original_text_snippet": ""
     },
     {
       "id": "UL9540-39",
@@ -393,13 +392,13 @@
       "acceptance_criteria": {
         "summary": "無變形、破裂或損壞",
         "details": [
-          "含流體部件應無破裂、變形、破裂或其他損壞"
+          "無斷裂、變形、破裂或其他損壞"
         ]
       },
       "exemptions": [],
       "related_tests": [],
       "source_reference": "39",
-      "original_text_snippet": "Includes hydrostatic strength test (1.5x design pressure) and pneumatic strength test (1.3x design pressure). No fracture, distortion, or rupture shall occur."
+      "original_text_snippet": ""
     },
     {
       "id": "UL9540-26.2",
@@ -429,7 +428,7 @@
       ],
       "related_tests": [],
       "source_reference": "26.2",
-      "original_text_snippet": "Electrochemical ESS shall be subjected to UL 9540A testing for increased capacity, decreased separation, indoor systems, or residential installations."
+      "original_text_snippet": ""
     }
   ],
   "test_sequence": {

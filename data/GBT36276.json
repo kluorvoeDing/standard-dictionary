@@ -43,13 +43,17 @@
         "observation": {
           "value": "1 小時",
           "detail": "停止充電後觀察1 小時。"
+        },
+        "pre_condition": {
+          "value": "滿電狀態",
+          "detail": "按照 6.2.4.1.1 完成初始化充電。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸",
         "details": [
-          "不應起火 (No fire)",
-          "不應爆炸 (No explosion)",
+          "無起火",
+          "無爆炸",
           "不應在防爆閥或洩壓點之外的位置發生破裂"
         ]
       },
@@ -82,16 +86,20 @@
         "observation": {
           "value": "1 小時",
           "detail": "停止放電後觀察1 小時。"
+        },
+        "pre_condition": {
+          "value": "空電狀態",
+          "detail": "按照 6.2.4.2.1 完成了初始化放電"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不應起火 (No fire)",
-          "不應爆炸 (No explosion)",
-          "不應洩漏 (No leakage)",
+          "無起火",
+          "無爆炸",
+          "無洩漏",
           "不應在防爆閥或洩壓點之外的位置發生破裂",
-          "不應冒煙"
+          "電池單體無冒煙"
         ]
       },
       "exemptions": [],
@@ -123,16 +131,20 @@
         "observation": {
           "value": "1 小時",
           "detail": "放電結束後觀察1 小時。"
+        },
+        "pre_condition": {
+          "value": "空電狀態",
+          "detail": "按照 6.2.4.2.1 完成了初始化放電"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不應起火 (No fire)",
-          "不應爆炸 (No explosion)",
-          "不應洩漏 (No leakage)",
+          "無起火",
+          "無爆炸",
+          "無洩漏",
           "不應在防爆閥或洩壓點之外的位置發生破裂",
-          "不應冒煙"
+          "電池單體無冒煙"
         ]
       },
       "exemptions": [],
@@ -164,13 +176,17 @@
         "observation": {
           "value": "1 小時",
           "detail": "斷開短路後觀察1 小時。"
+        },
+        "pre_condition": {
+          "value": "滿電狀態",
+          "detail": "按照 6.2.4.1.1 完成初始化充電。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸",
         "details": [
-          "不應起火 (No fire)",
-          "不應爆炸 (No explosion)",
+          "無起火",
+          "無爆炸",
           "不應在防爆閥或洩壓點之外的位置發生破裂"
         ]
       },
@@ -199,6 +215,10 @@
         "duration": {
           "value": "1 分鐘",
           "detail": "持續 1 分鐘，測量絕緣電阻。"
+        },
+        "pre_condition": {
+          "value": "滿電狀態",
+          "detail": "按照 6.2.4.1.1 完成初始化充電。"
         }
       },
       "acceptance_criteria": {
@@ -234,13 +254,17 @@
         "ac_voltage": {
           "value": "1080V~3800V AC",
           "detail": "施加相應的交流試驗電壓 60 秒 (45Hz~62Hz)。"
+        },
+        "pre_condition": {
+          "value": "滿電狀態",
+          "detail": "按照 6.2.4.1.1 完成初始化充電。"
         }
       },
       "acceptance_criteria": {
         "summary": "無擊穿、無閃絡",
         "details": [
-          "不應發生擊穿 (No breakdown)",
-          "不應發生閃絡 (No flashover)",
+          "無擊穿",
+          "無閃絡",
           "漏電流應 < 10 mA"
         ]
       },
@@ -279,16 +303,20 @@
         "observation": {
           "value": "1 小時",
           "detail": "停止擠壓後觀察 1 小時。"
+        },
+        "pre_condition": {
+          "value": "滿電狀態",
+          "detail": "按照 6.2.4.1.1 完成初始化充電。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "不應起火 (No fire)",
-          "不應爆炸 (No explosion)",
-          "不應洩漏 (No leakage)",
+          "無起火",
+          "無爆炸",
+          "無洩漏",
           "不應在防爆閥或洩壓點之外的位置發生破裂",
-          "不應冒煙"
+          "電池單體無冒煙"
         ]
       },
       "exemptions": [],
@@ -320,15 +348,19 @@
         "observation": {
           "value": "1 小時",
           "detail": "跌落後觀察 1 小時。"
+        },
+        "pre_condition": {
+          "value": "滿電狀態",
+          "detail": "按照 6.2.4.1.1 完成初始化充電。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸",
         "details": [
-          "不應起火 (No fire)",
-          "不應爆炸 (No explosion)",
+          "無起火",
+          "無爆炸",
           "不應在防爆閥或洩壓點之外的位置發生破裂",
-          "不應冒煙"
+          "電池單體無冒煙"
         ]
       },
       "exemptions": [],
@@ -359,13 +391,18 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試後觀察 1 小時。"
+        },
+        "pre_condition": {
+          "value": "滿電狀態",
+          "detail": "按照 6.2.4.1.1 完成初始化充電。"
         }
       },
       "acceptance_criteria": {
         "summary": "表面大於90 °C，無起火爆炸",
         "details": [
           "表面溫度應大於 90 °C",
-          "不應起火、爆炸",
+          "無起火",
+          "無爆炸",
           "不應在防爆閥或洩壓點之外的位置發生破裂"
         ]
       },
@@ -401,13 +438,18 @@
         "preconditioning": {
           "value": "完成循環壽命試驗",
           "detail": "單體電池在完成規定的循環壽命試驗後進行本測試。"
+        },
+        "pre_condition": {
+          "value": "滿電狀態",
+          "detail": "按照 6.2.4.1.1 完成初始化充電。"
         }
       },
       "acceptance_criteria": {
         "summary": "表面大於90 °C，無起火爆炸",
         "details": [
           "表面溫度應大於 90 °C",
-          "不應起火、爆炸",
+          "無起火",
+          "無爆炸",
           "不應在防爆閥或洩壓點之外的位置發生破裂"
         ]
       },
@@ -440,8 +482,9 @@
       "acceptance_criteria": {
         "summary": "不應擴散，無起火、無爆炸",
         "details": [
-          "不應觸發其他單體發生熱失控 (No propagation)",
-          "整體無起火、無爆炸",
+          "不應觸發其他單體發生熱失控",
+          "無起火",
+          "無爆炸",
           "試驗後絕緣性能應滿足 5.6.1.5.1"
         ]
       },
@@ -454,7 +497,7 @@
       "id": "GBT36276-6.7.2.3",
       "normalized_id": "MECH-VIB",
       "name_zh": "振動性能試驗",
-      "name_en": "MECH-VIB Test",
+      "name_en": "Vibration Performance Test",
       "section": "6.7.2.3",
       "category": "MECH",
       "subcategory": "振動性能試驗",
@@ -464,7 +507,7 @@
       "conditions": {
         "pre_condition": {
           "value": "滿電狀態",
-          "detail": "初始化充電"
+          "detail": "按照 6.2.4.1.2 完成初始化充電"
         },
         "vibration_profile": {
           "value": "三軸隨機振動",
@@ -476,15 +519,15 @@
         },
         "observation_time": {
           "value": "觀察 1 小時",
-          "detail": "1 小時"
+          "detail": "試驗結束後觀察 1 小時。"
         },
         "post_test": {
           "value": "絕緣與耐壓",
-          "detail": "絕緣性能試驗與耐壓性能試驗"
+          "detail": "依次進行絕緣性能試驗和耐壓性能試驗。"
         }
       },
       "acceptance_criteria": {
-        "summary": "符合標準要求",
+        "summary": "無洩漏、無冒煙、無起火、無爆炸",
         "details": [
           "無洩漏",
           "無冒煙",
@@ -497,13 +540,13 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "6.7.2.3",
-      "original_text_snippet": ""
+      "original_text_snippet": "將試驗樣品緊固在振動試驗台上，按要求進行三軸隨機振動... 觀察1h，無洩漏、無冒煙、無起火、無爆炸，絕緣與耐壓符合規定。"
     },
     {
       "id": "GBT36276-6.7.2.4",
       "normalized_id": "MECH-PRESS",
       "name_zh": "液冷管路耐壓性能試驗",
-      "name_en": "MECH-PRESS Test",
+      "name_en": "Liquid Cooling Pipeline Withstand Pressure Test",
       "section": "6.7.2.4",
       "category": "MECH",
       "subcategory": "液冷管路耐壓性能試驗",
@@ -514,7 +557,7 @@
       "conditions": {
         "pre_condition": {
           "value": "空電狀態",
-          "detail": "初始化放電"
+          "detail": "按照 6.2.4.2.2 或 6.2.4.2.3 完成初始化放電"
         },
         "pressure": {
           "value": "1.2倍工作壓強",
@@ -526,23 +569,23 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "符合標準要求",
+        "summary": "無破裂",
         "details": [
           "管路無破裂",
-          "氣壓降不大於最大工作壓強的 0.1% (電池模塊)",
-          "氣壓降不大於最大工作壓強的 0.2% (電池簇)"
+          "氣壓降不大於最大工作壓強的 0.1%",
+          "氣壓降不大於最大工作壓強的 0.2%"
         ]
       },
       "exemptions": [],
       "related_tests": [],
       "source_reference": "6.7.2.4",
-      "original_text_snippet": ""
+      "original_text_snippet": "向液冷管路增壓至壓強達到最大工作壓強的1.2倍，並穩壓2min，靜置1min。管路無破裂，氣壓降不大於規定值。"
     },
     {
       "id": "GBT36276-6.7.3.1",
       "normalized_id": "ENV-SALT",
       "name_zh": "鹽霧性能試驗",
-      "name_en": "ENV-SALT Test",
+      "name_en": "Salt Mist Performance Test",
       "section": "6.7.3.1",
       "category": "MECH",
       "subcategory": "鹽霧性能試驗",
@@ -552,7 +595,7 @@
       "conditions": {
         "pre_condition": {
           "value": "滿電狀態",
-          "detail": "初始化充電"
+          "detail": "按照 6.2.4.1.2 完成初始化充電"
         },
         "salt_solution": {
           "value": "5% NaCl",
@@ -576,7 +619,7 @@
         },
         "observation_time": {
           "value": "觀察 1 小時",
-          "detail": "1 小時"
+          "detail": "試驗結束後在室溫下觀察 1 小時。"
         },
         "post_test": {
           "value": "絕緣與耐壓",
@@ -584,7 +627,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "符合標準要求",
+        "summary": "無破裂、無洩漏、無起火、無爆炸",
         "details": [
           "外殼無破裂",
           "無洩漏",
@@ -597,13 +640,13 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "6.7.3.1",
-      "original_text_snippet": ""
+      "original_text_snippet": "試驗樣品處於滿電狀態，進行鹽霧交變試驗，噴霧2h，貯存22h，循環4次後常溫貯存3d... 外殼無破裂、無洩漏、無起火、無爆炸。"
     },
     {
       "id": "GBT36276-6.7.3.2",
       "normalized_id": "ENV-DAMP",
       "name_zh": "交變濕熱性能試驗",
-      "name_en": "ENV-DAMP Test",
+      "name_en": "Damp Heat Cyclic Performance Test",
       "section": "6.7.3.2",
       "category": "MECH",
       "subcategory": "交變濕熱性能試驗",
@@ -613,7 +656,7 @@
       "conditions": {
         "pre_condition": {
           "value": "滿電狀態",
-          "detail": "初始化充電"
+          "detail": "按照 6.2.4.1.2 完成初始化充電"
         },
         "high_temp_phase": {
           "value": "高溫高濕 6 小時",
@@ -625,11 +668,11 @@
         },
         "temp_ramp_rate": {
           "value": "斜率 12.5 °C/h",
-          "detail": "12.5 °C/h"
+          "detail": "溫度變化速率應控制在 12.5 °C/h。"
         },
         "cycles": {
           "value": "循環 6 次",
-          "detail": "6 次循環"
+          "detail": "依規定的溫濕度變化曲線連續進行 6 次循環。"
         },
         "post_cycle_storage": {
           "value": "常溫靜置",
@@ -637,7 +680,7 @@
         },
         "observation_time": {
           "value": "觀察 1 小時",
-          "detail": "1 小時"
+          "detail": "試驗結束後在室溫下觀察 1 小時。"
         },
         "post_test": {
           "value": "絕緣與耐壓",
@@ -645,7 +688,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "符合標準要求",
+        "summary": "無破裂、無洩漏、無起火、無爆炸",
         "details": [
           "外殼無破裂",
           "無洩漏",
@@ -658,13 +701,13 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "6.7.3.2",
-      "original_text_snippet": ""
+      "original_text_snippet": "試驗樣品處於滿電狀態，依規定的溫濕度曲線連續進行6次循環，常溫靜置後觀察1h... 外殼無破裂、無洩漏、無起火、無爆炸。"
     },
     {
       "id": "GBT36276-6.7.3.3",
       "normalized_id": "ELEC-IR-ALT",
       "name_zh": "高海拔絕緣性能試驗",
-      "name_en": "ELEC-IR-ALT Test",
+      "name_en": "High Altitude Insulation Resistance Test",
       "section": "6.7.3.3",
       "category": "ELEC",
       "subcategory": "高海拔絕緣性能試驗",
@@ -675,7 +718,7 @@
       "conditions": {
         "pre_condition": {
           "value": "滿電狀態",
-          "detail": "初始化充電"
+          "detail": "按照 6.2.4.1.2 完成初始化充電"
         },
         "pressure": {
           "value": "62 kPa / 54 kPa",
@@ -687,15 +730,15 @@
         },
         "hold_time": {
           "value": "維持 6 小時",
-          "detail": "6 小時"
+          "detail": "在目標溫度與濕度下保持 6 小時。"
         },
         "test_voltage": {
           "value": "施加 1 分鐘",
-          "detail": "施加試驗電壓 1 分鐘"
+          "detail": "依據額定電壓，施加相對應的試驗電壓，並保持 1 分鐘以測量絕緣電阻。"
         }
       },
       "acceptance_criteria": {
-        "summary": "符合標準要求",
+        "summary": "絕緣與耐壓符合規定",
         "details": [
           "絕緣電阻與標稱電壓的比值均不應小於 1000 Ω/V"
         ]
@@ -703,13 +746,13 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "6.7.3.3",
-      "original_text_snippet": ""
+      "original_text_snippet": "在模擬海拔大於 2000m（對應氣壓 62kPa 或 54kPa）的環境下保持6h後，施加規定的試驗電壓1min測量絕緣電阻。"
     },
     {
       "id": "GBT36276-6.7.3.4",
       "normalized_id": "ELEC-WV-ALT",
       "name_zh": "高海拔耐壓性能試驗",
-      "name_en": "ELEC-WV-ALT Test",
+      "name_en": "High Altitude Withstand Voltage Test",
       "section": "6.7.3.4",
       "category": "ELEC",
       "subcategory": "高海拔耐壓性能試驗",
@@ -720,7 +763,7 @@
       "conditions": {
         "pre_condition": {
           "value": "滿電狀態",
-          "detail": "初始化充電"
+          "detail": "按照 6.2.4.1.2 完成初始化充電"
         },
         "pressure": {
           "value": "62 kPa / 54 kPa",
@@ -732,11 +775,11 @@
         },
         "hold_time": {
           "value": "維持 6 小時",
-          "detail": "6 小時"
+          "detail": "在目標溫度與濕度下保持 6 小時。"
         },
         "dc_voltage": {
           "value": "直流 60 秒",
-          "detail": "施加直流電壓 60 秒"
+          "detail": "依據額定電壓，施加相對應的直流試驗電壓保持 60 秒。"
         },
         "ac_voltage": {
           "value": "交流 60 秒",
@@ -744,22 +787,23 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "符合標準要求",
+        "summary": "無擊穿、無閃絡",
         "details": [
-          "不發生擊穿或閃絡現象",
-          "直流耐壓漏電流 < 10 mA"
+          "無擊穿",
+          "直流耐壓漏電流 < 10 mA",
+          "無閃絡"
         ]
       },
       "exemptions": [],
       "related_tests": [],
       "source_reference": "6.7.3.4",
-      "original_text_snippet": ""
+      "original_text_snippet": "在模擬海拔大於 2000m 的環境下保持6h後，施加規定的交直流試驗電壓保持60s，無擊穿、無閃絡。"
     },
     {
       "id": "GBT36276-6.7.4.1",
       "normalized_id": "THERM-ADIA",
       "name_zh": "絕熱溫升特性試驗",
-      "name_en": "THERM-ADIA Test",
+      "name_en": "Adiabatic Temperature Rise Characteristic Test",
       "section": "6.7.4.1",
       "category": "THERM",
       "subcategory": "絕熱溫升特性試驗",
@@ -773,15 +817,15 @@
         },
         "start_temp": {
           "value": "起始 40 °C",
-          "detail": "40 °C"
+          "detail": "加熱初始溫度設定為 40 °C。"
         },
         "temp_step": {
           "value": "階躍 5 °C",
-          "detail": "5 °C"
+          "detail": "以 5 °C 為步進單位進行階梯升溫。"
         },
         "end_temp": {
           "value": "終止 130 °C",
-          "detail": "130 °C"
+          "detail": "加熱最高溫度設定為 130 °C。"
         },
         "hold_time_initial": {
           "value": "首階保持 5 小時",
@@ -797,7 +841,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "符合標準要求",
+        "summary": "無起火、無爆炸",
         "details": [
           "表面溫度小於或等於高溫一級報警溫度時，溫升速率 < 0.02 °C/min",
           "無起火",
@@ -808,13 +852,13 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "6.7.4.1",
-      "original_text_snippet": ""
+      "original_text_snippet": "將單體置於絕熱環境中，以40℃為起點，5℃為步進階梯升溫... 溫度小於報警值時，溫升速率不大於0.02℃/min，無起火、無爆炸。"
     },
     {
       "id": "GBT36276-6.7.5",
       "normalized_id": "BMS-ALARM",
       "name_zh": "報警和保護功能試驗",
-      "name_en": "BMS-ALARM Test",
+      "name_en": "Alarm and Protection Function Test",
       "section": "6.7.5",
       "category": "BMS",
       "subcategory": "報警和保護功能試驗",
@@ -832,7 +876,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "符合標準要求",
+        "summary": "發出報警信號並執行保護",
         "details": [
           "達到報警值時應發出報警信號",
           "執行相應保護動作"
@@ -841,7 +885,7 @@
       "exemptions": [],
       "related_tests": [],
       "source_reference": "6.7.5",
-      "original_text_snippet": ""
+      "original_text_snippet": "正常運行狀態下，模擬觸發各級報警設定值，BMS 應發出報警信號並執行相應保護動作。"
     }
   ],
   "test_sequence": {},
@@ -856,6 +900,6 @@
       "Mapped module/cluster safety tests to appropriate Schema v2.0 normalizations.",
       "Extracted Overcharge, Overdischarge, Overload, Short Circuit, Insulation, Withstand Voltage, Crush, Drop, Thermal Runaway, and Thermal Runaway Propagation from Section 6.7 Safety Tests."
     ],
-    "total_test_entries": 18
+    "total_test_entries": 19
   }
 }

@@ -40,13 +40,17 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "57 ± 4 °C"
+          "value": "57 °C ± 4 °C"
         },
         "external_resistance": {
           "value": "20 mΩ ± 5 mΩ"
         },
         "duration": {
           "value": "降溫後維持 1 小時"
+        },
+        "pre_conditioning": {
+          "value": "57 °C ± 4 °C，6 小時",
+          "detail": "待電池溫度達到 57 °C ± 4 °C 後，再放置 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -134,7 +138,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無洩漏、無破裂",
         "details": [
-          "電池應無起火、不洩氣、無解體、無破裂、無洩漏",
+          "電池應無起火、無洩氣、無解體、無破裂、無洩漏",
           "試驗後開路電壓不低於該項試驗前的 90%"
         ]
       }
@@ -158,12 +162,20 @@
         },
         "cycles": {
           "value": "10 次循環"
+        },
+        "post_test_conditioning": {
+          "value": "24 小時靜置",
+          "detail": "試驗後在室溫 20 °C±5 °C下至少保存 24 小時。"
+        },
+        "hold_time": {
+          "value": "保溫時間",
+          "detail": "對於大型電池(>500g)，保持時間應為 12 小時。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無洩漏、無破裂",
         "details": [
-          "電池應無起火、不洩氣、無解體、無破裂、無洩漏",
+          "電池應無起火、無洩氣、無解體、無破裂、無洩漏",
           "試驗後開路電壓不低於該項試驗前的 90%"
         ]
       }
@@ -192,7 +204,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無洩漏、無破裂",
         "details": [
-          "電池應無起火、不洩氣、無解體、無破裂、無洩漏",
+          "電池應無起火、無洩氣、無解體、無破裂、無洩漏",
           "開路電壓應不低於該項試驗前的 90%"
         ]
       }
@@ -221,7 +233,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無洩漏、無破裂",
         "details": [
-          "電池應無起火、不洩氣、無解體、無破裂、無洩漏",
+          "電池應無起火、無洩氣、無解體、無破裂、無洩漏",
           "開路電壓應不低於試驗前的 90%"
         ]
       }
@@ -273,6 +285,10 @@
         },
         "bar_diameter": {
           "value": "15.8 mm ± 0.1 mm"
+        },
+        "observation": {
+          "value": "觀察 6 小時",
+          "detail": "試驗後觀察 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -301,6 +317,10 @@
         },
         "stop_condition": {
           "value": "最大力或電壓降三分之一"
+        },
+        "observation": {
+          "value": "觀察 5 分鐘",
+          "detail": "試驗後觀察 5 分鐘。"
         }
       },
       "acceptance_criteria": {
@@ -325,7 +345,8 @@
           "value": "135 °C ± 2 °C"
         },
         "heating_rate": {
-          "value": "5 °C/min"
+          "value": "5±2 °C/min",
+          "detail": "以 5 °C/min ± 2 °C/min 的升溫速率。"
         },
         "duration": {
           "value": "恆溫 60 分鐘"
@@ -357,6 +378,10 @@
         },
         "duration": {
           "value": "停留觀察 1 小時"
+        },
+        "needle_spec": {
+          "value": "圓錐角 45°",
+          "detail": "鋼針圓錐角為 45°。"
         }
       },
       "acceptance_criteria": {
@@ -412,7 +437,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無洩漏、無破裂",
         "details": [
-          "樣品應無起火、不洩氣、無解體、無破裂、無洩漏",
+          "樣品應無起火、無洩氣、無解體、無破裂、無洩漏",
           "試驗後開路電壓不低於試驗前的 90%"
         ]
       }
@@ -436,12 +461,16 @@
         },
         "cycles": {
           "value": "10 次循環"
+        },
+        "duration": {
+          "value": "m≤12kg(6 小時) / m>12kg(12 小時)",
+          "detail": "質量 m≤12kg 保持 6 小時，m>12kg 保持 12 小時。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無洩漏、無破裂",
         "details": [
-          "樣品應無起火、不洩氣、無解體、無破裂、無洩漏",
+          "樣品應無起火、無洩氣、無解體、無破裂、無洩漏",
           "試驗後開路電壓不低於試驗前的 90%"
         ]
       }
@@ -458,7 +487,8 @@
       ],
       "conditions": {
         "acceleration": {
-          "value": "8gn 或 2gn"
+          "value": "m≤12kg(8gn) / m>12kg(2gn)",
+          "detail": "質量 m≤12kg 為 8gn，質量 m>12kg 為 2gn。"
         },
         "duration": {
           "value": "每個方向 3 小時"
@@ -467,7 +497,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無洩漏、無破裂",
         "details": [
-          "電池組應無起火、不洩氣、無解體、無破裂、無洩漏",
+          "電池組應無起火、無洩氣、無解體、無破裂、無洩漏",
           "開路電壓不低於試驗前的 90%"
         ]
       }
@@ -484,7 +514,8 @@
       ],
       "conditions": {
         "acceleration": {
-          "value": "150gn 或 50gn"
+          "value": "依質量計算取小者",
+          "detail": "質量 m≤12kg：取 150gn 或 100850/m 中較小者。m>12kg：取 50gn 或 30000/m 中較小者。"
         },
         "duration": {
           "value": "6 ms 或 11 ms"
@@ -493,7 +524,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無洩漏、無破裂",
         "details": [
-          "樣品應無起火、不洩氣、無解體、無破裂、無洩漏",
+          "樣品應無起火、無洩氣、無解體、無破裂、無洩漏",
           "開路電壓不低於試驗前的 90%"
         ]
       }
@@ -517,6 +548,10 @@
         },
         "drops": {
           "value": "6 次"
+        },
+        "post_test": {
+          "value": "靜置 4 小時，1次充放循環",
+          "detail": "測試結束後靜置 4 小時。試驗後繼續進行一次放電充電循環。"
         }
       },
       "acceptance_criteria": {
@@ -570,6 +605,10 @@
         },
         "duration": {
           "value": "至少 30 分鐘"
+        },
+        "post_test": {
+          "value": "靜置 24 小時，可充放則循環",
+          "detail": "將樣品擱置 24 小時，若樣品還能繼續放電，則進行一次放電充電循環。"
         }
       },
       "acceptance_criteria": {
@@ -601,7 +640,8 @@
         "summary": "符合阻燃要求",
         "details": [
           "電池組外殼應不低於 V-0 級",
-          "印製板及封裝材料不低於 V-1 級"
+          "印製板及封裝材料不低於 V-1 級",
+          "導線 (Wires): 導線應能通過附錄 C 的試驗。"
         ]
       }
     },
@@ -621,6 +661,14 @@
         },
         "stop_condition": {
           "value": "觸發保護或達到 1.2 倍電壓"
+        },
+        "fault_condition": {
+          "value": "正常與單一故障",
+          "detail": "必須在正常條件與單一故障條件下進行測試。"
+        },
+        "test_current": {
+          "value": "推薦或m倍電流",
+          "detail": "使用推薦充電電流(Icr) 或 m倍推薦充電電流(m×Icr)進行試驗。"
         }
       },
       "acceptance_criteria": {
@@ -719,6 +767,14 @@
         },
         "stop_condition": {
           "value": "電壓 < 0.2 V 或 1 小時"
+        },
+        "fault_condition": {
+          "value": "正常與單一故障",
+          "detail": "必須在正常條件與單一故障條件下進行測試。"
+        },
+        "post_test": {
+          "value": "停止並靜置 6 小時",
+          "detail": "停止試驗，然後靜置 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -776,7 +832,8 @@
           "value": "24 °C ± 4 °C"
         },
         "duration": {
-          "value": "存儲 6 小時"
+          "value": "3 個垂直位置，各 6 小時",
+          "detail": "三個相互垂直的位置上進行測試，每個位置至少 6 小時 (總計 18 小時)。"
         }
       },
       "acceptance_criteria": {
@@ -804,7 +861,11 @@
           "value": "80 mΩ ± 20 mΩ"
         },
         "stop_condition": {
-          "value": "短接 24 小時 或溫度下降"
+          "value": "短接 24 小時 或溫度降 20%"
+        },
+        "pre_conditioning": {
+          "value": "57 °C ± 4 °C，2 小時",
+          "detail": "待電池溫度達到 57 °C ± 4 °C 後，再放置 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -864,6 +925,187 @@
         "summary": "無起火、無爆炸",
         "details": [
           "電池應無起火、無爆炸"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-7.10",
+      "normalized_id": "ELEC-PLATING",
+      "name_zh": "析鋰 (鋰/鈉電池)",
+      "name_en": "Lithium plating (Li/Na Cell)",
+      "section": "7.10",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "charge": {
+          "value": "0.8Icm 恆流充電"
+        },
+        "discharge": {
+          "value": "1It 恆流放電"
+        },
+        "cycles": {
+          "value": "300 次循環"
+        },
+        "temperature": {
+          "value": "25±5 °C",
+          "detail": "試驗環境溫度為 25 °C±5 °C。"
+        },
+        "interval": {
+          "value": "間隔 10 分鐘",
+          "detail": "充放電間隔 10 分鐘。"
+        },
+        "termination": {
+          "value": "低於45%中止",
+          "detail": "當放電容量連續 3 次低於 45% 額定容量時，中止試驗。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無過量析鋰",
+        "details": [
+          "異常點數量不超過 5 個",
+          "總析鋰面積不超過 1 mm²",
+          "圖 4 所示豁免區域不計入異常統計。"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-9.4",
+      "normalized_id": "ELEC-COMM",
+      "name_zh": "互認協同 (鋰/鈉電池組)",
+      "name_en": "Mutual recognition (Li/Na Pack)",
+      "section": "9.4",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "charge_test": {
+          "value": "異常充電裝置"
+        },
+        "discharge_test": {
+          "value": "僅接通正負極"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無法異常充放電",
+        "details": [
+          "通過互認協同後才能充電",
+          "僅接通正負極端子時不能放電"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-9.5.2",
+      "normalized_id": "ELEC-UDIS",
+      "name_zh": "欠壓禁用 (鋰/鈉電池組)",
+      "name_en": "Under voltage disable (Li/Na Pack)",
+      "section": "9.5.2",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "voltage": {
+          "value": "0.4 倍截止電壓"
+        },
+        "duration": {
+          "value": "保持 10 秒"
+        },
+        "operation": {
+          "value": "嘗試充放電"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無洩漏、無爆炸",
+        "details": [
+          "電池組應不能充電和放電",
+          "電池組應無起火、無爆炸、無洩漏"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-9.8",
+      "normalized_id": "MECH-CONN",
+      "name_zh": "充電接口防反插 (鋰/鈉電池組)",
+      "name_en": "Anti-reverse charging interface (Li/Na Pack)",
+      "section": "9.8",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "connection": {
+          "value": "嘗試反向連接"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無法反向連接",
+        "details": [
+          "電池組接插件的設計應不能反向連接"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-9.9",
+      "normalized_id": "ELEC-TEMP-PROT-C",
+      "name_zh": "充電溫度保護 (鋰/鈉電池組)",
+      "name_en": "Charging temperature protection (Li/Na Pack)",
+      "section": "9.9",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "high_temp": {
+          "value": "最高溫度加 5 °C"
+        },
+        "low_temp": {
+          "value": "最低溫度減 5 °C"
+        },
+        "charge_current": {
+          "value": "最大充電電流"
+        },
+        "duration": {
+          "value": "高溫 6 小時/低溫 16 小時",
+          "detail": "高溫 (9.9.1)：放置 6 小時，測試後擱置 6 小時。低溫 (9.9.2)：放置 16 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無洩漏、無爆炸",
+        "details": [
+          "電池組應不能充電",
+          "電池組應無起火、無爆炸、無洩漏"
+        ]
+      }
+    },
+    {
+      "id": "GB47741-9.10",
+      "normalized_id": "ELEC-TEMP-PROT-D",
+      "name_zh": "放電溫度保護 (鋰/鈉電池組)",
+      "name_en": "Discharging temperature protection (Li/Na Pack)",
+      "section": "9.10",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "high_temp": {
+          "value": "最高溫度加 5 °C"
+        },
+        "duration": {
+          "value": "放置 8 小時"
+        },
+        "operation": {
+          "value": "標準程序放電"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無洩漏、無爆炸",
+        "details": [
+          "電池組應切斷電路",
+          "電池組應無起火、無爆炸、無洩漏"
         ]
       }
     }

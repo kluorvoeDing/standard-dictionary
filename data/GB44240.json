@@ -104,7 +104,7 @@
         },
         "duration": {
           "value": "90 分鐘",
-          "detail": "反向充電時間共計 90 分鐘。若最大放電電流小於 1 It，則以最大放電電流反向充電，時間 t = (1It / Im) * 90。"
+          "detail": "反向充電時間共計 90 分鐘。若最大放電電流小於 1 It，則以最大放電電流反向充電，時間 t = (1It / Im) * 90。 如果在反向充電 90 分鐘 內，電壓達到負的充電上限電壓（－Uup），應通過減小電流保持該電壓繼續進行反向充電。"
         }
       },
       "acceptance_criteria": {
@@ -186,7 +186,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無洩漏",
         "details": [
-          "無起火、無爆炸、無洩漏。"
+          "試驗後樣品應無起火、無爆炸、無洩漏。"
         ]
       },
       "exemptions": [],
@@ -289,6 +289,10 @@
         "impactor": {
           "value": "鋼棒直徑 15.8 mm ± 0.1 mm",
           "detail": "金屬棒直徑為 15.8 mm ± 0.1 mm。方形和軟包電池僅對其寬面進行衝擊。"
+        },
+        "orientation": {
+          "value": "依據電池形狀放置",
+          "detail": "圓柱型電池衝擊時使其縱軸向與重物表面平行，金屬棒與電池縱軸向垂直且盡量與衝擊面平行。"
         }
       },
       "acceptance_criteria": {
@@ -333,6 +337,10 @@
         "response_time": {
           "value": "反應時間 ≤ 100 ms",
           "detail": "達到停止條件後至設備實際停止的間隔時間應 ≤ 100 ms。"
+        },
+        "orientation": {
+          "value": "依據電池形狀放置",
+          "detail": "圓柱型電池擠壓時使其縱軸向與平面平行。"
         }
       },
       "acceptance_criteria": {
@@ -476,23 +484,28 @@
           "detail": "充電電壓設定為大於等於上限電壓的 1.1 倍。"
         },
         "cycles": {
-          "value": "循環 3 次",
-          "detail": "重複試驗 3 次。"
+          "value": "3 次",
+          "detail": "依上述步驟連續重複試驗 3 次。"
         },
         "observation": {
-          "value": "觀察 1 小時",
-          "detail": "每次試驗後觀察 1 小時。"
+          "value": "1 小時",
+          "detail": "每次充放電循環結束後，需靜置觀察 1 小時。"
         },
         "fallback": {
           "value": "電壓達 103% 或時間達 1 分鐘 停止",
           "detail": "如果電壓超過 103% 或過充時間達到 1 分鐘，則停止。"
+        },
+        "test_current": {
+          "value": "推薦最大電流",
+          "detail": "用推薦最大充電電流充電。"
         }
       },
       "acceptance_criteria": {
         "summary": "BMS 動作，無起火、無爆炸",
         "details": [
           "BMS 應能發現過充並進行保護。",
-          "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
+          "不可恢復的斷路視為合格，不可恢復的短路視為不合格。",
+          "無起火、無爆炸。"
         ]
       },
       "exemptions": [],
@@ -521,19 +534,20 @@
           "detail": "以比最大充電電流大 20% 的電流進行充電。"
         },
         "cycles": {
-          "value": "循環 3 次",
-          "detail": "重複試驗 3 次。"
+          "value": "3 次",
+          "detail": "依上述步驟連續重複試驗 3 次。"
         },
         "observation": {
-          "value": "觀察 1 小時",
-          "detail": "每次試驗後觀察 1 小時。"
+          "value": "1 小時",
+          "detail": "每次充放電循環結束後，需靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
         "summary": "BMS 動作，無起火、無爆炸",
         "details": [
           "BMS 應能發現過流並進行保護。",
-          "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
+          "不可恢復的斷路視為合格，不可恢復的短路視為不合格。",
+          "無起火、無爆炸。"
         ]
       },
       "exemptions": [],
@@ -558,27 +572,28 @@
           "detail": "BMS 應控制放電電壓不低於放電截止電壓。"
         },
         "precondition": {
-          "value": "以 0.2It 放電至 30% SOC",
-          "detail": "試驗前以 0.2It 放電至 30% SOC。"
+          "value": "放電至 30% 容量",
+          "detail": "試驗前以 0.2It 放電至 額定容量的 30%。"
         },
         "current": {
           "value": "最大放電電流",
           "detail": "使用最大放電電流進行測試。"
         },
         "cycles": {
-          "value": "循環 3 次",
-          "detail": "重複試驗 3 次。"
+          "value": "3 次",
+          "detail": "依上述步驟連續重複試驗 3 次。"
         },
         "observation": {
-          "value": "觀察 1 小時",
-          "detail": "每次試驗後觀察 1 小時。"
+          "value": "1 小時",
+          "detail": "每次充放電循環結束後，需靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
         "summary": "BMS 動作，無起火、無爆炸",
         "details": [
           "BMS 應能發現過放並進行保護。",
-          "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
+          "不可恢復的斷路視為合格，不可恢復的短路視為不合格。",
+          "無起火、無爆炸。"
         ]
       },
       "exemptions": [
@@ -613,12 +628,12 @@
           "detail": "將環境溫度升高至高於最高工作溫度 5 °C。"
         },
         "observation": {
-          "value": "觀察 1 小時",
-          "detail": "觀察 1 小時。"
+          "value": "1 小時",
+          "detail": "過熱保護動作後，靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
-        "summary": "BMS 動作，無起火、無爆炸",
+        "summary": "BMS 動作",
         "details": [
           "BMS 應能發現過熱並進行保護。",
           "不可恢復的斷路視為合格，不可恢復的短路視為不合格。"
@@ -653,7 +668,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸",
         "details": [
-          "評估電池熱失控特性。"
+          "電池按照附錄 B 進行熱失控試驗後，應無起火、無爆炸。"
         ]
       },
       "exemptions": [],
@@ -679,9 +694,10 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無熱擴散、無外部火焰",
+        "summary": "無熱擴散、無外部火焰、無破裂",
         "details": [
-          "觀察 24 小時。合格要求為：電池間無熱擴散、無外部火焰、外殼無破裂（目標電池本身的損壞不計）。"
+          "觀察 24 小時。合格要求為：電池間無熱擴散、無外部火焰、外殼無破裂（目標電池本身的損壞不計）。",
+          "如果電池組系統沒有外殼，製造商應指定防火區域。"
         ]
       },
       "exemptions": [],
@@ -701,6 +717,10 @@
       ],
       "exemptions": [],
       "conditions": {
+        "temp": {
+          "value": "25 ± 5 °C",
+          "detail": "樣品放置在室溫下，直至樣品溫度穩定在 25 ± 5 °C。"
+        },
         "resistance": {
           "value": "依結構係數計算",
           "detail": "短路電阻應為 (30 mΩ ± 10 mΩ) × 模組結構係數，或 ≤ 5 mΩ，以較高者為準，但最高不超過 100 mΩ。"
@@ -713,9 +733,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無破裂",
         "details": [
-          "無起火",
-          "無爆炸",
-          "無破裂"
+          "試驗後樣品應無破裂、無起火、無爆炸。"
         ]
       }
     },
@@ -731,10 +749,6 @@
       ],
       "exemptions": [],
       "conditions": {
-        "duration": {
-          "value": "靜置 1 小時",
-          "detail": "電池組系統應放置 1 小時。"
-        },
         "procedure": {
           "value": "依標準充放電程序",
           "detail": "將電池放電至運輸 SOC，以反向極性連接並充電至滿電或保護，靜置 1 小時後，以最大電流放電至截止條件，再靜置 1 小時。"
@@ -743,9 +757,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無破裂",
         "details": [
-          "無起火",
-          "無爆炸",
-          "無破裂"
+          "試驗後樣品應無破裂、無起火、無爆炸。"
         ]
       }
     },
@@ -771,11 +783,99 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不擊穿、無飛弧",
+        "summary": "符合 GB 4943.1—2022 中 5.4.9 規定",
         "details": [
-          "不應發生擊穿或飛弧。"
+          "符合 GB 4943.1—2022 中 5.4.9 規定抗電強度試驗要求。"
         ]
       }
+    },
+    {
+      "id": "GB44240-9.1",
+      "section": "9.1",
+      "category": "THERM",
+      "subcategory": "耐異常熱",
+      "name_en": "Resistance to abnormal heat",
+      "name_zh": "耐異常熱",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "（ΔT+Tmax+15 °C）±2 °C",
+          "detail": "試驗在溫度為（ΔT+Tmax+15 °C）±2 °C 的加熱箱中進行。"
+        },
+        "standard": {
+          "value": "GB/T 5169.21",
+          "detail": "根據 GB/T 5169.21，透過對零件進行球壓試驗來檢查合規性。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "符合球壓試驗要求",
+        "details": [
+          "直接安裝在帶危險電壓的部件上的非金屬材料應能抵抗異常加熱，符合球壓試驗要求。"
+        ]
+      },
+      "exemptions": [
+        "如果透過對材料物理特性的檢查能清楚地看出其將滿足本試驗的要求，則不進行試驗。"
+      ],
+      "related_tests": []
+    },
+    {
+      "id": "GB44240-9.2",
+      "section": "9.2",
+      "category": "THERM",
+      "subcategory": "外殼材料",
+      "name_en": "Transportable battery system enclosure materials for installation or maintenance",
+      "name_zh": "可運輸的用於安裝或維護的電池組系統外殼材料",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "standard": {
+          "value": "GB/T 5169.16",
+          "detail": "材料在最薄使用厚度下根據 GB/T 5169.16 進行試驗。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "V-1 或 V-0 級材料",
+        "details": [
+          "用做外殼的熱塑性材料應使用 V-1 或 V-0 級材料。"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": []
+    },
+    {
+      "id": "GB44240-9.3",
+      "normalized_id": "ELEC-IR",
+      "section": "9.3",
+      "category": "ELEC",
+      "subcategory": "絕緣電阻",
+      "name_en": "Electrical insulation inspection during transport and installation",
+      "name_zh": "運輸和安裝過程中的電氣絕緣檢查",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "voltage": {
+          "value": "直流 500 V",
+          "detail": "施加直流 500 V 電壓 60 秒。"
+        },
+        "standard": {
+          "value": "GB 4943.1—2022",
+          "detail": "相關檢驗方法按照 GB 4943.1—2022 的規定。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "絕緣電阻 ≥ 5 MΩ",
+        "details": [
+          "正極端與電池組除帶電可觸及表面以外的外部暴露金屬表面間的絕緣電阻在施加直流 500 V 電壓 60 秒下應不小於 5 MΩ。",
+          "危險帶電部件應覆蓋或絕緣，以防人員接觸。",
+          "內部配線及其絕緣特性應能承受最高的預期電流、電壓和溫度。佈線方向應確保導線之間保持足夠的電氣間隙和爬電距離。"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": []
     }
   ],
   "test_sequence": {

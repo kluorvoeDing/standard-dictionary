@@ -51,16 +51,15 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、排氣、洩漏或破裂；保護控制正常",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無排氣 (No venting)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
-          "保護控制正常 (Protection maintained)",
+          "無起火",
+          "無爆炸",
+          "無排氣",
+          "無洩漏",
+          "無破裂",
           "電壓不超出正常運行範圍",
-          "無可燃濃度氣體 (No Combustible Concentrations - C)",
-          "無電擊危險 (No Electric shock hazard - S)",
-          "無保護控制失效 (No Loss of protection controls - P)"
+          "無可燃濃度氣體",
+          "無電擊危險",
+          "無保護控制失效"
         ]
       },
       "exemptions": [],
@@ -97,15 +96,15 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、排氣、洩漏或破裂；保護控制正常",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無排氣 (No venting)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
-          "保護控制正常",
-          "無可燃濃度氣體 (No Combustible Concentrations - C)",
-          "無電擊危險 (No Electric shock hazard - S)",
-          "無保護控制失效 (No Loss of protection controls - P)"
+          "無起火",
+          "無爆炸",
+          "無排氣",
+          "無洩漏",
+          "無破裂",
+          "無保護控制失效",
+          "無可燃濃度氣體",
+          "無電擊危險",
+          "電池保護電路應檢測過充電流，並應防止電芯以超過最大充電電流的速度充電。"
         ]
       },
       "exemptions": [
@@ -142,17 +141,15 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無起火、爆炸、排氣、洩漏或破裂；保護控制正常",
+        "summary": "無起火、爆炸、洩漏或破裂；保護控制正常",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無排氣 (No venting)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
-          "保護控制正常",
-          "無可燃濃度氣體 (No Combustible Concentrations - C)",
-          "無電擊危險 (No Electric shock hazard - S)",
-          "無保護控制失效 (No Loss of protection controls - P)"
+          "無起火",
+          "無爆炸",
+          "無洩漏",
+          "無破裂",
+          "無可燃濃度氣體",
+          "無電擊危險",
+          "無保護控制失效"
         ]
       },
       "exemptions": [],
@@ -193,15 +190,14 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、排氣、洩漏或破裂；保護控制正常",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無排氣 (No venting)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
-          "保護控制正常",
-          "無可燃濃度氣體 (No Combustible Concentrations - C)",
-          "無電擊危險 (No Electric shock hazard - S)",
-          "無保護控制失效 (No Loss of protection controls - P)"
+          "無起火",
+          "無爆炸",
+          "無排氣",
+          "無洩漏",
+          "無破裂",
+          "無可燃濃度氣體",
+          "無電擊危險",
+          "無保護控制失效"
         ]
       },
       "exemptions": [],
@@ -242,15 +238,15 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、排氣、洩漏或破裂；電壓不超出正常範圍",
         "details": [
-          "保護裝置應啟動防止電池過放電",
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無排氣 (No venting)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
-          "無可燃濃度氣體 (No Combustible Concentrations - C)",
-          "無電擊危險 (No Electric shock hazard - S)",
-          "無保護控制失效 (No Loss of protection controls - P)"
+          "電池的最低放電電壓不得超出其正常運行範圍",
+          "無起火",
+          "無爆炸",
+          "無排氣",
+          "無洩漏",
+          "無破裂",
+          "無可燃濃度氣體",
+          "無電擊危險",
+          "無保護控制失效"
         ]
       },
       "exemptions": [],
@@ -290,7 +286,7 @@
           "無起火",
           "無可燃濃度氣體",
           "無破裂",
-          "無電解液洩漏",
+          "無洩漏",
           "無排氣",
           "無電擊危險",
           "無保護控制失效"
@@ -326,11 +322,11 @@
       "acceptance_criteria": {
         "summary": "電池電壓不超限；無起火、爆炸、洩漏等",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無排氣 (No venting)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
+          "無起火",
+          "無爆炸",
+          "無排氣",
+          "無洩漏",
+          "無破裂",
           "電池最大電壓限值不得超出",
           "無可燃濃度氣體",
           "無電擊危險",
@@ -371,7 +367,7 @@
       "acceptance_criteria": {
         "summary": "無介電擊穿",
         "details": [
-          "無介電擊穿 (No dielectric breakdown)",
+          "無介電擊穿",
           "電暈放電或單次瞬時放電不視為介電擊穿"
         ]
       },
@@ -407,7 +403,7 @@
       "acceptance_criteria": {
         "summary": "絕緣電阻達標",
         "details": [
-          "系統 ≥ 120V: 絕緣電阻 ≥ 100 Ω/V (DC) 或 500 Ω/V (AC)",
+          "系統 ≥ 120V: 絕緣電阻 ≥ 100 Ω/V (DC) 或 500 Ω/V",
           "系統 < 120V: 絕緣電阻 ≥ 50,000 Ω"
         ]
       },
@@ -474,12 +470,11 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、排氣、洩漏或破裂；保護控制正常",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無排氣 (No venting)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
-          "測試後能完成 1 次充放電",
+          "無起火",
+          "無爆炸",
+          "無排氣",
+          "無洩漏",
+          "無破裂",
           "無可燃濃度氣體",
           "無電擊危險",
           "無保護控制失效"
@@ -511,14 +506,14 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、排氣、洩漏或破裂",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無排氣 (No venting)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
-          "無可燃濃度氣體 (No Combustible Concentrations - C)",
-          "無電擊危險 (No Electric shock hazard - S)",
-          "無保護控制失效 (No Loss of protection controls - P)"
+          "無起火",
+          "無爆炸",
+          "無排氣",
+          "無洩漏",
+          "無破裂",
+          "無可燃濃度氣體",
+          "無電擊危險",
+          "無保護控制失效"
         ]
       },
       "exemptions": [],
@@ -559,9 +554,9 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、洩漏",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無洩漏 (No leakage)",
+          "無起火",
+          "無爆炸",
+          "無洩漏",
           "無可燃濃度氣體",
           "無電擊危險"
         ]
@@ -607,14 +602,15 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、洩漏；危險部件不可觸及",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
+          "無起火",
+          "無爆炸",
+          "無洩漏",
+          "無破裂",
           "測試指無法觸及危險帶電零件",
-          "無可燃濃度氣體 (No Combustible Concentrations - C)",
-          "無電擊危險 (No Electric shock hazard - S)",
-          "無保護控制失效 (No Loss of protection controls - P)"
+          "無可燃濃度氣體",
+          "無電擊危險",
+          "無保護控制失效",
+          "無排氣"
         ]
       },
       "exemptions": [
@@ -655,9 +651,9 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、洩漏",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無洩漏 (No leakage)",
+          "無起火",
+          "無爆炸",
+          "無洩漏",
           "無可燃濃度氣體",
           "無電擊危險"
         ]
@@ -698,7 +694,7 @@
       "acceptance_criteria": {
         "summary": "無絕緣擊穿，外殼無危險變形",
         "details": [
-          "無絕緣擊穿 (No insulation breakdown)",
+          "無絕緣擊穿",
           "外殼無損壞導致危險部件可接觸"
         ]
       },
@@ -732,7 +728,7 @@
       "acceptance_criteria": {
         "summary": "把手及連接部位無破裂",
         "details": [
-          "把手、固定裝置或連接部位應無破裂 (No breakage)"
+          "把手、固定裝置或連接部位應無破裂"
         ]
       },
       "exemptions": [
@@ -767,11 +763,11 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、洩漏等",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無排氣 (No venting)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
+          "無起火",
+          "無爆炸",
+          "無排氣",
+          "無洩漏",
+          "無破裂",
           "無可燃濃度氣體",
           "無電擊危險",
           "無保護控制失效"
@@ -850,12 +846,10 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、無電擊危險",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無破裂 (No rupture)",
-          "無電擊危險 (No shock hazard)",
-          "無可燃濃度氣體 (No Combustible Concentrations - C)",
-          "無保護控制失效 (No Loss of protection controls - P)"
+          "無起火",
+          "無爆炸",
+          "無破裂",
+          "無電擊危險"
         ]
       },
       "exemptions": [
@@ -890,14 +884,14 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、洩漏",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無排氣 (No venting)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
-          "無可燃濃度氣體 (No Combustible Concentrations - C)",
-          "無電擊危險 (No Electric shock hazard - S)",
-          "無保護控制失效 (No Loss of protection controls - P)"
+          "無起火",
+          "無爆炸",
+          "無排氣",
+          "無洩漏",
+          "無破裂",
+          "無可燃濃度氣體",
+          "無電擊危險",
+          "無保護控制失效"
         ]
       },
       "exemptions": [],
@@ -934,12 +928,12 @@
       "acceptance_criteria": {
         "summary": "無起火、爆炸、洩漏",
         "details": [
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
-          "無排氣 (No venting)",
-          "無洩漏 (No leakage)",
-          "無破裂 (No rupture)",
-          "保護控制正常",
+          "無起火",
+          "無爆炸",
+          "無排氣",
+          "無洩漏",
+          "無破裂",
+          "無保護控制失效",
           "無可燃濃度氣體",
           "無電擊危險"
         ]
@@ -977,7 +971,7 @@
         "summary": "火勢不傳播至外部，無爆炸",
         "details": [
           "單電池失效不應導致火災傳播至 DUT 外部",
-          "無爆炸 (No explosion)"
+          "無爆炸"
         ]
       },
       "exemptions": [

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SplitScreenGrid from './components/SplitScreenGrid';
 import StandardMatrix from './components/StandardMatrix';
 import AiConsultantChat from './components/AiConsultantChat';
+import GlobalMatrixModal from './components/GlobalMatrixModal';
 import './index.css';
 
 // Some data files still use the legacy schema (`test_items` / `document_info`).
@@ -38,6 +39,7 @@ function App() {
   const [theme, setTheme] = useState('light');
   const [testsData, setTestsData] = useState({});
   const [isAiChatOpen, setIsAiChatOpen] = useState(false);
+  const [isGlobalMatrixOpen, setIsGlobalMatrixOpen] = useState(false);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -55,7 +57,7 @@ function App() {
   };
 
   useEffect(() => {
-    fetch('/data/catalog.json')
+    fetch(`/data/catalog.json?t=${Date.now()}`)
       .then(res => res.json())
       .then(data => {
         const validDocs = data.filter(d => d.schema_v2_json);
@@ -69,7 +71,7 @@ function App() {
       const versions = catalog.filter(c => (c.base_standard_id || c.document_id) === baseId);
       versions.forEach(doc => {
         if (!testsData[doc.document_id] && doc.schema_v2_json) {
-          fetch(`/${doc.schema_v2_json}`)
+          fetch(`/${doc.schema_v2_json}?t=${Date.now()}`)
             .then(res => res.json())
             .then(data => {
               setTestsData(prev => ({
@@ -117,6 +119,22 @@ function App() {
           {theme === 'light' ? '🌙' : '☀️'}
         </button>
         <button
+          onClick={() => setIsGlobalMatrixOpen(true)}
+          title="全局總覽矩陣"
+          style={{
+            padding: '0.6rem 1.2rem', borderRadius: '9999px',
+            backgroundColor: 'var(--bg-panel)', color: 'var(--text-primary)',
+            border: '1px solid var(--border-color)', cursor: 'pointer',
+            boxShadow: 'var(--shadow-sm)', display: 'flex', alignItems: 'center', gap: '0.5rem',
+            fontWeight: 'bold', fontSize: '0.9rem',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = 'var(--shadow-md)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }}
+        >
+          📊 總覽矩陣
+        </button>
+        <button
           onClick={() => setIsAiChatOpen(true)}
           style={{
             padding: '0.6rem 1.2rem', borderRadius: '9999px',
@@ -141,6 +159,12 @@ function App() {
         onClose={() => setIsAiChatOpen(false)} 
         selectedDocs={selectedDocs}
         testsData={testsData}
+      />
+
+      <GlobalMatrixModal
+        isOpen={isGlobalMatrixOpen}
+        onClose={() => setIsGlobalMatrixOpen(false)}
+        catalog={catalog}
       />
 
       

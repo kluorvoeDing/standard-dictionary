@@ -87,9 +87,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不發火、無破裂",
+        "summary": "無起火、無破裂",
         "details": [
-          "不發火 (No fire)：測試過程中不得出現燃燒現象",
+          "無起火 (No fire)：測試過程中不得出現燃燒現象",
           "無破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
         ]
       },
@@ -97,7 +97,7 @@
       "related_tests": [
         "JISC8714-CELL-SC"
       ],
-      "source_reference": "5.2, 5.1 (壓壞測試終止邏輯)",
+      "source_reference": "5.2.2",
       "original_text_snippet": "Crush test: 13 ± 1 kN force applied to single cells. For prismatic cells, tests shall be conducted on both long and short sides (5 samples each). Termination conditions: (1) maximum force of 13 ± 1 kN reached; (2) voltage drops below 1/3 of initial voltage; (3) cell height deformation reaches 10%. Pass criteria: no fire, no explosion/burst."
     },
     {
@@ -134,9 +134,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不發火、無破裂",
+        "summary": "無起火、無破裂",
         "details": [
-          "不發火 (No fire)：測試過程中不得出現燃燒現象",
+          "無起火 (No fire)：測試過程中不得出現燃燒現象",
           "無破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
         ]
       },
@@ -183,9 +183,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不發火、無破裂",
+        "summary": "無起火、無破裂",
         "details": [
-          "不發火 (No fire)：測試過程中不得出現燃燒現象",
+          "無起火 (No fire)：測試過程中不得出現燃燒現象",
           "無破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
         ]
       },
@@ -260,12 +260,20 @@
         "ambient_temp": {
           "value": "20±5 °C",
           "detail": "Disassembly process must be performed at ambient temperature 20±5 °C."
+        },
+        "preheat_time": {
+          "value": "45 ± 15 分鐘",
+          "detail": "將電芯置於測試腔內預熱 45 ± 15 分鐘 (Annex A.4.1)"
+        },
+        "setup_time_limit": {
+          "value": "≤ 2 分鐘",
+          "detail": "為防止電解液蒸發，治具設置過程必須在 2 分鐘內完成 (Annex A.4.2.1)"
         }
       },
       "acceptance_criteria": {
-        "summary": "不發火",
+        "summary": "無起火",
         "details": [
-          "不發火 (No fire)：測試過程中不得出現燃燒現象"
+          "無起火 (No fire)：測試過程中不得出現燃燒現象"
         ]
       },
       "exemptions": [
@@ -350,9 +358,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不發火、無破裂",
+        "summary": "無起火、無破裂",
         "details": [
-          "不發火 (No fire)：測試過程中不得出現燃燒現象",
+          "無起火 (No fire)：測試過程中不得出現燃燒現象",
           "無破裂 (No explosion/burst)：測試過程中不得出現劇烈噴發或破裂"
         ]
       },
@@ -427,7 +435,7 @@
           "JISC8714-FISC"
         ],
         "rule": "所有電芯測試需針對上限試驗溫度 (45°C) 與下限試驗溫度 (10°C) 分別進行。(All cell tests shall be conducted separately at upper test temperature 45°C and lower test temperature 10°C.)",
-        "source_reference": "2.1"
+        "source_reference": "4"
       },
       {
         "group": "組電池層級測試 (Battery-Level Tests)",
@@ -437,7 +445,7 @@
           "JISC8714-OCP"
         ],
         "rule": "組電池層級測試包含跌落、外部短絡及過充電保護確認。外部短絡測試需經過上限 (45°C) 及下限 (10°C) 溫度充電條件 (各 5 個樣品)。(Battery-level tests include drop, external short circuit, and overcharge protection verification. External short circuit requires upper 45°C and lower 10°C charging regimen, 5 samples each.)",
-        "source_reference": "2.1"
+        "source_reference": "4"
       }
     ]
   },
@@ -478,7 +486,7 @@
       "強制內部短絡測試壓力值（圓柱 800N / 方型 400N）及停止條件（≥50 mV 壓降 / 達上限壓力）直接從來源提取",
       "跌落測試高度引用外部標準 JIS C 6950/6065，本 Gemini markdown 未列具體數值",
       "過充電保護確認方法 A/B 細節與串聯電池之處理方式直接從來源提取",
-      "所有判定準則（不發火、不破裂、內部短絡預防、電壓限制）從來源 Section 3.1 核心判定準則提取",
+      "所有判定準則（無起火、不破裂、內部短絡預防、電壓限制）從來源 Section 3.1 核心判定準則提取",
       "建議取得原始 PDF 或 OCR markdown 後，對以下參數進行二次驗證：加熱速率、溫度保持時間、鎳片規格、跌落高度"
     ],
     "total_test_entries": 7,

@@ -62,7 +62,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無起火、不觸電",
+        "summary": "無起火、無觸電",
         "details": [
           "不得噴出火焰或熔融金屬，不得產生起火、觸電或人員受傷之風險 (Section 55.1.1)",
           "測試後需通過 Section 55.1.2 的耐壓測試 (Dielectric Voltage Withstand Test)。",
@@ -87,7 +87,7 @@
       "conditions": {
         "charging_current": {
           "value": "3倍電流或最大輸出",
-          "detail": "通用充電接口：以最大充電電壓及3倍最大充電電流進行充電。非通用充電接口：以外部充電器可提供的最大電壓與電流輸出進行充電。 測試需在充電保護電路無單一故障或有單一故障的情況下進行 (with or without a single fault condition)。或電池內部提供的充電電路。"
+          "detail": "通用充電接口：以最大充電電壓及3倍最大充電電流進行充電。非通用充電接口：以外部充電器可提供的最大電壓與電流輸出進行充電。 測試需在充電保護電路無單一故障或有單一故障的情況下進行 (with or without a single fault condition)或電池內部提供的充電電路。"
         },
         "duration": {
           "value": "1.25 小時",
@@ -99,7 +99,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無爆炸、不燒焦",
+        "summary": "無爆炸、無燒焦",
         "details": [
           "不得發生爆炸，且覆蓋的醫療紗布或衛生紙不得有燒焦或燃燒現象 (Section 55.9.2)",
           "測試後需通過 Section 55.1.2 的耐壓測試 (Dielectric Voltage Withstand Test)。",
@@ -125,7 +125,7 @@
       "conditions": {
         "temperature": {
           "value": "室溫 (樣品1) 與 0 °C (樣品2)",
-          "detail": "第二個樣品需在 0 °C 進行調節。如果製造商規定的最低工作溫度低於 0 °C，則採用該最低溫度。"
+          "detail": "第二個樣品需在 0 °C 進行調節。如果製造商規定的最低工作溫度低於 0 °C，則採用該最低溫度。 (放置 4 小時)。"
         },
         "drop_height": {
           "value": "0.5m 或 0.9m",
@@ -133,7 +133,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "不漏電、耐壓通過",
+        "summary": "無漏電、耐壓通過",
         "details": [
           "測試棒不得接觸到危險電壓部件、通過耐壓測試、金屬外殼無永久變形導致間距不足 (metallic enclosure distortion) (Section 60.1.1)"
         ]

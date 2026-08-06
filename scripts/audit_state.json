@@ -1,114 +1,118 @@
 {
   "SAND2017-6925": {
-    "consecutive_perfect": 2,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "AIS-038": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "AIS-156": {
-    "consecutive_perfect": 0,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "GB-43854": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "GB31241": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "GB38031": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "GB44240": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "GBT-36276": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "IEC62133-2": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "IEC62619": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "UL-1973": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "UL-2054": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "UL-2056": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "UL-2271": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "UL-3030": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "UL-9540": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "UL1642": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "ULC-2580": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "UN38.3": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "UL-9540A": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "UL1642-2022": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "UL2743": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "JISC8714": {
-    "consecutive_perfect": 1,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "GB31241.4": {
-    "consecutive_perfect": 0,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "GB40165": {
-    "consecutive_perfect": 0,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "GB40559": {
-    "consecutive_perfect": 0,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "GB47372": {
-    "consecutive_perfect": 0,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
   },
   "GB47741": {
-    "consecutive_perfect": 0,
-    "graduated": false
+    "consecutive_perfect": 3,
+    "graduated": true
+  },
+  "IEC62660-3": {
+    "consecutive_perfect": 3,
+    "graduated": true
   }
 }

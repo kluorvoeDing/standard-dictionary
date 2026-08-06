@@ -80,6 +80,12 @@
         "ambient": {
           "value": "25 ±5 °C, 50 ±25 % RH",
           "detail": "室內實驗室環境應為 25 ±5 °C (77 ±9 °F) 及 50 ±25 % RH。"
+        },
+        "constraint": {
+          "name_zh": "約束條件",
+          "name_en": "Constraint",
+          "value": "模擬模組約束",
+          "detail": "軟包與方形電芯測試時須進行約束，以模擬在 BESS 模組內的狀態並防止過度膨脹 (7.2.4)。"
         }
       },
       "acceptance_criteria": {
@@ -140,7 +146,7 @@
         "summary": "確定模組內熱傳播特徵。若影響被限制在模組內，可豁免單元級測試。",
         "details": [
           "這也是一個特徵化測試。",
-          "若 (a) 排氣不可燃，(b) 無火焰傳播至模組外，(c) 模組外表面溫度不超過電池排氣溫度，則可豁免單元級測試。 (as measured adjacent to the initiating cell where the greatest thermal exposure is anticipated)."
+          "若 (a) 排氣不可燃，(b) 無火焰傳播至模組外，(c) 模組外表面溫度不超過電池排氣溫度，則可豁免單元級測試。 (在預期有最大熱暴露的啟動電芯相鄰處測量)。"
         ]
       },
       "exemptions": [
@@ -171,11 +177,11 @@
         },
         "wall_setup": {
           "value": "儀器化牆段 (至少 13 mm 厚)",
-          "detail": "安裝漆平黑的儀器化石膏牆板，並配備熱通量量規 (Schmidt-Boelter 或 Gardon) 及 Type-K 熱電偶。。石膏牆板厚度至少需為 13 mm (1/2 英吋)。"
+          "detail": "安裝漆平黑的儀器化石膏牆板，並配備熱通量量規 (Schmidt-Boelter 或 Gardon) 及 Type-K 熱電偶。石膏牆板厚度至少需為 13 mm (1/2 英吋)。"
         },
         "residential_indicator": {
           "value": "單層粗棉布",
-          "detail": "住宅用 BESS 需覆蓋單層粗棉布 (Cheesecloth) 作為點火指示器 (9.2.21)。。所用粗棉布需為未處理棉布，密度 26-28 m²/kg，每 6.45 cm² (1 in²) 雙向各有 28-32 根紗線。"
+          "detail": "住宅用 BESS 需覆蓋單層粗棉布 (Cheesecloth) 作為點火指示器 (9.2.21)。所用粗棉布需為未處理棉布，密度 26-28 m²/kg，每 6.45 cm² (1 in²) 雙向各有 28-32 根紗線。"
         },
         "termination": {
           "value": "溫度下降或危害發生",
@@ -184,6 +190,24 @@
         "ambient": {
           "value": "10 °C 至 32 °C",
           "detail": "室內環境溫度應不低於 10 °C (50 °F) 且不高於 32 °C (90 °F)。"
+        },
+        "soc": {
+          "name_zh": "SOC",
+          "name_en": "SOC",
+          "value": "滿充 (MOSOC)",
+          "detail": "將啟動單元充至最大操作荷電狀態 (MOSOC) (9.1.9)"
+        },
+        "rest_time": {
+          "name_zh": "靜置時間",
+          "name_en": "Rest Time",
+          "value": "至少 1 小時",
+          "detail": "測試前至少靜置 1 小時 (9.1.9)"
+        },
+        "trigger_method": {
+          "name_zh": "觸發方式",
+          "name_en": "Trigger Method",
+          "value": "單模組內熱失控",
+          "detail": "必須在啟動 BESS 單元內的單一模組中建立電芯間的熱失控蔓延 (9.2.22)"
         }
       },
       "acceptance_criteria": {
@@ -191,7 +215,7 @@
         "details": [
           "目標模組表面溫度 ≤ T_vent",
           "目標牆壁或屋簷表面溫升 ≤ 97 °C (175°F)",
-          "無爆炸/爆燃/爆轟危險",
+          "無爆炸、無爆燃、無爆轟",
           "逃生路徑測得之熱通量 ≤ 1.3 kW/m²",
           "室內安裝應無火焰蔓延至單元外",
           "對於住宅安裝，空氣中的可燃氣體濃度不得超過最小規定房間安裝尺寸的 25 % LFL。"
@@ -240,11 +264,13 @@
       "acceptance_criteria": {
         "summary": "驗證抑制系統能有效防止火災蔓延至室外及目標牆壁。",
         "details": [
-          "測試室外不應有火焰 (10.5.4)",
-          "電纜托盤火焰不應蔓延超出 BESS 外殼尺寸",
-          "無爆轟危險，除非有防爆系統否則無爆燃",
+          "測試室外無火焰 (10.5.4)",
+          "電纜托盤無火焰蔓延超出 BESS 外殼尺寸",
+          "無爆轟、無爆燃 (除非具備防爆系統)",
           "目標牆壁溫升 ≤ 97 °C (175°F)",
-          "關閉抑制系統後 24 小時內無復燃"
+          "關閉抑制系統後 24 小時內無復燃",
+          "相鄰目標 BESS 模組表面溫度 ≤ 熱失控排氣溫度 (Tvent)。",
+          "在逃生路線最小距離處測得的熱通量 ≤ 1.3 kW/m²。"
         ]
       },
       "exemptions": [

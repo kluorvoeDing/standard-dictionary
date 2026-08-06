@@ -56,16 +56,16 @@
         },
         "temperature": {
           "value": "20 ± 10 °C",
-          "detail": "The test shall be conducted at an ambient temperature of 20 ± 10 °C."
+          "detail": "測試在環境溫度 20 ± 10 °C 下進行。"
         }
       },
       "acceptance_criteria": {
-        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
         "details": [
-          "無電解液洩漏 (No electrolyte leakage)",
-          "無破裂 (No rupture，僅限高壓 REESS)",
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
+          "無洩漏",
+          "無破裂（僅限高壓 REESS）",
+          "無起火",
+          "無爆炸",
           "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
         ]
       },
@@ -122,12 +122,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
         "details": [
-          "無電解液洩漏 (No electrolyte leakage)",
-          "無破裂 (No rupture，僅限高壓 REESS)",
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
+          "無洩漏",
+          "無破裂（僅限高壓 REESS）",
+          "無起火",
+          "無爆炸",
           "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
         ]
       },
@@ -174,12 +174,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
         "details": [
-          "無電解液洩漏 (No electrolyte leakage)",
-          "無破裂 (No rupture，僅限高壓 REESS)",
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
+          "無洩漏",
+          "無破裂（僅限高壓 REESS）",
+          "無起火",
+          "無爆炸",
           "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
         ]
       },
@@ -228,12 +228,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
         "details": [
-          "無電解液洩漏 (No electrolyte leakage)",
-          "無破裂 (No rupture，僅限高壓 REESS)",
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
+          "無洩漏",
+          "無破裂（僅限高壓 REESS）",
+          "無起火",
+          "無爆炸",
           "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
         ]
       },
@@ -282,13 +282,13 @@
         },
         "temperature": {
           "value": "≥ 0 °C",
-          "detail": "The test shall be conducted at a temperature of at least 0 °C."
+          "detail": "測試在至少 0 °C 的環境溫度下進行。"
         }
       },
       "acceptance_criteria": {
-        "summary": "測試期間無爆炸",
+        "summary": "無爆炸",
         "details": [
-          "測試期間測試設備不得有爆炸的跡象 (shall exhibit no evidence of explosion)"
+          "無爆炸"
         ]
       },
       "exemptions": [
@@ -338,12 +338,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
         "details": [
-          "無電解液洩漏 (No electrolyte leakage)",
-          "無破裂 (No rupture，僅限高壓 REESS)",
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
+          "無洩漏",
+          "無破裂（僅限高壓 REESS）",
+          "無起火",
+          "無爆炸",
           "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
         ]
       },
@@ -386,12 +386,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
         "details": [
-          "無電解液洩漏 (No electrolyte leakage)",
-          "無破裂 (No rupture，僅限高壓 REESS)",
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
+          "無洩漏",
+          "無破裂（僅限高壓 REESS）",
+          "無起火",
+          "無爆炸",
           "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
         ]
       },
@@ -430,12 +430,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
         "details": [
-          "無電解液洩漏 (No electrolyte leakage)",
-          "無破裂 (No rupture，僅限高壓 REESS)",
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
+          "無洩漏",
+          "無破裂（僅限高壓 REESS）",
+          "無起火",
+          "無爆炸",
           "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
         ]
       },
@@ -478,12 +478,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無電解液洩漏、無破裂、無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V (高壓)",
+        "summary": "無洩漏、無破裂、無起火、無爆炸",
         "details": [
-          "無電解液洩漏 (No electrolyte leakage)",
-          "無破裂 (No rupture，僅限高壓 REESS)",
-          "無起火 (No fire)",
-          "無爆炸 (No explosion)",
+          "無洩漏",
+          "無破裂（僅限高壓 REESS）",
+          "無起火",
+          "無爆炸",
           "對於高壓 REESS，測試後絕緣電阻應至少為 100 Ω/V"
         ]
       },
@@ -505,18 +505,27 @@
         "REESS"
       ],
       "exemptions": [
-        "{\"id\":\"EX-H2-1\",\"condition_zh\":\"具備封閉化學系統之水性電解質電池或非水性電解質電池（如鋰離子電池）\",\"exempt_from\":[\"AIS-156-H2\"],\"source_reference\":\"6.10\"}"
+        "具備封閉化學系統之電池（如鋰離子電池）"
       ],
       "conditions": {
         "procedure": {
           "value": "密閉空間量測",
           "detail": "依照 Annex 7 的程序在密閉空間中測量氫氣排放量。"
+        },
+        "normal_charge": {
+          "value": "正常充電 < 125 g",
+          "detail": "正常充電條件下，5 小時內氫氣排放量低於 125 g。"
+        },
+        "failure_charge": {
+          "value": "故障充電 < 42 g",
+          "detail": "充電器故障條件下，氫氣排放量低於 42 g。"
         }
       },
       "acceptance_criteria": {
-        "summary": "不超過排放限值",
+        "summary": "氫氣排放未超標",
         "details": [
-          "氫氣排放量不得超過標準中規定的限值。"
+          "正常充電氫氣排放量低於 125 g",
+          "故障充電氫氣排放量低於 42 g"
         ]
       }
     }

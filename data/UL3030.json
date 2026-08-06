@@ -18,209 +18,38 @@
   "terms": [],
   "tests": [
     {
-      "id": "UL3030-32.6",
-      "normalized_id": "ELEC-OC",
-      "name_zh": "過充電試驗",
-      "name_en": "Overcharge",
-      "section": "32.6",
-      "category": "ELEC",
-      "subcategory": "過充電 (Overcharge)",
+      "id": "UL3030-28",
+      "section": "28",
+      "category": "THERM",
+      "subcategory": "ENV",
+      "name_en": "Temperature Test (Charging and Flying)",
+      "name_zh": "溫度測試 (充電與飛行)",
       "test_objects": [
         "PACK_SYSTEM"
       ],
+      "exemptions": [],
       "conditions": {
-        "discharge": {
-          "value": "0.2C 或更高放電率至 EODV",
-          "detail": "樣品以 0.2 倍額定容量之電流（或製造商允許之更高電流）放電至規定的截止電壓 (EODV)。"
+        "monitoring": {
+          "value": "監控參數",
+          "detail": "充電與飛行過程中必須監控單電池的電壓、電流與溫度。"
         },
-        "charge": {
-          "value": "最大指定充電率恆流充電",
-          "detail": "以製造商指定之最大充電率（基於最大預期充電器輸出電流）進行恆流充電。"
+        "thermal_stabilization": {
+          "value": "充放電至穩定",
+          "detail": "需進行充放電循環直至溫度穩定 (Section 28.4)。"
         },
-        "fault": {
-          "value": "充電控制電路單一故障",
-          "detail": "在充電保護電路中施加可能導致過充電之單一故障。可靠之保護裝置可保留於電路中。"
-        },
-        "retry_condition": {
-          "value": "在觸發點的 90% 重複測試",
-          "detail": "若保護裝置觸發，應在觸發點的 90% 或允許充電至少 10 分鐘的百分比下重複測試"
-        },
-        "termination": {
-          "value": "電壓達上限 110% 或溫度回穩後再加 2 小時，或起火/爆炸",
-          "detail": "測試持續至電壓達到最大指定電壓限制之 110%，或監測溫度降至環境溫度/穩定狀態後再持續 2 小時，或發生起火/爆炸為止。"
-        },
-        "post_test_cycle": {
-          "value": "1 次充放電循環",
-          "detail": "若測試後系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
-        },
-        "observation": {
-          "value": "觀察 1 小時",
-          "detail": "充放電循環（若適用）後，觀察 1 小時 (24.7)。"
+        "removable_batteries": {
+          "value": "備用電池組替換",
+          "detail": "可拆卸電池組需準備兩套，視需要交替使用 (Section 28.5)。"
         }
       },
       "acceptance_criteria": {
-        "summary": "無起火、無爆炸、無破裂、無洩漏；電池電壓不超過指定上限",
+        "summary": "維持在操作極限內",
         "details": [
-          "所有測試皆不得發生爆炸 (E)",
-          "所有測試皆不得發生持續燃燒/明火 (F)",
-          "外殼不得破裂導致內部危險零件外露 (R)",
-          "電解液不得洩漏至外殼外部 (L)",
-          "電池之電壓限制不得超過指定的充電電壓上限",
-          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) 以確保無電擊危險 (若具危險電壓)"
+          "單電池的電壓、電流與溫度應維持在製造商規定的操作極限內。",
+          "不得超過 Table 28.1 規定的零組件最高溫度限制。",
+          "使用者可觸及之外部表面不得超過 Table 28.2 規定的溫度限制（例如 70 °C）。"
         ]
-      },
-      "exemptions": [
-        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
-      ],
-      "related_tests": [],
-      "source_reference": "32.6",
-      "original_text_snippet": "The sample is then subjected to a constant current charging at the manufacturer's specified charging rate... under a single fault condition in the charging protection circuitry... The test is to be continued until the voltage has reached 110% of the maximum specified voltage limit and/or monitored temperatures return to ambient or steady state conditions and an additional 2 h has elapsed, or explosion/fire occurs."
-    },
-    {
-      "id": "UL3030-32.7",
-      "normalized_id": "ELEC-SC-EXT",
-      "name_zh": "短路試驗",
-      "name_en": "Short circuit",
-      "section": "32.7",
-      "category": "ELEC",
-      "subcategory": "外部短路 (External Short Circuit)",
-      "test_objects": [
-        "PACK_SYSTEM"
-      ],
-      "conditions": {
-        "resistance": {
-          "value": "≤ 20 mΩ",
-          "detail": "將滿充樣品之正負極以總電阻小於或等於 20 mΩ 之電路負載連接進行短路。"
-        },
-        "fault": {
-          "value": "充電控制電路單一故障",
-          "detail": "在充電控制電路中跨接任何保護裝置施加單一故障。可靠之保護裝置可保留於電路中。"
-        },
-        "retry_condition": {
-          "value": "在觸發點的 90% 重複測試",
-          "detail": "若保護裝置觸發，應在觸發點的 90% 或允許放電至少 10 分鐘的百分比下重複測試"
-        },
-        "duration": {
-          "value": "至溫度降回環境溫度，或起火/爆炸",
-          "detail": "持續短路放電，直到樣品回復至環境溫度，或發生起火、爆炸。"
-        },
-        "post_test_cycle": {
-          "value": "1 次充放電循環",
-          "detail": "若測試後系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
-        },
-        "observation": {
-          "value": "觀察 1 小時",
-          "detail": "測試及充放電循環後，觀察 1 小時 (24.7)。"
-        }
-      },
-      "acceptance_criteria": {
-        "summary": "無起火、無爆炸、無破裂、無洩漏、無電擊危險",
-        "details": [
-          "不得發生爆炸 (E)",
-          "不得發生持續燃燒 (F)",
-          "不得破裂 (R)",
-          "不得有電解液洩漏 (L)",
-          "冷卻至接近環境溫度後，通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
-        ]
-      },
-      "exemptions": [
-        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
-      ],
-      "related_tests": [],
-      "source_reference": "32.7",
-      "original_text_snippet": "A fully charged sample is to be short-circuited by connecting the positive and negative terminals of the sample with a circuit load having a total resistance of less than or equal to 20 mΩ."
-    },
-    {
-      "id": "UL3030-32.8",
-      "normalized_id": "ELEC-OC",
-      "name_zh": "不平衡充電試驗",
-      "name_en": "Imbalanced charging",
-      "section": "32.8",
-      "category": "ELEC",
-      "subcategory": "過充電 (Overcharge)",
-      "test_objects": [
-        "PACK_SYSTEM"
-      ],
-      "conditions": {
-        "preparation": {
-          "value": "除 1 個電芯外全部完放，剩餘 1 個電芯保持 50% SOC",
-          "detail": "將滿充電池組中除了 1 個電芯（或電芯塊）外的所有電芯放電至規定的完全放電狀態；未放電之電芯則放電至約 50% 規定之充電狀態 (SOC)，以建立不平衡條件。"
-        },
-        "charging": {
-          "value": "使用指定充電器充電",
-          "detail": "依製造商規範使用指定的充電器進行充電。充電期間監測部分充電電芯之電壓以確認是否超過電壓限制。"
-        },
-        "post_test_cycle": {
-          "value": "1 次充放電循環",
-          "detail": "若測試後系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
-        },
-        "observation": {
-          "value": "觀察 1 小時",
-          "detail": "測試後觀察 1 小時 (24.7)。"
-        }
-      },
-      "acceptance_criteria": {
-        "summary": "無起火、無爆炸、無破裂、無洩漏",
-        "details": [
-          "不得發生爆炸 (E)",
-          "不得發生持續燃燒 (F)",
-          "不得破裂 (R)",
-          "不得有電解液洩漏 (L)",
-          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
-        ]
-      },
-      "exemptions": [
-        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
-      ],
-      "related_tests": [],
-      "source_reference": "32.8",
-      "original_text_snippet": "A fully charged battery pack of a UAS shall have all of its cells with the exception of one cell/cell block discharged to its specified fully discharged condition. The undischarged cell shall be discharged to approximately 50% of its specified state of charge (SOC) to create an imbalanced condition prior to charging."
-    },
-    {
-      "id": "UL3030-32.9",
-      "normalized_id": "MECH-SHOCK",
-      "name_zh": "衝擊試驗",
-      "name_en": "Shock test",
-      "section": "32.9",
-      "category": "MECH",
-      "subcategory": "機械衝擊 (Mechanical Shock)",
-      "test_objects": [
-        "PACK_SYSTEM"
-      ],
-      "conditions": {
-        "light_uas": {
-          "value": "≤ 12kg：50g 半正弦波, 11ms, 6 方向",
-          "detail": "最大起飛重量 ≤ 12kg：半正弦波，峰值加速度 50g，持續時間 11ms。在 3 個相互垂直的軸向（共 6 個空間方向）施加衝擊。"
-        },
-        "heavy_uas": {
-          "value": "> 12kg 且 ≤ 25kg：25g, 15ms, 6 方向",
-          "detail": "最大起飛重量 > 12kg 且 ≤ 25kg：峰值加速度 25g，持續時間 15ms。在 3 個相互垂直的軸向施加衝擊。"
-        },
-        "post_test_cycle": {
-          "value": "1 次充放電循環",
-          "detail": "若系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
-        },
-        "observation": {
-          "value": "觀察期 1 小時",
-          "detail": "觀察 1 小時 (24.7)。"
-        }
-      },
-      "acceptance_criteria": {
-        "summary": "無起火、無爆炸、無破裂、無洩漏",
-        "details": [
-          "不得發生爆炸 (E)",
-          "不得發生持續燃燒 (F)",
-          "不得破裂 (R)",
-          "不得有電解液洩漏 (L)",
-          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
-        ]
-      },
-      "exemptions": [
-        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
-      ],
-      "related_tests": [],
-      "source_reference": "32.9",
-      "original_text_snippet": "The sample is to be subjected to mechanical shock testing with parameters as shown in Table 32.1... The shocks are to be applied in all 6 spatial directions."
+      }
     },
     {
       "id": "UL3030-32.10",
@@ -262,10 +91,10 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無破裂、無洩漏",
         "details": [
-          "不得發生爆炸 (E)",
-          "不得發生持續燃燒 (F)",
-          "不得破裂 (R)",
-          "不得有電解液洩漏 (L)",
+          "無爆炸 (E)",
+          "無起火 (F)",
+          "無破裂 (R)",
+          "無洩漏 (L)",
           "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
         ]
       },
@@ -275,6 +104,365 @@
       "related_tests": [],
       "source_reference": "32.10",
       "original_text_snippet": "The UAS shall be placed in a chamber with ambient air cycling at the temperature extremes of the manufacturer's recommended operating ambient range... A total of five cycles (at the high and low temperature extremes) are to be performed."
+    },
+    {
+      "id": "UL3030-32.2",
+      "normalized_id": "ELEC-FAULT",
+      "name_zh": "零件故障試驗",
+      "name_en": "Component faults",
+      "section": "32.2",
+      "category": "ELEC",
+      "subcategory": "異常運行 (Abnormal Operation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "fault": {
+          "value": "短路或開路",
+          "detail": "電源包中連接的電容器、二極管、固態元件、電阻或類似零件，一次一個任意兩個端子進行短路或開路。"
+        },
+        "operating_state": {
+          "value": "任何運行狀態",
+          "detail": "在包含飛行運行在內的任何運行狀態下施加單一故障。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無觸電",
+        "details": [
+          "無火焰或熔融金屬釋放",
+          "無起火",
+          "無觸電",
+          "無人員受傷",
+          "通過 Dielectric Voltage Withstand Test (29) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "若電路分析顯示無其他零件或電路會過載，則不需進行此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "32.2",
+      "original_text_snippet": "A component, such as a capacitor, diode, solid state device, resistor, or similar component, connected in the power pack are to be short- or open-circuited, any two terminals one at a time, during any condition of operation including in-flight operation."
+    },
+    {
+      "id": "UL3030-32.3",
+      "normalized_id": "ELEC-RELAY",
+      "name_zh": "繼電器與電磁閥燒毀試驗",
+      "name_en": "Relay and solenoid burnout",
+      "section": "32.3",
+      "category": "ELEC",
+      "subcategory": "異常運行 (Abnormal Operation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "fault": {
+          "value": "未激磁位置卡死",
+          "detail": "將具備開放線圈結構的電磁繼電器或電磁閥的銜鐵或柱塞阻擋卡死在未激磁 (de-energized) 位置。"
+        },
+        "duration": {
+          "value": "至穩定或7 小時",
+          "detail": "測試持續至溫度達到穩定，或最多 7 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無觸電",
+        "details": [
+          "無火焰或熔融金屬釋放",
+          "無起火",
+          "無觸電",
+          "無人員受傷",
+          "通過 Dielectric Voltage Withstand Test (29) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "32.3",
+      "original_text_snippet": "An electromagnetic relay or a solenoid having an open coil construction is to be tested by blocking the armature or the plunger in the de-energized position. The test shall be continued until constant temperatures are obtained or for 7 h maximum."
+    },
+    {
+      "id": "UL3030-32.4",
+      "normalized_id": "THERM-VENT",
+      "name_zh": "風扇斷開與通風口阻塞試驗",
+      "name_en": "Disconnected fans/blocked vents",
+      "section": "32.4",
+      "category": "THERM",
+      "subcategory": "異常運行 (Abnormal Operation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "fan_disconnected": {
+          "value": "斷開冷卻風扇",
+          "detail": "將具備強制通風的設備風扇斷開（一次一個或同源多個一起斷開）。若有保護電路則將其旁路或評估其適用性。"
+        },
+        "vents_blocked": {
+          "value": "通風口阻塞加滿載",
+          "detail": "阻塞內部零件冷卻通風口，並在最大正常負載下運行。若有強制通風風扇，風扇應保持運轉。"
+        },
+        "duration": {
+          "value": "至穩定或7 小時",
+          "detail": "測試持續至溫度達到穩定，或最多 7 小時。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無觸電",
+        "details": [
+          "無火焰或熔融金屬釋放",
+          "無起火",
+          "無觸電",
+          "無人員受傷",
+          "通過 Dielectric Voltage Withstand Test (29) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "32.4",
+      "original_text_snippet": "A device having forced ventilation is to be operated with the fan disconnected... The tests shall also be performed with ventilation openings for allowing air flow to cool internal components blocked, and the unit shall be operated at maximum normal load."
+    },
+    {
+      "id": "UL3030-32.5",
+      "section": "32.5",
+      "category": "ELEC",
+      "subcategory": "BMS",
+      "name_en": "Internal battery reverse polarity",
+      "name_zh": "內部電池極性反接",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "exemptions": [
+        "固定式或防呆電池"
+      ],
+      "conditions": {
+        "scenario1": {
+          "value": "完放後反接充電",
+          "detail": "將完全放電的內部電池以相反極性連接，並嘗試充電。"
+        },
+        "scenario2": {
+          "value": "滿電後反接運作",
+          "detail": "將完全充電的內部電池以相反極性連接，並在最大正常負載下嘗試運作。"
+        },
+        "duration": {
+          "name_zh": "持續時間",
+          "name_en": "Duration",
+          "value": "至保護動作或溫度穩定",
+          "detail": "直到內部保護動作或溫度達到穩定 (32.5.2)"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火",
+        "details": [
+          "無起火",
+          "無火焰或熔融金屬釋放",
+          "無觸電",
+          "無人員受傷",
+          "通過 Dielectric Voltage Withstand Test (29) (若具危險電壓)"
+        ]
+      }
+    },
+    {
+      "id": "UL3030-32.6",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電試驗",
+      "name_en": "Overcharge",
+      "section": "32.6",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "discharge": {
+          "value": "0.2C 或更高放電率至 EODV",
+          "detail": "樣品以 0.2 倍額定容量之電流（或製造商允許之更高電流）放電至規定的截止電壓 (EODV)。"
+        },
+        "charge": {
+          "value": "最大指定充電率恆流充電",
+          "detail": "以製造商指定之最大充電率（基於最大預期充電器輸出電流）進行恆流充電。"
+        },
+        "fault": {
+          "value": "充電控制電路單一故障",
+          "detail": "在充電保護電路中施加可能導致過充電之單一故障。可靠之保護裝置可保留於電路中。"
+        },
+        "retry_condition": {
+          "value": "在觸發點的 90% 重複測試",
+          "detail": "若保護裝置觸發，應在觸發點的 90% 或允許充電至少 10 分鐘的百分比下重複測試"
+        },
+        "termination": {
+          "value": "電壓達標或起火",
+          "detail": "測試持續至電壓達到最大指定電壓限制之 110%，或監測溫度降至環境溫度/穩定狀態後再持續 2 小時，或發生起火/爆炸為止。"
+        },
+        "post_test_cycle": {
+          "value": "1 次充放電循環",
+          "detail": "若測試後系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "充放電循環（若適用）後，觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂、無洩漏；電池電壓不超過指定上限",
+        "details": [
+          "無爆炸 (E)",
+          "無起火 (F)",
+          "無破裂 (R)",
+          "無洩漏 (L)",
+          "電池之電壓限制不得超過指定的充電電壓上限",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) 以確保無電擊危險 (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "32.6",
+      "original_text_snippet": "The sample is then subjected to a constant current charging at the manufacturer's specified charging rate... under a single fault condition in the charging protection circuitry... The test is to be continued until the voltage has reached 110% of the maximum specified voltage limit and/or monitored temperatures return to ambient or steady state conditions and an additional 2 h has elapsed, or explosion/fire occurs."
+    },
+    {
+      "id": "UL3030-32.7",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "短路試驗",
+      "name_en": "Short circuit",
+      "section": "32.7",
+      "category": "ELEC",
+      "subcategory": "外部短路 (External Short Circuit)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "resistance": {
+          "value": "≤ 20 mΩ",
+          "detail": "將滿充樣品之正負極以總電阻小於或等於 20 mΩ 之電路負載連接進行短路。"
+        },
+        "fault": {
+          "value": "充電控制電路單一故障",
+          "detail": "在充電控制電路中跨接任何保護裝置施加單一故障。可靠之保護裝置可保留於電路中。"
+        },
+        "retry_condition": {
+          "value": "在觸發點的 90% 重複測試",
+          "detail": "若保護裝置觸發，應在觸發點的 90% 或允許放電至少 10 分鐘的百分比下重複測試"
+        },
+        "duration": {
+          "value": "降至室溫",
+          "detail": "持續短路放電，直到樣品回復至環境溫度，或發生起火、爆炸。"
+        },
+        "post_test_cycle": {
+          "value": "1 次充放電循環",
+          "detail": "若測試後系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "測試及充放電循環後，觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂、無洩漏、無電擊危險",
+        "details": [
+          "無爆炸 (E)",
+          "無起火 (F)",
+          "無破裂 (R)",
+          "無洩漏 (L)",
+          "冷卻至接近環境溫度後，通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "32.7",
+      "original_text_snippet": "A fully charged sample is to be short-circuited by connecting the positive and negative terminals of the sample with a circuit load having a total resistance of less than or equal to 20 mΩ."
+    },
+    {
+      "id": "UL3030-32.8",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "不平衡充電試驗",
+      "name_en": "Imbalanced charging",
+      "section": "32.8",
+      "category": "ELEC",
+      "subcategory": "過充電 (Overcharge)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "preparation": {
+          "value": "50% SOC 不平衡",
+          "detail": "將滿充電池組中除了 1 個電芯（或電芯塊）外的所有電芯放電至規定的完全放電狀態；未放電之電芯則放電至約 50% 規定之充電狀態 (SOC)，以建立不平衡條件。"
+        },
+        "charging": {
+          "value": "使用指定充電器充電",
+          "detail": "依製造商規範使用指定的充電器進行充電。充電期間監測部分充電電芯之電壓以確認是否超過電壓限制。"
+        },
+        "post_test_cycle": {
+          "value": "1 次充放電循環",
+          "detail": "若測試後系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察 1 小時",
+          "detail": "測試後觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂、無洩漏",
+        "details": [
+          "無爆炸 (E)",
+          "無起火 (F)",
+          "無破裂 (R)",
+          "無洩漏 (L)",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "32.8",
+      "original_text_snippet": "A fully charged battery pack of a UAS shall have all of its cells with the exception of one cell/cell block discharged to its specified fully discharged condition. The undischarged cell shall be discharged to approximately 50% of its specified state of charge (SOC) to create an imbalanced condition prior to charging."
+    },
+    {
+      "id": "UL3030-32.9",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "衝擊試驗",
+      "name_en": "Shock test",
+      "section": "32.9",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "light_uas": {
+          "value": "小於12kg衝擊",
+          "detail": "最大起飛重量 ≤ 12kg：半正弦波，峰值加速度 50g，持續時間 11ms。在 3 個相互垂直的軸向（共 6 個空間方向）施加衝擊。"
+        },
+        "heavy_uas": {
+          "value": ">12kg ≤25kg 25g 15ms",
+          "detail": "最大起飛重量 > 12kg 且 ≤ 25kg：峰值加速度 25g，持續時間 15ms。在 3 個相互垂直的軸向施加衝擊。"
+        },
+        "post_test_cycle": {
+          "value": "1 次充放電循環",
+          "detail": "若系統仍可運作，須以製造商最大指定值執行至少 1 次充放電循環。"
+        },
+        "observation": {
+          "value": "觀察期 1 小時",
+          "detail": "觀察 1 小時 (24.7)。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無破裂、無洩漏",
+        "details": [
+          "無爆炸 (E)",
+          "無起火 (F)",
+          "無破裂 (R)",
+          "無洩漏 (L)",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+        ]
+      },
+      "exemptions": [
+        "符合 17.3.2(a) 或 17.3.2(b) 規定之電池組不需執行此測試"
+      ],
+      "related_tests": [],
+      "source_reference": "32.9",
+      "original_text_snippet": "The sample is to be subjected to mechanical shock testing with parameters as shown in Table 32.1... The shocks are to be applied in all 6 spatial directions."
     },
     {
       "id": "UL3030-33.1",
@@ -312,10 +500,10 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無破裂、無洩漏",
         "details": [
-          "不得發生爆炸 (E)",
-          "不得發生持續燃燒 (F)",
-          "不得破裂 (R)",
-          "不得有電解液洩漏 (L)",
+          "無爆炸 (E)",
+          "無起火 (F)",
+          "無破裂 (R)",
+          "無洩漏 (L)",
           "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
         ]
       },
@@ -368,11 +556,16 @@
       "acceptance_criteria": {
         "summary": "無起火、無熔融金屬、零件未鬆脫且運作正常",
         "details": [
-          "不排放火焰或熔融金屬",
-          "無起火、電擊或人員傷害危險",
-          "零件不得有鬆脫現象",
+          "無火焰或熔融金屬釋放",
+          "無觸電",
+          "無人員受傷",
+          "無零件鬆脫",
           "系統必須能正常運作",
-          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)",
+          "無爆炸 (E)",
+          "無起火 (F)",
+          "無破裂 (R)",
+          "無洩漏 (L)"
         ]
       },
       "exemptions": [],
@@ -481,7 +674,7 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "外殼最高溫度 + 10 °C，或 80 °C（取高者）",
+          "value": "Max(+10 °C, 80 °C)",
           "detail": "樣品置於烤箱中，溫度設定為外殼在測試中觀察到的最高溫度加上 10 °C (18°F) 或 80 °C (176°F)，兩者取較高值。"
         },
         "duration": {
@@ -496,7 +689,11 @@
       "acceptance_criteria": {
         "summary": "無危險零件外露，無絕緣破壞",
         "details": [
-          "冷卻後檢查，不得有收縮或變形導致危險零件外露或電氣間隙縮減",
+          "通過 2.5mm 測試棒及圖 12.1 關節探針測試",
+          "無爆炸 (E)",
+          "無起火 (F)",
+          "無破裂 (R)",
+          "無洩漏 (L)",
           "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
         ]
       },
@@ -535,10 +732,10 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸，能正常運作",
         "details": [
-          "不得發生爆炸 (E)",
-          "不得發生持續燃燒 (F)",
-          "不得破裂 (R)",
-          "不得有電解液洩漏 (L)",
+          "無爆炸 (E)",
+          "無起火 (F)",
+          "無破裂 (R)",
+          "無洩漏 (L)",
           "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
         ]
       },
@@ -581,10 +778,13 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "無起火、無爆炸",
+        "summary": "無起火、無爆炸、無破裂、無洩漏",
         "details": [
-          "浸水前及任何充放電循環後，均不得發生起火或爆炸",
-          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
+          "無破裂 (R)",
+          "無洩漏 (L)",
+          "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)",
+          "無起火 (F)",
+          "無爆炸 (E)"
         ]
       },
       "exemptions": [
@@ -595,72 +795,6 @@
       ],
       "source_reference": "36.2",
       "original_text_snippet": "The UAS is subjected to complete immersion to a depth that covers the highest point of the UAS with 76 mm (3 inches) of water. The UAS is subjected to this immersion for 5 min."
-    },
-    {
-      "id": "UL3030-32.5",
-      "section": "32.5",
-      "category": "ELEC",
-      "subcategory": "BMS",
-      "name_en": "Internal battery reverse polarity",
-      "name_zh": "內部電池極性反接",
-      "test_objects": [
-        "PACK"
-      ],
-      "exemptions": [
-        "固定式或防呆電池"
-      ],
-      "conditions": {
-        "connection": {
-          "value": "極性反接",
-          "detail": "以相反的極性連接無人機電氣系統與電池模組。"
-        },
-        "duration": {
-          "value": "直到穩定",
-          "detail": "維持反接狀態直到系統穩定或保護機制觸發。"
-        }
-      },
-      "acceptance_criteria": {
-        "summary": "無起火、無爆炸",
-        "details": [
-          "無起火",
-          "無爆炸",
-          "不得釋放火焰或熔融金屬，或產生火災、觸電或人員受傷的危險。"
-        ]
-      }
-    },
-    {
-      "id": "UL3030-28",
-      "section": "28",
-      "category": "THERM",
-      "subcategory": "ENV",
-      "name_en": "Temperature Test (Charging and Flying)",
-      "name_zh": "溫度測試 (充電與飛行)",
-      "test_objects": [
-        "PACK"
-      ],
-      "exemptions": [],
-      "conditions": {
-        "monitoring": {
-          "value": "監控參數",
-          "detail": "充電與飛行過程中必須監控單電池的電壓、電流與溫度。"
-        },
-        "thermal_stabilization": {
-          "value": "充放電至穩定",
-          "detail": "需進行充放電循環直至溫度穩定 (Section 28.4)。"
-        },
-        "removable_batteries": {
-          "value": "備用電池組替換",
-          "detail": "可拆卸電池組需準備兩套，視需要交替使用 (Section 28.5)。"
-        }
-      },
-      "acceptance_criteria": {
-        "summary": "維持在操作極限內",
-        "details": [
-          "單電池的電壓、電流與溫度應維持在製造商規定的操作極限內。",
-          "不得超過 Table 28.1 規定的零組件最高溫度限制。",
-          "使用者可觸及之外部表面不得超過 Table 28.2 規定的溫度限制（例如 70 °C）。"
-        ]
-      }
     }
   ],
   "test_sequence": {
@@ -714,6 +848,15 @@
       "異常測試後需進行 1 小時的觀察期，此點在 OCR 文本的 24.7 中確認並適用於各項相關測試。"
     ],
     "total_test_entries": 12,
-    "note": "本資料僅提取與電池/電氣安全直接相關的測試，排除純機械結構強度、標籤耐久性及馬達過載等不直接影響電池本體安全的測試條款（如 22, 23, 27, 29, 30, 31, 37, 38, 39）。部分外殼測試 (34, 35) 予以保留因其結果會直接影響電池的安全隔離與保護。"
+    "note": "本資料僅提取與電池/電氣安全直接相關的測試，排除純機械結構強度、標籤耐久性及馬達過載等不直接影響電池本體安全的測試條款（如 22, 23, 27, 29, 30, 31, 37, 38, 39）。部分外殼測試 (34, 35) 予以保留因其結果會直接影響電池的安全隔離與保護。",
+    "exemptions": [
+      "Section 27: Input Verification",
+      "Section 29: Dielectric Voltage Withstand Test",
+      "Section 30: Isolation Resistance Test",
+      "Section 31: Capacitor Discharge Test",
+      "Section 37: Accelerated Aging of Gaskets",
+      "Section 38: Permanence of Marking",
+      "Section 39: Motor Overload"
+    ]
   }
 }

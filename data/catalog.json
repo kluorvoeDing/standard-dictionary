@@ -1,5 +1,52 @@
 [
   {
+    "document_id": "JISC8715-2",
+    "document_type": "standard",
+    "document_strength": "standard",
+    "comparison_ready": true,
+    "display_name": "JISC8715-2",
+    "full_name": "JIS C 8715-2:2019 産業用リチウム二次電池の単電池及び電池システム－第２部：安全性要求事項",
+    "publisher": "JSA",
+    "publication_date": "2019",
+    "filename": "JISC8715-2_2019 産業用リチウム二次電池の単電池及び電池システム－第２部：安全性要求事.pdf",
+    "source_json": "",
+    "batch": "",
+    "li_applicable": true,
+    "item_count": 11,
+    "available_objects": [
+      "CELL",
+      "MODULE",
+      "PACK_SYSTEM"
+    ],
+    "test_type": null,
+    "normativity": "normative",
+    "important_note": null,
+    "source_pdf_path": "docs/source_pdfs/2026-08-06/JISC8715-2_2019 産業用リチウム二次電池の単電池及び電池システム－第２部：安全性要求事.pdf",
+    "source_markdown_path": "",
+    "canonical_markdown_path": "",
+    "canonical_markdown_url": "",
+    "translation_markdown_path": "",
+    "translation_markdown_url": "",
+    "preferred_markdown_path": "",
+    "preferred_markdown_url": "",
+    "qa_status": "pass",
+    "qa_issues": [],
+    "qa_cjk_ratio": 1,
+    "qa_english_ratio": 0,
+    "source_pdf_exists": true,
+    "source_markdown_exists": false,
+    "source_pdf_text_layer": "present",
+    "source_quality": "pdf-authoritative",
+    "schema_v2_json": "data/JISC8715-2.json",
+    "test_count_v2": 11,
+    "is_latest": true,
+    "latest_version": "2019版",
+    "versions_behind": 0,
+    "base_standard_id": "JISC8715-2",
+    "prerequisites": {},
+    "application": "儲能系統 (ESS)"
+  },
+  {
     "document_id": "SAND2017-6925",
     "document_type": "guidance",
     "document_strength": "guidance",
@@ -46,7 +93,8 @@
     "latest_version": "2017版 (最新指南)",
     "versions_behind": 0,
     "base_standard_id": "SAND2017-6925",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "儲能系統 (ESS)"
   },
   {
     "document_id": "AIS-038",
@@ -98,7 +146,8 @@
         "AIS-038",
         "IS 16893"
       ]
-    }
+    },
+    "application": "電動汽車 (EV)"
   },
   {
     "document_id": "AIS-156",
@@ -150,7 +199,8 @@
       "CELL": [
         "IS 16893"
       ]
-    }
+    },
+    "application": "輕型電動車 (LEV)"
   },
   {
     "document_id": "GB-43854",
@@ -198,7 +248,8 @@
     "latest_version": "2024版",
     "versions_behind": 0,
     "base_standard_id": "GB-43854",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "一般應用 (General)"
   },
   {
     "document_id": "GB31241",
@@ -247,7 +298,8 @@
     "latest_version": "2022版",
     "versions_behind": 0,
     "base_standard_id": "GB31241",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "便攜式電子 (Portable)"
   },
   {
     "document_id": "GB38031",
@@ -295,7 +347,8 @@
     "latest_version": "2025版",
     "versions_behind": 0,
     "base_standard_id": "GB38031",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "電動汽車 (EV)"
   },
   {
     "document_id": "GB44240",
@@ -343,7 +396,8 @@
     "latest_version": "2024版",
     "versions_behind": 0,
     "base_standard_id": "GB44240",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "儲能系統 (ESS)"
   },
   {
     "document_id": "GBT-36276",
@@ -392,7 +446,8 @@
     "latest_version": "2023版",
     "versions_behind": 0,
     "base_standard_id": "GBT-36276",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "儲能系統 (ESS)"
   },
   {
     "document_id": "IEC62133-2",
@@ -440,7 +495,8 @@
     "latest_version": "Edition 1.0 (2017) + AMD1 (2021)",
     "versions_behind": 0,
     "base_standard_id": "IEC62133-2",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "便攜式電子 (Portable)"
   },
   {
     "document_id": "IEC62619",
@@ -489,7 +545,8 @@
     "latest_version": "Edition 2.0 (2022)",
     "versions_behind": 0,
     "base_standard_id": "IEC62619",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "工業應用 (Industrial)"
   },
   {
     "document_id": "UL-1973",
@@ -546,7 +603,8 @@
       "MODULE": [
         "UL 2580"
       ]
-    }
+    },
+    "application": "儲能系統 (ESS)"
   },
   {
     "document_id": "UL-2054",
@@ -598,7 +656,8 @@
       "CELL": [
         "UL 1642"
       ]
-    }
+    },
+    "application": "一般應用 (General)"
   },
   {
     "document_id": "UL-2056",
@@ -650,7 +709,8 @@
       "CELL": [
         "UL 1642"
       ]
-    }
+    },
+    "application": "一般應用 (General)"
   },
   {
     "document_id": "UL-2271",
@@ -704,7 +764,8 @@
         "UL 2271 (Cell tests)",
         "UL 2580"
       ]
-    }
+    },
+    "application": "輕型電動車 (LEV)"
   },
   {
     "document_id": "UL-3030",
@@ -756,7 +817,8 @@
       "CELL": [
         "UL 1642"
       ]
-    }
+    },
+    "application": "無人機 (UAS)"
   },
   {
     "document_id": "UL-9540",
@@ -816,7 +878,8 @@
       "SYSTEM": [
         "UL 1973"
       ]
-    }
+    },
+    "application": "一般應用 (General)"
   },
   {
     "document_id": "UL1642",
@@ -862,7 +925,8 @@
     "latest_version": "Sixth Edition (rev 2022)",
     "versions_behind": 1,
     "base_standard_id": "UL1642",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "一般應用 (General)"
   },
   {
     "document_id": "ULC-2580",
@@ -916,7 +980,8 @@
         "UL 1642",
         "UL 2271"
       ]
-    }
+    },
+    "application": "電動汽車 (EV)"
   },
   {
     "document_id": "UN38.3",
@@ -963,7 +1028,8 @@
     "latest_version": "Rev. 8 (2023)",
     "versions_behind": 2,
     "base_standard_id": "UN38.3",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "運輸安全 (Transport)"
   },
   {
     "document_id": "UL-9540A",
@@ -1025,7 +1091,8 @@
       "SYSTEM": [
         "UL 1973"
       ]
-    }
+    },
+    "application": "儲能系統 (ESS)"
   },
   {
     "document_id": "UL1642-2022",
@@ -1071,7 +1138,8 @@
     "latest_version": "Sixth Edition (rev 2022)",
     "versions_behind": 0,
     "base_standard_id": "UL1642",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "一般應用 (General)"
   },
   {
     "document_id": "UL2743",
@@ -1101,7 +1169,8 @@
     "is_latest": true,
     "latest_version": "Third Edition (2025)",
     "versions_behind": 0,
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "一般應用 (General)"
   },
   {
     "document_id": "JISC8714",
@@ -1127,7 +1196,8 @@
     "latest_version": "JIS C 8714:2007",
     "versions_behind": 0,
     "base_standard_id": "JISC8714",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "一般應用 (General)"
   },
   {
     "document_id": "GB31241.4",
@@ -1172,7 +1242,8 @@
     "latest_version": "2026版",
     "versions_behind": 0,
     "base_standard_id": "GB31241.4",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "便攜式電子 (Portable)"
   },
   {
     "document_id": "GB40165",
@@ -1217,7 +1288,8 @@
     "latest_version": "2021版",
     "versions_behind": 0,
     "base_standard_id": "GB40165",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "工業應用 (Industrial)"
   },
   {
     "document_id": "GB40559",
@@ -1262,7 +1334,8 @@
     "latest_version": "2024版",
     "versions_behind": 0,
     "base_standard_id": "GB40559",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "輕型電動車 (LEV)"
   },
   {
     "document_id": "GB47372",
@@ -1307,7 +1380,8 @@
     "latest_version": "2026版",
     "versions_behind": 0,
     "base_standard_id": "GB47372",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "便攜式電子 (Portable)"
   },
   {
     "document_id": "GB47741",
@@ -1352,7 +1426,8 @@
     "latest_version": "2026版",
     "versions_behind": 0,
     "base_standard_id": "GB47741",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "輕型電動車 (LEV)"
   },
   {
     "document_id": "IEC62660-3",
@@ -1377,6 +1452,7 @@
     "latest_version": "2022版 (Edition 2.0)",
     "versions_behind": 0,
     "base_standard_id": "IEC62660-3",
-    "prerequisites": {}
+    "prerequisites": {},
+    "application": "電動汽車 (EV)"
   }
 ]

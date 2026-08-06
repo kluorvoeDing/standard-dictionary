@@ -47,15 +47,19 @@
         "termination": {
           "value": "110% 額定容量或保護",
           "detail": "測試持續至保護電路終止充電、充電至 110% 額定容量或發生極端結果（起火/爆炸）。"
+        },
+        "ignition_detection": {
+          "value": "火花點火源或氣體監測",
+          "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V；無洩漏/排氣/破裂",
         "details": [
-          "應無起火、無爆炸 (No fire or explosion)",
+          "無起火、無爆炸",
           "最小絕緣電阻 100 Ω/V (Isolation resistance ≥ 100 Ω/V)",
-          "無外部排氣、無破裂、無外部洩漏 (No external venting, no rupture, no external leakage)",
-          "Reaching 110% of the rated charge capacity or the manufacturer-specified charging limit would be considered as a failure of the overcharge evaluation."
+          "無排氣、無破裂、無洩漏 (No external venting, no rupture, no external leakage)",
+          "無超過 110% 額定容量或製造商充電限制。"
         ]
       },
       "exemptions": [
@@ -101,14 +105,18 @@
         "single_fault": {
           "value": "單一故障",
           "detail": "若樣品配有保護裝置，應在放電條件下可能發生的任何單一元件故障下進行測試。"
+        },
+        "ignition_detection": {
+          "value": "火花點火源或氣體監測",
+          "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "應無起火、無爆炸 (No fire or explosion)",
+          "無起火、無爆炸",
           "最小絕緣電阻 100 Ω/V",
-          "無外部排氣、無破裂、無外部洩漏"
+          "無排氣、無破裂、無洩漏"
         ]
       },
       "exemptions": [
@@ -142,15 +150,19 @@
         "termination": {
           "value": "保護啟動或達限值後 30 分鐘",
           "detail": "持續放電直至被動保護裝置啟動，或最小電壓/最高溫度保護啟動，或達到正常放電限值後 30 分鐘。"
+        },
+        "ignition_detection": {
+          "value": "火花點火源或氣體監測",
+          "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         }
       },
       "acceptance_criteria": {
         "summary": "保護應啟動；無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
           "保護裝置應啟動防止電池低於截止電壓",
-          "應無起火、無爆炸",
+          "無起火、無爆炸",
           "最小絕緣電阻 100 Ω/V",
-          "無外部排氣、無破裂、無洩漏"
+          "無排氣、無破裂、無洩漏"
         ]
       },
       "exemptions": [
@@ -218,15 +230,19 @@
         "charging": {
           "value": "正常充電",
           "detail": "按製造商規格對整個系統充電。"
+        },
+        "ignition_detection": {
+          "value": "火花點火源或氣體監測",
+          "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         }
       },
       "acceptance_criteria": {
         "summary": "模組電壓不超限；無起火、無爆炸",
         "details": [
           "模組最大電壓限值不得超出",
-          "應無起火、無爆炸",
+          "無起火、無爆炸",
           "最小絕緣電阻 100 Ω/V",
-          "無排氣現象。",
+          "無排氣",
           "無破裂。",
           "無洩漏。"
         ]
@@ -317,7 +333,7 @@
       "id": "ULC2580-T32",
       "section": "32",
       "category": "ELEC",
-      "subcategory": "BMS",
+      "subcategory": "Continuity",
       "name_en": "Continuity Test",
       "name_zh": "導通性測試",
       "test_objects": [
@@ -339,7 +355,7 @@
       },
       "normalized_id": "ELEC-CONTINUITY",
       "source_reference": "Section 32",
-      "original_text_snippet": "The protective grounding circuit of the DUT shall be evaluated to determine that the resistance between the equipment grounding terminal/connection and any dead metal part required to be grounded is not more than 0.1-Ω.",
+      "original_text_snippet": "The grounding system of an electric energy storage assembly shall have no more than 0.1-Ω resistance between any two parts of the system...",
       "taxonomy": {
         "category": "ELEC",
         "subcategory": "Continuity"
@@ -373,14 +389,18 @@
         "repetition": {
           "value": "最低溫重複測試",
           "detail": "整個試驗應在最低規定的工作環境溫度下重複進行。"
+        },
+        "ignition_detection": {
+          "value": "火花點火源或氣體監測",
+          "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸；絕緣電阻 ≥ 100 Ω/V",
         "details": [
-          "應無起火、無爆炸",
+          "無起火、無爆炸",
           "最小絕緣電阻 100 Ω/V",
-          "無外部排氣、破裂或洩漏"
+          "無排氣、無破裂、無洩漏"
         ]
       },
       "exemptions": [
@@ -410,12 +430,16 @@
         "axes": {
           "value": "3 軸向",
           "detail": "在 3 個互相垂直的方向進行（圓柱型設計為 2 個方向）。"
+        },
+        "ignition_detection": {
+          "value": "火花點火源或氣體監測",
+          "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無有毒氣體釋放",
         "details": [
-          "應無起火、無爆炸",
+          "無起火、無爆炸",
           "無有毒氣體釋放 (低於 ERPG-2)",
           "絕緣電阻 ≥ 100 Ω/V",
           "無破裂",
@@ -446,13 +470,17 @@
         "profile": {
           "value": "預期輪廓或 SAE J2380",
           "detail": "按照預期車輛的振動輪廓進行；若無，則使用 SAE J2380 標準。"
+        },
+        "ignition_detection": {
+          "value": "火花點火源或氣體監測",
+          "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸；能正常充放電",
         "details": [
-          "應無起火、無爆炸",
-          "無外部排氣、破裂或洩漏",
+          "無起火、無爆炸",
+          "無排氣、無破裂、無洩漏",
           "絕緣電阻 ≥ 100 Ω/V",
           "測試後能正常充放電"
         ]
@@ -485,13 +513,17 @@
         "shocks": {
           "value": "18 次",
           "detail": "3 個互相垂直軸，每軸正負方向各 3 次，共 18 次衝擊。"
+        },
+        "ignition_detection": {
+          "value": "火花點火源或氣體監測",
+          "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸",
         "details": [
-          "應無起火、無爆炸",
-          "無外部排氣、破裂或洩漏",
+          "無起火、無爆炸",
+          "無排氣、無破裂、無洩漏",
           "絕緣電阻 ≥ 100 Ω/V"
         ]
       },
@@ -523,16 +555,20 @@
         "orientation": {
           "value": "最不利位置",
           "detail": "以最可能產生不利結果的位置跌落，模擬維護/拆卸時的實際情況。"
+        },
+        "ignition_detection": {
+          "value": "火花點火源或氣體監測",
+          "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸",
         "details": [
-          "應無起火、無爆炸",
+          "無起火、無爆炸",
           "無有毒氣體釋放",
           "絕緣電阻 ≥ 100 Ω/V",
-          "無破裂現象。",
-          "無洩漏現象。"
+          "無破裂",
+          "無洩漏"
         ]
       },
       "exemptions": [
@@ -566,12 +602,16 @@
         "crush_tool": {
           "value": "SAE J2464 肋條壓板",
           "detail": "必須使用符合 SAE J2464 規範的肋條狀測試壓板 (ribbed test platen) 與固定平面進行擠壓。"
+        },
+        "ignition_detection": {
+          "value": "火花點火源或氣體監測",
+          "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         }
       },
       "acceptance_criteria": {
         "summary": "無起火、無爆炸、無有毒氣體釋放",
         "details": [
-          "應無起火、無爆炸",
+          "無起火、無爆炸",
           "無有毒氣體釋放",
           "絕緣電阻 ≥ 100 Ω/V"
         ]
@@ -598,7 +638,7 @@
       "conditions": {
         "profile": {
           "value": "85 °C 至 -40 °C",
-          "detail": "按照製造商規定的溫度循環輪廓，或使用 SAE J2464 流程，通常為 85 °C 至 -40 °C。"
+          "detail": "使用 SAE J2464 流程，溫度為 85 °C 至 -40 °C。"
         },
         "method": {
           "value": "SAE J2464 (modified)",
@@ -608,8 +648,8 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸",
         "details": [
-          "應無起火、無爆炸",
-          "無外部排氣、破裂或洩漏",
+          "無起火、無爆炸",
+          "無排氣、無破裂、無洩漏",
           "絕緣電阻 ≥ 100 Ω/V"
         ]
       },
@@ -641,8 +681,8 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸",
         "details": [
-          "應無起火、無爆炸",
-          "無外部排氣、破裂或洩漏",
+          "無起火、無爆炸",
+          "無排氣、無破裂、無洩漏",
           "絕緣電阻 ≥ 100 Ω/V"
         ]
       },
@@ -682,9 +722,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "應無起火、無爆炸",
+        "summary": "無起火、無爆炸",
         "details": [
-          "應無起火、無爆炸"
+          "無起火、無爆炸"
         ]
       },
       "exemptions": [
@@ -715,7 +755,7 @@
       "acceptance_criteria": {
         "summary": "無爆炸、無飛散碎片",
         "details": [
-          "起火可能發生但不得爆炸 (No explosion)",
+          "起火可能發生但無爆炸 (No explosion)",
           "碎片與爆炸物不得飛散至內部警戒線之外。"
         ]
       },
@@ -745,10 +785,12 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "熱失控不得蔓延至外殼外",
+        "summary": "熱失控不得蔓延至外殼外、無外部起火、無爆炸",
         "details": [
-          "允許內部熱失控蔓延，但不得蔓延至受測設備 (DUT) 外殼之外。",
-          "危害不得蔓延至受測設備外部"
+          "無外部起火",
+          "無爆炸",
+          "允許內部熱失控蔓延，但無蔓延至受測設備 (DUT) 外殼之外。",
+          "危害無蔓延至受測設備外部"
         ]
       },
       "exemptions": [
@@ -862,7 +904,7 @@
       "acceptance_criteria": {
         "summary": "無起火、無爆炸",
         "details": [
-          "No fire or explosion"
+          "無起火、無爆炸"
         ]
       },
       "exemptions": [],
@@ -1015,7 +1057,7 @@
       "section": "B2.10",
       "category": "THERM",
       "subcategory": "FIRE",
-      "name_en": "Heating (Projectile) Test",
+      "name_en": "Projectile Test",
       "name_zh": "加熱拋射測試",
       "test_objects": [
         "CELL"
@@ -1030,11 +1072,11 @@
       "acceptance_criteria": {
         "summary": "無碎片穿透或飛出界外",
         "details": [
-          "單電池爆炸產生的碎片不得穿透金屬網。",
-          "單電池碎片不得飛出測試區域外 0.5 公尺的範圍。"
+          "單電池爆炸產生的碎片無穿透金屬網。",
+          "單電池無碎片飛出測試區域外 0.5 公尺的範圍。"
         ]
       },
-      "original_text_snippet": "Heating test (placing the cell on a wire mesh over a Meker burner) until it explodes or burns out.",
+      "original_text_snippet": "",
       "normalized_id": "THERM-PROJECTILE"
     }
   ],
