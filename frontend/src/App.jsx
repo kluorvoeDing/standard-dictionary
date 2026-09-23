@@ -3,6 +3,7 @@ import SplitScreenGrid from './components/SplitScreenGrid';
 import StandardMatrix from './components/StandardMatrix';
 import AiConsultantChat from './components/AiConsultantChat';
 import GlobalMatrixModal from './components/GlobalMatrixModal';
+import GlobalSearchModal from './components/GlobalSearchModal';
 import './index.css';
 
 // Some data files still use the legacy schema (`test_items` / `document_info`).
@@ -40,6 +41,19 @@ function App() {
   const [testsData, setTestsData] = useState({});
   const [isAiChatOpen, setIsAiChatOpen] = useState(false);
   const [isGlobalMatrixOpen, setIsGlobalMatrixOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [aiInitialMessage, setAiInitialMessage] = useState(null);
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        setIsSearchOpen(prev => !prev);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, []);
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
@@ -119,6 +133,22 @@ function App() {
           {theme === 'light' ? '🌙' : '☀️'}
         </button>
         <button
+          onClick={() => setIsSearchOpen(true)}
+          title="全域參數即時檢索 (⌘K / Ctrl+K)"
+          style={{
+            padding: '0.6rem 1.1rem', borderRadius: '9999px',
+            backgroundColor: 'var(--bg-panel)', color: 'var(--text-primary)',
+            border: '1px solid var(--border-color)', cursor: 'pointer',
+            boxShadow: 'var(--shadow-sm)', display: 'flex', alignItems: 'center', gap: '0.45rem',
+            fontWeight: 'bold', fontSize: '0.9rem',
+            transition: 'transform 0.2s ease, box-shadow 0.2s ease'
+          }}
+          onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = 'var(--shadow-md)'; }}
+          onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }}
+        >
+          🔍 參數檢索
+        </button>
+        <button
           onClick={() => setIsGlobalMatrixOpen(true)}
           title="全局總覽矩陣"
           style={{
@@ -159,6 +189,8 @@ function App() {
         onClose={() => setIsAiChatOpen(false)} 
         selectedDocs={selectedDocs}
         testsData={testsData}
+        initialMessage={aiInitialMessage}
+        onClearInitialMessage={() => setAiInitialMessage(null)}
       />
 
       <GlobalMatrixModal
@@ -167,7 +199,25 @@ function App() {
         catalog={catalog}
       />
 
-      
+      <GlobalSearchModal
+        isOpen={isSearchOpen}
+        onClose={() => setIsSearchOpen(false)}
+        catalog={catalog}
+        selectedDocs={selectedDocs}
+        toggleDocument={toggleDocument}
+        onAskAi={(question, targetDocs) => {
+          if (targetDocs && targetDocs.length > 0) {
+            targetDocs.forEach(id => {
+              if (!selectedDocs.includes(id) && selectedDocs.length < 5) {
+                toggleDocument(id);
+              }
+            });
+          }
+          setAiInitialMessage(question);
+          setIsAiChatOpen(true);
+        }}
+      />
+
       <div className="layout-main" style={{ width: '100%', height: '100vh', overflow: 'hidden' }}>
         {!isComparing ? (
           <StandardMatrix 
@@ -176,6 +226,7 @@ function App() {
             selectedDocs={selectedDocs} 
             setIsComparing={setIsComparing} 
             setSelectedDocs={setSelectedDocs}
+            onOpenSearch={() => setIsSearchOpen(true)}
           />
         ) : (
           <SplitScreenGrid 

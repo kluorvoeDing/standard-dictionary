@@ -26,7 +26,7 @@ const APP_ORDER = [
   '一般應用 (General)',
 ];
 
-export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, setIsComparing, setSelectedDocs }) {
+export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, setIsComparing, setSelectedDocs, onOpenSearch }) {
   const [activeInfoNode, setActiveInfoNode] = useState(null);
   const [levelFilter, setLevelFilter] = useState('ALL');
   const isMobile = useIsMobile();
@@ -109,6 +109,54 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                 {l.label}
               </span>
             ))}
+          </div>
+        </div>
+
+        {/* Prominent Search Bar */}
+        <div style={{ marginBottom: '1.25rem' }}>
+          <div
+            onClick={onOpenSearch}
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpenSearch?.(); } }}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              padding: isMobile ? '0.65rem 0.9rem' : '0.8rem 1.25rem',
+              backgroundColor: 'var(--bg-panel)',
+              border: '1.5px solid var(--border-color)',
+              borderRadius: '12px',
+              cursor: 'pointer',
+              boxShadow: 'var(--shadow-sm)',
+              transition: 'all 0.2s ease',
+            }}
+            onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-color)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.15)'; }}
+            onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', minWidth: 0, color: 'var(--text-muted)' }}>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
+                <circle cx="11" cy="11" r="8" />
+                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+              </svg>
+              <span style={{ fontSize: isMobile ? '0.88rem' : '0.98rem', color: 'var(--text-secondary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                快速檢索全庫測試條款與參數（如「6V」、「3C」、「7天」、「80mΩ」、「擠壓」）...
+              </span>
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
+              <kbd style={{
+                fontSize: '0.75rem',
+                fontWeight: 600,
+                padding: '0.2rem 0.5rem',
+                borderRadius: '6px',
+                backgroundColor: 'var(--bg-color)',
+                border: '1px solid var(--border-color)',
+                color: 'var(--text-muted)',
+                fontFamily: 'monospace'
+              }}>
+                ⌘K
+              </kbd>
+            </div>
           </div>
         </div>
 

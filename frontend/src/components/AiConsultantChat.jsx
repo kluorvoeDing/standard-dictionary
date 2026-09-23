@@ -6,14 +6,16 @@ import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import useIsMobile from '../hooks/useIsMobile';
 
-const GREETING = {
+const makeGreeting = (selectedCount) => ({
   sender: 'AI',
   isGreeting: true,
-  text: '您好，我是您的 **AI 小幫手**。\n可以針對「目前已選取的標準」回答比較與法規問題。',
-};
+  text: selectedCount > 0
+    ? `您好，我是您的 **AI 小幫手**。\n可以針對「目前已選取的 ${selectedCount} 份標準」回答比較與法規問題。`
+    : `您好，我是您的 **AI 小幫手**。\n目前處於**【🌐 全庫智慧檢索模式】**，您可以直接詢問任何跨 30 份標準的測試參數、條件數值（如 6V、3C、7天）或法規條款！`,
+});
 
-export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsData }) {
-  const [messages, setMessages] = useState([GREETING]);
+export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsData, initialMessage, onClearInitialMessage }) {
+  const [messages, setMessages] = useState(() => [makeGreeting(selectedDocs.length)]);
   const [input, setInput] = useState('');
   const isMobile = useIsMobile();
   const [isTyping, setIsTyping] = useState(false);
@@ -113,10 +115,8 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
     }
   }, [cooldown]);
 
-  if (!isOpen) return null;
-
   const resetChat = () => {
-    setMessages([GREETING]);
+    setMessages([makeGreeting(selectedDocs.length)]);
     setInput('');
   };
 
@@ -236,6 +236,15 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
     setIsTyping(false);
   };
 
+  useEffect(() => {
+    if (isOpen && initialMessage) {
+      handleSend(initialMessage);
+      onClearInitialMessage?.();
+    }
+  }, [isOpen, initialMessage]);
+
+  if (!isOpen) return null;
+
   if (isMinimized) {
     return (
       <div 
@@ -292,8 +301,8 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
           </svg>
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2, minWidth: 0 }}>
             <span style={{ fontWeight: 700, fontSize: '1rem' }}>AI 小幫手</span>
-            <span style={{ fontSize: '0.72rem', opacity: 0.85, whiteSpace: 'nowrap' }}>
-              {selectedDocs.length > 0 ? `已載入 ${selectedDocs.length} 份標準` : '尚未選取標準'}
+            <span style={{ fontSize: '0.72rem', opacity: 0.9, whiteSpace: 'nowrap' }}>
+              {selectedDocs.length > 0 ? `已載入 ${selectedDocs.length} 份標準` : '🌐 全庫智慧檢索模式（30 份標準）'}
             </span>
           </div>
         </div>
@@ -392,11 +401,16 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
             ? ['總結這幾份標準的核心差異', '比較它們的熱濫用測試條件', '外部短路測試有什麼不同？']
             : selectedDocs.length === 1
               ? [`${selectedDocs[0]} 涵蓋哪些測試項目？`, `${selectedDocs[0]} 的適用範圍是什麼？`, '常見的鋰電池安全測試有哪些？']
-              : ['鋰電池常見的安全測試有哪些？', '什麼是 UN 38.3？', 'GB 與 UL 標準有何不同？'];
+              : [
+                  '有沒有哪一個規範過充條件是 3C 充電至 6V？',
+                  '有哪些標準的過充電壓規定達到 6V 以上？',
+                  '哪一份標準要求連續恆壓充電 7 天？',
+                  '各標準擠壓力道（如 13kN、100kN）有何差異？'
+                ];
           return (
             <div style={{ alignSelf: 'stretch', display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.25rem' }}>
               <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                {selectedDocs.length > 0 ? '試試這些問題：' : '可先回矩陣選取標準，或先問問看：'}
+                {selectedDocs.length > 0 ? '試試這些問題：' : '🌐 全庫模式推薦檢索問題：'}
               </span>
               {suggestions.map((s, i) => (
                 <button
