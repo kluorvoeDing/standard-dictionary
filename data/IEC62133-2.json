@@ -198,6 +198,14 @@
         "sample_size": {
           "value": "5 個",
           "detail": "5 個單電池 (Table 1)"
+        },
+        "sample_quantity": {
+          "value": "5 顆電芯",
+          "detail": "5 顆依 7.1.1 規定充飽電的電芯。"
+        },
+        "observation_period": {
+          "value": "持續充電 7 天",
+          "detail": "在恆溫箱中以指定充電方法連續充電 7 天。"
         }
       },
       "acceptance_criteria": {
@@ -304,6 +312,14 @@
         "sample_size": {
           "value": "5 個/每溫度",
           "detail": "5 個單電池 per temperature (Table 1)"
+        },
+        "sample_quantity": {
+          "value": "每溫度 5 顆 (共 10 顆)",
+          "detail": "20 ± 5 °C 5 顆與 55 ± 5 °C 5 顆。"
+        },
+        "observation_period": {
+          "value": "24 小時 或 溫降 20%",
+          "detail": "持續短路 24 小時或外殼溫度降至最大溫升 20% 以下。"
         }
       },
       "acceptance_criteria": {
@@ -361,6 +377,14 @@
         "sample_size": {
           "value": "5 個",
           "detail": "5 個電池組 (Table 1)"
+        },
+        "sample_quantity": {
+          "value": "每溫度 5 顆 (共 10 顆)",
+          "detail": "20 ± 5 °C 5 顆與 55 ± 5 °C 5 顆。"
+        },
+        "observation_period": {
+          "value": "24 小時 或 溫降 20%",
+          "detail": "持續短路 24 小時或外殼溫度降至最大溫升 20% 以下。"
         }
       },
       "acceptance_criteria": {
@@ -847,6 +871,14 @@
         "sample_size": {
           "value": "5 個/每溫度",
           "detail": "5 個鋰離子電池 per test temperature (Table 1)"
+        },
+        "apparatus": {
+          "value": "直角小型鎳片 (0.2 × 0.1 × 1.0 mm)",
+          "detail": "尺寸為高 0.2 mm、寬 0.1 mm、每邊長 1.0 mm 之 L 型鎳片。"
+        },
+        "sample_quantity": {
+          "value": "每條件 5 顆",
+          "detail": "上限與下限溫度條件下各 5 顆電芯。"
         }
       },
       "acceptance_criteria": {

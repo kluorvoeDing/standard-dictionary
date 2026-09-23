@@ -131,6 +131,14 @@
         "protective_device": {
           "value": "動作後須以不觸發之最大負載重新測試",
           "detail": "當過電流保護裝置在測試中動作時，須以不使保護裝置開路的最大負載重新進行測試 (Section 10.4)。所依賴之保護裝置須符合 2.3.1 要求。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (共 20 顆)",
+          "detail": "室溫組 10 顆（5 新鮮 + 5 循環）；55 °C 組 10 顆（5 新鮮 + 5 循環）。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續短路直到外殼溫度降至環境溫度，並持續觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -181,6 +189,14 @@
         "sample_size": {
           "value": "每條件 5 顆",
           "detail": "一次電池：滿充 5 + 半放電 5 + 完放 5。二次電池：滿充 5 + 循環後 5。"
+        },
+        "sample_quantity": {
+          "value": "一次 15 顆 / 二次 10 顆",
+          "detail": "一次電池：滿充 5 + 半放 5 + 完放 5；二次電池：新鮮滿充 5 + 循環後滿充 5。"
+        },
+        "observation_period": {
+          "value": "最短 7 小時",
+          "detail": "以 3×Ic 充電持續至少 7 小時或直到達到製造商指定條件。"
         }
       },
       "acceptance_criteria": {
@@ -282,6 +298,14 @@
         "sample_size": {
           "value": "5 顆（方形電芯需 10 顆）",
           "detail": "一次電池：滿充 5 + 半放電 5。二次電池：滿充 5(10) + 循環後 5(10)，方形電芯因需測試兩方向故需 10 顆。"
+        },
+        "sample_quantity": {
+          "value": "10 顆 (5 新鮮 + 5 循環)",
+          "detail": "5 顆新鮮滿充電芯與 5 顆循環後滿充電芯。"
+        },
+        "apparatus": {
+          "value": "直徑 32 mm 平板液壓壓頭",
+          "detail": "平坦金屬壓板，兩面平行。"
         }
       },
       "acceptance_criteria": {

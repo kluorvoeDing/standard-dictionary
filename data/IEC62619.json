@@ -114,6 +114,14 @@
         "duration": {
           "value": "6 小時或溫度下降 80%（取先到者）",
           "detail": "電芯維持測試狀態 6 小時，或直到外殼溫度從最大溫升下降 80%，以先到者為準 (6 小時 or until the case temperature declines by 80 % of the maximum temperature rise, whichever is the sooner)。"
+        },
+        "sample_quantity": {
+          "value": "1 組電池系統或模組",
+          "detail": "1 組含完整 BMS 與保護裝置的電池系統或模組。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復 或 24 小時",
+          "detail": "持續短路直到外殼溫度降至環境溫度 ±10 °C 或滿 24 小時。"
         }
       },
       "acceptance_criteria": {

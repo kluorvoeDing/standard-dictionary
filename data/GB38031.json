@@ -61,6 +61,14 @@
         "observation": {
           "value": "1 小時",
           "detail": "在試驗環境溫度下觀察 1 小時"
+        },
+        "sample_quantity": {
+          "value": "3 顆",
+          "detail": "依照表 1 規定，單體測試項目每組需 3 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依 7.1.1 規定，室溫下以 1/3 C 充電至終止電壓轉恆壓至 0.05 C 截止，靜置 30 分鐘。"
         }
       },
       "acceptance_criteria": {
@@ -102,6 +110,14 @@
         "observation": {
           "value": "1 小時",
           "detail": "在試驗環境溫度下觀察 1 小時"
+        },
+        "sample_quantity": {
+          "value": "3 顆",
+          "detail": "依照表 1 規定，單體測試項目每組需 3 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依 7.1.1 規定，室溫下以 1/3 C 充電至終止電壓轉恆壓至 0.05 C 截止，靜置 30 分鐘。"
         }
       },
       "acceptance_criteria": {
@@ -143,6 +159,14 @@
         "observation": {
           "value": "1 小時",
           "detail": "在試驗環境溫度下觀察 1 小時"
+        },
+        "sample_quantity": {
+          "value": "3 顆",
+          "detail": "依照表 1 規定，單體測試項目每組需 3 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依 7.1.1 規定，室溫下以 1/3 C 充電至終止電壓轉恆壓至 0.05 C 截止，靜置 30 分鐘。"
         }
       },
       "acceptance_criteria": {
@@ -188,6 +212,14 @@
         "observation": {
           "value": "1 小時",
           "detail": "在試驗環境溫度下觀察 1 小時"
+        },
+        "sample_quantity": {
+          "value": "3 顆",
+          "detail": "依照表 1 規定，單體測試項目每組需 3 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依 7.1.1 規定，室溫下以 1/3 C 充電至終止電壓轉恆壓至 0.05 C 截止，靜置 30 分鐘。"
         }
       },
       "acceptance_criteria": {
@@ -229,6 +261,14 @@
         "observation": {
           "value": "1 小時",
           "detail": "在試驗環境溫度下觀察 1 小時"
+        },
+        "sample_quantity": {
+          "value": "3 顆",
+          "detail": "依照表 1 規定，單體測試項目每組需 3 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依 7.1.1 規定，室溫下以 1/3 C 充電至終止電壓轉恆壓至 0.05 C 截止，靜置 30 分鐘。"
         }
       },
       "acceptance_criteria": {
@@ -282,6 +322,14 @@
         "observation": {
           "value": "1 小時",
           "detail": "在試驗環境溫度下觀察 1 小時"
+        },
+        "sample_quantity": {
+          "value": "3 顆",
+          "detail": "依照表 1 規定，單體測試項目每組需 3 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依 7.1.1 規定，室溫下以 1/3 C 充電至終止電壓轉恆壓至 0.05 C 截止，靜置 30 分鐘。"
         }
       },
       "acceptance_criteria": {
@@ -317,6 +365,14 @@
         "cycles": {
           "value": "300 次循環 (20%~80% SOC)",
           "detail": "進行 300 次連續快充循環（20%~80% SOC），每次充放電間靜置 30 分鐘，循環後需進行 8.1.4 外部短路試驗。"
+        },
+        "sample_quantity": {
+          "value": "3 顆",
+          "detail": "依照表 1 規定，單體測試項目每組需 3 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依 7.1.1 規定，室溫下以 1/3 C 充電至終止電壓轉恆壓至 0.05 C 截止，靜置 30 分鐘。"
         }
       },
       "acceptance_criteria": {
@@ -356,6 +412,14 @@
         "observation": {
           "value": "觀察 2 小時",
           "detail": "測試後在試驗環境溫度下觀察 2 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -396,6 +460,14 @@
         "observation": {
           "value": "觀察 2 小時",
           "detail": "測試後在試驗環境溫度下觀察 2 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -436,6 +508,14 @@
         "collision_pulse": {
           "value": "半正弦波脈衝",
           "detail": "依據車型選擇 Table 6 規定的半正弦波脈衝、加速度峰值與脈衝持續時間進行測試。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -476,6 +556,14 @@
         "observation": {
           "value": "觀察 2 小時",
           "detail": "測試後在試驗環境溫度下觀察 2 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -517,6 +605,14 @@
         "observation": {
           "value": "觀察 2 小時",
           "detail": "測試後在試驗環境溫度下觀察 2 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -565,6 +661,14 @@
         "observation": {
           "value": "觀察 2 小時",
           "detail": "測試後在試驗環境溫度下觀察 2 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -598,6 +702,14 @@
         "fire_stages": {
           "value": "4 階段火燒",
           "detail": "包含：預熱 60 秒 (Preheat)，直接燃燒 70 秒 (Direct flame)，間接燃燒 60 秒 (Indirect flame)，和離開火源觀察 2 小時 (Observation)。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -634,6 +746,14 @@
         "ambient_temp": {
           "value": "22 °C ± 5 °C",
           "detail": "試驗前需將環境與試驗對象溫度調整至 22 °C ± 5 °C。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -676,6 +796,14 @@
         "observation": {
           "value": "觀察 2 小時",
           "detail": "測試後在試驗環境溫度下觀察 2 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -716,6 +844,14 @@
         "power_on_monitoring": {
           "value": "低壓上電監控",
           "detail": "在一個循環的第4個小時和第5個小時之間進行低壓上電監控。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -758,6 +894,14 @@
         "observation": {
           "value": "觀察 2 小時",
           "detail": "測試後在試驗環境溫度下觀察 2 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -802,6 +946,14 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試後在試驗環境溫度下觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -850,6 +1002,14 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試後在試驗環境溫度下觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -898,6 +1058,14 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試後在試驗環境溫度下觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -942,6 +1110,14 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試後在試驗環境溫度下觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -986,6 +1162,14 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試後在試驗環境溫度下觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {
@@ -1030,6 +1214,14 @@
         "observation": {
           "value": "觀察 2 小時",
           "detail": "測試後在試驗環境溫度下觀察 2 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組",
+          "detail": "電池包或系統試驗需 1 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "調整至 50% 或 100% 規定的 SOC",
+          "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
         }
       },
       "acceptance_criteria": {

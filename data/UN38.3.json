@@ -144,8 +144,12 @@
           "detail": "原電池需有未放電 (undischarged) 及完全放電 (fully discharged) 兩組樣品。充電電池需處於第一循環滿充狀態。"
         },
         "sample_quantity": {
-          "value": "原電池：10+10 電芯, 4+4 小型電池, 4+4 大型電池；充電電池：10 電芯, 4+4 小型電池, 2+2 大型電池",
-          "detail": "原電池 (Primary)：10 個未放電電芯 + 10 個完全放電電芯；4 個未放電小型電池 + 4 個完全放電小型電池；4 個未放電大型電池 + 4 個完全放電大型電池。充電電池 (Rechargeable)：10 個第 1 循環滿充電芯；4 個第 1 循環滿充小型電池 + 4 個 50 循環後滿充小型電池；2 個第 1 循環滿充大型電池 + 2 個 25 循環後滿充大型電池。(依 38.3.3)"
+          "value": "10 顆電芯 (5 原態 + 5 循環態)",
+          "detail": "5 顆第 1 次循環 100% SOC 電芯 + 5 顆 25 次循環後 100% SOC 電芯。"
+        },
+        "observation_period": {
+          "value": "測試後 6 小時",
+          "detail": "測試結束後在環境溫度下觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -214,8 +218,12 @@
           "detail": "所有循環完成後，樣品須在環境溫度 (20 ± 5 °C) 下存放 24 小時。"
         },
         "sample_quantity": {
-          "value": "同 T.1 (依 38.3.3)",
-          "detail": "T.1 至 T.5 使用同一組樣品依序測試，樣品數量依 38.3.3 規定。"
+          "value": "10 顆電芯 (5 原態 + 5 循環態)",
+          "detail": "5 顆第 1 次循環 100% SOC 電芯 + 5 顆 25 次循環後 100% SOC 電芯。"
+        },
+        "observation_period": {
+          "value": "測試後 6 小時",
+          "detail": "測試結束後在環境溫度下觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -284,8 +292,12 @@
           "detail": "大型電池 (>12 kg)：7 Hz 起維持 1gn 加速度至 18 Hz；隨後維持 0.8 mm 振幅並增加頻率直至達 2gn（約 25 Hz）；再維持 2gn 加速度至 200 Hz。"
         },
         "sample_quantity": {
-          "value": "同 T.1 (依 38.3.3)",
-          "detail": "T.1 至 T.5 使用同一組樣品依序測試。"
+          "value": "10 顆電芯 (5 原態 + 5 循環態)",
+          "detail": "5 顆第 1 次循環 100% SOC 電芯 + 5 顆 25 次循環後 100% SOC 電芯。"
+        },
+        "observation_period": {
+          "value": "測試後 6 小時",
+          "detail": "測試結束後在環境溫度下觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -346,8 +358,12 @@
           "detail": "在三個互相垂直的安裝方向上，每個方向正向 3 次 + 反向 3 次，合計 18 次衝擊。"
         },
         "sample_quantity": {
-          "value": "同 T.1 (依 38.3.3)",
-          "detail": "T.1 至 T.5 使用同一組樣品依序測試。"
+          "value": "10 顆電芯 (5 原態 + 5 循環態)",
+          "detail": "5 顆第 1 次循環 100% SOC 電芯 + 5 顆 25 次循環後 100% SOC 電芯。"
+        },
+        "observation_period": {
+          "value": "測試後 6 小時",
+          "detail": "測試結束後在環境溫度下觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -404,8 +420,12 @@
           "detail": "短路及冷卻降溫階段須至少在環境溫度 (ambient temperature) 條件下進行。"
         },
         "sample_quantity": {
-          "value": "同 T.1 (依 38.3.3)",
-          "detail": "T.1 至 T.5 使用同一組樣品依序測試。"
+          "value": "10 顆電芯 (5 原態 + 5 循環態)",
+          "detail": "5 顆第 1 次循環 100% SOC 電芯 + 5 顆 25 次循環後 100% SOC 電芯。"
+        },
+        "observation_period": {
+          "value": "測試後 6 小時",
+          "detail": "測試結束後在環境溫度下觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -597,8 +617,12 @@
           "detail": "測試持續時間為 24 小時。"
         },
         "sample_quantity": {
-          "value": "4 小型電池 (1st cycle) + 4 小型電池 (50 cycles) + 2 大型電池 (1st cycle) + 2 大型電池 (25 cycles)",
-          "detail": "依 38.3.3(d)：4 個第 1 循環滿充小型電池 + 4 個 50 循環後滿充小型電池；2 個第 1 循環滿充大型電池 + 2 個 25 循環後滿充大型電池。"
+          "value": "8 組電池 (4 原態 + 4 循環態)",
+          "detail": "4 組第 1 循環滿充電池 + 4 組 25 循環滿充電池。"
+        },
+        "observation_period": {
+          "value": "測試後 7 天 (7 days)",
+          "detail": "過充完成後樣品須持續觀察 7 天。"
         }
       },
       "acceptance_criteria": {
@@ -650,12 +674,16 @@
           "detail": "每個電芯之強制放電時間（以小時計）等於其額定容量（Ah）除以初始測試電流（A）。"
         },
         "sample_quantity": {
-          "value": "原電芯：10 個完放 + 10 個組件電芯完放；充電電芯：10 個 1st cycle 完放 + 10 個組件電芯 1st cycle 完放 + 10 個 50 cycles 完放 + 10 個組件電芯 50 cycles 完放",
-          "detail": "依 38.3.3(e)：原電芯 10 個完全放電 + 10 個原組件電芯完全放電；充電電芯 10 個第 1 循環完全放電 + 10 個充電組件電芯第 1 循環完全放電 + 10 個 50 循環後完全放電 + 10 個充電組件電芯 50 循環後完全放電。"
+          "value": "20 顆電芯 (10 原態 + 10 循環態)",
+          "detail": "10 顆第 1 循環完放電芯 + 10 顆 25 循環完放電芯。"
         },
         "sample_requirement": {
           "value": "全新樣品",
           "detail": "受測電芯須為未經其他測試之樣品 (38.3.4)。"
+        },
+        "observation_period": {
+          "value": "測試後 7 天 (7 days)",
+          "detail": "強制放電完成後持續觀察 7 天。"
         }
       },
       "acceptance_criteria": {

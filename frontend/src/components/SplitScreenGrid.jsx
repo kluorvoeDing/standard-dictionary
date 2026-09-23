@@ -21,6 +21,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
     { id: 'PACK_SYSTEM', label: 'System (系統)' }
   ];
   const [filterObjects, setFilterObjects] = useState(['CELL']);
+  const [diffOnly, setDiffOnly] = useState(false);
 
   const toggleObjectFilter = (objId) => {
     setFilterObjects(prev => 
@@ -78,6 +79,39 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
     let arr = Object.values(groups).sort((a, b) => {
       if (a.order !== b.order) return a.order - b.order;
       return a.nameZh.localeCompare(b.nameZh, 'zh-Hant');
+    });
+
+    // Compute parameter diffs across standards for each test group
+    arr.forEach(g => {
+      const keyValuesMap = new Map();
+      const baseIdsInRow = Object.keys(g.records);
+
+      baseIdsInRow.forEach(bId => {
+        const verMap = g.records[bId];
+        Object.values(verMap).forEach(records => {
+          records.forEach(rec => {
+            if (rec.conditions && typeof rec.conditions === 'object') {
+              Object.entries(rec.conditions).forEach(([k, v]) => {
+                if (!keyValuesMap.has(k)) keyValuesMap.set(k, new Set());
+                let valStr = '';
+                if (typeof v === 'string' || typeof v === 'number') valStr = String(v);
+                else if (v && typeof v === 'object') valStr = v.value || '';
+                keyValuesMap.get(k).add(valStr.trim().toLowerCase());
+              });
+            }
+          });
+        });
+      });
+
+      const diffKeys = new Set();
+      if (baseIdsInRow.length >= 2) {
+        keyValuesMap.forEach((valSet, k) => {
+          if (valSet.size > 1) {
+            diffKeys.add(k);
+          }
+        });
+      }
+      g.diffKeys = diffKeys;
     });
 
     return arr.filter(g => {
@@ -297,6 +331,28 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
               );
             })}
           </div>
+
+          <div style={{ width: '1px', height: '1.4rem', backgroundColor: 'var(--border-color)' }}></div>
+
+          <div style={{ display: 'flex', gap: '0.45rem', alignItems: 'center' }}>
+            <button
+              className={`sm-filter${diffOnly ? ' is-active' : ''}`}
+              onClick={() => setDiffOnly(prev => !prev)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.35rem',
+                fontWeight: 600,
+                borderColor: diffOnly ? '#f59e0b' : undefined,
+                color: diffOnly ? '#d97706' : undefined,
+                backgroundColor: diffOnly ? 'rgba(245, 158, 11, 0.12)' : undefined
+              }}
+              title="僅顯示跨標準有分歧的測試條件參數"
+            >
+              <span>⚡</span>
+              <span>{diffOnly ? '只看差異中 (Diff Active)' : '只看差異 (Diff Only)'}</span>
+            </button>
+          </div>
         </div>
 
       <div className="scrollable" style={{ flexGrow: 1, padding: isMobile ? '0.75rem' : '1rem', overflowX: 'auto' }}>
@@ -437,6 +493,8 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
                     testRecords={recordsForActiveVersion} 
                     filterObjects={filterObjects}
                     prerequisites={prerequisites}
+                    diffOnly={diffOnly}
+                    diffKeys={group.diffKeys}
                   />
                 );
               })}

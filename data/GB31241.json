@@ -86,6 +86,14 @@
         "soaking": {
           "value": "達溫後保溫 30 分鐘",
           "detail": "在短路試驗前，必須讓電池表面溫度達到目標溫度後，再持續保溫 30 分鐘。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
         }
       },
       "acceptance_criteria": {
@@ -125,6 +133,18 @@
         "duration": {
           "value": "7 小時 或降溫 20%",
           "detail": "電池持續充電時間達到 7 小時，或製造商定義充電時間中較大值，或電池溫度下降值達到溫度最大值的 20%。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "充電結束或保護動作後，在試驗環境中觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -160,6 +180,14 @@
         "duration": {
           "value": "90 分鐘",
           "detail": "持續 90 分鐘。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
         }
       },
       "acceptance_criteria": {
@@ -197,6 +225,14 @@
         "duration": {
           "value": "6 小時",
           "detail": "保持 6 小時。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
         }
       },
       "acceptance_criteria": {
@@ -245,6 +281,14 @@
         "post_rest": {
           "value": "室溫靜置 6 小時",
           "detail": "溫度循環結束後，需在室溫 20 °C±5 °C 下至少保存 6 小時。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
         }
       },
       "acceptance_criteria": {
@@ -285,6 +329,14 @@
         "termination": {
           "value": "停機延遲 ≤ 100 ms",
           "detail": "擠壓達到截止條件（電壓降達三分之一或擠壓力達13.0 kN）和擠壓裝置停止的時間間隔應不大於 100 ms。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
         }
       },
       "acceptance_criteria": {
@@ -322,6 +374,14 @@
         "duration": {
           "value": "6 小時",
           "detail": "保持 6 小時。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
         }
       },
       "acceptance_criteria": {
@@ -370,6 +430,14 @@
         "post_rest": {
           "value": "室溫靜置 6 小時",
           "detail": "試驗結束後，在室溫下靜置 6 小時。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
         }
       },
       "acceptance_criteria": {
@@ -406,6 +474,14 @@
         "duration": {
           "value": "7 小時",
           "detail": "保持 7 小時。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
         }
       },
       "acceptance_criteria": {
@@ -450,6 +526,14 @@
         "post_test": {
           "value": "充放電循環 1 次",
           "detail": "若樣品還能繼續充放電，則按照規定的充放電方法繼續進行一次放電充電循環。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
         }
       },
       "acceptance_criteria": {
@@ -489,6 +573,18 @@
         "duration": {
           "value": "動作或取大值",
           "detail": "對於移除保護電路的電池組充電 1 小時 或(C/Icm)h，兩者取較大值。對於保留保護電路的電池組充電至保護電路動作。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "充電結束或保護動作後，在試驗環境中觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -525,6 +621,14 @@
         "duration": {
           "value": "保護動作或短路 24 小時",
           "detail": "直到電池組的保護電路動作；對於移除保護電路的電池組，需短路 24 小時。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
         }
       },
       "acceptance_criteria": {
@@ -557,6 +661,14 @@
         "cycles": {
           "value": "500 次動作",
           "detail": "模擬過壓、過流、欠壓、短路等條件，保護電路應能承受 500 次重複動作而不失效。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆",
+          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
         }
       },
       "acceptance_criteria": {
