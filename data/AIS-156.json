@@ -610,7 +610,7 @@
       "name_en": "Hydrogen Emission Test",
       "name_zh": "氫氣排放測試",
       "test_objects": [
-        "REESS"
+        "PACK_SYSTEM"
       ],
       "exemptions": [
         "具備封閉化學系統之電池（如鋰離子電池）"

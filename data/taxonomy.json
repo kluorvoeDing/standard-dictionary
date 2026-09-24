@@ -13,6 +13,14 @@
     "THERM": {
       "name_zh": "熱/環境測試",
       "name_en": "Thermal & Environmental Tests"
+    },
+    "ENV": {
+      "name_zh": "環境測試（氣體排放、鹽霧、濕熱等）",
+      "name_en": "Environmental Tests"
+    },
+    "BMS": {
+      "name_zh": "電池管理系統功能測試",
+      "name_en": "BMS Functional Tests"
     }
   },
   "test_types": [

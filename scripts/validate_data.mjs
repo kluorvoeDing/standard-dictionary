@@ -22,7 +22,37 @@ const DATA = path.join(ROOT, 'data');
 const STRICT = process.argv.includes('--strict');
 
 const SYSTEM_FILES = new Set(['catalog.json', 'taxonomy.json']);
-const PLACEHOLDER_RE = /(待確認|待補|TODO|TBD|FIXME|未知|N\/A|\bnull\b|\?\?\?)/i;
+// 這些字眼出現在任何位置都代表沒填完
+const PLACEHOLDER_RE = /(待確認|待補|TODO|TBD|FIXME|\?\?\?)/i;
+// 這些字眼只有「整個值就是它」才算佔位值；出現在句子裡是正常用語（例：「未知 DUT 電阻時」）
+const WHOLE_PLACEHOLDER_RE = /^\s*(未知|N\/A|null)\s*$/i;
+
+// 找出條件/判定中疑似偷懶的佔位值，回傳第一個命中的字眼
+function findPlaceholder(node) {
+  if (node === null) return 'null';
+  if (typeof node === 'string') {
+    const hit = node.match(PLACEHOLDER_RE) || node.match(WHOLE_PLACEHOLDER_RE);
+    return hit ? hit[1] : null;
+  }
+  if (Array.isArray(node)) {
+    for (const x of node) { const h = findPlaceholder(x); if (h) return h; }
+  } else if (node && typeof node === 'object') {
+    for (const x of Object.values(node)) { const h = findPlaceholder(x); if (h) return h; }
+  }
+  return null;
+}
+
+// 收集 test_sequence 內所有 `tests` 陣列引用的測試 id
+function collectSequenceRefs(node, out = []) {
+  if (Array.isArray(node)) node.forEach((x) => collectSequenceRefs(x, out));
+  else if (node && typeof node === 'object') {
+    for (const [k, v] of Object.entries(node)) {
+      if (k === 'tests' && Array.isArray(v)) v.filter((x) => typeof x === 'string').forEach((x) => out.push(x));
+      else collectSequenceRefs(v, out);
+    }
+  }
+  return out;
+}
 
 const errors = [];
 const warnings = [];
@@ -141,10 +171,16 @@ for (const f of onDisk) {
     if (t.acceptance_criteria === undefined) warn(tag, `${t.id} 缺少 acceptance_criteria`);
 
     // 偷懶佔位值掃描（只看條件與判定，降低誤報）
-    const probe = JSON.stringify({ c: t.conditions, a: t.acceptance_criteria });
-    const hit = probe.match(PLACEHOLDER_RE);
-    if (hit) warn(tag, `${t.id} 疑似偷懶/佔位值：「${hit[0]}」`);
+    const hit = findPlaceholder([t.conditions, t.acceptance_criteria]);
+    if (hit) warn(tag, `${t.id} 疑似偷懶/佔位值：「${hit}」`);
   });
+
+  // test_sequence 引用的測試必須真的存在（避免複製其他標準後留下舊 id）
+  if (d.test_sequence) {
+    const dangling = [...new Set(collectSequenceRefs(d.test_sequence))].filter((id) => !seenTestIds.has(id));
+    if (dangling.length)
+      warn(f, `test_sequence 引用了不存在的測試 id（${dangling.length} 個）：${dangling.slice(0, 5).join('、')}${dangling.length > 5 ? '…' : ''}`);
+  }
 }
 
 report();

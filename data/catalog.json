@@ -164,8 +164,7 @@
     "li_applicable": true,
     "item_count": 17,
     "available_objects": [
-      "PACK_SYSTEM",
-      "REESS"
+      "PACK_SYSTEM"
     ],
     "test_type": null,
     "normativity": "normative",
@@ -782,7 +781,6 @@
     "li_applicable": true,
     "item_count": 18,
     "available_objects": [
-      "PACK",
       "PACK_SYSTEM"
     ],
     "test_type": null,

@@ -186,5 +186,42 @@
       "related_tests": [],
       "source_reference": "Section 60.3"
     }
-  ]
+  ],
+  "test_sequence": {
+    "description": "本標準未規定整體試驗順序。以下依章節記錄本資料收錄之 3 項測試的樣品規定。",
+    "sequences": [
+      {
+        "group": "異常操作試驗（Section 55）",
+        "samples": "每項獨立樣品",
+        "tests": [
+          "UL2743-T55-2",
+          "UL2743-T55-9"
+        ],
+        "rule": "55.2～55.10 各項試驗使用各自的樣品，除非各方同意一個樣品進行多項試驗；每項試驗後均需進行 Section 53 耐壓試驗。",
+        "source_reference": "55.1.1、55.1.2"
+      },
+      {
+        "group": "外殼強度試驗（Section 60）",
+        "samples": "2 個",
+        "tests": [
+          "UL2743-T60-3"
+        ],
+        "rule": "落下試驗使用 2 個樣品：第 1 個為收貨狀態，第 2 個先在 0 °C（或製造商規定更低之最低工作溫度）冷凍箱調節 4 小時後立即試驗；試驗後需符合 60.1.1 (a)～(c)。",
+        "source_reference": "60.1.1、60.3.1"
+      }
+    ]
+  },
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "未記錄",
+    "created_date": "2026-06-03",
+    "created_date_note": "以 git 首次提交日期為準；原始 PDF 於 2026-05-23 加入資料庫。",
+    "source_files": [
+      "docs/source_pdfs/2026-05-23 add/s2743_3.pdf"
+    ],
+    "enrichment": "2026-09-24 Phase 2 以 scripts/data_tools/enrich_phase2_batchC.mjs 補上 sample_quantity、pre_conditioning、observation_period 等欄位；這些值多為整份標準共用的通用描述，尚未逐條對照原文核對。",
+    "test_sequence_source": "2026-09-24 依原文 55.1、60.1、60.3 補入。",
+    "coverage_note": "本資料僅收錄 3 項測試（55.2、55.9、60.3），並非 UL 2743 全部試驗。",
+    "total_tests": 3
+  }
 }
