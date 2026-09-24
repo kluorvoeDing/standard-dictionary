@@ -41,6 +41,18 @@
         "termination": {
           "value": "溫度下降至峰值溫升 80% 或達 6 小時",
           "detail": "當電池溫度下降值達到峰值溫升的 80% 或短接時間達到 6 小時 時終止（選較嚴者）。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -73,6 +85,18 @@
         "termination": {
           "value": "1.5 倍電壓恆壓 1 小時 或 總計 1.5 小時",
           "detail": "充電至 1.5 倍的充電限制電壓後持續恆壓充電 1 小時，或總充電時間達到 1.5 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -105,6 +129,18 @@
         "duration": {
           "value": "90 分鐘",
           "detail": "反向充電時間共計 90 分鐘。若最大放電電流小於 1 It，則以最大放電電流反向充電，時間 t = (1It / Im) * 90。 如果在反向充電 90 分鐘 內，電壓達到負的充電上限電壓（－Uup），應通過減小電流保持該電壓繼續進行反向充電。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -141,6 +177,18 @@
         "duration": {
           "value": "6 小時",
           "detail": "保持 6 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -181,6 +229,18 @@
         "large_battery_duration": {
           "value": "大型電池暴露 ≥ 12 小時",
           "detail": "大型電池暴露極端溫度時間至少 12 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -213,6 +273,18 @@
         "duration": {
           "value": "12 循環 / 方向 (共 3 小時)",
           "detail": "每個方向進行 12 個循環，每個方向循環時間共計 3 小時。圓柱形 2 個方向，方型和軟包 3 個方向。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -245,6 +317,18 @@
         "shocks": {
           "value": "每方向正反各 3 次",
           "detail": "每個方向進行三次衝擊，接著反方向三次。圓柱 12 次，方型軟包 18 次。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -293,6 +377,22 @@
         "orientation": {
           "value": "依據電池形狀放置",
           "detail": "圓柱型電池衝擊時使其縱軸向與重物表面平行，金屬棒與電池縱軸向垂直且盡量與衝擊面平行。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
+        },
+        "apparatus": {
+          "value": "直徑 15.8 mm 鋼棒 與 9.1 kg 重錘",
+          "detail": "直徑 15.8 ± 0.1 mm 鋼棒橫置於電芯中心，9.1 ± 0.1 kg 重錘自 610 ± 25 mm 落下。"
         }
       },
       "acceptance_criteria": {
@@ -341,6 +441,18 @@
         "orientation": {
           "value": "依據電池形狀放置",
           "detail": "圓柱型電池擠壓時使其縱軸向與平面平行。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -377,6 +489,18 @@
         "depth": {
           "value": "10 mm 或 30% 厚度",
           "detail": "針刺深度應扣除外殼厚度，對於電池外殼厚度小於或等於 10 mm 的，按 10 mm 計入。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -409,6 +533,18 @@
         "duration": {
           "value": "1 小時",
           "detail": "持續 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -450,6 +586,18 @@
         "orientation": {
           "value": "質量 ≥ 50kg 需包含邊和角跌落",
           "detail": "針對質量 ≥ 50kg 的樣品，需測試邊和角方向，且重複 2 次。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -498,6 +646,18 @@
         "test_current": {
           "value": "推薦最大電流",
           "detail": "用推薦最大充電電流充電。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -540,6 +700,18 @@
         "observation": {
           "value": "1 小時",
           "detail": "每次充放電循環結束後，需靜置觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -586,6 +758,18 @@
         "observation": {
           "value": "1 小時",
           "detail": "每次充放電循環結束後，需靜置觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -630,6 +814,18 @@
         "observation": {
           "value": "1 小時",
           "detail": "過熱保護動作後，靜置觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -663,6 +859,18 @@
         "stop_condition": {
           "value": "加熱至 300 °C 停止",
           "detail": "當溫度達到 300 °C 時停止加熱。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "按 4.3 規定，儲能電芯各項安全性能試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.2 標準充電程序充滿電",
+          "detail": "在 25 ± 2 °C 下按製造商規定之標準充電程序充滿電，並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -691,6 +899,18 @@
         "trigger": {
           "value": "激光或其他觸發單體",
           "detail": "按照附錄 C、D 進行熱擴散試驗程序。激光加熱為首選。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -728,6 +948,18 @@
         "termination": {
           "value": "降溫或 6 小時",
           "detail": "持續測試直到電池溫度下降到峰值的 80% 或是持續 6 小時為止。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -752,6 +984,18 @@
         "procedure": {
           "value": "依標準充放電程序",
           "detail": "將電池放電至運輸 SOC，以反向極性連接並充電至滿電或保護，靜置 1 小時後，以最大電流放電至截止條件，再靜置 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -780,6 +1024,18 @@
         "standard": {
           "value": "依 GB 4943.1",
           "detail": "抗電強度測試依據 GB 4943.1—2022 進行。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -807,6 +1063,18 @@
         "standard": {
           "value": "GB/T 5169.21",
           "detail": "根據 GB/T 5169.21，透過對零件進行球壓試驗來檢查合規性。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -834,6 +1102,18 @@
         "standard": {
           "value": "GB/T 5169.16",
           "detail": "材料在最薄使用厚度下根據 GB/T 5169.16 進行試驗。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -864,6 +1144,18 @@
         "standard": {
           "value": "GB 4943.1—2022",
           "detail": "相關檢驗方法按照 GB 4943.1—2022 的規定。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性系統",
+          "detail": "電池組系統各項保護與安全試驗每項需 1 組或 2 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 5.3 規定充電至 100% SOC",
+          "detail": "在受控環境溫度下按製造商規定之方法充電至滿電狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後靜置觀察 1 小時；熱擴散試驗需監控至少 2 小時。"
         }
       },
       "acceptance_criteria": {

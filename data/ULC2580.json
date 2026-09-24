@@ -51,6 +51,18 @@
         "ignition_detection": {
           "value": "火花點火源或氣體監測",
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -109,6 +121,18 @@
         "ignition_detection": {
           "value": "火花點火源或氣體監測",
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -154,6 +178,18 @@
         "ignition_detection": {
           "value": "火花點火源或氣體監測",
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -196,6 +232,18 @@
         "stabilization": {
           "value": "靜置 1 小時",
           "detail": "在測試前，預估所有電芯溫度需達到腔室溫度 ±10 °C (±18°F) 內，並靜置 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -234,6 +282,18 @@
         "ignition_detection": {
           "value": "火花點火源或氣體監測",
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -276,6 +336,18 @@
         "duration": {
           "value": "≥ 1 分鐘",
           "detail": "測試電壓持續施加至少 1 分鐘。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -316,6 +388,18 @@
         "voltage": {
           "value": "高於待測電壓",
           "detail": "施加高於待測電路的直流電壓（至少為高壓直流母線的工作電壓）。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -344,6 +428,18 @@
         "test_current": {
           "value": "150% 或 25A",
           "detail": "施加最大額定電流的 150% 或 25A (取較大者) 維持 5 秒。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -393,6 +489,18 @@
         "ignition_detection": {
           "value": "火花點火源或氣體監測",
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -434,6 +542,18 @@
         "ignition_detection": {
           "value": "火花點火源或氣體監測",
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -474,6 +594,18 @@
         "ignition_detection": {
           "value": "火花點火源或氣體監測",
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -517,6 +649,18 @@
         "ignition_detection": {
           "value": "火花點火源或氣體監測",
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -559,6 +703,18 @@
         "ignition_detection": {
           "value": "火花點火源或氣體監測",
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -606,6 +762,22 @@
         "ignition_detection": {
           "value": "火花點火源或氣體監測",
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+        },
+        "apparatus": {
+          "value": "半徑 75 mm 半圓柱壓頭 或 直徑 150 mm 平板",
+          "detail": "依樣品尺寸選用半徑 75 mm 之圓柱壓頭或平整鋼製壓板。"
         }
       },
       "acceptance_criteria": {
@@ -643,6 +815,18 @@
         "method": {
           "value": "SAE J2464 (modified)",
           "detail": "採用 SAE J2464 的熱衝擊測試方法，但極限溫度修改為 85 ±2 °C 至 -40 ±2 °C。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -676,6 +860,18 @@
         "method": {
           "value": "IEC 60068-2-52",
           "detail": "依據 IEC 60068-2-52 或等效標準進行鹽霧暴露。 並採用嚴酷等級 6 進行測試."
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -719,6 +915,18 @@
         "duration": {
           "value": "1 小時",
           "detail": "浸泡 1 小時或直到所有可見的化學反應停止。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -750,6 +958,18 @@
         "fire_exposure": {
           "value": "590 °C 火焰 20 分鐘",
           "detail": "暴露於 590 °C 以上之火焰中持續 20 分鐘，或按車輛預期的火災暴露條件進行。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -782,6 +1002,18 @@
         "trigger": {
           "value": "誘導單電芯熱失控",
           "detail": "使用內部短路或其他手段（見 Annex C）觸發至少一個電池發生熱失控。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池包",
+          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依試驗要求調整至 100% 或特定 SOC",
+          "detail": "依各測試章節要求調整初始荷電狀態。"
+        },
+        "observation_period": {
+          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
+          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -815,6 +1047,18 @@
         "method": {
           "value": "IEC 62660-2",
           "detail": "依據 IEC 62660-2 進行振動。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆電芯",
+          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依製造商規定之標準充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -843,6 +1087,18 @@
         "method": {
           "value": "IEC 62660-2",
           "detail": "依據 IEC 62660-2 進行機械衝擊。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆電芯",
+          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依製造商規定之標準充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -871,6 +1127,18 @@
         "height": {
           "value": "1.0 m",
           "detail": "從 1.0 m 跌落至平坦混凝土表面，共3次。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆電芯",
+          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依製造商規定之標準充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -899,6 +1167,18 @@
         "method": {
           "value": "IEC 62660-2",
           "detail": "依據 IEC 62660-2 進行擠壓測試。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆電芯",
+          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依製造商規定之標準充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -927,6 +1207,18 @@
         "method": {
           "value": "IEC 62660-2",
           "detail": "依據 IEC 62660-2 進行高溫耐久性測試。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆電芯",
+          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依製造商規定之標準充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -955,6 +1247,18 @@
         "method": {
           "value": "IEC 62660-2",
           "detail": "依據 IEC 62660-2 進行溫度循環測試。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆電芯",
+          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依製造商規定之標準充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -983,6 +1287,18 @@
         "method": {
           "value": "IEC 62660-2",
           "detail": "依據 IEC 62660-2 進行外部短路測試。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆電芯",
+          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依製造商規定之標準充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1011,6 +1327,18 @@
         "termination": {
           "value": "120%電壓 或 130% SOC",
           "detail": "以最大充電電流恆流充電至120%最大電壓或130% SOC。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆電芯",
+          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依製造商規定之標準充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1039,6 +1367,18 @@
         "method": {
           "value": "IEC 62660-2",
           "detail": "依據 IEC 62660-2 進行強制放電測試。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆電芯",
+          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依製造商規定之標準充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1067,6 +1407,18 @@
         "heat_source": {
           "value": "Meker 本生燈",
           "detail": "將單電池置於金屬網上，使用 Meker 本生燈加熱，直到單電池爆炸或燃燒殆盡。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆電芯",
+          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充放電確認容量後滿充",
+          "detail": "依製造商規定之標準充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
         }
       },
       "acceptance_criteria": {

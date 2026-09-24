@@ -114,6 +114,18 @@
         "duration": {
           "value": "6 小時或溫度下降 80%（取先到者）",
           "detail": "電芯維持測試狀態 6 小時，或直到外殼溫度從最大溫升下降 80%，以先到者為準 (6 小時 or until the case temperature declines by 80 % of the maximum temperature rise, whichever is the sooner)。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "單電池級別測試每項條件使用 5 顆新鮮或循環後之代表性單電池。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充並靜置",
+          "detail": "在常溫環境下依製造商規定之充放電程序充滿電至 100% SOC，靜置 1 小時至 4 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後，在環境溫度下持續監控樣品狀態至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -176,6 +188,22 @@
         "floor_note": {
           "value": "金屬地板需防止外部短路",
           "detail": "若使用金屬地板，應採取適當措施避免電芯或電芯組與地板發生外部短路 (In the case of a metal floor, external short circuit of the cell or cell block with the floor should be avoided by appropriate measures)。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "單電池級別測試每項條件使用 5 顆新鮮或循環後之代表性單電池。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充並靜置",
+          "detail": "在常溫環境下依製造商規定之充放電程序充滿電至 100% SOC，靜置 1 小時至 4 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後，在環境溫度下持續監控樣品狀態至少 1 小時。"
+        },
+        "apparatus": {
+          "value": "直徑 15.8 mm 鋼棒 與 9.1 kg 重錘",
+          "detail": "直徑 15.8 ± 0.1 mm 平滑鋼棒，9.1 ± 0.1 kg 重錘自 610 ± 25 mm 高度自由落下。"
         }
       },
       "acceptance_criteria": {
@@ -231,6 +259,22 @@
         "subdivision_note": {
           "value": "可測試代表性子單元",
           "detail": "若電池系統可分為較小單元，可測試代表性子單元。製造商可為測試單元添加最終電池系統中的功能，須明確聲明測試單元 (If the battery system is divided into smaller units, the unit can be tested as the representative of the battery system)。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "電池系統或模組測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依系統規範充電至 100% SOC",
+          "detail": "依製造商規格將電池系統充滿電，並確保 BMS 處於正常運作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱蔓延監控至冷卻)",
+          "detail": "測試結束後外觀檢查並持續監控 1 小時；熱蔓延試驗需監控至外殼溫度冷卻並靜置 1 小時。"
+        },
+        "apparatus": {
+          "value": "平整水泥地面 或 50 mm 厚硬質木板",
+          "detail": "平整堅固之水泥地面或平鋪於堅固基座上的厚度 50 mm 硬質木板。"
         }
       },
       "acceptance_criteria": {
@@ -281,6 +325,18 @@
         "hold_time": {
           "value": "3 小時",
           "detail": "電芯在此溫度下維持 3 小時後結束測試 (The cell remains at this temperature for 3 小時 before the test is discontinued)。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "單電池級別測試每項條件使用 5 顆新鮮或循環後之代表性單電池。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充並靜置",
+          "detail": "在常溫環境下依製造商規定之充放電程序充滿電至 100% SOC，靜置 1 小時至 4 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後，在環境溫度下持續監控樣品狀態至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -331,6 +387,18 @@
         "termination": {
           "value": "溫度穩定（30 分鐘內 < 10 °C 變化）或恢復至環境溫度",
           "detail": "測試持續至電芯表面溫度達穩態條件（30 分鐘內變化小於 10 °C）或恢復至環境溫度 (until the temperature of the cell surface reaches steady state conditions (less than 10 °C change in a 30-min period) or returns to ambient temperature)。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "單電池級別測試每項條件使用 5 顆新鮮或循環後之代表性單電池。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充並靜置",
+          "detail": "在常溫環境下依製造商規定之充放電程序充滿電至 100% SOC，靜置 1 小時至 4 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後，在環境溫度下持續監控樣品狀態至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -389,6 +457,18 @@
         "voltage_hold": {
           "value": "達目標電壓後降低電流維持至測試結束",
           "detail": "若放電電壓在測試期間達到目標電壓，應通過降低電流將電壓維持在目標電壓，直到測試期結束 (If the voltage in discharge reaches the target voltage, the voltage shall be kept at the target voltage by reducing the current for the remaining test period)。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "單電池級別測試每項條件使用 5 顆新鮮或循環後之代表性單電池。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充並靜置",
+          "detail": "在常溫環境下依製造商規定之充放電程序充滿電至 100% SOC，靜置 1 小時至 4 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後，在環境溫度下持續監控樣品狀態至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -458,6 +538,22 @@
         "voltage_monitoring_rate": {
           "value": "> 100 次/秒",
           "detail": "電壓監測速率大於每秒 100 次 (The voltage is monitored at a rate of more than 100 times per second)。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "單電池級別測試每項條件使用 5 顆新鮮或循環後之代表性單電池。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充並靜置",
+          "detail": "在常溫環境下依製造商規定之充放電程序充滿電至 100% SOC，靜置 1 小時至 4 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後，在環境溫度下持續監控樣品狀態至少 1 小時。"
+        },
+        "apparatus": {
+          "value": "直徑 10 mm 壓頭 與 微型小鎳片",
+          "detail": "高 0.2 mm、寬 0.1 mm、每邊長 1.0 mm 之微型 L 型小鎳片，搭配直徑 10 mm 壓頭加壓治具。"
         }
       },
       "acceptance_criteria": {
@@ -511,6 +607,18 @@
         "modification_note": {
           "value": "可最小化修改電池系統以利測試",
           "detail": "可對電池系統進行修改以利目標電芯熱失控，但修改應最小化且不影響電池系統的熱特性 (The battery system may be modified to facilitate the thermal runaway of the target cell. The modification should be minimized and it shall not affect the thermal properties of the battery system)。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "電池系統或模組測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依系統規範充電至 100% SOC",
+          "detail": "依製造商規格將電池系統充滿電，並確保 BMS 處於正常運作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱蔓延監控至冷卻)",
+          "detail": "測試結束後外觀檢查並持續監控 1 小時；熱蔓延試驗需監控至外殼溫度冷卻並靜置 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -574,6 +682,18 @@
         "safety_stop": {
           "value": "BMS 失效時：電芯電壓達 103% 上限或超過上限 1 分鐘後停止",
           "detail": "若 BMS 未能終止充電，應在適當時機出於安全原因停止測試，例如電芯電壓達到上限充電電壓的 103% 或超過上限充電電壓 1 分鐘後 (If the BMS fails to terminate the charging, the test should be stopped at the proper timing for safety reasons, for example when the cell voltage reaches 103 % of the upper limit charging voltage or 1 分鐘 after having exceeded the upper limit charging voltage)。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "電池系統或模組測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依系統規範充電至 100% SOC",
+          "detail": "依製造商規格將電池系統充滿電，並確保 BMS 處於正常運作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱蔓延監控至冷卻)",
+          "detail": "測試結束後外觀檢查並持續監控 1 小時；熱蔓延試驗需監控至外殼溫度冷卻並靜置 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -629,6 +749,18 @@
         "full_operation": {
           "value": "所有 BMS 功能須完全運作",
           "detail": "測試期間電池系統的所有功能須按設計完全運作 (During the test, all functions of the battery system shall be fully operational as designed)。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "電池系統或模組測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依系統規範充電至 100% SOC",
+          "detail": "依製造商規格將電池系統充滿電，並確保 BMS 處於正常運作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱蔓延監控至冷卻)",
+          "detail": "測試結束後外觀檢查並持續監控 1 小時；熱蔓延試驗需監控至外殼溫度冷卻並靜置 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -685,6 +817,18 @@
         "post_test_monitoring": {
           "value": "BMS 終止充電後 1 小時",
           "detail": "數據擷取/監測在序列停止後繼續 1 小時 (Data acquisition/monitoring shall be continued for one hour after the sequence is stopped (e.g. the BMS has terminated charging))。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "電池系統或模組測試需 1 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依系統規範充電至 100% SOC",
+          "detail": "依製造商規格將電池系統充滿電，並確保 BMS 處於正常運作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱蔓延監控至冷卻)",
+          "detail": "測試結束後外觀檢查並持續監控 1 小時；熱蔓延試驗需監控至外殼溫度冷卻並靜置 1 小時。"
         }
       },
       "acceptance_criteria": {

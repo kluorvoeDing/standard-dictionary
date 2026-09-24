@@ -61,6 +61,18 @@
         "termination": {
           "value": "溫度降至 20% 或 24 小時",
           "detail": "電池溫度下降值達到溫度最大值的 20% 或 短接時間達到 24 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "玩具用電芯試驗每項條件需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定之充電方法充滿電",
+          "detail": "在 20 ± 5 °C 下依規定程序充滿電並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -101,6 +113,18 @@
         "termination": {
           "value": "恆壓 1 小時 或 總 7 小時",
           "detail": "繼續恆壓充電 1 小時 停止試驗，或總充電時間達到 7 小時 停止試驗"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "玩具用電芯試驗每項條件需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定之充電方法充滿電",
+          "detail": "在 20 ± 5 °C 下依規定程序充滿電並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -141,6 +165,18 @@
         "duration": {
           "value": "90 分鐘",
           "detail": "反向充電時間共計 90 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "玩具用電芯試驗每項條件需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定之充電方法充滿電",
+          "detail": "在 20 ± 5 °C 下依規定程序充滿電並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -182,6 +218,18 @@
         "duration": {
           "value": "6 小時",
           "detail": "保持 6 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -224,6 +272,18 @@
         "observation": {
           "value": "6 小時",
           "detail": "在 25 °C ± 5 °C 的環境溫度下保存至少 6 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -262,6 +322,18 @@
         "cycles": {
           "value": "每個方向 12 次",
           "detail": "每個方向進行 12 個循環，共計 3 小時。圓柱型/扣式 2 個方向，方型/軟包 3 個方向。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -304,6 +376,18 @@
         "direction": {
           "value": "每方向 3 次",
           "detail": "每個方向進行 3 次。圓柱/扣式 12 次 (2個方向的正反)，方型/軟包 18 次 (3個方向的正反)。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -342,6 +426,22 @@
         "direction": {
           "value": "各面跌落",
           "detail": "電池: 圓柱/扣式端面各 1 次，側面 2 次；方型/軟包每個面各 1 次。電池組: 三個相互垂直軸正反方向共 6 次；不可更換電池組允許安裝在設備內每面 1 次。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
+        },
+        "apparatus": {
+          "value": "混凝土基座上鋪設 4 mm 鋼板 或 硬木板",
+          "detail": "混凝土平整地面上鋪設 4 mm 鋼板（模擬玩具硬質衝擊面）或 20 mm 硬木板。"
         }
       },
       "acceptance_criteria": {
@@ -386,6 +486,18 @@
         "termination": {
           "value": "最大力或電壓降1/3",
           "detail": "壓力達到最大值或電壓下降三分之一，停止並觀察 5 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "玩具用電芯試驗每項條件需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定之充電方法充滿電",
+          "detail": "在 20 ± 5 °C 下依規定程序充滿電並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -430,6 +542,18 @@
         "observation": {
           "value": "6 小時",
           "detail": "試驗後觀察 6 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "玩具用電芯試驗每項條件需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定之充電方法充滿電",
+          "detail": "在 20 ± 5 °C 下依規定程序充滿電並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -472,6 +596,18 @@
         "duration": {
           "value": "60 分鐘",
           "detail": "持續 60 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "玩具用電芯試驗每項條件需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定之充電方法充滿電",
+          "detail": "在 20 ± 5 °C 下依規定程序充滿電並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -516,6 +652,18 @@
         "observation": {
           "value": "5 分鐘",
           "detail": "鋼針停留在電池中觀察 5 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "玩具用電芯試驗每項條件需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定之充電方法充滿電",
+          "detail": "在 20 ± 5 °C 下依規定程序充滿電並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -552,6 +700,18 @@
         "termination": {
           "value": "爆炸、完全燃燒或 30 分鐘",
           "detail": "電池爆炸、完全燃燒或持續加熱 30 分鐘 未起火未爆炸時停止"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "玩具用電芯試驗每項條件需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定之充電方法充滿電",
+          "detail": "在 20 ± 5 °C 下依規定程序充滿電並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -578,6 +738,18 @@
         "apparatus": {
           "value": "吞嚥量規",
           "detail": "以任意方向將樣品放入吞嚥量規"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -619,6 +791,18 @@
         "observation": {
           "value": "8 小時",
           "detail": "取出後在實驗室環境放置 8 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -655,6 +839,18 @@
         "duration": {
           "value": "7 小時",
           "detail": "擱置 7 小時 後取出恢復至室溫"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -682,6 +878,18 @@
         "test_item": {
           "value": "外殼及封裝材料",
           "detail": "針對外殼、PCB 板、導線及其他封裝材料進行可燃性評估"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -726,6 +934,18 @@
         "teardown": {
           "value": "拆解並顯微鏡檢查",
           "detail": "充電後拆解，通過光學顯微鏡等設備檢查負極界面"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "玩具用電芯試驗每項條件需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定之充電方法充滿電",
+          "detail": "在 20 ± 5 °C 下依規定程序充滿電並靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -772,6 +992,18 @@
         "termination": {
           "value": "保護動作後 1 分鐘",
           "detail": "保護裝置動作後靜置 1 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -814,6 +1046,18 @@
         "termination": {
           "value": "保護動作後 1 分鐘",
           "detail": "每次保護裝置動作後靜置 1 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -852,6 +1096,18 @@
         "termination": {
           "value": "保護動作後 1 分鐘",
           "detail": "每次保護裝置動作後靜置 1 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -891,6 +1147,18 @@
         "termination": {
           "value": "保護動作後 1 分鐘",
           "detail": "每次保護裝置動作後靜置 1 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -929,6 +1197,18 @@
         "termination": {
           "value": "保護動作後 1 分鐘",
           "detail": "短路正負極或輸出端子，保護裝置動作後靜置 1 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -971,6 +1251,18 @@
         "cycle_count": {
           "value": "3 次",
           "detail": "進行 3 次測試"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -1014,6 +1306,18 @@
         "charge": {
           "value": "10 分鐘",
           "detail": "用推薦充電電流進行充電，保持 10 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -1052,6 +1356,18 @@
         "discharge": {
           "value": "10 分鐘",
           "detail": "按放電程序進行放電，保持 10 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -1090,6 +1406,18 @@
         "charge": {
           "value": "推薦充電電流",
           "detail": "以 Icr 進行充電，使該電池電壓超過充電限制電壓"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {
@@ -1125,6 +1453,18 @@
         "discharge": {
           "value": "推薦放電電流",
           "detail": "以 Idr 進行放電，使該電池電壓低於放電終止電壓"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "玩具用電池組試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充至 100% SOC",
+          "detail": "依製造商說明書規定方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "在環境溫度下持續觀察 1 小時以確認無異常發熱與起火。"
         }
       },
       "acceptance_criteria": {

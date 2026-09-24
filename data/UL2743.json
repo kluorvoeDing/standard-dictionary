@@ -59,6 +59,22 @@
         "physical_setup": {
           "value": "木板/棉紙/紗布",
           "detail": "設備需放置在軟木表面上，覆蓋薄棉紙，並用起司布（或紗布）鬆散覆蓋。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組代表性電源包",
+          "detail": "可攜式應急電源包測試每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "以額定規格充滿電 (100% SOC) 並靜置",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC，靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "測試結束後在環境溫度下持續監控外殼溫度至恢復室溫或至少觀察 1 小時。"
+        },
+        "apparatus": {
+          "value": "負載電阻 < 20 mΩ 之大電流開關迴路",
+          "detail": "外接總電阻小於 20 mΩ 之開關負載迴路。"
         }
       },
       "acceptance_criteria": {
@@ -96,6 +112,18 @@
         "physical_setup": {
           "value": "木板/棉紙/紗布",
           "detail": "設備需放置在軟木表面上，覆蓋兩層薄棉紙，並覆蓋一層未經處理的 100% 醫療級棉紗布。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組代表性電源包",
+          "detail": "可攜式應急電源包測試每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "以額定規格充滿電 (100% SOC) 並靜置",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC，靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "測試結束後在環境溫度下持續監控外殼溫度至恢復室溫或至少觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -130,6 +158,22 @@
         "drop_height": {
           "value": "0.5m 或 0.9m",
           "detail": "重量 ≤ 18kg：從 0.9m 高度落下 3 次。重量 > 18kg 且附提把：從 0.9m 高度落下 1 次。重量 > 25kg 且附輪子：從 0.5m 高度落下 1 次。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組代表性電源包",
+          "detail": "可攜式應急電源包測試每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "以額定規格充滿電 (100% SOC) 並靜置",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC，靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "測試結束後在環境溫度下持續監控外殼溫度至恢復室溫或至少觀察 1 小時。"
+        },
+        "apparatus": {
+          "value": "平整混凝土地面上鋪設硬木板",
+          "detail": "平整水泥基座上鋪設 20 mm 厚硬質木板，自 1 m 高度跌落。"
         }
       },
       "acceptance_criteria": {

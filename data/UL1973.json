@@ -47,6 +47,18 @@
         "termination": {
           "value": "充電至 110% 或保護啟動",
           "detail": "測試持續至保護電路終止充電、充電至最大規定電壓之 110% 或發生起火/爆炸。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -94,6 +106,18 @@
         "fault_condition": {
           "value": "單一故障",
           "detail": "充電電路單一故障（可能導致高倍率充電）。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -133,6 +157,18 @@
         "fault_condition": {
           "value": "放電保護電路單一故障",
           "detail": "放電電路中引入單一元件故障。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -173,6 +209,18 @@
         "fault_condition": {
           "value": "放電電路單一故障",
           "detail": "放電電路中引入單一元件故障。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -215,6 +263,18 @@
         "termination": {
           "value": "至保護啟動或極限後30 分鐘",
           "detail": "放電直到保護裝置啟動，或電池達到最低電壓/最高溫度保護，或在達到規定的正常放電極限後繼續放電 30 分鐘為止。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -250,6 +310,18 @@
         "operation": {
           "value": "多次充放電",
           "detail": "依指定的最大充電與放電參數，進行至少兩次完整的充放電循環。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -285,6 +357,18 @@
         "fault_condition": {
           "value": "關閉冷卻系統",
           "detail": "在最高及最低額定環境溫度下，關閉冷卻系統進行充放電。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -321,6 +405,18 @@
         "profile": {
           "value": "車輛振動輪廓",
           "detail": "根據預期的車輛或輕軌應用環境的振動頻譜。 Specific compliance with IEC 61373 for LER, and explicitly UL/ULC 2271 or UL/ULC 2580 for VAP applications."
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -357,6 +453,22 @@
         "waveform": {
           "value": "半正弦波或其他",
           "detail": "Both positive and negative direction shocks shall be applied in each of 3 mutually perpendicular directions for a total of 18 shocks. 測試應符合 IEC 61373，或對於 VAP 應用符合 UL/ULC 2271 或 UL/ULC 2580 (Section 29.3)。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
+        },
+        "apparatus": {
+          "value": "直徑 15.8 mm 鋼棒 與 9.1 kg 重錘",
+          "detail": "直徑 15.8 ± 0.1 mm 鋼棒橫置於樣品表面，9.1 ± 0.1 kg 重錘自 610 ± 25 mm 落下。"
         }
       },
       "acceptance_criteria": {
@@ -393,6 +505,22 @@
         "force": {
           "value": "100 ±6 kN",
           "detail": "Crush between a fixed surface and a ribbed test platen in accordance with the test fixture described in SAE J2464, applied in 3 mutually perpendicular directions of press (or 2 directions for systems with 2 axes of symmetry like cylindrical designs)."
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
+        },
+        "apparatus": {
+          "value": "半徑 75 mm 半圓柱壓頭 或 直徑 150 mm 平板",
+          "detail": "半徑 75 mm 之鋼製半圓柱壓板或直徑 150 mm 之平整鋼板。"
         }
       },
       "acceptance_criteria": {
@@ -428,6 +556,18 @@
         "height": {
           "value": "Variable",
           "detail": "100 cm for 7 kg or less, 10 cm for >7 kg but less than 100 kg, and 2.5 cm for > 100 kg."
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -465,6 +605,18 @@
         "temperature": {
           "value": "最高測得溫度 + 10 °C (≥70 °C)",
           "detail": "在烤箱中維持該溫度持續 7 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -500,6 +652,18 @@
         "trigger": {
           "value": "誘發熱失控",
           "detail": "在最大額定操作溫度下，於最嚴苛位置使用內部短路或加熱器觸發單一電芯熱失控。 Cells must be within ±10 °C (±18 °F) of the max specified temperature just before inducing the mechanism, and once thermal runaway is shut off/stopped, the DUT is subjected to a 24-h observation period."
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -544,6 +708,18 @@
         "duration": {
           "value": "7 小時",
           "detail": "Apply the short for 7 小時 or until temperatures on the cell cool to within ±10 °C."
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯 (新鮮態或循環態)",
+          "detail": "Annex E 單電池測試每項條件使用 5 顆新鮮態或循環後之代表性樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充電程序滿充",
+          "detail": "依製造商規格在室溫下依額定充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 1 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度或觀察至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -577,6 +753,22 @@
         "impact": {
           "value": "標準衝擊",
           "detail": "Explicitly requires a 15.8 ±0.1-mm bar, a 9.1 ±0.46-kg weight, and a drop height of 610 ±25 mm."
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯 (新鮮態或循環態)",
+          "detail": "Annex E 單電池測試每項條件使用 5 顆新鮮態或循環後之代表性樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充電程序滿充",
+          "detail": "依製造商規格在室溫下依額定充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 1 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度或觀察至少 1 小時。"
+        },
+        "apparatus": {
+          "value": "直徑 15.8 mm 鋼棒 與 9.1 kg 重錘",
+          "detail": "直徑 15.8 ± 0.1 mm 鋼棒橫置於樣品表面，9.1 ± 0.1 kg 重錘自 610 ± 25 mm 落下。"
         }
       },
       "acceptance_criteria": {
@@ -610,6 +802,18 @@
         "height": {
           "value": "1.0 m",
           "detail": "從 1.0 m 高度跌落 3 次。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯 (新鮮態或循環態)",
+          "detail": "Annex E 單電池測試每項條件使用 5 顆新鮮態或循環後之代表性樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充電程序滿充",
+          "detail": "依製造商規格在室溫下依額定充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 1 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度或觀察至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -643,6 +847,18 @@
         "soc": {
           "value": "完全充電",
           "detail": "單電池在加熱測試前必須完全充電 (100% SOC)。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯 (新鮮態或循環態)",
+          "detail": "Annex E 單電池測試每項條件使用 5 顆新鮮態或循環後之代表性樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充電程序滿充",
+          "detail": "依製造商規格在室溫下依額定充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 1 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度或觀察至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -680,6 +896,18 @@
         "soc": {
           "value": "完全放電",
           "detail": "在過充測試之前，單電池必須放電至指定的終止電壓 (0% SOC)。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯 (新鮮態或循環態)",
+          "detail": "Annex E 單電池測試每項條件使用 5 顆新鮮態或循環後之代表性樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充電程序滿充",
+          "detail": "依製造商規格在室溫下依額定充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 1 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度或觀察至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -713,6 +941,18 @@
         "duration": {
           "value": "90 分鐘",
           "detail": "Discharge voltage limit not to exceed the numerical value of the upper limit charging voltage specified for the cell. If the discharge voltage limit is reached before the 90 分鐘, the cell shall be discharged at a constant voltage discharge equal to the manufacturer’s determined low voltage cutoff."
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯 (新鮮態或循環態)",
+          "detail": "Annex E 單電池測試每項條件使用 5 顆新鮮態或循環後之代表性樣品。"
+        },
+        "pre_conditioning": {
+          "value": "常溫標準充電程序滿充",
+          "detail": "依製造商規格在室溫下依額定充電程序充滿電。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 1 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度或觀察至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -747,6 +987,18 @@
         "fault_condition": {
           "value": "單一故障條件",
           "detail": "主動保護裝置應處於單一故障條件下 (Section 21.3)。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -780,6 +1032,18 @@
         "soc": {
           "value": "完全充電",
           "detail": "在開始溫度循環之前，電池系統必須完全充電 (100% SOC)。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性模組或電池系統",
+          "detail": "固定式儲能系統或模組測試需 1 組完整組裝之 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規範 100% 滿充",
+          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "冷卻至室溫 或 1 小時 (熱擴散需監控 2 小時)",
+          "detail": "試驗後監控外殼溫度至恢復室溫或至少觀察 1 小時；熱失控擴散耐受測試需持續監控 2 小時。"
         }
       },
       "acceptance_criteria": {

@@ -41,6 +41,18 @@
         "termination": {
           "value": "降溫20%或24 小時",
           "detail": "電池溫度下降值達到溫度最大值的 20% 或短接時間達到 24 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -78,6 +90,18 @@
         "termination": {
           "value": "1.5倍電壓或1.5 小時",
           "detail": "至 1.5 倍充電限制電壓後持續恆壓充電 1 小時，或總充電時間達到 1.5 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -115,6 +139,18 @@
         "termination": {
           "value": "總計 90 分鐘",
           "detail": "反向充電時間共計 90 分鐘，若未達負電壓則維持電流，若達到則減小電流保持該電壓"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -152,6 +188,18 @@
         "duration": {
           "value": "至少 6 小時",
           "detail": "保持至少 6 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -190,6 +238,18 @@
         "cycles": {
           "value": "10 次循環",
           "detail": "重複 10 次循環，轉換時間不大於 30 分鐘，隨後在室溫保存 24 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -228,6 +288,18 @@
         "duration": {
           "value": "每方向 3 小時",
           "detail": "每個方向進行 12 個循環，共計 3 小時。圓柱型 2 個方向，方型和軟包 3 個方向。試驗後進行1次充放電循環"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -270,6 +342,18 @@
         "cycles": {
           "value": "每方向 3 次",
           "detail": "每個方向 3 次。圓柱型 2 個方向正反共 12 次；方型和軟包 3 個方向正反共 18 次"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -308,6 +392,18 @@
         "cycles": {
           "value": "4 或 6 次",
           "detail": "圓柱型兩個端面各 1 次、圓柱面 2 次（共 4 次）；方型和軟包每個面各 1 次（共 6 次）"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -350,6 +446,18 @@
         "duration": {
           "value": "觀察 6 小時",
           "detail": "試驗後觀察 6 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -389,6 +497,18 @@
         "termination": {
           "value": "壓力達標或電壓降1/3",
           "detail": "壓力達到最大值或電池電壓下降三分之一"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -428,6 +548,18 @@
         "target_temp": {
           "value": "130 °C ± 2 °C",
           "detail": "箱內溫度達到 130 °C ± 2 °C 後恆溫，並持續 30 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -469,6 +601,18 @@
         "duration": {
           "value": "觀察 1 小時",
           "detail": "鋼針停留在電池中，並觀察 1 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "平衡車與滑板車鋰電池型式檢驗中，電芯級試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5 規定的充電方法滿充",
+          "detail": "在 20 ± 5 °C 環境下按製造商規定之方法充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "完成試驗步驟後在環境中靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -506,6 +650,18 @@
         "duration": {
           "value": "至少 6 小時",
           "detail": "保持至少 6 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -544,6 +700,18 @@
         "cycles": {
           "value": "10 次循環",
           "detail": "重複 10 次循環"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -582,6 +750,18 @@
         "duration": {
           "value": "每方向 3 小時",
           "detail": "按照 3 個相互垂直的方向依次進行振動試驗，每個方向 12 次循環，共計 3 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -624,6 +804,18 @@
         "cycles": {
           "value": "每方向 3 次",
           "detail": "按照 3 個相互垂直的方向依次進行試驗"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -666,6 +858,22 @@
         "cycles": {
           "value": "6 個面各 1 次",
           "detail": "將樣品的 6 個面進行跌落"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
+        },
+        "apparatus": {
+          "value": "厚度 20 mm 硬木板平鋪於水泥地面",
+          "detail": "跌落表面為鋪設在平整混凝土基座上的厚度 20 mm 硬質木板。"
         }
       },
       "acceptance_criteria": {
@@ -704,6 +912,18 @@
         "duration": {
           "value": "7 小時",
           "detail": "擱置 7 小時，然後取出樣品並恢復至室溫"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -744,6 +964,18 @@
         "duration": {
           "value": "至少 30 分鐘",
           "detail": "浸泡至少 30 分鐘。將樣品擱置 24 小時，若還能放電則進行一次充放電循環"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -774,6 +1006,18 @@
         "grade": {
           "value": "V-0 / V-1 / HF-1",
           "detail": "外殼應為不低於 V-0 級材料，PCB板不低於 V-1 級，其他封裝材料不低於 V-1 級，泡沫材料不低於 HF-1 級"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -810,6 +1054,18 @@
         "heating_power": {
           "value": "30W 至 300W",
           "detail": "依據單體額定能量選擇 30~200W (<80Wh) 或 100~300W (≥80Wh)"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -846,6 +1102,18 @@
         "cycles": {
           "value": "500 次循環",
           "detail": "500 次循環測試，每次測試 BMS 均應切斷充電電路。隨後在 BMS 單一故障下測試 1 次"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -884,6 +1152,18 @@
         "cycles": {
           "value": "3 次測試",
           "detail": "選用 3 個不同的並聯塊，共進行 3 次測試"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -923,6 +1203,18 @@
         "cycles": {
           "value": "500次 或 3次",
           "detail": "電動滑板車 500 次循環測試；電動平衡車 3 次測試"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -963,6 +1255,18 @@
         "cycles": {
           "value": "500 次循環",
           "detail": "進行 500 次循環測試，每次測試 BMS 都應動作"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1002,6 +1306,18 @@
         "cycles": {
           "value": "3 次測試",
           "detail": "將樣品進行 3 次測試"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1041,6 +1357,18 @@
         "cycles": {
           "value": "500 次循環",
           "detail": "500 次循環短路測試，隨後在 BMS 單一故障下測試 1 次"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1076,6 +1404,18 @@
         "temp": {
           "value": "極限溫度超出 5 °C",
           "detail": "在最高充電溫度或 55 °C(取大者)加 5 °C下放8 小時並嘗試充電；在最低充電溫度或 0 °C(取小者)再降 5 °C下放16 小時並嘗試充電"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1111,6 +1451,18 @@
         "temp": {
           "value": "極限溫度 + 5 °C",
           "detail": "在最高放電溫度或 45 °C(取大者) 加 5 °C 的環境下放置 8 小時，然後嘗試放電"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1150,6 +1502,18 @@
         "cycles": {
           "value": "3 次測試",
           "detail": "將樣品進行 3 次測試"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池組",
+          "detail": "電池組級別測試每項通常需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依條款規定滿充或放電態",
+          "detail": "依照各具體安全保護試驗章節要求調整初始狀態。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時 (浸水後靜置 24 小時)",
+          "detail": "試驗後靜置觀察 1 小時；浸水試驗後需在乾燥環境靜置 24 小時。"
         }
       },
       "acceptance_criteria": {

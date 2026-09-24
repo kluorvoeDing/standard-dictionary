@@ -131,6 +131,22 @@
         "protective_device": {
           "value": "動作後須以不觸發之最大負載重新測試",
           "detail": "當過電流保護裝置在測試中動作時，須以不使保護裝置開路的最大負載重新進行測試 (Section 10.4)。所依賴之保護裝置須符合 2.3.1 要求。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
+        },
+        "apparatus": {
+          "value": "80 ± 20 mΩ 外部電阻迴路",
+          "detail": "總電阻為 80 ± 20 mΩ 之負載迴路，連接電芯正負極終端。"
         }
       },
       "acceptance_criteria": {
@@ -181,6 +197,18 @@
         "sample_size": {
           "value": "每條件 5 顆",
           "detail": "一次電池：滿充 5 + 半放電 5 + 完放 5。二次電池：滿充 5 + 循環後 5。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -234,6 +262,18 @@
         "protective_device": {
           "value": "動作後須以不觸發之最大負載重新測試",
           "detail": "當過電流保護裝置動作時，須以不使保護裝置開路的最大負載重新測試 (Section 12.5)。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -282,6 +322,22 @@
         "sample_size": {
           "value": "5 顆（方形電芯需 10 顆）",
           "detail": "一次電池：滿充 5 + 半放電 5。二次電池：滿充 5(10) + 循環後 5(10)，方形電芯因需測試兩方向故需 10 顆。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
+        },
+        "apparatus": {
+          "value": "直徑 150 mm 平面鋼壓板",
+          "detail": "平整平行之直徑 150 mm 鋼製壓板，平穩施壓至 13 ± 0.78 kN。"
         }
       },
       "acceptance_criteria": {
@@ -343,6 +399,22 @@
         "sample_size": {
           "value": "5 顆（方形電芯需 10 顆）",
           "detail": "一次電池：滿充 5 + 半放電 5。二次電池：滿充 5(10) + 循環後 5(10)，方形電芯因需測試兩方向故需 10 顆。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
+        },
+        "apparatus": {
+          "value": "直徑 15.8 mm 鋼棒 與 9.1 kg 重錘",
+          "detail": "直徑 15.8 ± 0.1 mm 鋼棒橫置於電芯中心，9.1 ± 0.1 kg 重錘自 610 ± 25 mm 落下。"
         }
       },
       "acceptance_criteria": {
@@ -402,6 +474,18 @@
         "direction": {
           "value": "90±1° 垂直擠壓",
           "detail": "擠壓方向必須與圓棒的幾何方向呈現 90±1° 的角度進行施力。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -456,6 +540,18 @@
         "sample_size": {
           "value": "每條件 5 顆",
           "detail": "一次電池：滿充 5 + 半放電 5 + 完放 5。二次電池：滿充 5 + 循環後 5。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -505,6 +601,18 @@
         "sample_size": {
           "value": "每條件 5 顆",
           "detail": "一次電池：滿充 5 + 半放電 5 + 完放 5。二次電池：滿充 5 + 循環後 5。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -558,6 +666,18 @@
         "sample_size": {
           "value": "5 顆（鋰離子可能需 10 顆）",
           "detail": "一次電池：滿充 5 + 半放電 5。二次電池：滿充 5(10) + 循環後 5(10)，鋰離子電芯因需在操作區域上下限溫度各預處理 5 顆故可能需 10 顆。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -610,6 +730,18 @@
         "sample_size": {
           "value": "每條件 5 顆",
           "detail": "一次電池：滿充 5 + 半放電 5 + 完放 5。二次電池：滿充 5 + 循環後 5。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -651,6 +783,18 @@
         "sample_size": {
           "value": "每條件 5 顆",
           "detail": "一次電池：滿充 5 + 半放電 5 + 完放 5。二次電池：滿充 5 + 循環後 5。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
         }
       },
       "acceptance_criteria": {
@@ -696,6 +840,22 @@
         "sample_size": {
           "value": "5 顆（不合格時追加至 10 顆）",
           "detail": "一次電池：滿充 5(10) 顆。二次電池：滿充 5(10) 顆。當 5 顆中有 1 顆不合格時，須再測 5 顆且全部合格 (Section 5.2.2)。"
+        },
+        "sample_quantity": {
+          "value": "每組 5 顆 (新鮮態 5 顆 + 循環態 5 顆)",
+          "detail": "每項試驗條件需 5 顆新鮮態與 5 顆循環老化後電芯（室溫與 55 °C 試驗共 20 顆）。"
+        },
+        "pre_conditioning": {
+          "value": "室溫標準充滿電 (100% SOC)",
+          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 6 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
+        },
+        "apparatus": {
+          "value": "8 面八角形金屬絲網罩 與 本生燈",
+          "detail": "每面寬 610 mm、高 305 mm 八面網罩（直徑 0.25 mm 鋼絲，20 目/inch），中心配置本生燈。"
         }
       },
       "acceptance_criteria": {

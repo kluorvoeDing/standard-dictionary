@@ -51,6 +51,14 @@
         "pre_conditioning": {
           "value": "57 °C ± 4 °C，6 小時",
           "detail": "待電池溫度達到 57 °C ± 4 °C 後，再放置 6 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -80,6 +88,18 @@
         },
         "duration": {
           "value": "1 小時 或總 1.5 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -105,6 +125,18 @@
         },
         "duration": {
           "value": "共計 90 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -133,6 +165,18 @@
         },
         "duration": {
           "value": "≥ 6 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -170,6 +214,18 @@
         "hold_time": {
           "value": "保溫時間",
           "detail": "對於大型電池(>500g)，保持時間應為 12 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -199,6 +255,18 @@
         },
         "duration": {
           "value": "每方向 3 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -228,6 +296,18 @@
         },
         "shocks": {
           "value": "每個方向 3 次"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -257,6 +337,18 @@
         },
         "drops": {
           "value": "4 或 6 次"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -289,6 +381,18 @@
         "observation": {
           "value": "觀察 6 小時",
           "detail": "試驗後觀察 6 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -321,6 +425,18 @@
         "observation": {
           "value": "觀察 5 分鐘",
           "detail": "試驗後觀察 5 分鐘。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -350,6 +466,18 @@
         },
         "duration": {
           "value": "恆溫 60 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -382,6 +510,18 @@
         "needle_spec": {
           "value": "圓錐角 45°",
           "detail": "鋼針圓錐角為 45°。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -407,6 +547,18 @@
         },
         "stop_condition": {
           "value": "降壓25%或達300 °C"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -432,6 +584,18 @@
         },
         "duration": {
           "value": "至少 6 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -465,6 +629,18 @@
         "duration": {
           "value": "m≤12kg(6 小時) / m>12kg(12 小時)",
           "detail": "質量 m≤12kg 保持 6 小時，m>12kg 保持 12 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -492,6 +668,18 @@
         },
         "duration": {
           "value": "每個方向 3 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -519,6 +707,18 @@
         },
         "duration": {
           "value": "6 ms 或 11 ms"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -552,6 +752,18 @@
         "post_test": {
           "value": "靜置 4 小時，1次充放循環",
           "detail": "測試結束後靜置 4 小時。試驗後繼續進行一次放電充電循環。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -577,6 +789,18 @@
         },
         "duration": {
           "value": "7 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -609,6 +833,18 @@
         "post_test": {
           "value": "靜置 24 小時，可充放則循環",
           "detail": "將樣品擱置 24 小時，若樣品還能繼續放電，則進行一次放電充電循環。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -634,6 +870,18 @@
         },
         "pcb_and_materials": {
           "value": "不低於 V-1 級"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -669,6 +917,18 @@
         "test_current": {
           "value": "推薦或m倍電流",
           "detail": "使用推薦充電電流(Icr) 或 m倍推薦充電電流(m×Icr)進行試驗。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -692,6 +952,18 @@
       "conditions": {
         "current": {
           "value": "1.5 倍過流充電保護電流"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -718,6 +990,18 @@
         },
         "stop_condition": {
           "value": "放電至保護電路動作"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -741,6 +1025,18 @@
       "conditions": {
         "current": {
           "value": "1.5 倍過流放電保護電流"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -775,6 +1071,18 @@
         "post_test": {
           "value": "停止並靜置 6 小時",
           "detail": "停止試驗，然後靜置 6 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -804,6 +1112,18 @@
         },
         "duration": {
           "value": "往返移動 95 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -834,6 +1154,18 @@
         "duration": {
           "value": "3 個垂直位置，各 6 小時",
           "detail": "三個相互垂直的位置上進行測試，每個位置至少 6 小時 (總計 18 小時)。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -866,6 +1198,14 @@
         "pre_conditioning": {
           "value": "57 °C ± 4 °C，2 小時",
           "detail": "待電池溫度達到 57 °C ± 4 °C 後，再放置 2 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -891,6 +1231,18 @@
         },
         "capacity": {
           "value": "充入 250% 額定容量"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -919,6 +1271,18 @@
         },
         "duration": {
           "value": "停留觀察 1 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -959,6 +1323,18 @@
         "termination": {
           "value": "低於45%中止",
           "detail": "當放電容量連續 3 次低於 45% 額定容量時，中止試驗。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按標準充電程序充滿電",
+          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗完成後觀察 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -986,6 +1362,18 @@
         },
         "discharge_test": {
           "value": "僅接通正負極"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1015,6 +1403,18 @@
         },
         "operation": {
           "value": "嘗試充放電"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1038,6 +1438,18 @@
       "conditions": {
         "connection": {
           "value": "嘗試反向連接"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1070,6 +1482,18 @@
         "duration": {
           "value": "高溫 6 小時/低溫 16 小時",
           "detail": "高溫 (9.9.1)：放置 6 小時，測試後擱置 6 小時。低溫 (9.9.2)：放置 16 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -1099,6 +1523,18 @@
         },
         "operation": {
           "value": "標準程序放電"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組電池系統",
+          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充或設定特定 SOC",
+          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下持續監控 1 小時。"
         }
       },
       "acceptance_criteria": {

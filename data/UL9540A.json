@@ -86,6 +86,22 @@
           "name_en": "Constraint",
           "value": "模擬模組約束",
           "detail": "軟包與方形電芯測試時須進行約束，以模擬在 BESS 模組內的狀態並防止過度膨脹 (7.2.4)。"
+        },
+        "sample_quantity": {
+          "value": "至少 3 顆電芯",
+          "detail": "電芯級別熱失控判定與產氣特性評估需至少 3 顆代表性電芯。"
+        },
+        "pre_conditioning": {
+          "value": "常溫 100% 滿充並靜置 1 小時",
+          "detail": "在 25 ± 5 °C 下依製造商指定充電程序充滿電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "熱事件平息後持續觀察 2 小時",
+          "detail": "熱失控觸發後持續監測溫度、壓力與產氣，直至所有熱偶冷卻至室溫並持續觀察至少 2 小時。"
+        },
+        "apparatus": {
+          "value": "密封測試艙 (Gas Collection Vessel) 與加熱器",
+          "detail": "專用耐壓密封艙、薄膜加熱器 (Film heater)、氣體收集閥組與 FTIR 氣體成分分析儀。"
         }
       },
       "acceptance_criteria": {
@@ -140,6 +156,22 @@
         "ambient": {
           "value": "25 ±5 °C, 50 ±25 % RH",
           "detail": "室內實驗室環境應為 25 ±5 °C (77 ±9 °F) 及 50 ±25 % RH。"
+        },
+        "sample_quantity": {
+          "value": "至少 1 組代表性模組",
+          "detail": "模組級熱傳播測試需至少 1 組包含觸發電芯與周邊受測電芯之完整模組。"
+        },
+        "pre_conditioning": {
+          "value": "依規範滿充電至 100% SOC",
+          "detail": "在室溫下將模組充滿電並安裝熱電偶陣列與約束夾具。"
+        },
+        "observation_period": {
+          "value": "熱失控結束後觀察 2 小時 (防範復燃)",
+          "detail": "觸發熱失控後持續記錄各電芯溫度至所有熱偶溫度下降至室溫以下，並持續觀察至少 2 小時。"
+        },
+        "apparatus": {
+          "value": "電芯加熱器/過充引發裝置 與 熱電偶陣列",
+          "detail": "薄膜電阻加熱器 (Film heater)、多通道熱電偶採集儀與排煙採樣管道。"
         }
       },
       "acceptance_criteria": {
@@ -208,6 +240,22 @@
           "name_en": "Trigger Method",
           "value": "單模組內熱失控",
           "detail": "必須在啟動 BESS 單元內的單一模組中建立電芯間的熱失控蔓延 (9.2.22)"
+        },
+        "sample_quantity": {
+          "value": "至少 1 台儲能單元機櫃 (Unit BESS)",
+          "detail": "單元級火災傳播測試需 1 台完整儲能單元機櫃 (內含所有模組與通風/防火隔板)。"
+        },
+        "pre_conditioning": {
+          "value": "全單元滿充電至 100% SOC",
+          "detail": "將單元內所有電池模組充滿電至 100% SOC，閉合所有門板並啟用消防/排煙通訊。"
+        },
+        "observation_period": {
+          "value": "火災平息後持續監控 2 小時",
+          "detail": "燃燒或熱事件完全終止後持續監測溫度與可燃氣體濃度至少 2 小時。"
+        },
+        "apparatus": {
+          "value": "量熱集煙罩、熱通量計與引風管道",
+          "detail": "耗氧量熱儀 (Oxygen consumption calorimeter)、集煙罩、輻射熱通量計陣列及氣體採樣探頭。"
         }
       },
       "acceptance_criteria": {
@@ -259,6 +307,22 @@
         "method_high_temp": {
           "value": "高溫電池集裝箱",
           "detail": "依據製造商規格的集裝箱進行安裝級測試 (10.9)。"
+        },
+        "sample_quantity": {
+          "value": "代表性多單元安裝陣列",
+          "detail": "依製造商現場規格佈設代表性多機櫃陣列（含間距、模擬牆面與滅火系統）。"
+        },
+        "pre_conditioning": {
+          "value": "全陣列單元滿充電至 100% SOC",
+          "detail": "目標機櫃與周圍相鄰儲能機櫃全部充滿電至 100% SOC。"
+        },
+        "observation_period": {
+          "value": "滅火系統動作並監控至常溫 (至少 2 小時)",
+          "detail": "滅火抑制系統動作後持續監控陣列溫度至冷卻，並持續觀察至少 2 小時以防二次復燃。"
+        },
+        "apparatus": {
+          "value": "模擬安裝室、自動噴淋/氣體滅火系統與熱通量計",
+          "detail": "符合 NFPA 855 / UL 9540A 規格之模擬室內安裝試驗艙、滅火水噴淋或氣體滅火裝置。"
         }
       },
       "acceptance_criteria": {

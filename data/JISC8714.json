@@ -84,6 +84,18 @@
         "termination_logic": {
           "value": "三條件先達者",
           "detail": "滿足以下任一條件時，應立即釋放壓力：(1) 達到 13 ± 1 kN 最大壓力；(2) 電壓降至初始電壓的 1/3 以下；(3) 電池高度變形量達到 10%。"
+        },
+        "pre_conditioning": {
+          "value": "依 4.1 條款在規定溫度下滿充電",
+          "detail": "依製造商規格在室溫 (20 ± 5 °C) 或高溫上限下充滿電至 100% SOC，靜置 1-4 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下觀察 1 小時以確認無起火或爆炸。"
+        },
+        "apparatus": {
+          "value": "直徑 150 mm 平面鋼製壓板",
+          "detail": "直徑 150 mm 之平整鋼板，以液壓平穩加壓至 13 kN。"
         }
       },
       "acceptance_criteria": {
@@ -131,6 +143,14 @@
         "duration": {
           "value": "24 小時 或 溫降 20%",
           "detail": "持續 24 小時，或直到電芯表面溫度與環境溫度的差值降至其最大值的 20% 以下，以較短者為準。(Maintained for 24 hours or until the difference between cell surface temp and ambient drops to 20% or less of its maximum value, whichever is shorter.)"
+        },
+        "pre_conditioning": {
+          "value": "依 4.1 條款在規定溫度下滿充電",
+          "detail": "依製造商規格在室溫 (20 ± 5 °C) 或高溫上限下充滿電至 100% SOC，靜置 1-4 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下觀察 1 小時以確認無起火或爆炸。"
         }
       },
       "acceptance_criteria": {
@@ -180,6 +200,14 @@
         "sample_quantity": {
           "value": "每溫度 5 個",
           "detail": "每個溫度條件下 5 個樣品。(5 samples per temperature condition.)"
+        },
+        "pre_conditioning": {
+          "value": "依 4.1 條款在規定溫度下滿充電",
+          "detail": "依製造商規格在室溫 (20 ± 5 °C) 或高溫上限下充滿電至 100% SOC，靜置 1-4 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下觀察 1 小時以確認無起火或爆炸。"
         }
       },
       "acceptance_criteria": {
@@ -268,6 +296,18 @@
         "setup_time_limit": {
           "value": "≤ 2 分鐘",
           "detail": "為防止電解液蒸發，治具設置過程必須在 2 分鐘內完成 (Annex A.4.2.1)"
+        },
+        "pre_conditioning": {
+          "value": "依 4.1 條款在規定溫度下滿充電",
+          "detail": "依製造商規格在室溫 (20 ± 5 °C) 或高溫上限下充滿電至 100% SOC，靜置 1-4 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下觀察 1 小時以確認無起火或爆炸。"
+        },
+        "apparatus": {
+          "value": "直徑 10 mm 壓頭 與 微型小鎳片",
+          "detail": "直徑 10 mm 壓頭加壓治具，內置高 0.2 mm、寬 0.1 mm、長 1.0 mm L 型微小鎳片。"
         }
       },
       "acceptance_criteria": {
@@ -312,6 +352,14 @@
         "sample_quantity": {
           "value": "3 個",
           "detail": "組電池跌落測試共需 3 個樣品（不分溫度）。(3 assembled battery samples total.)"
+        },
+        "pre_conditioning": {
+          "value": "依標準充電程序充滿電至 100% SOC",
+          "detail": "在常溫下以標準充電方式充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -355,6 +403,14 @@
         "duration_and_observation": {
           "value": "24 小時 或 溫降 20%",
           "detail": "Maintain short circuit for 24 hours OR until the temperature difference drops to 20% of its maximum value. Only if current is interrupted by a protection device, observe for 1 hour after current interruption."
+        },
+        "pre_conditioning": {
+          "value": "依標準充電程序充滿電至 100% SOC",
+          "detail": "在常溫下以標準充電方式充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -407,6 +463,14 @@
         "ambient_temp": {
           "value": "20±5 °C",
           "detail": "Test must be performed at ambient temperature 20±5 °C."
+        },
+        "pre_conditioning": {
+          "value": "依標準充電程序充滿電至 100% SOC",
+          "detail": "在常溫下以標準充電方式充滿電。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "在環境溫度下靜置觀察 1 小時。"
         }
       },
       "acceptance_criteria": {

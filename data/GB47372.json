@@ -62,6 +62,18 @@
         "protection": {
           "value": "正常與單一故障",
           "detail": "在保護電路正常條件下以及單一故障條件下分別進行"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -96,6 +108,18 @@
         "condition": {
           "value": "正常與單一故障",
           "detail": "在正常工作條件及單一故障條件下分別測量"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -129,6 +153,18 @@
         "condition": {
           "value": "正常與單一故障",
           "detail": "在正常工作條件及單一故障條件下分別測量"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -162,6 +198,18 @@
         "condition": {
           "value": "正常與單一故障",
           "detail": "在正常工作條件及單一故障條件下分別測量"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -199,6 +247,18 @@
         "discharge_high": {
           "value": "Tdm + 4 °C",
           "detail": "將滿電樣品置於 Tdm + 4 °C 中放電"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -236,6 +296,22 @@
         "duration": {
           "value": "2 小時",
           "detail": "持續 2 小時 後斷開"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
+        },
+        "apparatus": {
+          "value": "負載電阻 ≤ 5 mΩ 之電子開關迴路",
+          "detail": "外接總電阻小於等於 5 mΩ 之高壓大電流接觸器或專用電子短路負載。"
         }
       },
       "acceptance_criteria": {
@@ -272,6 +348,18 @@
         "operation_2": {
           "value": "端口互連 1 小時",
           "detail": "任一輸出端口與任一輸入端口用連接線連接，持續 1 小時"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -301,6 +389,18 @@
         "monitoring": {
           "value": "監測與存儲",
           "detail": "監測並存儲電壓、溫度、歷史異常等狀態"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -330,6 +430,18 @@
         "regulation": {
           "value": "依時間或循環次數調節",
           "detail": "根據運行時間或循環次數調節最大充電電壓"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -363,6 +475,18 @@
         "overvoltage": {
           "value": "Uup + 0.3 V",
           "detail": "電池調整至 Uup + 0.3 V 保持 2 秒，維持該電壓進行充放電"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -407,6 +531,18 @@
         "duration": {
           "value": "1 小時 或 7 小時",
           "detail": "繼續恆壓充電 1 小時 停止，或總充電時間達到 7 小時 停止試驗"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -461,6 +597,18 @@
         "observation": {
           "value": "5 分鐘",
           "detail": "停止擠壓並觀察 5 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -501,6 +649,18 @@
         "duration": {
           "value": "60 分鐘",
           "detail": "恆溫並持續 60 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -541,6 +701,18 @@
         "observation": {
           "value": "5 分鐘",
           "detail": "鋼針停留在電池中，觀察 5 分鐘"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -584,6 +756,18 @@
         "teardown": {
           "value": "拆解檢查",
           "detail": "滿電狀態下進行拆解檢查負極析鋰情況"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -620,6 +804,18 @@
         "trigger": {
           "value": "加熱觸發",
           "detail": "啟動加熱裝置，以最大功率持續加熱（表B.1），直至發生熱失控或溫度達到 300 °C"
+        },
+        "sample_quantity": {
+          "value": "每項 3 組完整移動電源",
+          "detail": "移動電源整機各項安全試驗每項需 3 組完整代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以額定輸入規格充滿電 (100% SOC)",
+          "detail": "按製造商標稱輸入功率充電至滿電並靜置穩定 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗完成後在環境溫度下持續監控樣品外殼溫度與外觀 1 小時。"
         }
       },
       "acceptance_criteria": {

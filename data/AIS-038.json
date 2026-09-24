@@ -52,6 +52,18 @@
         "post_test": {
           "value": "標準循環與 1 小時觀察",
           "detail": "振動後進行一次標準循環，並在測試環境下觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組 REESS",
+          "detail": "各項車輛 REESS 濫用試驗需 1 組完整代表性待測樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依附錄 2 調整至 50% 或 100% SOC",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 規定調整至對應數值。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "試驗步驟完成後，在試驗環境溫度下持續監控樣品至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -107,6 +119,18 @@
         "post_test": {
           "value": "標準循環與 1 小時觀察",
           "detail": "存放 24 小時後進行一次標準循環，並觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組 REESS",
+          "detail": "各項車輛 REESS 濫用試驗需 1 組完整代表性待測樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依附錄 2 調整至 50% 或 100% SOC",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 規定調整至對應數值。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "試驗步驟完成後，在試驗環境溫度下持續監控樣品至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -160,6 +184,18 @@
         "soc": {
           "value": "SOC 調整",
           "detail": "依照 Annexure IX 的一般測試條件調整 SOC。"
+        },
+        "sample_quantity": {
+          "value": "1 組 REESS",
+          "detail": "各項車輛 REESS 濫用試驗需 1 組完整代表性待測樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依附錄 2 調整至 50% 或 100% SOC",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 規定調整至對應數值。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "試驗步驟完成後，在試驗環境溫度下持續監控樣品至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -222,6 +258,18 @@
         "soc": {
           "value": "SOC 調整",
           "detail": "依照 Annexure IX 的一般測試條件調整 SOC。"
+        },
+        "sample_quantity": {
+          "value": "1 組 REESS",
+          "detail": "各項車輛 REESS 濫用試驗需 1 組完整代表性待測樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依附錄 2 調整至 50% 或 100% SOC",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 規定調整至對應數值。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "試驗步驟完成後，在試驗環境溫度下持續監控樣品至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -271,6 +319,18 @@
         "soc": {
           "value": "SOC 調整",
           "detail": "依照 Annexure IX 的一般測試條件調整 SOC。"
+        },
+        "sample_quantity": {
+          "value": "1 組 REESS",
+          "detail": "各項車輛 REESS 濫用試驗需 1 組完整代表性待測樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依附錄 2 調整至 50% 或 100% SOC",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 規定調整至對應數值。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "試驗步驟完成後，在試驗環境溫度下持續監控樣品至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -317,6 +377,18 @@
         "soc": {
           "value": "SOC 調整",
           "detail": "依照 Annexure IX 的一般測試條件調整 SOC。"
+        },
+        "sample_quantity": {
+          "value": "1 組 REESS",
+          "detail": "各項車輛 REESS 濫用試驗需 1 組完整代表性待測樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依附錄 2 調整至 50% 或 100% SOC",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 規定調整至對應數值。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "試驗步驟完成後，在試驗環境溫度下持續監控樣品至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -370,6 +442,18 @@
         "post_test": {
           "value": "標準循環與 1 小時觀察",
           "detail": "終止後進行一次標準循環，並觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組 REESS",
+          "detail": "各項車輛 REESS 濫用試驗需 1 組完整代表性待測樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依附錄 2 調整至 50% 或 100% SOC",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 規定調整至對應數值。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "試驗步驟完成後，在試驗環境溫度下持續監控樣品至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -419,6 +503,18 @@
         "post_test": {
           "value": "標準循環並觀察 1 小時",
           "detail": "試驗後，直接進行一次標準充電，隨後進行一次標準放電，並在測試環境下觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組 REESS",
+          "detail": "各項車輛 REESS 濫用試驗需 1 組完整代表性待測樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依附錄 2 調整至 50% 或 100% SOC",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 規定調整至對應數值。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "試驗步驟完成後，在試驗環境溫度下持續監控樣品至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -460,6 +556,18 @@
         "termination": {
           "value": "保護啟動",
           "detail": "持續測試直到過溫保護功能（如冷卻啟動或電流限制/切斷）成功啟動。 若保護裝置未動作，則持續直到受測設備溫度穩定（2 小時內溫度梯度變化小於 4 °C）。"
+        },
+        "sample_quantity": {
+          "value": "1 組 REESS",
+          "detail": "各項車輛 REESS 濫用試驗需 1 組完整代表性待測樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依附錄 2 調整至 50% 或 100% SOC",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 規定調整至對應數值。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "試驗步驟完成後，在試驗環境溫度下持續監控樣品至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -509,6 +617,18 @@
         "soc": {
           "value": "正常操作範圍的中間值",
           "detail": "測試前將 REESS 的 SOC 調整至正常操作範圍的中間值。"
+        },
+        "sample_quantity": {
+          "value": "1 組 REESS",
+          "detail": "各項車輛 REESS 濫用試驗需 1 組完整代表性待測樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依附錄 2 調整至 50% 或 100% SOC",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 規定調整至對應數值。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "試驗步驟完成後，在試驗環境溫度下持續監控樣品至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -554,6 +674,18 @@
         "temperature": {
           "value": "25 ± 2 °C",
           "detail": "測試應在 25 ± 2 °C 下進行。"
+        },
+        "sample_quantity": {
+          "value": "1 組 REESS",
+          "detail": "各項車輛 REESS 濫用試驗需 1 組完整代表性待測樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依附錄 2 調整至 50% 或 100% SOC",
+          "detail": "測試開始前，SOC 應依 Annexure IX, Appendix 2 規定調整至對應數值。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "試驗步驟完成後，在試驗環境溫度下持續監控樣品至少 1 小時。"
         }
       },
       "acceptance_criteria": {

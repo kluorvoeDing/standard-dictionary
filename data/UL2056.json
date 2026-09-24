@@ -61,6 +61,22 @@
         "special_condition_3": {
           "value": "直接電芯放電 (僅限鋰電池)",
           "detail": "1 個樣品以 1.2 倍最大連續放電電流直接放電 (繞過轉換電路，不需單一故障)，直到爆炸、排氣或 BMS 動作且溫度穩定。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 至 5 組移動電源",
+          "detail": "移動電源整機各項濫用試驗每項需 3 至 5 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以最大額定規格充滿電 (100% SOC)",
+          "detail": "使用製造商指定充電參數滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "外殼冷卻至室溫 或 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察至少 1 小時以確認無異常與復燃。"
+        },
+        "apparatus": {
+          "value": "負載電阻 < 20 mΩ 之大電流開關",
+          "detail": "低阻抗開關迴路，外接導線與接觸電阻總和小於 20 mΩ。"
         }
       },
       "acceptance_criteria": {
@@ -121,6 +137,18 @@
         "ambient": {
           "value": "20 ± 5 °C",
           "detail": "在 20 ± 5 °C 的環境下進行測試。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 至 5 組移動電源",
+          "detail": "移動電源整機各項濫用試驗每項需 3 至 5 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以最大額定規格充滿電 (100% SOC)",
+          "detail": "使用製造商指定充電參數滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "外殼冷卻至室溫 或 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察至少 1 小時以確認無異常與復燃。"
         }
       },
       "acceptance_criteria": {
@@ -172,6 +200,18 @@
         "ambient": {
           "value": "20 ± 5 °C",
           "detail": "在 20 ± 5 °C 的環境下進行測試。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 至 5 組移動電源",
+          "detail": "移動電源整機各項濫用試驗每項需 3 至 5 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以最大額定規格充滿電 (100% SOC)",
+          "detail": "使用製造商指定充電參數滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "外殼冷卻至室溫 或 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察至少 1 小時以確認無異常與復燃。"
         }
       },
       "acceptance_criteria": {
@@ -226,6 +266,18 @@
         "ambient": {
           "value": "20 ± 5 °C",
           "detail": "在 20 ± 5 °C 的環境下進行測試。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電芯強制放電等單元試驗每項需 5 顆樣品。"
+        },
+        "pre_conditioning": {
+          "value": "按規格完全放電",
+          "detail": "以製造商額定放電電流放電至截止電壓。"
+        },
+        "observation_period": {
+          "value": "殼溫回復至室溫 或 1 小時",
+          "detail": "持續觀察直到樣品外殼溫度冷卻至環境溫度或觀察至少 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -268,6 +320,18 @@
         "protective_devices": {
           "value": "保護裝置不應啟動",
           "detail": "在正常輸入輸出負載測試期間，保護裝置不應啟動。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 至 5 組移動電源",
+          "detail": "移動電源整機各項濫用試驗每項需 3 至 5 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以最大額定規格充滿電 (100% SOC)",
+          "detail": "使用製造商指定充電參數滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "外殼冷卻至室溫 或 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察至少 1 小時以確認無異常與復燃。"
         }
       },
       "acceptance_criteria": {
@@ -298,6 +362,18 @@
         "load": {
           "value": "最大正常負載",
           "detail": "行動電源在所有可能模式 (電池不同 SOC 狀態、輸出埠滿載、開啟手電筒等輔助功能) 下以最大正常負載運行，並測量輸入電流。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 至 5 組移動電源",
+          "detail": "移動電源整機各項濫用試驗每項需 3 至 5 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以最大額定規格充滿電 (100% SOC)",
+          "detail": "使用製造商指定充電參數滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "外殼冷卻至室溫 或 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察至少 1 小時以確認無異常與復燃。"
         }
       },
       "acceptance_criteria": {
@@ -342,6 +418,18 @@
         "simultaneous_io": {
           "value": "邊充邊放測試",
           "detail": "若支援輸入時輸出，需同時進行最大充電速率輸入與輸出最大功率過載。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 至 5 組移動電源",
+          "detail": "移動電源整機各項濫用試驗每項需 3 至 5 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以最大額定規格充滿電 (100% SOC)",
+          "detail": "使用製造商指定充電參數滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "外殼冷卻至室溫 或 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察至少 1 小時以確認無異常與復燃。"
         }
       },
       "acceptance_criteria": {
@@ -388,6 +476,18 @@
         "duration": {
           "value": "1 小時",
           "detail": "測試持續 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 至 5 組移動電源",
+          "detail": "移動電源整機各項濫用試驗每項需 3 至 5 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以最大額定規格充滿電 (100% SOC)",
+          "detail": "使用製造商指定充電參數滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "外殼冷卻至室溫 或 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察至少 1 小時以確認無異常與復燃。"
         }
       },
       "acceptance_criteria": {
@@ -443,6 +543,18 @@
         "ambient": {
           "value": "20 ± 5 °C",
           "detail": "在 20 ± 5 °C 的環境下進行測試。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 至 5 組移動電源",
+          "detail": "移動電源整機各項濫用試驗每項需 3 至 5 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以最大額定規格充滿電 (100% SOC)",
+          "detail": "使用製造商指定充電參數滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "外殼冷卻至室溫 或 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察至少 1 小時以確認無異常與復燃。"
         }
       },
       "acceptance_criteria": {
@@ -498,6 +610,18 @@
         "ambient": {
           "value": "20 ± 5 °C",
           "detail": "在 20 ± 5 °C 的環境下進行測試。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 至 5 組移動電源",
+          "detail": "移動電源整機各項濫用試驗每項需 3 至 5 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以最大額定規格充滿電 (100% SOC)",
+          "detail": "使用製造商指定充電參數滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "外殼冷卻至室溫 或 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察至少 1 小時以確認無異常與復燃。"
         }
       },
       "acceptance_criteria": {
@@ -542,6 +666,18 @@
         "post_test": {
           "value": "冷卻至室溫後檢查",
           "detail": "取出後冷卻至室溫再進行檢查。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 至 5 組移動電源",
+          "detail": "移動電源整機各項濫用試驗每項需 3 至 5 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以最大額定規格充滿電 (100% SOC)",
+          "detail": "使用製造商指定充電參數滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "外殼冷卻至室溫 或 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察至少 1 小時以確認無異常與復燃。"
         }
       },
       "acceptance_criteria": {
@@ -594,6 +730,22 @@
         "ambient": {
           "value": "20 ± 5 °C",
           "detail": "在 20 ± 5 °C 的環境下進行測試。"
+        },
+        "sample_quantity": {
+          "value": "每項 3 至 5 組移動電源",
+          "detail": "移動電源整機各項濫用試驗每項需 3 至 5 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "以最大額定規格充滿電 (100% SOC)",
+          "detail": "使用製造商指定充電參數滿充並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "外殼冷卻至室溫 或 1 小時",
+          "detail": "試驗結束後在環境溫度下觀察至少 1 小時以確認無異常與復燃。"
+        },
+        "apparatus": {
+          "value": "混凝土地面鋪設 20 mm 硬木板",
+          "detail": "混凝土基座上鋪設平整厚度 20 mm 之硬木板。"
         }
       },
       "acceptance_criteria": {

@@ -47,6 +47,18 @@
         "pre_condition": {
           "value": "滿電狀態",
           "detail": "按照 6.2.4.1.1 完成初始化充電。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電芯級安全性能試驗每項需 5 顆樣品（新鮮態或循環壽命態）。"
+        },
+        "pre_conditioning": {
+          "value": "按 6.2 標稱方法充滿電 (100% SOC)",
+          "detail": "在 25 ± 2 °C 下按 6.2 規定方法完成預處理充電，並在環境中靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "完成試驗程序後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -90,6 +102,18 @@
         "pre_condition": {
           "value": "空電狀態",
           "detail": "按照 6.2.4.2.1 完成了初始化放電"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電芯級安全性能試驗每項需 5 顆樣品（新鮮態或循環壽命態）。"
+        },
+        "pre_conditioning": {
+          "value": "按 6.2 標稱方法充滿電 (100% SOC)",
+          "detail": "在 25 ± 2 °C 下按 6.2 規定方法完成預處理充電，並在環境中靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "完成試驗程序後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -135,6 +159,18 @@
         "pre_condition": {
           "value": "空電狀態",
           "detail": "按照 6.2.4.2.1 完成了初始化放電"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電芯級安全性能試驗每項需 5 顆樣品（新鮮態或循環壽命態）。"
+        },
+        "pre_conditioning": {
+          "value": "按 6.2 標稱方法充滿電 (100% SOC)",
+          "detail": "在 25 ± 2 °C 下按 6.2 規定方法完成預處理充電，並在環境中靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "完成試驗程序後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -180,6 +216,18 @@
         "pre_condition": {
           "value": "滿電狀態",
           "detail": "按照 6.2.4.1.1 完成初始化充電。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電芯級安全性能試驗每項需 5 顆樣品（新鮮態或循環壽命態）。"
+        },
+        "pre_conditioning": {
+          "value": "按 6.2 標稱方法充滿電 (100% SOC)",
+          "detail": "在 25 ± 2 °C 下按 6.2 規定方法完成預處理充電，並在環境中靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "完成試驗程序後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -219,6 +267,18 @@
         "pre_condition": {
           "value": "滿電狀態",
           "detail": "按照 6.2.4.1.1 完成初始化充電。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性模組",
+          "detail": "模組級測試每項需 1 組或 2 組完整代表性模組樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規定充電至 100% SOC",
+          "detail": "依模組技術條件充電至滿電狀態並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後在室溫下靜置觀察 1 小時；熱失控擴展試驗需持續觀察至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -258,6 +318,18 @@
         "pre_condition": {
           "value": "滿電狀態",
           "detail": "按照 6.2.4.1.1 完成初始化充電。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性模組",
+          "detail": "模組級測試每項需 1 組或 2 組完整代表性模組樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規定充電至 100% SOC",
+          "detail": "依模組技術條件充電至滿電狀態並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後在室溫下靜置觀察 1 小時；熱失控擴展試驗需持續觀察至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -307,6 +379,22 @@
         "pre_condition": {
           "value": "滿電狀態",
           "detail": "按照 6.2.4.1.1 完成初始化充電。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電芯級安全性能試驗每項需 5 顆樣品（新鮮態或循環壽命態）。"
+        },
+        "pre_conditioning": {
+          "value": "按 6.2 標稱方法充滿電 (100% SOC)",
+          "detail": "在 25 ± 2 °C 下按 6.2 規定方法完成預處理充電，並在環境中靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "完成試驗程序後在環境溫度下觀察 1 小時。"
+        },
+        "apparatus": {
+          "value": "半徑 75 mm 半圓柱鋼壓頭",
+          "detail": "半徑 75 mm 之半圓柱壓頭，長度大於被測樣品表面寬度。"
         }
       },
       "acceptance_criteria": {
@@ -352,6 +440,18 @@
         "pre_condition": {
           "value": "滿電狀態",
           "detail": "按照 6.2.4.1.1 完成初始化充電。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電芯級安全性能試驗每項需 5 顆樣品（新鮮態或循環壽命態）。"
+        },
+        "pre_conditioning": {
+          "value": "按 6.2 標稱方法充滿電 (100% SOC)",
+          "detail": "在 25 ± 2 °C 下按 6.2 規定方法完成預處理充電，並在環境中靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "完成試驗程序後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -395,6 +495,18 @@
         "pre_condition": {
           "value": "滿電狀態",
           "detail": "按照 6.2.4.1.1 完成初始化充電。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電芯級安全性能試驗每項需 5 顆樣品（新鮮態或循環壽命態）。"
+        },
+        "pre_conditioning": {
+          "value": "按 6.2 標稱方法充滿電 (100% SOC)",
+          "detail": "在 25 ± 2 °C 下按 6.2 規定方法完成預處理充電，並在環境中靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "完成試驗程序後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -442,6 +554,18 @@
         "pre_condition": {
           "value": "滿電狀態",
           "detail": "按照 6.2.4.1.1 完成初始化充電。"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電芯級安全性能試驗每項需 5 顆樣品（新鮮態或循環壽命態）。"
+        },
+        "pre_conditioning": {
+          "value": "按 6.2 標稱方法充滿電 (100% SOC)",
+          "detail": "在 25 ± 2 °C 下按 6.2 規定方法完成預處理充電，並在環境中靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "完成試驗程序後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -477,6 +601,22 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試後觀察 1 小時，監測相鄰單體是否發生熱失控。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性模組",
+          "detail": "模組級測試每項需 1 組或 2 組完整代表性模組樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規定充電至 100% SOC",
+          "detail": "依模組技術條件充電至滿電狀態並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後在室溫下靜置觀察 1 小時；熱失控擴展試驗需持續觀察至少 2 小時。"
+        },
+        "apparatus": {
+          "value": "500W-1000W 平面加熱板 或 專用觸發裝置",
+          "detail": "加熱功率 500 W 至 1000 W 之加熱板或電芯內部微加熱觸發裝置。"
         }
       },
       "acceptance_criteria": {
@@ -524,6 +664,18 @@
         "post_test": {
           "value": "絕緣與耐壓",
           "detail": "依次進行絕緣性能試驗和耐壓性能試驗。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性模組",
+          "detail": "模組級測試每項需 1 組或 2 組完整代表性模組樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規定充電至 100% SOC",
+          "detail": "依模組技術條件充電至滿電狀態並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後在室溫下靜置觀察 1 小時；熱失控擴展試驗需持續觀察至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -566,6 +718,18 @@
         "hold_time": {
           "value": "靜置 1 分鐘",
           "detail": "測試後靜置 1 分鐘觀察管路壓力。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性模組",
+          "detail": "模組級測試每項需 1 組或 2 組完整代表性模組樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規定充電至 100% SOC",
+          "detail": "依模組技術條件充電至滿電狀態並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後在室溫下靜置觀察 1 小時；熱失控擴展試驗需持續觀察至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -624,6 +788,18 @@
         "post_test": {
           "value": "絕緣與耐壓",
           "detail": "30 分鐘 內進行絕緣與耐壓試驗"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性模組",
+          "detail": "模組級測試每項需 1 組或 2 組完整代表性模組樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規定充電至 100% SOC",
+          "detail": "依模組技術條件充電至滿電狀態並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後在室溫下靜置觀察 1 小時；熱失控擴展試驗需持續觀察至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -685,6 +861,18 @@
         "post_test": {
           "value": "絕緣與耐壓",
           "detail": "30 分鐘 內進行絕緣與耐壓試驗"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性模組",
+          "detail": "模組級測試每項需 1 組或 2 組完整代表性模組樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規定充電至 100% SOC",
+          "detail": "依模組技術條件充電至滿電狀態並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後在室溫下靜置觀察 1 小時；熱失控擴展試驗需持續觀察至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -735,6 +923,18 @@
         "test_voltage": {
           "value": "施加 1 分鐘",
           "detail": "依據額定電壓，施加相對應的試驗電壓，並保持 1 分鐘以測量絕緣電阻。"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性模組",
+          "detail": "模組級測試每項需 1 組或 2 組完整代表性模組樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規定充電至 100% SOC",
+          "detail": "依模組技術條件充電至滿電狀態並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後在室溫下靜置觀察 1 小時；熱失控擴展試驗需持續觀察至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -784,6 +984,18 @@
         "ac_voltage": {
           "value": "交流 60 秒",
           "detail": "施加交流電壓 45-62 Hz 保持 60 秒"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性模組",
+          "detail": "模組級測試每項需 1 組或 2 組完整代表性模組樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規定充電至 100% SOC",
+          "detail": "依模組技術條件充電至滿電狀態並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後在室溫下靜置觀察 1 小時；熱失控擴展試驗需持續觀察至少 2 小時。"
         }
       },
       "acceptance_criteria": {
@@ -838,6 +1050,18 @@
         "measurement_period": {
           "value": "計算區間 20m",
           "detail": "恆定溫度 20 分鐘 用於計算溫升速率"
+        },
+        "sample_quantity": {
+          "value": "每項 5 顆電芯",
+          "detail": "電芯級安全性能試驗每項需 5 顆樣品（新鮮態或循環壽命態）。"
+        },
+        "pre_conditioning": {
+          "value": "按 6.2 標稱方法充滿電 (100% SOC)",
+          "detail": "在 25 ± 2 °C 下按 6.2 規定方法完成預處理充電，並在環境中靜置 1 小時。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "完成試驗程序後在環境溫度下觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -873,6 +1097,18 @@
         "test_method": {
           "value": "各級報警觸發",
           "detail": "依次觸發電壓、電流、溫度、極差、絕緣電阻等一、二、三級報警設定值"
+        },
+        "sample_quantity": {
+          "value": "每項 1 組或 2 組代表性模組",
+          "detail": "模組級測試每項需 1 組或 2 組完整代表性模組樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依規定充電至 100% SOC",
+          "detail": "依模組技術條件充電至滿電狀態並靜置穩定。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時 (熱擴散監控 2 小時)",
+          "detail": "試驗後在室溫下靜置觀察 1 小時；熱失控擴展試驗需持續觀察至少 2 小時。"
         }
       },
       "acceptance_criteria": {

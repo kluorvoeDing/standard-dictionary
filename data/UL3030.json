@@ -40,6 +40,18 @@
         "removable_batteries": {
           "value": "備用電池組替換",
           "detail": "可拆卸電池組需準備兩套，視需要交替使用 (Section 28.5)。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -86,6 +98,18 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試後觀察 1 小時 (24.7)。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -124,6 +148,18 @@
         "operating_state": {
           "value": "任何運行狀態",
           "detail": "在包含飛行運行在內的任何運行狀態下施加單一故障。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -162,6 +198,18 @@
         "duration": {
           "value": "至穩定或7 小時",
           "detail": "測試持續至溫度達到穩定，或最多 7 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -202,6 +250,18 @@
         "duration": {
           "value": "至穩定或7 小時",
           "detail": "測試持續至溫度達到穩定，或最多 7 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -246,6 +306,18 @@
           "name_en": "Duration",
           "value": "至保護動作或溫度穩定",
           "detail": "直到內部保護動作或溫度達到穩定 (32.5.2)"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -298,6 +370,18 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "充放電循環（若適用）後，觀察 1 小時 (24.7)。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -353,6 +437,18 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試及充放電循環後，觀察 1 小時 (24.7)。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -399,6 +495,18 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試後觀察 1 小時 (24.7)。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -445,6 +553,18 @@
         "observation": {
           "value": "觀察期 1 小時",
           "detail": "觀察 1 小時 (24.7)。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -495,6 +615,18 @@
         "observation": {
           "value": "觀察期 1 小時",
           "detail": "觀察 1 小時 (24.7)。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -551,6 +683,18 @@
         "observation": {
           "value": "觀察期 1 小時",
           "detail": "觀察 1 小時 (24.7)。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -598,6 +742,18 @@
         "cold_conditioning": {
           "value": "外殼需低溫調節 4 小時",
           "detail": "第二個樣品需在製造商建議的最低環境溫度下調節 4 小時，取出後立即進行衝擊測試。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -643,6 +799,22 @@
         "cold_conditioning": {
           "value": "非金屬外殼需低溫調節 4 小時",
           "detail": "若是使用非金屬外殼的 UAS，第二個樣品需在製造商建議的最低環境溫度下調節 4 小時，取出後立即進行跌落測試。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
+        },
+        "apparatus": {
+          "value": "硬木板平鋪於水泥地面衝擊台",
+          "detail": "混凝土平整地面上鋪設 20 mm 硬木板，以規定飛行姿態釋放跌落。"
         }
       },
       "acceptance_criteria": {
@@ -684,6 +856,18 @@
         "preparation": {
           "value": "電池完全放電",
           "detail": "為防止電池過熱危險，測試前樣品必須完全放電。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -727,6 +911,18 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試後觀察 1 小時 (24.7)。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -775,6 +971,18 @@
         "observation": {
           "value": "觀察 1 小時",
           "detail": "測試後觀察 1 小時 (24.7)。"
+        },
+        "sample_quantity": {
+          "value": "1 至 3 組無人機或飛行電氣系統",
+          "detail": "無人機系統各項電氣故障、零件失效與熱試驗需 1 至 3 組代表性 DUT。"
+        },
+        "pre_conditioning": {
+          "value": "依飛行前程序充滿電至 100% SOC",
+          "detail": "依操作手冊規定充電至 100% 滿充電狀態並確認飛行控制系統自檢完成。"
+        },
+        "observation_period": {
+          "value": "試驗結束後觀察 1 小時",
+          "detail": "試驗步驟完成後在環境溫度下持續監控樣品狀態 1 小時。"
         }
       },
       "acceptance_criteria": {

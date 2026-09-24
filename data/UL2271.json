@@ -46,6 +46,18 @@
         "termination": {
           "value": "電壓達 110% 且靜置 2 小時",
           "detail": "測試持續至保護電路終止充電，或電壓達到規定的 110 % 且溫度恢復至環境溫度/穩定狀態，並額外靜置 2 小時（或發生起火/爆炸）。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -91,6 +103,18 @@
         "fault_condition": {
           "value": "單一故障條件",
           "detail": "過充電流保護裝置或控制器需處於單一故障條件下。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -138,6 +162,18 @@
         "fault_condition": {
           "value": "單一故障",
           "detail": "在放電保護電路中引入單一元件故障。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -185,6 +221,18 @@
         "duration": {
           "value": "持續至完放或靜置 7 小時",
           "detail": "測試持續至完全放電，或保護啟動/溫度穩定後並已經過 7 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -233,6 +281,18 @@
         "termination": {
           "value": "放電至零或保護動作",
           "detail": "持續測試直到完全放電至接近零電壓狀態，或保護裝置作動。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -274,6 +334,18 @@
         "cycles": {
           "value": "≥ 2 次循環",
           "detail": "至少 2 次完整充放電循環，直到連續循環電池溫度增加不超過 2 °C。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -317,6 +389,18 @@
         "charging": {
           "value": "按製造商規格充電",
           "detail": "在不平衡狀態下依正常規格充電。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -362,6 +446,18 @@
         "duration": {
           "value": "1 分鐘",
           "detail": "維持 1 分鐘。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -398,6 +494,18 @@
         "test_method_low": {
           "value": "系統 < 120 V",
           "detail": "施加 500 Vdc 60 秒。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -432,6 +540,18 @@
         "duration": {
           "value": "5 秒",
           "detail": "持續 5 秒。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -465,6 +585,18 @@
         "duration": {
           "value": "每軸 12 小時",
           "detail": "X、Y、Z 三方向各 12 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -501,6 +633,18 @@
         "waveform": {
           "value": "半正弦波",
           "detail": "依重量不同，加速度為 50gn/11 ms (≤12kg)、25gn/15 ms (12-100kg)、10gn/20 ms (>100kg)。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -549,6 +693,22 @@
         "soc": {
           "value": "完全充電",
           "detail": "測試前樣品需處於完全充電狀態。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+        },
+        "apparatus": {
+          "value": "半徑 75 mm 半圓柱鋼製壓頭",
+          "detail": "平滑半圓柱鋼製壓板，長度足以覆蓋整個被測表面。"
         }
       },
       "acceptance_criteria": {
@@ -597,6 +757,18 @@
         "soc": {
           "value": "完全充電",
           "detail": "測試前樣品需處於完全充電狀態。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -646,6 +818,18 @@
         "soc": {
           "value": "完全充電",
           "detail": "測試前樣品需處於完全充電狀態。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -689,6 +873,18 @@
         "soc": {
           "value": "完全放電",
           "detail": "在進行溫度調節前，樣品需處於完全放電狀態。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -723,6 +919,18 @@
         "duration": {
           "value": "1 分鐘",
           "detail": "保持 1 分鐘。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -758,6 +966,18 @@
         "soc": {
           "value": "完全充電",
           "detail": "測試前樣品需處於完全充電狀態。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -800,6 +1020,18 @@
         "push_back": {
           "value": "推回測試",
           "detail": "將電線向內推回 (25.4-mm increments)。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -841,6 +1073,18 @@
         "soc": {
           "value": "完全充電",
           "detail": "測試前樣品需處於完全充電狀態。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -879,6 +1123,18 @@
         "soc": {
           "value": "完全充電",
           "detail": "測試前樣品需處於完全充電狀態。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -923,6 +1179,18 @@
         "soc": {
           "value": "完全充電",
           "detail": "測試前樣品需處於完全充電狀態。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {
@@ -965,6 +1233,18 @@
         "trigger": {
           "value": "觸發單電池熱失控",
           "detail": "依 UL 2580 單電池失效測試方法，誘發單一電芯熱失控。"
+        },
+        "sample_quantity": {
+          "value": "1 組代表性 DUT",
+          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定滿充並靜置",
+          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+        },
+        "observation_period": {
+          "value": "外殼溫度恢復室溫 或 1 小時",
+          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
         }
       },
       "acceptance_criteria": {

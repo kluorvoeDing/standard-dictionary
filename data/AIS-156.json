@@ -57,6 +57,18 @@
         "temperature": {
           "value": "20 ± 10 °C",
           "detail": "測試在環境溫度 20 ± 10 °C 下進行。"
+        },
+        "sample_quantity": {
+          "value": "1 組輕型電動車 REESS",
+          "detail": "各項濫用測試需 1 組完整代表性二輪/三輪車輛牽引電池組。"
+        },
+        "pre_conditioning": {
+          "value": "依 Appendix 2 調整至 100% SOC",
+          "detail": "在環境溫度下進行標準充電至 100% 滿充狀態。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "測試結束後外觀檢查並持續觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -119,6 +131,18 @@
         "post_test": {
           "value": "標準循環 + 1 小時觀察",
           "detail": "靜置後進行一次標準充放電循環，並觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組輕型電動車 REESS",
+          "detail": "各項濫用測試需 1 組完整代表性二輪/三輪車輛牽引電池組。"
+        },
+        "pre_conditioning": {
+          "value": "依 Appendix 2 調整至 100% SOC",
+          "detail": "在環境溫度下進行標準充電至 100% 滿充狀態。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "測試結束後外觀檢查並持續觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -171,6 +195,18 @@
         "post_test": {
           "value": "標準循環 + 1 小時觀察",
           "detail": "測試後直接進行標準循環（若適用）或觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組輕型電動車 REESS",
+          "detail": "各項濫用測試需 1 組完整代表性二輪/三輪車輛牽引電池組。"
+        },
+        "pre_conditioning": {
+          "value": "依 Appendix 2 調整至 100% SOC",
+          "detail": "在環境溫度下進行標準充電至 100% 滿充狀態。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "測試結束後外觀檢查並持續觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -225,6 +261,18 @@
         "post_test": {
           "value": "標準循環 + 1 小時觀察",
           "detail": "測試後進行一次標準充放電循環，並觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組輕型電動車 REESS",
+          "detail": "各項濫用測試需 1 組完整代表性二輪/三輪車輛牽引電池組。"
+        },
+        "pre_conditioning": {
+          "value": "依 Appendix 2 調整至 100% SOC",
+          "detail": "在環境溫度下進行標準充電至 100% 滿充狀態。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "測試結束後外觀檢查並持續觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -283,6 +331,18 @@
         "temperature": {
           "value": "≥ 0 °C",
           "detail": "測試在至少 0 °C 的環境溫度下進行。"
+        },
+        "sample_quantity": {
+          "value": "1 組輕型電動車 REESS",
+          "detail": "各項濫用測試需 1 組完整代表性二輪/三輪車輛牽引電池組。"
+        },
+        "pre_conditioning": {
+          "value": "依 Appendix 2 調整至 100% SOC",
+          "detail": "在環境溫度下進行標準充電至 100% 滿充狀態。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "測試結束後外觀檢查並持續觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -335,6 +395,18 @@
         "post_test": {
           "value": "標準循環 + 1 小時觀察",
           "detail": "測試後進行一次標準充放電循環，並觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組輕型電動車 REESS",
+          "detail": "各項濫用測試需 1 組完整代表性二輪/三輪車輛牽引電池組。"
+        },
+        "pre_conditioning": {
+          "value": "依 Appendix 2 調整至 100% SOC",
+          "detail": "在環境溫度下進行標準充電至 100% 滿充狀態。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "測試結束後外觀檢查並持續觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -383,6 +455,18 @@
         "post_test": {
           "value": "標準循環 + 1 小時觀察",
           "detail": "測試後進行一次標準充放電循環，並觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組輕型電動車 REESS",
+          "detail": "各項濫用測試需 1 組完整代表性二輪/三輪車輛牽引電池組。"
+        },
+        "pre_conditioning": {
+          "value": "依 Appendix 2 調整至 100% SOC",
+          "detail": "在環境溫度下進行標準充電至 100% 滿充狀態。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "測試結束後外觀檢查並持續觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -427,6 +511,18 @@
         "post_test": {
           "value": "標準充電 + 1 小時觀察",
           "detail": "測試後進行一次標準充電，並觀察 1 小時。"
+        },
+        "sample_quantity": {
+          "value": "1 組輕型電動車 REESS",
+          "detail": "各項濫用測試需 1 組完整代表性二輪/三輪車輛牽引電池組。"
+        },
+        "pre_conditioning": {
+          "value": "依 Appendix 2 調整至 100% SOC",
+          "detail": "在環境溫度下進行標準充電至 100% 滿充狀態。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "測試結束後外觀檢查並持續觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -475,6 +571,18 @@
         "end_condition": {
           "value": "保護介入或溫度穩定",
           "detail": "測試持續直至 REESS 抑制或限制充放電，或溫度穩定 (2 小時內溫度梯度小於 4 °C)。"
+        },
+        "sample_quantity": {
+          "value": "1 組輕型電動車 REESS",
+          "detail": "各項濫用測試需 1 組完整代表性二輪/三輪車輛牽引電池組。"
+        },
+        "pre_conditioning": {
+          "value": "依 Appendix 2 調整至 100% SOC",
+          "detail": "在環境溫度下進行標準充電至 100% 滿充狀態。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "測試結束後外觀檢查並持續觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -519,6 +627,18 @@
         "failure_charge": {
           "value": "故障充電 < 42 g",
           "detail": "充電器故障條件下，氫氣排放量低於 42 g。"
+        },
+        "sample_quantity": {
+          "value": "1 組輕型電動車 REESS",
+          "detail": "各項濫用測試需 1 組完整代表性二輪/三輪車輛牽引電池組。"
+        },
+        "pre_conditioning": {
+          "value": "依 Appendix 2 調整至 100% SOC",
+          "detail": "在環境溫度下進行標準充電至 100% 滿充狀態。"
+        },
+        "observation_period": {
+          "value": "測試後在環境溫度下觀察 1 小時",
+          "detail": "測試結束後外觀檢查並持續觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
