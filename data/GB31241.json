@@ -88,8 +88,8 @@
           "detail": "在短路試驗前，必須讓電池表面溫度達到目標溫度後，再持續保溫 30 分鐘。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個（樣品 1～3）",
+          "detail": "4.7.2 除特殊說明外每個試驗項目的樣品為 3 個；4.7.5 表 1：樣品 1～3（先依序完成 7.1～7.4 後再進行 6.1，見附錄 B）。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
@@ -135,16 +135,12 @@
           "detail": "電池持續充電時間達到 7 小時，或製造商定義充電時間中較大值，或電池溫度下降值達到溫度最大值的 20%。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個（樣品 4～6）",
+          "detail": "4.7.2；4.7.5 表 1：樣品 4～6。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
           "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "充電結束或保護動作後，在試驗環境中觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -182,8 +178,8 @@
           "detail": "持續 90 分鐘。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個（樣品 7～9）",
+          "detail": "4.7.2；4.7.5 表 1：樣品 7～9。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
@@ -198,7 +194,9 @@
         ]
       },
       "exemptions": [],
-      "related_tests": [],
+      "related_tests": [
+        "GB31241-9.7"
+      ],
       "source_reference": "6.3",
       "original_text_snippet": "6.3 強制放電：電池按照 6.3 進行強制放電試驗，應不起火、不爆炸。"
     },
@@ -227,8 +225,8 @@
           "detail": "保持 6 小時。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個（樣品 1～3）",
+          "detail": "4.7.2；4.7.5 表 1：樣品 1～3，與 7.2、7.3、7.4、6.1 共用（附錄 B）。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
@@ -283,8 +281,8 @@
           "detail": "溫度循環結束後，需在室溫 20 °C±5 °C 下至少保存 6 小時。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個（樣品 1～3）",
+          "detail": "4.7.2；4.7.5 表 1：樣品 1～3，與 7.1、7.3、7.4、6.1 共用（附錄 B）。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
@@ -305,6 +303,187 @@
       ],
       "source_reference": "7.2",
       "original_text_snippet": "7.2 溫度循環：電池按照 7.2 進行溫度循環試驗，應不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-7.3",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動試驗 (Vibration)",
+      "name_en": "Test 7.3: Vibration (Cell)",
+      "section": "7.3",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "frequency": {
+          "value": "7 Hz ~ 200 Hz ~ 7 Hz",
+          "detail": "頻率範圍由 f1=7 Hz 經交越點 f2、f3 至 f4=200 Hz，再返回 f1=7 Hz；交越點頻率 f2≈17.62 Hz、f3≈49.84 Hz（表9）。"
+        },
+        "amplitude": {
+          "value": "位移 0.8 mm（f2～f3 區間）",
+          "detail": "表 9：f2 至 f3 區間以位移幅度 S = 0.8 mm 控制（峰-峰值位移 1.6 mm）；f1～f2 區間為加速度 a1 = 1 gn，f3～f4 區間為 a2 = 8 gn。"
+        },
+        "acceleration": {
+          "value": "a1=1 gn（f1~f2）／a2=8 gn（f3~f4）",
+          "detail": "f1至f2加速度幅度 a1=1 gn；f3至f4加速度幅度 a2=8 gn（表9）。"
+        },
+        "sweep_time": {
+          "value": "15 分鐘",
+          "detail": "對數掃頻循環時間（7 Hz→200 Hz→7 Hz）為15 分鐘（表9）。"
+        },
+        "cycles": {
+          "value": "每方向12循環（總計36循環）",
+          "detail": "每個方向進行12個循環，X、Y、Z三軸總計36循環（表9）。"
+        },
+        "duration": {
+          "value": "每方向3 小時",
+          "detail": "每個方向循環時間共計3 小時的振動。"
+        },
+        "direction": {
+          "value": "圓柱/鈕扣型：軸向+徑向；方型/軟包裝：三向",
+          "detail": "圓柱型和鈕扣型電池按照其軸向和徑向兩個方向進行振動試驗，方型和軟包裝電池按照三個相互垂直的方向進行振動試驗。"
+        },
+        "test_method_reference": {
+          "value": "GB/T 2423.10",
+          "detail": "具體試驗方法按照GB/T 2423.10的相關規定。"
+        },
+        "sample_quantity": {
+          "value": "每組 3 顆（樣品1~3）",
+          "detail": "與7.1、7.2、7.4共用樣品1~3，依序進行低氣壓、溫度循環、振動、加速度衝擊測試（4.7.5 表1）。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "將充滿電的電池緊固在振動試驗台上進行測試。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火",
+          "無爆炸",
+          "無洩漏"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-7.1",
+        "GB31241-7.2",
+        "GB31241-7.4",
+        "GB31241-8.3"
+      ],
+      "source_reference": "7.3",
+      "original_text_snippet": "7.3 振動：將充滿電的電池緊固在振動試驗台上，按表9中參數進行正弦振動測試……電池應不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-7.4",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "加速度衝擊試驗 (Acceleration Shock)",
+      "name_en": "Test 7.4: Acceleration Shock (Cell)",
+      "section": "7.4",
+      "category": "MECH",
+      "subcategory": "加速度衝擊 (Acceleration Shock)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "pulse_shape": {
+          "value": "半正弦脈衝",
+          "detail": "進行半正弦脈衝衝擊試驗。"
+        },
+        "acceleration": {
+          "value": "峰值150 gn±25 gn，最小平均75 gn",
+          "detail": "在最初的3 ms內，最小平均加速度為75 gn，峰值加速度為150 gn±25 gn。"
+        },
+        "duration": {
+          "value": "6 ms±1 ms",
+          "detail": "脈衝持續時間為6 ms±1 ms。"
+        },
+        "repetitions": {
+          "value": "每方向3次",
+          "detail": "電池每個方向進行三次加速度衝擊試驗。"
+        },
+        "direction": {
+          "value": "圓柱/鈕扣型：軸向+徑向；方型/軟包裝：三向",
+          "detail": "圓柱型和鈕扣型電池按照其軸向和徑向兩個方向進行衝擊試驗，方型和軟包裝電池按照三個相互垂直的方向依次進行衝擊試驗。"
+        },
+        "test_method_reference": {
+          "value": "GB/T 2423.5",
+          "detail": "具體試驗方法按照GB/T 2423.5的相關規定。"
+        },
+        "sample_quantity": {
+          "value": "每組 3 顆（樣品1~3）",
+          "detail": "與7.1、7.2、7.3共用樣品1~3，依序測試（4.7.5 表1）。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "將充滿電的電池固定在衝擊台上進行測試。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火",
+          "無爆炸",
+          "無洩漏"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-7.1",
+        "GB31241-7.2",
+        "GB31241-7.3",
+        "GB31241-8.4"
+      ],
+      "source_reference": "7.4",
+      "original_text_snippet": "7.4 加速度衝擊：將充滿電的電池固定在衝擊台上，進行半正弦脈衝衝擊試驗，在最初的3 ms內，最小平均加速度為75 gn，峰值加速度為150 gn±25 gn，脈衝持續時間為6 ms±1 ms……電池應不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-7.5",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落試驗 (Drop)",
+      "name_en": "Test 7.5: Drop (Cell)",
+      "section": "7.5",
+      "category": "MECH",
+      "subcategory": "落下 (Drop)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "drop_height": {
+          "value": "1 m",
+          "detail": "按1 m的跌落高度自由落體跌落於混凝土板上。"
+        },
+        "drop_surface": {
+          "value": "混凝土板",
+          "detail": "跌落面為混凝土板。"
+        },
+        "drop_count": {
+          "value": "圓柱/鈕扣型：4次；方型/軟包裝：6次",
+          "detail": "圓柱型和鈕扣型電池兩個端面各跌落一次、圓柱面跌落兩次，共計進行四次跌落試驗；方型和軟包裝電池每個面各跌落一次，共進行六次試驗。"
+        },
+        "sample_quantity": {
+          "value": "每組 3 顆（樣品10~12）",
+          "detail": "型式試驗樣品編號10~12（4.7.5 表1）。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "將電池按照4.5.1規定的試驗方法充滿電後進行本試驗。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火",
+          "無爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-8.5"
+      ],
+      "source_reference": "7.5",
+      "original_text_snippet": "7.5 跌落：將電池按照4.5.1規定的試驗方法充滿電後，按1 m的跌落高度自由落體跌落於混凝土板上……電池應不起火、不爆炸。"
     },
     {
       "id": "GB31241-7.6",
@@ -331,8 +510,8 @@
           "detail": "擠壓達到截止條件（電壓降達三分之一或擠壓力達13.0 kN）和擠壓裝置停止的時間間隔應不大於 100 ms。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個（樣品 13～15）",
+          "detail": "4.7.2；4.7.5 表 1：樣品 13～15。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
@@ -350,6 +529,155 @@
       "related_tests": [],
       "source_reference": "7.6",
       "original_text_snippet": "7.6 擠壓：電池按照 7.6 進行擠壓試驗，應不起火、不爆炸。"
+    },
+    {
+      "id": "GB31241-7.7",
+      "normalized_id": "MECH-IMPACT",
+      "name_zh": "重物衝擊試驗 (Heavy Object Impact)",
+      "name_en": "Test 7.7: Heavy Object Impact (Cell)",
+      "section": "7.7",
+      "category": "MECH",
+      "subcategory": "撞擊 (Impact)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "steel_bar": {
+          "value": "直徑15.8 mm±0.2 mm",
+          "detail": "將直徑為15.8 mm±0.2 mm的金屬棒橫置在電池幾何中心上表面。"
+        },
+        "impact_mass": {
+          "value": "9.1 kg±0.1 kg",
+          "detail": "採用質量為9.1 kg±0.1 kg的重物撞擊放有金屬棒的電池表面。"
+        },
+        "drop_height": {
+          "value": "610 mm±25 mm",
+          "detail": "重物從610 mm±25 mm的高處自由落體狀態撞擊。"
+        },
+        "observation_period": {
+          "value": "撞擊後觀察6 小時",
+          "detail": "撞擊後並觀察6 小時。"
+        },
+        "orientation": {
+          "value": "圓柱型：縱軸與重物表面平行；方型：僅寬面；鈕扣型：金屬棒橫跨表面中心",
+          "detail": "圓柱型電池冲擊試驗時使其縱軸向與重物表面平行，金屬棒與電池縱軸向垂直且盡量與衝擊面平行，方型電池只對寬面進行衝擊試驗。扣式電池進行衝擊試驗時將金屬棒橫跨過電池表面中心。1個樣品只做一次衝擊試驗。"
+        },
+        "sample_quantity": {
+          "value": "每組 3 顆（樣品16~18）",
+          "detail": "型式試驗樣品編號16~18（4.7.5 表1）。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "將電池按照4.5.1規定的試驗方法充滿電後，將電池置於平台表面進行本試驗。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火",
+          "無爆炸"
+        ]
+      },
+      "exemptions": [
+        "對於軟包裝電池，本條不適用（7.7注）"
+      ],
+      "related_tests": [],
+      "source_reference": "7.7",
+      "original_text_snippet": "7.7 重物衝擊：將電池按照4.5.1規定的試驗方法充滿電後，將電池置於平台表面，將直徑為15.8 mm±0.2 mm的金屬棒橫置在電池幾何中心上表面，採用質量為9.1 kg±0.1 kg的重物從610 mm±25 mm的高處自由落體狀態撞擊放有金屬棒的電池表面，並觀察6 h……電池應不起火、不爆炸。注：對於軟包裝電池，本條不適用。"
+    },
+    {
+      "id": "GB31241-7.8",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "熱濫用試驗 (Thermal Abuse)",
+      "name_en": "Test 7.8: Thermal Abuse (Cell)",
+      "section": "7.8",
+      "category": "THERM",
+      "subcategory": "熱濫用 (Thermal Abuse)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "heating_rate": {
+          "value": "5 °C/min±2 °C/min",
+          "detail": "試驗箱以5 °C/min±2 °C/min的溫升速率進行升溫。"
+        },
+        "temperature": {
+          "value": "130 °C±2 °C",
+          "detail": "當箱內溫度達到130 °C±2 °C後恆溫。"
+        },
+        "duration": {
+          "value": "恆溫持續30 分鐘",
+          "detail": "達到目標溫度後恆溫，並持續30 分鐘。"
+        },
+        "sample_quantity": {
+          "value": "每組 3 顆（樣品19~21）",
+          "detail": "型式試驗樣品編號19~21（4.7.5 表1）。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "將電池按照4.5.1規定的試驗方法充滿電後放入試驗箱中。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸",
+        "details": [
+          "無起火",
+          "無爆炸"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "7.8",
+      "original_text_snippet": "7.8 熱濫用：將電池按照4.5.1規定的試驗方法充滿電後，將電池放入試驗箱中。試驗箱以5 °C/min±2 °C/min的溫升速率進行升溫，當箱內溫度達到130 °C±2 °C後恆溫，並持續30 min。電池應不起火、不爆炸。"
+    },
+    {
+      "id": "GB31241-7.9",
+      "normalized_id": "THERM-FIRE",
+      "name_zh": "燃燒噴射試驗 (Burning Jet)",
+      "name_en": "Test 7.9: Burning Jet / Fire Exposure (Cell)",
+      "section": "7.9",
+      "category": "THERM",
+      "subcategory": "外部火燒 (Fire Exposure)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "apparatus": {
+          "value": "鋼絲網試驗工裝（見附錄C.2）",
+          "detail": "將電池放置在試驗工裝的鋼絲網上，試驗工裝見附錄C的C.2（未於本次核對頁碼範圍內確認附錄細節）。"
+        },
+        "fixation": {
+          "value": "僅滑落時以單根金屬絲固定",
+          "detail": "如果試驗過程中出現電池滑落的情況時，可用單根金屬絲把電池樣品固定在鋼絲網上；如果無此類情況發生，則不可以捆綁電池。"
+        },
+        "heat_source": {
+          "value": "火焰加熱",
+          "detail": "用火焰加熱電池。"
+        },
+        "termination": {
+          "value": "爆炸／完全燃燒／持續加熱30 分鐘未起火爆炸",
+          "detail": "當出現以下三種情況時停止加熱：a) 電池爆炸；b) 電池完全燃燒；c) 持續加熱30 分鐘，但電池未起火、未爆炸。"
+        },
+        "sample_quantity": {
+          "value": "每組 3 顆（樣品22~24）",
+          "detail": "型式試驗樣品編號22~24（4.7.5 表1）。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 規定的充電方法滿充",
+          "detail": "將電池按照4.5.1規定的試驗方法充滿電後進行本試驗。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電池部件（粉塵狀產物除外）或電池整體不應穿透鋁網",
+        "details": [
+          "試驗後組成電池的部件（粉塵狀產物除外）不應穿透鋁網",
+          "電池整體不應穿透鋁網"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "7.9",
+      "original_text_snippet": "7.9 燃燒噴射：將電池按照4.5.1規定的試驗方法充滿電後，再將電池放置在試驗工裝的鋼絲網上……用火焰加熱電池，當出現以下三種情況時停止加熱：a) 電池爆炸；b) 電池完全燃燒；c) 持續加熱30 min，但電池未起火、未爆炸。試驗後，組成電池的部件（粉塵狀產物除外）或電池整體不應穿透鋁網。"
     },
     {
       "id": "GB31241-8.1",
@@ -376,8 +704,8 @@
           "detail": "保持 6 小時。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個（樣品 1～3）",
+          "detail": "4.7.2；4.7.5 表 2：樣品 1～3，與 8.2、8.3、8.4 共用（附錄 B）。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
@@ -432,8 +760,8 @@
           "detail": "試驗結束後，在室溫下靜置 6 小時。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個（樣品 1～3）",
+          "detail": "4.7.2；4.7.5 表 2：樣品 1～3，與 8.1、8.3、8.4 共用（附錄 B）。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
@@ -456,6 +784,174 @@
       "original_text_snippet": "8.2 溫度循環：電池組按照 8.2 進行溫度循環試驗，應不起火、不爆炸、不漏液。"
     },
     {
+      "id": "GB31241-8.3",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動試驗 (Vibration) - 電池組",
+      "name_en": "Test 8.3: Vibration (Battery Pack)",
+      "section": "8.3",
+      "category": "MECH",
+      "subcategory": "振動 (Vibration)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "frequency": {
+          "value": "7 Hz ~ 200 Hz ~ 7 Hz",
+          "detail": "依7.3表9規定，頻率範圍由 f1=7Hz 經交越點 f2≈17.62Hz、f3≈49.84Hz 至上限 f4=200Hz，再返回 f1=7Hz。"
+        },
+        "amplitude": {
+          "value": "S = 0.8 mm（f2~f3 段）",
+          "detail": "f2至f3頻段位移幅度 S=0.8mm（峰-峰值1.6mm）。"
+        },
+        "acceleration": {
+          "value": "a1=1gn（f1~f2）、a2=8gn（f3~f4）",
+          "detail": "f1至f2頻段加速度幅度 a1=1gn；f3至f4頻段加速度幅度 a2=8gn。"
+        },
+        "direction": {
+          "value": "三個互相垂直方向依序進行",
+          "detail": "電池組按照三個相互垂直的方向依次進行振動試驗（與7.3電池依外形分軸向/徑向或三方向不同，電池組一律採三方向）。"
+        },
+        "cycles": {
+          "value": "每方向12循環，共36循環",
+          "detail": "對數掃頻循環時間15 分鐘，每個方向進行12個循環，三方向總計36個循環（依7.3表9）。"
+        },
+        "duration": {
+          "value": "每方向3 小時",
+          "detail": "每個方向循環時間共計3 小時的振動。"
+        },
+        "sample_quantity": {
+          "value": "每組3個",
+          "detail": "型式試驗表2：8.3振動樣品編號1~3（共3個），依4.7.2「除特殊說明外，每個試驗項目的樣品為3個」。"
+        },
+        "pre_conditioning": {
+          "value": "按4.5.1規定的充電方法滿充",
+          "detail": "將充滿電的樣品緊固在振動試驗台上進行正弦振動測試。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火",
+          "無爆炸",
+          "無洩漏"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-7.3"
+      ],
+      "source_reference": "8.3",
+      "original_text_snippet": "8.3 振動：將樣品進行振動試驗，按照三個相互垂直的方向依次進行振動試驗，試驗方法見7.3。樣品應不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-8.4",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "加速度衝擊試驗 (Acceleration Shock) - 電池組",
+      "name_en": "Test 8.4: Acceleration Shock (Battery Pack)",
+      "section": "8.4",
+      "category": "MECH",
+      "subcategory": "機械衝擊 (Mechanical Shock)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "acceleration": {
+          "value": "最小平均75gn，峰值150gn±25gn",
+          "detail": "半正弦脈衝衝擊，依7.4規定：最初3ms內最小平均加速度為75gn，峰值加速度為150gn±25gn。"
+        },
+        "duration": {
+          "value": "脈衝持續6ms±1ms",
+          "detail": "脈衝持續時間為6ms±1ms（依7.4規定）。"
+        },
+        "direction": {
+          "value": "三個互相垂直方向依序進行",
+          "detail": "電池組按照三個相互垂直的方向依次進行加速度衝擊試驗。"
+        },
+        "cycles": {
+          "value": "每方向3次",
+          "detail": "每個方向進行三次加速度衝擊試驗（依7.4規定）。"
+        },
+        "post_test": {
+          "value": "充放電循環1次",
+          "detail": "試驗後按照4.5規定的充放電方法繼續進行一次放電充電循環。"
+        },
+        "sample_quantity": {
+          "value": "每組3個",
+          "detail": "型式試驗表2：8.4加速度衝擊樣品編號1~3（共3個）。"
+        },
+        "pre_conditioning": {
+          "value": "按4.5.1規定的充電方法滿充",
+          "detail": "將充滿電的樣品固定在衝擊台上進行試驗。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火",
+          "無爆炸",
+          "無洩漏"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-7.4"
+      ],
+      "source_reference": "8.4",
+      "original_text_snippet": "8.4 加速度衝擊：將樣品進行加速度衝擊試驗，按照三個相互垂直的方向依次進行加速度衝擊試驗，試驗方法見7.4。試驗後按照4.5規定的充放電方法繼續進行一次放電充電循環。樣品應不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-8.5",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "跌落試驗 (Drop) - 電池組",
+      "name_en": "Test 8.5: Drop (Battery Pack)",
+      "section": "8.5",
+      "category": "MECH",
+      "subcategory": "落下 / 自由跌落 (Drop / Free Fall)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "drop_height": {
+          "value": "非用戶更換型1.0m／用戶可更換型1.5m",
+          "detail": "依表11：非用戶更換型電池/電池組跌落高度1.0m；用戶可更換型1.5m。對於如手持式電子設備等預定使用高度高於1.0m的便攜式電子產品供電的樣品，其跌落高度應為1.5m。"
+        },
+        "drop_surface": {
+          "value": "混凝土板",
+          "detail": "自由落體跌落於混凝土板上。"
+        },
+        "drop_count": {
+          "value": "圓柱/紐扣型4次；方型6次",
+          "detail": "對圓柱型和紐扣型電池組兩個端面各跌落一次、圓柱面跌落兩次，共進行4次跌落試驗；對方型電池組每個面各跌落一次，共進行6次試驗。對非用戶更換型電池/電池組進行帶設備的跌落試驗時，設備每面跌落一次。"
+        },
+        "post_test": {
+          "value": "充放電循環1次",
+          "detail": "試驗後按照4.5規定的充放電方法繼續進行一次放電充電循環。"
+        },
+        "sample_quantity": {
+          "value": "每組3個",
+          "detail": "型式試驗表2：8.5跌落樣品編號4~6（共3個）。"
+        },
+        "pre_conditioning": {
+          "value": "按4.5.1規定的充電方法滿充",
+          "detail": "將樣品按照4.5.1規定的試驗方法充滿電後進行跌落。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火",
+          "無爆炸",
+          "無洩漏"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-7.5"
+      ],
+      "source_reference": "8.5",
+      "original_text_snippet": "8.5 跌落：將樣品按照4.5.1規定的試驗方法充滿電後，按表11的跌落高度自由落體跌落於混凝土板上⋯試驗後按照4.5規定的充放電方法繼續進行一次放電充電循環。樣品應不起火、不爆炸、不漏液。"
+    },
+    {
       "id": "GB31241-8.6",
       "normalized_id": "MECH-STRESS",
       "name_zh": "應力消除試驗 (Stress Relief)",
@@ -476,8 +972,8 @@
           "detail": "保持 7 小時。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個（樣品 7～9）",
+          "detail": "4.7.2；4.7.5 表 2：樣品 7～9。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
@@ -494,6 +990,47 @@
       "related_tests": [],
       "source_reference": "8.6",
       "original_text_snippet": "8.6 應力消除：電池組按照 8.6 進行應力消除試驗，樣品不應發生導致內部組成暴露或影響安全的物理形變。"
+    },
+    {
+      "id": "GB31241-8.7",
+      "normalized_id": "THERM-HOTUSE",
+      "name_zh": "高溫使用試驗 (High Temperature Use) - 電池組",
+      "name_en": "Test 8.7: High Temperature Use (Battery Pack)",
+      "section": "8.7",
+      "category": "THERM",
+      "subcategory": "高溫使用 (High Temperature Operation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "temperature": {
+          "value": "製造商規定充放電上限溫度與80 °C中之最大值",
+          "detail": "試驗箱內溫度設為製造商規定的電池組充電上限溫度和放電上限溫度、電池的充電上限溫度和放電上限溫度及 80 °C 中的最大值（8.7）。"
+        },
+        "duration": {
+          "value": "7 小時（或延長至充放電循環結束）",
+          "detail": "待樣品表面溫度穩定後，保持7 小時。若進行一次放電充電循環的時間大於7 小時，可將高溫試驗時間延長至本次充放電循環結束。"
+        },
+        "sample_quantity": {
+          "value": "每組3個",
+          "detail": "型式試驗表2：8.7高溫使用樣品編號10~12（共3個）。"
+        },
+        "pre_conditioning": {
+          "value": "按4.5.1規定的充電方法滿充",
+          "detail": "將樣品按照4.5.1規定的試驗方法充滿電後置於高溫試驗箱內。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "切斷電路且無起火無爆炸無洩漏；或未切斷電路但完成充放電循環後無起火無爆炸無洩漏",
+        "details": [
+          "a) 切斷電路，且無起火、無爆炸、無洩漏",
+          "b) 未切斷電路，於高溫試驗過程中按照4.5規定的充放電方法繼續進行一次放電充電循環，樣品應無起火、無爆炸、無洩漏"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "8.7",
+      "original_text_snippet": "8.7 高溫使用：樣品在高溫條件下使用應具有足夠的安全性⋯待樣品表面溫度穩定後，保持7h⋯樣品應滿足以下要求之一：a)切斷電路，且不起火、不爆炸、不漏液；b)未切斷電路，在高溫試驗過程中按照4.5規定的充放電方法繼續進行一次放電充電循環，樣品應不起火、不爆炸、不漏液。"
     },
     {
       "id": "GB31241-8.8",
@@ -528,8 +1065,8 @@
           "detail": "若樣品還能繼續充放電，則按照規定的充放電方法繼續進行一次放電充電循環。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個新樣品",
+          "detail": "4.7.5 表 2 該列為「見 8.8」；附錄 B：若有必要進行 8.8 試驗時應使用 3 個新樣品。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
@@ -551,6 +1088,57 @@
       "original_text_snippet": "8.8 洗滌：電池組按照 8.8 進行洗滌試驗，應不起火、不爆炸現象。"
     },
     {
+      "id": "GB31241-8.9",
+      "normalized_id": "THERM-FIRE",
+      "name_zh": "阻燃要求 (Flame Retardant Requirements) - 電池組",
+      "name_en": "Test 8.9: Flame Retardant Requirements (Battery Pack)",
+      "section": "8.9",
+      "category": "THERM",
+      "subcategory": "材料阻燃等級 (Material Flame Retardancy)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "applicability": {
+          "value": "充電限制電壓 × 最大充/放電電流 > 15 VA",
+          "detail": "對於充電限制電壓和最大充電電流或最大放電電流的乘積超過15VA的電池組，其封裝所使用的材料應能限制火焰的蔓延，阻燃等級應滿足8.9.2~8.9.5的相應要求（8.9.1）。材料的可燃性定義按照GB4943.1—2022中3.3.4的規定。"
+        },
+        "enclosure_material": {
+          "value": "不低於V-1級或通過附錄F試驗",
+          "detail": "電池組的外殼應使用防火防護外殼，外殼應是不低於V-1級的材料或能通過附錄F的試驗（8.9.2）。"
+        },
+        "pcb_material": {
+          "value": "不低於V-1級或通過附錄F試驗",
+          "detail": "印製板應是不低於V-1級的材料或能通過附錄F的試驗（8.9.3）。"
+        },
+        "wire_material": {
+          "value": "通過附錄G試驗",
+          "detail": "導線應能通過附錄G的試驗（8.9.4）。"
+        },
+        "other_packaging": {
+          "value": "不低於V-1級或通過附錄F試驗（適用時）",
+          "detail": "適用時，其他封裝材料應是不低於V-1級的材料或能通過附錄F的試驗（8.9.5）。膠帶、標貼、熱縮套管、泡沫材料不適用。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "外殼、印製板、導線及其他封裝材料均符合對應阻燃等級要求",
+        "details": [
+          "外殼不低於V-1級或通過附錄F",
+          "印製板不低於V-1級或通過附錄F",
+          "導線通過附錄G",
+          "其他封裝材料（適用時）不低於V-1級或通過附錄F"
+        ]
+      },
+      "exemptions": [
+        "對於沒有外殼、導線等材料的樣品，相應材料的阻燃要求不適用；對於沒有外殼的樣品，需要由整機提供防火防護外殼",
+        "膠帶、標貼、熱縮套管、泡沫材料不適用其他封裝材料要求",
+        "作為燃燒物質可忽略不計的小零部件可不作考核"
+      ],
+      "related_tests": [],
+      "source_reference": "8.9.1~8.9.5",
+      "original_text_snippet": "8.9 阻燃要求：對於充電限制電壓和最大充電電流或最大放電電流的乘積超過15VA的電池組，其封裝所使用的材料，應能限制火焰的蔓延，其阻燃等級應滿足8.9.2~8.9.5的相應要求⋯"
+    },
+    {
       "id": "GB31241-9.2",
       "normalized_id": "ELEC-OC",
       "name_zh": "過壓充電試驗 (Overvoltage Charging)",
@@ -564,27 +1152,23 @@
       "conditions": {
         "voltage": {
           "value": "n=1 時 6V，n≥2 時 n×6.0V",
-          "detail": "當串聯數量 n=1 時，規定的試驗電壓為 6 V；當 n≥2 時，規定的試驗電壓為 (n×6.0)V。"
+          "detail": "以最大充電電流 Icm 恆流充電至規定的試驗電壓或者可能承受的最高電壓值（兩者取較高者），並保持該電壓恆壓充電；規定的試驗電壓：n = 1 時為 6 V，n ≥ 2 時為 (n × 6.0) V。"
         },
         "current": {
           "value": "Icm",
-          "detail": "以最大充電電流 (Icm) 進行恆流充電。"
+          "detail": "以最大充電電流 Icm 恆流充電至試驗電壓，之後保持該電壓進行恆壓充電（9.2）。"
         },
         "duration": {
           "value": "動作或取大值",
           "detail": "對於移除保護電路的電池組充電 1 小時 或(C/Icm)h，兩者取較大值。對於保留保護電路的電池組充電至保護電路動作。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個（樣品 13～15）",
+          "detail": "4.7.2；4.7.5 表 2：樣品 13～15。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
           "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "充電結束或保護動作後，在試驗環境中觀察 1 小時。"
         }
       },
       "acceptance_criteria": {
@@ -601,6 +1185,136 @@
       ],
       "source_reference": "9.2",
       "original_text_snippet": "9.2 過壓充電：不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-9.3",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "過流充電試驗 (Overcurrent Charging)",
+      "name_en": "Test 9.3: Overcurrent Charging (Battery Pack)",
+      "section": "9.3",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "pre_conditioning": {
+          "value": "先按4.5.2規定放完電",
+          "detail": "將電池組按照4.5.2規定的試驗方法放完電。"
+        },
+        "charging_current": {
+          "value": "1.5 × Icp（未設計者以1.5×Icm代替）",
+          "detail": "以1.5倍的過流充電保護電流（1.5Icp）進行恆流充電。對於未設計過流充電保護的電池組，試驗時以1.5倍的最大充電電流（1.5Icm）代替；當過流充電保護電流值是一個區間值時，以區間值上限代替1.5Icp。"
+        },
+        "termination": {
+          "value": "移除保護電路者充至Uup；保留者至保護動作",
+          "detail": "對於移除保護電路的電池組的充電至充電上限電壓（Uup），對於保留保護電路的電池組充電至保護電路動作。"
+        },
+        "sample_quantity": {
+          "value": "每組3個",
+          "detail": "型式試驗表2：9.3過流充電樣品編號16~18（共3個）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火",
+          "無爆炸",
+          "無洩漏"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "9.3",
+      "original_text_snippet": "9.3 過流充電：將電池組按照4.5.2規定的試驗方法放完電，然後以1.5倍的過流充電保護電流（1.5Icp）進行恆流充電。對於移除保護電路的電池組的充電至充電上限電壓Uup，對於保留保護電路的電池組充電至保護電路動作。電池組應不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-9.4",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "欠壓放電試驗 (Undervoltage Discharge)",
+      "name_en": "Test 9.4: Undervoltage Discharge (Battery Pack)",
+      "section": "9.4",
+      "category": "ELEC",
+      "subcategory": "過放電 (Over-discharge)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "pre_conditioning": {
+          "value": "按4.5.1規定滿充",
+          "detail": "將電池組按照4.5.1規定的試驗方法充滿電後，以其最大放電電流Idm恆流放電。"
+        },
+        "discharge_current": {
+          "value": "Idm（最大放電電流）",
+          "detail": "以其最大放電電流Idm恆流放電。"
+        },
+        "termination": {
+          "value": "移除保護電路者放至(n×0.15)V；保留者至保護動作",
+          "detail": "對於移除保護電路的電池組放電至（n×0.15）V，對於保留保護電路的電池組放電至保護電路動作（n為電池組內電池或電池並聯塊的串聯級數）。"
+        },
+        "post_test": {
+          "value": "靜置10 分鐘後再充滿電",
+          "detail": "放電後靜置10 分鐘，並繼續按照4.5.1規定的試驗方法充滿電。"
+        },
+        "sample_quantity": {
+          "value": "每組3個",
+          "detail": "型式試驗表2：9.4欠壓放電樣品編號19~21（共3個）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火",
+          "無爆炸",
+          "無洩漏"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "9.4",
+      "original_text_snippet": "9.4 欠壓放電：將電池組按照4.5.1規定的試驗方法充滿電後，以其最大放電電流Idm恆流放電。對於移除保護電路的電池組放電至（n×0.15）V，對於保留保護電路的電池組放電至保護電路動作。放電後靜置10min，並繼續按照4.5.1規定的試驗方法充滿電。電池組應不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-9.5",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "過流放電試驗 (Overcurrent Discharge)",
+      "name_en": "Test 9.5: Overcurrent Discharge (Battery Pack)",
+      "section": "9.5",
+      "category": "ELEC",
+      "subcategory": "過電流 (Over-current)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "pre_conditioning": {
+          "value": "按4.5.1規定滿充",
+          "detail": "將電池組按照4.5.1規定的試驗方法充滿電。"
+        },
+        "discharge_current": {
+          "value": "1.5 × Idp（過流放電保護電流）",
+          "detail": "以1.5倍的過流放電保護電流（1.5Idp）恆流放電；當過流放電保護電流值是一個區間值時，以區間值上限代替1.5Idp。"
+        },
+        "termination": {
+          "value": "移除保護電路者放至放電終止電壓；保留者至保護動作",
+          "detail": "對於移除保護電路的電池組放電至放電終止電壓，對於保留保護電路的電池組放電至保護電路動作。"
+        },
+        "sample_quantity": {
+          "value": "每組3個",
+          "detail": "型式試驗表2：9.5過流放電樣品編號22~24（共3個）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火",
+          "無爆炸",
+          "無洩漏"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [],
+      "source_reference": "9.5",
+      "original_text_snippet": "9.5 過流放電：將電池組按照4.5.1規定的試驗方法充滿電，然後以1.5倍的過流放電保護電流（1.5Idp）恆流放電。對於移除保護電路的電池組放電至放電終止電壓，對於保留保護電路的電池組放電至保護電路動作。電池組應不起火、不爆炸、不漏液。"
     },
     {
       "id": "GB31241-9.6",
@@ -623,8 +1337,8 @@
           "detail": "直到電池組的保護電路動作；對於移除保護電路的電池組，需短路 24 小時。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+          "value": "3 個（樣品 25～27）",
+          "detail": "4.7.2；4.7.5 表 2：樣品 25～27。"
         },
         "pre_conditioning": {
           "value": "按 4.5.1 規定的充電方法滿充",
@@ -647,67 +1361,866 @@
       "original_text_snippet": "9.6 外部短路：不起火、不爆炸、不漏液。"
     },
     {
-      "id": "GB31241-10",
-      "normalized_id": "ELEC-CC",
-      "name_zh": "保護電路 500 次循環測試",
-      "name_en": "Test 10: Protection Circuit 500 Cycles Test",
-      "section": "10.1~10.5",
+      "id": "GB31241-9.7",
+      "normalized_id": "ELEC-FD",
+      "name_zh": "反向充電試驗 (Reverse Charging)",
+      "name_en": "Test 9.7: Reverse Charging (Battery Pack)",
+      "section": "9.7",
       "category": "ELEC",
-      "subcategory": "保護電路 (Protection Circuit)",
+      "subcategory": "強制放電 (Forced Discharge)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "pre_conditioning": {
+          "value": "按4.5.1規定滿充",
+          "detail": "將電池組按照4.5.1規定的試驗方法充滿電。"
+        },
+        "current": {
+          "value": "Icr（推薦充電電流）反向充電",
+          "detail": "以推薦充電電流Icr反向充電至負的充電上限電壓（－Uup）。"
+        },
+        "termination": {
+          "value": "移除保護電路者充電90 分鐘；保留者至保護動作",
+          "detail": "對於移除保護電路的電池組充電90 分鐘，對於保留保護電路的電池組充電至保護電路動作。"
+        },
+        "sample_quantity": {
+          "value": "每組3個",
+          "detail": "型式試驗表2：9.7反向充電樣品編號28~30（共3個）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無起火、無爆炸、無洩漏",
+        "details": [
+          "無起火",
+          "無爆炸",
+          "無洩漏"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-6.3"
+      ],
+      "source_reference": "9.7",
+      "original_text_snippet": "9.7 反向充電：將電池組按照4.5.1規定的試驗方法充滿電，然後以推薦充電電流Icr反向充電至負的充電上限電壓（－Uup）。對於移除保護電路的電池組充電90min，對於保留保護電路的電池組充電至保護電路動作。電池組應不起火、不爆炸、不漏液。"
+    },
+    {
+      "id": "GB31241-10.1",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過壓充電保護試驗 (Overvoltage Charging Protection)",
+      "name_en": "Test 10.1: Overvoltage Charging Protection (Battery Pack Protection Circuit)",
+      "section": "10.1",
+      "category": "ELEC",
+      "subcategory": "保護電路 (Protection Circuit) - 過壓充電保護",
       "test_objects": [
         "PACK_SYSTEM"
       ],
       "conditions": {
         "cycles": {
-          "value": "500 次動作",
-          "detail": "模擬過壓、過流、欠壓、短路等條件，保護電路應能承受 500 次重複動作而不失效。"
+          "value": "500 次循環",
+          "detail": "樣品依序進行 a) 過壓充電；b) 保護裝置動作後靜置 1 分鐘，共執行 500 次循環（10.1）。"
         },
-        "sample_quantity": {
-          "value": "每組 5 顆",
-          "detail": "型式試驗中每項單體或電池組測試基本樣品數為 5 顆。"
+        "charging_current": {
+          "value": "Icm (最大充電電流)",
+          "detail": "過壓充電時，充電電流為最大充電電流 (Icm)。"
+        },
+        "charging_voltage": {
+          "value": "(n×6.0) V 或可能承受之最高電壓值，兩者取較高者",
+          "detail": "充電電壓為 (n×6.0) V 或電池組可能承受的最高電壓值，兩者取最高者（n 為電池組內電池或電池並聯塊之串聯級數）。"
+        },
+        "rest_after_action": {
+          "value": "動作後靜置 1 分鐘",
+          "detail": "保護裝置動作後靜置 1 分鐘（步驟 b)）。"
         },
         "pre_conditioning": {
-          "value": "按 4.5.1 規定的充電方法滿充",
-          "detail": "在室溫下以製造商規定的充電方法充滿電，並靜置穩定。"
+          "value": "樣品為電池組時，先按 4.5.1 充滿電",
+          "detail": "當樣品是電池組時，試驗前先按照 4.5.1 規定的試驗方法充滿電。"
+        },
+        "sample_quantity": {
+          "value": "每項試驗 1 個樣品",
+          "detail": "表 3 保護電路型式試驗規定，10.1~10.5 每項試驗各使用 1 個樣品。"
+        },
+        "sample_type_note": {
+          "value": "樣品可為帶保護電路之電池組整組或僅保護電路本身",
+          "detail": "第 10 章注 2：本章試驗的樣品可以是帶有保護電路的電池組，也可以是電池組的保護電路（例如外接虛擬電池以使保護電路正常工作）；注 4：電路中有不可恢復的保護裝置(如保險絲)時，需旁路後進行 10.1~10.5 試驗；注 5：進行本章測試時，輸出需滿足持續穩定輸出要求。"
         }
       },
       "acceptance_criteria": {
-        "summary": "承受 500 次保護動作循環而不失效",
+        "summary": "每次循環時電池組的過壓充電保護電路都應動作",
         "details": [
-          "保護功能正常",
-          "每次循環時電池組的保護電路都應正確動作。"
+          "每次循環時電池組的過壓充電保護電路都應動作"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-9.2",
+        "GB31241-11.1"
+      ],
+      "source_reference": "10.1",
+      "original_text_snippet": "10.1 過壓充電保護：將樣品按照以下順序進行 500 次循環測試：a) 過壓充電；b) 保護裝置動作後靜置 1 min。過壓充電時，充電電流為最大充電電流(Icm)，充電電壓為(n×6.0)V 或者可能承受的最高電壓值（兩者取最高者）。每次循環時電池組的過壓充電保護電路都應動作。當樣品是電池組時，試驗前先按照 4.5.1 規定的試驗方法充滿電。"
+    },
+    {
+      "id": "GB31241-10.2",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "過流充電保護試驗 (Overcurrent Charging Protection)",
+      "name_en": "Test 10.2: Overcurrent Charging Protection (Battery Pack Protection Circuit)",
+      "section": "10.2",
+      "category": "ELEC",
+      "subcategory": "保護電路 (Protection Circuit) - 過流充電保護",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "cycles": {
+          "value": "500 次循環",
+          "detail": "樣品依序進行 a) 過流充電；b) 保護裝置動作後靜置 1 分鐘，共執行 500 次循環（10.2）。"
+        },
+        "charging_current": {
+          "value": "1.5 × Icp (1.5 倍過流充電保護電流)",
+          "detail": "過流充電時，充電電流為 1.5 倍的過流充電保護電流 (1.5 Icp)；當過流充電保護電流值是一個區間值時，試驗時以區間值上限代替 1.5 Icp。"
+        },
+        "charging_voltage": {
+          "value": "Uup (充電上限電壓)",
+          "detail": "充電電壓為充電上限電壓 (Uup)。"
+        },
+        "rest_after_action": {
+          "value": "動作後靜置 1 分鐘",
+          "detail": "保護裝置動作後靜置 1 分鐘（步驟 b)）。"
+        },
+        "pre_conditioning": {
+          "value": "樣品為電池組時，先按 4.5.2 放完電",
+          "detail": "當樣品是電池組時，試驗前先按照 4.5.2 規定的試驗方法將電池組放完電。並應保證電池組在試驗過程中的 500 次循環測試都在恆流充電狀態下進行，如果電池組在進行完 500 次循環測試之前結束恆流充電狀態，則應將電池按照 4.5.2 規定的試驗方法放完電後，繼續進行上述循環測試。"
+        },
+        "sample_quantity": {
+          "value": "每項試驗 1 個樣品",
+          "detail": "表 3 保護電路型式試驗規定，10.1~10.5 每項試驗各使用 1 個樣品。"
+        },
+        "sample_type_note": {
+          "value": "樣品可為帶保護電路之電池組整組或僅保護電路本身",
+          "detail": "第 10 章注 2、注 4、注 5（同 10.1）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "每次循環時電池組的過流充電保護電路都應動作",
+        "details": [
+          "每次循環時電池組的過流充電保護電路都應動作"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-11.2"
+      ],
+      "source_reference": "10.2",
+      "original_text_snippet": "10.2 過流充電保護：將樣品按照以下順序進行 500 次循環測試：a) 過流充電；b) 保護裝置動作後靜置 1 min。過流充電時，充電電流為 1.5 倍的過流充電保護電流(1.5 Icp)，充電電壓為充電上限電壓(Uup)。每次循環時電池組的過流充電保護電路都應動作。"
+    },
+    {
+      "id": "GB31241-10.3",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "欠壓放電保護試驗 (Undervoltage Discharge Protection)",
+      "name_en": "Test 10.3: Undervoltage Discharge Protection (Battery Pack Protection Circuit)",
+      "section": "10.3",
+      "category": "ELEC",
+      "subcategory": "保護電路 (Protection Circuit) - 欠壓放電保護",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "cycles": {
+          "value": "500 次循環",
+          "detail": "樣品依序進行 a) 欠壓放電；b) 保護裝置動作後靜置 1 分鐘，共執行 500 次循環（10.3）。"
+        },
+        "discharge_current": {
+          "value": "Idr (推薦放電電流)",
+          "detail": "欠壓放電時，放電電流為推薦放電電流 (Idr)。"
+        },
+        "termination": {
+          "value": "最低電壓不低於 n×Udo 或電池組放電截止電壓中之較小者",
+          "detail": "每次循環時電池組的欠壓放電保護電路都應動作，最低電壓都不應低於 n 倍的電池放電截止電壓 (n×Udo) 或電池組的放電截止電壓中的較小者。"
+        },
+        "pre_conditioning": {
+          "value": "樣品為電池組時，先按 4.5.2 放完電",
+          "detail": "當樣品是電池組時，試驗前先按照 4.5.2 規定的試驗方法將電池組放完電。必要時允許在保護電路動作後在循環中增加短暫充電以重新激活電池。"
+        },
+        "sample_quantity": {
+          "value": "每項試驗 1 個樣品",
+          "detail": "表 3 保護電路型式試驗規定，10.1~10.5 每項試驗各使用 1 個樣品。"
+        },
+        "sample_type_note": {
+          "value": "樣品可為帶保護電路之電池組整組或僅保護電路本身",
+          "detail": "第 10 章注 2、注 4、注 5（同 10.1）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "每次循環時電池組的欠壓放電保護電路都應動作，最低電壓不低於 n×Udo 或電池組放電截止電壓中較小者",
+        "details": [
+          "每次循環時電池組的欠壓放電保護電路都應動作",
+          "最低電壓都不應低於 n 倍的電池放電截止電壓(n×Udo)或電池組的放電截止電壓中的較小者"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-11.3"
+      ],
+      "source_reference": "10.3",
+      "original_text_snippet": "10.3 欠壓放電保護：將樣品按照以下順序進行 500 次循環測試：a) 欠壓放電；b) 保護裝置動作後靜置 1 min。欠壓放電時，放電電流為推薦放電電流(Idr)。每次循環時電池組的欠壓放電保護電路都應動作，最低電壓都不應低於 n 倍的電池放電截止電壓(n×Udo)或電池組的放電截止電壓中的較小者。"
+    },
+    {
+      "id": "GB31241-10.4",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "過流放電保護試驗 (Overcurrent Discharge Protection)",
+      "name_en": "Test 10.4: Overcurrent Discharge Protection (Battery Pack Protection Circuit)",
+      "section": "10.4",
+      "category": "ELEC",
+      "subcategory": "保護電路 (Protection Circuit) - 過流放電保護",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "cycles": {
+          "value": "500 次循環",
+          "detail": "樣品依序進行 a) 過流放電；b) 保護裝置動作後靜置 1 分鐘，共執行 500 次循環（10.4）。"
+        },
+        "discharge_current": {
+          "value": "1.5 × Idp (1.5 倍過流放電保護電流)",
+          "detail": "過流放電時，放電電流為 1.5 倍的過流放電保護電流 (1.5 Idp)；當過流放電保護電流值是一個區間值時，試驗時以區間值上限代替 1.5 Idp。"
+        },
+        "pre_conditioning": {
+          "value": "樣品為電池組時，先按 4.5.1 充滿電",
+          "detail": "當樣品是電池組時，試驗前先按照 4.5.1 規定的試驗方法充滿電。並應保證電池組在試驗過程中的 500 次循環測試都在未放完電的狀態下進行，如果電池組在進行完 500 次循環測試之前已經放完電，則應將電池按照 4.5.1 規定的試驗方法充滿電後，繼續進行上述循環測試。"
+        },
+        "sample_quantity": {
+          "value": "每項試驗 1 個樣品",
+          "detail": "表 3 保護電路型式試驗規定，10.1~10.5 每項試驗各使用 1 個樣品。"
+        },
+        "sample_type_note": {
+          "value": "樣品可為帶保護電路之電池組整組或僅保護電路本身",
+          "detail": "第 10 章注 2、注 4、注 5（同 10.1）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "每次循環時電池組的過流放電保護電路都應動作",
+        "details": [
+          "每次循環時電池組的過流放電保護電路都應動作"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-11.4"
+      ],
+      "source_reference": "10.4",
+      "original_text_snippet": "10.4 過流放電保護：將樣品按照以下順序進行 500 次循環測試：a) 過流放電；b) 保護裝置動作後靜置 1 min。過流放電時，放電電流為 1.5 倍的過流放電保護電流(1.5 Idp)。每次循環時電池組的過流放電保護電路都應動作。"
+    },
+    {
+      "id": "GB31241-10.5",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "短路保護試驗 (Short Circuit Protection)",
+      "name_en": "Test 10.5: Short Circuit Protection (Battery Pack Protection Circuit)",
+      "section": "10.5",
+      "category": "ELEC",
+      "subcategory": "保護電路 (Protection Circuit) - 短路保護",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "cycles": {
+          "value": "500 次循環",
+          "detail": "樣品依序進行 a) 短路電池組的正負極端子或保護電路中的輸出端子；b) 保護裝置動作後靜置 1 分鐘，共執行 500 次循環（10.5）。"
+        },
+        "resistance": {
+          "value": "80 mΩ ± 20 mΩ",
+          "detail": "短路時，外部短路總電阻為 80 mΩ±20 mΩ。"
+        },
+        "pre_conditioning": {
+          "value": "樣品為電池組時，先按 4.5.1 充滿電",
+          "detail": "當樣品是電池組時，試驗前先按照 4.5.1 規定的試驗方法充滿電。並應保證電池組在試驗過程中的 500 次循環測試都在未放完電的狀態下進行，如果電池組在進行完 500 次循環測試之前已經放完電，則應將電池按照 4.5.1 規定的試驗方法充滿電後，繼續進行上述循環測試。"
+        },
+        "sample_quantity": {
+          "value": "每項試驗 1 個樣品",
+          "detail": "表 3 保護電路型式試驗規定，10.1~10.5 每項試驗各使用 1 個樣品。"
+        },
+        "sample_type_note": {
+          "value": "樣品可為帶保護電路之電池組整組或僅保護電路本身",
+          "detail": "第 10 章注 2、注 4、注 5（同 10.1）。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "每次循環時電池組的短路保護電路都應動作",
+        "details": [
+          "每次循環時電池組的短路保護電路都應動作"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-9.6"
+      ],
+      "source_reference": "10.5",
+      "original_text_snippet": "10.5 短路保護：將樣品按照以下順序進行 500 次循環測試：a) 短路電池組的正負極端子或保護電路中的輸出端子；b) 保護裝置動作後靜置 1 min。短路時，外部短路總電阻為 80 mΩ±20 mΩ。每次循環時電池組的短路保護電路都應動作。"
+    },
+    {
+      "id": "GB31241-11.1",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "充電電壓控制試驗 (Charging Voltage Control)",
+      "name_en": "Test 11.1: Charging Voltage Control (System Protection Circuit)",
+      "section": "11.1",
+      "category": "ELEC",
+      "subcategory": "系統保護電路 (System Protection Circuit) - 充電電壓控制",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "test_condition": {
+          "value": "正常工作條件與模擬單一故障條件下分別測量",
+          "detail": "在電子產品正常工作條件及對其模擬任何元器件的單一故障條件下，分別測量其輸出的充電電壓的最大值。"
+        },
+        "limit": {
+          "value": "不應超過製造商規定值，如無規定則不超過 Uup",
+          "detail": "充電電壓值的最大值不應超過電池或電池組製造商的規定值，如無規定則不應超過其充電上限電壓 (Uup)。"
+        },
+        "sample_note": {
+          "value": "樣品為至少 1 個由電池/電池組供電的電子產品或其控制部分",
+          "detail": "表 4 系統保護電路型式試驗規定，樣品為至少 1 個由該電池或電池組供電的電子產品或其控制部分。"
+        },
+        "fault_simulation": {
+          "value": "依 4.6 模擬故障或異常工作條件",
+          "detail": "故障條件依 4.6 之規定，一次模擬一個故障；可用半導體器件短路/開路、電容器短路/開路、限流/限壓器件短路/開路、積體電路內部故障等合理可預見之故障條件。"
+        },
+        "substitute_equipment_note": {
+          "value": "可用電子負載或外接電源/適配器代替電池",
+          "detail": "第 11 章注 3：進行 11.1、11.2 測試時可使用電子負載等設備代替電池或電池組；進行 11.1、11.2 和 11.5 測試時，可外接電子產品的電源或適配器，以保證其能夠工作。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "正常及故障條件下均不應造成電池或電池組過壓充電",
+        "details": [
+          "電子產品在正常工作條件及故障條件下均不應造成對電池或電池組的過壓充電"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-10.1"
+      ],
+      "source_reference": "11.1",
+      "original_text_snippet": "11.1 充電電壓控制：電子產品在正常工作條件及故障條件下均不應造成對電池或電池組的過壓充電。在電子產品正常工作條件及對其模擬任何元器件的單一故障條件下，分別測量其輸出的充電電壓的最大值。充電電壓值的最大值不應超過電池或電池組製造商的規定值，如無規定則不應超過其充電上限電壓(Uup)。"
+    },
+    {
+      "id": "GB31241-11.2",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "充電電流控制試驗 (Charging Current Control)",
+      "name_en": "Test 11.2: Charging Current Control (System Protection Circuit)",
+      "section": "11.2",
+      "category": "ELEC",
+      "subcategory": "系統保護電路 (System Protection Circuit) - 充電電流控制",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "test_condition": {
+          "value": "正常工作條件與模擬單一故障條件下分別測量",
+          "detail": "在電子產品正常工作條件及對其模擬任何元器件的單一故障條件下，分別測量其輸出的最大的充電電流。"
+        },
+        "limit": {
+          "value": "不應超過 Icm (最大充電電流)",
+          "detail": "充電電流的最大值不應超過電池或電池組的最大充電電流 (Icm)。"
+        },
+        "sample_note": {
+          "value": "樣品為至少 1 個由電池/電池組供電的電子產品或其控制部分",
+          "detail": "表 4 系統保護電路型式試驗規定。"
+        },
+        "fault_simulation": {
+          "value": "依 4.6 模擬故障或異常工作條件",
+          "detail": "同 11.1。"
+        },
+        "substitute_equipment_note": {
+          "value": "可用電子負載代替電池，或外接電源／適配器",
+          "detail": "第 11 章注 3：進行 11.1、11.2 測試時可使用電子負載等設備代替電池或電池組；進行 11.1、11.2 和 11.5 測試時，可外接電子產品的電源或適配器，以保證其能夠工作。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "正常及故障條件下均不應造成電池或電池組過流充電",
+        "details": [
+          "電子產品在正常工作條件及故障條件下均不應造成對電池或電池組的過流充電"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-10.2"
+      ],
+      "source_reference": "11.2",
+      "original_text_snippet": "11.2 充電電流控制：電子產品在正常工作條件及故障條件下均不應造成對電池或電池組的過流充電。在電子產品正常工作條件及對其模擬任何元器件的單一故障條件下，分別測量其輸出的最大的充電電流。充電電流的最大值不應超過電池或電池組的最大充電電流(Icm)。"
+    },
+    {
+      "id": "GB31241-11.3",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "放電電壓控制試驗 (Discharge Voltage Control)",
+      "name_en": "Test 11.3: Discharge Voltage Control (System Protection Circuit)",
+      "section": "11.3",
+      "category": "ELEC",
+      "subcategory": "系統保護電路 (System Protection Circuit) - 放電電壓控制",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "test_condition": {
+          "value": "正常工作條件與模擬單一故障條件下分別測量",
+          "detail": "在電子產品正常工作條件及對其模擬任何元器件的單一故障條件下，分別測量其放電的最低電壓值。"
+        },
+        "limit": {
+          "value": "不應低於 Udo (放電截止電壓)",
+          "detail": "放電電壓的最小值不應低於電池或電池組的放電截止電壓 (Udo)。"
+        },
+        "sample_note": {
+          "value": "樣品為至少 1 個由電池/電池組供電的電子產品或其控制部分",
+          "detail": "表 4 系統保護電路型式試驗規定。"
+        },
+        "fault_simulation": {
+          "value": "依 4.6 模擬故障或異常工作條件",
+          "detail": "同 11.1。"
+        },
+        "substitute_equipment_note": {
+          "value": "可用恆流恆壓源代替電池",
+          "detail": "第 11 章注 3：進行 11.3、11.4 測試時可使用恆流恆壓源等設備代替電池或電池組。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "正常及故障條件下均不應造成電池或電池組欠壓放電",
+        "details": [
+          "電子產品在正常工作條件及故障條件下均不應造成對電池或電池組的欠壓放電"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-10.3"
+      ],
+      "source_reference": "11.3",
+      "original_text_snippet": "11.3 放電電壓控制：電子產品在正常工作條件及故障條件下均不應造成對電池或電池組的欠壓放電。在電子產品正常工作條件及對其模擬任何元器件的單一故障條件下，分別測量其放電的最低電壓值。放電電壓的最小值不應低於電池或電池組的放電截止電壓(Udo)。"
+    },
+    {
+      "id": "GB31241-11.4",
+      "normalized_id": "ELEC-OCUR",
+      "name_zh": "放電電流控制試驗 (Discharge Current Control)",
+      "name_en": "Test 11.4: Discharge Current Control (System Protection Circuit)",
+      "section": "11.4",
+      "category": "ELEC",
+      "subcategory": "系統保護電路 (System Protection Circuit) - 放電電流控制",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "test_condition": {
+          "value": "正常工作條件與模擬單一故障條件下分別測量",
+          "detail": "在電子產品正常工作條件及對其模擬任何元器件的單一故障條件下，分別測量其對恆流源放電的最大電流值。"
+        },
+        "limit": {
+          "value": "不應超過 Idm (最大放電電流)",
+          "detail": "放電電流的最大值不應超過電池或電池組的最大放電電流 (Idm)。"
+        },
+        "sample_note": {
+          "value": "樣品為至少 1 個由電池/電池組供電的電子產品或其控制部分",
+          "detail": "表 4 系統保護電路型式試驗規定。"
+        },
+        "fault_simulation": {
+          "value": "依 4.6 模擬故障或異常工作條件",
+          "detail": "同 11.1。"
+        },
+        "substitute_equipment_note": {
+          "value": "可用恆流恆壓源代替電池",
+          "detail": "第 11 章注 3：進行 11.3、11.4 測試時可使用恆流恆壓源等設備代替電池或電池組。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "正常及故障條件下均不應造成電池或電池組過流放電",
+        "details": [
+          "電子產品在正常工作條件及故障條件下均不應造成對電池或電池組的過流放電"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-10.4"
+      ],
+      "source_reference": "11.4",
+      "original_text_snippet": "11.4 放電電流控制：電子產品在正常工作條件及故障條件下均不應造成對電池或電池組的過流放電。在電子產品正常工作條件及對其模擬任何元器件的單一故障條件下，分別測量其對恆流源放電的最大電流值。放電電流的最大值不應超過電池或電池組的最大放電電流(Idm)。"
+    },
+    {
+      "id": "GB31241-11.5",
+      "normalized_id": "BMS-TEMP-CTRL",
+      "name_zh": "充放電溫度控制試驗 (Charge/Discharge Temperature Control)",
+      "name_en": "Test 11.5: Charge/Discharge Temperature Control (System Protection Circuit)",
+      "section": "11.5",
+      "category": "BMS",
+      "subcategory": "系統保護電路 (System Protection Circuit) - 充放電溫度控制",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "overtemp_charge_high": {
+          "value": "Tcm ＋ 4 °C",
+          "detail": "樣品空電狀態下，置於溫度試驗箱中，當樣品達到 Tcm+4 °C 並達到平衡後進行充電，電池應不能進行充電。"
+        },
+        "overtemp_charge_low": {
+          "value": "Tcl － 4 °C",
+          "detail": "樣品空電狀態下，當樣品達到 Tcl－4 °C 並達到平衡後進行充電，電池應不能進行充電。"
+        },
+        "overtemp_discharge_high": {
+          "value": "Tdm ＋ 4 °C",
+          "detail": "樣品滿電狀態下，置於溫度試驗箱中，當樣品達到 Tdm+4 °C 並達到平衡後進行放電，電池應不能進行放電。"
+        },
+        "overtemp_discharge_low": {
+          "value": "Tdl － 4 °C",
+          "detail": "樣品滿電狀態下，當樣品達到 Tdl－4 °C 並達到平衡後進行放電，電池應不能進行放電。"
+        },
+        "allowed_discharge_exception": {
+          "value": "放電時可於超出範圍外以 < 0.1 It 電流放電",
+          "detail": "充放電行為停止時的溫度值不應超過電池或電池組所規定的允許充放電溫度範圍。對於放電情況，可允許在超出電池或電池組所規定的允許放電溫度範圍外，以小於 0.1 It 的電流進行放電。"
+        },
+        "measurement_point": {
+          "value": "放置在樣品溫度最不利點測量",
+          "detail": "注 1：放置在樣品溫度最不利點測量溫度。"
+        },
+        "sample_state_definition": {
+          "value": "空電依 4.5.2 放電；滿電依 4.5.1 充電",
+          "detail": "注 2：空電是指樣品按照 4.5.2 進行放電。滿電是指樣品按照 4.5.1 進行充電。"
+        },
+        "sample_note": {
+          "value": "樣品為至少 1 個由電池/電池組供電的電子產品或其控制部分",
+          "detail": "表 4 系統保護電路型式試驗規定。"
+        },
+        "substitute_equipment_note": {
+          "value": "可外接電子產品之電源或適配器",
+          "detail": "第 11 章注 3：進行 11.5 測試時，可外接電子產品的電源或適配器，以保證其能夠工作。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "溫度超出製造商規定範圍時電池應不能充放電，且充放電停止溫度不超過允許範圍",
+        "details": [
+          "當溫度超出製造商規定的範圍時，電池應不能進行充放電",
+          "充放電行為停止時的溫度值不應超過電池或電池組所規定的允許充放電溫度範圍（放電情況允許以 <0.1It 電流超範圍放電）"
         ]
       },
       "exemptions": [],
       "related_tests": [],
-      "source_reference": "10",
-      "original_text_snippet": "第 10 章：保護電路應能承受 500 次重複動作而不失效。"
+      "source_reference": "11.5",
+      "original_text_snippet": "11.5 充放電溫度控制：當溫度超出製造商規定的範圍時，電池應不能進行充放電。在樣品空電狀態下，將樣品置於溫度試驗箱中，當樣品達到 Tcm+4℃，並達到平衡後進行充電，電池應不能進行充電…充放電行為停止時的溫度值不應超過電池或電池組所規定的允許充放電溫度範圍。"
+    },
+    {
+      "id": "GB31241-12.2.1",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "單級電池過充保護一致性試驗 (Single-Level Cell Overcharge Protection Consistency)",
+      "name_en": "Test 12.2.1: Single-Level Cell Overcharge Protection (Consistency)",
+      "section": "12.2.1",
+      "category": "ELEC",
+      "subcategory": "一致性要求 (Consistency) - 單級電池過充保護",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "applicability": {
+          "value": "多節電池/電池並聯塊串聯構成之電池組(自帶或經充電器/供電產品帶保護電路)",
+          "detail": "12.1 一致性要求僅適用於：a) 自身帶保護電路的由多節電池/電池並聯塊串聯構成的電池組；b) 自身不帶保護電路但在其充電器或由其供電的電子產品(含其配件)中帶有保護電路的由多節電池/電池並聯塊串聯構成的電池或電池組。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 充滿電",
+          "detail": "將樣品按照 4.5.1 規定的試驗方法充滿電後，進行後續步驟，如圖 5 所示。"
+        },
+        "procedure": {
+          "value": "任意(n-1)只以 Idr 放電至低 x%後，再充電至任一只超過充電限制電壓",
+          "detail": "a) 使用負載對樣品中任意(n-1)只電池或電池並聯塊以推薦放電電流(Idr)放電至容量比此(n-1)只電池或電池並聯塊充滿電的容量低 x%；b) 自帶保護電路者以推薦充電電流(Icr)充電，不帶保護電路者以製造商規定方法充電，使樣品中任意一只電池或電池並聯塊的充電電壓超過其充電限制電壓，監測此電池或電池並聯塊之電壓 U1 和總電壓 U2。"
+        },
+        "x_value": {
+          "value": "x 優先值為 10 (%)",
+          "detail": "x 優先值為 10，可視試驗狀況適當增大數值。"
+        },
+        "termination": {
+          "value": "充電至保護電路終止充電",
+          "detail": "充電至保護電路終止充電，保護電路動作時，U1 應大於電池充電限制電壓，U2 應小於電池組充電限制電壓。"
+        },
+        "alternative_pass": {
+          "value": "不可恢復性斷路(如壓差保護)亦可判定合格",
+          "detail": "試驗過程中保護系統符合保護策略發生不可恢復性的斷路也可判定為合格，例如：如果有其他保護動作（如壓差保護）導致步驟 b) 無法進行，也可判定為滿足要求。"
+        },
+        "sample_quantity": {
+          "value": "每項試驗 1 個樣品",
+          "detail": "表 5 一致性型式試驗規定，12.2.1 每項試驗使用 1 個樣品。"
+        },
+        "n_definition": {
+          "value": "n 為電池組內電池或電池並聯塊的串聯級數",
+          "detail": "注：n 為電池組內電池或電池並聯塊的串聯級數。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "保護電路動作時 U1 應大於電池充電限制電壓，U2 應小於電池組充電限制電壓",
+        "details": [
+          "保護電路動作時，U1(單只電池或電池並聯塊電壓)應大於電池充電限制電壓",
+          "保護電路動作時，U2(總電壓)應小於電池組充電限制電壓",
+          "或保護系統依保護策略發生不可恢復性斷路，亦判定合格"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-10.1",
+        "GB31241-11.1"
+      ],
+      "source_reference": "12.2.1",
+      "original_text_snippet": "12.2.1 單級電池過充保護：將樣品按照 4.5.1 規定的試驗方法充滿電後，進行如下步驟，如圖 5 所示：a) 使用負載對樣品中任意(n-1)只電池或電池並聯塊以推薦放電電流(Idr)放電至容量比此(n-1)只電池或電池並聯塊充滿電的容量低 x%；b)……充電至保護電路終止充電，保護電路動作時，U1 應大於電池充電限制電壓，U2 應小於電池組充電限制電壓。x 優先值為 10，可視試驗狀況適當增大數值。"
+    },
+    {
+      "id": "GB31241-12.2.2",
+      "normalized_id": "ELEC-OD",
+      "name_zh": "單級電池過放保護一致性試驗 (Single-Level Cell Overdischarge Protection Consistency)",
+      "name_en": "Test 12.2.2: Single-Level Cell Overdischarge Protection (Consistency)",
+      "section": "12.2.2",
+      "category": "ELEC",
+      "subcategory": "一致性要求 (Consistency) - 單級電池過放保護",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "applicability": {
+          "value": "多節電池/電池並聯塊串聯構成之電池組(自帶或經充電器/供電產品帶保護電路)",
+          "detail": "同 12.2.1（12.1 一致性要求適用範圍）。"
+        },
+        "pre_conditioning": {
+          "value": "按 4.5.1 充滿電",
+          "detail": "將樣品按照 4.5.1 規定的試驗方法充滿電後，進行如下步驟，如圖 6 所示。"
+        },
+        "procedure": {
+          "value": "任意一只以 Idr 放電至低 x%後，再以 Idr 放電至任一只低於放電終止電壓",
+          "detail": "a) 使用負載對樣品中任意一只電池或電池並聯塊以推薦放電電流(Idr)放電至容量比此只電池或電池並聯塊充滿電的容量低 x%；b) 使用負載對樣品以推薦放電電流(Idr)進行放電，使樣品中任意一只電池的放電電壓低於放電終止電壓，監測此電池或電池並聯塊的電壓 U1 和總電壓 U2。"
+        },
+        "x_value": {
+          "value": "x 優先值為 10 (%)",
+          "detail": "x 優先值為 10，可視試驗狀況適當增大數值。"
+        },
+        "termination": {
+          "value": "放電至保護電路終止放電",
+          "detail": "放電至保護電路終止放電，保護電路動作時，U1 應小於電池放電終止電壓，U2 應大於電池組放電終止電壓。"
+        },
+        "alternative_pass": {
+          "value": "不可恢復性斷路(如壓差保護)亦可判定合格",
+          "detail": "試驗過程中保護系統符合保護策略發生不可恢復性的斷路也可判定為合格，例如：如果有其他保護動作（如壓差保護）導致步驟 b) 無法進行，也可判定為滿足要求。"
+        },
+        "sample_quantity": {
+          "value": "每項試驗 1 個樣品",
+          "detail": "表 5 一致性型式試驗規定，12.2.2 每項試驗使用 1 個樣品。"
+        },
+        "n_definition": {
+          "value": "n 為電池組內電池或電池並聯塊的串聯級數",
+          "detail": "注：n 為電池組內電池或電池並聯塊的串聯級數。"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "保護電路動作時 U1 應小於電池放電終止電壓，U2 應大於電池組放電終止電壓",
+        "details": [
+          "保護電路動作時，U1(單只電池或電池並聯塊電壓)應小於電池放電終止電壓",
+          "保護電路動作時，U2(總電壓)應大於電池組放電終止電壓",
+          "或保護系統依保護策略發生不可恢復性斷路，亦判定合格"
+        ]
+      },
+      "exemptions": [],
+      "related_tests": [
+        "GB31241-10.3",
+        "GB31241-11.3"
+      ],
+      "source_reference": "12.2.2",
+      "original_text_snippet": "12.2.2 單級電池過放保護：將樣品按照 4.5.1 規定的試驗方法充滿電後，進行如下步驟，如圖 6 所示：a) 使用負載對樣品中任意一只電池或電池並聯塊以推薦放電電流(Idr)放電至容量比此只電池或電池並聯塊充滿電的容量低 x%；b) 使用負載對樣品以推薦放電電流(Idr)進行放電，使樣品中任意一只電池的放電電壓低於放電終止電壓，監測此電池或電池並聯塊的電壓 U1 和總電壓 U2。放電至保護電路終止放電，保護電路動作時，U1 應小於電池放電終止電壓，U2 應大於電池組放電終止電壓。"
     }
   ],
   "test_sequence": {
-    "description": "GB 31241 規定的部分測試順序要求",
+    "description": "依 4.7.1~4.7.5（p12–p15，印刷頁6–9：樣品要求/數量/容量測試/預處理/表1~表5）、4.7.6 試驗順序（p15：『電池和電池組試驗順序按照附錄B的規定』）及附錄B 試驗順序（p36–p37，印刷頁30–31：圖B.1電池安全型式試驗順序、圖B.2電池組環境安全試驗順序、圖B.3電池組電安全試驗順序）整理。樣品編號依各表『樣品』欄。",
     "sequences": [
       {
-        "group": "單體電池順序測試",
+        "group": "電池安全試驗 - 環境安全鏈 (低氣壓→溫度循環→振動→加速度衝擊→高溫外部短路)",
+        "samples": "1~3",
         "tests": [
           "GB31241-7.1",
           "GB31241-7.2",
           "GB31241-7.3",
-          "GB31241-7.4"
+          "GB31241-7.4",
+          "GB31241-6.1"
         ],
-        "rule": "樣品 1~3 需依序進行低氣壓、溫度循環、振動、加速度衝擊測試。",
-        "source_reference": "4.7.1 表1"
+        "rule": "樣品1~3依序進行低氣壓(7.1)、溫度循環(7.2)、振動(7.3)、加速度衝擊(7.4)、高溫外部短路(6.1)，五項依序在同一組樣品上完成。",
+        "source_reference": "附錄 B 圖 B.1；4.7.5 表 1"
       },
       {
-        "group": "電池組順序測試",
+        "group": "電池安全試驗 - 過充電",
+        "samples": "4~6",
+        "tests": [
+          "GB31241-6.2"
+        ],
+        "rule": "樣品4~6獨立進行過充電試驗。",
+        "source_reference": "附錄 B 圖 B.1；4.7.5 表 1"
+      },
+      {
+        "group": "電池安全試驗 - 強制放電",
+        "samples": "7~9",
+        "tests": [
+          "GB31241-6.3"
+        ],
+        "rule": "樣品7~9獨立進行強制放電試驗。",
+        "source_reference": "附錄 B 圖 B.1；4.7.5 表 1"
+      },
+      {
+        "group": "電池安全試驗 - 跌落",
+        "samples": "10~12",
+        "tests": [
+          "GB31241-7.5"
+        ],
+        "rule": "樣品10~12獨立進行跌落試驗。",
+        "source_reference": "附錄 B 圖 B.1；4.7.5 表 1"
+      },
+      {
+        "group": "電池安全試驗 - 擠壓",
+        "samples": "13~15",
+        "tests": [
+          "GB31241-7.6"
+        ],
+        "rule": "樣品13~15獨立進行擠壓試驗。",
+        "source_reference": "附錄 B 圖 B.1；4.7.5 表 1"
+      },
+      {
+        "group": "電池安全試驗 - 重物衝擊",
+        "samples": "16~18",
+        "tests": [
+          "GB31241-7.7"
+        ],
+        "rule": "樣品16~18獨立進行重物衝擊試驗。",
+        "source_reference": "附錄 B 圖 B.1；4.7.5 表 1"
+      },
+      {
+        "group": "電池安全試驗 - 熱濫用",
+        "samples": "19~21",
+        "tests": [
+          "GB31241-7.8"
+        ],
+        "rule": "樣品19~21獨立進行熱濫用試驗。",
+        "source_reference": "附錄 B 圖 B.1；4.7.5 表 1"
+      },
+      {
+        "group": "電池安全試驗 - 燃燒噴射",
+        "samples": "22~24",
+        "tests": [
+          "GB31241-7.9"
+        ],
+        "rule": "樣品22~24獨立進行燃燒噴射試驗。對符合適用條件之電池進行第11章試驗時，試驗順序不做規定。",
+        "source_reference": "附錄 B 圖 B.1；4.7.5 表 1"
+      },
+      {
+        "group": "電池組環境安全試驗 - 環境安全鏈 (低氣壓→溫度循環→振動→加速度衝擊)",
+        "samples": "1~3",
         "tests": [
           "GB31241-8.1",
           "GB31241-8.2",
           "GB31241-8.3",
           "GB31241-8.4"
         ],
-        "rule": "樣品 1~3 需依序進行低氣壓、溫度循環、振動、加速度衝擊測試。",
-        "source_reference": "4.7.2 表2"
+        "rule": "樣品1~3依序進行低氣壓(8.1)、溫度循環(8.2)、振動(8.3)、加速度衝擊(8.4)。",
+        "source_reference": "附錄 B 圖 B.2；4.7.5 表 2"
+      },
+      {
+        "group": "電池組環境安全試驗 - 跌落",
+        "samples": "4~6",
+        "tests": [
+          "GB31241-8.5"
+        ],
+        "rule": "樣品4~6獨立進行跌落試驗。",
+        "source_reference": "附錄 B 圖 B.2；4.7.5 表 2"
+      },
+      {
+        "group": "電池組環境安全試驗 - 應力消除",
+        "samples": "7~9",
+        "tests": [
+          "GB31241-8.6"
+        ],
+        "rule": "樣品7~9獨立進行應力消除試驗。",
+        "source_reference": "附錄 B 圖 B.2；4.7.5 表 2"
+      },
+      {
+        "group": "電池組環境安全試驗 - 高溫使用",
+        "samples": "10~12",
+        "tests": [
+          "GB31241-8.7"
+        ],
+        "rule": "樣品10~12獨立進行高溫使用試驗。",
+        "source_reference": "附錄 B 圖 B.2；4.7.5 表 2"
+      },
+      {
+        "group": "電池組環境安全試驗 - 洗滌 (如適用)",
+        "samples": "3 個新樣品",
+        "tests": [
+          "GB31241-8.8"
+        ],
+        "rule": "若有必要進行8.8洗滌試驗，應使用3個新樣品，不與上述任何樣品組共用。",
+        "source_reference": "附錄 B（p37／印刷頁31：『若有必要進行8.8試驗時應使用3個新樣品』）；4.7.5 表 2"
+      },
+      {
+        "group": "電池組環境安全試驗 - 阻燃要求",
+        "samples": "見 8.9",
+        "tests": [
+          "GB31241-8.9"
+        ],
+        "rule": "8.9阻燃要求未列入附錄B流程圖(圖B.1/B.2/B.3)，其樣品需求與判定另見8.9本文（不在本次頁碼範圍 p27-p30 內，待其他批次確認）。",
+        "source_reference": "4.7.5 表 2（8.9 列）"
+      },
+      {
+        "group": "電池組電安全試驗 - 不採用保護電路作為防護措施",
+        "samples": "13~30",
+        "tests": [
+          "GB31241-9.2",
+          "GB31241-9.3",
+          "GB31241-9.4",
+          "GB31241-9.5",
+          "GB31241-9.6",
+          "GB31241-9.7"
+        ],
+        "rule": "若檢查樣品後判定不採用保護電路作為防護措施，直接對樣品13~30進行第9章電安全試驗：過壓充電(9.2,13~15)、過流充電(9.3,16~18)、欠壓放電(9.4,19~21)、過流放電(9.5,22~24)、外部短路(9.6,25~27)、反向充電(9.7,28~30)；全部通過即判定合格，任一不通過即不合格。",
+        "source_reference": "附錄 B 圖 B.3 (B.2.2)；4.7.5 表 2"
+      },
+      {
+        "group": "電池組電安全試驗 - 保護電路位於電池組內 (自帶保護電路)",
+        "samples": "10.1~10.5 各1個樣品；第9章樣品13~30",
+        "tests": [
+          "GB31241-10.1",
+          "GB31241-10.2",
+          "GB31241-10.3",
+          "GB31241-10.4",
+          "GB31241-10.5",
+          "GB31241-9.2",
+          "GB31241-9.3",
+          "GB31241-9.4",
+          "GB31241-9.5",
+          "GB31241-9.6",
+          "GB31241-9.7"
+        ],
+        "rule": "若保護電路位於電池組內，先進行第10章保護電路測試(10.1~10.5，每項1個樣品)；若10.1~10.5全部通過，接續對樣品13~30進行第9章試驗；若第10章未通過，可依虛線之可選路徑移除保護電路後，仍需接續進行第9章試驗；第9章全部通過方可判定合格，任一階段不通過即不合格。",
+        "source_reference": "附錄 B 圖 B.3 (B.2.2)；4.7.5 表 2、表 3"
+      },
+      {
+        "group": "電池組電安全試驗 - 保護電路位於電子產品內 (系統保護)",
+        "samples": "11.1~11.5：至少1個由電池/電池組供電之電子產品或其控制部分；第9章樣品13~30",
+        "tests": [
+          "GB31241-11.1",
+          "GB31241-11.2",
+          "GB31241-11.3",
+          "GB31241-11.4",
+          "GB31241-11.5",
+          "GB31241-9.2",
+          "GB31241-9.3",
+          "GB31241-9.4",
+          "GB31241-9.5",
+          "GB31241-9.6",
+          "GB31241-9.7"
+        ],
+        "rule": "若保護電路位於供電之電子產品內(而非電池組內)，先進行第11章系統保護電路測試(11.1~11.5)；通過後接續對樣品13~30進行第9章試驗；第11章或第9章任一階段不通過即判定不合格。",
+        "source_reference": "附錄 B 圖 B.3 (B.2.2)；4.7.5 表 2、表 4"
+      },
+      {
+        "group": "一致性型式試驗 (多級串聯電池/電池組適用)",
+        "samples": "12.2.1、12.2.2 各 1 個樣品",
+        "tests": [
+          "GB31241-12.2.1",
+          "GB31241-12.2.2"
+        ],
+        "rule": "僅適用於多級串聯構成之電池或電池組（第12章）；附錄B流程圖未涵蓋一致性試驗，12.2.1(單級電池過充保護)與12.2.2(單級電池過放保護)各自獨立使用1個樣品進行，順序不做規定。",
+        "source_reference": "4.7.5 表 5；12.1、12.2"
       }
     ]
   },
@@ -742,6 +2255,8 @@
       "僅收錄了最具代表性的核心試驗 13 項（其餘 MECH 等測試視為補充）"
     ],
     "total_test_entries": 13,
-    "note": "GB 31241 (2022) 包含完整的單體電池與電池組試驗，強調保護電路的 500 次循環與各項過壓/過流測試。"
+    "note": "GB 31241 (2022) 包含完整的單體電池與電池組試驗，強調保護電路的 500 次循環與各項過壓/過流測試。",
+    "total_tests": 39,
+    "update_2026_09_25": "依原文 PDF 頁面影像（文字層為亂碼，無法抽字）補入 27 項測試：7.3～7.5、7.7～7.9、8.3～8.5、8.7、8.9、9.3～9.5、9.7、10.1～10.5、11.1～11.5、12.2.1、12.2.2；以 10.1～10.5 取代原本合併的 GB31241-10；依 4.7.2 與 4.7.5 表 1～表 5 修正樣品數量（每項 3 個，原誤植為 5 顆）；移除 6.2、9.2 無原文依據的觀察期；依 4.7.6 與附錄 B 重寫 test_sequence。由 Sonnet 子代理轉寫、另一子代理獨立核對，人工抽查驗收。"
   }
 }

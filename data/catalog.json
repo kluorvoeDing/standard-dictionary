@@ -263,7 +263,7 @@
     "source_json": "data/batch2/content/GB31241_structured.json",
     "batch": "batch2",
     "li_applicable": true,
-    "item_count": 21,
+    "item_count": 39,
     "available_objects": [
       "CELL",
       "PACK_SYSTEM"
@@ -292,7 +292,7 @@
     "source_pdf_text_layer": "present",
     "source_quality": "pdf-authoritative",
     "schema_v2_json": "data/GB31241.json",
-    "test_count_v2": 13,
+    "test_count_v2": 39,
     "is_latest": true,
     "latest_version": "2022版",
     "versions_behind": 0,

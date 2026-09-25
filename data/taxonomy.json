@@ -239,6 +239,30 @@
       "name_en": "Salt Spray / Salt Mist",
       "synonyms_en": ["salt spray", "salt mist", "salt fog"],
       "synonyms_zh": ["鹽霧", "鹽霧測試"]
+    },
+    {
+      "normalized_id": "THERM-HOTUSE",
+      "category": "THERM",
+      "name_zh": "高溫使用",
+      "name_en": "High Temperature Use",
+      "synonyms_en": ["high temperature use"],
+      "synonyms_zh": ["高溫使用"]
+    },
+    {
+      "normalized_id": "BMS-TEMP-CTRL",
+      "category": "BMS",
+      "name_zh": "充放電溫度控制",
+      "name_en": "Charge / Discharge Temperature Control",
+      "synonyms_en": ["charge/discharge temperature control"],
+      "synonyms_zh": ["充放電溫度控制"]
+    },
+    {
+      "normalized_id": "BMS-ALARM",
+      "category": "BMS",
+      "name_zh": "BMS 報警與保護功能",
+      "name_en": "BMS Alarm and Protection",
+      "synonyms_en": ["alarm and protection"],
+      "synonyms_zh": ["報警和保護功能"]
     }
   ],
   "test_objects": [
