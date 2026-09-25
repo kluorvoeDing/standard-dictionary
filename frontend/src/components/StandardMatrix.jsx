@@ -1,17 +1,19 @@
-import React, { useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
+import { getOrgColor } from '../utils/orgColors';
 
-// Map raw objects to major sample levels
+// Map raw objects to major sample levels. PACK_SYSTEM (the taxonomy's pack / system level) maps to Pack.
 const getMajorLevel = (raw) => {
   const upper = raw.toUpperCase();
   if (upper.includes('CELL')) return 'Cell';
   if (upper.includes('MODULE')) return 'Module';
-  if (upper.includes('SYSTEM') || upper.includes('INSTALLATION')) return 'System';
   if (upper.includes('PACK')) return 'Pack';
+  if (upper.includes('SYSTEM') || upper.includes('INSTALLATION')) return 'System';
   return 'Other';
 };
 
 const MAJOR_LEVELS = ['Cell', 'Module', 'Pack', 'System', 'Other'];
+const LEVEL_FILTER_LABEL = { Pack: 'Pack / System' };
 
 // Domain display order (most specific applications first, General last)
 const APP_ORDER = [
@@ -31,12 +33,6 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
   const [levelFilter, setLevelFilter] = useState('ALL');
   const isMobile = useIsMobile();
 
-  const getOrgColor = (baseId) => {
-    if (baseId.startsWith('GB')) return { solid: 'var(--org-gb-solid)', text: 'var(--org-gb-text)', fill: 'var(--org-gb-fill)', border: 'var(--org-gb-border)' };
-    if (baseId.startsWith('UL')) return { solid: 'var(--org-ul-solid)', text: 'var(--org-ul-text)', fill: 'var(--org-ul-fill)', border: 'var(--org-ul-border)' };
-    if (baseId.startsWith('IEC') || baseId.startsWith('UN')) return { solid: 'var(--org-intl-solid)', text: 'var(--org-intl-text)', fill: 'var(--org-intl-fill)', border: 'var(--org-intl-border)' };
-    return { solid: 'var(--org-other-solid)', text: 'var(--org-other-text)', fill: 'var(--org-other-fill)', border: 'var(--org-other-border)' };
-  };
 
   const LEGEND = [
     { label: '中國 GB', solid: 'var(--org-gb-solid)' },
@@ -169,7 +165,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
               className={`sm-filter${levelFilter === lv ? ' is-active' : ''}`}
               onClick={() => setLevelFilter(lv)}
             >
-              {lv === 'ALL' ? '全部' : lv}
+              {lv === 'ALL' ? '全部' : (LEVEL_FILTER_LABEL[lv] || lv)}
             </button>
           ))}
         </div>
