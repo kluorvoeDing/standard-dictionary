@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SplitScreenGrid from './components/SplitScreenGrid';
 import StandardMatrix from './components/StandardMatrix';
 import AiConsultantChat from './components/AiConsultantChat';
 import GlobalMatrixModal from './components/GlobalMatrixModal';
 import GlobalSearchModal from './components/GlobalSearchModal';
+import Icon from './components/Icon';
 import './index.css';
 
 // Some data files still use the legacy schema (`test_items` / `document_info`).
@@ -99,6 +100,9 @@ function App() {
     });
   }, [selectedDocs, catalog, testsData]);
 
+  // Number of distinct standards (versions of one standard count once).
+  const libraryCount = new Set(catalog.map(c => c.base_standard_id || c.document_id)).size;
+
   const toggleDocument = (docId) => {
     if (selectedDocs.includes(docId)) {
       const newDocs = selectedDocs.filter(id => id !== docId);
@@ -115,72 +119,21 @@ function App() {
 
   return (
     <div className="layout-app" style={{ backgroundColor: 'var(--bg-color)' }}>
-      <div style={{ position: 'fixed', top: '1rem', right: '1rem', zIndex: 900, display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-        <button
-          onClick={toggleTheme}
-          title="切換深淺色"
-          style={{
-            padding: '0.6rem', borderRadius: '50%',
-            backgroundColor: 'var(--bg-panel)', color: 'var(--text-primary)',
-            border: '1px solid var(--border-color)', cursor: 'pointer',
-            boxShadow: 'var(--shadow-sm)', display: 'flex', alignItems: 'center', justifyContent: 'center',
-            width: '40px', height: '40px', fontSize: '1.2rem',
-            transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.1)'; e.currentTarget.style.boxShadow = 'var(--shadow-md)'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }}
-        >
-          {theme === 'light' ? '🌙' : '☀️'}
+      <div style={{ position: 'fixed', top: '1rem', right: '1rem', zIndex: 900, display: 'flex', gap: '0.6rem', alignItems: 'center' }}>
+        <button className="topbar-btn is-icon" onClick={toggleTheme} title={theme === 'light' ? '切換為深色' : '切換為淺色'} aria-label="切換深淺色">
+          <Icon name={theme === 'light' ? 'moon' : 'sun'} size={18} />
         </button>
-        <button
-          onClick={() => setIsSearchOpen(true)}
-          title="全域參數即時檢索 (⌘K / Ctrl+K)"
-          style={{
-            padding: '0.6rem 1.1rem', borderRadius: '9999px',
-            backgroundColor: 'var(--bg-panel)', color: 'var(--text-primary)',
-            border: '1px solid var(--border-color)', cursor: 'pointer',
-            boxShadow: 'var(--shadow-sm)', display: 'flex', alignItems: 'center', gap: '0.45rem',
-            fontWeight: 'bold', fontSize: '0.9rem',
-            transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = 'var(--shadow-md)'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }}
-        >
-          🔍 參數檢索
+        <button className="topbar-btn" onClick={() => setIsSearchOpen(true)} title="參數檢索（⌘K / Ctrl+K）">
+          <Icon name="search" size={16} />
+          <span className="topbar-label">參數檢索</span>
         </button>
-        <button
-          onClick={() => setIsGlobalMatrixOpen(true)}
-          title="全局總覽矩陣"
-          style={{
-            padding: '0.6rem 1.2rem', borderRadius: '9999px',
-            backgroundColor: 'var(--bg-panel)', color: 'var(--text-primary)',
-            border: '1px solid var(--border-color)', cursor: 'pointer',
-            boxShadow: 'var(--shadow-sm)', display: 'flex', alignItems: 'center', gap: '0.5rem',
-            fontWeight: 'bold', fontSize: '0.9rem',
-            transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = 'var(--shadow-md)'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }}
-        >
-          📊 總覽矩陣
+        <button className="topbar-btn" onClick={() => setIsGlobalMatrixOpen(true)} title="全部標準的測試項目總覽">
+          <Icon name="grid" size={16} />
+          <span className="topbar-label">總覽矩陣</span>
         </button>
-        <button
-          onClick={() => setIsAiChatOpen(true)}
-          style={{
-            padding: '0.6rem 1.2rem', borderRadius: '9999px',
-            background: 'linear-gradient(135deg, var(--accent-color) 0%, #8b5cf6 100%)', color: '#fff',
-            border: 'none', cursor: 'pointer', boxShadow: '0 4px 15px rgba(139, 92, 246, 0.4)',
-            display: 'flex', alignItems: 'center', gap: '0.5rem', fontWeight: 'bold',
-            transition: 'transform 0.2s ease, box-shadow 0.2s ease'
-          }}
-          onMouseEnter={(e) => { e.currentTarget.style.transform = 'scale(1.05)'; e.currentTarget.style.boxShadow = '0 6px 20px rgba(139, 92, 246, 0.6)'; }}
-          onMouseLeave={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.boxShadow = '0 4px 15px rgba(139, 92, 246, 0.4)'; }}
-        >
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275Z"/>
-            <path d="M5 3v4"/><path d="M3 5h4"/>
-          </svg>
-          AI 小幫手
+        <button className="topbar-ai" onClick={() => setIsAiChatOpen(true)} title="AI 小幫手">
+          <Icon name="sparkles" size={18} />
+          <span className="topbar-label">AI 小幫手</span>
         </button>
       </div>
 
@@ -191,6 +144,7 @@ function App() {
         testsData={testsData}
         initialMessage={aiInitialMessage}
         onClearInitialMessage={() => setAiInitialMessage(null)}
+        libraryCount={libraryCount}
       />
 
       <GlobalMatrixModal

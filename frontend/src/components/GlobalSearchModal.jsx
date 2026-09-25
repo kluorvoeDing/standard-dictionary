@@ -1,5 +1,8 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
+import Icon from './Icon';
+import { getOrgColor } from '../utils/orgColors';
+import { getParameterMeta } from '../utils/parameterDictionary';
 
 function normalizeStandardData(data) {
   if (!data || typeof data !== 'object') return data;
@@ -257,12 +260,7 @@ export default function GlobalSearchModal({
 
   if (!isOpen) return null;
 
-  const getOrgColor = (baseId) => {
-    if (baseId.startsWith('GB')) return { solid: 'var(--org-gb-solid)', fill: 'var(--org-gb-fill)' };
-    if (baseId.startsWith('UL')) return { solid: 'var(--org-ul-solid)', fill: 'var(--org-ul-fill)' };
-    if (baseId.startsWith('IEC') || baseId.startsWith('UN')) return { solid: 'var(--org-intl-solid)', fill: 'var(--org-intl-fill)' };
-    return { solid: 'var(--org-other-solid)', fill: 'var(--org-other-fill)' };
-  };
+  const libraryCount = new Set(catalog.map(c => c.base_standard_id || c.document_id)).size;
 
   const highlightMatches = (text, q) => {
     if (!text || !q.trim()) return text;
@@ -271,7 +269,7 @@ export default function GlobalSearchModal({
     const parts = String(text).split(regex);
     return parts.map((part, i) =>
       regex.test(part) ? (
-        <mark key={i} style={{ backgroundColor: 'rgba(234, 179, 8, 0.35)', color: 'inherit', padding: '0 2px', borderRadius: '3px', fontWeight: 600 }}>
+        <mark key={i} className="hl">
           {part}
         </mark>
       ) : part
@@ -343,18 +341,11 @@ export default function GlobalSearchModal({
           {query && (
             <button
               onClick={() => { setQuery(''); inputRef.current?.focus(); }}
-              style={{
-                background: 'none',
-                border: 'none',
-                color: 'var(--text-muted)',
-                cursor: 'pointer',
-                fontSize: '1rem',
-                padding: '0.2rem 0.5rem',
-                borderRadius: '4px'
-              }}
+              style={{ display: 'inline-flex', color: 'var(--text-muted)', padding: '0.25rem', borderRadius: '4px' }}
               title="清除"
+              aria-label="清除搜尋"
             >
-              ✕
+              <Icon name="x" size={16} />
             </button>
           )}
           <span style={{
@@ -378,19 +369,8 @@ export default function GlobalSearchModal({
             {QUICK_SUGGESTIONS.map(s => (
               <button
                 key={s}
+                className="btn-pill"
                 onClick={() => { setQuery(s); inputRef.current?.focus(); }}
-                style={{
-                  fontSize: '0.78rem',
-                  padding: '0.25rem 0.65rem',
-                  borderRadius: '9999px',
-                  backgroundColor: 'var(--bg-color)',
-                  border: '1px solid var(--border-color)',
-                  color: 'var(--text-secondary)',
-                  cursor: 'pointer',
-                  transition: 'all 0.15s ease'
-                }}
-                onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-color)'; e.currentTarget.style.color = 'var(--accent-color)'; }}
-                onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.color = 'var(--text-secondary)'; }}
               >
                 {s}
               </button>
@@ -403,13 +383,12 @@ export default function GlobalSearchModal({
           {loading && allStandardsData.length === 0 ? (
             <div style={{ padding: '3rem 1rem', textAlign: 'center', color: 'var(--text-muted)' }}>
               <div style={{ display: 'inline-block', width: '28px', height: '28px', border: '3px solid var(--border-color)', borderTopColor: 'var(--accent-color)', borderRadius: '50%', animation: 'spin 0.8s linear infinite', marginBottom: '0.8rem' }} />
-              <div>正在載入 30 份標準條款索引資料...</div>
+              <div>正在載入 {libraryCount} 份標準的條款索引…</div>
             </div>
           ) : !query.trim() ? (
             <div style={{ padding: '2.5rem 1rem', textAlign: 'center', color: 'var(--text-muted)' }}>
-              <div style={{ fontSize: '2.2rem', marginBottom: '0.6rem' }}>⚡</div>
               <div style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem' }}>
-                跨 30 份標準全參數即時檢索
+                跨 {libraryCount} 份標準的參數檢索
               </div>
               <div style={{ fontSize: '0.88rem', maxWidth: '480px', margin: '0 auto', lineHeight: 1.5 }}>
                 可同時輸入測試條件（如 <code style={{ color: 'var(--accent-color)' }}>6V</code>、<code style={{ color: 'var(--accent-color)' }}>3C</code>、<code style={{ color: 'var(--accent-color)' }}>7天</code>）、條款名稱或標準名稱，瞬間查出對應規範條款。
@@ -417,7 +396,7 @@ export default function GlobalSearchModal({
             </div>
           ) : searchResults.length === 0 ? (
             <div style={{ padding: '3rem 1rem', textAlign: 'center', color: 'var(--text-muted)' }}>
-              <div style={{ fontSize: '2rem', marginBottom: '0.5rem' }}>🔍</div>
+              <Icon name="search" size={28} strokeWidth={1.5} style={{ marginBottom: '0.6rem', opacity: 0.6 }} />
               <div style={{ fontSize: '1.05rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.4rem' }}>
                 找不到完全符合「{query}」的條款
               </div>
@@ -465,15 +444,15 @@ export default function GlobalSearchModal({
                             color: '#fff',
                             whiteSpace: 'nowrap'
                           }}>
-                            {highlightMatches(item.baseId, query)}
+                            {item.baseId}
                           </span>
                           <span style={{ fontSize: '0.88rem', fontWeight: 700, color: 'var(--text-primary)' }}>
                             {item.section && <span style={{ color: 'var(--text-muted)', marginRight: '0.35rem' }}>§{item.section}</span>}
                             {highlightMatches(item.nameZh || item.nameEn, query)}
                           </span>
                           {!isTestLevelMatch && (
-                            <span style={{ fontSize: '0.68rem', padding: '0.1rem 0.4rem', borderRadius: '4px', backgroundColor: 'rgba(234, 179, 8, 0.15)', color: '#d97706', border: '1px solid rgba(234, 179, 8, 0.3)' }}>
-                              同標準跨項目相關
+                            <span className="tag" title="關鍵字分散在同一份標準的不同測試項目中">
+                              同標準其他項目相關
                             </span>
                           )}
                         </div>
@@ -481,42 +460,25 @@ export default function GlobalSearchModal({
                         {/* Action buttons */}
                         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }} onClick={e => e.stopPropagation()}>
                           <button
+                            className={`btn-pill${isDocInComparison ? ' is-on' : ''}`}
                             onClick={() => toggleDocument(item.baseId)}
-                            style={{
-                              fontSize: '0.75rem',
-                              padding: '0.2rem 0.55rem',
-                              borderRadius: '6px',
-                              backgroundColor: isDocInComparison ? 'rgba(34, 197, 94, 0.15)' : 'var(--bg-panel)',
-                              color: isDocInComparison ? '#16a34a' : 'var(--text-secondary)',
-                              border: `1px solid ${isDocInComparison ? '#16a34a' : 'var(--border-color)'}`,
-                              cursor: 'pointer',
-                              fontWeight: 600,
-                              whiteSpace: 'nowrap'
-                            }}
-                            title="加入首頁橫向比對佇列"
+                            title={isDocInComparison ? '從比對清單移除' : '加入首頁的比對清單'}
                           >
-                            {isDocInComparison ? '✓ 已在比對中' : '＋ 加入比對'}
+                            <Icon name={isDocInComparison ? 'check' : 'plus'} size={13} />
+                            {isDocInComparison ? '已在比對中' : '加入比對'}
                           </button>
                           {onAskAi && (
                             <button
+                              className="btn-text"
                               onClick={() => {
                                 onClose();
                                 onAskAi(`請為我深度解析 ${item.baseId} 的第 ${item.section} 節（${item.nameZh}）試驗條件與判定依據。`, [item.baseId]);
                               }}
-                              style={{
-                                fontSize: '0.75rem',
-                                padding: '0.2rem 0.55rem',
-                                borderRadius: '6px',
-                                background: 'linear-gradient(135deg, var(--accent-color) 0%, #8b5cf6 100%)',
-                                color: '#fff',
-                                border: 'none',
-                                cursor: 'pointer',
-                                fontWeight: 600,
-                                whiteSpace: 'nowrap'
-                              }}
                               title="向 AI 小幫手提問此條款"
+                              style={{ display: 'inline-flex', alignItems: 'center', gap: '0.25rem' }}
                             >
-                              💬 問 AI
+                              <Icon name="message" size={13} />
+                              問 AI
                             </button>
                           )}
                         </div>
@@ -527,7 +489,7 @@ export default function GlobalSearchModal({
                         <div style={{ marginTop: '0.4rem', display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
                           {matchedConditions.map((c, ci) => (
                             <div key={ci} style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', backgroundColor: 'var(--bg-panel)', padding: '0.3rem 0.6rem', borderRadius: '5px', border: '1px solid var(--border-color)', lineHeight: 1.4 }}>
-                              <strong style={{ color: 'var(--accent-color)', marginRight: '0.35rem' }}>⚡ 命中【{c.key}】：</strong>
+                              <strong style={{ color: 'var(--text-primary)', marginRight: '0.4rem' }}>{getParameterMeta(c.key).label}</strong>
                               <span>{highlightMatches(c.value, query)}</span>
                               {c.detail && c.detail !== c.value && (
                                 <span style={{ color: 'var(--text-muted)', marginLeft: '0.35rem', fontSize: '0.76rem' }}>
@@ -551,13 +513,13 @@ export default function GlobalSearchModal({
                       {isExpanded && (
                         <div style={{ marginTop: '0.85rem', paddingTop: '0.85rem', borderTop: '1px dashed var(--border-color)', fontSize: '0.82rem' }}>
                           <div style={{ fontWeight: 700, color: 'var(--text-primary)', marginBottom: '0.5rem' }}>
-                            📋 完整試驗條件清單：
+                            完整試驗條件
                           </div>
                           <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : '1fr 1fr', gap: '0.5rem', marginBottom: '0.6rem' }}>
                             {item.conditionList.map((c, i) => (
                               <div key={i} style={{ backgroundColor: 'var(--bg-panel)', padding: '0.4rem 0.6rem', borderRadius: '6px', border: '1px solid var(--border-color)' }}>
-                                <div style={{ fontWeight: 600, color: 'var(--accent-color)', fontSize: '0.75rem', marginBottom: '0.15rem' }}>
-                                  {c.key}
+                                <div style={{ fontWeight: 600, color: 'var(--text-secondary)', fontSize: '0.75rem', marginBottom: '0.15rem' }}>
+                                  {getParameterMeta(c.key).label}
                                 </div>
                                 <div style={{ color: 'var(--text-primary)', fontWeight: 500 }}>
                                   {highlightMatches(c.value, query)}
@@ -574,7 +536,7 @@ export default function GlobalSearchModal({
                           {item.acceptanceCriteria?.details?.length > 0 && (
                             <div style={{ backgroundColor: 'var(--bg-panel)', padding: '0.5rem 0.75rem', borderRadius: '6px', border: '1px solid var(--border-color)' }}>
                               <div style={{ fontWeight: 600, color: 'var(--text-secondary)', fontSize: '0.75rem', marginBottom: '0.2rem' }}>
-                                詳細判定要件：
+                                判定要求
                               </div>
                               <ul style={{ margin: 0, paddingLeft: '1.2rem', color: 'var(--text-primary)', lineHeight: 1.5 }}>
                                 {item.acceptanceCriteria.details.map((d, di) => (

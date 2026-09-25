@@ -5,17 +5,18 @@ import remarkMath from 'remark-math';
 import rehypeKatex from 'rehype-katex';
 import 'katex/dist/katex.min.css';
 import useIsMobile from '../hooks/useIsMobile';
+import Icon from './Icon';
 
-const makeGreeting = (selectedCount) => ({
+const makeGreeting = (selectedCount, libraryCount) => ({
   sender: 'AI',
   isGreeting: true,
   text: selectedCount > 0
     ? `您好，我是您的 **AI 小幫手**。\n可以針對「目前已選取的 ${selectedCount} 份標準」回答比較與法規問題。`
-    : `您好，我是您的 **AI 小幫手**。\n目前處於**【🌐 全庫智慧檢索模式】**，您可以直接詢問任何跨 30 份標準的測試參數、條件數值（如 6V、3C、7天）或法規條款！`,
+    : `您好，我是您的 **AI 小幫手**。\n目前為**全庫檢索模式**，可以直接詢問全部 ${libraryCount} 份標準的測試參數、條件數值（如 6V、3C、7 天）或法規條款。`,
 });
 
-export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsData, initialMessage, onClearInitialMessage }) {
-  const [messages, setMessages] = useState(() => [makeGreeting(selectedDocs.length)]);
+export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsData, initialMessage, onClearInitialMessage, libraryCount }) {
+  const [messages, setMessages] = useState(() => [makeGreeting(selectedDocs.length, libraryCount)]);
   const [input, setInput] = useState('');
   const isMobile = useIsMobile();
   const [isTyping, setIsTyping] = useState(false);
@@ -116,7 +117,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
   }, [cooldown]);
 
   const resetChat = () => {
-    setMessages([makeGreeting(selectedDocs.length)]);
+    setMessages([makeGreeting(selectedDocs.length, libraryCount)]);
     setInput('');
   };
 
@@ -127,7 +128,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
     const now = Date.now();
     if (now - lastRequestTime < 5000) {
       const remaining = Math.ceil((5000 - (now - lastRequestTime)) / 1000);
-      setMessages(prev => [...prev, { sender: 'System', text: `⏳ 請稍候 ${remaining} 秒後再發問，以避免 API 超載。` }]);
+      setMessages(prev => [...prev, { sender: 'System', text: `請稍候 ${remaining} 秒後再發問，以避免 API 超載。` }]);
       return;
     }
 
@@ -302,15 +303,15 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2, minWidth: 0 }}>
             <span style={{ fontWeight: 700, fontSize: '1rem' }}>AI 小幫手</span>
             <span style={{ fontSize: '0.72rem', opacity: 0.9, whiteSpace: 'nowrap' }}>
-              {selectedDocs.length > 0 ? `已載入 ${selectedDocs.length} 份標準` : '🌐 全庫智慧檢索模式（30 份標準）'}
+              {selectedDocs.length > 0 ? `已載入 ${selectedDocs.length} 份標準` : `全庫檢索模式（${libraryCount} 份標準）`}
             </span>
           </div>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.1rem', flexShrink: 0 }}>
           {[
             { key: 'reset', label: '↺', title: '開新對話', onClick: resetChat, size: '1.05rem' },
-            { key: 'min', label: '➖', title: '縮小為浮動按鈕', onClick: () => setIsMinimized(true), size: '0.95rem' },
-            { key: 'close', label: '✕', title: '關閉', onClick: onClose, size: '1.1rem' },
+            { key: 'min', label: <Icon name="minus" size={16} />, title: '縮小為浮動按鈕', onClick: () => setIsMinimized(true), size: '0.95rem' },
+            { key: 'close', label: <Icon name="x" size={16} />, title: '關閉', onClick: onClose, size: '1.1rem' },
           ].map(b => (
             <button key={b.key} className="chat-iconbtn" onClick={b.onClick} title={b.title} aria-label={b.title}
               style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', width: '30px', height: '30px', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: b.size }}>
@@ -327,6 +328,8 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
         backgroundColor: 'var(--bg-color)'
       }}>
         {messages.map((msg, idx) => {
+          // The greeting follows the current selection and library size instead of the values at mount time.
+          const text = msg.isGreeting ? makeGreeting(selectedDocs.length, libraryCount).text : msg.text;
           const isUser = msg.sender === 'User';
           const isSys = msg.sender === 'System';
           return (
@@ -375,7 +378,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
                             borderRadius: '6px', padding: '0.2rem 0.5rem', fontSize: '0.72rem',
                             cursor: 'pointer', opacity: 0.85, boxShadow: 'var(--shadow-sm)'
                           }}
-                        >🔍 放大</button>
+                        ><Icon name="expand" size={12} style={{ marginRight: '0.25rem', verticalAlign: '-1px' }} />放大</button>
                         <div style={{ overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
                           <table style={{ borderCollapse: 'collapse', width: '100%', fontSize: '0.82rem' }} {...props} />
                         </div>
@@ -388,7 +391,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
                       ? <code style={{ backgroundColor: 'var(--bg-color)', padding: '0.1rem 0.3rem', borderRadius: '4px', fontSize: '0.85em' }} {...props} />
                       : <code style={{ display: 'block', backgroundColor: 'var(--bg-color)', padding: '0.6rem', borderRadius: '8px', overflowX: 'auto', fontSize: '0.85em' }} {...props} />
                   }}>
-                    {msg.text.replace(/<br\s*\/?>/gi, ' ')}
+                    {text.replace(/<br\s*\/?>/gi, ' ')}
                   </ReactMarkdown>
                 )}
               </div>
@@ -410,7 +413,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
           return (
             <div style={{ alignSelf: 'stretch', display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.25rem' }}>
               <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-                {selectedDocs.length > 0 ? '試試這些問題：' : '🌐 全庫模式推薦檢索問題：'}
+                {selectedDocs.length > 0 ? '試試這些問題：' : '可以試著問：'}
               </span>
               {suggestions.map((s, i) => (
                 <button
@@ -510,7 +513,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
             }}
           >
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem' }}>
-              <strong style={{ color: 'var(--text-primary)' }}>📊 表格放大檢視</strong>
+              <strong style={{ color: 'var(--text-primary)' }}>表格放大檢視</strong>
               <button
                 onClick={() => setZoomContent(null)}
                 style={{ background: 'none', border: 'none', color: 'var(--text-muted)', fontSize: '1.25rem', cursor: 'pointer' }}

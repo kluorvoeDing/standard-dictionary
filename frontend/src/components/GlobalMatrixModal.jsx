@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
+import Icon from './Icon';
 
 function normalizeStandardData(data) {
   if (!data || typeof data !== 'object') return data;
@@ -197,7 +198,7 @@ export default function GlobalMatrixModal({ isOpen, onClose, catalog }) {
         }}>
           <div>
             <h2 style={{ margin: 0, fontSize: '1.4rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-              全局總覽矩陣 (Global Overview Matrix)
+              總覽矩陣
             </h2>
             <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
               總結所有標準的測試層級與分類
@@ -216,19 +217,16 @@ export default function GlobalMatrixModal({ isOpen, onClose, catalog }) {
               }}
             />
             <button onClick={handleExportCSV} style={actionBtnStyle}>
-              📥 匯出 Excel (CSV)
+              <Icon name="download" size={15} />
+              匯出 Excel (CSV)
             </button>
             <button onClick={handleExportPDF} style={actionBtnStyle}>
-              🖨️ 匯出 PDF
+              <Icon name="printer" size={15} />
+              匯出 PDF
             </button>
-            <button onClick={onClose} style={{
-              background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '1.5rem',
-              display: 'flex', alignItems: 'center', justifyContent: 'center', width: '36px', height: '36px',
-              borderRadius: '50%', transition: 'background-color 0.2s', marginLeft: '0.5rem'
-            }}
-            onMouseEnter={e => e.currentTarget.style.backgroundColor = 'var(--hover-bg)'}
-            onMouseLeave={e => e.currentTarget.style.backgroundColor = 'transparent'}
-            >✕</button>
+            <button type="button" className="modal-close" onClick={onClose} aria-label="關閉" style={{ position: 'static', marginLeft: '0.25rem' }}>
+              <Icon name="x" size={16} />
+            </button>
           </div>
         </div>
 

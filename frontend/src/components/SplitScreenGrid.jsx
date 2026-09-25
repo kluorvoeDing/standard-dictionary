@@ -176,7 +176,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', overflow: 'hidden' }}>
-      <div style={{ padding: isMobile ? '0.75rem 0.85rem' : '0.9rem 1.5rem', borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--bg-panel)', display: 'flex', alignItems: 'center', gap: '0.9rem' }}>
+      <div style={{ padding: isMobile ? '0.75rem 13.25rem 0.75rem 0.85rem' : '0.9rem 1.5rem', minHeight: isMobile ? '64px' : undefined, borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--bg-panel)', display: 'flex', alignItems: 'center', gap: '0.9rem' }}>
         <button
           className="cmp-back"
           onClick={() => setIsComparing && setIsComparing(false)}
@@ -184,9 +184,9 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
         >
           <span aria-hidden="true">←</span>{isMobile ? '' : ' 返回'}
         </button>
-        <h2 style={{ margin: 0, display: 'flex', alignItems: 'baseline', gap: '0.55rem', fontSize: isMobile ? '1.05rem' : '1.25rem', fontWeight: 700, letterSpacing: '-0.01em', color: 'var(--text-primary)' }}>
+        <h2 style={{ margin: 0, display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '0.1rem 0.55rem', fontSize: isMobile ? '1.05rem' : '1.25rem', fontWeight: 700, letterSpacing: '-0.01em', color: 'var(--text-primary)' }}>
           橫向對比
-          <span style={{ fontSize: '0.82rem', fontWeight: 500, color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
+          <span style={{ fontSize: '0.82rem', fontWeight: 500, color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {selectedDocIds.length} 份標準 · {visible.length} 項測試
           </span>
         </h2>

@@ -575,6 +575,27 @@ button {
 .topbar-btn:hover { border-color: var(--border-hover); box-shadow: var(--shadow-md); }
 .topbar-btn:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
 .topbar-btn.is-icon { width: 40px; padding: 0; }
+.topbar-ai {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 40px;
+  padding: 0 1.15rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, var(--accent-color) 0%, #8b5cf6 100%);
+  color: #fff;
+  font-weight: 700;
+  white-space: nowrap;
+  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
+}
+.topbar-ai:hover { box-shadow: 0 6px 20px rgba(139, 92, 246, 0.55); transform: translateY(-1px); }
+.topbar-ai:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+@media (max-width: 767px) {
+  .topbar-label { display: none; }
+  .topbar-btn, .topbar-ai { width: 40px; padding: 0; }
+}
 .btn-pill {
   display: inline-flex;
   align-items: center;
@@ -696,7 +717,7 @@ mark.hl {
 @media (prefers-reduced-motion: reduce) {
   .sm-card, .sm-row, .sm-filter,
   .cmp-back, .cmp-colhead, .cmp-cell, .cmp-ver, .cmp-clause, .cmp-section-toggle .chev,
-  .topbar-btn, .btn-pill,
+  .topbar-btn, .topbar-ai, .btn-pill,
   .chat-input, .chat-send, .chat-iconbtn, .chat-suggest { transition: none; }
   .sm-row:active { transform: none; }
   .chat-dots span { animation: none; opacity: 0.6; }
