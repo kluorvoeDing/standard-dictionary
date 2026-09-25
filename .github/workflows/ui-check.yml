@@ -1,0 +1,38 @@
+name: UI Check
+
+# 前端 / API 有變動時把關：不得出現 emoji（AGENTS.md「UI 風格鐵律」），且前端必須能建置。
+on:
+  push:
+    paths:
+      - 'frontend/**'
+      - 'api/**'
+      - 'scripts/check_ui_style.mjs'
+      - '.github/workflows/ui-check.yml'
+  pull_request:
+    paths:
+      - 'frontend/**'
+      - 'api/**'
+      - 'scripts/check_ui_style.mjs'
+  workflow_dispatch:
+
+jobs:
+  ui:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: No emoji in UI source
+        run: node scripts/check_ui_style.mjs
+
+      # 與 Vercel 的 buildCommand 相同（npm install，而非 npm ci）
+      - name: Build frontend
+        working-directory: frontend
+        run: |
+          npm install --no-audit --no-fund
+          npm run build

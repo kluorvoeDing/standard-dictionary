@@ -49,6 +49,18 @@
 >
 > CI（`data-integrity.yml`）會以 `normalize:check` 把關：只要有檔案未正規化就會 fail。正規化器預設會**略過 git-dirty 檔**以免干擾進行中的工作；要全部處理加 `--all`。標準形：時間用繁中（小時／分鐘／秒）、溫度用 `°C`。
 
+> ## UI 風格鐵律：新功能要長得像首頁
+>
+> 首頁「標準應用領域導覽」是全站的風格基準：米白底、細框線、8px 機構色塊、灰階文字層次、藥丸形篩選按鈕。**任何 agent 新增或修改前端時必須遵守：**
+>
+> 1. **不用 emoji**（介面文字、按鈕、標題、AI 提示詞都一樣）。需要圖示時用 `frontend/src/components/Icon.jsx` 的單色線條圖示；`✓ ✕ ← ⓘ ⌘` 這類文字符號可以用。
+> 2. **顏色只用 `frontend/src/index.css` 的 token**（`--text-*`、`--border-color`、`--org-*`、`--cat-*`、`--diff-*`…），不要寫死 `#d97706`、`rgba(...)`，否則深色模式會壞。
+> 3. **互動樣式寫成 CSS class**（`.sm-*`、`.cmp-*`、`.topbar-btn`、`.btn-pill`、`.modal-*`），不要用 `onMouseEnter` 改 style。
+> 4. **沿用既有元件**：機構色用 `utils/orgColors.js`，參數名稱用 `utils/parameterDictionary.js`（新欄位名要補中文標籤或別名），彈窗用 `.modal-backdrop` / `.modal-panel`。
+> 5. **文字精簡、用中文**，不要中英並列的標題（例如「只看差異 (Diff Only)」）或【】括號。
+>
+> CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/` 不得出現 emoji，並確認前端能建置。
+
 ## 2026-09-24 (Data Fix - 驗證器警告清零與試驗順序補齊)
 - 事件：處理 `npm run validate` 的 17 個警告，並補上驗證器原本沒抓到的錯誤引用。
 - 內容：

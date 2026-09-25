@@ -6,7 +6,8 @@
   "scripts": {
     "validate": "node scripts/validate_data.mjs",
     "normalize": "node scripts/normalize_data.mjs --write",
-    "normalize:check": "node scripts/normalize_data.mjs --check"
+    "normalize:check": "node scripts/normalize_data.mjs --check",
+    "lint:ui": "node scripts/check_ui_style.mjs"
   },
   "devDependencies": {
     "cheerio": "^1.2.0"
