@@ -61,6 +61,26 @@
 >
 > CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/` 不得出現 emoji，並確認前端能建置。
 
+## 2026-09-26 (Data - 試驗程序欄位核對第三批：9 份國際與各國標準)
+- 事件：工作 A 第三批完成。IEC62133-2、IEC62619、JISC8715-2、JISC8714、UN38.3、SAND2017、AIS-038、AIS-156、IEC62660-3 等 9 份標準之樣品數量／前置處理／觀察期（共 91 項測試、298 筆欄位）逐項對照原文核對與改寫，重複欄位全數清除。
+- 背景：Phase 2 補強值多為樣板句（如「每項 5 顆」、「滿充電」、「觀察 1 小時」），且存在 `sample_size`、`observation`、`rest_time`、`observation_time` 等重複欄位。
+- 做法（子代理定位與判定，主 agent 抽查驗收與覆寫修正）：
+  - 原文轉文字：以 PyMuPDF 文字層擷取（IEC62133-2 採 Part 2 Final Version 101–146 頁以避開 Redline 劃線舊條文干擾；JISC8715-2 / JISC8714 採日文原文；IEC62660-3 採 OCR 權威文字）。
+  - Flash 子代理（locator）定位通則與各測試條款行號，`excerpts.py` 產出逐字摘錄（9 份 0 錯誤）。
+  - Pro 子代理（reviewer）逐項審查 `sample_quantity`、`pre_conditioning`、`observation_period` 與重複欄位，附逐字引文、條款號出處與處置說明。
+  - 驗收與覆寫：`verify.py` 檢查引文逐字存在、無簡體字、標準繁中時間單位與 `°C` 溫度；主 agent 抽查並修正模型偏差：
+    * 修正 IEC62133-2 7.3.1 / 7.3.2 短路試驗將 24 小時/溫降 20% 之終止條件誤作觀察期的錯誤（改為 delete，動態終止保留於 termination 欄位）。
+    * 修正 IEC62619 子代理因原文 PDF 缺少 Section 6/7.1 而誤刪全部樣品與前處理的重大偏差：對照各條款本文及 JIS C 8715-2 Table 1 原文補齊 11 項測試之精確樣品數量、各條款內文規定之充放電預處理，並將 7.2.3 / 7.3.3 重複欄位清理回歸標準觀察期。
+    * 核實 UN38.3 T.5 (6 小時)、T.6 (6 小時)、T.7 (7 天)、T.8 (7 天) 之試驗後觀察期規定。
+    * 核實 JISC8714 5.3.2 / 5.7.2 放置 24 小時或溫降 20% 之觀察期規定。
+    * 核實 AIS-156 Annex 8C 跌落試驗得使用最多 6 組 REESS 之彈性規定。
+  - 以確定性腳本 `apply.mjs` 落地寫入 `data/*.json`，更新 `metadata.enrichment`。
+- 內容：
+  - 改寫後的欄位均標註 `source_reference`，`scripts/audit_enrichment.mjs` 正式標記為「已核對」。
+  - 9 份標準之重複欄位全數清除（0 筆重複）。
+- 影響：`npm run validate` 0 錯誤、0 警告；全庫累計已核對項目由 613 筆躍升至 836 筆（佔比大幅攀升至 68%）；全庫含樣板標準自 13 份降至僅剩 6 份；`npm run lint:ui` 通過，Vite build 通過。
+- 後續：待使用者核准後合併分支 `review/procedure-batch3`；續行批次 4（5 份國標：GB38031, GB44240, GBT36276, GB31241, GB43854）或工作 B 引用條款展開。
+
 ## 2026-09-26 (Data - 試驗程序欄位核對第二批：10 份 UL 標準)
 - 事件：工作 A 第二批完成。UL1642、UL1642-2022、UL2054、UL2056、UL2271、UL1973、UL3030、UL9540、UL9540A、UL2743 等 10 份 UL 標準之樣品數量／前置處理／觀察期（共 129 項測試、422 筆欄位）逐項對照原文核對與改寫，重複欄位全數清除。
 - 背景：Phase 2 補強值多為整份標準套用樣板句（如「每項 5 顆」、「滿充電」、「觀察 1 小時」），且存在 `sample_size`、`observation` 等重複欄位。
