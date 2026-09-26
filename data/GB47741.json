@@ -49,16 +49,14 @@
           "value": "降溫後維持 1 小時"
         },
         "pre_conditioning": {
-          "value": "57 °C ± 4 °C，6 小時",
-          "detail": "待電池溫度達到 57 °C ± 4 °C 後，再放置 6 小時。"
+          "value": "預處理後充滿電，於 57 °C±4 °C 待溫後再放置 6 小時",
+          "detail": "4.6.4 a)：先按 4.5 進行 1 次充放電循環（表 1 注 b）；6.1：按 4.5.1 充滿電後放置在 57 °C±4 °C 的環境中，電池溫度達到 57 °C±4 °C 後再放置 6 小時，然後短路。",
+          "source_reference": "4.6.4；4.5.1；6.1"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "5 個（樣品 1～5）",
+          "detail": "4.6.2；表 1：樣品 1～5，與 7.1、7.2、7.3、7.4 共用（表 1 注 b：預處理僅 1 次充放電循環）。",
+          "source_reference": "4.6.2；表 1"
         }
       },
       "acceptance_criteria": {
@@ -90,16 +88,14 @@
           "value": "1 小時 或總 1.5 小時"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "3 個（樣品 6～8）",
+          "detail": "4.6.2；表 1：樣品 6～8。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次，充放電之間擱置 10 分鐘或 30 分鐘）；6.2：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；6.2"
         }
       },
       "acceptance_criteria": {
@@ -127,16 +123,14 @@
           "value": "共計 90 分鐘"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "3 個（樣品 9～11）",
+          "detail": "4.6.2；表 1：樣品 9～11。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "預處理後，按 4.5.2 放完電",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次，充放電之間擱置 10 分鐘或 30 分鐘）；6.3：按 4.5.2 規定的試驗方法放完電後進行試驗。",
+          "source_reference": "4.6.4；4.5.2；6.3"
         }
       },
       "acceptance_criteria": {
@@ -167,16 +161,14 @@
           "value": "≥ 6 小時"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "5 個（樣品 1～5）",
+          "detail": "4.6.2；表 1：樣品 1～5，與 6.1、7.2、7.3、7.4 共用（表 1 注 b）。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行 1 次充放電循環（表 1 注 b）；7.1：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；7.1"
         }
       },
       "acceptance_criteria": {
@@ -216,16 +208,19 @@
           "detail": "對於大型電池(>500g)，保持時間應為 12 小時。"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "5 個（樣品 1～5）",
+          "detail": "4.6.2；表 1：樣品 1～5，與 6.1、7.1、7.3、7.4 共用（表 1 注 b）。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行 1 次充放電循環（表 1 注 b）；7.2：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；7.2"
         },
         "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "循環後室溫存放至少 24 小時",
+          "detail": "7.2 d)：在室溫 20 °C±5 °C 下至少保存 24 小時。",
+          "source_reference": "7.2"
         }
       },
       "acceptance_criteria": {
@@ -257,16 +252,14 @@
           "value": "每方向 3 小時"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "5 個（樣品 1～5）",
+          "detail": "4.6.2；表 1：樣品 1～5，與 6.1、7.1、7.2、7.4 共用（表 1 注 b）。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行 1 次充放電循環（表 1 注 b）；7.3：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；7.3"
         }
       },
       "acceptance_criteria": {
@@ -298,16 +291,14 @@
           "value": "每個方向 3 次"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "5 個（樣品 1～5）",
+          "detail": "4.6.2；表 1：樣品 1～5，與 6.1、7.1、7.2、7.3 共用（表 1 注 b）。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行 1 次充放電循環（表 1 注 b）；7.4：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；7.4"
         }
       },
       "acceptance_criteria": {
@@ -339,16 +330,14 @@
           "value": "4 或 6 次"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "3 個（樣品 12～14）",
+          "detail": "4.6.2；表 1：樣品 12～14。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次，充放電之間擱置 10 分鐘或 30 分鐘）；7.5：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；7.5"
         }
       },
       "acceptance_criteria": {
@@ -383,16 +372,14 @@
           "detail": "試驗後觀察 6 小時。"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "3 個（樣品 15～17）",
+          "detail": "4.6.2；表 1：樣品 15～17。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次，充放電之間擱置 10 分鐘或 30 分鐘）；7.6：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；7.6"
         }
       },
       "acceptance_criteria": {
@@ -427,16 +414,14 @@
           "detail": "試驗後觀察 5 分鐘。"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "3 個（樣品 18～20）",
+          "detail": "4.6.2；表 1：樣品 18～20。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次，充放電之間擱置 10 分鐘或 30 分鐘）；7.7：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；7.7"
         }
       },
       "acceptance_criteria": {
@@ -468,16 +453,14 @@
           "value": "恆溫 60 分鐘"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "3 個（樣品 21～23）",
+          "detail": "4.6.2；表 1：樣品 21～23。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次，充放電之間擱置 10 分鐘或 30 分鐘）；7.8：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；7.8"
         }
       },
       "acceptance_criteria": {
@@ -512,16 +495,19 @@
           "detail": "鋼針圓錐角為 45°。"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "3 個（樣品 24～26）",
+          "detail": "4.6.2；表 1：樣品 24～26。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次，充放電之間擱置 10 分鐘或 30 分鐘）；7.9：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；7.9"
         },
         "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "鋼針停留在電池中觀察 1 小時",
+          "detail": "7.9：針尖完全穿過電池，鋼針停留在電池中，並觀察 1 小時。",
+          "source_reference": "7.9"
         }
       },
       "acceptance_criteria": {
@@ -549,16 +535,19 @@
           "value": "降壓25%或達300 °C"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "3 個（樣品 30～32）",
+          "detail": "4.6.2；表 1：樣品 30～32。",
+          "source_reference": "4.6.2；表 1"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次，充放電之間擱置 10 分鐘或 30 分鐘）；7.11：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；7.11"
         },
         "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "加熱期間及加熱結束後 1 小時內",
+          "detail": "7.11.3.2：加熱過程中及加熱結束 1 小時內，如果發生起火、爆炸，則試驗終止。",
+          "source_reference": "7.11.3.2"
         }
       },
       "acceptance_criteria": {
@@ -586,16 +575,14 @@
           "value": "至少 6 小時"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "4 個（樣品 1～4）",
+          "detail": "4.6.2；表 2：樣品 1～4，與 8.2、8.3、8.4 共用（表 2 注 b：預處理僅 1 次充放電循環）。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行 1 次充放電循環（表 2 注 b）；第 8 章樣品不做靜電放電預處理（注 3）；8.1：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；8.1"
         }
       },
       "acceptance_criteria": {
@@ -631,16 +618,19 @@
           "detail": "質量 m≤12kg 保持 6 小時，m>12kg 保持 12 小時。"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "4 個（樣品 1～4）",
+          "detail": "4.6.2；表 2：樣品 1～4，與 8.1、8.3、8.4 共用（表 2 注 b）。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行 1 次充放電循環（表 2 注 b）；第 8 章樣品不做靜電放電預處理（注 3）；8.2：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；8.2"
         },
         "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "循環後室溫存放至少 24 小時",
+          "detail": "8.2：試驗方法見 7.2；7.2 d)：在室溫 20 °C±5 °C 下至少保存 24 小時。",
+          "source_reference": "8.2；7.2"
         }
       },
       "acceptance_criteria": {
@@ -670,16 +660,14 @@
           "value": "每個方向 3 小時"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "4 個（樣品 1～4）",
+          "detail": "4.6.2；表 2：樣品 1～4，與 8.1、8.2、8.4 共用（表 2 注 b）。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行 1 次充放電循環（表 2 注 b）；第 8 章樣品不做靜電放電預處理（注 3）；8.3：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；8.3"
         }
       },
       "acceptance_criteria": {
@@ -709,16 +697,14 @@
           "value": "6 ms 或 11 ms"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "4 個（樣品 1～4）",
+          "detail": "4.6.2；表 2：樣品 1～4，與 8.1、8.2、8.3 共用（表 2 注 b）。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行 1 次充放電循環（表 2 注 b）；第 8 章樣品不做靜電放電預處理（注 3）；8.4：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；8.4"
         }
       },
       "acceptance_criteria": {
@@ -754,16 +740,19 @@
           "detail": "測試結束後靜置 4 小時。試驗後繼續進行一次放電充電循環。"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 5）",
+          "detail": "4.6.2；表 2：樣品 5。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次）；第 8 章樣品不做靜電放電預處理（注 3）；8.5：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；8.5"
         },
         "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "跌落結束後靜置 4 小時",
+          "detail": "8.5：每兩次跌落間隔 5 分鐘±1 分鐘，測試結束後靜置 4 小時。",
+          "source_reference": "8.5"
         }
       },
       "acceptance_criteria": {
@@ -791,16 +780,14 @@
           "value": "7 小時"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 6）",
+          "detail": "4.6.2；表 2：樣品 6。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次）；第 8 章樣品不做靜電放電預處理（注 3）；8.6：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；8.6"
         }
       },
       "acceptance_criteria": {
@@ -835,16 +822,19 @@
           "detail": "將樣品擱置 24 小時，若樣品還能繼續放電，則進行一次放電充電循環。"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 7）",
+          "detail": "4.6.2；表 2：樣品 7。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次）；第 8 章樣品不做靜電放電預處理（注 3）；8.7：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；8.7"
         },
         "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "浸水後擱置 24 小時",
+          "detail": "8.7：將樣品擱置 24 小時，若還能放電，再按 4.5 進行一次放電充電循環。",
+          "source_reference": "8.7"
         }
       },
       "acceptance_criteria": {
@@ -872,16 +862,14 @@
           "value": "不低於 V-1 級"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "見 8.8（附錄 B、C 各 3 個）",
+          "detail": "表2：8.8見8.8；8.8.3印製板應不低於V-1級材料或通過附錄B（B.2：三個樣品）；8.8.4導線應通過附錄C（C.2：三個樣品）；8.8.5其他封裝材料經附錄B試驗者亦為3個；8.8.2外殼僅需材料等級不低於V-0，未另訂樣品數。",
+          "source_reference": "表 2；8.8.2；8.8.3；8.8.4；8.8.5；附录 B.2；附录 C.2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "附錄 B 材料於烘箱處理 7 天",
+          "detail": "8.8.3：印製板應不低於V-1級材料或通過附錄B之試驗；附錄B.4：試驗前樣品於空氣循環烘箱處理7天（168 小時），烘箱溫度為容許最高表面溫度加10K或70 °C（取較高者），處理後使樣品冷卻至室溫；對PCB板另於125 °C±2 °C烘箱處理24 小時，隨後置於裝有無水氯化鈣之乾燥器中，於室溫冷卻4 小時。",
+          "source_reference": "8.8.3；附录 B.4"
         }
       },
       "acceptance_criteria": {
@@ -919,16 +907,14 @@
           "detail": "使用推薦充電電流(Icr) 或 m倍推薦充電電流(m×Icr)進行試驗。"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 8）",
+          "detail": "4.6.2；表 2：樣品 8。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4：先按 4.5 進行充放電循環（無特殊規定時為 2 次），再按 4.5.1 充滿電，依 GB/T 17626.2 對每個輸出端子進行 ±4 kV 接觸放電與 ±8 kV 空氣放電；9.2：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；9.2"
         }
       },
       "acceptance_criteria": {
@@ -954,16 +940,14 @@
           "value": "1.5 倍過流充電保護電流"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 9）",
+          "detail": "4.6.2；表 2：樣品 9。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "預處理後，按 4.5.2 放完電",
+          "detail": "4.6.4：先按 4.5 進行充放電循環（無特殊規定時為 2 次），再按 4.5.1 充滿電，依 GB/T 17626.2 對每個輸出端子進行 ±4 kV 接觸放電與 ±8 kV 空氣放電；9.3：按 4.5.2 規定的試驗方法放完電後進行試驗。",
+          "source_reference": "4.6.4；4.5.2；9.3"
         }
       },
       "acceptance_criteria": {
@@ -992,16 +976,14 @@
           "value": "放電至保護電路動作"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 11）",
+          "detail": "4.6.2；表 2：樣品 11（9.5 欠壓保護含 9.5.2 欠壓禁用共用同一樣品）。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "完成 4.6.4 預處理",
+          "detail": "4.6.4：先按 4.5 進行充放電循環（無特殊規定時為 2 次），再按 4.5.1 充滿電，依 GB/T 17626.2 對每個輸出端子進行 ±4 kV 接觸放電與 ±8 kV 空氣放電；9.5：條文未另規定充放電狀態。",
+          "source_reference": "4.6.4；9.5"
         }
       },
       "acceptance_criteria": {
@@ -1027,16 +1009,14 @@
           "value": "1.5 倍過流放電保護電流"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 12）",
+          "detail": "4.6.2；表 2：樣品 12。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4：先按 4.5 進行充放電循環（無特殊規定時為 2 次），再按 4.5.1 充滿電，依 GB/T 17626.2 對每個輸出端子進行 ±4 kV 接觸放電與 ±8 kV 空氣放電；9.6：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；9.6"
         }
       },
       "acceptance_criteria": {
@@ -1073,16 +1053,19 @@
           "detail": "停止試驗，然後靜置 6 小時。"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 13）",
+          "detail": "4.6.2；表 2：樣品 13。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+          "value": "預處理後，按 4.5.1 充滿電",
+          "detail": "4.6.4：先按 4.5 進行充放電循環（無特殊規定時為 2 次），再按 4.5.1 充滿電，依 GB/T 17626.2 對每個輸出端子進行 ±4 kV 接觸放電與 ±8 kV 空氣放電；9.7：按 4.5.1 規定的試驗方法充滿電後進行試驗。",
+          "source_reference": "4.6.4；4.5.1；9.7"
         },
         "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "短路停止後靜置 6 小時",
+          "detail": "9.7：電池組電壓低於 0.2 V 或短路時間達到 1 小時即停止試驗，然後靜置 6 小時。",
+          "source_reference": "9.7"
         }
       },
       "acceptance_criteria": {
@@ -1114,16 +1097,9 @@
           "value": "往返移動 95 分鐘"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
-        },
-        "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "3 個（樣品 1～3）",
+          "detail": "4.6.2；表 3：樣品 1～3。",
+          "source_reference": "4.6.2；表 3"
         }
       },
       "acceptance_criteria": {
@@ -1156,16 +1132,14 @@
           "detail": "三個相互垂直的位置上進行測試，每個位置至少 6 小時 (總計 18 小時)。"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "3 個（樣品 4～6）",
+          "detail": "4.6.2；表 3：樣品 4～6。",
+          "source_reference": "4.6.2；表 3"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "振動試驗後",
+          "detail": "10.3：「振動實驗後，當壓力差至少為 88 kPa，可將電池／電池組在 24 °C±4 °C 下存儲 6 小時」；表 3 中 10.2、10.3 使用不同樣品（1～3、4～6），原文未說明 10.3 的樣品是否先做 10.2 振動。",
+          "source_reference": "10.3；表 3"
         }
       },
       "acceptance_criteria": {
@@ -1196,16 +1170,14 @@
           "value": "短接 24 小時 或溫度降 20%"
         },
         "pre_conditioning": {
-          "value": "57 °C ± 4 °C，2 小時",
-          "detail": "待電池溫度達到 57 °C ± 4 °C 後，再放置 2 小時。"
+          "value": "按製造商規定充滿電，於 57 °C±4 °C 待溫後再放置 2 小時",
+          "detail": "4.5.3：鎳系電池按製造商規定的方法充放電（4.6.3、4.6.4 不適用）；11.2：充滿電後放置在 57 °C±4 °C 的環境中，電池溫度達到 57 °C±4 °C 後再放置 2 小時，然後短路。",
+          "source_reference": "4.5.3；11.2"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "3 個（樣品 1～3）",
+          "detail": "4.6.2；表 4：樣品 1～3。",
+          "source_reference": "4.6.2；表 4"
         }
       },
       "acceptance_criteria": {
@@ -1233,16 +1205,14 @@
           "value": "充入 250% 額定容量"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "3 個（樣品 4～6）",
+          "detail": "4.6.2；表 4：樣品 4～6。",
+          "source_reference": "4.6.2；表 4"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "按製造商規定放完電",
+          "detail": "4.5.3：鎳系電池按製造商規定的方法充放電（4.6.3、4.6.4 不適用）；11.3：按製造商規定的方法放完電後進行過充。",
+          "source_reference": "4.5.3；11.3"
         }
       },
       "acceptance_criteria": {
@@ -1273,16 +1243,19 @@
           "value": "停留觀察 1 小時"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "3 個（樣品 7～9）",
+          "detail": "4.6.2；表 4：樣品 7～9。",
+          "source_reference": "4.6.2；表 4"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
+          "value": "按製造商規定充滿電",
+          "detail": "4.5.3：鎳系電池按製造商規定的方法充放電（4.6.3、4.6.4 不適用）；11.4：按製造商規定的試驗方法充滿電後進行針刺。",
+          "source_reference": "4.5.3；11.4"
         },
         "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "鋼針停留在電池中觀察 1 小時",
+          "detail": "11.4：鋼針停留在電池中，並觀察 1 小時。",
+          "source_reference": "11.4"
         }
       },
       "acceptance_criteria": {
@@ -1325,16 +1298,14 @@
           "detail": "當放電容量連續 3 次低於 45% 額定容量時，中止試驗。"
         },
         "sample_quantity": {
-          "value": "每項 5 顆電芯",
-          "detail": "電動輪椅用電芯試驗每組需 5 顆樣品。"
+          "value": "3 個（樣品 27～29）",
+          "detail": "4.6.2；表 1：樣品 27～29。7.10 d)：c) 停止循環後析鋰判定合格時，更換 3 個全新樣品，充放電電流調為原來的 0.8 倍重新循環。",
+          "source_reference": "4.6.2；表 1；7.10"
         },
         "pre_conditioning": {
-          "value": "按標準充電程序充滿電",
-          "detail": "室溫下依規定充電程序滿充並靜置穩定。"
-        },
-        "observation_period": {
-          "value": "試驗完成後觀察 1 小時",
-          "detail": "試驗結束後在環境溫度下觀察 1 小時。"
+          "value": "完成 4.6.4 預處理",
+          "detail": "4.6.4 a)：先按 4.5 進行充放電循環（無特殊規定時為 2 次，充放電之間擱置 10 分鐘或 30 分鐘）；7.10：以 0.8 × Icm 充電、1It 放電的循環即為試驗本身，未另規定試驗前的充電狀態。",
+          "source_reference": "4.6.4；7.10"
         }
       },
       "acceptance_criteria": {
@@ -1364,16 +1335,14 @@
           "value": "僅接通正負極"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 10）",
+          "detail": "4.6.2；表 2：樣品 10（9.4 互認協同與 9.8 充電接口防反插共用同一樣品）。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "完成 4.6.4 預處理",
+          "detail": "4.6.4：先按 4.5 進行充放電循環（無特殊規定時為 2 次），再按 4.5.1 充滿電，依 GB/T 17626.2 對每個輸出端子進行 ±4 kV 接觸放電與 ±8 kV 空氣放電；9.4：條文未另規定充放電狀態。",
+          "source_reference": "4.6.4；9.4"
         }
       },
       "acceptance_criteria": {
@@ -1405,16 +1374,14 @@
           "value": "嘗試充放電"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 11）",
+          "detail": "4.6.2；表 2：樣品 11（與 9.5 欠壓保護共用同一樣品）。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "預處理後，按 4.5.2 放完電",
+          "detail": "4.6.4：先按 4.5 進行充放電循環（無特殊規定時為 2 次），再按 4.5.1 充滿電，依 GB/T 17626.2 對每個輸出端子進行 ±4 kV 接觸放電與 ±8 kV 空氣放電；9.5.2：按 4.5.2 規定的試驗方法放完電後進行試驗。",
+          "source_reference": "4.6.4；4.5.2；9.5.2"
         }
       },
       "acceptance_criteria": {
@@ -1440,16 +1407,14 @@
           "value": "嘗試反向連接"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 10）",
+          "detail": "4.6.2；表 2：樣品 10（與 9.4 互認協同共用同一樣品）。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "完成 4.6.4 預處理",
+          "detail": "4.6.4：先按 4.5 進行充放電循環（無特殊規定時為 2 次），再按 4.5.1 充滿電，依 GB/T 17626.2 對每個輸出端子進行 ±4 kV 接觸放電與 ±8 kV 空氣放電；9.8：條文未另規定充放電狀態。",
+          "source_reference": "4.6.4；9.8"
         }
       },
       "acceptance_criteria": {
@@ -1484,16 +1449,19 @@
           "detail": "高溫 (9.9.1)：放置 6 小時，測試後擱置 6 小時。低溫 (9.9.2)：放置 16 小時。"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 14）",
+          "detail": "4.6.2；表 2：樣品 14（9.9 充電溫度保護與 9.10 放電溫度保護共用同一樣品）。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
+          "value": "預處理後放完電，高溫放置 6 小時或低溫放置 16 小時",
+          "detail": "4.6.4：先按 4.5 進行充放電循環（無特殊規定時為 2 次），再按 4.5.1 充滿電，依 GB/T 17626.2 對每個輸出端子進行 ±4 kV 接觸放電與 ±8 kV 空氣放電；9.9.1：按 4.5.2 放完電後，於最高充電溫度或 55 °C（取較高者）加 5 °C 的環境放置 6 小時；9.9.2：於最低充電溫度或 0 °C（取較低者）再降 5 °C 的環境放置 16 小時，然後充電。",
+          "source_reference": "4.6.4；4.5.2；9.9.1；9.9.2"
         },
         "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "高溫段充電 10 分鐘後擱置 6 小時",
+          "detail": "9.9.1：以最大充電電流充電並保持 10 分鐘，其後擱置 6 小時；9.9.2 低溫段未規定。",
+          "source_reference": "9.9.1"
         }
       },
       "acceptance_criteria": {
@@ -1525,16 +1493,14 @@
           "value": "標準程序放電"
         },
         "sample_quantity": {
-          "value": "每項 3 組電池系統",
-          "detail": "輪椅電池系統試驗每項需 3 組完整樣品。"
+          "value": "1 個（樣品 14）",
+          "detail": "4.6.2；表 2：樣品 14（與 9.9 充電溫度保護共用同一樣品）。",
+          "source_reference": "4.6.2；表 2"
         },
         "pre_conditioning": {
-          "value": "依規範滿充或設定特定 SOC",
-          "detail": "試驗前確保電池系統處於製造商指定工作狀態。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下持續監控 1 小時。"
+          "value": "預處理後充滿電，於高溫放置 8 小時",
+          "detail": "4.6.4：先按 4.5 進行充放電循環（無特殊規定時為 2 次），再按 4.5.1 充滿電，依 GB/T 17626.2 對每個輸出端子進行 ±4 kV 接觸放電與 ±8 kV 空氣放電；9.10：按 4.5.1 充滿電後，於放電最高溫度或 45 °C（取大者）加 5 °C 的高溫試驗箱放置 8 小時，樣品表面溫度穩定後再按 4.5.2 放電。",
+          "source_reference": "4.6.4；4.5.1；9.10"
         }
       },
       "acceptance_criteria": {
@@ -1708,7 +1674,7 @@
     "source_files": [
       "docs/source_pdfs/2026-06-25 add/GB47741-2026.pdf"
     ],
-    "enrichment": "2026-09-24 Phase 2 以 scripts/data_tools/enrich_phase2_batchA.mjs 補上 sample_quantity、pre_conditioning、observation_period 等欄位；這些值多為整份標準共用的通用描述，尚未逐條對照原文核對。",
+    "enrichment": "2026-09-24 Phase 2 以腳本補上 sample_quantity、pre_conditioning、observation_period；2026-09-26 已逐項對照原文核對：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。",
     "test_sequence_source": "2026-09-24 依原文樣品表與試驗順序規定補入（出處見各組 source_reference）。",
     "total_tests": 37
   }
