@@ -61,10 +61,6 @@
           "value": "100% SOC 或依製造商規格滿充",
           "detail": "充電至 100 % SOC 或依製造商規格之滿充最高電壓。"
         },
-        "rest_time": {
-          "value": "≥ 1 小時",
-          "detail": "調節後在室內環境靜置至少 1 小時 (7.2.2)。"
-        },
         "trigger_methods": {
           "value": "外部加熱、過充電或短路",
           "detail": "使用外部加熱觸發；或對鉛酸/鎳鎘電池使用過充電；高溫電池亦可使用內部短路或針刺。"
@@ -88,16 +84,14 @@
           "detail": "軟包與方形電芯測試時須進行約束，以模擬在 BESS 模組內的狀態並防止過度膨脹 (7.2.4)。"
         },
         "sample_quantity": {
-          "value": "至少 3 顆電芯",
-          "detail": "電芯級別熱失控判定與產氣特性評估需至少 3 顆代表性電芯。"
+          "value": "至少 3 顆額外電芯進行重複性測試",
+          "detail": "若電芯表現出熱失控行為，則須以相同方法測試額外 3 顆電芯以證明其重複性。",
+          "source_reference": "7.3.1.13"
         },
         "pre_conditioning": {
-          "value": "常溫 100% 滿充並靜置 1 小時",
-          "detail": "在 25 ± 5 °C 下依製造商指定充電程序充滿電至 100% SOC。"
-        },
-        "observation_period": {
-          "value": "熱事件平息後持續觀察 2 小時",
-          "detail": "熱失控觸發後持續監測溫度、壓力與產氣，直至所有熱偶冷卻至室溫並持續觀察至少 2 小時。"
+          "value": "滿充電至 100% SOC 並靜置至少 1 小時",
+          "detail": "測試電芯須充電至 100% SOC 或依製造商指定之滿充條件，並在測試開始前至少靜置 1 小時。",
+          "source_reference": "7.2.2"
         },
         "apparatus": {
           "value": "密封測試艙 (Gas Collection Vessel) 與加熱器",
@@ -137,10 +131,6 @@
           "value": "100% SOC 或依製造商規格滿充",
           "detail": "充電至 100 % SOC 或依製造商規格之滿充最高電壓。"
         },
-        "rest_time": {
-          "value": "≥ 1 小時",
-          "detail": "充電後靜置至少 1 小時 (8.1.2)。"
-        },
         "trigger_method": {
           "value": "同電池級觸發方式",
           "detail": "使用在電池級測試中驗證有效的應力方法觸發一個或多個電芯熱失控。"
@@ -158,16 +148,14 @@
           "detail": "室內實驗室環境應為 25 ±5 °C (77 ±9 °F) 及 50 ±25 % RH。"
         },
         "sample_quantity": {
-          "value": "至少 1 組代表性模組",
-          "detail": "模組級熱傳播測試需至少 1 組包含觸發電芯與周邊受測電芯之完整模組。"
+          "value": "足夠數量的電芯以產生熱傳播",
+          "detail": "強制進入熱失控的電芯數量可為 1 顆或多顆，應足以在模組內產生電芯至電芯的熱傳播條件。",
+          "source_reference": "8.2.4；8.2.5"
         },
         "pre_conditioning": {
-          "value": "依規範滿充電至 100% SOC",
-          "detail": "在室溫下將模組充滿電並安裝熱電偶陣列與約束夾具。"
-        },
-        "observation_period": {
-          "value": "熱失控結束後觀察 2 小時 (防範復燃)",
-          "detail": "觸發熱失控後持續記錄各電芯溫度至所有熱偶溫度下降至室溫以下，並持續觀察至少 2 小時。"
+          "value": "滿充電至 100% SOC 並靜置至少 1 小時",
+          "detail": "測試模組須充電至 100% SOC 或依製造商指定之滿充條件，並在測試開始前至少靜置 1 小時。",
+          "source_reference": "8.1.2"
         },
         "apparatus": {
           "value": "電芯加熱器/過充引發裝置 與 熱電偶陣列",
@@ -229,12 +217,6 @@
           "value": "滿充 (MOSOC)",
           "detail": "將啟動單元充至最大操作荷電狀態 (MOSOC) (9.1.9)"
         },
-        "rest_time": {
-          "name_zh": "靜置時間",
-          "name_en": "Rest Time",
-          "value": "至少 1 小時",
-          "detail": "測試前至少靜置 1 小時 (9.1.9)"
-        },
         "trigger_method": {
           "name_zh": "觸發方式",
           "name_en": "Trigger Method",
@@ -242,16 +224,19 @@
           "detail": "必須在啟動 BESS 單元內的單一模組中建立電芯間的熱失控蔓延 (9.2.22)"
         },
         "sample_quantity": {
-          "value": "至少 1 台儲能單元機櫃 (Unit BESS)",
-          "detail": "單元級火災傳播測試需 1 台完整儲能單元機櫃 (內含所有模組與通風/防火隔板)。"
+          "value": "依製造商指示安裝的儲能單元",
+          "detail": "單元級測試須以製造商說明書描述的方式安裝儲能單元進行，包含各種類型的安裝配置。",
+          "source_reference": "9.1.1"
         },
         "pre_conditioning": {
-          "value": "全單元滿充電至 100% SOC",
-          "detail": "將單元內所有電池模組充滿電至 100% SOC，閉合所有門板並啟用消防/排煙通訊。"
+          "value": "充至最大運行充電狀態並靜置至少 1 小時",
+          "detail": "初始儲能單元須依製造商規格充至最大運行充電狀態，並在測試開始前於室溫下靜置至少 1 小時。",
+          "source_reference": "9.1.9"
         },
         "observation_period": {
-          "value": "火災平息後持續監控 2 小時",
-          "detail": "燃燒或熱事件完全終止後持續監測溫度與可燃氣體濃度至少 2 小時。"
+          "value": "觀察至降溫或發生危險而終止",
+          "detail": "當連續三次 15 分鐘間隔溫度下降、模組降至 60 °C 以下或發生危險情況時終止測試，視為測試結束的觀察條件。",
+          "source_reference": "9.2.25"
         },
         "apparatus": {
           "value": "量熱集煙罩、熱通量計與引風管道",
@@ -309,16 +294,19 @@
           "detail": "依據製造商規格的集裝箱進行安裝級測試 (10.9)。"
         },
         "sample_quantity": {
-          "value": "代表性多單元安裝陣列",
-          "detail": "依製造商現場規格佈設代表性多機櫃陣列（含間距、模擬牆面與滅火系統）。"
+          "value": "與單元級測試相同的樣本",
+          "detail": "測試樣本（初始儲能單元與目標儲能單元）須與單元級測試完全相同。",
+          "source_reference": "10.2.1"
         },
         "pre_conditioning": {
-          "value": "全陣列單元滿充電至 100% SOC",
-          "detail": "目標機櫃與周圍相鄰儲能機櫃全部充滿電至 100% SOC。"
+          "value": "與單元級測試準備相同",
+          "detail": "測試樣本及其準備條件，包含與牆面的分隔距離，須與單元級測試（第 9 節）完全相同。",
+          "source_reference": "10.2.1"
         },
         "observation_period": {
-          "value": "滅火系統動作並監控至常溫 (至少 2 小時)",
-          "detail": "滅火抑制系統動作後持續監控陣列溫度至冷卻，並持續觀察至少 2 小時以防二次復燃。"
+          "value": "測試終止後觀察 24 小時",
+          "detail": "安裝級測試結束後，初始單元須在觀察下保持 24 小時，以確定不會發生復燃。",
+          "source_reference": "10.3.15"
         },
         "apparatus": {
           "value": "模擬安裝室、自動噴淋/氣體滅火系統與熱通量計",
@@ -423,6 +411,7 @@
       "All thermal propagation tests mapped to 'THERM-PROP' under 'THERM' category.",
       "OCR markdown text was directly excerpted for the 'original_text_snippet' field for maximum fidelity."
     ],
-    "total_test_entries": 4
+    "total_test_entries": 4,
+    "enrichment": "2026-09-24 Phase 2 以腳本補上 sample_quantity、pre_conditioning、observation_period；2026-09-26 已逐項對照原文核對：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
   }
 }
