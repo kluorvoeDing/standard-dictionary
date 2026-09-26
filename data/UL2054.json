@@ -77,16 +77,14 @@
           "detail": "5個室溫測試樣品中的1個，必須在柔軟的木頭表面覆蓋紙巾並在上方覆蓋單層粗棉布的情況下進行短路測試。"
         },
         "sample_quantity": {
-          "value": "每條件 5 組電池組 (新鮮與循環各 5 組)",
-          "detail": "電池包測試每項使用 5 組新鮮態與 5 組循環後樣品。"
+          "value": "電芯與電池組各10個 (含不同溫度)",
+          "detail": "電芯：室溫 5 個，55 °C 5 個。電池組：室溫 5 個未密封，55 °C 5 個未密封。",
+          "source_reference": "Table 8.1；Table 8.2"
         },
         "pre_conditioning": {
-          "value": "依製造商規範 100% 滿充",
-          "detail": "依指定充電器規格充電至 100% SOC。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "試驗後持續監控至樣品溫度恢復室溫或觀察至少 6 小時。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         },
         "apparatus": {
           "value": "80 ± 20 mΩ 外部短路迴路",
@@ -144,16 +142,14 @@
           "detail": "測試環境溫度需維持在 20 ± 5 °C。"
         },
         "sample_quantity": {
-          "value": "每條件 5 組電池組 (新鮮與循環各 5 組)",
-          "detail": "電池包測試每項使用 5 組新鮮態與 5 組循環後樣品。"
+          "value": "電芯 5 個，電池組 5 個",
+          "detail": "使用 5 個電芯，以及 5 個未密封的電池組。",
+          "source_reference": "Table 8.1；Table 8.2"
         },
         "pre_conditioning": {
-          "value": "依製造商規範 100% 滿充",
-          "detail": "依指定充電器規格充電至 100% SOC。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "試驗後持續監控至樣品溫度恢復室溫或觀察至少 6 小時。"
+          "value": "放電至指定截止電壓",
+          "detail": "測試前應使用製造商指定的電流，將電池放電至製造商指定的截止電壓。",
+          "source_reference": "8.3"
         }
       },
       "acceptance_criteria": {
@@ -208,16 +204,14 @@
           "detail": "測試環境溫度需維持在 20 ± 5 °C。"
         },
         "sample_quantity": {
-          "value": "每條件 5 組電池組 (新鮮與循環各 5 組)",
-          "detail": "電池包測試每項使用 5 組新鮮態與 5 組循環後樣品。"
+          "value": "未密封電池組 5 個",
+          "detail": "使用 5 個未密封的電池組。",
+          "source_reference": "Table 8.2"
         },
         "pre_conditioning": {
-          "value": "依製造商規範 100% 滿充",
-          "detail": "依指定充電器規格充電至 100% SOC。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "試驗後持續監控至樣品溫度恢復室溫或觀察至少 6 小時。"
+          "value": "放電至指定截止電壓",
+          "detail": "測試前應使用製造商指定的電流，將電池放電至製造商指定的截止電壓。",
+          "source_reference": "8.3"
         }
       },
       "acceptance_criteria": {
@@ -266,16 +260,14 @@
           "detail": "對放電電路中可能導致過度放電的任何單一組件施加故障。"
         },
         "sample_quantity": {
-          "value": "每條件 5 組電池組 (新鮮與循環各 5 組)",
-          "detail": "電池包測試每項使用 5 組新鮮態與 5 組循環後樣品。"
+          "value": "電芯 5 個，電池組 5 個",
+          "detail": "使用 5 個電芯，以及 5 個未密封的電池組。",
+          "source_reference": "Table 8.1；Table 8.2"
         },
         "pre_conditioning": {
-          "value": "依製造商規範 100% 滿充",
-          "detail": "依指定充電器規格充電至 100% SOC。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "試驗後持續監控至樣品溫度恢復室溫或觀察至少 6 小時。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         }
       },
       "acceptance_criteria": {
@@ -321,16 +313,14 @@
           "detail": "圓柱形和方形電池：縱軸平行於擠壓平面。方形電池需旋轉90度測試寬窄面。鈕扣電池：平面平行於擠壓平面。"
         },
         "sample_quantity": {
-          "value": "每條件 5 顆電芯 (共 10 顆)",
-          "detail": "每項測試需 5 顆新鮮態與 5 顆循環老化後電芯，共 10 顆樣品。"
+          "value": "電芯 5 個",
+          "detail": "使用 5 個電芯。",
+          "source_reference": "Table 8.1"
         },
         "pre_conditioning": {
-          "value": "室溫標準充滿電 (100% SOC)",
-          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置平衡。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "持續觀察直到外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         },
         "apparatus": {
           "value": "直徑 150 mm 平面鋼壓板",
@@ -382,16 +372,14 @@
           "detail": "每個樣品只承受一次衝擊。"
         },
         "sample_quantity": {
-          "value": "每條件 5 顆電芯 (共 10 顆)",
-          "detail": "每項測試需 5 顆新鮮態與 5 顆循環老化後電芯，共 10 顆樣品。"
+          "value": "電芯 5 個",
+          "detail": "使用 5 個電芯。",
+          "source_reference": "Table 8.1"
         },
         "pre_conditioning": {
-          "value": "室溫標準充滿電 (100% SOC)",
-          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置平衡。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "持續觀察直到外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         }
       },
       "acceptance_criteria": {
@@ -435,16 +423,14 @@
           "detail": "總共施加 3 次衝擊（每個相互垂直的方向各 1 次）。"
         },
         "sample_quantity": {
-          "value": "每條件 5 顆電芯 (共 10 顆)",
-          "detail": "每項測試需 5 顆新鮮態與 5 顆循環老化後電芯，共 10 顆樣品。"
+          "value": "電芯 5 個",
+          "detail": "使用 5 個電芯。",
+          "source_reference": "Table 8.1"
         },
         "pre_conditioning": {
-          "value": "室溫標準充滿電 (100% SOC)",
-          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置平衡。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "持續觀察直到外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         }
       },
       "acceptance_criteria": {
@@ -490,16 +476,14 @@
           "detail": "在三個相互垂直的方向上，每個方向測試 90-100 分鐘。"
         },
         "sample_quantity": {
-          "value": "每條件 5 顆電芯 (共 10 顆)",
-          "detail": "每項測試需 5 顆新鮮態與 5 顆循環老化後電芯，共 10 顆樣品。"
+          "value": "電芯 5 個",
+          "detail": "使用 5 個電芯。",
+          "source_reference": "Table 8.1"
         },
         "pre_conditioning": {
-          "value": "室溫標準充滿電 (100% SOC)",
-          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置平衡。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "持續觀察直到外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         }
       },
       "acceptance_criteria": {
@@ -545,16 +529,14 @@
           "detail": "使用提供 30 mm 直徑圓形平面的合適工具向外殼頂部、底部和側面施加力。"
         },
         "sample_quantity": {
-          "value": "每條件 5 組電池組 (新鮮與循環各 5 組)",
-          "detail": "電池包測試每項使用 5 組新鮮態與 5 組循環後樣品。"
+          "value": "完整電池組 3 個",
+          "detail": "使用 3 個完整的電池組。",
+          "source_reference": "Table 8.2"
         },
         "pre_conditioning": {
-          "value": "依製造商規範 100% 滿充",
-          "detail": "依指定充電器規格充電至 100% SOC。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "試驗後持續監控至樣品溫度恢復室溫或觀察至少 6 小時。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         }
       },
       "acceptance_criteria": {
@@ -599,16 +581,14 @@
           "detail": "樣品在測試前必須完全放電，或者配備『假』電芯（dummy cells）。"
         },
         "sample_quantity": {
-          "value": "每條件 5 組電池組 (新鮮與循環各 5 組)",
-          "detail": "電池包測試每項使用 5 組新鮮態與 5 組循環後樣品。"
+          "value": "完整電池組 3 個",
+          "detail": "使用 3 個完整的電池組。",
+          "source_reference": "Table 8.2"
         },
         "pre_conditioning": {
-          "value": "依製造商規範 100% 滿充",
-          "detail": "依指定充電器規格充電至 100% SOC。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "試驗後持續監控至樣品溫度恢復室溫或觀察至少 6 小時。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         }
       },
       "acceptance_criteria": {
@@ -661,16 +641,14 @@
           "detail": "如果電池組使用塑膠外殼，且預期會在 0 °C 下使用，則跌落前必須在 0 °C 下進行 3 小時的低溫預處理。"
         },
         "sample_quantity": {
-          "value": "每條件 5 組電池組 (新鮮與循環各 5 組)",
-          "detail": "電池包測試每項使用 5 組新鮮態與 5 組循環後樣品。"
+          "value": "完整電池組 3 個",
+          "detail": "使用 3 個完整的電池組。",
+          "source_reference": "Table 8.2"
         },
         "pre_conditioning": {
-          "value": "依製造商規範 100% 滿充",
-          "detail": "依指定充電器規格充電至 100% SOC。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "試驗後持續監控至樣品溫度恢復室溫或觀察至少 6 小時。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         }
       },
       "acceptance_criteria": {
@@ -712,16 +690,14 @@
           "detail": "測試電池用 610x305 mm 的八角形鋁質金屬絲籠覆蓋，網格密度為每英吋 16-18 根金屬絲。 鋁線直徑為 0.25 mm。"
         },
         "sample_quantity": {
-          "value": "每條件 5 顆電芯 (共 10 顆)",
-          "detail": "每項測試需 5 顆新鮮態與 5 顆循環老化後電芯，共 10 顆樣品。"
+          "value": "電芯 5 個",
+          "detail": "使用 5 個電芯。",
+          "source_reference": "Table 8.1"
         },
         "pre_conditioning": {
-          "value": "室溫標準充滿電 (100% SOC)",
-          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置平衡。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "持續觀察直到外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         }
       },
       "acceptance_criteria": {
@@ -760,16 +736,14 @@
           "detail": "達到 130 °C 後維持 10 分鐘。"
         },
         "sample_quantity": {
-          "value": "每條件 5 顆電芯 (共 10 顆)",
-          "detail": "每項測試需 5 顆新鮮態與 5 顆循環老化後電芯，共 10 顆樣品。"
+          "value": "電芯 5 個",
+          "detail": "使用 5 個電芯。",
+          "source_reference": "Table 8.1"
         },
         "pre_conditioning": {
-          "value": "室溫標準充滿電 (100% SOC)",
-          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置平衡。"
-        },
-        "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "持續觀察直到外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         }
       },
       "acceptance_criteria": {
@@ -809,16 +783,19 @@
           "detail": "完成 10 次循環後，在 20 ± 5 °C 下儲存至少 24 小時再進行檢查。"
         },
         "sample_quantity": {
-          "value": "每條件 5 顆電芯 (共 10 顆)",
-          "detail": "每項測試需 5 顆新鮮態與 5 顆循環老化後電芯，共 10 顆樣品。"
+          "value": "電芯 5 個",
+          "detail": "使用 5 個電芯。",
+          "source_reference": "Table 8.1"
         },
         "pre_conditioning": {
-          "value": "室溫標準充滿電 (100% SOC)",
-          "detail": "在 20 ± 5 °C 下按製造商規格充滿電並靜置平衡。"
+          "value": "依製造商規格完全充電",
+          "detail": "測試前所有電池應依製造商規格完全充電。",
+          "source_reference": "8.3"
         },
         "observation_period": {
-          "value": "殼溫回復至室溫 或 6 小時",
-          "detail": "持續觀察直到外殼溫度冷卻至環境溫度，並持續觀察至少 6 小時。"
+          "value": "完成 10 次循環後靜置至少 24 小時",
+          "detail": "28.1 f)：第 10 次循環結束後，於檢驗前將電池在 20 ± 5 °C (68 ± 9 °F) 下儲存至少 24 小時。",
+          "source_reference": "28.1 f)"
         }
       },
       "acceptance_criteria": {
@@ -867,6 +844,7 @@
       "Label permanence test (29) was excluded as per instructions 'Only include battery safety tests (exclude marking, packaging, labeling requirements)'.",
       "Test parameters cross-verified. OCR markdown is authoritative.",
       "Short circuit resistance is 80±20 mΩ. Heating test is 5±2°C/min to 130±2°C for 10 min. Crush test is 13±1.0 kN. Impact test is 9.1±0.46 kg from 610 mm onto 15.8 mm bar. Shock test is 125g-175g. Vibration test is 0.8 mm amplitude 10-55 Hz. Steady force is 250±10 N."
-    ]
+    ],
+    "enrichment": "2026-09-24 Phase 2 以腳本補上 sample_quantity、pre_conditioning、observation_period；2026-09-26 已逐項對照原文核對：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
   }
 }
