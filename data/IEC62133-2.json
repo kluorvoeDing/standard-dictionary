@@ -195,17 +195,15 @@
           "value": "7 天",
           "detail": "持續充電 7 天 (7 days)"
         },
-        "sample_size": {
-          "value": "5 個",
-          "detail": "5 個單電池 (Table 1)"
-        },
         "sample_quantity": {
           "value": "5 顆電芯",
-          "detail": "5 顆依 7.1.1 規定充飽電的電芯。"
+          "detail": "依 Table 1 規定，使用 5 顆電芯。",
+          "source_reference": "Table 1"
         },
-        "observation_period": {
-          "value": "持續充電 7 天",
-          "detail": "在恆溫箱中以指定充電方法連續充電 7 天。"
+        "pre_conditioning": {
+          "value": "程序一：室溫 20 ± 5 °C 充滿電",
+          "detail": "依據 7.1.1 規定，於 20 ± 5 °C 進行充電。",
+          "source_reference": "7.1.1"
         }
       },
       "acceptance_criteria": {
@@ -255,9 +253,15 @@
           "value": "7 小時",
           "detail": "電池組在烤箱中放置 7 小時，之後取出讓其恢復至室溫。"
         },
-        "sample_size": {
-          "value": "3 個",
-          "detail": "3 個電池組 (Table 1)"
+        "sample_quantity": {
+          "value": "3 個電池組",
+          "detail": "依 Table 1 規定，使用 3 個電池組。",
+          "source_reference": "Table 1"
+        },
+        "pre_conditioning": {
+          "value": "程序一：室溫 20 ± 5 °C 充滿電",
+          "detail": "依據 7.1.1 規定，於 20 ± 5 °C 進行充電。",
+          "source_reference": "7.1.1"
         }
       },
       "acceptance_criteria": {
@@ -309,17 +313,15 @@
           "value": "24 小時或溫升下降 20%（取先到者）",
           "detail": "測試持續 24 小時或直到表面溫度下降為最大溫升的 20%，以先發生者為準。"
         },
-        "sample_size": {
-          "value": "5 個/每溫度",
-          "detail": "5 個單電池 per temperature (Table 1)"
-        },
         "sample_quantity": {
-          "value": "每溫度 5 顆 (共 10 顆)",
-          "detail": "20 ± 5 °C 5 顆與 55 ± 5 °C 5 顆。"
+          "value": "每溫度 5 顆電芯（共 10 顆）",
+          "detail": "依 Table 1 規定，使用程序二的測試，上限與下限溫度條件下各 5 顆電芯。",
+          "source_reference": "Table 1"
         },
-        "observation_period": {
-          "value": "24 小時 或 溫降 20%",
-          "detail": "持續短路 24 小時或外殼溫度降至最大溫升 20% 以下。"
+        "pre_conditioning": {
+          "value": "程序二：於上限或下限溫度靜置 1 到 4 小時後充滿電",
+          "detail": "依據 7.1.2 規定，樣品在上限或下限溫度條件下靜置 1 至 4 小時後充電。",
+          "source_reference": "7.1.2"
         }
       },
       "acceptance_criteria": {
@@ -374,17 +376,15 @@
           "value": "1-4 個樣品需模擬放電保護電路單一故障",
           "detail": "5 個樣品中 1-4 個（取決於保護電路設計）需在短路測試前模擬放電保護電路的單一故障。單一故障適用於 MOSFET、保險絲、溫控器或 PTC 熱敏電阻等保護元件。符合 Annex F 所列元件標準或經功能安全評估的電子電路不受單一故障條件約束。"
         },
-        "sample_size": {
-          "value": "5 個",
-          "detail": "5 個電池組 (Table 1)"
-        },
         "sample_quantity": {
-          "value": "每溫度 5 顆 (共 10 顆)",
-          "detail": "20 ± 5 °C 5 顆與 55 ± 5 °C 5 顆。"
+          "value": "5 個電池組",
+          "detail": "依 Table 1 規定，使用 5 個電池組。",
+          "source_reference": "Table 1"
         },
-        "observation_period": {
-          "value": "24 小時 或 溫降 20%",
-          "detail": "持續短路 24 小時或外殼溫度降至最大溫升 20% 以下。"
+        "pre_conditioning": {
+          "value": "程序一：室溫 20 ± 5 °C 充滿電",
+          "detail": "依據 7.1.1 規定，於 20 ± 5 °C 進行充電。",
+          "source_reference": "7.1.1"
         }
       },
       "acceptance_criteria": {
@@ -434,17 +434,24 @@
           "value": "隨機方向",
           "detail": "跌落方向為隨機方向以取得隨機衝擊 (dropped so as to obtain impacts in random orientations)"
         },
-        "observation": {
-          "value": "靜置 ≥ 1 小時後目視檢查",
-          "detail": "測試後靜置至少 1 小時，然後進行目視檢查 (put on rest for a minimum of 1 小時 and then a visual inspection shall be performed)"
-        },
         "temperature": {
           "value": "20 ± 5 °C",
           "detail": "環境溫度 20 °C ± 5 °C"
         },
-        "sample_size": {
-          "value": "各 3 個 (Cell: 3, Battery: 3)",
-          "detail": "單電池 3 個、電池組 3 個 (Table 1)"
+        "sample_quantity": {
+          "value": "3 顆電芯、3 個電池組",
+          "detail": "依 Table 1 規定，使用 3 顆電芯及 3 個電池組。",
+          "source_reference": "Table 1"
+        },
+        "pre_conditioning": {
+          "value": "程序一：室溫 20 ± 5 °C 充滿電",
+          "detail": "依據 7.1.1 規定，於 20 ± 5 °C 進行充電。",
+          "source_reference": "7.1.1"
+        },
+        "observation_period": {
+          "value": "靜置至少 1 小時後目視檢查",
+          "detail": "試驗後靜置至少 1 小時，隨後進行目視檢查。",
+          "source_reference": "7.3.3"
         }
       },
       "acceptance_criteria": {
@@ -501,9 +508,15 @@
           "value": "重力或空氣對流烤箱",
           "detail": "gravity or circulating air-convection oven"
         },
-        "sample_size": {
-          "value": "5 個/每溫度",
-          "detail": "5 個單電池 per temperature (Table 1)"
+        "sample_quantity": {
+          "value": "每溫度 5 顆電芯（共 10 顆）",
+          "detail": "依 Table 1 規定，使用程序二的測試，上限與下限溫度條件下各 5 顆電芯。",
+          "source_reference": "Table 1"
+        },
+        "pre_conditioning": {
+          "value": "程序二：於上限或下限溫度靜置 1 到 4 小時後充滿電",
+          "detail": "依據 7.1.2 規定，樣品在上限或下限溫度條件下靜置 1 至 4 小時後充電。",
+          "source_reference": "7.1.2"
         }
       },
       "acceptance_criteria": {
@@ -560,9 +573,15 @@
           "value": "環境溫度",
           "detail": "在環境溫度下進行擠壓 (crushed between two flat surfaces in an ambient temperature)"
         },
-        "sample_size": {
-          "value": "5 個/每溫度",
-          "detail": "5 個單電池 per temperature (Table 1)"
+        "sample_quantity": {
+          "value": "每溫度 5 顆電芯（共 10 顆）",
+          "detail": "依 Table 1 規定，使用程序二的測試，上限與下限溫度條件下各 5 顆電芯。",
+          "source_reference": "Table 1"
+        },
+        "pre_conditioning": {
+          "value": "程序二：於上限或下限溫度靜置 1 到 4 小時後充滿電",
+          "detail": "依據 7.1.2 規定，樣品在上限或下限溫度條件下靜置 1 至 4 小時後充電。",
+          "source_reference": "7.1.2"
         }
       },
       "acceptance_criteria": {
@@ -624,9 +643,15 @@
           "value": "20 ± 5 °C",
           "detail": "環境溫度 20 °C ± 5 °C"
         },
-        "sample_size": {
-          "value": "5 個",
-          "detail": "5 個電池組 (Table 1)"
+        "sample_quantity": {
+          "value": "5 個電池組",
+          "detail": "依 Table 1 規定，使用 5 個電池組。",
+          "source_reference": "Table 1"
+        },
+        "pre_conditioning": {
+          "value": "程序一：室溫 20 ± 5 °C 充滿電",
+          "detail": "依據 7.1.1 規定，於 20 ± 5 °C 進行充電。",
+          "source_reference": "7.1.1"
         }
       },
       "acceptance_criteria": {
@@ -673,9 +698,15 @@
           "value": "90 分鐘",
           "detail": "強制放電測試的總持續時間為 90 分鐘。若在測試期間放電電壓達到上限充電電壓的負值，則降低電流以維持該電壓直到測試結束 (Case 1)。若未達到，則在 90 分鐘結束時終止 (Case 2)。"
         },
-        "sample_size": {
-          "value": "5 個",
-          "detail": "5 個單電池 (Table 1)"
+        "sample_quantity": {
+          "value": "5 顆電芯",
+          "detail": "依 Table 1 規定，使用 5 顆電芯。",
+          "source_reference": "Table 1"
+        },
+        "pre_conditioning": {
+          "value": "程序一：室溫 20 ± 5 °C 充滿電",
+          "detail": "依據 7.1.1 規定，於 20 ± 5 °C 進行充電。",
+          "source_reference": "7.1.1"
         }
       },
       "acceptance_criteria": {
@@ -736,9 +767,15 @@
           "value": "3 個互相垂直方向",
           "detail": "三個互相垂直的安裝位置，其中之一垂直於端子面 (three mutually perpendicular mounting positions, one of the directions shall be perpendicular to the terminal face)"
         },
-        "sample_size": {
-          "value": "3 個",
-          "detail": "3 個電池組 (Table 1)"
+        "sample_quantity": {
+          "value": "3 個電池組",
+          "detail": "依 Table 1 規定，使用 3 個電池組。",
+          "source_reference": "Table 1"
+        },
+        "pre_conditioning": {
+          "value": "程序一：室溫 20 ± 5 °C 充滿電",
+          "detail": "依據 7.1.1 規定，於 20 ± 5 °C 進行充電。",
+          "source_reference": "7.1.1"
         }
       },
       "acceptance_criteria": {
@@ -794,9 +831,15 @@
           "value": "18 次（3 方向 × 正反各 3 次）",
           "detail": "在三個互相垂直安裝位置的每個方向施加 3 次衝擊，共 18 次衝擊 (subjected to three shocks in each direction of three mutually perpendicular mounting positions for a total of 18 shocks)"
         },
-        "sample_size": {
-          "value": "3 個",
-          "detail": "3 個電池組 (Table 1)"
+        "sample_quantity": {
+          "value": "3 個電池組",
+          "detail": "依 Table 1 規定，使用 3 個電池組。",
+          "source_reference": "Table 1"
+        },
+        "pre_conditioning": {
+          "value": "程序一：室溫 20 ± 5 °C 充滿電",
+          "detail": "依據 7.1.1 規定，於 20 ± 5 °C 進行充電。",
+          "source_reference": "7.1.1"
         }
       },
       "acceptance_criteria": {
@@ -868,17 +911,19 @@
           "value": "保持 30 秒",
           "detail": "偵測到短路後保持壓裝具位置 30 秒後釋放 (keep the pressing jig in the position for 30 秒, and then release the pressure)"
         },
-        "sample_size": {
-          "value": "5 個/每溫度",
-          "detail": "5 個鋰離子電池 per test temperature (Table 1)"
-        },
         "apparatus": {
           "value": "直角小型鎳片 (0.2 × 0.1 × 1.0 mm)",
           "detail": "尺寸為高 0.2 mm、寬 0.1 mm、每邊長 1.0 mm 之 L 型鎳片。"
         },
         "sample_quantity": {
-          "value": "每條件 5 顆",
-          "detail": "上限與下限溫度條件下各 5 顆電芯。"
+          "value": "每溫度 5 顆電芯（共 10 顆）",
+          "detail": "依 Table 1 規定，使用程序二的測試，上限與下限溫度條件下各 5 顆電芯。",
+          "source_reference": "Table 1"
+        },
+        "pre_conditioning": {
+          "value": "程序二：於上限或下限溫度靜置 1 到 4 小時後充滿電",
+          "detail": "依據 7.1.2 規定，樣品在上限或下限溫度條件下靜置 1 至 4 小時後充電。",
+          "source_reference": "7.1.2"
         }
       },
       "acceptance_criteria": {
@@ -1087,6 +1132,7 @@
       "鈕扣電池（內阻 > 3 Ω）享有廣泛豁免",
       "7.3.9 為設計評估級別的國家特定測試，僅 4 國要求",
       "Amendment 1 (2021) 新增了鈕扣電池吞食風險相關要求 (8.2, 9.3)"
-    ]
+    ],
+    "enrichment": "2026-09-26 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
   }
 }
