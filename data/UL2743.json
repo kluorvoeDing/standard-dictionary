@@ -61,16 +61,14 @@
           "detail": "設備需放置在軟木表面上，覆蓋薄棉紙，並用起司布（或紗布）鬆散覆蓋。"
         },
         "sample_quantity": {
-          "value": "每項 3 組代表性電源包",
-          "detail": "可攜式應急電源包測試每項需 3 組完整樣品。"
+          "value": "每項獨立完整樣品",
+          "detail": "對涉及整體裝置的試驗，需提供完整的電源包樣品。每項試驗應使用獨立的樣品進行。",
+          "source_reference": "44.1；55.1.1"
         },
         "pre_conditioning": {
-          "value": "以額定規格充滿電 (100% SOC) 並靜置",
-          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC，靜置 1 小時。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "測試結束後在環境溫度下持續監控外殼溫度至恢復室溫或至少觀察 1 小時。"
+          "value": "依試驗規定充滿或放完電，並穩定至 20 °C",
+          "detail": "電源包內的電池應依個別試驗指示完全充電或放電，且在試驗前所有樣品均應穩定於 20 ± 5 °C 的環境溫度中。",
+          "source_reference": "44.1；44.4"
         },
         "apparatus": {
           "value": "負載電阻 < 20 mΩ 之大電流開關迴路",
@@ -114,16 +112,14 @@
           "detail": "設備需放置在軟木表面上，覆蓋兩層薄棉紙，並覆蓋一層未經處理的 100% 醫療級棉紗布。"
         },
         "sample_quantity": {
-          "value": "每項 3 組代表性電源包",
-          "detail": "可攜式應急電源包測試每項需 3 組完整樣品。"
+          "value": "每項獨立完整樣品",
+          "detail": "對涉及整體裝置的試驗，需提供完整的電源包樣品。每項試驗應使用獨立的樣品進行。",
+          "source_reference": "44.1；55.1.1"
         },
         "pre_conditioning": {
-          "value": "以額定規格充滿電 (100% SOC) 並靜置",
-          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC，靜置 1 小時。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "測試結束後在環境溫度下持續監控外殼溫度至恢復室溫或至少觀察 1 小時。"
+          "value": "依試驗規定充滿或放完電，並穩定至 20 °C",
+          "detail": "電源包內的電池應依個別試驗指示完全充電或放電，且在試驗前所有樣品均應穩定於 20 ± 5 °C 的環境溫度中。",
+          "source_reference": "44.1；44.4"
         }
       },
       "acceptance_criteria": {
@@ -160,16 +156,14 @@
           "detail": "重量 ≤ 18kg：從 0.9m 高度落下 3 次。重量 > 18kg 且附提把：從 0.9m 高度落下 1 次。重量 > 25kg 且附輪子：從 0.5m 高度落下 1 次。"
         },
         "sample_quantity": {
-          "value": "每項 3 組代表性電源包",
-          "detail": "可攜式應急電源包測試每項需 3 組完整樣品。"
+          "value": "2 個完整樣品",
+          "detail": "落下試驗需使用 2 個電源包完整樣品。",
+          "source_reference": "44.1；60.3.1"
         },
         "pre_conditioning": {
-          "value": "以額定規格充滿電 (100% SOC) 並靜置",
-          "detail": "依製造商說明書規範使用指定充電器滿充電至 100% SOC，靜置 1 小時。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "測試結束後在環境溫度下持續監控外殼溫度至恢復室溫或至少觀察 1 小時。"
+          "value": "1 個收貨態，1 個 0 °C 處理 4 小時",
+          "detail": "第 1 個樣品在收貨狀態下試驗；第 2 個樣品在 0 °C （或製造商指定的最低工作溫度）下冷處理 4 小時後立即試驗。",
+          "source_reference": "60.3.1"
         },
         "apparatus": {
           "value": "平整混凝土地面上鋪設硬木板",
@@ -219,7 +213,7 @@
     "source_files": [
       "docs/source_pdfs/2026-05-23 add/s2743_3.pdf"
     ],
-    "enrichment": "2026-09-24 Phase 2 以 scripts/data_tools/enrich_phase2_batchC.mjs 補上 sample_quantity、pre_conditioning、observation_period 等欄位；這些值多為整份標準共用的通用描述，尚未逐條對照原文核對。",
+    "enrichment": "2026-09-24 Phase 2 以腳本補上 sample_quantity、pre_conditioning、observation_period；2026-09-26 已逐項對照原文核對：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。",
     "test_sequence_source": "2026-09-24 依原文 55.1、60.1、60.3 補入。",
     "coverage_note": "本資料僅收錄 3 項測試（55.2、55.9、60.3），並非 UL 2743 全部試驗。",
     "total_tests": 3
