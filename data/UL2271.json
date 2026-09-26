@@ -48,16 +48,19 @@
           "detail": "測試持續至保護電路終止充電，或電壓達到規定的 110 % 且溫度恢復至環境溫度/穩定狀態，並額外靜置 2 小時（或發生起火/爆炸）。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -105,16 +108,19 @@
           "detail": "過充電流保護裝置或控制器需處於單一故障條件下。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -164,16 +170,19 @@
           "detail": "在放電保護電路中引入單一元件故障。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -223,16 +232,19 @@
           "detail": "測試持續至完全放電，或保護啟動/溫度穩定後並已經過 7 小時。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -283,16 +295,19 @@
           "detail": "持續測試直到完全放電至接近零電壓狀態，或保護裝置作動。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -336,16 +351,19 @@
           "detail": "至少 2 次完整充放電循環，直到連續循環電池溫度增加不超過 2 °C。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -391,16 +409,19 @@
           "detail": "在不平衡狀態下依正常規格充電。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -448,16 +469,14 @@
           "detail": "維持 1 分鐘。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         }
       },
       "acceptance_criteria": {
@@ -496,16 +515,14 @@
           "detail": "施加 500 Vdc 60 秒。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         }
       },
       "acceptance_criteria": {
@@ -541,17 +558,10 @@
           "value": "5 秒",
           "detail": "持續 5 秒。"
         },
-        "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
-        },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         }
       },
       "acceptance_criteria": {
@@ -587,16 +597,19 @@
           "detail": "X、Y、Z 三方向各 12 小時。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -635,16 +648,19 @@
           "detail": "依重量不同，加速度為 50gn/11 ms (≤12kg)、25gn/15 ms (12-100kg)、10gn/20 ms (>100kg)。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -695,16 +711,19 @@
           "detail": "測試前樣品需處於完全充電狀態。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         },
         "apparatus": {
           "value": "半徑 75 mm 半圓柱鋼製壓頭",
@@ -759,16 +778,19 @@
           "detail": "測試前樣品需處於完全充電狀態。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -820,16 +842,19 @@
           "detail": "測試前樣品需處於完全充電狀態。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -875,16 +900,14 @@
           "detail": "在進行溫度調節前，樣品需處於完全放電狀態。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "完全放電",
+          "detail": "為了防止受電電池過熱造成危險，樣品在調節前應完全放電。",
+          "source_reference": "37.3"
         }
       },
       "acceptance_criteria": {
@@ -921,16 +944,14 @@
           "detail": "保持 1 分鐘。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         }
       },
       "acceptance_criteria": {
@@ -968,16 +989,19 @@
           "detail": "測試前樣品需處於完全充電狀態。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -1022,16 +1046,14 @@
           "detail": "將電線向內推回 (25.4-mm increments)。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "2 個測試樣品或完整 EESA",
+          "detail": "應使用 2 個受測部件之測試樣品，或使用完整的 EESA 進行試驗。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         }
       },
       "acceptance_criteria": {
@@ -1075,16 +1097,14 @@
           "detail": "測試前樣品需處於完全充電狀態。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         }
       },
       "acceptance_criteria": {
@@ -1125,16 +1145,19 @@
           "detail": "測試前樣品需處於完全充電狀態。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -1181,16 +1204,19 @@
           "detail": "測試前樣品需處於完全充電狀態。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
+          "value": "充至 MOSOC，靜置最多 8 小時",
+          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
+          "source_reference": "18.1"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "至少觀察 1 小時並監控溫度",
+          "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
+          "source_reference": "18.7"
         }
       },
       "acceptance_criteria": {
@@ -1235,16 +1261,9 @@
           "detail": "依 UL 2580 單電池失效測試方法，誘發單一電芯熱失控。"
         },
         "sample_quantity": {
-          "value": "1 組代表性 DUT",
-          "detail": "輕型車電池組測試需 1 組完整組裝之樣品。"
-        },
-        "pre_conditioning": {
-          "value": "依製造商規定滿充並靜置",
-          "detail": "在 20 ± 5 °C 下依製造商指定方法進行充電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "試驗後持續監控外殼溫度至恢復室溫。"
+          "value": "1 個 EESA",
+          "detail": "應使用 1 個完整的能量儲存系統 (EESA) 進行試驗。如果確定具有代表性，也可對次組裝件進行測試。樣品若保持完好，經製造商同意可重複用於多項測試。",
+          "source_reference": "18.2；Table 18.1"
         }
       },
       "acceptance_criteria": {
@@ -1274,6 +1293,7 @@
       "Gemini MD provided 5 cycles for Thermal Cycling which aligns with standard SAE J2464 requirements usually referenced.",
       "The mapping to schema v2.0 normalizes test names strictly based on taxonomy constraints."
     ],
-    "total_test_entries": 21
+    "total_test_entries": 21,
+    "enrichment": "2026-09-24 Phase 2 以腳本補上 sample_quantity、pre_conditioning、observation_period；2026-09-26 已逐項對照原文核對：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
   }
 }
