@@ -70,8 +70,9 @@
           "detail": "所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。"
         },
         "sample_quantity": {
-          "value": "各溫5個 (方型10個)",
-          "detail": "每個溫度條件下 5 個樣品。方型電芯 (Prismatic cells) 須分別針對長側 (long side) 與短側 (short side) 各進行 5 個樣品測試。"
+          "value": "各試驗溫度 5 個（角形共 10 個）",
+          "detail": "在上限與下限試驗溫度下各需 5 個樣品。對於角形電池，長側面與短側面各需 5 個樣品。",
+          "source_reference": "表1"
         },
         "termination_voltage_drop": {
           "value": "電壓降至 1/3",
@@ -86,12 +87,9 @@
           "detail": "滿足以下任一條件時，應立即釋放壓力：(1) 達到 13 ± 1 kN 最大壓力；(2) 電壓降至初始電壓的 1/3 以下；(3) 電池高度變形量達到 10%。"
         },
         "pre_conditioning": {
-          "value": "依 4.1 條款在規定溫度下滿充電",
-          "detail": "依製造商規格在室溫 (20 ± 5 °C) 或高溫上限下充滿電至 100% SOC，靜置 1-4 小時。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "試驗完成後在環境溫度下觀察 1 小時以確認無起火或爆炸。"
+          "value": "0.2 It A 放電後於試驗溫度充滿電",
+          "detail": "試驗前先在 20 ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。單電池接著在規定之上限與下限試驗溫度下靜置 1 至 4 小時後，於各溫度下充滿電（至 0.05 It A）。",
+          "source_reference": "5.1"
         },
         "apparatus": {
           "value": "直徑 150 mm 平面鋼製壓板",
@@ -137,20 +135,23 @@
           "detail": "所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。"
         },
         "sample_quantity": {
-          "value": "每溫度 5 個",
-          "detail": "每個溫度條件下 5 個樣品。(5 samples per temperature condition.)"
+          "value": "各試驗溫度 5 個",
+          "detail": "在上限與下限試驗溫度下各需 5 個樣品。",
+          "source_reference": "表1"
         },
         "duration": {
           "value": "24 小時 或 溫降 20%",
           "detail": "持續 24 小時，或直到電芯表面溫度與環境溫度的差值降至其最大值的 20% 以下，以較短者為準。(Maintained for 24 hours or until the difference between cell surface temp and ambient drops to 20% or less of its maximum value, whichever is shorter.)"
         },
         "pre_conditioning": {
-          "value": "依 4.1 條款在規定溫度下滿充電",
-          "detail": "依製造商規格在室溫 (20 ± 5 °C) 或高溫上限下充滿電至 100% SOC，靜置 1-4 小時。"
+          "value": "0.2 It A 放電後於試驗溫度充滿電",
+          "detail": "試驗前先在 20 ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。單電池接著在規定之上限與下限試驗溫度下靜置 1 至 4 小時後，於各溫度下充滿電（至 0.05 It A）。",
+          "source_reference": "5.1"
         },
         "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "試驗完成後在環境溫度下觀察 1 小時以確認無起火或爆炸。"
+          "value": "放置 24 小時或至溫降 20%",
+          "detail": "試驗中持續放置至短路後經過 24 小時，或單電池表面溫度與環境溫度差降至最大溫差的 20% 以下，以較短者為準。",
+          "source_reference": "5.3.2"
         }
       },
       "acceptance_criteria": {
@@ -198,16 +199,14 @@
           "detail": "所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。"
         },
         "sample_quantity": {
-          "value": "每溫度 5 個",
-          "detail": "每個溫度條件下 5 個樣品。(5 samples per temperature condition.)"
+          "value": "各試驗溫度 5 個",
+          "detail": "在上限與下限試驗溫度下各需 5 個樣品。",
+          "source_reference": "表1"
         },
         "pre_conditioning": {
-          "value": "依 4.1 條款在規定溫度下滿充電",
-          "detail": "依製造商規格在室溫 (20 ± 5 °C) 或高溫上限下充滿電至 100% SOC，靜置 1-4 小時。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "試驗完成後在環境溫度下觀察 1 小時以確認無起火或爆炸。"
+          "value": "0.2 It A 放電後於試驗溫度充滿電",
+          "detail": "試驗前先在 20 ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。單電池接著在規定之上限與下限試驗溫度下靜置 1 至 4 小時後，於各溫度下充滿電（至 0.05 It A）。",
+          "source_reference": "5.1"
         }
       },
       "acceptance_criteria": {
@@ -282,8 +281,9 @@
           "detail": "所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。"
         },
         "sample_quantity": {
-          "value": "各溫5至10個",
-          "detail": "每個溫度條件下 5 個樣品。若達到上限壓力仍未發生短絡，可追加至最多 10 個。(5 samples per temperature, extendable up to 10 if no short circuit at upper limit pressure.)"
+          "value": "各試驗溫度 5 至 10 個",
+          "detail": "在上限與下限試驗溫度下各測試 5 個樣品。若達到壓力上限仍未確認發生短路，則最多追加至 10 個測試樣品。",
+          "source_reference": "表1；A.1"
         },
         "ambient_temp": {
           "value": "20±5 °C",
@@ -298,12 +298,9 @@
           "detail": "為防止電解液蒸發，治具設置過程必須在 2 分鐘內完成 (Annex A.4.2.1)"
         },
         "pre_conditioning": {
-          "value": "依 4.1 條款在規定溫度下滿充電",
-          "detail": "依製造商規格在室溫 (20 ± 5 °C) 或高溫上限下充滿電至 100% SOC，靜置 1-4 小時。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "試驗完成後在環境溫度下觀察 1 小時以確認無起火或爆炸。"
+          "value": "0.2 It A 放電後於試驗溫度充滿電",
+          "detail": "試驗前先在 20 ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。單電池接著在規定之上限與下限試驗溫度下靜置 1 至 4 小時後，於各溫度下充滿電（至 0.05 It A）。",
+          "source_reference": "5.1"
         },
         "apparatus": {
           "value": "直徑 10 mm 壓頭 與 微型小鎳片",
@@ -351,15 +348,13 @@
         },
         "sample_quantity": {
           "value": "3 個",
-          "detail": "組電池跌落測試共需 3 個樣品（不分溫度）。(3 assembled battery samples total.)"
+          "detail": "組電池共需 3 個樣品。",
+          "source_reference": "表1"
         },
         "pre_conditioning": {
-          "value": "依標準充電程序充滿電至 100% SOC",
-          "detail": "在常溫下以標準充電方式充滿電。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下靜置觀察 1 小時。"
+          "value": "0.2 It A 放電後充滿電",
+          "detail": "試驗前先在 20 ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。組電池接著在規定溫度下（外部短路試驗為上下限溫度，跌落試驗為室溫）充至製造商指定的滿電狀態。",
+          "source_reference": "5.1"
         }
       },
       "acceptance_criteria": {
@@ -397,20 +392,23 @@
           "detail": "外部短絡電阻為 80 ± 20 mΩ，與電芯層級相同。(External short circuit resistance: 80 ± 20 mΩ, same as cell level.)"
         },
         "sample_quantity": {
-          "value": "45C/10C 各5個",
-          "detail": "需要經過雙溫度充電條件（45 °C 及 10 °C），各 5 個樣品，共 10 個樣品。(Requires dual-temperature charging requirement at 45 °C and 10 °C, 5 samples each, total 10 samples.)"
+          "value": "各試驗溫度 5 個",
+          "detail": "在上限與下限試驗溫度下各需 5 個樣品。",
+          "source_reference": "表1"
         },
         "duration_and_observation": {
           "value": "24 小時 或 溫降 20%",
           "detail": "Maintain short circuit for 24 hours OR until the temperature difference drops to 20% of its maximum value. Only if current is interrupted by a protection device, observe for 1 hour after current interruption."
         },
         "pre_conditioning": {
-          "value": "依標準充電程序充滿電至 100% SOC",
-          "detail": "在常溫下以標準充電方式充滿電。"
+          "value": "0.2 It A 放電後充滿電",
+          "detail": "試驗前先在 20 ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。組電池接著在規定溫度下（外部短路試驗為上下限溫度，跌落試驗為室溫）充至製造商指定的滿電狀態。",
+          "source_reference": "5.1"
         },
         "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下靜置觀察 1 小時。"
+          "value": "放置 24 小時（若電流停止則 1 小時）",
+          "detail": "短路後放置至經過 24 小時，或組電池容器與環境溫差降至最大值的 20% 以下，以較短者為準。若電流停止，則在電流停止後放置 1 小時。",
+          "source_reference": "5.7.2"
         }
       },
       "acceptance_criteria": {
@@ -458,19 +456,17 @@
         },
         "sample_quantity": {
           "value": "1 個",
-          "detail": "過充電保護確認測試僅需 1 個組電池樣品。(Only 1 assembled battery sample required.)"
+          "detail": "組電池僅需 1 個樣品。",
+          "source_reference": "表1"
         },
         "ambient_temp": {
           "value": "20±5 °C",
           "detail": "Test must be performed at ambient temperature 20±5 °C."
         },
         "pre_conditioning": {
-          "value": "依標準充電程序充滿電至 100% SOC",
-          "detail": "在常溫下以標準充電方式充滿電。"
-        },
-        "observation_period": {
-          "value": "試驗結束後觀察 1 小時",
-          "detail": "在環境溫度下靜置觀察 1 小時。"
+          "value": "0.2 It A 放電後充滿電",
+          "detail": "試驗前先在 20 ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。組電池接著在規定溫度下（外部短路試驗為上下限溫度，跌落試驗為室溫）充至製造商指定的滿電狀態。",
+          "source_reference": "5.1"
         }
       },
       "acceptance_criteria": {
@@ -554,6 +550,7 @@
       "建議取得原始 PDF 或 OCR markdown 後，對以下參數進行二次驗證：加熱速率、溫度保持時間、鎳片規格、跌落高度"
     ],
     "total_test_entries": 7,
-    "note": "JIS C 8714:2007 共 7 項測試（電芯層級 4 項 + 組電池層級 3 項）。本標準為日本特有之鋰離子二次電池安全性標準，與 IEC 62133-2 範圍類似但包含日本特有的強制內部短絡測試 (Forced Internal Short Circuit) 及雙溫度條件 (45°C/10°C) 要求。因僅有單一來源 (Gemini markdown)，建議後續補充原始 PDF 驗證。"
+    "note": "JIS C 8714:2007 共 7 項測試（電芯層級 4 項 + 組電池層級 3 項）。本標準為日本特有之鋰離子二次電池安全性標準，與 IEC 62133-2 範圍類似但包含日本特有的強制內部短絡測試 (Forced Internal Short Circuit) 及雙溫度條件 (45°C/10°C) 要求。因僅有單一來源 (Gemini markdown)，建議後續補充原始 PDF 驗證。",
+    "enrichment": "2026-09-26 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
   }
 }
