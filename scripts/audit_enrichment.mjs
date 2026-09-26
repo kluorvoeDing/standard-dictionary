@@ -13,17 +13,11 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
+import { PROCEDURE_FIELDS as FIELDS } from './review/fields.mjs';
 
 const ROOT = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'data');
 const SYSTEM_FILES = new Set(['catalog.json', 'taxonomy.json']);
-
-// 補強腳本寫入的欄位 → 原始資料中的同義欄位
-const FIELDS = {
-  sample_quantity: ['sample_size', 'samples'],
-  pre_conditioning: ['preconditioning', 'pre_condition'],
-  observation_period: ['observation', 'observation_time', 'rest_time', 'rest_period', 'post_rest'],
-};
 const TEMPLATE_SHARE = 0.8;
 const TEMPLATE_MIN_TESTS = 3;
 

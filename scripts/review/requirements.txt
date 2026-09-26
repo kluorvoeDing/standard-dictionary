@@ -1,0 +1,4 @@
+# scripts/review/ 需要的 Python 套件：pip install -r scripts/review/requirements.txt
+pymupdf                        # 讀 PDF 文字層、產生頁面影像
+opencc-python-reimplemented    # verify.py 檢查簡體字
+rapidocr_onnxruntime           # 只有文字層不可用（亂碼、掃描檔）時才需要：extract_text.py --ocr

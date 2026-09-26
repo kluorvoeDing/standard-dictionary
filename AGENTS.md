@@ -61,6 +61,20 @@
 >
 > CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/` 不得出現 emoji，並確認前端能建置。
 
+## 2026-09-26 (Tooling - 原文核對工具收進 repo)
+- 事件：把第一批核對用的暫存腳本整理成 `scripts/review/`，讓後續接手的 agent（含 Antigravity）照同一流程核對其餘標準。
+- 內容：
+  - `extract_text.py`：原文轉文字，並判斷文字層是否可讀；不可讀時用 `--ocr`（存頁面影像）。
+  - `make_worklist.mjs`：工作單，分試驗程序欄位與 `--all-fields`（補齊只寫參照的測試）兩種。
+  - `excerpts.py`：依定位行號逐字擷取摘錄，並擋下指到目錄的範圍。
+  - `verify.py`：機械驗收；簡體字改用 OpenCC `s2tw` 判斷，也檢查主代理的覆寫檔。
+  - `apply.mjs`：寫入前先跑 `verify.py`；`keep` 附條款時補上 `source_reference`；新欄位缺中文標籤會提醒。
+  - `render_page.py`：輸出單頁影像，供核對表格與數值。
+  - `SPEC.md`：子代理規格；`README.md`：主代理流程與驗收清單。
+  - 中間檔放在 `.review-work/`（已加入 `.gitignore`），內含標準原文，不可進版控。
+  - `audit_enrichment.mjs` 改從 `scripts/review/fields.mjs` 讀欄位清單。
+- 驗證：以第一批 GB47372 的實際結果重跑，`verify.py` 0 問題、`apply.mjs --dry` 0 變更；刻意放入簡體字、非標準單位、缺條款、缺決定、目錄範圍，都有擋下。
+
 ## 2026-09-26 (Data - 試驗程序欄位核對第一批：5 份國標)
 - 事件：事項 2 第一批完成。GB40559、GB47741、GB31241.4、GB47372、GB40165 的樣品數量／前置處理／觀察期（共 134 項測試）逐項對照原文改寫。
 - 背景：Phase 2 補強值多是整份標準套用同一句（電芯一律「每項 5 顆」、電池組「每項 3 組」、每項都「試驗後觀察 1 小時」），大多沒有原文依據。
