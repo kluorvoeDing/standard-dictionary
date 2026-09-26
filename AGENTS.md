@@ -61,6 +61,26 @@
 >
 > CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/` 不得出現 emoji，並確認前端能建置。
 
+## 2026-09-26 (Data - 試驗程序欄位核對第二批：10 份 UL 標準)
+- 事件：工作 A 第二批完成。UL1642、UL1642-2022、UL2054、UL2056、UL2271、UL1973、UL3030、UL9540、UL9540A、UL2743 等 10 份 UL 標準之樣品數量／前置處理／觀察期（共 129 項測試、422 筆欄位）逐項對照原文核對與改寫，重複欄位全數清除。
+- 背景：Phase 2 補強值多為整份標準套用樣板句（如「每項 5 顆」、「滿充電」、「觀察 1 小時」），且存在 `sample_size`、`observation` 等重複欄位。
+- 做法（子代理文本定位與判定，主 agent 抽查驗收與修正）：
+  - 原文轉文字：10 份標準全部以 PyMuPDF 擷取文字層（零空頁、零遺失）。
+  - Haiku 子代理（locator）定位通則（樣品表、充電通用條款、預處理與觀察通則）與各測試條款行號。
+  - Pro 子代理（reviewer）逐項審查 `sample_quantity`、`pre_conditioning`、`observation_period` 與重複欄位，附原文逐字引文、條款號出處與處置說明。
+  - 驗收：`verify.py` 檢查引文逐字存在、無簡體字、標準繁中時間單位與 `°C` 溫度；主 agent 人工抽查並修正模型偏差：
+    * 修正 UL1642-2022 / UL1642 短路試驗將終止判據（殼溫回常溫或放電達標）誤當觀察期的錯誤（改為 delete，動態終止保留於 termination 欄位）。
+    * 修正 UL2054 將 Section 9.2 人員安全防護（冷卻至室溫方可靠近）誤作觀察期的錯誤（改為 delete）。
+    * 補齊 UL2054 Section 28.1 f) 溫度循環後於 20 ± 5 °C 靜置至少 24 小時之規定。
+    * 核實 UL1973 Section 42.2.4 熱失控擴展試驗之 24 小時觀察期與 Annex E.1 電芯每組 2 顆規範。
+    * 核實 UL9540A Section 10.3.15 之 24 小時復燃監控觀察期。
+  - 以確定性腳本落地寫入 `data/*.json`，更新 `metadata.enrichment`。
+- 內容：
+  - 改寫後的欄位均標註 `source_reference`，`scripts/audit_enrichment.mjs` 正式標記為「已核對」。
+  - 10 份 UL 標準之重複欄位全數清除（0 筆重複）。
+- 影響：`npm run validate` 0 錯誤、0 警告；全庫累計已核對項目由 298 筆躍升至 613 筆；`npm run lint:ui` 通過，Vite build 通過。
+- 後續：待使用者核准後合併分支 `review/procedure-batch2`；續行批次 3（9 份 IEC / JIS / UN / AIS / SAND 標準）或工作 B 引用條款展開。
+
 ## 2026-09-26 (Tooling - 原文核對工具收進 repo)
 - 事件：把第一批核對用的暫存腳本整理成 `scripts/review/`，讓後續接手的 agent（含 Antigravity）照同一流程核對其餘標準。
 - 內容：
