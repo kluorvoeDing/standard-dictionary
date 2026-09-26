@@ -97,7 +97,7 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
             <Icon name="chevronRight" size={14} className="chev" />
             試驗程序
             <span className="cmp-note">
-              {view.procedure.map(r => r.label).join('、')}（尚未逐條核對原文，不標示差異）
+              {view.procedure.map(r => r.label).join('、')}（{view.procedureChecked ? '已對照原文' : '部分數值尚未核對原文'}，不標示差異）
             </span>
           </button>
         )}

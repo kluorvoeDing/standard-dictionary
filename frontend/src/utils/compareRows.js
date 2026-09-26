@@ -36,6 +36,8 @@ export function buildGroupRows(columns) {
           clause: rec.section,
           value: value || detail,
           detail: value ? detail : '',
+          // Checked against the source text (see scripts/audit_enrichment.mjs).
+          checked: Boolean(raw && raw.source_reference),
         });
       });
     });
@@ -68,6 +70,7 @@ export function buildGroupRows(columns) {
     procedure,
     criteria,
     diffCount: technical.filter(r => r.state === 'diff').length,
+    procedureChecked: procedure.length > 0 && procedure.every(r => r.cells.flat().every(e => e.checked)),
     // Nothing to see in diff-only mode: every standard covers the test and all technical rows agree.
     identical: columns.every(c => c.status === 'ok') && technical.every(r => r.state === 'same'),
   };
