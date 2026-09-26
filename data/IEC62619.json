@@ -116,12 +116,14 @@
           "detail": "電芯維持測試狀態 6 小時，或直到外殼溫度從最大溫升下降 80%，以先到者為準 (6 小時 or until the case temperature declines by 80 % of the maximum temperature rise, whichever is the sooner)。"
         },
         "sample_quantity": {
-          "value": "1 組電池系統或模組",
-          "detail": "1 組含完整 BMS 與保護裝置的電池系統或模組。"
+          "value": "1 個以上",
+          "detail": "6.2 表 1：單電池或單電池塊型式試驗樣品數量至少 1 個。",
+          "source_reference": "6.2 表 1；7.2.1"
         },
-        "observation_period": {
-          "value": "外殼溫度恢復 或 24 小時",
-          "detail": "持續短路直到外殼溫度降至環境溫度 ±10 °C 或滿 24 小時。"
+        "pre_conditioning": {
+          "value": "滿充後於 25 ± 5 °C 儲存",
+          "detail": "7.2.1 b)：充滿電的電芯儲存於 25 ± 5 °C 環境溫度下。",
+          "source_reference": "7.2.1 b)"
         }
       },
       "acceptance_criteria": {
@@ -184,6 +186,16 @@
         "floor_note": {
           "value": "金屬地板需防止外部短路",
           "detail": "若使用金屬地板，應採取適當措施避免電芯或電芯組與地板發生外部短路 (In the case of a metal floor, external short circuit of the cell or cell block with the floor should be avoided by appropriate measures)。"
+        },
+        "sample_quantity": {
+          "value": "每項撞擊各 1 個獨立樣品",
+          "detail": "6.2 表 1、7.2.2 b)：各衝擊方向均須使用全新獨立樣品進行試驗。",
+          "source_reference": "6.2 表 1；7.2.2 b)"
+        },
+        "pre_conditioning": {
+          "value": "0.2 It A 放電至 50% 額定容量",
+          "detail": "7.2.2 b)：電芯或電芯塊以 0.2 It A 恆流放電至額定容量之 50%。",
+          "source_reference": "7.2.2 b)"
         }
       },
       "acceptance_criteria": {
@@ -232,13 +244,24 @@
           "value": "棱角各 2 次（質量 ≥ 20 kg）",
           "detail": "棱角跌落測試 (7.2.3.3)：質量 ≥ 20 kg 時執行最短邊跌落 2 次 + 角跌落 2 次，兩次撞擊在同一角和同一最短邊上 (dropped two times, the two impacts per impact type shall be on the same corner and on the same shortest edge)。"
         },
-        "rest_time": {
-          "value": "測試後靜置 ≥ 1 小時",
-          "detail": "測試後靜置至少 1 小時，然後進行目視檢查 (put on rest for a minimum of 1 小時, and then a visual inspection shall be performed)。"
-        },
         "subdivision_note": {
           "value": "可測試代表性子單元",
           "detail": "若電池系統可分為較小單元，可測試代表性子單元。製造商可為測試單元添加最終電池系統中的功能，須明確聲明測試單元 (If the battery system is divided into smaller units, the unit can be tested as the representative of the battery system)。"
+        },
+        "sample_quantity": {
+          "value": "依 Table 2 規定（1 個以上）",
+          "detail": "6.2 表 1、7.2.3.1 表 2：單電池、單電池塊或電池系統，依質量決定整體或次單元跌落試驗。",
+          "source_reference": "6.2 表 1；7.2.3.1 表 2"
+        },
+        "pre_conditioning": {
+          "value": "依製造商規定充電",
+          "detail": "7.2.3.2：單電池、單電池塊或電池系統依製造商指定方法進行充電。",
+          "source_reference": "7.2.3.2"
+        },
+        "observation_period": {
+          "value": "靜置至少 1 小時後檢查",
+          "detail": "7.2.3.2 c)：單電池、電芯塊或電池系統在跌落後靜置至少 1 小時，再進行外觀檢查。",
+          "source_reference": "7.2.3.2 c)"
         }
       },
       "acceptance_criteria": {
@@ -289,6 +312,16 @@
         "hold_time": {
           "value": "3 小時",
           "detail": "電芯在此溫度下維持 3 小時後結束測試 (The cell remains at this temperature for 3 小時 before the test is discontinued)。"
+        },
+        "sample_quantity": {
+          "value": "1 個以上",
+          "detail": "6.2 表 1：單電池或單電池塊型式試驗樣品數量至少 1 個。",
+          "source_reference": "6.2 表 1；7.2.4"
+        },
+        "pre_conditioning": {
+          "value": "滿充後於 25 ± 5 °C 儲存",
+          "detail": "7.2.4 b)：充滿電的電芯儲存於 25 ± 5 °C 環境溫度下。",
+          "source_reference": "7.2.4 b)"
         }
       },
       "acceptance_criteria": {
@@ -339,6 +372,16 @@
         "termination": {
           "value": "溫度穩定（30 分鐘內 < 10 °C 變化）或恢復至環境溫度",
           "detail": "測試持續至電芯表面溫度達穩態條件（30 分鐘內變化小於 10 °C）或恢復至環境溫度 (until the temperature of the cell surface reaches steady state conditions (less than 10 °C change in a 30-min period) or returns to ambient temperature)。"
+        },
+        "sample_quantity": {
+          "value": "1 個以上",
+          "detail": "6.2 表 1：單電池或單電池塊型式試驗樣品數量至少 1 個。",
+          "source_reference": "6.2 表 1；7.2.5"
+        },
+        "pre_conditioning": {
+          "value": "0.2 It A 完放至終止電壓",
+          "detail": "7.2.5 b)：在 25 ± 5 °C 環境下以 0.2 It A 恆流完全放電至指定的終止電壓。",
+          "source_reference": "7.2.5 b)"
         }
       },
       "acceptance_criteria": {
@@ -397,6 +440,16 @@
         "voltage_hold": {
           "value": "達目標電壓後降低電流維持至測試結束",
           "detail": "若放電電壓在測試期間達到目標電壓，應通過降低電流將電壓維持在目標電壓，直到測試期結束 (If the voltage in discharge reaches the target voltage, the voltage shall be kept at the target voltage by reducing the current for the remaining test period)。"
+        },
+        "sample_quantity": {
+          "value": "1 個以上",
+          "detail": "6.2 表 1：單電池或單電池塊型式試驗樣品數量至少 1 個。",
+          "source_reference": "6.2 表 1；7.2.6"
+        },
+        "pre_conditioning": {
+          "value": "0.2 It A 完放至終止電壓",
+          "detail": "7.2.6 b)：在 25 ± 5 °C 環境下以 0.2 It A 恆流完全放電至指定的終止電壓。",
+          "source_reference": "7.2.6 b)"
         }
       },
       "acceptance_criteria": {
@@ -466,6 +519,16 @@
         "voltage_monitoring_rate": {
           "value": "> 100 次/秒",
           "detail": "電壓監測速率大於每秒 100 次 (The voltage is monitored at a rate of more than 100 times per second)。"
+        },
+        "sample_quantity": {
+          "value": "1 顆電芯",
+          "detail": "6.2 表 1、7.3.2：強制內部短路試驗單電池樣品。",
+          "source_reference": "6.2 表 1；7.3.2"
+        },
+        "pre_conditioning": {
+          "value": "放完電後於上限溫度充滿電",
+          "detail": "7.3.2 b) 1)：在 25 ± 5 °C 下以 0.2 It A 放電至終止電壓，接著在充電溫度上限以製造商方法充滿電。",
+          "source_reference": "7.3.2 b) 1)"
         }
       },
       "acceptance_criteria": {
@@ -513,13 +576,24 @@
           "value": "目標電芯熱失控後關閉觸發源",
           "detail": "目標電芯發生熱失控後，關閉觸發源 (After thermal runaway in the cell is initiated, the triggering source is turned off)。"
         },
-        "observation_time": {
-          "value": "8 小時",
-          "detail": "關閉觸發源後觀察電池系統 8 小時 (battery system is observed for 8 小時)。"
-        },
         "modification_note": {
           "value": "可最小化修改電池系統以利測試",
           "detail": "可對電池系統進行修改以利目標電芯熱失控，但修改應最小化且不影響電池系統的熱特性 (The battery system may be modified to facilitate the thermal runaway of the target cell. The modification should be minimized and it shall not affect the thermal properties of the battery system)。"
+        },
+        "sample_quantity": {
+          "value": "1 組電池系統",
+          "detail": "6.2 表 1、7.3.3：電池系統蔓延試驗。",
+          "source_reference": "6.2 表 1；7.3.3"
+        },
+        "pre_conditioning": {
+          "value": "滿充後於 25 ± 5 °C 靜置至穩定",
+          "detail": "7.3.3 b)：電池系統完全充電，然後在 25 ± 5 °C 環境溫度下靜置至電芯穩定。",
+          "source_reference": "7.3.3 b)"
+        },
+        "observation_period": {
+          "value": "熱失控觸發後觀察 8 小時",
+          "detail": "7.3.3 b)：目標電芯觸發熱失控並關閉觸發源後，對電池系統觀察 8 小時。",
+          "source_reference": "7.3.3 b)"
         }
       },
       "acceptance_criteria": {
@@ -583,6 +657,21 @@
         "safety_stop": {
           "value": "BMS 失效時：電芯電壓達 103% 上限或超過上限 1 分鐘後停止",
           "detail": "若 BMS 未能終止充電，應在適當時機出於安全原因停止測試，例如電芯電壓達到上限充電電壓的 103% 或超過上限充電電壓 1 分鐘後 (If the BMS fails to terminate the charging, the test should be stopped at the proper timing for safety reasons, for example when the cell voltage reaches 103 % of the upper limit charging voltage or 1 分鐘 after having exceeded the upper limit charging voltage)。"
+        },
+        "sample_quantity": {
+          "value": "1 組電池系統",
+          "detail": "6.2 表 1、8.2.2：電池系統過充電壓控制評估。",
+          "source_reference": "6.2 表 1；8.2.2"
+        },
+        "pre_conditioning": {
+          "value": "0.2 It A 完放至終止電壓",
+          "detail": "8.2.2 b)：在 25 ± 5 °C 下以 0.2 It A 恆流將電池系統完全放電至指定終止電壓。",
+          "source_reference": "8.2.2 b)"
+        },
+        "observation_period": {
+          "value": "1 小時",
+          "detail": "在充電停止後，資料擷取與監控應持續 1 小時。",
+          "source_reference": "8.2.2"
         }
       },
       "acceptance_criteria": {
@@ -638,6 +727,21 @@
         "full_operation": {
           "value": "所有 BMS 功能須完全運作",
           "detail": "測試期間電池系統的所有功能須按設計完全運作 (During the test, all functions of the battery system shall be fully operational as designed)。"
+        },
+        "sample_quantity": {
+          "value": "1 組電池系統",
+          "detail": "6.2 表 1、8.2.3：電池系統過大充電電流控制評估。",
+          "source_reference": "6.2 表 1；8.2.3"
+        },
+        "pre_conditioning": {
+          "value": "0.2 It A 完放至終止電壓",
+          "detail": "8.2.3 b)：在 25 ± 5 °C 下以 0.2 It A 恆流將電池系統完全放電至指定終止電壓。",
+          "source_reference": "8.2.3 b)"
+        },
+        "observation_period": {
+          "value": "1 小時",
+          "detail": "在充電停止後，資料擷取與監控應持續 1 小時。",
+          "source_reference": "8.2.3"
         }
       },
       "acceptance_criteria": {
@@ -694,6 +798,21 @@
         "post_test_monitoring": {
           "value": "BMS 終止充電後 1 小時",
           "detail": "數據擷取/監測在序列停止後繼續 1 小時 (Data acquisition/monitoring shall be continued for one hour after the sequence is stopped (e.g. the BMS has terminated charging))。"
+        },
+        "sample_quantity": {
+          "value": "1 組電池系統",
+          "detail": "6.2 表 1、8.2.4：電池系統過熱控制評估。",
+          "source_reference": "6.2 表 1；8.2.4"
+        },
+        "pre_conditioning": {
+          "value": "於 25 ± 5 °C 依製造商方法充滿電",
+          "detail": "8.2.4 b)：在 25 ± 5 °C 環境下依製造商宣告之方法將電池系統完全充電。",
+          "source_reference": "8.2.4 b)"
+        },
+        "observation_period": {
+          "value": "1 小時",
+          "detail": "在程序停止後，資料擷取與監控應持續 1 小時。",
+          "source_reference": "8.2.4"
         }
       },
       "acceptance_criteria": {
@@ -890,6 +1009,7 @@
       "7.3.2 內部短路與 7.3.3 蔓延測試為「至少擇一」關係，非全部必須",
       "外部短路電阻 30 mΩ（vs IEC 62133-2 的 80 mΩ），反映工業應用的不同使用場景",
       "跌落測試依質量分為全跌落（< 20 kg）和棱角跌落（≥ 20 kg），反映工業電池較大的重量特性"
-    ]
+    ],
+    "enrichment": "2026-09-26 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
   }
 }
