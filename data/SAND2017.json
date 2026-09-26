@@ -157,16 +157,19 @@
           "detail": "測試結束後應監控 DUT 至少 30 分鐘。(The DUT should be monitored for at least 30 minutes after the end of the test.)"
         },
         "sample_quantity": {
-          "value": "建議 4 個電芯",
-          "detail": "依 Table 2 建議：電芯級測試 4 個。(Table 2: Cell = 4)"
+          "value": "建議 4 顆電芯",
+          "detail": "依 Table 2 建議，控制壓壞試驗於電芯層級之測試樣品數量為 4 顆。",
+          "source_reference": "Table 2"
         },
         "pre_conditioning": {
-          "value": "依測試需求調整至 100% 或 50% SOC",
-          "detail": "常溫下依標準程序充滿電 (100% SOC)，若評估運輸態則調整為 50% SOC。"
+          "value": "100% SOC，並於 10-30 °C 穩定",
+          "detail": "除另有特別說明外，所有可充電儲能系統 (RESS) 之濫用測試均應在 100% 荷電狀態 (SOC) 下進行。環境溫度應為 10-30 °C (±2 °C)，且測試前必須將待測物環境穩定於此溫度。",
+          "source_reference": "2.1.3；2.1.4"
         },
         "observation_period": {
-          "value": "測試後監控 1 至 2 小時 (防範遲滯熱失控)",
-          "detail": "試驗步驟完成後持續記錄溫度、電壓與氣體釋放至少 1 小時至 2 小時以防範遲滯熱失控。"
+          "value": "測試後至少監控 30 分鐘",
+          "detail": "測試結束後，待測物應至少監控 30 分鐘。",
+          "source_reference": "3.1.1.1"
         },
         "apparatus": {
           "value": "伺服控制液壓壓機與專用平/圓壓頭",
@@ -235,16 +238,19 @@
           "detail": "測試結束後應監控 DUT 至少 30 分鐘。"
         },
         "sample_quantity": {
-          "value": "建議 4 個電芯",
-          "detail": "依 Table 2 建議：電芯級測試 4 個。(Table 2: Cell = 4)"
+          "value": "建議 4 顆電芯",
+          "detail": "依 Table 2 建議，控制壓壞試驗於電芯層級之測試樣品數量為 4 顆。",
+          "source_reference": "Table 2"
         },
         "pre_conditioning": {
-          "value": "依測試需求調整至 100% 或 50% SOC",
-          "detail": "常溫下依標準程序充滿電 (100% SOC)，若評估運輸態則調整為 50% SOC。"
+          "value": "100% SOC，並於 10-30 °C 穩定",
+          "detail": "除非另有說明，濫用測試應在 100% SOC 下進行，並將環境溫度穩定在 10-30 °C (±2 °C) 範圍內。",
+          "source_reference": "2.1.3；2.1.4"
         },
         "observation_period": {
-          "value": "測試後監控 1 至 2 小時 (防範遲滯熱失控)",
-          "detail": "試驗步驟完成後持續記錄溫度、電壓與氣體釋放至少 1 小時至 2 小時以防範遲滯熱失控。"
+          "value": "測試後至少監控 30 分鐘",
+          "detail": "測試結束後，待測物應至少監控 30 分鐘。",
+          "source_reference": "3.1.1.2"
         },
         "apparatus": {
           "value": "伺服控制液壓壓機與專用平/圓壓頭",
@@ -309,16 +315,19 @@
           "detail": "測試結束後應監控 DUT 至少 30 分鐘。"
         },
         "sample_quantity": {
-          "value": "建議模組 2 個、電池包 2 個",
-          "detail": "依 Table 2 建議：模組級測試 2 個、電池包級測試 2 個。(Table 2: Module = 2, Pack = 2)"
+          "value": "建議模組 2 組、電池包 2 組",
+          "detail": "依 Table 2 建議，控制壓壞試驗於模組與電池包層級之測試樣品數量各為 2 組。",
+          "source_reference": "Table 2"
         },
         "pre_conditioning": {
-          "value": "依指定工作模式滿充至 100% SOC",
-          "detail": "依儲能系統規範在受控環境下充電至滿電態。"
+          "value": "100% SOC，並於 10-30 °C 穩定",
+          "detail": "濫用測試應在 100% SOC 下進行，且測試前需將環境溫度穩定在 10-30 °C (±2 °C)。",
+          "source_reference": "2.1.3；2.1.4"
         },
         "observation_period": {
-          "value": "持續監控至溫度冷卻並靜置至少 2 小時",
-          "detail": "持續監控外殼溫度與煙霧釋放直至溫度降至環境溫度，並持續觀察至少 2 小時。"
+          "value": "測試後至少監控 30 分鐘",
+          "detail": "測試結束後，待測物應至少監控 30 分鐘。",
+          "source_reference": "3.1.1.3"
         },
         "apparatus": {
           "value": "伺服控制液壓壓機與專用平/圓壓頭",
@@ -379,16 +388,19 @@
           "detail": "測試結束後應監控 DUT 至少 30 分鐘。"
         },
         "sample_quantity": {
-          "value": "建議 4 個電芯、2 個模組、2 個電池包",
-          "detail": "依 Table 2 建議：電芯級 4 個、模組級 2 個、電池包級 2 個。(Table 2: Cell = 4, Module = 2, Pack = 2)"
+          "value": "建議電芯 4 顆",
+          "detail": "依 Table 2 建議，穿刺試驗於電芯層級為 4 顆。雖然亦可測試模組與電池包各 2 組，但本條款之最低組裝層級為電芯。",
+          "source_reference": "Table 2；3.1.2"
         },
         "pre_conditioning": {
-          "value": "依測試需求調整至 100% 或 50% SOC",
-          "detail": "常溫下依標準程序充滿電 (100% SOC)，若評估運輸態則調整為 50% SOC。"
+          "value": "初始測試於 100% SOC 及 55 °C 進行",
+          "detail": "首次測試應於 100% SOC 及 55 °C 下進行（包含待測物與測試裝置）。若有其他硬體，則應依溫度與 SOC 矩陣進行額外測試。",
+          "source_reference": "3.1.2"
         },
         "observation_period": {
-          "value": "測試後監控 1 至 2 小時 (防範遲滯熱失控)",
-          "detail": "試驗步驟完成後持續記錄溫度、電壓與氣體釋放至少 1 小時至 2 小時以防範遲滯熱失控。"
+          "value": "測試後至少監控 30 分鐘",
+          "detail": "測試結束後，待測物應至少監控 30 分鐘。",
+          "source_reference": "3.1.2"
         },
         "apparatus": {
           "value": "直徑 3.175 mm 鎢鋼/淬火鋼針",
@@ -442,16 +454,19 @@
           "detail": "測試結束後應監控 DUT 至少 30 分鐘。"
         },
         "sample_quantity": {
-          "value": "建議電芯 4 個、模組 2 個；電池包級不建議",
-          "detail": "依 Table 2 建議：電芯級 4 個、模組級 2 個。電池包級因測試之實際限制不建議執行。(Table 2: Cell = 4, Module = 2. Pack level not recommended due to practical limitations.)"
+          "value": "建議電芯 4 顆、模組 2 組",
+          "detail": "依 Table 2 建議，熱升溫試驗於電芯層級為 4 顆，模組層級為 2 組。因實際限制不建議進行電池包層級測試。",
+          "source_reference": "Table 2"
         },
         "pre_conditioning": {
-          "value": "依測試需求調整至 100% 或 50% SOC",
-          "detail": "常溫下依標準程序充滿電 (100% SOC)，若評估運輸態則調整為 50% SOC。"
+          "value": "正常工作溫度及 100% SOC 開始",
+          "detail": "測試應從待測物的正常工作溫度開始，並於 100% SOC 下進行。若有額外樣品，建議於較低 SOC 下進行額外測試。",
+          "source_reference": "3.2.1"
         },
         "observation_period": {
-          "value": "測試後監控 1 至 2 小時 (防範遲滯熱失控)",
-          "detail": "試驗步驟完成後持續記錄溫度、電壓與氣體釋放至少 1 小時至 2 小時以防範遲滯熱失控。"
+          "value": "測試後至少監控 30 分鐘",
+          "detail": "測試結束後，待測物應至少監控 30 分鐘。",
+          "source_reference": "3.2.1"
         }
       },
       "acceptance_criteria": {
@@ -512,20 +527,23 @@
           "detail": "DUT 應留在 ARC 中並冷卻至環境溫度後再處理。(The DUT should be left in the ARC and allowed to cool to ambient temperature prior to handling.)"
         },
         "sample_quantity": {
-          "value": "建議 4 個電芯；模組/包不建議",
-          "detail": "依 Table 2 建議：電芯級 4 個。模組及電池包因測試之實際限制不建議執行。(Table 2: Cell = 4. Module and pack not recommended due to practical limitations.)"
+          "value": "建議電芯 4 顆",
+          "detail": "依 Table 2 建議，加速量熱試驗於電芯層級為 4 顆。因實際限制不建議進行模組與電池包層級測試。",
+          "source_reference": "Table 2"
         },
         "pre_test_requirement": {
           "value": "預先熱濫用測試",
           "detail": "應在建議濫用測試前先執行熱濫用測試以判定 DUT 在熱濫用下之失效模式是否可能損壞 ARC 系統。(A thermal abuse test should be performed on a DUT prior to an ARC experiment.)"
         },
         "pre_conditioning": {
-          "value": "依測試需求調整至 100% 或 50% SOC",
-          "detail": "常溫下依標準程序充滿電 (100% SOC)，若評估運輸態則調整為 50% SOC。"
+          "value": "正常工作溫度及 100% SOC",
+          "detail": "測試應從待測物的正常工作溫度開始。依通則，除非另有說明，所有試驗均應於 100% SOC 下進行。",
+          "source_reference": "2.1.3；3.2.2"
         },
         "observation_period": {
-          "value": "測試後監控 1 至 2 小時 (防範遲滯熱失控)",
-          "detail": "試驗步驟完成後持續記錄溫度、電壓與氣體釋放至少 1 小時至 2 小時以防範遲滯熱失控。"
+          "value": "於加速量熱儀內冷卻至環境溫度",
+          "detail": "測試結束後，應將待測物留在加速量熱儀 (ARC) 內，待其冷卻至環境溫度後再進行後續處理。",
+          "source_reference": "3.2.2"
         }
       },
       "acceptance_criteria": {
@@ -595,16 +613,19 @@
           "detail": "測試結束後應監控 DUT 至少 30 分鐘。"
         },
         "sample_quantity": {
-          "value": "建議電芯 4 個、模組 4 個、電池包 2 個",
-          "detail": "依 Table 2 建議：電芯級 4 個、模組級 4 個、電池包級 2 個。(Table 2: Cell = 4, Module = 4, Pack = 2)"
+          "value": "建議電芯 4 顆、模組 4 組、電池包 2 組",
+          "detail": "依 Table 2 建議，過充電試驗於電芯層級為 4 顆，模組層級為 4 組，電池包層級為 2 組。",
+          "source_reference": "Table 2"
         },
         "pre_conditioning": {
-          "value": "依指定工作模式滿充至 100% SOC",
-          "detail": "依儲能系統規範在受控環境下充電至滿電態。"
+          "value": "正常工作溫度及 100% SOC 開始",
+          "detail": "測試應在待測物處於正常工作溫度，並且達到 100% SOC 時開始進行。",
+          "source_reference": "3.3.1"
         },
         "observation_period": {
-          "value": "持續監控至溫度冷卻並靜置至少 2 小時",
-          "detail": "持續監控外殼溫度與煙霧釋放直至溫度降至環境溫度，並持續觀察至少 2 小時。"
+          "value": "測試後至少監控 30 分鐘",
+          "detail": "測試結束後，待測物應至少監控 30 分鐘。",
+          "source_reference": "3.3.1"
         }
       },
       "acceptance_criteria": {
@@ -660,16 +681,19 @@
           "detail": "測試結束後應監控 DUT 至少 30 分鐘。"
         },
         "sample_quantity": {
-          "value": "建議電芯 2 個、模組 2 個、電池包 2 個",
-          "detail": "依 Table 2 建議：電芯級 2 個、模組級 2 個、電池包級 2 個。(Table 2: Cell = 2, Module = 2, Pack = 2)"
+          "value": "建議電芯 2 顆、模組 2 組、電池包 2 組",
+          "detail": "依 Table 2 建議，過放電試驗於各層級（電芯、模組、電池包）之測試樣品數量均為 2 組。",
+          "source_reference": "Table 2"
         },
         "pre_conditioning": {
-          "value": "依指定工作模式滿充至 100% SOC",
-          "detail": "依儲能系統規範在受控環境下充電至滿電態。"
+          "value": "正常工作溫度及 100% SOC 開始",
+          "detail": "測試應從待測物處於正常工作溫度及 100% SOC 下開始進行放電。",
+          "source_reference": "3.3.3"
         },
         "observation_period": {
-          "value": "持續監控至溫度冷卻並靜置至少 2 小時",
-          "detail": "持續監控外殼溫度與煙霧釋放直至溫度降至環境溫度，並持續觀察至少 2 小時。"
+          "value": "測試後至少監控 30 分鐘",
+          "detail": "測試結束後，待測物應至少監控 30 分鐘。",
+          "source_reference": "3.3.3"
         }
       },
       "acceptance_criteria": {
@@ -736,16 +760,19 @@
           "detail": "測試結束後應監控 DUT 至少 30 分鐘。"
         },
         "sample_quantity": {
-          "value": "建議電芯 4 個、模組 4 個、電池包 2 個",
-          "detail": "依 Table 2 建議：電芯級 4 個、模組級 4 個、電池包級 2 個。(Table 2: Cell = 4, Module = 4, Pack = 2)"
+          "value": "建議電芯 4 顆、模組 4 組、電池包 2 組",
+          "detail": "依 Table 2 建議，外部短路試驗於電芯與模組層級各為 4 組，電池包層級為 2 組。",
+          "source_reference": "Table 2"
         },
         "pre_conditioning": {
-          "value": "依指定工作模式滿充至 100% SOC",
-          "detail": "依儲能系統規範在受控環境下充電至滿電態。"
+          "value": "100% SOC，並於 10-30 °C 穩定",
+          "detail": "依據通則，試驗應在 100% SOC 下進行，且測試環境應穩定在 10-30 °C (±2 °C)。",
+          "source_reference": "2.1.3；2.1.4"
         },
         "observation_period": {
-          "value": "持續監控至溫度冷卻並靜置至少 2 小時",
-          "detail": "持續監控外殼溫度與煙霧釋放直至溫度降至環境溫度，並持續觀察至少 2 小時。"
+          "value": "測試後至少監控 30 分鐘",
+          "detail": "測試結束後，待測物應至少監控 30 分鐘。",
+          "source_reference": "3.3.5"
         }
       },
       "acceptance_criteria": {
@@ -799,16 +826,19 @@
           "detail": "若熱失控蔓延，從最後一次失效事件 (HSL 5-7) 結束後再監控 60 分鐘。(If propagation occurs, monitor for an additional 60 minutes from the end of the last failure event.)"
         },
         "sample_quantity": {
-          "value": "建議多次測試，多個起始位置及 SOC",
-          "detail": "因電芯熱失控之可變性，強烈建議多次重複測試。測試位置應考慮 (1) 最大化涉及之電芯數量及 (2) 代表基於使用條件或誤用之任何潛在設計弱點。(Multiple tests are highly recommended at several initiation locations and SOCs.)"
+          "value": "強烈建議在多個起始位置與 SOC 下進行多次測試",
+          "detail": "由於電芯熱失控之變異性，強烈建議在多個觸發位置與不同荷電狀態 (SOC) 下進行多次測試，以決定可靠之設計餘裕。",
+          "source_reference": "3.4"
         },
         "pre_conditioning": {
-          "value": "依指定工作模式滿充至 100% SOC",
-          "detail": "依儲能系統規範在受控環境下充電至滿電態。"
+          "value": "最低建議於 100% SOC 及 25 °C 觸發",
+          "detail": "作為最低限度，建議將電芯失效觸發條件設定在 100% SOC 及 25 °C。",
+          "source_reference": "3.4"
         },
         "observation_period": {
-          "value": "持續監控至溫度冷卻並靜置至少 2 小時",
-          "detail": "持續監控外殼溫度與煙霧釋放直至溫度降至環境溫度，並持續觀察至少 2 小時。"
+          "value": "無蔓延監控 60 分鐘；有蔓延則於最後失效後再監控 60 分鐘",
+          "detail": "觸發後，若熱失控未蔓延，至少監控 60 分鐘。若發生蔓延，則在最後一次失效事件結束後再額外監控 60 分鐘。",
+          "source_reference": "3.4"
         }
       },
       "acceptance_criteria": {
@@ -863,17 +893,10 @@
           "value": "100% SOC",
           "detail": "DUT 從 100% SOC 開始。(Section 2.1.3)"
         },
-        "sample_quantity": {
-          "value": "建議每條件 3 至 5 顆電芯",
-          "detail": "推薦測試矩陣建議電芯級濫用評估每項條件使用 3 至 5 顆樣品。"
-        },
         "pre_conditioning": {
-          "value": "依測試需求調整至 100% 或 50% SOC",
-          "detail": "常溫下依標準程序充滿電 (100% SOC)，若評估運輸態則調整為 50% SOC。"
-        },
-        "observation_period": {
-          "value": "測試後監控 1 至 2 小時 (防範遲滯熱失控)",
-          "detail": "試驗步驟完成後持續記錄溫度、電壓與氣體釋放至少 1 小時至 2 小時以防範遲滯熱失控。"
+          "value": "100% SOC",
+          "detail": "依據通則，除非另有說明，所有濫用測試皆應在 100% SOC 下進行。此條款並無指定其它 SOC。",
+          "source_reference": "2.1.3"
         }
       },
       "acceptance_criteria": {
@@ -941,17 +964,15 @@
           "value": "建議額外測試冷卻液、燃料等常見接觸液體",
           "detail": "若有額外測試物件，建議浸沒於 DUT 可能接觸之其他常見液體中（如電池冷卻液、燃料）。許多引擎室液體為可燃性，應採取適當風險緩解措施。(Immersion in other common fluids is also recommended if additional units are available.)"
         },
-        "sample_quantity": {
-          "value": "建議 1 至 2 組模組或電池包",
-          "detail": "模組或電池包級別濫用試驗建議使用 1 至 2 組代表性 DUT 進行驗證。"
-        },
         "pre_conditioning": {
-          "value": "依指定工作模式滿充至 100% SOC",
-          "detail": "依儲能系統規範在受控環境下充電至滿電態。"
+          "value": "100% SOC 及正常工作溫度",
+          "detail": "在此測試中，可充電儲能系統 (RESS) 應處於 100% SOC 及正常工作溫度。",
+          "source_reference": "4.4"
         },
         "observation_period": {
-          "value": "持續監控至溫度冷卻並靜置至少 2 小時",
-          "detail": "持續監控外殼溫度與煙霧釋放直至溫度降至環境溫度，並持續觀察至少 2 小時。"
+          "value": "測試完成後至少監控 30 分鐘",
+          "detail": "水浸測試完成後，待測物應至少監控 30 分鐘。",
+          "source_reference": "4.4"
         }
       },
       "acceptance_criteria": {
@@ -1064,6 +1085,7 @@
       "document.type 已依使用者要求設為 'guidance' 而非 'standard'，反映本文件為 Sandia National Laboratories 推薦實踐文件之性質"
     ],
     "total_test_entries": 12,
-    "note": "SAND2017-6925 共涵蓋核心測試 7 項（含壓壞 3 個子程序）及補充測試 5 項。本 JSON 納入 12 個測試條目：壓壞拆分為 3 個獨立條目（圓柱電芯、方形/軟包電芯、模組/包）。電化學電容器專用測試（過電壓 3.3.2、電壓反轉 3.3.4）及僅引用外部標準之測試（燃油火災 4.5、模擬燃油火災 4.6）未納入。停機隔膜完整性 (4.2) 為高度特殊化測試，僅適用於具有停機隔膜之電芯，未獨立納入。"
+    "note": "SAND2017-6925 共涵蓋核心測試 7 項（含壓壞 3 個子程序）及補充測試 5 項。本 JSON 納入 12 個測試條目：壓壞拆分為 3 個獨立條目（圓柱電芯、方形/軟包電芯、模組/包）。電化學電容器專用測試（過電壓 3.3.2、電壓反轉 3.3.4）及僅引用外部標準之測試（燃油火災 4.5、模擬燃油火災 4.6）未納入。停機隔膜完整性 (4.2) 為高度特殊化測試，僅適用於具有停機隔膜之電芯，未獨立納入。",
+    "enrichment": "2026-09-26 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
   }
 }
