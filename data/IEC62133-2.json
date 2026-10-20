@@ -175,25 +175,25 @@
         "CELL"
       ],
       "conditions": {
-        "charging_procedure": {
-          "value": "程序一 (Procedure 1, 7.1.1)",
-          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充電。充電前先在 20 °C ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。"
+        "charge": {
+          "value": "依製造商規定規格充電",
+          "detail": "完全充電的單電池接受 7 天的充電，使用製造商指定的電流和標準電壓方法進行充電。充電前先在 20 ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。依程序一（7.1.1）：在 20 ± 5 °C 環境下，按照 7.1.1 第一程序充滿電。原文：Fully charged per Procedure 1."
         },
         "soc": {
-          "value": "滿充 (Fully charged)",
-          "detail": "按照 7.1.1 第一程序充滿電"
+          "value": "滿充",
+          "detail": "按照 7.1.1 第一程序充滿電。"
         },
-        "test_method": {
+        "operation": {
           "value": "恆壓充電 7 天",
           "detail": "完全充電的單電池接受 7 天的充電，使用製造商指定的電流和標準電壓方法進行充電。"
         },
         "temperature": {
           "value": "20 ± 5 °C",
-          "detail": "環境溫度 20 °C ± 5 °C"
+          "detail": "環境溫度 20 ± 5 °C。"
         },
         "duration": {
           "value": "7 天",
-          "detail": "持續充電 7 天 (7 days)"
+          "detail": "持續充電 7 天（7 days）。"
         },
         "sample_quantity": {
           "value": "5 顆電芯",
@@ -233,25 +233,25 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
-        "charging_procedure": {
-          "value": "程序一 (Procedure 1, 7.1.1)",
-          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充電。"
-        },
-        "applicability": {
-          "value": "僅限模塑外殼 (Moulded case only)",
-          "detail": "此要求僅適用於具有模塑外殼的電池組 (This requirement only applies to batteries with a moulded case)。"
+        "test_type": {
+          "value": "高溫模塑外殼應力釋放",
+          "detail": "空氣循環烤箱高溫消除模塑外殼應力。"
         },
         "soc": {
-          "value": "滿充 (Fully charged)",
-          "detail": "按照 7.1.1 第一程序充滿電"
+          "value": "滿充",
+          "detail": "依程序一（7.1.1）：在 20 ± 5 °C 環境下，按照 7.1.1 第一程序充滿電。原文：Fully charged per Procedure 1."
         },
         "temperature": {
           "value": "70 ± 2 °C",
-          "detail": "空氣循環烤箱 (air circulating oven)，溫度 70 °C ± 2 °C"
+          "detail": "空氣循環烤箱（air circulating oven），溫度 70 ± 2 °C。"
         },
         "duration": {
           "value": "7 小時",
           "detail": "電池組在烤箱中放置 7 小時，之後取出讓其恢復至室溫。"
+        },
+        "applicability": {
+          "value": "僅限模塑外殼電池組",
+          "detail": "此要求僅適用於具有模塑外殼的電池組。原文：This requirement only applies to batteries with a moulded case."
         },
         "sample_quantity": {
           "value": "3 個電池組",
@@ -289,28 +289,20 @@
         "CELL"
       ],
       "conditions": {
-        "charging_procedure": {
-          "value": "程序二 (Procedure 2, 7.1.2) — 安全充電程序",
-          "detail": "在最高及最低充電溫度下穩定 1-4 小時後，使用上限充電電壓及最大充電電流充電，直到電流降至 0.05 It A (CC-CV 方法)。充電溫度條件見 Table 2，由製造商指定。"
-        },
         "soc": {
-          "value": "滿充 (Fully charged per Procedure 2)",
-          "detail": "按照 7.1.2 第二程序充滿電"
-        },
-        "ambient_temperature": {
-          "value": "55 ± 5 °C",
-          "detail": "在 55 °C ± 5 °C 環境下儲存並進行測試 (Store in an ambient temperature of 55 °C ± 5 °C)"
-        },
-        "stabilization_time": {
-          "value": "1-4 小時",
-          "detail": "在 55 °C ± 5 °C 環境下穩定 1 至 4 小時 (After stabilization for 1 小時 to 4 小時)"
+          "value": "滿充",
+          "detail": "按照 7.1.2 第二程序充滿電。依程序二（7.1.2）：安全充電程序，在最高及最低充電溫度下穩定 1～4 小時後，使用上限充電電壓及最大充電電流充電，直到電流降至 0.05 It A（CC-CV 方法）。充電溫度條件見 Table 2，由製造商指定。原文：Fully charged per Procedure 2."
         },
         "external_resistance": {
           "value": "80 ± 20 mΩ",
-          "detail": "正負端子之間以總外部電阻 80 mΩ ± 20 mΩ 進行短路"
+          "detail": "正負端子之間以總外部電阻 80 ± 20 mΩ 進行短路。"
+        },
+        "temperature": {
+          "value": "55 ± 5 °C",
+          "detail": "在 55 ± 5 °C 環境下儲存並進行測試。在 55 ± 5 °C 環境下穩定 1 至 4 小時。原文：Store in an ambient temperature of 55 °C ± 5 °C, after stabilization for 1 小時 to 4 小時."
         },
         "duration": {
-          "value": "24 小時或溫升下降 20%（取先到者）",
+          "value": "24 小時或外殼溫降 20%（取先到者）",
           "detail": "測試持續 24 小時或直到表面溫度下降為最大溫升的 20%，以先發生者為準。"
         },
         "sample_quantity": {
@@ -352,29 +344,25 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
-        "charging_procedure": {
-          "value": "程序一 (Procedure 1, 7.1.1)",
-          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充電。"
-        },
         "soc": {
-          "value": "滿充 (Fully charged per Procedure 1)",
-          "detail": "按照 7.1.1 第一程序充滿電"
-        },
-        "ambient_temperature": {
-          "value": "20 ± 5 °C",
-          "detail": "在 20 °C ± 5 °C 環境下進行測試"
+          "value": "滿充",
+          "detail": "依程序一（7.1.1）：在 20 ± 5 °C 環境下，按照 7.1.1 第一程序充滿電。原文：Fully charged per Procedure 1."
         },
         "external_resistance": {
           "value": "80 ± 20 mΩ",
-          "detail": "正負端子之間以總外部電阻 80 mΩ ± 20 mΩ 進行短路"
+          "detail": "正負端子之間以總外部電阻 80 ± 20 mΩ 進行短路。"
+        },
+        "temperature": {
+          "value": "20 ± 5 °C",
+          "detail": "在 20 ± 5 °C 環境下進行測試。"
         },
         "duration": {
-          "value": "24 小時或外殼溫度下降 20%（取先到者）",
+          "value": "24 小時或外殼溫降 20%（取先到者）",
           "detail": "測試持續 24 小時或直到外殼溫度下降為最大溫升的 20%，以先發生者為準。若短路電流急速下降，電池應在電流達到低端穩態後繼續測試 1 小時（每電池電壓低於 0.8 V 且 30 分鐘內下降不超過 0.1 V）。"
         },
-        "fault_simulation": {
-          "value": "1-4 個樣品需模擬放電保護電路單一故障",
-          "detail": "5 個樣品中 1-4 個（取決於保護電路設計）需在短路測試前模擬放電保護電路的單一故障。單一故障適用於 MOSFET、保險絲、溫控器或 PTC 熱敏電阻等保護元件。符合 Annex F 所列元件標準或經功能安全評估的電子電路不受單一故障條件約束。"
+        "fault_condition": {
+          "value": "放電保護電路單一故障（1～4 個樣品）",
+          "detail": "5 個樣品中 1～4 個（取決於保護電路設計）需在短路測試前模擬放電保護電路的單一故障。單一故障適用於 MOSFET、保險絲、溫控器或 PTC 熱敏電阻等保護元件。符合 Annex F 所列元件標準或經功能安全評估的電子電路不受單一故障條件約束。"
         },
         "sample_quantity": {
           "value": "5 個電池組",
@@ -480,33 +468,29 @@
         "CELL"
       ],
       "conditions": {
-        "charging_procedure": {
-          "value": "程序二 (Procedure 2, 7.1.2) — 安全充電程序",
-          "detail": "在最高及最低充電溫度下穩定 1-4 小時後，使用上限充電電壓及最大充電電流充電，直到電流降至 0.05 It A (CC-CV 方法)。"
-        },
         "soc": {
-          "value": "滿充 (Fully charged per Procedure 2)",
-          "detail": "按照 7.1.2 第二程序充滿電"
+          "value": "滿充",
+          "detail": "按照 7.1.2 第二程序充滿電。依程序二（7.1.2）：安全充電程序，在最高及最低充電溫度下穩定 1～4 小時後，使用上限充電電壓及最大充電電流充電，直到電流降至 0.05 It A（CC-CV 方法）。充電溫度條件見 Table 2，由製造商指定。原文：Fully charged per Procedure 2."
         },
-        "initial_condition": {
-          "value": "20 ± 5 °C，放入烤箱 1 小時",
-          "detail": "完全充電的單電池在 20 °C ± 5 °C 環境下放入重力或循環空氣對流烤箱中 1 小時 (placed in a gravity or circulating air-convection oven, in an ambient temperature of 20 °C ± 5 °C, for 1 小時)"
+        "initial_temperature": {
+          "value": "20 ± 5 °C",
+          "detail": "完全充電的單電池在 20 ± 5 °C 環境下放入重力或循環空氣對流烤箱中 1 小時。原文：placed in a gravity or circulating air-convection oven, in an ambient temperature of 20 °C ± 5 °C, for 1 hour."
         },
-        "ramp_rate": {
+        "oven_type": {
+          "value": "自然對流或空氣循環烘箱",
+          "detail": "重力或循環空氣對流烤箱（gravity or circulating air-convection oven）。"
+        },
+        "heating_rate": {
           "value": "5 ± 2 °C/min",
-          "detail": "烤箱溫度以 5 °C/min ± 2 °C/min 的速率上升 (oven temperature is raised at a rate of 5 °C/min ± 2 °C/min)"
+          "detail": "烤箱溫度以 5 ± 2 °C/min 的速率上升。原文：oven temperature is raised at a rate of 5 °C/min ± 2 °C/min."
         },
         "target_temperature": {
           "value": "130 ± 2 °C",
-          "detail": "上升至 130 °C ± 2 °C (to a temperature of 130 °C ± 2 °C)"
+          "detail": "上升至 130 ± 2 °C。原文：to a temperature of 130 °C ± 2 °C."
         },
-        "hold_time": {
-          "value": "30 分鐘",
-          "detail": "電池在 130 °C 下維持 30 分鐘後結束測試 (cell remains at this temperature for 30 分鐘 before the test is terminated)"
-        },
-        "oven_type": {
-          "value": "重力或空氣對流烤箱",
-          "detail": "gravity or circulating air-convection oven"
+        "duration": {
+          "value": "保持 30 分鐘",
+          "detail": "電池在 130 ± 2 °C 下維持 30 分鐘後結束測試。原文：cell remains at this temperature for 30 minutes before the test is terminated."
         },
         "sample_quantity": {
           "value": "每溫度 5 顆電芯（共 10 顆）",
@@ -607,37 +591,25 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
-        "charging_procedure": {
-          "value": "程序一 (Procedure 1, 7.1.1) — 先放電至終止電壓",
-          "detail": "每個測試電池先以 0.2 It A 恆流放電至製造商指定的終止放電電壓。"
-        },
         "soc": {
-          "value": "完全放電 (Discharged to final voltage)",
-          "detail": "按 0.2 It A 恆流放電至製造商指定的終止電壓後進行過充"
+          "value": "0% SOC (放電至終止電壓)",
+          "detail": "依程序一（7.1.1）：每個測試電池先以 0.2 It A 恆流放電至製造商指定的終止放電電壓。原文：Discharged to final voltage per Procedure 1."
         },
         "charging_current": {
           "value": "2.0 It A",
-          "detail": "以 2.0 It A 恆流進行充電 (charged at a constant current of 2.0 It A)"
+          "detail": "以 2.0 It A 恆流進行充電。原文：charged at a constant current of 2.0 It A."
         },
-        "supply_voltage_single_cell": {
-          "value": "1.4 × 上限充電電壓（不超過 6.0 V）",
-          "detail": "單電池/電池並聯組電池組之供電電壓為上限充電電壓的 1.4 倍（但不超過 6.0 V）(1.4 times the upper limit charging voltage presented in Table A.1, but not to exceed 6.0 V, for single cell/cell block batteries)"
-        },
-        "supply_voltage_series_multi_cell": {
-          "value": "1.2 × 上限充電電壓/每電池",
-          "detail": "串聯多電池電池組之供電電壓為每個單電池的上限充電電壓的 1.2 倍 (1.2 times the upper limit charging voltage per cell for series connected multi-cell batteries)"
-        },
-        "current_maintenance": {
-          "value": "需維持 2.0 It A 至供電電壓",
-          "detail": "供電電壓須足以在整個測試期間維持 2.0 It A 的電流，直到達到供電電壓 (sufficient to maintain a current of 2.0 It A throughout the duration of the test or until the supply voltage is reached)"
-        },
-        "termination": {
-          "value": "溫度穩定（30 分鐘內 < 10 °C 變化）或恢復至室溫",
-          "detail": "外殼溫度達到穩態條件（30 分鐘內變化小於 10 °C）或恢復至環境溫度時終止測試。需附上熱電偶測量溫度。"
+        "charging_voltage": {
+          "value": "單電芯：1.4 × 上限充電電壓（≤ 6.0 V）；串聯：1.2 × 上限充電電壓/電芯",
+          "detail": "單電池/電池並聯組電池組之供電電壓為上限充電電壓的 1.4 倍（但不超過 6.0 V）；串聯多電池電池組之供電電壓為每個單電池的上限充電電壓的 1.2 倍。供電電壓須足以在整個測試期間維持 2.0 It A 的電流，直到達到供電電壓。原文：1.4 times the upper limit charging voltage (not to exceed 6.0 V) for single cell/cell block, 1.2 times per cell for series connected."
         },
         "temperature": {
           "value": "20 ± 5 °C",
-          "detail": "環境溫度 20 °C ± 5 °C"
+          "detail": "環境溫度 20 ± 5 °C。"
+        },
+        "termination": {
+          "value": "外殼溫度恢復至環境溫度或達穩態（30 分鐘內變化 < 10 °C）",
+          "detail": "外殼溫度達到穩態條件（30 分鐘內變化小於 10 °C）或恢復至環境溫度時終止測試。需附上熱電偶測量溫度。"
         },
         "sample_quantity": {
           "value": "5 個電池組",
@@ -674,21 +646,17 @@
         "CELL"
       ],
       "conditions": {
-        "charging_procedure": {
-          "value": "程序一 (Procedure 1, 7.1.1) — 先放電至下限",
-          "detail": "先將單電池放電至製造商指定的下限放電電壓。"
-        },
         "soc": {
-          "value": "完全放電至下限電壓",
-          "detail": "放電至製造商指定的下限放電電壓 (Discharge a single cell to the lower limit discharge voltage specified by the cell manufacturer)"
+          "value": "0% SOC (放電至終止電壓)",
+          "detail": "依程序一（7.1.1）：先將單電池以 0.2 It A 放電至製造商指定的下限放電電壓。原文：Discharge a single cell to the lower limit discharge voltage specified by the cell manufacturer."
         },
         "forced_discharge_current": {
-          "value": "1 It A",
-          "detail": "以 1 It A 的電流進行強制放電 (subjected to a forced discharge at 1 It A)"
+          "value": "1.0 It A",
+          "detail": "以 1 It A（1.0 It A）的電流進行強制放電。原文：subjected to a forced discharge at 1 It A."
         },
         "target_voltage": {
-          "value": "負上限充電電壓 (negative of upper limit charging voltage)",
-          "detail": "強制放電至上限充電電壓的負值 (to the negative value of the upper limit charging voltage)"
+          "value": "-Uup (負上限充電電壓)",
+          "detail": "強制放電至上限充電電壓的負值（to the negative value of the upper limit charging voltage）。"
         },
         "duration": {
           "value": "90 分鐘",
@@ -731,37 +699,41 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
-        "charging_procedure": {
-          "value": "程序一 (Procedure 1, 7.1.1)",
-          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充滿電。"
-        },
         "soc": {
-          "value": "滿充 (Fully charged per Procedure 1)",
-          "detail": "按照 7.1.1 第一程序充滿電"
+          "value": "100% 滿充電",
+          "detail": "依程序一（7.1.1）：在 20 ± 5 °C 環境下，按照 7.1.1 第一程序充滿電。原文：Fully charged per Procedure 1."
         },
         "waveform": {
-          "value": "正弦波 (Sinusoidal)",
-          "detail": "正弦波振動 (sinusoidal vibration)"
+          "value": "正弦波對數掃頻",
+          "detail": "正弦波振動（sinusoidal vibration）。"
         },
-        "frequency_range": {
-          "value": "7 Hz – 200 Hz – 7 Hz (對數掃描)",
-          "detail": "頻率範圍 7 Hz 到 200 Hz 的對數掃描循環 (logarithmic sweep cycle)"
+        "vibration_frequency": {
+          "value": "7 Hz～200 Hz",
+          "detail": "頻率範圍 7 Hz 到 200 Hz 的對數掃描循環（logarithmic sweep cycle）。"
         },
-        "vibration_profile": {
-          "value": "1 gn (7-17.62 Hz) / 0.8 mm (17.62-49.84 Hz) / 8 gn (49.84-200 Hz)",
-          "detail": "f1=7 Hz 至 f2≈17.62 Hz: 加速度 A1=1 gn；f2≈17.62 Hz 至 f3≈49.84 Hz: 位移振幅 S=0.8 mm (峰-峰 1.6 mm)；f3≈49.84 Hz 至 f4=200 Hz: 加速度 A2=8 gn。(Table 3)"
+        "acceleration_peak": {
+          "value": "1 gn（7～17.62 Hz）；8 gn（49.84～200 Hz）",
+          "detail": "f1=7 Hz 至 f2≈17.62 Hz：加速度 A1=1 gn；f2≈17.62 Hz 至 f3≈49.84 Hz：位移振幅 S=0.8 mm（峰-峰 1.6 mm）；f3≈49.84 Hz 至 f4=200 Hz：加速度 A2=8 gn。"
         },
-        "sweep_duration": {
-          "value": "約 15 分鐘/循環",
-          "detail": "每次對數掃描循環 (7 Hz – 200 Hz – 7 Hz) 約 15 分鐘"
+        "amplitude": {
+          "value": "0.8 mm（峰對峰 1.6 mm，17.62～49.84 Hz）",
+          "detail": "位移振幅 0.8 mm（峰-峰值 1.6 mm）。"
         },
-        "cycle_count": {
-          "value": "每軸 12 次循環（共 36 次循環）",
+        "sweep_rate": {
+          "value": "15 分鐘/循環（對數掃頻）",
+          "detail": "每次對數掃描循環（7 Hz – 200 Hz – 7 Hz）約 15 分鐘。"
+        },
+        "test_duration": {
+          "value": "每軸 12 次循環（共 3 小時/軸，總共 36 次循環）",
           "detail": "X/Y/Z 三個互相垂直的方向各 12 次循環，總共 36 次循環。每個方向約 3 小時。其中一個方向須垂直於端子面。"
         },
-        "directions": {
+        "axes": {
           "value": "3 個互相垂直方向",
-          "detail": "三個互相垂直的安裝位置，其中之一垂直於端子面 (three mutually perpendicular mounting positions, one of the directions shall be perpendicular to the terminal face)"
+          "detail": "三個互相垂直的安裝位置，其中之一垂直於端子面（three mutually perpendicular mounting positions, one of the directions shall be perpendicular to the terminal face）。"
+        },
+        "temperature": {
+          "value": "20 ± 5 °C",
+          "detail": "在 20 ± 5 °C 環境下進行測試。"
         },
         "sample_quantity": {
           "value": "3 個電池組",
@@ -803,29 +775,33 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
-        "charging_procedure": {
-          "value": "程序一 (Procedure 1, 7.1.1)",
-          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充滿電。"
-        },
         "soc": {
-          "value": "滿充 (Fully charged per Procedure 1)",
-          "detail": "按照 7.1.1 第一程序充滿電"
+          "value": "100% 滿充電",
+          "detail": "依程序一（7.1.1）：在 20 ± 5 °C 環境下，按照 7.1.1 第一程序充滿電。原文：Fully charged per Procedure 1."
         },
         "waveform": {
-          "value": "半正弦波 (Half sine)",
-          "detail": "半正弦波衝擊 (Table 4)"
+          "value": "半正弦波",
+          "detail": "半正弦波衝擊（Table 4）。"
         },
-        "peak_acceleration": {
+        "acceleration_peak": {
           "value": "150 gn",
-          "detail": "峰值加速度 150 gn (Peak acceleration: 150 gn)"
+          "detail": "峰值加速度 150 gn。原文：Peak acceleration: 150 gn."
         },
         "pulse_duration": {
           "value": "6 ms",
-          "detail": "脈衝持續時間 6 ms (Pulse duration: 6 ms)"
+          "detail": "脈衝持續時間 6 ms。原文：Pulse duration: 6 ms."
         },
         "shock_count": {
-          "value": "18 次（3 方向 × 正反各 3 次）",
-          "detail": "在三個互相垂直安裝位置的每個方向施加 3 次衝擊，共 18 次衝擊 (subjected to three shocks in each direction of three mutually perpendicular mounting positions for a total of 18 shocks)"
+          "value": "每個方向正反各 3 次（共 18 次）",
+          "detail": "在三個互相垂直安裝位置的每個方向施加 3 次衝擊，共 18 次衝擊。原文：subjected to three shocks in each direction of three mutually perpendicular mounting positions (18 shocks total)."
+        },
+        "direction": {
+          "value": "3 個互相垂直方向",
+          "detail": "三個互相垂直安裝方向。"
+        },
+        "temperature": {
+          "value": "20 ± 5 °C",
+          "detail": "在 20 ± 5 °C 環境下進行測試。"
         },
         "sample_quantity": {
           "value": "3 個電池組",

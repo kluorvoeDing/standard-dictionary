@@ -76,7 +76,7 @@ export function checkStandardData(std, oldData, newData) {
 }
 
 // 若直接由 CLI 執行
-if (import.meta.url === url.pathToFileURL(process.argv[1]).href) {
+if (process.argv[1] && import.meta.url === url.pathToFileURL(process.argv[1]).href) {
   const args = process.argv.slice(2);
   const all = args.includes('--all');
   const fromIdx = args.indexOf('--ref');
