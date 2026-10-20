@@ -100,20 +100,20 @@
       ],
       "conditions": {
         "soc": {
-          "value": "滿充 (Fully charged)",
-          "detail": "電芯需滿充後在 25 °C ± 5 °C 環境中穩定。"
-        },
-        "ambient_temperature": {
-          "value": "25 ± 5 °C",
-          "detail": "滿充電芯儲存於環境溫度 25 °C ± 5 °C (Fully charged cells are stored in an ambient temperature of 25 °C ± 5 °C)。"
+          "value": "100% 滿充電",
+          "detail": "電芯需滿充後在 25 ± 5 °C 環境中穩定。"
         },
         "external_resistance": {
           "value": "30 ± 10 mΩ",
-          "detail": "以總外部電阻 30 mΩ ± 10 mΩ 連接正負極端子進行短路 (connecting the positive and negative terminals with a total external resistance of 30 mΩ ± 10 mΩ)。"
+          "detail": "以總外部電阻 30 ± 10 mΩ 連接正負極端子進行短路（connecting the positive and negative terminals with a total external resistance of 30 mΩ ± 10 mΩ）。"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "滿充電芯儲存於環境溫度 25 ± 5 °C（Fully charged cells are stored in an ambient temperature of 25 °C ± 5 °C）。"
         },
         "duration": {
-          "value": "6 小時或溫度下降 80%（取先到者）",
-          "detail": "電芯維持測試狀態 6 小時，或直到外殼溫度從最大溫升下降 80%，以先到者為準 (6 小時 or until the case temperature declines by 80 % of the maximum temperature rise, whichever is the sooner)。"
+          "value": "6 小時或外殼溫降 80%（取先到者）",
+          "detail": "電芯維持測試狀態 6 小時，或直到外殼溫度從最大溫升下降 80%，以先到者為準（6 小時 or until the case temperature declines by 80 % of the maximum temperature rise）。"
         },
         "sample_quantity": {
           "value": "1 個以上",
@@ -153,39 +153,27 @@
       "conditions": {
         "soc": {
           "value": "50% 額定容量",
-          "detail": "電芯或電芯組以 0.2 It A 恆流放電至額定容量的 50% (discharged at a constant current of 0.2 It A, to 50 % capacity of the rated capacity)。"
+          "detail": "電芯或電芯組以 0.2 It A 恆流放電至額定容量的 50%（discharged at a constant current of 0.2 It A, to 50 % capacity of the cell or cell block）。"
         },
         "steel_bar": {
-          "value": "Ø15.8 ± 0.1 mm, Type 316 不鏽鋼棒, ≥ 60 mm",
-          "detail": "使用直徑 15.8 mm ± 0.1 mm、長度至少 60 mm（或電芯最長尺寸，取較大值）之 Type 316 不鏽鋼棒，置於樣品中央 (A type 316 stainless steel bar with a diameter of 15.8 mm ± 0.1 mm and at least 60 mm in length or the longest dimension of the cell, whichever is greater, is placed across the centre of the cell)。"
+          "value": "直徑 15.8 ± 0.1 mm，長度 ≥ 60 mm 不鏽鋼棒",
+          "detail": "使用直徑 15.8 ± 0.1 mm、長度至少 60 mm（或電芯最長尺寸，取較大值）之 Type 316 不鏽鋼棒，置於樣品中央。平滑鋼棒搭配 9.1 ± 0.1 kg 重錘自 610 ± 25 mm 高度自由落下。"
         },
-        "drop_mass": {
-          "value": "9.1 kg 重物",
-          "detail": "9.1 kg 剛性質量 (A 9.1 kg rigid mass)。"
+        "impact_mass": {
+          "value": "9.1 kg",
+          "detail": "9.1 kg 剛性質量（A 9.1 kg rigid mass）。"
         },
         "drop_height": {
           "value": "610 ± 25 mm",
-          "detail": "從 610 mm ± 25 mm 高度垂直落下撞擊不鏽鋼棒 (dropped from a height of 610 mm ± 25 mm onto the bar placed on the sample)。"
+          "detail": "從 610 ± 25 mm 高度垂直落下撞擊不鏽鋼棒（dropped from a height of 610 mm ± 25 mm onto the bar placed on the sample）。"
         },
-        "orientation_cylindrical": {
-          "value": "縱軸平行地板，垂直於鋼棒",
-          "detail": "圓柱形電芯縱軸平行於平坦混凝土或金屬地板，垂直於 15.8 mm 直徑鋼棒 (longitudinal axis parallel to the flat concrete or metal floor and perpendicular to the longitudinal axis of the 15.8 mm diameter curved surface lying across the centre)。"
-        },
-        "orientation_prismatic": {
-          "value": "需測試寬面和窄面（旋轉 90°）",
-          "detail": "方形電芯需額外繞縱軸旋轉 90 度，使寬面和窄面均受撞擊，每次使用不同樣品 (A prismatic cell is also to be rotated 90 degrees around its longitudinal axis so that both the wide and narrow sides will be subjected to the impact. Each sample is to be subjected to only a single impact with separate samples to be used for each impact)。"
-        },
-        "pouch_cells": {
-          "value": "視為方形電芯測試",
-          "detail": "軟包電芯以方形電芯方式測試 (Pouch cells are tested as prismatic cells)。"
+        "orientation": {
+          "value": "圓柱形：縱軸平行地板垂直鋼棒；方形：寬面與窄面（旋轉 90°）；軟包：視為方形",
+          "detail": "圓柱形電芯縱軸平行於平坦混凝土或金屬地板，垂直於 15.8 mm 直徑鋼棒。方形電芯需額外繞縱軸旋轉 90 度，使寬面和窄面均受撞擊，每次使用不同樣品。軟包電芯以方形電芯方式測試。若使用金屬地板，應採取適當措施避免電芯或電芯組與地板發生外部短路。"
         },
         "impact_count": {
-          "value": "每個樣品僅 1 次撞擊",
-          "detail": "每個樣品僅承受一次撞擊，不同撞擊使用不同樣品 (Each sample is to be subjected to only a single impact with separate samples to be used for each impact)。"
-        },
-        "floor_note": {
-          "value": "金屬地板需防止外部短路",
-          "detail": "若使用金屬地板，應採取適當措施避免電芯或電芯組與地板發生外部短路 (In the case of a metal floor, external short circuit of the cell or cell block with the floor should be avoided by appropriate measures)。"
+          "value": "每個樣品 1 次",
+          "detail": "每個樣品僅承受一次撞擊，不同撞擊使用不同樣品（Each sample is to be subjected to only a single impact with separate samples used for each impact）。"
         },
         "sample_quantity": {
           "value": "1 個以上",
@@ -196,10 +184,6 @@
           "value": "依製造商指定方法充電",
           "detail": "在環境溫度 25 ± 5 °C 下，以 0.2 It A 放電至指定的終止電壓，接著依製造商指定的方法進行充電。",
           "source_reference": "7.1"
-        },
-        "apparatus": {
-          "value": "直徑 15.8 mm 鋼棒 與 9.1 kg 重錘",
-          "detail": "直徑 15.8 ± 0.1 mm 平滑鋼棒，9.1 ± 0.1 kg 重錘自 610 ± 25 mm 高度自由落下。"
         }
       },
       "acceptance_criteria": {
@@ -229,28 +213,28 @@
       ],
       "conditions": {
         "soc": {
-          "value": "滿充 (Fully charged)",
-          "detail": "每個測試單元均為滿充狀態 (Each fully charged test unit)。"
+          "value": "100% 滿充電",
+          "detail": "每個測試單元均為滿充狀態（Each fully charged test unit）。"
         },
-        "floor": {
-          "value": "平坦混凝土或金屬地板",
-          "detail": "跌落至平坦混凝土或金屬地板 (onto a flat concrete or metal floor)。金屬地板需防止外部短路。"
-        },
-        "mass_based_conditions": {
-          "value": "依質量分級（見 detail）",
+        "drop_height": {
+          "value": "質量 < 7 kg：1000 mm；7～20 kg：100 mm；20～50 kg：100 mm；50～100 kg：50 mm；≥ 100 kg：25 mm",
           "detail": "Table 2 — 跌落方法與條件：(1) 質量 < 7 kg：全跌落 (Whole drop), 1000 mm, 隨機方向, 3 次；(2) 7 kg ≤ 質量 < 20 kg：全跌落 (Whole drop), 100 mm, 底部朝下（由製造商指定）, 3 次；(3) 20 kg ≤ 質量 < 50 kg：棱角跌落 (Edge and corner drop), 100 mm, 每類撞擊 2 次；(4) 50 kg ≤ 質量 < 100 kg：棱角跌落, 50 mm, 每類撞擊 2 次；(5) 質量 ≥ 100 kg：棱角跌落, 25 mm, 每類撞擊 2 次。"
         },
-        "whole_drop_count": {
-          "value": "3 次（質量 < 20 kg）",
-          "detail": "全跌落測試 (7.2.3.2)：質量 < 7 kg 時以隨機方向跌落 3 次；7-20 kg 時以底部朝下方向跌落 3 次 (dropped three times from a height shown in Table 2)。"
+        "drop_count": {
+          "value": "質量 < 20 kg：全跌落 3 次；質量 ≥ 20 kg：棱角各 2 次",
+          "detail": "全跌落測試 (7.2.3.2)：質量 < 7 kg 時以隨機方向跌落 3 次；7～20 kg 時以底部朝下方向跌落 3 次。棱角跌落測試 (7.2.3.3)：質量 ≥ 20 kg 時執行最短邊跌落 2 次 + 角跌落 2 次，兩次撞擊在同一角和同一最短邊上。"
         },
-        "edge_corner_drop_count": {
-          "value": "棱角各 2 次（質量 ≥ 20 kg）",
-          "detail": "棱角跌落測試 (7.2.3.3)：質量 ≥ 20 kg 時執行最短邊跌落 2 次 + 角跌落 2 次，兩次撞擊在同一角和同一最短邊上 (dropped two times, the two impacts per impact type shall be on the same corner and on the same shortest edge)。"
+        "drop_surface": {
+          "value": "平坦混凝土或金屬地板（或平整水泥地面、50 mm 厚硬質木板）",
+          "detail": "跌落至平坦混凝土或金屬地板（onto a flat concrete or metal floor）。金屬地板需防止外部短路。平整堅固之水泥地面或平鋪於堅固基座上的厚度 50 mm 硬質木板。"
         },
-        "subdivision_note": {
+        "orientation": {
+          "value": "< 7 kg：隨機方向；7～20 kg：底部朝下；≥ 20 kg：同一角與最短邊",
+          "detail": "依質量級距分別以隨機方向、底部朝下或同一角與最短邊進行試驗。"
+        },
+        "applicability": {
           "value": "可測試代表性子單元",
-          "detail": "若電池系統可分為較小單元，可測試代表性子單元。製造商可為測試單元添加最終電池系統中的功能，須明確聲明測試單元 (If the battery system is divided into smaller units, the unit can be tested as the representative of the battery system)。"
+          "detail": "若電池系統可分為較小單元，可測試代表性子單元。製造商可為測試單元添加最終電池系統中的功能，須明確聲明測試單元。"
         },
         "sample_quantity": {
           "value": "1 個以上",
@@ -266,10 +250,6 @@
           "value": "靜置 1 小時以上",
           "detail": "試驗後，將試驗對象放置 1 小時以上，並進行外觀檢查。",
           "source_reference": "7.2.3.3；Annex JA"
-        },
-        "apparatus": {
-          "value": "平整水泥地面 或 50 mm 厚硬質木板",
-          "detail": "平整堅固之水泥地面或平鋪於堅固基座上的厚度 50 mm 硬質木板。"
         }
       },
       "acceptance_criteria": {
@@ -298,28 +278,28 @@
       ],
       "conditions": {
         "soc": {
-          "value": "滿充 (Fully charged)",
-          "detail": "完全充電的電芯在 25 °C ± 5 °C 環境溫度下穩定 (Each fully charged cell, stabilized in an ambient temperature of 25 °C ± 5 °C)。"
+          "value": "100% 滿充電",
+          "detail": "完全充電的電芯在 25 ± 5 °C 環境溫度下穩定（Each fully charged cell, stabilized in an ambient temperature of 25 °C ± 5 °C）。"
         },
         "initial_temperature": {
           "value": "25 ± 5 °C",
-          "detail": "環境溫度 25 °C ± 5 °C 下穩定後放入烤箱。"
+          "detail": "環境溫度 25 ± 5 °C 下穩定後放入烤箱。"
         },
         "oven_type": {
-          "value": "重力或循環空氣對流烤箱",
-          "detail": "放入重力型或循環空氣對流烤箱 (placed in a gravity or circulating air-convection oven)。"
+          "value": "自然對流或空氣循環烘箱",
+          "detail": "放入重力型或循環空氣對流烤箱（placed in a gravity or circulating air-convection oven）。"
         },
-        "ramp_rate": {
+        "heating_rate": {
           "value": "5 ± 2 °C/min",
-          "detail": "烤箱溫度以 5 °C/min ± 2 °C/min 的速率升溫 (The oven temperature is raised at a rate of 5 °C / min ± 2 °C /min)。"
+          "detail": "烤箱溫度以 5 ± 2 °C/min 的速率升溫（The oven temperature is raised at a rate of 5 °C/min ± 2 °C/min）。"
         },
         "target_temperature": {
           "value": "85 ± 5 °C",
-          "detail": "升溫至 85 °C ± 5 °C (to a temperature of 85 °C ± 5 °C)。注意：此溫度低於 IEC 62133-2 的 130 °C 目標溫度。"
+          "detail": "升溫至 85 ± 5 °C（to a temperature of 85 °C ± 5 °C）。注意：此溫度低於 IEC 62133-2 的 130 °C 目標溫度。"
         },
-        "hold_time": {
-          "value": "3 小時",
-          "detail": "電芯在此溫度下維持 3 小時後結束測試 (The cell remains at this temperature for 3 小時 before the test is discontinued)。"
+        "duration": {
+          "value": "保持 3 小時",
+          "detail": "電芯在此溫度下維持 3 小時後結束測試（The cell remains at this temperature for 3 小時 before the test is discontinued）。"
         },
         "sample_quantity": {
           "value": "1 個以上",
@@ -359,27 +339,27 @@
       "conditions": {
         "applicability": {
           "value": "僅限單一充電電壓控制/保護的電池系統",
-          "detail": "此測試僅適用於只有單一充電電壓控制或保護的電池系統。提供兩個或以上獨立充電電壓保護/控制的電池系統可豁免 (This test shall be performed for those battery systems that are provided with only a single control or protection for the charging voltage control. For those battery systems provided with two or more independent protection(s) or control(s) for the charging voltage control, this test may be waived)。"
+          "detail": "此測試僅適用於只有單一充電電壓控制或保護的電池系統。提供兩個或以上獨立充電電壓保護/控制的電池系統可豁免此測試。"
         },
         "soc": {
-          "value": "放電至終止電壓 (0.2 It A)",
-          "detail": "測試電芯先以 0.2 It A 恆流放電至製造商指定的終止電壓 (Each test cell shall be discharged at a constant current of 0.2 It A to a final voltage specified by the manufacturer)。"
+          "value": "0% SOC (放電至終止電壓)",
+          "detail": "測試電池系統先以 0.2 It A 恆流放電至製造商指定的終止電壓。"
         },
-        "ambient_temperature": {
+        "temperature": {
           "value": "25 ± 5 °C",
-          "detail": "測試在環境溫度 25 °C ± 5 °C 下進行 (The test shall be carried out in an ambient temperature of 25 °C ± 5 °C)。"
+          "detail": "測試在環境溫度 25 ± 5 °C 下進行。"
         },
         "charging_current": {
-          "value": "電池系統最大充電電流",
-          "detail": "以等於電池系統最大指定充電電流的恆流進行充電 (charged with a constant current equal to the maximum specified charging current of the battery system)。對於並聯電芯，單電芯電流 = 電池系統最大充電電流 ÷ 並聯電芯數。 若為並聯，充電電流為最大充電電流除以單電池之並聯數 (電池システム内で単電池が並列に接続されている場合の単電池の充電電流は，電池システムの最大の充電電流を単電池の並列数で除した値とした)。"
+          "value": "推薦充電器的最大電流",
+          "detail": "以推薦充電器的最大電流進行充電（charged at the maximum current of the recommended charger）。"
         },
         "charging_voltage": {
-          "value": "原充電控制失效時的最大電壓",
-          "detail": "充電直至電壓達到在原充電控制不工作條件下可能達到的最大電壓值，然後終止充電 (until the voltage reaches the maximum voltage value that is possible under the condition where the original charging control of the battery system does not work)。"
+          "value": "超過最高充電電壓上限 20%",
+          "detail": "設定充電電壓超過最高充電電壓上限 20%（若製造商無指定充電器則設定為 2.0 倍上限充電電壓）。供電電壓足以維持最大電流。"
         },
         "termination": {
-          "value": "溫度穩定（30 分鐘內 < 10 °C 變化）或恢復至環境溫度",
-          "detail": "測試持續至電芯表面溫度達穩態條件（30 分鐘內變化小於 10 °C）或恢復至環境溫度 (until the temperature of the cell surface reaches steady state conditions (less than 10 °C change in a 30-min period) or returns to ambient temperature)。"
+          "value": "直到保護電路動作終止充電；或溫度達穩態（30 分鐘變化 < 10 °C）",
+          "detail": "測試持續直到保護裝置中斷充電，或直到外殼溫度達到穩定狀態（30 分鐘內溫度變化小於 10 °C）且已完全放電/充電停止。"
         },
         "sample_quantity": {
           "value": "1 個以上",
@@ -422,32 +402,24 @@
       ],
       "conditions": {
         "soc": {
-          "value": "放電至終止電壓 (0.2 It A)",
-          "detail": "單電池以 0.2 It A 的定電流放電至製造商指定的放電終止電壓 (単電池は，0.2 It Aの定電流で製造業者が指定する放電終止電圧まで放電する)。"
+          "value": "0% SOC (放電至終止電壓)",
+          "detail": "電芯先以 0.2 It A 恆流放電至製造商指定的終止放電電壓。"
         },
-        "ambient_temperature": {
+        "temperature": {
           "value": "25 ± 5 °C",
-          "detail": "試驗在 25±5 °C 的周圍溫度下進行 (試験は25±5 °Cの周囲温度下で行う)。"
+          "detail": "測試在環境溫度 25 ± 5 °C 下進行。"
         },
         "forced_discharge_current": {
           "value": "1.0 It A",
-          "detail": "已放電電芯以 1.0 It A 恆流進行強制放電 (A discharged cell is subjected to a forced discharge at a constant current of 1.0 It A)。若電芯最大放電電流 < 1.0 It A，則按公式調整：t = (1 It / Im) × 90 分鐘（Im = 最大放電電流）。"
+          "detail": "以 1 It A（1.0 It A）恆流進行強制放電（subjected to a forced discharge at 1 It A）。"
+        },
+        "target_voltage": {
+          "value": "具雙重保護：-Uup；單一或無保護：-(n-1) × Uup",
+          "detail": "情況 1（提供兩組獨立保護）：強制放電至上限充電電壓的負值 (-Uup)。情況 2（單一保護或無保護）：強制放電至 -(n-1) × Uup（n 為串聯電芯數）。若達到目標電壓，降低電流以維持該電壓至 90 分鐘測試結束。"
         },
         "duration": {
           "value": "90 分鐘",
-          "detail": "強制放電持續 90 分鐘 (for a test period of 90 分鐘)。測試結束後進行目視檢查。"
-        },
-        "target_voltage_case_1": {
-          "value": "-(上限充電電壓)",
-          "detail": "情況一：電池系統具備兩個或以上獨立放電電壓保護/控制，或電池系統僅有單個電芯或電芯組時，目標電壓 = 負的電芯上限充電電壓 (Target voltage is minus the value of the upper limit charging voltage of the cell)。"
-        },
-        "target_voltage_case_2": {
-          "value": "-(n-1) × 上限充電電壓",
-          "detail": "情況二：電池系統僅有單一或無放電電壓保護/控制時，目標電壓 = -(n-1) × 電芯上限充電電壓，其中 n 為串聯電芯數 (Target voltage is minus the value of (n−1) multiplied by the upper limit charging voltage of the cell, where n is the number of cells connected in series)。"
-        },
-        "voltage_hold": {
-          "value": "達目標電壓後降低電流維持至測試結束",
-          "detail": "若放電電壓在測試期間達到目標電壓，應通過降低電流將電壓維持在目標電壓，直到測試期結束 (If the voltage in discharge reaches the target voltage, the voltage shall be kept at the target voltage by reducing the current for the remaining test period)。"
+          "detail": "測試持續 90 分鐘。"
         },
         "sample_quantity": {
           "value": "1 個以上",
@@ -486,47 +458,35 @@
       "conditions": {
         "applicability": {
           "value": "圓柱形及方形電芯（設計評估）",
-          "detail": "針對圓柱形電芯和方形電芯的強制內部短路測試。設計評估性質，由電芯製造商或第三方實驗室執行 (An evaluation of a newly designed cell shall be conducted by the cell manufacturer or a third-party test house)。"
+          "detail": "針對圓柱形電芯和方形電芯的強制內部短路測試。設計評估性質，由電芯製造商或第三方實驗室執行。"
         },
         "charging_procedure": {
-          "value": "放電 (0.2 It A) → CC-CV 充電至 0.05 It A",
-          "detail": "先以 0.2 It A 恆流放電至指定終止電壓。然後以上限充電電壓及製造商指定電流進行恆流-恆壓 (CC-CV) 充電，直到充電電流降至 0.05 It A (Prior to charging, the cell shall be discharged at a constant current of 0.2 It A, down to a specified final voltage. Then, the cell shall be charged at the upper limited charging voltage at the constant current specified by the manufacturer, continue charging at constant voltage at upper limited charge current drops to 0.05 It A)。"
+          "value": "0.2 It A 放電 → CC-CV 充電至 0.05 It A",
+          "detail": "先以 0.2 It A 恆流放電至指定終止電壓。然後以上限充電電壓及製造商指定電流進行恆流-恆壓 (CC-CV) 充電，直到充電電流降至 0.05 It A。"
         },
-        "ambient_temperature": {
+        "temperature": {
           "value": "25 ± 5 °C",
-          "detail": "所有測試在環境溫度 25 °C ± 5 °C 下進行。鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘。"
+          "detail": "所有測試在環境溫度 25 ± 5 °C 下進行。鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘。"
         },
-        "nickel_particle": {
-          "value": "鎳片刺入捲芯模擬內部短路",
-          "detail": "參照 IEC 62133-2:2017 附錄 A.5 及 A.6 的樣品準備指南。將鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘。取出後 10 分鐘內完成安裝 (Refer to the sample preparation guidance in Clause A.5 and Clause A.6 of IEC 62133-2:2017)。"
-        },
-        "press_speed": {
+        "crush_speed": {
           "value": "0.1 mm/s",
-          "detail": "壓裝具以 0.1 mm/s 的速度下壓，同時監測電芯電壓 (The fixture is moved down at a speed of 0.1 mm/s monitoring the cell voltage)。"
+          "detail": "壓裝具以 0.1 mm/s 的速度下壓，同時監測電芯電壓。"
         },
-        "pressing_jig": {
-          "value": "10 mm × 10 mm 不鏽鋼軸 + 丁腈橡膠/壓克力樹脂",
-          "detail": "壓裝具底面為丁腈橡膠 (nitrile rubber)，置於 10 mm × 10 mm 不鏽鋼軸上。圓柱形使用丁腈橡膠底面；方形電芯另加 5 mm × 5 mm（2 mm 厚）壓克力樹脂 (acrylic resin)。"
+        "force_limit": {
+          "value": "圓柱形 800 N；方形 400 N",
+          "detail": "圓柱形電芯若壓力達到 800 N 仍未發生 50 mV 電壓降，立即停止下壓；方形電芯最大壓力為 400 N。對於堆疊式或折疊式電極方形電芯，鎳顆粒應插入最外側正負電極對的中心位置。"
         },
         "short_circuit_detection": {
           "value": "電壓降 > 50 mV",
-          "detail": "以大於每秒 100 次的速率監測電壓。若電壓相對初始電壓下降超過 50 mV，即判定發生內部短路 (If the voltage drops more than 50 mV compared the initial voltage, an internal short-circuit has been determined to have occurred)。也可使用低於 50 mV 的閾值，但需使用足夠精度的高精度電壓計並確認短路位置。"
+          "detail": "以大於每秒 100 次的速率監測電壓。若電壓相對初始電壓下降超過 50 mV，即判定發生內部短路。也可使用低於 50 mV 的閾值，但需使用足夠精度的高精度電壓計並確認短路位置。"
         },
-        "stop_criteria_voltage": {
+        "hold_after_short": {
           "value": "偵測到電壓降 > 50 mV 時立即停止，保持 30 秒",
-          "detail": "偵測到內部短路時立即停止下壓，保持壓裝具位置 30 秒後釋放壓力 (stop the descent immediately and keep the pressing jig in the position for 30 秒, and then release the pressure)。"
+          "detail": "偵測到內部短路時立即停止下壓，保持壓裝具位置 30 秒後釋放壓力。"
         },
-        "stop_criteria_force_cylindrical": {
-          "value": "800 N",
-          "detail": "若壓力達到 800 N 仍未發生 50 mV 電壓降，立即停止下壓（圓柱形電芯）(If the force of the press reaches 800 N for a cylindrical cell before the 50 mV voltage drop, stop the descent immediately)。"
-        },
-        "stop_criteria_force_prismatic": {
-          "value": "400 N",
-          "detail": "若壓力達到 400 N 仍未發生 50 mV 電壓降，立即停止下壓（方形電芯）(400 N for a prismatic cell)。對於堆疊式或折疊式電極方形電芯，鎳顆粒應插入最外側正負電極對的中心位置，最大壓力為 400 N。"
-        },
-        "voltage_monitoring_rate": {
-          "value": "> 100 次/秒",
-          "detail": "電壓監測速率大於每秒 100 次 (The voltage is monitored at a rate of more than 100 times per second)。"
+        "apparatus": {
+          "value": "10 mm × 10 mm 不鏽鋼軸 + 丁腈橡膠/壓克力樹脂，搭配微型小鎳片",
+          "detail": "參照 IEC 62133-2:2017 附錄 A.5 及 A.6 的樣品準備指南。將鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘。取出後 10 分鐘內完成安裝。壓裝具底面為丁腈橡膠，置於 10 mm × 10 mm 不鏽鋼軸上。圓柱形使用丁腈橡膠底面；方形電芯另加 5 mm × 5 mm（2 mm 厚）壓克力樹脂。高 0.2 mm、寬 0.1 mm、每邊長 1.0 mm 之微型 L 型小鎳片，搭配直徑 10 mm 壓頭加壓治具。"
         },
         "sample_quantity": {
           "value": "依 JIS C 8712:2015",
@@ -537,10 +497,6 @@
           "value": "依製造商指定方法充電",
           "detail": "在環境溫度 25 ± 5 °C 下，以 0.2 It A 放電至指定的終止電壓，接著依製造商指定的方法進行充電。",
           "source_reference": "7.1"
-        },
-        "apparatus": {
-          "value": "直徑 10 mm 壓頭 與 微型小鎳片",
-          "detail": "高 0.2 mm、寬 0.1 mm、每邊長 1.0 mm 之微型 L 型小鎳片，搭配直徑 10 mm 壓頭加壓治具。"
         }
       },
       "acceptance_criteria": {
@@ -572,24 +528,24 @@
       ],
       "conditions": {
         "soc": {
-          "value": "滿充 (Fully charged)",
-          "detail": "電池系統滿充後在 25 °C ± 5 °C 環境中等待電芯穩定 (The battery system is fully charged and then left until the cells stabilize in an ambient temperature of 25 °C ± 5 °C)。"
+          "value": "100% 滿充電",
+          "detail": "電池系統依製造商規定方法完全充電。"
         },
-        "ambient_temperature": {
+        "temperature": {
           "value": "25 ± 5 °C",
-          "detail": "環境溫度 25 °C ± 5 °C。"
+          "detail": "測試在環境溫度 25 ± 5 °C 下進行。"
         },
-        "trigger_method": {
-          "value": "雷射或其他方式誘發單電芯熱失控",
-          "detail": "電池系統中一個目標電芯 (target cell) 例如以雷射加熱直至進入熱失控 (One cell in the battery system (hereafter target cell) is e.g. heated by laser until the cell enters into thermal runaway)。亦允許使用雷射以外的其他方法，見附錄 B（雷射範例）及附錄 C（其他方法）。"
+        "trigger": {
+          "value": "加熱、針刺、過充或雷射照射等（製造商選定最能引發熱失控之方法）",
+          "detail": "熱失控可透過多種方法觸發，包括但不限於：電芯內部或外部加熱、針刺、過充、外部短路、雷射照射等。製造商應選擇最能可靠引發熱失控的方法並提供理由。"
         },
-        "trigger_off": {
-          "value": "目標電芯熱失控後關閉觸發源",
-          "detail": "目標電芯發生熱失控後，關閉觸發源 (After thermal runaway in the cell is initiated, the triggering source is turned off)。"
+        "termination_for_trigger": {
+          "value": "熱失控觸發後立即停止",
+          "detail": "一旦目標電芯發生熱失控（如溫度急劇上升、電壓突降、冒煙或排氣），觸發源（如加熱器或充電電源）應立即關閉或停止。"
         },
-        "modification_note": {
-          "value": "可最小化修改電池系統以利測試",
-          "detail": "可對電池系統進行修改以利目標電芯熱失控，但修改應最小化且不影響電池系統的熱特性 (The battery system may be modified to facilitate the thermal runaway of the target cell. The modification should be minimized and it shall not affect the thermal properties of the battery system)。"
+        "flame_indicator": {
+          "value": "為引入觸發源可進行最小必要修改",
+          "detail": "為將觸發設備（如加熱器、熱電偶、針刺機構）引入電池系統內部，允許對樣品進行最小限度的必要修改，但不得影響系統的熱擴展防護特性。"
         },
         "sample_quantity": {
           "value": "1 個以上",
@@ -633,36 +589,32 @@
       ],
       "conditions": {
         "soc": {
-          "value": "放電至終止電壓 (0.2 It A)",
+          "value": "0% SOC (放電至終止電壓)",
           "detail": "電池系統以 0.2 It A 的定電流放電至單電池製造商指定的放電終止電壓 (0.2 It Aの定電流で，単電池の製造業者が指定する放電終止電圧まで放電する)。"
         },
-        "ambient_temperature": {
+        "temperature": {
           "value": "25 ± 5 °C",
-          "detail": "測試在環境溫度 25 °C ± 5 °C 下進行。"
-        },
-        "operating_conditions": {
-          "value": "正常操作條件，冷卻系統運作",
-          "detail": "在正常操作條件下進行，冷卻系統（若有）須運作。主接觸器閉合，電池系統由 BMS 控制 (under normal operating conditions with the cooling system (if any) operating, main contactors are closed with the battery system controlled by the BMS)。"
+          "detail": "測試在環境溫度 25 ± 5 °C 下進行。"
         },
         "charging_current": {
           "value": "推薦充電器的最大電流",
-          "detail": "以推薦充電器的最大電流進行充電 (charged at the maximum current of the recommended charger)。"
+          "detail": "以推薦充電器的最大電流進行充電（charged at the maximum current of the recommended charger）。"
         },
-        "excess_voltage": {
+        "charging_voltage": {
           "value": "每電芯上限充電電壓 + 10%",
-          "detail": "設定電壓超過每個電芯上限充電電壓 10% (with set voltage exceeding the upper limit charging voltage by 10 % for each cell in the battery system)。可使用附加充電器施加過量電壓；也可僅對電池系統中部分電芯施加。"
+          "detail": "設定電壓超過每個電芯上限充電電壓 10%（with set voltage exceeding the upper limit charging voltage by 10 % for each cell）。"
+        },
+        "operating_conditions": {
+          "value": "正常操作條件，冷卻系統運作；充電停止後監測 1 小時",
+          "detail": "在正常操作條件下進行，冷卻系統（若有）須運作。主接觸器閉合，電池系統由 BMS 控制。數據擷取/監測在充電停止後繼續 1 小時。"
         },
         "termination": {
-          "value": "直到 BMS 終止充電",
-          "detail": "測試持續至 BMS 終止充電 (The test shall be carried out until the BMS terminates the charging)。數據擷取/監測在充電停止後繼續 1 小時。"
+          "value": "直到 BMS 終止充電（失效備援：電芯電壓達 103% 上限或超過上限 1 分鐘後停止）",
+          "detail": "測試持續至 BMS 終止充電。若 BMS 未能終止充電，應在適當時機出於安全原因停止測試，例如電芯電壓達到上限充電電壓的 103% 或超過上限充電電壓 1 分鐘後。"
         },
         "post_test_monitoring": {
           "value": "BMS 終止充電後 1 小時",
           "detail": "數據擷取/監測在充電停止後繼續 1 小時 (Data acquisition/monitoring shall be continued for 1 小時 after charging is stopped)。"
-        },
-        "safety_stop": {
-          "value": "BMS 失效時：電芯電壓達 103% 上限或超過上限 1 分鐘後停止",
-          "detail": "若 BMS 未能終止充電，應在適當時機出於安全原因停止測試，例如電芯電壓達到上限充電電壓的 103% 或超過上限充電電壓 1 分鐘後 (If the BMS fails to terminate the charging, the test should be stopped at the proper timing for safety reasons, for example when the cell voltage reaches 103 % of the upper limit charging voltage or 1 分鐘 after having exceeded the upper limit charging voltage)。"
         },
         "sample_quantity": {
           "value": "1 個以上",
@@ -705,29 +657,25 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
+        "current": {
+          "value": "充電：最大充電電流 + 20%",
+          "detail": "以超過最大充電電流 20% 的電流進行充電（charged at a current exceeding the maximum charging current by 20 %）。"
+        },
         "soc": {
-          "value": "放電至終止電壓 (0.2 It A)",
+          "value": "0% SOC (放電至終止電壓)",
           "detail": "測試電池系統先以 0.2 It A 恆流放電至製造商指定的終止電壓。"
         },
-        "ambient_temperature": {
+        "temperature": {
           "value": "25 ± 5 °C",
-          "detail": "測試在環境溫度 25 °C ± 5 °C 下進行。"
+          "detail": "測試在環境溫度 25 ± 5 °C 下進行。"
         },
         "operating_conditions": {
-          "value": "正常操作條件，冷卻系統運作",
-          "detail": "在正常操作條件下進行，冷卻系統（若有）須運作。主接觸器閉合，電池系統由 BMS 控制 (under normal operating conditions with the cooling system (if any) operating, main contactors closed with the battery system being controlled by the BMS)。"
-        },
-        "charging_current": {
-          "value": "最大充電電流 + 20%",
-          "detail": "以超過最大充電電流 20% 的電流進行充電 (charged at a current exceeding the maximum charging current by 20 %)。"
+          "value": "正常操作條件，冷卻系統運作，所有 BMS 功能完全運作",
+          "detail": "在正常操作條件下進行，冷卻系統（若有）須運作。主接觸器閉合，電池系統由 BMS 控制。測試期間電池系統的所有功能須按設計完全運作。數據擷取和/或監測在充電停止後繼續 1 小時。"
         },
         "post_test_monitoring": {
           "value": "充電停止後 1 小時",
           "detail": "數據擷取和/或監測在充電停止後繼續 1 小時 (Data acquisition and/or monitoring shall be continued for 1 小時 after charging is stopped)。"
-        },
-        "full_operation": {
-          "value": "所有 BMS 功能須完全運作",
-          "detail": "測試期間電池系統的所有功能須按設計完全運作 (During the test, all functions of the battery system shall be fully operational as designed)。"
         },
         "sample_quantity": {
           "value": "1 個以上",
@@ -772,24 +720,16 @@
       ],
       "conditions": {
         "soc": {
-          "value": "放電至終止電壓 (0.2 It A)，充電至 50% 額定容量",
-          "detail": "測試電池系統先以 0.2 It A 恆流放電至製造商指定的終止電壓，然後以推薦電流充電至額定容量的 50% (Each test battery system shall be discharged at a constant current of 0.2 It A, to a final voltage specified by the manufacturer. Sample battery systems shall then be charged at the recommended current to a 50 % capacity of the rated capacity)。"
+          "value": "50% 額定容量 (先完放再充電至 50%)",
+          "detail": "測試電池系統先以 0.2 It A 恆流放電至製造商指定的終止電壓，然後以推薦電流充電至額定容量的 50%。"
         },
         "initial_temperature": {
           "value": "25 ± 5 °C",
-          "detail": "初始環境溫度 25 °C ± 5 °C (at an initial ambient temperature of 25 °C ± 5 °C)。"
+          "detail": "初始環境溫度 25 ± 5 °C。"
         },
-        "operating_conditions": {
-          "value": "正常操作條件，但冷卻系統斷開",
-          "detail": "在正常操作條件下進行，主接觸器閉合由 BMS 控制，但冷卻系統（若有）須斷開 (under normal operating conditions with the exception that the cooling system, if provided, shall be disconnected)。"
-        },
-        "temperature_elevation": {
+        "target_temperature": {
           "value": "最高操作溫度 + 5 °C",
-          "detail": "電池系統溫度升高至超過最高操作溫度 5 °C (The temperature of the battery system shall be increased to 5 °C above the maximum operating temperature)。"
-        },
-        "charging_continuation": {
-          "value": "在升高溫度下繼續充電至 BMS 終止",
-          "detail": "在升高溫度下繼續充電，直到 BMS 終止充電 (The charging is continued at the elevated temperature until the BMS terminates the charging)。"
+          "detail": "電池系統溫度升高至超過最高操作溫度 5 °C。在升高溫度下繼續充電，直到 BMS 終止充電。數據擷取/監測在序列停止後繼續 1 小時。在正常操作條件下進行，主接觸器閉合由 BMS 控制，但冷卻系統（若有）須斷開。"
         },
         "post_test_monitoring": {
           "value": "BMS 終止充電後 1 小時",
