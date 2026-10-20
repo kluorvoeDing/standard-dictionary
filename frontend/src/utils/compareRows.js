@@ -36,7 +36,7 @@ export function buildGroupRows(columns) {
   columns.forEach((col, ci) => {
     col.records.forEach(rec => {
       Object.entries(rec.conditions || {}).forEach(([rawKey, raw]) => {
-        const { value, detail } = splitConditionValue(raw);
+        const { value, detail, source_reference } = splitConditionValue(raw);
         if (!value && !detail) return;
         const key = canonicalKey(rawKey);
         if (!rows.has(key)) rows.set(key, { key, ...getParameterMeta(key), cells: columns.map(() => []) });
@@ -44,8 +44,9 @@ export function buildGroupRows(columns) {
           clause: rec.section,
           value: value || detail,
           detail: value ? detail : '',
+          source_reference,
           // Checked against the source text (see scripts/audit_enrichment.mjs).
-          checked: Boolean(raw && raw.source_reference),
+          checked: Boolean(source_reference),
         });
       });
     });
@@ -68,10 +69,17 @@ export function buildGroupRows(columns) {
 
   const technical = withState.filter(r => r.category !== 'procedure');
   const procedure = withState.filter(r => r.category === 'procedure');
-  const criteria = columns.map(col => col.records.map(rec => ({
-    clause: rec.section,
-    summary: toText(rec.acceptance_criteria?.summary),
-  })).filter(e => e.summary));
+  const criteria = columns.map(col => col.records.map(rec => {
+    const summary = toText(rec.acceptance_criteria?.summary);
+    const details = Array.isArray(rec.acceptance_criteria?.details)
+      ? rec.acceptance_criteria.details.map(toText).filter(Boolean)
+      : [];
+    return {
+      clause: rec.section,
+      summary,
+      details,
+    };
+  }).filter(e => e.summary));
 
   return {
     technical,

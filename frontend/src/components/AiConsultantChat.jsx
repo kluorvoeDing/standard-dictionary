@@ -166,13 +166,14 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
       });
 
       if (!response.ok) {
-        let errMsg = `伺服器錯誤: ${response.status} ${response.statusText}`;
+        let errMsg = `HTTP ${response.status}`;
         try {
           const errData = await response.json();
-          if (errData.details) {
-            errMsg += `\n詳細資訊: ${JSON.stringify(errData.details)}`;
-          } else if (errData.error) {
-            errMsg += `\n${errData.error}`;
+          if (errData.error) {
+            errMsg = errData.error;
+          }
+          if (errData.details?.error?.message) {
+            errMsg += `\n（${errData.details.error.message}）`;
           }
         } catch (e) {
           // Ignore
@@ -228,9 +229,9 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
       }
     } catch (err) {
       if (err.message.includes('504')) {
-        updateLastMessage(aiResponseText ? (aiResponseText + `\n\n*(連線中斷：處理超時，僅列出部分結果)*`) : `【連線異常】伺服器處理超時 (504)，請嘗試減少勾選的標準數量再試一次。`);
+        updateLastMessage(aiResponseText ? (aiResponseText + `\n\n*(連線中斷：處理超時，僅列出部分結果)*`) : `連線異常：伺服器處理超時 (504)，請嘗試減少勾選的標準數量再試一次。`);
       } else {
-        updateLastMessage(`【連線異常】無法取得回覆：${err.message}`);
+        updateLastMessage(`無法取得回覆：${err.message}`);
       }
     }
 

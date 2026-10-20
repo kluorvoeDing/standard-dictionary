@@ -72,6 +72,27 @@
   - 完成 `ELEC-SC-INT`、`MECH-CRUSH`、`MECH-DROP` 三組樣板改寫（`IEC62133-2`、`IEC62619`、`GB31241`、`UL1642`、`UN38.3`、`GB38031`、`IEC62660-3`），通過 `check_numbers.mjs --all` 0 遺失、`npm run validate` 0 錯誤 0 警告。
 - 後續：待使用者確認 D1 盤查結果與 D2 三組樣板截圖方向後，啟動 D3 擴展至全部 24 組測試與全庫標準。
 
+## 2026-10-21 (UI - 工作 E：比對表懸浮提示改為點擊彈窗)
+- 事件：將 `ComparisonGroup.jsx` 中原本依賴 HTML `title` 屬性的補充說明（參數 `detail`、判定要求 `summary`）改為可點擊的窄版彈窗（`.modal-panel--sm`），並移除差異列多餘的 `title` 提示。
+- 背景：原生 `title` 提示框無法調整樣式、需要滑鼠懸停延遲才會出現，且在手機與平板上完全無法查看。
+- 內容：
+  - `ComparisonGroup.jsx`：有 `detail` 或 `source_reference` 的參數格，以及判定要求格，改為 `<button class="cmp-entry cmp-entry--more">`，文字旁加上 `ⓘ` 記號，hover 時顯示虛線底線與強調色。
+  - 點擊後開啟窄版彈窗 `.modal-panel--sm`（沿用 `.modal-backdrop`／`.modal-panel`），依序顯示：標準代號與條款（§）、參數中文名、`value`、`detail`、以及 `source_reference`（出處）。
+  - 無障礙與鍵盤互動：彈窗具 `role="dialog"`、`aria-modal="true"`、`aria-labelledby`，開啟時焦點移至彈窗，按 Esc 或點擊背景關閉後焦點回到原觸發按鈕。
+  - 盤點全站 `title=` 屬性：其餘皆為按鈕用途說明或同內容截斷提示，無其他「只靠 title 才看得到隱藏內容」之處。
+- 影響：`npm run lint:ui` 與前端建置通過；桌機（1440px）與手機（390px）之淺色／深色模式皆經 Playwright 截圖驗收。
+- 後續：已合併至 main。
+
+## 2026-10-21 (Fix - 工作 C：AI 小幫手限流器 fail-open 與環境變數模型設定)
+- 事件：修復 `/api/chat` 因 Upstash Redis 異常導致整條 API 回傳 500 `internal error` 的問題，並將 Gemini 模型名稱改為環境變數可配置。
+- 背景：Vercel runtime logs 顯示 `/api/chat` 在 `await ratelimit.limit(ip)` 拋出未捕捉例外，導致尚未呼叫 Gemini 即中斷服務。
+- 內容：
+  - `api/chat.js`：`ratelimit.limit(ip)` 包入 `try/catch` 並加上 `Promise.race` 1.5 秒逾時；若 Upstash 連線失敗或逾時，記錄 `console.error('ratelimit unavailable', err)` 後自動放行（fail-open），不阻斷問答服務。
+  - 新增 `GEMINI_MODEL_PRIMARY`（預設 `gemini-3.5-flash`）與 `GEMINI_MODEL_BACKUP`（預設 `gemini-3.1-flash-lite`）環境變數支援，並更新 `.env.example`（僅列變數名）。
+  - 強化錯誤日誌與中文錯誤提示：記錄引擎名稱與 HTTP 狀態碼，針對 404（模型不存在或已停用）與 429（額度達上限）回傳明確的繁體中文說明；前端 `AiConsultantChat.jsx` 直接呈現清楚的中文錯誤訊息並移除 `【】` 括號。
+- 影響：`npm run lint:ui` 與前端建置通過；Upstash 故障或憑證失效時不再阻斷 AI 小幫手。
+- 後續：已合併至 main。
+
 ## 2026-09-26 (Data - 試驗程序欄位核對第三批：9 份國際與各國標準)
 - 事件：工作 A 第三批完成。IEC62133-2、IEC62619、JISC8715-2、JISC8714、UN38.3、SAND2017、AIS-038、AIS-156、IEC62660-3 等 9 份標準之樣品數量／前置處理／觀察期（共 91 項測試、298 筆欄位）逐項對照原文核對與改寫，重複欄位全數清除。
 - 背景：Phase 2 補強值多為樣板句（如「每項 5 顆」、「滿充電」、「觀察 1 小時」），且存在 `sample_size`、`observation`、`rest_time`、`observation_time` 等重複欄位。
