@@ -11,7 +11,8 @@ const MAX_MESSAGES = 40;       // 最多對話輪數
 const MAX_TEXT_LEN = 8000;     // 單則訊息字數上限
 const ID_RE = /^[A-Za-z0-9._-]+$/;
 
-// ── 限流器（Upstash 未設定時自動停用，不阻斷服務）─────────
+// ── 限流器（Upstash 未設定、連線失敗或逾時時皆放行 fail-open，不阻斷服務）─────────
+const RATELIMIT_TIMEOUT_MS = 1500;
 let ratelimit = null;
 if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) {
   ratelimit = new Ratelimit({
@@ -38,13 +39,22 @@ export default async function handler(req) {
     return json({ error: 'Forbidden origin' }, 403);
   }
 
-  // ① 速率限制（每 IP）
+  // ② 速率限制（每 IP；Redis 出錯或超過 1.5 秒逾時則 fail-open 放行）
   if (ratelimit) {
     const ip = (req.headers.get('x-forwarded-for') || '').split(',')[0].trim() || 'anonymous';
-    const { success, reset } = await ratelimit.limit(ip);
-    if (!success) {
-      const retry = Math.max(1, Math.ceil((reset - Date.now()) / 1000));
-      return json({ error: `請求過於頻繁，請於 ${retry} 秒後再試。` }, 429, { 'Retry-After': String(retry) });
+    try {
+      const { success, reset } = await Promise.race([
+        ratelimit.limit(ip),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error(`ratelimit timeout (${RATELIMIT_TIMEOUT_MS}ms)`)), RATELIMIT_TIMEOUT_MS)
+        ),
+      ]);
+      if (!success) {
+        const retry = Math.max(1, Math.ceil((reset - Date.now()) / 1000));
+        return json({ error: `請求過於頻繁，請於 ${retry} 秒後再試。` }, 429, { 'Retry-After': String(retry) });
+      }
+    } catch (err) {
+      console.error('ratelimit unavailable', err);
     }
   }
 
@@ -194,21 +204,24 @@ ${JSON.stringify(contextData)}
     ...cleanMessages.map((m) => ({ role: m.role, parts: [{ text: m.text }] })),
   ];
 
-  // ── 引擎與 fallback（沿用原本的雙金鑰機制）───────────────
+  // ── 引擎與 fallback（沿用原本的雙金鑰機制，模型名稱可由環境變數覆寫）───────
+  const primaryModel = process.env.GEMINI_MODEL_PRIMARY || 'gemini-3.5-flash';
+  const backupModel = process.env.GEMINI_MODEL_BACKUP || 'gemini-3.1-flash-lite';
   const engines = [];
   if (process.env.GEMINI_API_KEY_1) {
-    engines.push({ name: 'Gemini 3.5 Flash Primary', model: 'gemini-3.5-flash', key: process.env.GEMINI_API_KEY_1 });
+    engines.push({ name: `Gemini Primary (${primaryModel})`, model: primaryModel, key: process.env.GEMINI_API_KEY_1 });
   }
   if (process.env.GEMINI_API_KEY_2) {
-    engines.push({ name: 'Gemini Flash-Lite Backup', model: 'gemini-3.1-flash-lite', key: process.env.GEMINI_API_KEY_2 });
+    engines.push({ name: `Gemini Backup (${backupModel})`, model: backupModel, key: process.env.GEMINI_API_KEY_2 });
   }
   if (engines.length === 0) {
-    return json({ error: 'No API keys configured on server' }, 500);
+    return json({ error: '伺服器尚未設定 Gemini API 金鑰。' }, 500);
   }
 
   let finalRes = null;
   let usedEngineIndex = 0;
   let lastErrorData = null;
+  let lastStatus = 500;
 
   for (let i = 0; i < engines.length; i++) {
     const engine = engines[i];
@@ -220,24 +233,36 @@ ${JSON.stringify(contextData)}
         body: JSON.stringify({ contents }),
       });
 
-      if (finalRes.status === 429) { console.warn(`${engine.name} rate limited. Trying next...`); continue; }
+      if (finalRes.status === 429) {
+        lastStatus = 429;
+        console.error(`${engine.name} returned HTTP 429 (rate limited). Trying next...`);
+        continue;
+      }
       if (!finalRes.ok) {
+        lastStatus = finalRes.status;
         try { lastErrorData = await finalRes.json(); } catch { lastErrorData = { message: finalRes.statusText }; }
-        console.warn(`${engine.name} returned ${finalRes.status}. Trying next...`);
+        console.error(`${engine.name} returned HTTP ${finalRes.status}:`, lastErrorData);
         continue;
       }
       usedEngineIndex = i;
       break;
     } catch (e) {
-      console.warn(`${engine.name} fetch failed:`, e.message);
+      console.error(`${engine.name} fetch failed:`, e.message);
       continue;
     }
   }
 
   if (!finalRes || !finalRes.ok) {
+    const status = finalRes ? finalRes.status : lastStatus;
+    let errorMsg = '所有 AI 引擎目前皆無法回應，請稍後再試。';
+    if (status === 404) {
+      errorMsg = '指定的 AI 模型不存在或已停用（HTTP 404），請檢查伺服器環境變數 GEMINI_MODEL_PRIMARY / GEMINI_MODEL_BACKUP 設定。';
+    } else if (status === 429) {
+      errorMsg = 'AI 服務請求額度已達上限（HTTP 429），請稍候片刻再試。';
+    }
     return json(
-      { error: '所有 API 引擎均失敗或達上限 (All API engines failed or rate limited).', details: lastErrorData },
-      finalRes ? finalRes.status : 500
+      { error: errorMsg, details: lastErrorData },
+      status
     );
   }
 

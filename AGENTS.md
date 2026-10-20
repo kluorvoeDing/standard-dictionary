@@ -61,6 +61,16 @@
 >
 > CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/` 不得出現 emoji，並確認前端能建置。
 
+## 2026-10-21 (Fix - 工作 C：AI 小幫手限流器 fail-open 與環境變數模型設定)
+- 事件：修復 `/api/chat` 因 Upstash Redis 異常導致整條 API 回傳 500 `internal error` 的問題，並將 Gemini 模型名稱改為環境變數可配置。
+- 背景：Vercel runtime logs 顯示 `/api/chat` 在 `await ratelimit.limit(ip)` 拋出未捕捉例外，導致尚未呼叫 Gemini 即中斷服務。
+- 內容：
+  - `api/chat.js`：`ratelimit.limit(ip)` 包入 `try/catch` 並加上 `Promise.race` 1.5 秒逾時；若 Upstash 連線失敗或逾時，記錄 `console.error('ratelimit unavailable', err)` 後自動放行（fail-open），不阻斷問答服務。
+  - 新增 `GEMINI_MODEL_PRIMARY`（預設 `gemini-3.5-flash`）與 `GEMINI_MODEL_BACKUP`（預設 `gemini-3.1-flash-lite`）環境變數支援，並更新 `.env.example`（僅列變數名）。
+  - 強化錯誤日誌與中文錯誤提示：記錄引擎名稱與 HTTP 狀態碼，針對 404（模型不存在或已停用）與 429（額度達上限）回傳明確的繁體中文說明；前端 `AiConsultantChat.jsx` 直接呈現清楚的中文錯誤訊息並移除 `【】` 括號。
+- 影響：`npm run lint:ui` 與前端建置通過；Upstash 故障或憑證失效時不再阻斷 AI 小幫手。
+- 後續：請使用者確認 Upstash 主控台狀態與 Gemini 可用模型清單，核准後合併 `fix/chat-ratelimit`。
+
 ## 2026-09-26 (Data - 試驗程序欄位核對第三批：9 份國際與各國標準)
 - 事件：工作 A 第三批完成。IEC62133-2、IEC62619、JISC8715-2、JISC8714、UN38.3、SAND2017、AIS-038、AIS-156、IEC62660-3 等 9 份標準之樣品數量／前置處理／觀察期（共 91 項測試、298 筆欄位）逐項對照原文核對與改寫，重複欄位全數清除。
 - 背景：Phase 2 補強值多為樣板句（如「每項 5 顆」、「滿充電」、「觀察 1 小時」），且存在 `sample_size`、`observation`、`rest_time`、`observation_time` 等重複欄位。
