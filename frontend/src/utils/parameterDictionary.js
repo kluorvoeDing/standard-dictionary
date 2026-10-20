@@ -562,13 +562,14 @@ export function getParameterMeta(rawKey) {
   };
 }
 
-/** Split a condition value ({ value, detail } or a bare string) into strings. */
+/** Split a condition value ({ value, detail, source_reference } or a bare string) into strings. */
 export function splitConditionValue(raw) {
-  if (raw == null) return { value: '', detail: '' };
-  if (typeof raw === 'string' || typeof raw === 'number') return { value: String(raw), detail: '' };
+  if (raw == null) return { value: '', detail: '', source_reference: '' };
+  if (typeof raw === 'string' || typeof raw === 'number') return { value: String(raw), detail: '', source_reference: '' };
   const value = raw.value == null ? '' : String(raw.value);
   const detail = raw.detail == null ? '' : String(raw.detail);
-  return { value, detail };
+  const source_reference = raw.source_reference == null ? '' : String(raw.source_reference);
+  return { value, detail, source_reference };
 }
 
 /** Condition entries of one test, labelled and sorted for display. */
