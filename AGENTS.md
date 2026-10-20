@@ -61,6 +61,25 @@
 >
 > CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/` 不得出現 emoji，並確認前端能建置。
 
+## 2026-10-21 (Data - 跨標準條件欄位與數值寫法統一 D3 全庫 30 份標準完成)
+- 事件：完成工作 D 的 D3 階段，將全庫 30 份標準、24 組共有測試之條件欄位鍵與數值寫法統一至 `data/field_schema.json` 規範，達成跨標準橫向比對規格表緊湊對齊與 0 數值遺失。
+- 背景：在 D1 盤查（抓出 6 大類跨標準分歧問題）與 D2 三組樣板驗收通過後，將其餘 21 組測試與全庫 30 份標準全面改寫，消除因欄位鍵不一或數值單位格式差異產生的假性差異列。
+- 內容：
+  - 分 4 批次逐標準改寫與獨立 git commit：
+    - Batch 1（國際與外國 7 份）：IEC62133-2, IEC62619, JISC8715-2, JISC8714, UN38.3, IEC62660-3, SAND2017
+    - Batch 2（UL 系列 10 份）：UL1642, UL1642-2022, UL2054, UL2056, UL1973, UL2271, UL2743, UL3030, UL9540, UL9540A
+    - Batch 3（車用與儲能 5 份）：AIS-038, AIS-156, ULC2580, GBT36276, GB38031
+    - Batch 4（國標消費與輕型車 8 份）：GB31241, GB31241.4, GB40165, GB40559, GB43854, GB44240, GB47372, GB47741
+  - 數值完整性防線：所有 30 份標準改寫前後均以 `node scripts/review/check_numbers.mjs --all` 逐字元與舊版對照，確認舊 `value`＋`detail` 中的所有數值 100% 被保留於新版資料中（30/30 通過，0 遺失）。
+  - 自動化與規範升級：新增 `scripts/review/batch1_harmonize.mjs` 至 `batch4_harmonize.mjs` 確定性批次改寫工具；正規化器 (`npm run normalize -- --all`) 與驗證器 (`npm run validate`) 0 錯誤 0 警告；UI 無 emoji (`npm run lint:ui`) 且 Vite 建置成功。
+  - 比對表成效量化（`buildGroupRows`）：
+    - IEC62133-2 vs IEC62619：`ELEC-SC-INT` 差異自 7 項降至 3 項，5 項參數（短路判定、保持時間、擠壓速度、治具、截止力）完全對齊；`ELEC-FD` 9 列收斂至 5 列；`THERM-ABUSE` 11 列收斂至 6 列。
+    - GB31241 vs IEC62133-2：`ELEC-OC` 25 列散列大幅壓縮至 10 列緊湊對齊；`MECH-CRUSH` 13 ± 0.78 kN 完美對齊，差異降為 1 項；`MECH-SHOCK` 13 列收斂至 7 列。
+    - UL1642 vs UN38.3：`THERM-CYCLE` 10 列散列縮減為 5 列且 10 循環完全對齊；`MECH-IMPACT` 9 列收斂至 7 列。
+  - Playwright 截圖驗收：於 Light / Dark 模式下截取 7 組關鍵比對畫面（`ELEC-SC-INT`, `MECH-DROP`, `MECH-CRUSH`, `THERM-ABUSE`, `THERM-CYCLE`, `MECH-SHOCK`），確認版面無溢出、無破版、無 emoji，且差異紅底與提示圖示正常顯示。
+- 影響：跨標準橫向比對規格表真正具備左右精準對齊能力，徹底消除假性「—」散列與格式假差異；全庫 30 份標準資料結構一致性達 100%。
+- 後續：分支 `data/harmonize-fields` 待使用者確認後合併至 `main`。
+
 ## 2026-10-21 (Data & Tooling - 跨標準條件欄位與數值寫法統一 D1 盤查與 D2 三組樣板完成)
 - 事件：完成工作 D 的 D1 全庫 24 組共有測試盤查、制定 `data/field_schema.json` 規範、新增 `scripts/review/check_numbers.mjs` 數值完整性防線，並完成 `ELEC-SC-INT`、`MECH-CRUSH`、`MECH-DROP` 三組樣板改寫與 Playwright 截圖驗收。
 - 背景：跨標準比對時，同一物理量常因使用不同欄位鍵（如 `force_limit` vs `stop_criteria_force_cylindrical`）、一邊寫程序代號一邊寫參數，或整張表塞在 `detail`（如 `mass_based_conditions`），導致相同內容分列顯示「—」或被誤判為差異。
