@@ -61,6 +61,17 @@
 >
 > CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/` 不得出現 emoji，並確認前端能建置。
 
+## 2026-10-21 (UI - 工作 E：比對表懸浮提示改為點擊彈窗)
+- 事件：將 `ComparisonGroup.jsx` 中原本依賴 HTML `title` 屬性的補充說明（參數 `detail`、判定要求 `summary`）改為可點擊的窄版彈窗（`.modal-panel--sm`），並移除差異列多餘的 `title` 提示。
+- 背景：原生 `title` 提示框無法調整樣式、需要滑鼠懸停延遲才會出現，且在手機與平板上完全無法查看。
+- 內容：
+  - `ComparisonGroup.jsx`：有 `detail` 或 `source_reference` 的參數格，以及判定要求格，改為 `<button class="cmp-entry cmp-entry--more">`，文字旁加上 `ⓘ` 記號，hover 時顯示虛線底線與強調色。
+  - 點擊後開啟窄版彈窗 `.modal-panel--sm`（沿用 `.modal-backdrop`／`.modal-panel`），依序顯示：標準代號與條款（§）、參數中文名、`value`、`detail`、以及 `source_reference`（出處）。
+  - 無障礙與鍵盤互動：彈窗具 `role="dialog"`、`aria-modal="true"`、`aria-labelledby`，開啟時焦點移至彈窗，按 Esc 或點擊背景關閉後焦點回到原觸發按鈕。
+  - 盤點全站 `title=` 屬性：其餘皆為按鈕用途說明或同內容截斷提示，無其他「只靠 title 才看得到隱藏內容」之處。
+- 影響：`npm run lint:ui` 與前端建置通過；桌機（1440px）與手機（390px）之淺色／深色模式皆經 Playwright 截圖驗收。
+- 後續：待使用者核准後合併 `ui/click-popover`。
+
 ## 2026-09-26 (Data - 試驗程序欄位核對第三批：9 份國際與各國標準)
 - 事件：工作 A 第三批完成。IEC62133-2、IEC62619、JISC8715-2、JISC8714、UN38.3、SAND2017、AIS-038、AIS-156、IEC62660-3 等 9 份標準之樣品數量／前置處理／觀察期（共 91 項測試、298 筆欄位）逐項對照原文核對與改寫，重複欄位全數清除。
 - 背景：Phase 2 補強值多為樣板句（如「每項 5 顆」、「滿充電」、「觀察 1 小時」），且存在 `sample_size`、`observation`、`rest_time`、`observation_time` 等重複欄位。

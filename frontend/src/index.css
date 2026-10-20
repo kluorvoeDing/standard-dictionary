@@ -480,6 +480,52 @@ button {
 }
 .cmp-row-diff.cmp-val { background: var(--diff-bg); }
 .cmp-entry + .cmp-entry { margin-top: 0.35rem; }
+.cmp-entry--more {
+  display: inline;
+  width: auto;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  line-height: inherit;
+  text-align: left;
+  cursor: pointer;
+  border-bottom: 1px dashed transparent;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+.cmp-entry + .cmp-entry--more,
+.cmp-entry--more + .cmp-entry,
+.cmp-entry--more + .cmp-entry--more {
+  display: block;
+  margin-top: 0.35rem;
+}
+.cmp-entry--more:hover {
+  border-bottom-color: var(--accent-color);
+  color: var(--accent-color);
+}
+.cmp-entry--more:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+  border-radius: 3px;
+}
+.cmp-entry-info {
+  display: inline-block;
+  margin-left: 0.28rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  vertical-align: baseline;
+  transition: color 0.15s ease;
+}
+.cmp-entry--more:hover .cmp-entry-info {
+  color: var(--accent-color);
+}
+.cmp-entry--more.cmp-criteria {
+  display: -webkit-box;
+  width: 100%;
+  border-bottom: none;
+}
 .cmp-entry-clause {
   display: inline-block;
   margin-right: 0.35rem;
@@ -646,6 +692,13 @@ button {
   border: 1px solid var(--border-color);
   background: var(--bg-panel);
   box-shadow: var(--shadow-lg);
+}
+.modal-panel--sm {
+  max-width: 480px;
+  padding: 1.35rem 1.5rem;
+}
+.modal-panel--sm:focus {
+  outline: none;
 }
 .modal-close {
   position: absolute;
