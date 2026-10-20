@@ -296,32 +296,32 @@
       ],
       "conditions": {
         "soc": {
-          "value": "標準充電後",
-          "detail": "試驗對象按 7.1.1 方法充電"
+          "value": "滿充",
+          "detail": "標準充電後，試驗對象按 7.1.1 方法充電。"
         },
-        "direction": {
-          "value": "垂直極板或最易受擠壓方向",
-          "detail": "垂直於電池單體極板方向施壓，或與電池單體在整車佈局上最容易受到擠壓的方向相同"
+        "force": {
+          "value": "100 kN 或 1000 倍質量",
+          "detail": "擠壓力達到 100 kN 或 1000 倍試驗對象質量。"
+        },
+        "crush_speed": {
+          "value": "≤ 2 mm/s",
+          "detail": "擠壓速度不大於 2 mm/s。"
         },
         "apparatus": {
-          "value": "R75 mm 半圓柱體",
-          "detail": "半徑 75 mm 的半圓柱體"
+          "value": "半徑 75 mm 半圓柱體",
+          "detail": "半徑 75 mm（R75 mm）的半圓柱體。"
         },
-        "speed": {
-          "value": "≤ 2 mm/s",
-          "detail": "擠壓速度不大於 2 mm/s"
+        "orientation": {
+          "value": "垂直於極板方向或最易受擠壓方向",
+          "detail": "垂直於電芯極板方向施壓，或與電芯在整車佈局上最容易受到擠壓的方向相同。"
         },
         "termination": {
-          "value": "0V 或 15%變形 或 100kN 或 1000倍質量",
-          "detail": "電壓達到 0V 或變形量達到 15% 或擠壓力達到 100 kN 或 1000 倍試驗對象質量後停止擠壓"
+          "value": "達最大力（100 kN 或 1000 倍質量）、電壓達 0 V 或變形量 ≥ 15%（先到者停止）",
+          "detail": "電壓達到 0 V 或變形量達到 15% 或擠壓力達到 100 kN 或 1000 倍試驗對象質量後停止擠壓。"
         },
-        "hold_time": {
-          "value": "10 分鐘",
-          "detail": "保持當前位置 10 分鐘"
-        },
-        "observation": {
-          "value": "1 小時",
-          "detail": "在試驗環境溫度下觀察 1 小時"
+        "duration": {
+          "value": "保持 10 分鐘",
+          "detail": "停止擠壓後保持當前位置 10 分鐘。"
         },
         "sample_quantity": {
           "value": "3 顆",
@@ -330,6 +330,10 @@
         "pre_conditioning": {
           "value": "常溫標準充放電確認容量後滿充",
           "detail": "依 7.1.1 規定，室溫下以 1/3 C 充電至終止電壓轉恆壓至 0.05 C 截止，靜置 30 分鐘。"
+        },
+        "observation": {
+          "value": "1 小時",
+          "detail": "在試驗環境溫度下觀察 1 小時"
         }
       },
       "acceptance_criteria": {
@@ -407,7 +411,7 @@
         },
         "vibration_params": {
           "value": "隨機振動 12 小時 + 正弦定頻 1~2 小時",
-          "detail": "包含隨機振動（依重量及安裝位置參考表2、表3的 RMS 值如 0.52g, 0.57g, 0.73g 等）測試 12 小時，以及正弦定頻振動測試 1~2 小時。"
+          "detail": "包含隨機振動（依重量及安裝位置參考表2、表3的 RMS 值如 0.52 g, 0.57 g, 0.73 g 等）測試 12 小時，以及正弦定頻振動測試 1~2 小時。"
         },
         "observation": {
           "value": "觀察 2 小時",
@@ -454,8 +458,8 @@
           "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
         },
         "shock_params": {
-          "value": "半正弦衝擊波, 7g, 6ms, 12次",
-          "detail": "施加半正弦衝擊波，加速度 7g，脈衝時間 6 ms，在 ±z 方向各進行 6 次衝擊，共計 12 次。"
+          "value": "半正弦衝擊波, 7 g, 6ms, 12次",
+          "detail": "施加半正弦衝擊波，加速度 7 g，脈衝時間 6 ms，在 ±z 方向各進行 6 次衝擊，共計 12 次。"
         },
         "observation": {
           "value": "觀察 2 小時",
@@ -547,15 +551,27 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
         },
-        "crush_params": {
-          "value": "100 kN 或 30% 變形量",
-          "detail": "使用半圓柱體（半徑 75 mm）以不大於 2 mm/s 的速度擠壓，直到擠壓力達到 100 kN 或變形量達到 30%，並保持 10 分鐘。"
+        "force": {
+          "value": "100 kN",
+          "detail": "擠壓力達到 100 kN。"
         },
-        "observation": {
-          "value": "觀察 2 小時",
-          "detail": "測試後在試驗環境溫度下觀察 2 小時。"
+        "crush_speed": {
+          "value": "≤ 2 mm/s",
+          "detail": "以不大於 2 mm/s 的速度擠壓。"
+        },
+        "apparatus": {
+          "value": "半徑 75 mm 半圓柱體",
+          "detail": "使用半圓柱體（半徑 75 mm）。"
+        },
+        "termination": {
+          "value": "達最大力 100 kN 或變形量達 30%",
+          "detail": "直到擠壓力達到 100 kN 或變形量達到 30% 時停止擠壓。"
+        },
+        "duration": {
+          "value": "保持 10 分鐘",
+          "detail": "達到終止條件後保持 10 分鐘。"
         },
         "sample_quantity": {
           "value": "1 組",
@@ -564,6 +580,10 @@
         "pre_conditioning": {
           "value": "調整至 50% 或 100% 規定的 SOC",
           "detail": "試驗前依各測試要求調整至指定的荷電狀態 (50% 或 100% SOC)。"
+        },
+        "observation": {
+          "value": "觀察 2 小時",
+          "detail": "測試後在試驗環境溫度下觀察 2 小時。"
         }
       },
       "acceptance_criteria": {

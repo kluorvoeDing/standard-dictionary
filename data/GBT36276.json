@@ -92,8 +92,8 @@
           "detail": "以 I = P_rd / U_nom 的恆定電流進行放電。"
         },
         "termination": {
-          "value": "0V或1 小時",
-          "detail": "放電至電壓達到0V，或時間達到1 小時停止放電。"
+          "value": "0 V或1 小時",
+          "detail": "放電至電壓達到0 V，或時間達到1 小時停止放電。"
         },
         "observation": {
           "value": "1 小時",
@@ -257,8 +257,8 @@
       ],
       "conditions": {
         "voltage": {
-          "value": "500V/1000V/2500V",
-          "detail": "根據截止電壓不同，施加 500V、1000V 或 2500V 試驗電壓。"
+          "value": "500V/1000V/2500 V",
+          "detail": "根據截止電壓不同，施加 500 V、1000 V 或 2500 V 試驗電壓。"
         },
         "duration": {
           "value": "1 分鐘",
@@ -308,12 +308,12 @@
       ],
       "conditions": {
         "dc_voltage": {
-          "value": "1530V~5370V DC",
+          "value": "1530 V~5370 V DC",
           "detail": "根據額定電壓，施加相應的直流試驗電壓 60 秒。"
         },
         "ac_voltage": {
-          "value": "1080V~3800V AC",
-          "detail": "施加相應的交流試驗電壓 60 秒 (45Hz~62Hz)。"
+          "value": "1080 V~3800 V AC",
+          "detail": "施加相應的交流試驗電壓 60 秒 (45 Hz~62 Hz)。"
         },
         "pre_condition": {
           "value": "滿電狀態",
@@ -365,8 +365,8 @@
           "detail": "初始速度設置為 5 mm/s。"
         },
         "crusher": {
-          "value": "R=75mm 半圓柱體",
-          "detail": "使用半徑 75mm 的半圓柱體擠壓頭。"
+          "value": "R=75 mm 半圓柱體",
+          "detail": "使用半徑 75 mm 的半圓柱體擠壓頭。"
         },
         "force": {
           "value": "50 kN",
@@ -426,8 +426,8 @@
       ],
       "conditions": {
         "height": {
-          "value": "單體 1.5m, 模塊 2.0m",
-          "detail": "單體從 1.5m 高度跌落；模塊從 2.0m 高度跌落至水泥地面。"
+          "value": "單體 1.5 m, 模塊 2.0 m",
+          "detail": "單體從 1.5 m 高度跌落；模塊從 2.0 m 高度跌落至水泥地面。"
         },
         "orientation": {
           "value": "正/負極朝下",
@@ -910,7 +910,7 @@
         },
         "pressure": {
           "value": "62 kPa / 54 kPa",
-          "detail": "62 kPa (海拔 ≤4000m) 或 54 kPa (海拔 >4000m)"
+          "detail": "62 kPa (海拔 ≤4000 m) 或 54 kPa (海拔 >4000 m)"
         },
         "temperature": {
           "value": "25±2 °C",
@@ -967,7 +967,7 @@
         },
         "pressure": {
           "value": "62 kPa / 54 kPa",
-          "detail": "62 kPa (海拔 ≤4000m) 或 54 kPa (海拔 >4000m)"
+          "detail": "62 kPa (海拔 ≤4000 m) 或 54 kPa (海拔 >4000 m)"
         },
         "temperature": {
           "value": "25±2 °C",
@@ -1048,7 +1048,7 @@
           "detail": "後續每階保持 1 小時"
         },
         "measurement_period": {
-          "value": "計算區間 20m",
+          "value": "計算區間 20 m",
           "detail": "恆定溫度 20 分鐘 用於計算溫升速率"
         },
         "sample_quantity": {

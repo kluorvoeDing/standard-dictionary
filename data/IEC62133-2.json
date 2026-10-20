@@ -414,29 +414,29 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
-        "charging_procedure": {
-          "value": "程序一 (Procedure 1, 7.1.1)",
-          "detail": "在 20 °C ± 5 °C 環境下，依製造商宣告的方法充滿電。"
-        },
         "soc": {
-          "value": "滿充 (Fully charged per Procedure 1)",
-          "detail": "按照 7.1.1 第一程序充滿電"
+          "value": "滿充",
+          "detail": "依程序一（7.1.1）：在 20 ± 5 °C 環境下，依製造商宣告的方法充滿電。原文：Fully charged per Procedure 1."
         },
         "drop_height": {
           "value": "1.0 m",
-          "detail": "從 1.0 m 高度跌落至平坦混凝土或金屬地板 (dropped from a height of 1.0 m onto a flat concrete floor or metal floor)"
+          "detail": "從 1.0 m 高度跌落至平坦混凝土或金屬地板。原文：dropped from a height of 1.0 m onto a flat concrete floor or metal floor."
         },
         "drop_count": {
-          "value": "3 次/每個樣品",
-          "detail": "每個單電池或電池組跌落 3 次 (dropped three times)"
+          "value": "3 次",
+          "detail": "每個電芯或電池組跌落 3 次。原文：dropped three times."
+        },
+        "drop_surface": {
+          "value": "平坦混凝土或金屬地板",
+          "detail": "跌落至平坦混凝土或金屬地板。原文：onto a flat concrete floor or metal floor."
         },
         "orientation": {
           "value": "隨機方向",
-          "detail": "跌落方向為隨機方向以取得隨機衝擊 (dropped so as to obtain impacts in random orientations)"
+          "detail": "跌落方向為隨機方向以取得隨機衝擊。原文：dropped so as to obtain impacts in random orientations."
         },
         "temperature": {
           "value": "20 ± 5 °C",
-          "detail": "環境溫度 20 °C ± 5 °C"
+          "detail": "環境溫度 20 ± 5 °C。"
         },
         "sample_quantity": {
           "value": "3 顆電芯、3 個電池組",
@@ -545,33 +545,29 @@
         "CELL"
       ],
       "conditions": {
-        "charging_procedure": {
-          "value": "程序二 (Procedure 2, 7.1.2) — 安全充電程序（在上限充電溫度下充電）",
-          "detail": "依照 7.1.2 第二程序在上限充電溫度下充電後立即轉移進行擠壓 (charged according to the second procedure at the upper limit charging temperature in 7.1.2, is immediately transferred and crushed)。"
-        },
         "soc": {
-          "value": "滿充 (Fully charged per Procedure 2, at upper limit charging temp)",
-          "detail": "按照 7.1.2 第二程序在上限充電溫度下充滿電後立即進行測試"
+          "value": "滿充（於上限充電溫度充電）",
+          "detail": "依程序二（7.1.2）：依照 7.1.2 第二程序在上限充電溫度下存放 1～4 小時後充滿電，立即轉移進行擠壓。原文：charged according to the second procedure at the upper limit charging temperature in 7.1.2, is immediately transferred and crushed."
         },
         "force": {
           "value": "13 ± 0.78 kN",
-          "detail": "擠壓裝置施加 13 kN ± 0.78 kN 的力 (force of 13 kN ± 0.78 kN)"
+          "detail": "擠壓裝置施加 13 ± 0.78 kN 的力。原文：force of 13 kN ± 0.78 kN."
         },
-        "termination_criteria": {
-          "value": "達最大力 或 電壓突降 1/3",
-          "detail": "施加最大力或電壓突然下降至原始電壓三分之一時即釋放力 (Once the maximum force has been applied, or an abrupt voltage drop of one-third of the original voltage has been obtained, the force is released)"
+        "apparatus": {
+          "value": "兩個平面間擠壓",
+          "detail": "在兩個平坦表面之間進行擠壓。原文：crushed between two flat surfaces."
         },
-        "orientation_cylindrical_prismatic": {
-          "value": "縱軸平行於擠壓面",
-          "detail": "圓柱形或方形電池以其縱軸平行於擠壓裝置的平坦表面進行擠壓。方形電池僅測試寬面。(A cylindrical or prismatic cell is crushed with its longitudinal axis parallel to the flat surfaces. Test only the wide side of prismatic cells.)"
+        "orientation": {
+          "value": "圓柱形／方形（寬面）：縱軸平行於擠壓面；鈕扣形：平坦面施壓",
+          "detail": "圓柱形或方形電芯以其縱軸平行於擠壓裝置的平坦表面進行擠壓（方形電芯僅測試寬面）；鈕扣電芯應在其平坦表面施加壓力。原文：A cylindrical or prismatic cell is crushed with its longitudinal axis parallel to the flat surfaces. Test only the wide side of prismatic cells."
         },
-        "orientation_coin": {
-          "value": "平坦面施壓",
-          "detail": "鈕扣電池應在其平坦表面施加壓力 (A coin cell shall be crushed by applying the force on its flat surface)"
+        "termination": {
+          "value": "達最大力 13 ± 0.78 kN 或電壓突降 1/3（釋放壓力）",
+          "detail": "施加最大力或電壓突然下降至原始電壓 1/3 時即釋放壓力。原文：Once the maximum force has been applied, or an abrupt voltage drop of one-third of the original voltage has been obtained, the force is released."
         },
         "temperature": {
           "value": "環境溫度",
-          "detail": "在環境溫度下進行擠壓 (crushed between two flat surfaces in an ambient temperature)"
+          "detail": "在環境溫度下進行擠壓。原文：crushed between two flat surfaces in an ambient temperature."
         },
         "sample_quantity": {
           "value": "每溫度 5 顆電芯（共 10 顆）",
@@ -872,48 +868,36 @@
       ],
       "conditions": {
         "charging_procedure": {
-          "value": "程序二 (Procedure 2, 7.1.2) — 含特殊預處理",
-          "detail": "先在 20 °C ± 5 °C 按製造商建議充電，然後以 0.2 It A 放電至製造商指定終止電壓。再依 Table 5 所列溫度儲存 1-4 小時後，在該溫度下以上限充電電壓和製造商指定電流充電 (CC-CV) 直到充電電流降至 0.05 It A。"
+          "value": "0.2 It A 放電 → 依表 5 溫度存放 1～4 小時 → CC-CV 充電至 0.05 It A",
+          "detail": "程序二（7.1.2）：先在 20 ± 5 °C 按製造商建議充電，然後以 0.2 It A 放電至製造商指定終止電壓。再依表 5（Table 5）所列溫度儲存 1～4 小時後，在該溫度下以上限充電電壓和製造商指定電流充電（CC-CV）直到充電電流降至 0.05 It A。"
         },
-        "applicability": {
-          "value": "僅限圓柱型和方型鋰離子電池",
-          "detail": "僅適用於圓柱型和方形鋰離子電池。不適用於鋰離子聚合物電池 (not required on lithium ion polymer cells) 和鈕扣電池 (not applicable to coin cells)。"
+        "temperature": {
+          "value": "最低充電溫度 ± 2 °C；最高充電溫度 ± 2 °C",
+          "detail": "表 5（Table 5）定義了兩組溫度條件：儲存步驟 10 ± 2 °C（低溫）或 45 ± 2 °C（高溫）；充電步驟同儲存溫度；壓製準備 5 ± 2 °C（低溫）或 50 ± 2 °C（高溫）；壓製時核心表面 10 ± 5 °C（低溫）或 45 ± 5 °C（高溫）。最低／最高充電溫度由製造商指定。"
         },
-        "regional_requirement": {
-          "value": "僅韓國、日本、瑞士、法國要求",
-          "detail": "此為國家特定測試，僅適用於法國、日本、韓國和瑞士 (This is a country specific test, which is only applicable to France, Japan, Korea and Switzerland)"
-        },
-        "test_temperatures": {
-          "value": "最低充電溫度 ± 2 °C / 最高充電溫度 ± 2 °C",
-          "detail": "Table 5 定義了兩組溫度條件：儲存步驟：10 ± 2 °C (低溫) 或 45 ± 2 °C (高溫)；充電步驟：同儲存溫度；壓製準備：5 ± 2 °C (低溫) 或 50 ± 2 °C (高溫)；壓製時核心表面：10 ± 5 °C (低溫) 或 45 ± 5 °C (高溫)。最低/最高充電溫度由製造商指定。"
-        },
-        "method": {
-          "value": "鎳顆粒刺入模擬內部短路",
-          "detail": "使用鎳顆粒 (nickel particle) 刺入捲芯 (winding core) 模擬內部短路。詳見附錄 A.5 及 A.6。將鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘，取出後 10 分鐘內完成安裝。"
-        },
-        "press_speed": {
+        "crush_speed": {
           "value": "0.1 mm/s",
-          "detail": "壓裝具以 0.1 mm/s 的速度下壓 (fixture is moved down at a speed of 0.1 mm/s)"
-        },
-        "pressing_jig": {
-          "value": "10 mm × 10 mm 不鏽鋼軸 + 丁腈橡膠/壓克力樹脂",
-          "detail": "壓裝具底面為丁腈橡膠 (硬度 A60, t=2mm)，置於 10 mm × 10 mm 不鏽鋼軸上。圓柱型用丁腈橡膠底面；方形電池加 5 mm × 5 mm (t=2mm) 壓克力樹脂。"
-        },
-        "short_circuit_detection": {
-          "value": "電壓降 > 50 mV",
-          "detail": "以大於每秒 100 次的速率監測電壓。若電壓下降超過 50 mV 即判定發生內部短路 (If the voltage drops more than 50 mV compared to the initial voltage, an internal short-circuit has been determined to have occurred)"
+          "detail": "壓裝具以 0.1 mm/s 的速度下壓。原文：fixture is moved down at a speed of 0.1 mm/s."
         },
         "force_limit": {
-          "value": "圓柱型 800 N / 方型 400 N",
-          "detail": "若壓力達到 800 N (圓柱型) 或 400 N (方形) 仍未發生 50 mV 電壓降，立即停止下壓 (If the force reaches 800 N for a cylindrical cell or 400 N for a prismatic cell before the 50 mV voltage drop, stop the descent immediately)"
+          "value": "圓柱形 800 N；方形 400 N",
+          "detail": "若壓力達到 800 N（圓柱形）或 400 N（方形）仍未發生 50 mV 電壓降，立即停止下壓。原文：If the force reaches 800 N for a cylindrical cell or 400 N for a prismatic cell before the 50 mV voltage drop, stop the descent immediately."
+        },
+        "short_circuit_detection": {
+          "value": "電壓降 > 50 mV（監測速率 > 100 次/秒）",
+          "detail": "以大於每秒 100 次的速率監測電壓。若電壓下降超過 50 mV 即判定發生內部短路。原文：If the voltage drops more than 50 mV compared to the initial voltage, an internal short-circuit has been determined to have occurred."
         },
         "hold_after_short": {
-          "value": "保持 30 秒",
-          "detail": "偵測到短路後保持壓裝具位置 30 秒後釋放 (keep the pressing jig in the position for 30 秒, and then release the pressure)"
+          "value": "偵測後立即停止下壓，保持 30 秒",
+          "detail": "偵測到短路後保持壓裝具位置 30 秒後釋放。原文：keep the pressing jig in the position for 30 秒, and then release the pressure."
         },
         "apparatus": {
-          "value": "直角小型鎳片 (0.2 × 0.1 × 1.0 mm)",
-          "detail": "尺寸為高 0.2 mm、寬 0.1 mm、每邊長 1.0 mm 之 L 型鎳片。"
+          "value": "10 mm × 10 mm 不鏽鋼軸（丁腈橡膠／壓克力樹脂）與鎳顆粒",
+          "detail": "壓裝具底面為丁腈橡膠（硬度 A60，t = 2 mm），置於 10 mm × 10 mm 不鏽鋼軸上；圓柱形用丁腈橡膠底面，方形電芯加 5 mm × 5 mm（t = 2 mm）壓克力樹脂。使用尺寸為高 0.2 mm、寬 0.1 mm、每邊長 1.0 mm（0.2 × 0.1 × 1.0 mm）之直角小型 L 型鎳片（鎳顆粒）刺入捲芯模擬內部短路，詳見附錄 A.5 及 A.6。將鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘，取出後 10 分鐘內完成安裝。"
+        },
+        "applicability": {
+          "value": "圓柱形與方形鋰離子電芯（僅韓國、日本、瑞士、法國要求）",
+          "detail": "僅適用於圓柱形和方形鋰離子電芯，不適用於鋰離子聚合物電芯和鈕扣電芯。此為國家特定測試，僅適用於法國、日本、韓國和瑞士。原文：This is a country specific test, which is only applicable to France, Japan, Korea and Switzerland."
         },
         "sample_quantity": {
           "value": "每溫度 5 顆電芯（共 10 顆）",

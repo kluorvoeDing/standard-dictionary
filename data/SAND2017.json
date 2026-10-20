@@ -138,7 +138,7 @@
         },
         "impactor": {
           "value": "圓柱形壓頭，直徑依電芯尺寸縮放",
-          "detail": "使用圓柱形壓頭 (cylindrical impactor)，壓頭直徑與電芯尺寸對應：20mm 壓頭→電芯直徑≤32mm；30mm 壓頭→電芯直徑 32-60mm；60mm 壓頭→電芯直徑>60mm。(Table 5)"
+          "detail": "使用圓柱形壓頭 (cylindrical impactor)，壓頭直徑與電芯尺寸對應：20 mm 壓頭→電芯直徑≤32 mm；30 mm 壓頭→電芯直徑 32-60 mm；60 mm 壓頭→電芯直徑>60 mm。(Table 5)"
         },
         "end_conditions": {
           "value": "25 kN 力上限 / HSL ≥ 5 / 100% 位移",
@@ -211,7 +211,7 @@
         },
         "impactor": {
           "value": "半圓形鋼製壓頭，直徑依電芯寬度縮放",
-          "detail": "壓頭為鋼製半圓形（矩形底座），半圓直徑與壓壞面寬度對應：20mm→寬度≤32mm；30mm→32-60mm；60mm→60-150mm；150mm→>150mm。(Table 6, Figure 3)"
+          "detail": "壓頭為鋼製半圓形（矩形底座），半圓直徑與壓壞面寬度對應：20 mm→寬度≤32 mm；30 mm→32-60 mm；60 mm→60-150 mm；150 mm→>150 mm。(Table 6, Figure 3)"
         },
         "orientation": {
           "value": "y 方向或 z 方向壓壞",
@@ -593,12 +593,12 @@
           "detail": "DUT 容量 >40 Ah：建議充電電流為 1C、2C 及 80A。80A 來自 SAE J1772 (2009) 標準之 Level 2 充電站最大電流。(Table 8: >40 Ah → 1C, 2C, 80A) 如果 2C 和 32/80 A 充電電流條件彼此接近（在 10% 以內），建議僅執行其中 2 個條件。"
         },
         "voltage_limit_cell": {
-          "value": "電芯：20V",
-          "detail": "電芯層級電壓合規限制為 20V。(Cell voltage limit: 20V — Table 8)"
+          "value": "電芯：20 V",
+          "detail": "電芯層級電壓合規限制為 20 V。(Cell voltage limit: 20 V — Table 8)"
         },
         "voltage_limit_module": {
-          "value": "模組：20V / 每電芯或並聯組，或電池包電壓",
-          "detail": "模組層級電壓合規限制為 20V 每電芯/並聯組或電池包電壓。(Module voltage limit: 20V per cell/parallel group or pack voltage — Table 8)"
+          "value": "模組：20 V / 每電芯或並聯組，或電池包電壓",
+          "detail": "模組層級電壓合規限制為 20 V 每電芯/並聯組或電池包電壓。(Module voltage limit: 20 V per cell/parallel group or pack voltage — Table 8)"
         },
         "voltage_limit_pack": {
           "value": "電池包：1.5× 電池包電壓",
@@ -665,8 +665,8 @@
           "detail": "以 1C 放電率進行過放電。(The DUT is discharged at 1C.)"
         },
         "cell_voltage_limit": {
-          "value": "-20V（電芯級合規電壓）",
-          "detail": "電芯層級合規電壓設定為 -20V。(Cell-level compliance voltage should be set to -20V.)"
+          "value": "-20 V（電芯級合規電壓）",
+          "detail": "電芯層級合規電壓設定為 -20 V。(Cell-level compliance voltage should be set to -20 V.)"
         },
         "end_conditions_cell": {
           "value": "1.5 小時 / HSL ≥ 5",

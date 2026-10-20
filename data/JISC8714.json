@@ -246,15 +246,15 @@
         },
         "pressure_jig": {
           "value": "橡膠 (+ 壓克力板)",
-          "detail": "使用包含 10x10mm 丁腈橡膠與 5x5mm 壓克力板的加壓治具。(Pressure jig specifics: 10x10mm nitrile rubber, plus 5x5mm acrylic plate.)"
+          "detail": "使用包含 10x10 mm 丁腈橡膠與 5x5 mm 壓克力板的加壓治具。(Pressure jig specifics: 10x10 mm nitrile rubber, plus 5x5 mm acrylic plate.)"
         },
         "force_cylindrical": {
           "value": "800 N (圓柱)",
           "detail": "圓柱形電芯 (Cylindrical cells) 之壓力上限為 800 N。(Upper limit pressure for cylindrical cells: 800 N.)"
         },
         "force_prismatic": {
-          "value": "400 N (方型)",
-          "detail": "方型電芯 (Prismatic cells) 之壓力上限為 400 N。(Upper limit pressure for prismatic cells: 400 N.)"
+          "value": "400 N (方形)",
+          "detail": "方形電芯 (Prismatic cells) 之壓力上限為 400 N。(Upper limit pressure for prismatic cells: 400 N.)"
         },
         "environment_dew_point": {
           "value": "露點 ≤ -25 °C",
@@ -265,12 +265,12 @@
           "detail": "從電芯解體至重新密封的過程須在 30 分鐘內完成。(The process from cell disassembly to resealing must be completed within 30 minutes.)"
         },
         "voltage_drop_stop_condition": {
-          "value": "壓降 ≥50mV / 30 秒釋放",
+          "value": "壓降 ≥50 mV / 30 秒釋放",
           "detail": "若偵測到電壓降 ≥ 50 mV：停止加壓 (stop pressurizing)，30 秒後釋放壓力。(If voltage drop ≥ 50 mV detected: stop pressurizing, release after 30 seconds.)"
         },
         "force_limit_stop_condition": {
           "value": "達壓力上限釋放",
-          "detail": "若壓力達到上限值（圓柱形 800N / 方型 400N）：停止加壓並釋放壓力。(If force reaches upper limit (800N cylindrical / 400N prismatic): stop pressurizing and release.)"
+          "detail": "若壓力達到上限值（圓柱形 800 N / 方形 400 N）：停止加壓並釋放壓力。(If force reaches upper limit (800 N cylindrical / 400 N prismatic): stop pressurizing and release.)"
         },
         "extended_sampling": {
           "value": "最多追加至 10 個",
@@ -439,8 +439,8 @@
       ],
       "conditions": {
         "voltage_limit": {
-          "value": "不超上限電壓 (4.25V)",
-          "detail": "驗證組電池內的單電芯或電池塊在充電過程中不得超過上限充電電壓（通常為 4.25V）。(Verify that individual cells or battery blocks within the assembled battery do not exceed the upper limit charge voltage, typically 4.25V, during charging.)"
+          "value": "不超上限電壓 (4.25 V)",
+          "detail": "驗證組電池內的單電芯或電池塊在充電過程中不得超過上限充電電壓（通常為 4.25 V）。(Verify that individual cells or battery blocks within the assembled battery do not exceed the upper limit charge voltage, typically 4.25 V, during charging.)"
         },
         "method_single_stage": {
           "value": "測量充電電壓",
@@ -470,9 +470,9 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "單電芯或電池塊不得超過上限充電電壓（通常 4.25V）",
+        "summary": "單電芯或電池塊不得超過上限充電電壓（通常 4.25 V）",
         "details": [
-          "電壓限制 (Voltage Limit)：組電池內的單電芯或電池塊不得超過上限充電電壓（通常為 4.25V）"
+          "電壓限制 (Voltage Limit)：組電池內的單電芯或電池塊不得超過上限充電電壓（通常為 4.25 V）"
         ]
       },
       "exemptions": [

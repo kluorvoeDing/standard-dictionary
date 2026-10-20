@@ -205,7 +205,7 @@
         },
         "hold_time": {
           "value": "保溫時間",
-          "detail": "對於大型電池(>500g)，保持時間應為 12 小時。"
+          "detail": "對於大型電池(>500 g)，保持時間應為 12 小時。"
         },
         "sample_quantity": {
           "value": "5 個（樣品 1～5）",
@@ -614,8 +614,8 @@
           "value": "10 次循環"
         },
         "duration": {
-          "value": "m≤12kg(6 小時) / m>12kg(12 小時)",
-          "detail": "質量 m≤12kg 保持 6 小時，m>12kg 保持 12 小時。"
+          "value": "m≤12 kg(6 小時) / m>12 kg(12 小時)",
+          "detail": "質量 m≤12 kg 保持 6 小時，m>12 kg 保持 12 小時。"
         },
         "sample_quantity": {
           "value": "4 個（樣品 1～4）",
@@ -653,8 +653,8 @@
       ],
       "conditions": {
         "acceleration": {
-          "value": "m≤12kg(8gn) / m>12kg(2gn)",
-          "detail": "質量 m≤12kg 為 8gn，質量 m>12kg 為 2gn。"
+          "value": "m≤12 kg(8gn) / m>12 kg(2gn)",
+          "detail": "質量 m≤12 kg 為 8gn，質量 m>12 kg 為 2gn。"
         },
         "duration": {
           "value": "每個方向 3 小時"
@@ -691,7 +691,7 @@
       "conditions": {
         "acceleration": {
           "value": "依質量計算取小者",
-          "detail": "質量 m≤12kg：取 150gn 或 100850/m 中較小者。m>12kg：取 50gn 或 30000/m 中較小者。"
+          "detail": "質量 m≤12 kg：取 150gn 或 100850/m 中較小者。m>12 kg：取 50gn 或 30000/m 中較小者。"
         },
         "duration": {
           "value": "6 ms 或 11 ms"

@@ -225,28 +225,28 @@
       ],
       "conditions": {
         "soc": {
-          "value": "滿充 (Fully charged)",
-          "detail": "每個測試單元均為滿充狀態 (Each fully charged test unit)。"
+          "value": "滿充",
+          "detail": "每個測試單元均為滿充狀態。原文：Each fully charged test unit."
         },
-        "floor": {
+        "drop_height": {
+          "value": "< 7 kg：1000 mm；7～50 kg：100 mm；50～100 kg：50 mm；≥ 100 kg：25 mm",
+          "detail": "依表 2（Table 2）跌落方法與條件：(1) 質量 < 7 kg：全跌落 1000 mm，隨機方向，3 次；(2) 7 kg ≤ 質量 < 20 kg：全跌落 100 mm，底部朝下（由製造商指定），3 次；(3) 20 kg ≤ 質量 < 50 kg：棱角跌落 100 mm，每類撞擊 2 次；(4) 50 kg ≤ 質量 < 100 kg：棱角跌落 50 mm，每類撞擊 2 次；(5) 質量 ≥ 100 kg：棱角跌落 25 mm，每類撞擊 2 次。"
+        },
+        "drop_count": {
+          "value": "< 20 kg：3 次；≥ 20 kg：最短邊與角各 2 次",
+          "detail": "全跌落測試（7.2.3.2，質量 < 20 kg）：質量 < 7 kg 時以隨機方向跌落 3 次，7～20 kg 時以底部朝下方向跌落 3 次；棱角跌落測試（7.2.3.3，質量 ≥ 20 kg）：執行最短邊跌落 2 次＋角跌落 2 次。"
+        },
+        "drop_surface": {
           "value": "平坦混凝土或金屬地板",
-          "detail": "跌落至平坦混凝土或金屬地板 (onto a flat concrete or metal floor)。金屬地板需防止外部短路。"
+          "detail": "跌落至平坦混凝土或金屬地板，金屬地板需防止外部短路。原文：onto a flat concrete or metal floor."
         },
-        "mass_based_conditions": {
-          "value": "依質量分級（見 detail）",
-          "detail": "Table 2 — 跌落方法與條件：(1) 質量 < 7 kg：全跌落 (Whole drop), 1000 mm, 隨機方向, 3 次；(2) 7 kg ≤ 質量 < 20 kg：全跌落 (Whole drop), 100 mm, 底部朝下（由製造商指定）, 3 次；(3) 20 kg ≤ 質量 < 50 kg：棱角跌落 (Edge and corner drop), 100 mm, 每類撞擊 2 次；(4) 50 kg ≤ 質量 < 100 kg：棱角跌落, 50 mm, 每類撞擊 2 次；(5) 質量 ≥ 100 kg：棱角跌落, 25 mm, 每類撞擊 2 次。"
+        "orientation": {
+          "value": "< 7 kg：隨機方向；7～20 kg：底部朝下；≥ 20 kg：同一最短邊與同一角",
+          "detail": "依表 2、7.2.3.2 及 7.2.3.3：質量 < 7 kg 為隨機方向；7～20 kg 為底部朝下（由製造商指定）；質量 ≥ 20 kg 時兩次撞擊在同一角和同一最短邊上。"
         },
-        "whole_drop_count": {
-          "value": "3 次（質量 < 20 kg）",
-          "detail": "全跌落測試 (7.2.3.2)：質量 < 7 kg 時以隨機方向跌落 3 次；7-20 kg 時以底部朝下方向跌落 3 次 (dropped three times from a height shown in Table 2)。"
-        },
-        "edge_corner_drop_count": {
-          "value": "棱角各 2 次（質量 ≥ 20 kg）",
-          "detail": "棱角跌落測試 (7.2.3.3)：質量 ≥ 20 kg 時執行最短邊跌落 2 次 + 角跌落 2 次，兩次撞擊在同一角和同一最短邊上 (dropped two times, the two impacts per impact type shall be on the same corner and on the same shortest edge)。"
-        },
-        "subdivision_note": {
+        "applicability": {
           "value": "可測試代表性子單元",
-          "detail": "若電池系統可分為較小單元，可測試代表性子單元。製造商可為測試單元添加最終電池系統中的功能，須明確聲明測試單元 (If the battery system is divided into smaller units, the unit can be tested as the representative of the battery system)。"
+          "detail": "若電池系統可分為較小單元，可測試代表性子單元。製造商可為測試單元添加最終電池系統中的功能，須明確聲明測試單元。原文：If the battery system is divided into smaller units, the unit can be tested as the representative of the battery system."
         },
         "sample_quantity": {
           "value": "依 Table 2 規定（1 個以上）",
@@ -476,49 +476,37 @@
         "CELL"
       ],
       "conditions": {
-        "applicability": {
-          "value": "圓柱形及方形電芯（設計評估）",
-          "detail": "針對圓柱形電芯和方形電芯的強制內部短路測試。設計評估性質，由電芯製造商或第三方實驗室執行 (An evaluation of a newly designed cell shall be conducted by the cell manufacturer or a third-party test house)。"
-        },
         "charging_procedure": {
-          "value": "放電 (0.2 It A) → CC-CV 充電至 0.05 It A",
-          "detail": "先以 0.2 It A 恆流放電至指定終止電壓。然後以上限充電電壓及製造商指定電流進行恆流-恆壓 (CC-CV) 充電，直到充電電流降至 0.05 It A (Prior to charging, the cell shall be discharged at a constant current of 0.2 It A, down to a specified final voltage. Then, the cell shall be charged at the upper limited charging voltage at the constant current specified by the manufacturer, continue charging at constant voltage at upper limited charge current drops to 0.05 It A)。"
+          "value": "0.2 It A 放電 → CC-CV 充電至 0.05 It A",
+          "detail": "先以 0.2 It A 恆流放電至指定終止電壓，然後以上限充電電壓及製造商指定電流進行恆流-恆壓（CC-CV）充電，直到充電電流降至 0.05 It A。原文：Prior to charging, the cell shall be discharged at a constant current of 0.2 It A, down to a specified final voltage."
         },
-        "ambient_temperature": {
+        "temperature": {
           "value": "25 ± 5 °C",
-          "detail": "所有測試在環境溫度 25 °C ± 5 °C 下進行。鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘。"
+          "detail": "所有測試在環境溫度 25 ± 5 °C 下進行。鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘。"
         },
-        "nickel_particle": {
-          "value": "鎳片刺入捲芯模擬內部短路",
-          "detail": "參照 IEC 62133-2:2017 附錄 A.5 及 A.6 的樣品準備指南。將鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘。取出後 10 分鐘內完成安裝 (Refer to the sample preparation guidance in Clause A.5 and Clause A.6 of IEC 62133-2:2017)。"
-        },
-        "press_speed": {
+        "crush_speed": {
           "value": "0.1 mm/s",
-          "detail": "壓裝具以 0.1 mm/s 的速度下壓，同時監測電芯電壓 (The fixture is moved down at a speed of 0.1 mm/s monitoring the cell voltage)。"
+          "detail": "壓裝具以 0.1 mm/s 的速度下壓，同時監測電芯電壓。原文：The fixture is moved down at a speed of 0.1 mm/s monitoring the cell voltage."
         },
-        "pressing_jig": {
-          "value": "10 mm × 10 mm 不鏽鋼軸 + 丁腈橡膠/壓克力樹脂",
-          "detail": "壓裝具底面為丁腈橡膠 (nitrile rubber)，置於 10 mm × 10 mm 不鏽鋼軸上。圓柱形使用丁腈橡膠底面；方形電芯另加 5 mm × 5 mm（2 mm 厚）壓克力樹脂 (acrylic resin)。"
+        "force_limit": {
+          "value": "圓柱形 800 N；方形 400 N",
+          "detail": "若壓力達到 800 N（圓柱形電芯）或 400 N（方形電芯）仍未發生 50 mV 電壓降，立即停止下壓。對於堆疊式或折疊式電極方形電芯，鎳顆粒應插入最外側正負電極對的中心位置，最大壓力為 400 N。原文：If the force of the press reaches 800 N for a cylindrical cell before the 50 mV voltage drop, stop the descent immediately."
         },
         "short_circuit_detection": {
-          "value": "電壓降 > 50 mV",
-          "detail": "以大於每秒 100 次的速率監測電壓。若電壓相對初始電壓下降超過 50 mV，即判定發生內部短路 (If the voltage drops more than 50 mV compared the initial voltage, an internal short-circuit has been determined to have occurred)。也可使用低於 50 mV 的閾值，但需使用足夠精度的高精度電壓計並確認短路位置。"
+          "value": "電壓降 > 50 mV（監測速率 > 100 次/秒）",
+          "detail": "以大於每秒 100 次的速率監測電壓。若電壓相對初始電壓下降超過 50 mV，即判定發生內部短路；也可使用低於 50 mV 的閾值，但需使用足夠精度的高精度電壓計並確認短路位置。原文：The voltage is monitored at a rate of more than 100 times per second."
         },
-        "stop_criteria_voltage": {
-          "value": "偵測到電壓降 > 50 mV 時立即停止，保持 30 秒",
-          "detail": "偵測到內部短路時立即停止下壓，保持壓裝具位置 30 秒後釋放壓力 (stop the descent immediately and keep the pressing jig in the position for 30 秒, and then release the pressure)。"
+        "hold_after_short": {
+          "value": "偵測後立即停止下壓，保持 30 秒",
+          "detail": "偵測到電壓降 > 50 mV 內部短路時立即停止下壓，保持壓裝具位置 30 秒後釋放壓力。原文：stop the descent immediately and keep the pressing jig in the position for 30 秒, and then release the pressure."
         },
-        "stop_criteria_force_cylindrical": {
-          "value": "800 N",
-          "detail": "若壓力達到 800 N 仍未發生 50 mV 電壓降，立即停止下壓（圓柱形電芯）(If the force of the press reaches 800 N for a cylindrical cell before the 50 mV voltage drop, stop the descent immediately)。"
+        "apparatus": {
+          "value": "10 mm × 10 mm 不鏽鋼軸（丁腈橡膠／壓克力樹脂）與鎳顆粒",
+          "detail": "壓裝具底面為丁腈橡膠，置於 10 mm × 10 mm 不鏽鋼軸上；圓柱形使用丁腈橡膠底面，方形電芯另加 5 mm × 5 mm（2 mm 厚）壓克力樹脂。參照 IEC 62133-2:2017 附錄 A.5 及 A.6 的樣品準備指南，以鎳片刺入捲芯模擬內部短路；將鋁塑膜袋中的捲芯和鎳顆粒放入溫控箱 45 ± 15 分鐘，取出後 10 分鐘內完成安裝。"
         },
-        "stop_criteria_force_prismatic": {
-          "value": "400 N",
-          "detail": "若壓力達到 400 N 仍未發生 50 mV 電壓降，立即停止下壓（方形電芯）(400 N for a prismatic cell)。對於堆疊式或折疊式電極方形電芯，鎳顆粒應插入最外側正負電極對的中心位置，最大壓力為 400 N。"
-        },
-        "voltage_monitoring_rate": {
-          "value": "> 100 次/秒",
-          "detail": "電壓監測速率大於每秒 100 次 (The voltage is monitored at a rate of more than 100 times per second)。"
+        "applicability": {
+          "value": "圓柱形與方形電芯（設計評估）",
+          "detail": "針對圓柱形電芯和方形電芯的強制內部短路測試。設計評估性質，由電芯製造商或第三方實驗室執行。原文：An evaluation of a newly designed cell shall be conducted by the cell manufacturer or a third-party test house."
         },
         "sample_quantity": {
           "value": "1 顆電芯",

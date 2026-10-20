@@ -46,7 +46,7 @@
           "detail": "每軸重複 12 次，總計 3 小時，施加於 REESS 之垂直安裝方向。"
         },
         "acceleration": {
-          "value": "7-18Hz: 10m/s²; 18-30Hz: 10→2m/s²; 30-50Hz: 2m/s²",
+          "value": "7-18 Hz: 10m/s²; 18-30 Hz: 10→2m/s²; 30-50 Hz: 2m/s²",
           "detail": "依 Table 1：7-18 Hz 為 10 m/s²；18-30 Hz 逐漸從 10 降至 2 m/s²；30-50 Hz 為 2 m/s²。"
         },
         "post_test": {
@@ -176,12 +176,12 @@
           "detail": "測試依據 M1/N1/M2/M3 車型規定的時間與加速度 (g) 範圍進行，並無強制指定半正弦或鋸齒波。"
         },
         "acceleration_M1_N1": {
-          "value": "縱向 20-28g, 橫向 8-15g",
-          "detail": "M1 與 N1 車輛：縱向加速度峰值範圍約 20-28g，橫向 8-15g。"
+          "value": "縱向 20-28 g, 橫向 8-15 g",
+          "detail": "M1 與 N1 車輛：縱向加速度峰值範圍約 20-28 g，橫向 8-15 g。"
         },
         "acceleration_M2_M3_N2_N3": {
-          "value": "縱向 10-17g, 橫向 5-10g",
-          "detail": "M2/M3 與 N2/N3 車輛：縱向加速度峰值範圍約 10-17g，橫向 5-10g。"
+          "value": "縱向 10-17 g, 橫向 5-10 g",
+          "detail": "M2/M3 與 N2/N3 車輛：縱向加速度峰值範圍約 10-17 g，橫向 5-10 g。"
         },
         "soc": {
           "value": "SOC 調整",
@@ -347,7 +347,7 @@
         ]
       },
       "exemptions": [
-        "若 REESS 安裝位置之最低表面離地高度 > 1.5m，可豁免耐火測試"
+        "若 REESS 安裝位置之最低表面離地高度 > 1.5 m，可豁免耐火測試"
       ],
       "related_tests": [],
       "source_reference": "Annexure IX-E, 6.5.2",

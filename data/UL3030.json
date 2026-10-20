@@ -550,12 +550,12 @@
       ],
       "conditions": {
         "light_uas": {
-          "value": "小於12kg衝擊",
-          "detail": "最大起飛重量 ≤ 12kg：半正弦波，峰值加速度 50g，持續時間 11ms。在 3 個相互垂直的軸向（共 6 個空間方向）施加衝擊。"
+          "value": "小於12 kg衝擊",
+          "detail": "最大起飛重量 ≤ 12 kg：半正弦波，峰值加速度 50 g，持續時間 11ms。在 3 個相互垂直的軸向（共 6 個空間方向）施加衝擊。"
         },
         "heavy_uas": {
-          "value": ">12kg ≤25kg 25g 15ms",
-          "detail": "最大起飛重量 > 12kg 且 ≤ 25kg：峰值加速度 25g，持續時間 15ms。在 3 個相互垂直的軸向施加衝擊。"
+          "value": ">12 kg ≤25 kg 25 g 15ms",
+          "detail": "最大起飛重量 > 12 kg 且 ≤ 25 kg：峰值加速度 25 g，持續時間 15ms。在 3 個相互垂直的軸向施加衝擊。"
         },
         "post_test_cycle": {
           "value": "1 次充放電循環",
@@ -770,7 +770,7 @@
       "acceptance_criteria": {
         "summary": "外殼未損壞致危險零件外露",
         "details": [
-          "外殼不得有損壞導致危險電壓零件可被接觸 (使用 2.5mm 直徑測試棒驗證，及 Figure 12.1 關節探測器驗證)",
+          "外殼不得有損壞導致危險電壓零件可被接觸 (使用 2.5 mm 直徑測試棒驗證，及 Figure 12.1 關節探測器驗證)",
           "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
         ]
       },
@@ -834,7 +834,7 @@
       "acceptance_criteria": {
         "summary": "外殼未損壞致危險零件外露",
         "details": [
-          "外殼不得有損壞導致危險電壓零件可被接觸 (使用 2.5mm 直徑測試棒驗證，及 Figure 12.1 關節探測器驗證)",
+          "外殼不得有損壞導致危險電壓零件可被接觸 (使用 2.5 mm 直徑測試棒驗證，及 Figure 12.1 關節探測器驗證)",
           "通過 Dielectric Voltage Withstand Test (29) 或 Isolation Resistance Test (30) (若具危險電壓)"
         ]
       },
@@ -890,7 +890,7 @@
       "acceptance_criteria": {
         "summary": "無危險零件外露，無絕緣破壞",
         "details": [
-          "通過 2.5mm 測試棒及圖 12.1 關節探針測試",
+          "通過 2.5 mm 測試棒及圖 12.1 關節探針測試",
           "無爆炸 (E)",
           "無起火 (F)",
           "無破裂 (R)",

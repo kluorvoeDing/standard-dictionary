@@ -27,7 +27,7 @@ const DATA = path.join(ROOT, 'data');
 const WRITE = process.argv.includes('--write');
 const CHECK = process.argv.includes('--check'); // CI 模式：有待正規化內容就 exit 1
 const INCLUDE_DIRTY = process.argv.includes('--all') || CHECK;
-const SYSTEM_FILES = new Set(['catalog.json', 'taxonomy.json']);
+const SYSTEM_FILES = new Set(['catalog.json', 'taxonomy.json', 'field_schema.json']);
 
 // ── 找出 git-dirty 的 data 檔，預設略過（不碰 cron 進行中的工作）────
 let dirty = new Set();
@@ -58,6 +58,16 @@ const UNIT_RULES = [
   // 溫度：全形 ℃ → 標準 °C，並正規化間距
   [/℃/g, '°C'],
   [new RegExp(`${NUM}\\s*°C`, 'g'), '$1 °C'],                // 57°C → 57 °C
+  // 常用物理單位間距正規化（單位後若接字母或 / 代表複合單位或單字，不拆開；mm/s、°C/min 另列）
+  [new RegExp(`${NUM}\\s*mm\\/s(?![A-Za-z])`, 'g'), '$1 mm/s'],
+  [new RegExp(`${NUM}\\s*mm\\/min(?![A-Za-z])`, 'g'), '$1 mm/min'],
+  [new RegExp(`${NUM}\\s*°C\\/min(?![A-Za-z])`, 'g'), '$1 °C/min'],
+  [new RegExp(`${NUM}\\s*(kN|N|mΩ|Ω|mV|V|mA|kA|kPa|MPa|Hz|kHz|kg|g|mm|cm|m)(?![A-Za-z/·²³⁻¹])`, 'g'), '$1 $2'],
+  // 用詞統一：圓柱型 → 圓柱形、方型 → 方形
+  [/圓柱型/g, '圓柱形'],
+  [/方型/g, '方形'],
+  // 箭頭統一：-> → →
+  [/\s*->\s*/g, ' → '],
 ];
 
 function normStr(s) {

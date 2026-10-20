@@ -1,0 +1,2654 @@
+{
+  "schema_version": "1.0",
+  "description": "各 normalized_id 測試項目的標準條件欄位規範（依 D2 通則制定）",
+  "rules": [
+    "1. 一個物理量一列：依形狀、質量、容量等條件有不同值時寫在同一個鍵，以「條件 數值；條件 數值」分隔。",
+    "2. value 寫實際參數，不寫程序代號；程序名稱與條款號放 detail 開頭或 source_reference。",
+    "3. 同一份比對寫法一致：箭頭用 →、範圍用 ～、倍率用 ×、單位前空一格、圓柱形／方形／電芯／電池組用語統一。",
+    "4. value 只用繁體中文（單位、It A、CC-CV 等技術符號除外）；英文原文放 detail 末尾。",
+    "5. 不刪資訊：舊 value/detail 中每一個數值都必須保留在新資料中；被合併的舊鍵加入 parameterDictionary.js 的 ALIASES。",
+    "6. 一個測試內不重複：同一件事只留一個鍵。"
+  ],
+  "groups": {
+    "ELEC-CC": {
+      "name_zh": "快充循環後安全試驗 (電池單體)",
+      "standards_count": 6,
+      "fields": [
+        {
+          "key": "charge",
+          "label_zh": "充電條件",
+          "order": 1,
+          "merged_from": [
+            "charging_procedure",
+            "charging",
+            "charge"
+          ],
+          "value_style": "依製造商規定規格充電；0.8 × Icm 恆流充電至 (Ucl - 0.1 V)"
+        },
+        {
+          "key": "discharge",
+          "label_zh": "放電條件",
+          "order": 2,
+          "merged_from": [
+            "discharge"
+          ],
+          "value_style": "1 It 恆流放電至 Ude"
+        },
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 3,
+          "merged_from": [
+            "soc",
+            "soc_preparation"
+          ],
+          "value_style": "100% SOC；單一電芯放電至 0%，其餘電芯 50% SOC"
+        },
+        {
+          "key": "cycles",
+          "label_zh": "循環次數",
+          "order": 4,
+          "merged_from": [
+            "cycles"
+          ],
+          "value_style": "300 次循環 (20%～80% SOC)"
+        },
+        {
+          "key": "operation",
+          "label_zh": "操作步驟與方法",
+          "order": 5,
+          "merged_from": [
+            "test_method",
+            "operation",
+            "operation_1",
+            "operation_2"
+          ],
+          "value_style": "反向充電 1 小時；端口互連 1 小時；最大負載充放電循環"
+        },
+        {
+          "key": "duration",
+          "label_zh": "維持時間",
+          "order": 6,
+          "merged_from": [
+            "duration"
+          ],
+          "value_style": "7 天"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 7,
+          "merged_from": [
+            "temp",
+            "temperature"
+          ],
+          "value_style": "20 ± 5 °C"
+        },
+        {
+          "key": "fault_condition",
+          "label_zh": "單一故障設定",
+          "order": 8,
+          "merged_from": [
+            "fault_condition"
+          ],
+          "value_style": "主動保護裝置單一故障"
+        },
+        {
+          "key": "thermal_equilibrium",
+          "label_zh": "熱平衡判定",
+          "order": 9,
+          "merged_from": [
+            "thermal_equilibrium"
+          ],
+          "value_style": "±2 °C (連續 3 次測量)"
+        },
+        {
+          "key": "applicability",
+          "label_zh": "適用對象與條件",
+          "order": 10,
+          "merged_from": [
+            "applicability"
+          ],
+          "value_style": "20% 至 80% SOC 充電時間 ≤ 15 分鐘之快充單體"
+        },
+        {
+          "key": "teardown",
+          "label_zh": "試驗後拆解",
+          "order": 11,
+          "merged_from": [
+            "teardown"
+          ],
+          "value_style": "滿電狀態下拆解檢查負極析鋰情況"
+        }
+      ]
+    },
+    "ELEC-FD": {
+      "name_zh": "強制放電測試 (Forced Discharge Test)",
+      "standards_count": 15,
+      "fields": [
+        {
+          "key": "forced_discharge_current",
+          "label_zh": "強制放電電流",
+          "order": 1,
+          "merged_from": [
+            "forced_discharge_current",
+            "current",
+            "charge_current",
+            "discharge_current",
+            "charge",
+            "initial_current"
+          ],
+          "value_style": "1.0 It A；製造商規定之最大放電電流"
+        },
+        {
+          "key": "target_voltage",
+          "label_zh": "目標電壓",
+          "order": 2,
+          "merged_from": [
+            "target_voltage",
+            "target_voltage_case_1",
+            "target_voltage_case_2",
+            "voltage",
+            "voltage_hold"
+          ],
+          "value_style": "具雙重保護：-Uup；單一或無保護：-(n-1) × Uup (達標後降流維持)"
+        },
+        {
+          "key": "duration",
+          "label_zh": "維持時間",
+          "order": 3,
+          "merged_from": [
+            "duration"
+          ],
+          "value_style": "90 分鐘；時間(小時) = 額定容量(Ah) / 初始電流(A)"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 4,
+          "merged_from": [
+            "ambient_temperature",
+            "temperature",
+            "ambient"
+          ],
+          "value_style": "20 ± 5 °C；25 ± 5 °C"
+        },
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 5,
+          "merged_from": [
+            "soc"
+          ],
+          "value_style": "0% SOC (放電至終止電壓)"
+        },
+        {
+          "key": "external_resistance",
+          "label_zh": "外部負載電阻",
+          "order": 6,
+          "merged_from": [
+            "external_resistance",
+            "resistance",
+            "load"
+          ],
+          "value_style": "80 ± 20 mΩ"
+        },
+        {
+          "key": "setup",
+          "label_zh": "電芯配置與試驗設置",
+          "order": 7,
+          "merged_from": [
+            "configuration",
+            "setup",
+            "series_cells"
+          ],
+          "value_style": "1 顆完全放電電芯串聯 (n-1) 顆滿充電芯"
+        },
+        {
+          "key": "power_supply",
+          "label_zh": "試驗電源",
+          "order": 8,
+          "merged_from": [
+            "power_supply"
+          ],
+          "value_style": "12 V 直流電源串聯"
+        },
+        {
+          "key": "fault_condition",
+          "label_zh": "單一故障設定",
+          "order": 9,
+          "merged_from": [
+            "fault_condition"
+          ],
+          "value_style": "放電電路中施加單一故障"
+        },
+        {
+          "key": "termination",
+          "label_zh": "試驗終止條件",
+          "order": 10,
+          "merged_from": [
+            "termination"
+          ],
+          "value_style": "起火或爆炸；電壓 < 0.2 V 且外殼溫度回復至環境溫度 ±10 °C；保護動作"
+        },
+        {
+          "key": "protective_device",
+          "label_zh": "保護裝置狀態",
+          "order": 11,
+          "merged_from": [
+            "protective_device"
+          ],
+          "value_style": "動作後須以不觸發之最大負載重新測試"
+        },
+        {
+          "key": "applicability",
+          "label_zh": "適用對象與條件",
+          "order": 12,
+          "merged_from": [
+            "applicability"
+          ],
+          "value_style": "僅適用於串聯多電芯應用"
+        },
+        {
+          "key": "cycles",
+          "label_zh": "重複次數",
+          "order": 13,
+          "merged_from": [
+            "cycles",
+            "cycle_count",
+            "repetition",
+            "charging_procedure",
+            "sample_requirement"
+          ],
+          "value_style": "3 次"
+        }
+      ]
+    },
+    "ELEC-IR": {
+      "name_zh": "電池組 - 絕緣電阻試驗",
+      "standards_count": 6,
+      "fields": [
+        {
+          "key": "voltage",
+          "label_zh": "試驗電壓",
+          "order": 1,
+          "merged_from": [
+            "test_voltage",
+            "voltage"
+          ],
+          "value_style": "直流 500 V；2 倍額定電壓 × 1.414 (直流)"
+        },
+        {
+          "key": "method",
+          "label_zh": "試驗方法與規範",
+          "order": 2,
+          "merged_from": [
+            "method",
+            "standard",
+            "test_method_120V",
+            "test_method_low"
+          ],
+          "value_style": "系統 ≥ 120 V：按 ISO 6469-1 測試；系統 < 120 V：施加直流 500 V"
+        },
+        {
+          "key": "duration",
+          "label_zh": "維持時間",
+          "order": 3,
+          "merged_from": [
+            "duration"
+          ],
+          "value_style": "1 分鐘；5 秒"
+        },
+        {
+          "key": "current",
+          "label_zh": "試驗電流",
+          "order": 4,
+          "merged_from": [
+            "current",
+            "test_current"
+          ],
+          "value_style": "1.5 倍最大充電電流或 25 A (取較大者)；10 A"
+        },
+        {
+          "key": "test_points",
+          "label_zh": "測試部位與連接點",
+          "order": 5,
+          "merged_from": [
+            "test_points"
+          ],
+          "value_style": "正極與外殼、負極與外殼"
+        },
+        {
+          "key": "applicability",
+          "label_zh": "適用對象與條件",
+          "order": 6,
+          "merged_from": [
+            "applicability"
+          ],
+          "value_style": "額定電壓 ≥ 60 V 之直流電路"
+        },
+        {
+          "key": "conditioning",
+          "label_zh": "調理條件",
+          "order": 7,
+          "merged_from": [
+            "conditioning"
+          ],
+          "value_style": "接收狀態；55 ± 2 °C 濕熱循環 6 次後"
+        },
+        {
+          "key": "apparatus",
+          "label_zh": "試驗治具與設備",
+          "order": 8,
+          "merged_from": [
+            "apparatus",
+            "transformer_capacity"
+          ],
+          "value_style": "高壓絕緣電阻測試儀與耐壓測試儀；變壓器容量 ≥ 500 VA"
+        },
+        {
+          "key": "waveform",
+          "label_zh": "衝擊波形",
+          "order": 9,
+          "merged_from": [
+            "waveform"
+          ],
+          "value_style": "1.2/50 µs 衝擊電壓波形"
+        },
+        {
+          "key": "count",
+          "label_zh": "脈衝次數與間隔",
+          "order": 10,
+          "merged_from": [
+            "count",
+            "interval"
+          ],
+          "value_style": "正負極各 3 至 5 次，間隔 ≥ 1 秒"
+        },
+        {
+          "key": "measurement",
+          "label_zh": "測量要求",
+          "order": 11,
+          "merged_from": [
+            "measurement",
+            "pre_condition"
+          ],
+          "value_style": "接地端子與可觸及金屬部件間之阻抗"
+        }
+      ]
+    },
+    "ELEC-OC": {
+      "name_zh": "過充電測試 (Overcharge Test)",
+      "standards_count": 28,
+      "fields": [
+        {
+          "key": "charging_current",
+          "label_zh": "充電電流",
+          "order": 1,
+          "merged_from": [
+            "charging_current",
+            "charge_current",
+            "current",
+            "charging_rate",
+            "charging",
+            "charge",
+            "charge_current_small",
+            "charge_current_medium",
+            "charge_current_large",
+            "test_current"
+          ],
+          "value_style": "1.0 It A；≤16 Ah：1C；16～40 Ah：16A；>40 Ah：0.4C"
+        },
+        {
+          "key": "charging_voltage",
+          "label_zh": "充電電壓",
+          "order": 2,
+          "merged_from": [
+            "charging_voltage",
+            "charge_voltage",
+            "voltage",
+            "excess_voltage",
+            "voltage_limit",
+            "supply_voltage_single_cell",
+            "supply_voltage_series_multi_cell",
+            "voltage_rule_low",
+            "voltage_rule_high",
+            "voltage_limit_cell",
+            "voltage_limit_module",
+            "voltage_limit_pack",
+            "x_value"
+          ],
+          "value_style": "單電芯：10 V；串聯多電芯：10 × n V；≤18 V：最高 18 V；>18 V：最高 2 × 額定電壓"
+        },
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 3,
+          "merged_from": [
+            "soc"
+          ],
+          "value_style": "0% SOC (放電至終止電壓)；100% SOC (滿充)"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 4,
+          "merged_from": [
+            "ambient_temp",
+            "ambient_temperature",
+            "temperature",
+            "ambient"
+          ],
+          "value_style": "20 ± 5 °C；25 ± 5 °C"
+        },
+        {
+          "key": "duration",
+          "label_zh": "充電與維持時間",
+          "order": 5,
+          "merged_from": [
+            "duration",
+            "charging_time_primary",
+            "charging_time_secondary",
+            "duration_primary",
+            "duration_secondary"
+          ],
+          "value_style": "主充電：直至終止條件；加充：連續充電 7 天"
+        },
+        {
+          "key": "termination",
+          "label_zh": "試驗終止條件",
+          "order": 6,
+          "merged_from": [
+            "termination",
+            "end_condition",
+            "end_conditions",
+            "stop_condition",
+            "safety_stop",
+            "fallback"
+          ],
+          "value_style": "溫度穩定 (30 分鐘變化 < 10 °C)；保護電路動作；起火或爆炸"
+        },
+        {
+          "key": "fault_condition",
+          "label_zh": "單一故障設定",
+          "order": 7,
+          "merged_from": [
+            "fault",
+            "fault_condition",
+            "fault_simulation"
+          ],
+          "value_style": "充電電路單一故障 (BMS 故障)"
+        },
+        {
+          "key": "operating_conditions",
+          "label_zh": "運行條件",
+          "order": 8,
+          "merged_from": [
+            "operating_conditions",
+            "controls",
+            "control"
+          ],
+          "value_style": "正常操作條件，冷卻系統運作"
+        },
+        {
+          "key": "applicability",
+          "label_zh": "適用對象與條件",
+          "order": 9,
+          "merged_from": [
+            "applicability"
+          ],
+          "value_style": "僅適用於具單一充電電壓控制之電池系統"
+        },
+        {
+          "key": "protective_device",
+          "label_zh": "保護裝置狀態",
+          "order": 10,
+          "merged_from": [
+            "protective_device",
+            "protection"
+          ],
+          "value_style": "動作後須以不觸發之最大負載重新測試"
+        },
+        {
+          "key": "cycles",
+          "label_zh": "循環次數",
+          "order": 11,
+          "merged_from": [
+            "cycles",
+            "repetition",
+            "initial_state",
+            "rest_after_action",
+            "sample_type_note",
+            "test_condition",
+            "limit",
+            "sample_note",
+            "substitute_equipment_note",
+            "procedure",
+            "alternative_pass",
+            "n_definition",
+            "pre_condition",
+            "charging_procedure",
+            "current_maintenance",
+            "additional_test",
+            "special_condition_1",
+            "discharge",
+            "retry_condition",
+            "ignition_detection",
+            "imbalance_setup",
+            "physical_setup",
+            "method_single_stage",
+            "method_series_A",
+            "method_series_B",
+            "regulation",
+            "capacity",
+            "agreement"
+          ],
+          "value_style": "3 次測試；500 次循環"
+        }
+      ]
+    },
+    "ELEC-OCUR": {
+      "name_zh": "過充電流控制測試 (Overcharge Control of Current) — BMS",
+      "standards_count": 16,
+      "fields": [
+        {
+          "key": "current",
+          "label_zh": "試驗過流倍率",
+          "order": 1,
+          "merged_from": [
+            "charging_current",
+            "discharge_current",
+            "current",
+            "charging_rate",
+            "discharge_rate",
+            "charge",
+            "discharge",
+            "load",
+            "current_step"
+          ],
+          "value_style": "充電：最大充電電流 + 20% (或 1.5 倍 Icp)；放電：1.5 倍 Idp (或 4 × P_rd)"
+        },
+        {
+          "key": "charging_voltage",
+          "label_zh": "充電電壓",
+          "order": 2,
+          "merged_from": [
+            "charging_voltage",
+            "voltage"
+          ],
+          "value_style": "充電上限電壓 (Uup)；(n × 6.0) V"
+        },
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 3,
+          "merged_from": [
+            "soc"
+          ],
+          "value_style": "0% SOC (放電至終止電壓)；100% SOC (滿充)"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 4,
+          "merged_from": [
+            "ambient_temp",
+            "ambient_temperature",
+            "temperature",
+            "ambient"
+          ],
+          "value_style": "20 ± 5 °C；25 ± 5 °C"
+        },
+        {
+          "key": "duration",
+          "label_zh": "維持時間",
+          "order": 5,
+          "merged_from": [
+            "duration"
+          ],
+          "value_style": "2 小時；持續充電至結束條件後再維持 7 小時"
+        },
+        {
+          "key": "termination",
+          "label_zh": "試驗終止條件",
+          "order": 6,
+          "merged_from": [
+            "termination",
+            "rest_after_action"
+          ],
+          "value_style": "保護功能啟動切斷電流；保護動作後靜置 1 分鐘；溫度穩定 2 小時"
+        },
+        {
+          "key": "fault_condition",
+          "label_zh": "單一故障設定",
+          "order": 7,
+          "merged_from": [
+            "fault_condition",
+            "fault_simulation",
+            "condition",
+            "test_condition"
+          ],
+          "value_style": "正常工作條件與充電/放電保護電路單一故障條件下分別測試"
+        },
+        {
+          "key": "operating_conditions",
+          "label_zh": "運行條件",
+          "order": 8,
+          "merged_from": [
+            "operating_conditions",
+            "full_operation",
+            "control"
+          ],
+          "value_style": "正常操作條件，冷卻系統運作，所有 BMS 功能完全運作"
+        },
+        {
+          "key": "condition",
+          "label_zh": "特殊測試條件",
+          "order": 9,
+          "merged_from": [
+            "condition",
+            "special_condition_1",
+            "special_condition_2",
+            "simultaneous_io",
+            "setup"
+          ],
+          "value_style": "深度放電至低於終止電壓 10%；直接過充；支援邊充邊放時同時滿載"
+        },
+        {
+          "key": "cycles",
+          "label_zh": "循環次數",
+          "order": 10,
+          "merged_from": [
+            "cycles",
+            "cycle_count",
+            "repetition",
+            "sample_type_note",
+            "limit",
+            "sample_note",
+            "substitute_equipment_note",
+            "pre_condition"
+          ],
+          "value_style": "3 次測試；500 次循環"
+        }
+      ]
+    },
+    "ELEC-OD": {
+      "name_zh": "過放電試驗 (Overdischarge)",
+      "standards_count": 16,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 1,
+          "merged_from": [
+            "soc",
+            "initial_state",
+            "pre_condition",
+            "precondition"
+          ],
+          "value_style": "100% SOC；電芯：0% SOC；放完電"
+        },
+        {
+          "key": "discharge_current",
+          "label_zh": "放電電流",
+          "order": 2,
+          "merged_from": [
+            "discharge_current",
+            "discharge_rate",
+            "current",
+            "discharge"
+          ],
+          "value_style": "1C；2 I2；最大放電電流；推薦放電電流"
+        },
+        {
+          "key": "termination",
+          "label_zh": "試驗終止條件",
+          "order": 3,
+          "merged_from": [
+            "termination",
+            "end_condition",
+            "stop_condition",
+            "end_conditions_cell",
+            "end_conditions_module_pack",
+            "cell_voltage_limit"
+          ],
+          "value_style": "電芯：1.5 小時或 -20 V；電池組：保護動作或放電至標稱電壓 25%"
+        },
+        {
+          "key": "duration",
+          "label_zh": "放電維持時間",
+          "order": 4,
+          "merged_from": [
+            "duration"
+          ],
+          "value_style": "30 分鐘；90 分鐘"
+        },
+        {
+          "key": "cycles",
+          "label_zh": "循環次數",
+          "order": 5,
+          "merged_from": [
+            "cycles",
+            "cycle_count",
+            "repetition"
+          ],
+          "value_style": "電動滑板車：500 次；電動平衡車：3 次"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 6,
+          "merged_from": [
+            "temperature",
+            "ambient_temp"
+          ],
+          "value_style": "20 ± 10 °C"
+        },
+        {
+          "key": "fault_condition",
+          "label_zh": "單一故障設定",
+          "order": 7,
+          "merged_from": [
+            "fault_condition",
+            "fault_simulation",
+            "sample_type_note",
+            "condition",
+            "test_condition",
+            "limit",
+            "sample_note",
+            "substitute_equipment_note",
+            "applicability",
+            "procedure",
+            "x_value",
+            "alternative_pass",
+            "n_definition",
+            "control",
+            "ignition_detection",
+            "method",
+            "undervoltage",
+            "overvoltage"
+          ],
+          "value_style": "單一故障條件"
+        }
+      ]
+    },
+    "ELEC-SC-EXT": {
+      "name_zh": "外部短路測試 (External Short-Circuit Test)",
+      "standards_count": 28,
+      "fields": [
+        {
+          "key": "external_resistance",
+          "label_zh": "外部短路電阻",
+          "order": 1,
+          "merged_from": [
+            "external_resistance",
+            "resistance",
+            "ext_res",
+            "short_circuit_resistance",
+            "short_circuit_res",
+            "short",
+            "practical_resistance",
+            "resistance_cell",
+            "resistance_module"
+          ],
+          "value_style": "≤ 5 mΩ；80 ± 20 mΩ；電芯：[0.8, 1.0] mΩ；模組：[27.0, 32.8] mΩ"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 2,
+          "merged_from": [
+            "temperature",
+            "ambient_temp",
+            "ambient_temperature",
+            "temp",
+            "temperature_room",
+            "temperature_high",
+            "test_temperature",
+            "preconditioning_temperature",
+            "ambient",
+            "ambient_condition"
+          ],
+          "value_style": "20 ± 5 °C；55 ± 5 °C；20 ± 5 °C 及 55 ± 5 °C"
+        },
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 3,
+          "merged_from": [
+            "soc",
+            "pre_condition",
+            "charging_procedure"
+          ],
+          "value_style": "100% SOC；≥ 50% SOC"
+        },
+        {
+          "key": "duration",
+          "label_zh": "短路維持時間",
+          "order": 4,
+          "merged_from": [
+            "duration",
+            "short_circuit_duration",
+            "duration_and_observation",
+            "application_time"
+          ],
+          "value_style": "10 分鐘；24 小時或外殼溫降 20%；直至完全放電或起火爆炸"
+        },
+        {
+          "key": "termination",
+          "label_zh": "試驗終止條件",
+          "order": 5,
+          "merged_from": [
+            "termination",
+            "end_conditions",
+            "stop_condition",
+            "termination_criteria"
+          ],
+          "value_style": "電壓 < 0.2 V 且外殼溫度回復至環境溫度 ±10 °C；保護電路動作"
+        },
+        {
+          "key": "fault_condition",
+          "label_zh": "單一故障設定",
+          "order": 6,
+          "merged_from": [
+            "fault_condition",
+            "fault",
+            "fault_simulation",
+            "single_fault"
+          ],
+          "value_style": "放電保護電路單一故障；正常與單一故障條件"
+        },
+        {
+          "key": "apparatus",
+          "label_zh": "治具與設備",
+          "order": 7,
+          "merged_from": [
+            "apparatus",
+            "physical_setup",
+            "cheesecloth_test",
+            "data_collection_rate",
+            "contactors",
+            "soaking",
+            "cycles",
+            "sample_type_note",
+            "stabilization_time",
+            "special_condition_1",
+            "special_condition_2",
+            "special_condition_3",
+            "retry_condition",
+            "multicell",
+            "protective_device",
+            "repeat_test",
+            "ignition_detection",
+            "method",
+            "active_supply",
+            "switch_status",
+            "branch_protection",
+            "repetition",
+            "sampling"
+          ],
+          "value_style": "80 ± 20 mΩ 外部短路迴路；覆蓋薄紙與粗棉布"
+        }
+      ]
+    },
+    "ELEC-SC-INT": {
+      "name_zh": "強制內部短路測試 (Internal Short-Circuit Test)",
+      "standards_count": 6,
+      "fields": [
+        {
+          "key": "charging_procedure",
+          "label_zh": "充電程序",
+          "order": 1,
+          "merged_from": [
+            "charging_procedure",
+            "voltage_state"
+          ],
+          "value_style": "0.2 It A 放電 → 依表 5 溫度存放 1～4 小時 → CC-CV 充電至 0.05 It A；0.2 It A 放電 → CC-CV 充電至 0.05 It A"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 2,
+          "merged_from": [
+            "temperature",
+            "ambient_temp",
+            "ambient_temperature",
+            "test_temperatures",
+            "test_temperature",
+            "environment_dew_point"
+          ],
+          "value_style": "最低充電溫度 ± 2 °C；最高充電溫度 ± 2 °C；25 ± 5 °C"
+        },
+        {
+          "key": "crush_speed",
+          "label_zh": "擠壓速度",
+          "order": 3,
+          "merged_from": [
+            "crush_speed",
+            "press_speed",
+            "pressing_speed",
+            "speed"
+          ],
+          "value_style": "0.1 mm/s"
+        },
+        {
+          "key": "force_limit",
+          "label_zh": "截止力（依形狀）",
+          "order": 4,
+          "merged_from": [
+            "force_limit",
+            "stop_criteria_force_cylindrical",
+            "stop_criteria_force_prismatic",
+            "force_cylindrical",
+            "force_prismatic",
+            "force_limit_stop_condition"
+          ],
+          "value_style": "圓柱形 800 N；方形 400 N"
+        },
+        {
+          "key": "short_circuit_detection",
+          "label_zh": "短路判定",
+          "order": 5,
+          "merged_from": [
+            "short_circuit_detection",
+            "voltage_monitoring_rate"
+          ],
+          "value_style": "電壓降 > 50 mV（監測速率 > 100 次/秒）"
+        },
+        {
+          "key": "hold_after_short",
+          "label_zh": "短路後保持時間",
+          "order": 6,
+          "merged_from": [
+            "hold_after_short",
+            "stop_criteria_voltage",
+            "voltage_drop_stop_condition"
+          ],
+          "value_style": "偵測後立即停止下壓，保持 30 秒"
+        },
+        {
+          "key": "apparatus",
+          "label_zh": "治具與設備",
+          "order": 7,
+          "merged_from": [
+            "apparatus",
+            "pressing_jig",
+            "pressure_jig",
+            "nickel_particle",
+            "method",
+            "method_a",
+            "method_b",
+            "depth"
+          ],
+          "value_style": "10 mm × 10 mm 不鏽鋼軸（丁腈橡膠／壓克力樹脂）與鎳顆粒"
+        },
+        {
+          "key": "applicability",
+          "label_zh": "適用對象與條件",
+          "order": 8,
+          "merged_from": [
+            "applicability",
+            "regional_requirement",
+            "disassembly_time_limit",
+            "extended_sampling",
+            "preheat_time",
+            "setup_time_limit"
+          ],
+          "value_style": "圓柱形與方形鋰離子電芯（僅法國、日本、韓國、瑞士要求）；圓柱形與方形電芯（設計評估）"
+        }
+      ]
+    },
+    "MECH-CRUSH": {
+      "name_zh": "控制壓壞試驗 — 圓柱形電芯 (Controlled Crush — Cylindrical Cell)",
+      "standards_count": 22,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 1,
+          "merged_from": [
+            "soc",
+            "pre_condition",
+            "sample_state",
+            "sample_requirement"
+          ],
+          "value_style": "滿充；BEV 100% / HEV 80%；一次電芯：未放電與完全放電；二次電芯：首循環 50% 設計容量"
+        },
+        {
+          "key": "charging_procedure",
+          "label_zh": "充電程序",
+          "order": 2,
+          "merged_from": [
+            "charging_procedure"
+          ],
+          "value_style": "0.2 It A 放電 → 於上限充電溫度存放 1～4 小時 → CC-CV 充電至 0.05 It A"
+        },
+        {
+          "key": "force",
+          "label_zh": "施加力 / 擠壓力",
+          "order": 3,
+          "merged_from": [
+            "force",
+            "crush_force",
+            "crush",
+            "force_hard",
+            "force_soft",
+            "crush_params"
+          ],
+          "value_style": "13 ± 0.78 kN；13 ± 1 kN；100 kN 或 1000 倍質量"
+        },
+        {
+          "key": "crush_speed",
+          "label_zh": "擠壓速度",
+          "order": 4,
+          "merged_from": [
+            "crush_speed",
+            "speed"
+          ],
+          "value_style": "0.1 mm/s；≤ 2 mm/s；≤ 6 mm/min；≈ 1.5 cm/s"
+        },
+        {
+          "key": "apparatus",
+          "label_zh": "治具與設備",
+          "order": 5,
+          "merged_from": [
+            "apparatus",
+            "impactor",
+            "crush_plate",
+            "crush_tool",
+            "crusher",
+            "tool",
+            "constraint_fixture"
+          ],
+          "value_style": "兩個平面間擠壓；半徑 75 mm 半圓柱體；直徑 150 mm 平面鋼製壓板"
+        },
+        {
+          "key": "orientation",
+          "label_zh": "樣品方位",
+          "order": 6,
+          "merged_from": [
+            "orientation",
+            "placement",
+            "orientation_cylindrical_prismatic",
+            "orientation_coin",
+            "orientation_cylindrical_pouch",
+            "orientation_prismatic_non_li_ion",
+            "orientation_prismatic",
+            "orientation_cylindrical",
+            "direction"
+          ],
+          "value_style": "圓柱形／方形（寬面）：縱軸平行於擠壓面；鈕扣形：平坦面施壓"
+        },
+        {
+          "key": "termination",
+          "label_zh": "試驗終止條件",
+          "order": 7,
+          "merged_from": [
+            "termination",
+            "end_conditions",
+            "stop_condition",
+            "termination_criteria",
+            "termination_voltage_drop",
+            "termination_deformation",
+            "termination_logic",
+            "release"
+          ],
+          "value_style": "達最大力 13 ± 0.78 kN 或電壓突降 1/3（釋放壓力）；達最大力 13 ± 0.78 kN、電壓降 ≥ 100 mV 或變形量 ≥ 50%（先到者釋放壓力）"
+        },
+        {
+          "key": "duration",
+          "label_zh": "維持時間",
+          "order": 8,
+          "merged_from": [
+            "duration",
+            "hold_time",
+            "response_time",
+            "onset_time"
+          ],
+          "value_style": "保持 10 分鐘；保持 5 分鐘"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 9,
+          "merged_from": [
+            "temperature",
+            "ambient_temperature",
+            "test_temperature"
+          ],
+          "value_style": "20 ± 5 °C；45 °C 與 10 °C"
+        },
+        {
+          "key": "applicability",
+          "label_zh": "適用對象與條件",
+          "order": 10,
+          "merged_from": [
+            "applicability",
+            "crush_count",
+            "length",
+            "ignition_detection",
+            "method"
+          ],
+          "value_style": "方形、軟包、鈕扣電芯及圓柱形直徑 < 18.0 mm（單次擠壓）"
+        }
+      ]
+    },
+    "MECH-DROP": {
+      "name_zh": "跌落測試 (Drop Test)",
+      "standards_count": 20,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 1,
+          "merged_from": [
+            "soc",
+            "pre_condition",
+            "charging_procedure"
+          ],
+          "value_style": "滿充；100% SOC"
+        },
+        {
+          "key": "drop_height",
+          "label_zh": "跌落高度",
+          "order": 2,
+          "merged_from": [
+            "drop_height",
+            "height",
+            "mass_based_conditions",
+            "drop"
+          ],
+          "value_style": "1.0 m；< 7 kg：1000 mm；7～50 kg：100 mm；50～100 kg：50 mm；≥ 100 kg：25 mm"
+        },
+        {
+          "key": "drop_count",
+          "label_zh": "跌落次數",
+          "order": 3,
+          "merged_from": [
+            "drop_count",
+            "drops",
+            "count",
+            "cycles",
+            "whole_drop_count",
+            "edge_corner_drop_count"
+          ],
+          "value_style": "3 次；< 20 kg：3 次；≥ 20 kg：最短邊與角各 2 次；圓柱形／鈕扣形 4 次；方形／軟包 6 次"
+        },
+        {
+          "key": "drop_surface",
+          "label_zh": "撞擊面",
+          "order": 4,
+          "merged_from": [
+            "drop_surface",
+            "floor",
+            "surface",
+            "apparatus"
+          ],
+          "value_style": "平坦混凝土或金屬地板；混凝土板；混凝土鋪設 18 mm 硬木板"
+        },
+        {
+          "key": "orientation",
+          "label_zh": "樣品方位",
+          "order": 5,
+          "merged_from": [
+            "orientation",
+            "direction",
+            "rotation"
+          ],
+          "value_style": "隨機方向；< 7 kg：隨機方向；7～20 kg：底部朝下；≥ 20 kg：同一最短邊與同一角"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 6,
+          "merged_from": [
+            "temperature",
+            "ambient_temperature"
+          ],
+          "value_style": "20 ± 5 °C"
+        },
+        {
+          "key": "cold_conditioning",
+          "label_zh": "低溫調節",
+          "order": 7,
+          "merged_from": [
+            "cold_conditioning",
+            "cold_condition"
+          ],
+          "value_style": "-20 °C 冷卻 24 小時（取出後 1 分鐘內跌落）"
+        },
+        {
+          "key": "interval",
+          "label_zh": "間隔時間",
+          "order": 8,
+          "merged_from": [
+            "interval"
+          ],
+          "value_style": "兩次跌落間隔 ≥ 5 分鐘"
+        },
+        {
+          "key": "applicability",
+          "label_zh": "適用對象與條件",
+          "order": 9,
+          "merged_from": [
+            "applicability",
+            "subdivision_note",
+            "ambient",
+            "ignition_detection"
+          ],
+          "value_style": "可測試代表性子單元"
+        }
+      ]
+    },
+    "MECH-IMPACT": {
+      "name_zh": "撞擊測試 (Impact Test)",
+      "standards_count": 15,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 1,
+          "merged_from": [
+            "soc",
+            "dut_state",
+            "sample_state"
+          ],
+          "value_style": "100% 滿充電；50% 額定容量"
+        },
+        {
+          "key": "steel_bar",
+          "label_zh": "鋼棒規格",
+          "order": 2,
+          "merged_from": [
+            "steel_bar",
+            "bar_diameter",
+            "bar",
+            "bar_specification",
+            "impactor",
+            "apparatus"
+          ],
+          "value_style": "直徑 15.8 ± 0.1 mm，長度 ≥ 60 mm 不鏽鋼棒"
+        },
+        {
+          "key": "impact_mass",
+          "label_zh": "衝擊質量",
+          "order": 3,
+          "merged_from": [
+            "impact_mass",
+            "drop_mass",
+            "mass",
+            "weight",
+            "drop_weight",
+            "impact"
+          ],
+          "value_style": "電芯：9.1 ± 0.1 kg；整車底部：10 kg；外殼：0.535 kg 鋼球"
+        },
+        {
+          "key": "drop_height",
+          "label_zh": "跌落高度",
+          "order": 4,
+          "merged_from": [
+            "drop_height",
+            "height",
+            "impact"
+          ],
+          "value_style": "610 ± 25 mm；外殼：1.29 m"
+        },
+        {
+          "key": "impact_energy",
+          "label_zh": "衝擊能量",
+          "order": 5,
+          "merged_from": [
+            "impact_energy",
+            "impact_params"
+          ],
+          "value_style": "整車底部：150 ± 3 J；外殼：6.78 N·m"
+        },
+        {
+          "key": "orientation",
+          "label_zh": "樣品方位",
+          "order": 6,
+          "merged_from": [
+            "orientation",
+            "orientation_cylindrical",
+            "orientation_prismatic",
+            "pouch_cells",
+            "orientation_cylindrical_pouch",
+            "orientation_prismatic_non_li_ion",
+            "orientation_coin"
+          ],
+          "value_style": "圓柱形：縱軸平行於平面且垂直於鋼棒；方形與軟包：寬面（非鋰離子旋轉90°測寬窄兩面）；鈕扣型：鋼棒橫跨中心"
+        },
+        {
+          "key": "impact_count",
+          "label_zh": "衝擊次數",
+          "order": 7,
+          "merged_from": [
+            "impact_count",
+            "impacts_per_sample"
+          ],
+          "value_style": "每個樣品 1 次；外殼：至少 3 次"
+        },
+        {
+          "key": "impact_spots",
+          "label_zh": "衝擊位置",
+          "order": 8,
+          "merged_from": [
+            "impact_spots",
+            "surfaces"
+          ],
+          "value_style": "樣品幾何中心；整車底部：前部、中部、後部各 1 處；外殼：易受衝擊之每個表面"
+        },
+        {
+          "key": "applicability",
+          "label_zh": "適用限制",
+          "order": 9,
+          "merged_from": [
+            "applicability",
+            "sample_requirement"
+          ],
+          "value_style": "直徑 ≥ 18.0 mm 圓柱形電芯"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 10,
+          "merged_from": [
+            "temperature",
+            "ambient_temperature",
+            "floor_note",
+            "cold_conditioning",
+            "impact_object",
+            "duration"
+          ],
+          "value_style": "20 ± 5 °C"
+        }
+      ]
+    },
+    "MECH-NAIL": {
+      "name_zh": "穿刺試驗 (Penetration)",
+      "standards_count": 6,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 1,
+          "merged_from": [
+            "soc",
+            "initial_test_conditions",
+            "test_matrix"
+          ],
+          "value_style": "100% 滿充電"
+        },
+        {
+          "key": "nail_diameter",
+          "label_zh": "鋼針直徑",
+          "order": 2,
+          "merged_from": [
+            "nail_diameter",
+            "nail_spec",
+            "nail",
+            "needle",
+            "rod_specification",
+            "apparatus"
+          ],
+          "value_style": "直徑 5 mm；直徑 4 mm；直徑 3 ± 0.2 mm"
+        },
+        {
+          "key": "needle_diameter",
+          "label_zh": "針尖圓錐角",
+          "order": 3,
+          "merged_from": [
+            "needle_diameter",
+            "needle_spec"
+          ],
+          "value_style": "圓錐角 45°；圓錐角 14°；端部半徑 1.5 ± 0.1 mm"
+        },
+        {
+          "key": "penetration_speed",
+          "label_zh": "貫穿速度",
+          "order": 4,
+          "merged_from": [
+            "speed",
+            "penetration_speed"
+          ],
+          "value_style": "25 ± 5 mm/s；20 ± 1 mm/s；0.1 mm/s"
+        },
+        {
+          "key": "penetration",
+          "label_zh": "貫穿位置與方向",
+          "order": 5,
+          "merged_from": [
+            "location",
+            "penetration"
+          ],
+          "value_style": "垂直於電池極板方向，貫穿幾何中心"
+        },
+        {
+          "key": "hold_duration",
+          "label_zh": "鋼針停留時間",
+          "order": 6,
+          "merged_from": [
+            "hold_duration",
+            "duration"
+          ],
+          "value_style": "鋼針停留在電池中 1 小時"
+        },
+        {
+          "key": "termination",
+          "label_zh": "終止判據",
+          "order": 7,
+          "merged_from": [
+            "termination",
+            "end_conditions"
+          ],
+          "value_style": "完全穿透；電壓降 ≥ 100 ± 10 mV"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "試驗環境溫度",
+          "order": 8,
+          "merged_from": [
+            "temperature",
+            "initial_test_conditions"
+          ],
+          "value_style": "20 ± 5 °C；55 °C"
+        }
+      ]
+    },
+    "MECH-SHOCK": {
+      "name_zh": "機械衝擊測試 (Mechanical Shock)",
+      "standards_count": 20,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 1,
+          "merged_from": [
+            "soc",
+            "charging_procedure"
+          ],
+          "value_style": "100% 滿充電；BEV 100%、HEV 80%；≥ 50% SOC"
+        },
+        {
+          "key": "waveform",
+          "label_zh": "衝擊波形",
+          "order": 2,
+          "merged_from": [
+            "waveform",
+            "pulse_shape",
+            "pulse",
+            "pulse_type",
+            "shock_profile"
+          ],
+          "value_style": "半正弦波"
+        },
+        {
+          "key": "acceleration_peak",
+          "label_zh": "峰值加速度",
+          "order": 3,
+          "merged_from": [
+            "acceleration",
+            "acceleration_peak",
+            "peak_acceleration",
+            "cell_parameters",
+            "small_battery_parameters",
+            "large_battery_parameters",
+            "shock_lt_12kg",
+            "shock_ge_12kg",
+            "light_uas",
+            "heavy_uas",
+            "acceleration_M1_N1",
+            "acceleration_M2_M3_N2_N3",
+            "shock",
+            "shock_params"
+          ],
+          "value_style": "電芯：150 gn（大型電芯可選 50 gn）；電池包：≤ 12 kg 為 150 gn 或公式計算取小者；> 12 kg 為 50 gn 或公式計算取小者；車載：縱向 20～28 gn，橫向 8～15 gn"
+        },
+        {
+          "key": "pulse_duration",
+          "label_zh": "脈衝持續時間",
+          "order": 4,
+          "merged_from": [
+            "duration",
+            "pulse_duration",
+            "shock_profile",
+            "shock",
+            "shock_params"
+          ],
+          "value_style": "質量 ≤ 12 kg：6 ms；質量 > 12 kg：11 ms；車載：15 ms"
+        },
+        {
+          "key": "acceleration_initial",
+          "label_zh": "初始平均加速度",
+          "order": 5,
+          "merged_from": [
+            "acceleration_initial"
+          ],
+          "value_style": "初始 3 ms 內最低平均加速度 ≥ 75 gn"
+        },
+        {
+          "key": "shock_count",
+          "label_zh": "衝擊次數",
+          "order": 6,
+          "merged_from": [
+            "shock_count",
+            "shocks",
+            "count",
+            "cycles",
+            "repetitions",
+            "shock_directions"
+          ],
+          "value_style": "每個方向正反各 3 次（共 18 次）；每方向 3 次；每方向 10 次"
+        },
+        {
+          "key": "direction",
+          "label_zh": "衝擊方向",
+          "order": 7,
+          "merged_from": [
+            "direction",
+            "directions"
+          ],
+          "value_style": "3 個互相垂直方向（正反兩向）"
+        },
+        {
+          "key": "mounting",
+          "label_zh": "安裝固定方式",
+          "order": 8,
+          "merged_from": [
+            "mounting"
+          ],
+          "value_style": "剛性安裝，支撐所有安裝面"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 9,
+          "merged_from": [
+            "temperature",
+            "ambient_temperature",
+            "test_method_reference",
+            "apparatus",
+            "impact",
+            "ignition_detection",
+            "method"
+          ],
+          "value_style": "20 ± 5 °C；20 ± 10 °C"
+        }
+      ]
+    },
+    "MECH-STRESS": {
+      "name_zh": "電池組 - 提把強度試驗",
+      "standards_count": 12,
+      "fields": [
+        {
+          "key": "test_type",
+          "label_zh": "應力試驗類型",
+          "order": 1,
+          "merged_from": [
+            "test_type",
+            "setup",
+            "rotation",
+            "test_pressure"
+          ],
+          "value_style": "高溫模塑外殼應力釋放；外殼恆定壓力；把手與吊掛強度；三點彎曲"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "試驗溫度",
+          "order": 2,
+          "merged_from": [
+            "temperature",
+            "temp",
+            "ambient_temperature",
+            "ambient"
+          ],
+          "value_style": "70 ± 2 °C；最高工作溫度 + 10 °C（至少 70 °C）；20 ± 5 °C"
+        },
+        {
+          "key": "duration",
+          "label_zh": "維持時間",
+          "order": 3,
+          "merged_from": [
+            "duration"
+          ],
+          "value_style": "7 小時（高溫應力釋放）；1 分鐘（提把載荷）；5 秒（外殼恆定壓力）；30 秒（移動電源外殼）"
+        },
+        {
+          "key": "force",
+          "label_zh": "施加外力或載荷",
+          "order": 4,
+          "merged_from": [
+            "force",
+            "load",
+            "pull_test"
+          ],
+          "value_style": "250 ± 10 N；4 倍系統重量；3 倍系統重量；2 倍重量拉力"
+        },
+        {
+          "key": "rate",
+          "label_zh": "施力速率",
+          "order": 5,
+          "merged_from": [
+            "rate"
+          ],
+          "value_style": "10 ± 2.5 N/s；10 秒內均勻施加"
+        },
+        {
+          "key": "apparatus",
+          "label_zh": "施力工具規格",
+          "order": 6,
+          "merged_from": [
+            "apparatus",
+            "tool"
+          ],
+          "value_style": "直徑 30 mm 圓形平面壓頭"
+        },
+        {
+          "key": "surfaces",
+          "label_zh": "受測表面",
+          "order": 7,
+          "merged_from": [
+            "surfaces"
+          ],
+          "value_style": "頂部、底部與側面；易受外力之各外表面"
+        },
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 8,
+          "merged_from": [
+            "soc",
+            "charging_procedure",
+            "dut_state",
+            "setup"
+          ],
+          "value_style": "100% 滿充電；完全放電（或使用假電芯）"
+        },
+        {
+          "key": "applicability",
+          "label_zh": "適用限制",
+          "order": 9,
+          "merged_from": [
+            "applicability",
+            "push_back",
+            "axes",
+            "ignition_detection"
+          ],
+          "value_style": "僅限模塑外殼電池組"
+        }
+      ]
+    },
+    "MECH-VIB": {
+      "name_zh": "振動測試 (Vibration Test)",
+      "standards_count": 20,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態 (SOC)",
+          "order": 1,
+          "merged_from": [
+            "soc",
+            "charging_procedure",
+            "pre_condition"
+          ],
+          "value_style": "100% 滿充電；≥ 50% SOC；最高工作荷電狀態"
+        },
+        {
+          "key": "waveform",
+          "label_zh": "振動波形與模式",
+          "order": 2,
+          "merged_from": [
+            "waveform",
+            "motion_type",
+            "vibration_type"
+          ],
+          "value_style": "正弦波對數掃頻；簡諧運動；隨機振動"
+        },
+        {
+          "key": "vibration_frequency",
+          "label_zh": "頻率範圍",
+          "order": 3,
+          "merged_from": [
+            "vibration_frequency",
+            "frequency",
+            "frequency_range"
+          ],
+          "value_style": "7 Hz～200 Hz；10 Hz～55 Hz；5 Hz～200 Hz"
+        },
+        {
+          "key": "acceleration_peak",
+          "label_zh": "最大加速度",
+          "order": 4,
+          "merged_from": [
+            "acceleration_peak",
+            "acceleration",
+            "vibration_profile",
+            "profile_lt_12kg",
+            "profile_ge_12kg",
+            "small_cell_battery_profile",
+            "large_battery_profile"
+          ],
+          "value_style": "電芯與小型電池：8 gn（7～18 Hz 為 1 gn，49.84～200 Hz 為 8 gn）；大型電池：2 gn（25～200 Hz 為 2 gn）"
+        },
+        {
+          "key": "amplitude",
+          "label_zh": "振幅/位移",
+          "order": 5,
+          "merged_from": [
+            "amplitude"
+          ],
+          "value_style": "0.8 mm（總行程 1.6 mm）；1.0 mm（峰對峰）"
+        },
+        {
+          "key": "sweep_rate",
+          "label_zh": "掃頻速率與循環時間",
+          "order": 6,
+          "merged_from": [
+            "sweep_time",
+            "sweep_duration",
+            "sweep_rate"
+          ],
+          "value_style": "15 分鐘/循環（對數掃頻）；1 Hz/分鐘；2 分鐘/循環"
+        },
+        {
+          "key": "test_duration",
+          "label_zh": "試驗持續時間",
+          "order": 7,
+          "merged_from": [
+            "test_duration",
+            "duration",
+            "cycles",
+            "cycle_count",
+            "cycles_per_axis",
+            "vibration_params"
+          ],
+          "value_style": "每個方向 12 次循環（共 3 小時）；每軸 12 小時；每軸 21 小時"
+        },
+        {
+          "key": "axes",
+          "label_zh": "振動方向",
+          "order": 8,
+          "merged_from": [
+            "direction",
+            "directions",
+            "axes"
+          ],
+          "value_style": "3 個互相垂直方向（X、Y、Z 軸）"
+        },
+        {
+          "key": "vibration_rms",
+          "label_zh": "隨機振動均方根加速度",
+          "order": 9,
+          "merged_from": [
+            "vibration_rms",
+            "vibration_profile"
+          ],
+          "value_style": "0.51 g；X: 1.09 g、Y: 0.68 g、Z: 2.53 g"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 10,
+          "merged_from": [
+            "temperature",
+            "ambient_temperature",
+            "test_method_reference",
+            "profile",
+            "standard",
+            "ignition_detection",
+            "method",
+            "vibration"
+          ],
+          "value_style": "20 ± 5 °C；20 ± 10 °C"
+        }
+      ]
+    },
+    "THERM-ABUSE": {
+      "name_zh": "熱濫用測試 (Thermal Abuse Test)",
+      "standards_count": 25,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態",
+          "order": 1,
+          "merged_from": [
+            "soc",
+            "pre_condition"
+          ],
+          "value_style": "100% SOC；HEV：80% SOC"
+        },
+        {
+          "key": "initial_temperature",
+          "label_zh": "初始溫度",
+          "order": 2,
+          "merged_from": [
+            "initial_temperature",
+            "initial_condition",
+            "ambient_temp"
+          ],
+          "value_style": "20 ± 5 °C"
+        },
+        {
+          "key": "oven_type",
+          "label_zh": "烘箱類型",
+          "order": 3,
+          "merged_from": [
+            "oven_type",
+            "oven"
+          ],
+          "value_style": "自然對流或循環風烘箱"
+        },
+        {
+          "key": "heating_rate",
+          "label_zh": "升溫速率",
+          "order": 4,
+          "merged_from": [
+            "heating_rate",
+            "ramp_rate",
+            "ramp"
+          ],
+          "value_style": "5 ± 2 °C/min"
+        },
+        {
+          "key": "target_temperature",
+          "label_zh": "目標溫度",
+          "order": 5,
+          "merged_from": [
+            "target_temperature",
+            "target_temp",
+            "temperature",
+            "temp",
+            "target_condition_non_nimh",
+            "target_condition_nimh",
+            "temperature_elevation",
+            "ramp"
+          ],
+          "value_style": "鋰離子：130 ± 2 °C；鎳氫：85 ± 5 °C；電池包：最高工作溫度 + 5 °C"
+        },
+        {
+          "key": "duration",
+          "label_zh": "維持時間",
+          "order": 6,
+          "merged_from": [
+            "duration",
+            "hold_time",
+            "hold_duration",
+            "hold",
+            "target_condition_non_nimh",
+            "target_condition_nimh"
+          ],
+          "value_style": "鋰離子：30 分鐘；鎳氫：2 小時；行動電源：60 分鐘"
+        },
+        {
+          "key": "termination",
+          "label_zh": "終止條件",
+          "order": 7,
+          "merged_from": [
+            "termination",
+            "end_conditions",
+            "end_condition",
+            "trigger"
+          ],
+          "value_style": "保護功能啟動；或 2 小時內溫度變化 < 4 °C"
+        },
+        {
+          "key": "cooling",
+          "label_zh": "冷卻系統狀態",
+          "order": 8,
+          "merged_from": [
+            "cooling_disabled",
+            "cooling",
+            "fault_condition",
+            "operating_conditions"
+          ],
+          "value_style": "冷卻系統停用"
+        },
+        {
+          "key": "operation",
+          "label_zh": "運行操作",
+          "order": 9,
+          "merged_from": [
+            "operation",
+            "charge_discharge",
+            "charging_continuation",
+            "output_test",
+            "input_test",
+            "charge",
+            "discharge",
+            "temperature_measurement",
+            "environment",
+            "high_temp",
+            "high_temp_condition",
+            "low_temp",
+            "low_temp_condition",
+            "control",
+            "heating",
+            "charging_procedure",
+            "stabilization",
+            "protective_devices",
+            "cycles",
+            "conditioning",
+            "repetition",
+            "ignition_detection",
+            "method",
+            "test_temperature",
+            "charge_high",
+            "charge_low",
+            "discharge_high"
+          ],
+          "value_style": "以最大速率連續充放電循環"
+        }
+      ]
+    },
+    "THERM-ALT": {
+      "name_zh": "低氣壓試驗 (Altitude Simulation Test)",
+      "standards_count": 11,
+      "fields": [
+        {
+          "key": "pressure",
+          "label_zh": "試驗壓強",
+          "order": 1,
+          "merged_from": [
+            "pressure",
+            "altitude_params",
+            "pressure_diff"
+          ],
+          "value_style": "≤ 11.6 kPa；高海拔車輛：61.2 kPa；包裝壓差：≥ 88 kPa"
+        },
+        {
+          "key": "duration",
+          "label_zh": "維持時間",
+          "order": 2,
+          "merged_from": [
+            "duration",
+            "altitude_params"
+          ],
+          "value_style": "≥ 6 小時；車載系統：5 小時"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 3,
+          "merged_from": [
+            "temperature"
+          ],
+          "value_style": "20 ± 5 °C"
+        },
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態",
+          "order": 4,
+          "merged_from": [
+            "soc",
+            "sample_state"
+          ],
+          "value_style": "滿電狀態（100% SOC）；原電池：未放電及完全放電"
+        }
+      ]
+    },
+    "THERM-CYCLE": {
+      "name_zh": "熱衝擊和循環測試 (Thermal Shock and Cycling Test)",
+      "standards_count": 19,
+      "fields": [
+        {
+          "key": "high_temperature",
+          "label_zh": "高溫設定",
+          "order": 1,
+          "merged_from": [
+            "high_temp",
+            "high_temperature",
+            "temp_high",
+            "step_a_high_temp",
+            "temperatures",
+            "temp_range",
+            "range",
+            "temperature_range",
+            "cycle_profile",
+            "profile",
+            "temperature_profile"
+          ],
+          "value_style": "72 ± 2 °C；儲能/車用：85 ± 2 °C"
+        },
+        {
+          "key": "low_temperature",
+          "label_zh": "低溫設定",
+          "order": 2,
+          "merged_from": [
+            "low_temp",
+            "low_temperature",
+            "temp_low",
+            "step_c_low_temp",
+            "temperatures",
+            "temp_range",
+            "range",
+            "temperature_range",
+            "cycle_profile",
+            "profile",
+            "temperature_profile"
+          ],
+          "value_style": "-40 ± 2 °C"
+        },
+        {
+          "key": "dwell_time",
+          "label_zh": "停留時間",
+          "order": 3,
+          "merged_from": [
+            "dwell_time",
+            "hold_time",
+            "duration",
+            "high_temp_duration",
+            "low_temp_duration",
+            "large_battery_duration",
+            "step_a_high_temp",
+            "step_c_low_temp",
+            "cycle_profile"
+          ],
+          "value_style": "小型：≥ 6 小時；大型（> 12 kg 或 > 500 g）：≥ 12 小時；UL1642：4 小時"
+        },
+        {
+          "key": "transition_time",
+          "label_zh": "轉換時間",
+          "order": 4,
+          "merged_from": [
+            "transition_time",
+            "transition",
+            "transition_rate"
+          ],
+          "value_style": "≤ 30 分鐘；或 5 °C/min"
+        },
+        {
+          "key": "cycles",
+          "label_zh": "循環次數",
+          "order": 5,
+          "merged_from": [
+            "cycles",
+            "cycle_count"
+          ],
+          "value_style": "10 次循環；車用/系統：5 次循環；耐久：30 次循環"
+        },
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態",
+          "order": 6,
+          "merged_from": [
+            "soc",
+            "standard",
+            "step_b_ambient",
+            "step_d_recovery",
+            "temperature",
+            "stabilization",
+            "method",
+            "recording"
+          ],
+          "value_style": "100% SOC；系統：≥ 50% SOC"
+        }
+      ]
+    },
+    "THERM-FIRE": {
+      "name_zh": "火燒與材料耐燃試驗 (Fire Exposure and Flammability Test)",
+      "standards_count": 14,
+      "fields": [
+        {
+          "key": "burner",
+          "label_zh": "火源規格",
+          "order": 1,
+          "merged_from": [
+            "heat_source",
+            "burner",
+            "lpg_burner_fire",
+            "gasoline_pool_fire",
+            "heating",
+            "setup"
+          ],
+          "value_style": "本生燈/Meker 燃燒器；外部火燒：商業燃料燃燒盤；LPG 燃燒器 800～1100 °C"
+        },
+        {
+          "key": "fire_exposure",
+          "label_zh": "火燒階段與時間",
+          "order": 2,
+          "merged_from": [
+            "fire_stages",
+            "phase_a",
+            "phase_b",
+            "phase_c",
+            "phase_d",
+            "fire_exposure",
+            "duration"
+          ],
+          "value_style": "預熱 60 秒；直接火燒 70 秒；間接火燒 60 秒；冷卻觀察至室溫"
+        },
+        {
+          "key": "apparatus",
+          "label_zh": "試驗治具規格",
+          "order": 3,
+          "merged_from": [
+            "apparatus",
+            "platform_screen",
+            "cage",
+            "fixation"
+          ],
+          "value_style": "金屬網孔 102 mm；八角金屬網罩 610 × 305 mm"
+        },
+        {
+          "key": "enclosure_material",
+          "label_zh": "外殼阻燃等級",
+          "order": 4,
+          "merged_from": [
+            "enclosure_material",
+            "non_metallic_case",
+            "enclosure",
+            "grade",
+            "test_item"
+          ],
+          "value_style": "不低於 V-0 級；小型封裝：不低於 V-1 級"
+        },
+        {
+          "key": "pcb_material",
+          "label_zh": "電路板阻燃等級",
+          "order": 5,
+          "merged_from": [
+            "pcb_material",
+            "pcb",
+            "pcb_and_materials",
+            "grade"
+          ],
+          "value_style": "不低於 V-1 級"
+        },
+        {
+          "key": "wire_material",
+          "label_zh": "導線阻燃要求",
+          "order": 6,
+          "merged_from": [
+            "wire_material",
+            "wires",
+            "test_item"
+          ],
+          "value_style": "通過針焰試驗"
+        },
+        {
+          "key": "termination",
+          "label_zh": "終止條件",
+          "order": 7,
+          "merged_from": [
+            "termination",
+            "end_conditions",
+            "duration"
+          ],
+          "value_style": "電芯爆炸或完全燃燒；或持續加熱 30 分鐘無起火爆炸"
+        },
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態",
+          "order": 8,
+          "merged_from": [
+            "soc"
+          ],
+          "value_style": "100% SOC；系統：最高工作荷電狀態（或 ≥ 50% SOC）"
+        },
+        {
+          "key": "ignition_detection",
+          "label_zh": "點火源距離",
+          "order": 9,
+          "merged_from": [
+            "ignition_detection",
+            "ignition_source_defined_vent",
+            "ignition_source_undefined_vent",
+            "method",
+            "heating_rate",
+            "temperature",
+            "test_type",
+            "applicability",
+            "other_packaging",
+            "fault_condition"
+          ],
+          "value_style": "明確排氣路徑：距排氣口 40 ± 5 mm；無明確排氣路徑：多點火源覆蓋"
+        }
+      ]
+    },
+    "THERM-HUMID": {
+      "name_zh": "溼熱循環試驗 (Damp Heat Cycling Test)",
+      "standards_count": 2,
+      "fields": [
+        {
+          "key": "high_temperature",
+          "label_zh": "最高試驗溫度",
+          "order": 1,
+          "merged_from": [
+            "high_temperature",
+            "standard",
+            "cycle_params"
+          ],
+          "value_style": "60 °C；GB43854：65 °C"
+        },
+        {
+          "key": "humidity",
+          "label_zh": "相對濕度",
+          "order": 2,
+          "merged_from": [
+            "humidity",
+            "standard",
+            "cycle_params"
+          ],
+          "value_style": "90% ～ 96% RH"
+        },
+        {
+          "key": "cycles",
+          "label_zh": "循環次數",
+          "order": 3,
+          "merged_from": [
+            "cycles",
+            "cycle_params"
+          ],
+          "value_style": "5 次循環"
+        },
+        {
+          "key": "cycling_time",
+          "label_zh": "單次循環週期",
+          "order": 4,
+          "merged_from": [
+            "cycling_time",
+            "standard",
+            "cycle_params"
+          ],
+          "value_style": "24 小時/循環"
+        },
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態",
+          "order": 5,
+          "merged_from": [
+            "soc"
+          ],
+          "value_style": "最高工作荷電狀態（100% SOC）"
+        }
+      ]
+    },
+    "THERM-PROP": {
+      "name_zh": "蔓延測試 / 熱擴散測試 (Propagation Test)",
+      "standards_count": 16,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態",
+          "order": 1,
+          "merged_from": [
+            "soc"
+          ],
+          "value_style": "100% SOC；外部充電：95% SOC；車輛能源充電：90% SOC"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "環境溫度",
+          "order": 2,
+          "merged_from": [
+            "ambient_temp",
+            "ambient_temperature",
+            "temperature",
+            "ambient"
+          ],
+          "value_style": "25 ± 5 °C；25 ± 2 °C；22 ± 5 °C"
+        },
+        {
+          "key": "trigger",
+          "label_zh": "觸發方式",
+          "order": 3,
+          "merged_from": [
+            "initiation_trigger",
+            "trigger",
+            "trigger_method",
+            "trigger_methods",
+            "heating",
+            "thermal_ramp"
+          ],
+          "value_style": "加熱；針刺；過充電；雷射加熱"
+        },
+        {
+          "key": "heating_power",
+          "label_zh": "加熱功率",
+          "order": 4,
+          "merged_from": [
+            "heating_power"
+          ],
+          "value_style": "< 80 Wh：30～200 W；≥ 80 Wh：100～300 W"
+        },
+        {
+          "key": "trigger_location",
+          "label_zh": "觸發目標位置",
+          "order": 5,
+          "merged_from": [
+            "trigger_location",
+            "initiation_location",
+            "target_cell"
+          ],
+          "value_style": "中心或被相鄰電芯包圍之電芯；最脆弱位置"
+        },
+        {
+          "key": "termination_for_trigger",
+          "label_zh": "觸發停止條件",
+          "order": 6,
+          "merged_from": [
+            "trigger_off",
+            "termination_for_trigger",
+            "stop_condition"
+          ],
+          "value_style": "熱失控觸發後停止；溫度達 300 °C 或電壓降 25%"
+        },
+        {
+          "key": "termination",
+          "label_zh": "試驗終止條件",
+          "order": 7,
+          "merged_from": [
+            "termination"
+          ],
+          "value_style": "連續 3 次每 15 分鐘降溫或低於 60 °C；火災蔓延至相鄰單元"
+        },
+        {
+          "key": "apparatus",
+          "label_zh": "治具與設備",
+          "order": 8,
+          "merged_from": [
+            "apparatus"
+          ],
+          "value_style": "耐壓密封試驗艙、薄膜加熱器、FTIR 氣體分析儀"
+        },
+        {
+          "key": "method",
+          "label_zh": "滅火與防護方式",
+          "order": 9,
+          "merged_from": [
+            "method",
+            "method_1",
+            "method_2",
+            "method_high_temp"
+          ],
+          "value_style": "噴水滅火系統；氣體滅火劑；高溫電池集裝箱"
+        },
+        {
+          "key": "flame_indicator",
+          "label_zh": "火災與點火指示物",
+          "order": 10,
+          "merged_from": [
+            "residential_indicator",
+            "flame_indicator",
+            "modification_note",
+            "active_passive_controls",
+            "applicability",
+            "measurements",
+            "constraint",
+            "propagation",
+            "configurations",
+            "wall_setup"
+          ],
+          "value_style": "住宅：單層粗棉布；火焰：電纜托盤"
+        }
+      ]
+    },
+    "THERM-SALT": {
+      "name_zh": "電池組 - 鹽霧試驗",
+      "standards_count": 3,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態",
+          "order": 1,
+          "merged_from": [
+            "soc"
+          ],
+          "value_style": "最高工作荷電狀態；100% SOC"
+        },
+        {
+          "key": "salt_solution",
+          "label_zh": "鹽水濃度",
+          "order": 2,
+          "merged_from": [
+            "salt_solution",
+            "salt_params"
+          ],
+          "value_style": "50 ± 5 g/L (5% NaCl，pH 6.5～7.2)"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "試驗溫度",
+          "order": 3,
+          "merged_from": [
+            "temperature",
+            "salt_params"
+          ],
+          "value_style": "35 ± 2 °C"
+        },
+        {
+          "key": "spray_cycle",
+          "label_zh": "噴霧與靜置週期",
+          "order": 4,
+          "merged_from": [
+            "spray_cycle",
+            "salt_params"
+          ],
+          "value_style": "噴霧 8 小時，靜置 16 小時"
+        },
+        {
+          "key": "cycles",
+          "label_zh": "循環次數",
+          "order": 5,
+          "merged_from": [
+            "cycles",
+            "salt_params"
+          ],
+          "value_style": "6 個循環"
+        },
+        {
+          "key": "standard",
+          "label_zh": "引用試驗標準",
+          "order": 6,
+          "merged_from": [
+            "standard",
+            "method"
+          ],
+          "value_style": "GB/T 2423.18 試驗方法 3；IEC 60068-2-52 嚴酷等級 6"
+        },
+        {
+          "key": "operating_state",
+          "label_zh": "試驗中通電狀態",
+          "order": 7,
+          "merged_from": [
+            "operating_state",
+            "power_on_monitoring"
+          ],
+          "value_style": "低壓上電監控（單個循環之第 4 至第 5 小時）"
+        }
+      ]
+    },
+    "THERM-STAB": {
+      "name_zh": "加速量熱試驗 (Accelerating Rate Calorimetry / ARC)",
+      "standards_count": 3,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態與樣品狀態",
+          "order": 1,
+          "merged_from": [
+            "soc",
+            "dut_state",
+            "preparation"
+          ],
+          "value_style": "100% SOC；完全放電；使用假電池"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "試驗溫度",
+          "order": 2,
+          "merged_from": [
+            "temperature"
+          ],
+          "value_style": "70 ± 1 °C 或 Tmax + 10 °C"
+        },
+        {
+          "key": "duration",
+          "label_zh": "維持時間",
+          "order": 3,
+          "merged_from": [
+            "duration"
+          ],
+          "value_style": "7 小時"
+        },
+        {
+          "key": "heating_profile",
+          "label_zh": "加熱步階與等待時間",
+          "order": 4,
+          "merged_from": [
+            "heating_profile"
+          ],
+          "value_style": "5 °C 步階加熱，每步靜置 30 分鐘"
+        },
+        {
+          "key": "exotherm_threshold_example",
+          "label_zh": "放熱判定閾值",
+          "order": 5,
+          "merged_from": [
+            "exotherm_threshold_example"
+          ],
+          "value_style": "0.02 °C/min；最高溫度 405 °C"
+        },
+        {
+          "key": "thermocouple_placement",
+          "label_zh": "熱電偶測溫位置",
+          "order": 6,
+          "merged_from": [
+            "thermocouple_placement"
+          ],
+          "value_style": "金屬外殼：電芯表面；軟包：負極極耳"
+        },
+        {
+          "key": "constraint",
+          "label_zh": "物理約束條件",
+          "order": 7,
+          "merged_from": [
+            "constraint",
+            "pouch_constraint",
+            "method"
+          ],
+          "value_style": "軟包電芯施加物理約束以防膨脹"
+        }
+      ]
+    },
+    "THERM-WATER": {
+      "name_zh": "水浸試驗 (Water Immersion)",
+      "standards_count": 10,
+      "fields": [
+        {
+          "key": "soc",
+          "label_zh": "荷電狀態",
+          "order": 1,
+          "merged_from": [
+            "soc"
+          ],
+          "value_style": "100% SOC；最高工作荷電狀態"
+        },
+        {
+          "key": "liquid",
+          "label_zh": "浸泡液體",
+          "order": 2,
+          "merged_from": [
+            "immersion_medium",
+            "water_condition",
+            "solution",
+            "fluid",
+            "liquid"
+          ],
+          "value_style": "3.5% NaCl 水溶液；5% NaCl 水溶液；常溫水；pH 11.0 鹼性溶液"
+        },
+        {
+          "key": "method",
+          "label_zh": "浸沒方式與引用標準",
+          "order": 3,
+          "merged_from": [
+            "method_option_1",
+            "method_option_2",
+            "option_1",
+            "option_2",
+            "standard",
+            "method",
+            "process",
+            "washing_params"
+          ],
+          "value_style": "完全浸沒；5 分鐘內注滿；GB/T 4208 IPX7；IEC 60529 IPX4"
+        },
+        {
+          "key": "depth",
+          "label_zh": "浸沒深度",
+          "order": 4,
+          "merged_from": [
+            "depth"
+          ],
+          "value_style": "淹沒 5～10 cm；水面高於最高點 76 mm"
+        },
+        {
+          "key": "duration",
+          "label_zh": "維持時間",
+          "order": 5,
+          "merged_from": [
+            "duration"
+          ],
+          "value_style": "30 分鐘；1 小時；2 小時；24 小時；48 小時"
+        },
+        {
+          "key": "temperature",
+          "label_zh": "液體與環境溫度",
+          "order": 6,
+          "merged_from": [
+            "temperature"
+          ],
+          "value_style": "20 ± 5 °C；45 ± 2 °C；室溫"
+        },
+        {
+          "key": "temperature_diff",
+          "label_zh": "水溫與樣品溫差",
+          "order": 7,
+          "merged_from": [
+            "temperature_diff",
+            "caution",
+            "additional_fluids"
+          ],
+          "value_style": "溫差 ≤ 5 °C"
+        }
+      ]
+    }
+  },
+  "procedure_keys": [
+    "sample_quantity",
+    "sample_size",
+    "samples",
+    "preparation",
+    "pre_conditioning",
+    "preconditioning",
+    "pretreatment",
+    "cycling",
+    "observation_period",
+    "observation",
+    "observation_time",
+    "rest_time",
+    "rest_period",
+    "post_rest",
+    "monitoring_period",
+    "post_test_monitoring",
+    "post_test",
+    "post_test_cycle",
+    "post_storage",
+    "post_test_storage",
+    "teardown",
+    "ambient_storage",
+    "cold_condition",
+    "extended_sampling",
+    "li_ion_preconditioning",
+    "monitoring_no_propagation",
+    "monitoring_propagation",
+    "post_cycle_storage",
+    "post_test_conditioning",
+    "pre_test_requirement",
+    "precondition",
+    "process",
+    "soc_preparation",
+    "washing_params"
+  ]
+}

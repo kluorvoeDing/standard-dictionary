@@ -21,7 +21,7 @@ const ROOT = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), '..'
 const DATA = path.join(ROOT, 'data');
 const STRICT = process.argv.includes('--strict');
 
-const SYSTEM_FILES = new Set(['catalog.json', 'taxonomy.json']);
+const SYSTEM_FILES = new Set(['catalog.json', 'taxonomy.json', 'field_schema.json']);
 // 這些字眼出現在任何位置都代表沒填完
 const PLACEHOLDER_RE = /(待確認|待補|TODO|TBD|FIXME|\?\?\?)/i;
 // 這些字眼只有「整個值就是它」才算佔位值；出現在句子裡是正常用語（例：「未知 DUT 電阻時」）
@@ -77,6 +77,22 @@ let okObjects = new Set();
   } else {
     okCategories = new Set(Object.keys(tax.categories || {}));
     okObjects = new Set((tax.test_objects || []).map((o) => o.id).filter(Boolean));
+  }
+}
+
+// ── 載入 field_schema 作為各 normalized_id 條件鍵規範 ──────────
+let fieldSchemaGroups = {};
+let fieldSchemaProcKeys = new Set();
+{
+  const schemaPath = path.join(DATA, 'field_schema.json');
+  if (fs.existsSync(schemaPath)) {
+    const { data: fsData, error } = loadJSON(schemaPath);
+    if (error) {
+      warn('field_schema.json', `無法解析：${error}`);
+    } else if (fsData && typeof fsData === 'object') {
+      fieldSchemaGroups = fsData.groups || {};
+      fieldSchemaProcKeys = new Set(fsData.procedure_keys || []);
+    }
   }
 }
 
@@ -168,6 +184,21 @@ for (const f of onDisk) {
         if (!okObjects.has(o)) warn(tag, `${t.id} 的 test_objects 含未登記 token「${o}」`);
 
     if (t.conditions === undefined) warn(tag, `${t.id} 缺少 conditions`);
+    else if (t.conditions && typeof t.conditions === 'object' && t.normalized_id && fieldSchemaGroups[t.normalized_id]) {
+      const grp = fieldSchemaGroups[t.normalized_id];
+      const canonicalKeys = new Set((grp.fields || []).map((fld) => fld.key));
+      const allowedKeys = new Set([...canonicalKeys, ...fieldSchemaProcKeys]);
+      if (!grp.enforced) {
+        for (const fld of grp.fields || []) {
+          for (const mk of fld.merged_from || []) allowedKeys.add(mk);
+        }
+      }
+      for (const rk of Object.keys(t.conditions)) {
+        if (!allowedKeys.has(rk)) {
+          warn(tag, `${t.id} (${t.normalized_id}) 的條件鍵「${rk}」不在 field_schema.json 規範清單中`);
+        }
+      }
+    }
     if (t.acceptance_criteria === undefined) warn(tag, `${t.id} 缺少 acceptance_criteria`);
 
     // 偷懶佔位值掃描（只看條件與判定，降低誤報）

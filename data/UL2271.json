@@ -528,8 +528,8 @@
       "acceptance_criteria": {
         "summary": "絕緣電阻達標",
         "details": [
-          "系統 ≥ 120V: 絕緣電阻 ≥ 100 Ω/V (DC) 或 500 Ω/V",
-          "系統 < 120V: 絕緣電阻 ≥ 50,000 Ω"
+          "系統 ≥ 120 V: 絕緣電阻 ≥ 100 Ω/V (DC) 或 500 Ω/V",
+          "系統 < 120 V: 絕緣電阻 ≥ 50,000 Ω"
         ]
       },
       "exemptions": [],
@@ -645,7 +645,7 @@
       "conditions": {
         "waveform": {
           "value": "半正弦波",
-          "detail": "依重量不同，加速度為 50gn/11 ms (≤12kg)、25gn/15 ms (12-100kg)、10gn/20 ms (>100kg)。"
+          "detail": "依重量不同，加速度為 50gn/11 ms (≤12 kg)、25gn/15 ms (12-100 kg)、10gn/20 ms (>100 kg)。"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -700,7 +700,7 @@
         },
         "force": {
           "value": "1000倍重量或 100 kN",
-          "detail": "使用半徑 75mm 肋狀壓板擠壓，施加至 1000倍 DUT 重量或 100 kN（取較早者），或 50% 變形。"
+          "detail": "使用半徑 75 mm 肋狀壓板擠壓，施加至 1000倍 DUT 重量或 100 kN（取較早者），或 50% 變形。"
         },
         "speed": {
           "value": "約 1.5 cm/s",

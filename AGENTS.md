@@ -61,6 +61,17 @@
 >
 > CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/` 不得出現 emoji，並確認前端能建置。
 
+## 2026-10-21 (Data & Tooling - 跨標準條件欄位與數值寫法統一 D1 盤查與 D2 三組樣板完成)
+- 事件：完成工作 D 的 D1 全庫 24 組共有測試盤查、制定 `data/field_schema.json` 規範、新增 `scripts/review/check_numbers.mjs` 數值完整性防線，並完成 `ELEC-SC-INT`、`MECH-CRUSH`、`MECH-DROP` 三組樣板改寫與 Playwright 截圖驗收。
+- 背景：跨標準比對時，同一物理量常因使用不同欄位鍵（如 `force_limit` vs `stop_criteria_force_cylindrical`）、一邊寫程序代號一邊寫參數，或整張表塞在 `detail`（如 `mass_based_conditions`），導致相同內容分列顯示「—」或被誤判為差異。
+- 內容：
+  - 新增 `scripts/review/field_inventory.mjs` 產出 `.review-work/out/field_inventory.json`，並由 5 個子代理完成 24 組共有 `normalized_id` 的問題盤查（`.review-work/out/harmonize/*.json`）。
+  - 制定 `data/field_schema.json`（涵蓋全部 24 組共有測試之標準欄位鍵、繁中標籤、排序、`merged_from` 與 `value_style` 範例），並將被合併之舊鍵加入 `frontend/src/utils/parameterDictionary.js` 的 `ALIASES`。
+  - 新增 `scripts/review/check_numbers.mjs` 並整合進 `scripts/review/apply.mjs`，確保改寫前後舊 `value`＋`detail` 中的所有數字 100% 保留於新資料中（0 遺失）。
+  - 升級 `scripts/normalize_data.mjs`（數值與單位間補空格、`圓柱型`→`圓柱形`、`方型`→`方形`、`->`→`→`）、`scripts/validate_data.mjs`（檢查條件鍵是否在 `field_schema.json` 清單中）與 `frontend/src/utils/compareRows.js`（正規化比對折疊 `／`、`～`、`→`、`✕`）。
+  - 完成 `ELEC-SC-INT`、`MECH-CRUSH`、`MECH-DROP` 三組樣板改寫（`IEC62133-2`、`IEC62619`、`GB31241`、`UL1642`、`UN38.3`、`GB38031`、`IEC62660-3`），通過 `check_numbers.mjs --all` 0 遺失、`npm run validate` 0 錯誤 0 警告。
+- 後續：待使用者確認 D1 盤查結果與 D2 三組樣板截圖方向後，啟動 D3 擴展至全部 24 組測試與全庫標準。
+
 ## 2026-09-26 (Data - 試驗程序欄位核對第三批：9 份國際與各國標準)
 - 事件：工作 A 第三批完成。IEC62133-2、IEC62619、JISC8715-2、JISC8714、UN38.3、SAND2017、AIS-038、AIS-156、IEC62660-3 等 9 份標準之樣品數量／前置處理／觀察期（共 91 項測試、298 筆欄位）逐項對照原文核對與改寫，重複欄位全數清除。
 - 背景：Phase 2 補強值多為樣板句（如「每項 5 顆」、「滿充電」、「觀察 1 小時」），且存在 `sample_size`、`observation`、`rest_time`、`observation_time` 等重複欄位。

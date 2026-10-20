@@ -2,9 +2,17 @@ import { canonicalKey, getParameterMeta, splitConditionValue } from './parameter
 import { toText } from './testRecord.js';
 
 // Values are compared after Unicode compatibility folding (Ω vs Ω, full-width digits),
-// whitespace removal and lower-casing, so formatting-only differences never count as a difference.
+// unifying slash/tilde/arrow/times variants, whitespace removal and lower-casing,
+// so formatting-only differences never count as a difference.
 export function normalizeForCompare(value) {
-  return String(value ?? '').normalize('NFKC').replace(/\s+/g, '').toLowerCase();
+  return String(value ?? '')
+    .normalize('NFKC')
+    .replace(/／/g, '/')
+    .replace(/[~〜～]/g, '~')
+    .replace(/->/g, '→')
+    .replace(/✕/g, '×')
+    .replace(/\s+/g, '')
+    .toLowerCase();
 }
 
 /**

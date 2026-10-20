@@ -14,6 +14,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
 import { PARAMETER_DICTIONARY, canonicalKey } from '../../frontend/src/utils/parameterDictionary.js';
+import { checkStandardData } from './check_numbers.mjs';
 
 const ROOT = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), '..', '..');
 const WORK = process.env.REVIEW_WORK || path.join(ROOT, '.review-work');
@@ -33,7 +34,8 @@ try {
 
 const readJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 const file = path.join(ROOT, 'data', `${std}.json`);
-const data = readJson(file);
+const oldData = readJson(file);
+const data = JSON.parse(JSON.stringify(oldData));
 const work = readJson(path.join(WORK, 'work', `${std}.json`));
 const { decisions } = readJson(path.join(WORK, 'out', `${std}.decisions.json`));
 const ovPath = path.join(WORK, 'out', `${std}.overrides.json`);
@@ -88,6 +90,15 @@ if (touched.size) {
   } else if (!String(data.metadata.enrichment || '').includes('已逐項對照原文核對')) {
     const note = `${today} 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。`;
     data.metadata.enrichment = data.metadata.enrichment ? `${data.metadata.enrichment}；${note}` : note;
+  }
+}
+
+if (work.mode === 'all-fields') {
+  const numErrors = checkStandardData(std, oldData, data);
+  if (numErrors.length > 0) {
+    numErrors.forEach((m) => console.error(`✗ ${m}`));
+    console.error('check_numbers.mjs 發現數值遺失，沒有寫入。');
+    process.exit(1);
   }
 }
 

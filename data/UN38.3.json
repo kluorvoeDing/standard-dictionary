@@ -288,11 +288,11 @@
           "detail": "在三個互相垂直的安裝方向 (mutually perpendicular mounting positions) 上分別執行，其中一個方向必須垂直於端子面 (terminal face)。總計 9 小時。"
         },
         "small_cell_battery_profile": {
-          "value": "1gn→18Hz; 0.8mm 振幅至 ~50Hz (8gn); 8gn 至 200Hz",
+          "value": "1gn→18 Hz; 0.8 mm 振幅至 ~50 Hz (8gn); 8gn 至 200 Hz",
           "detail": "電芯及小型電池 (≤12 kg)：7 Hz 起維持 1gn 加速度至 18 Hz；隨後維持 0.8 mm 振幅（總振幅 1.6 mm）並增加頻率直至達 8gn（約 50 Hz）；再維持 8gn 加速度至 200 Hz。"
         },
         "large_battery_profile": {
-          "value": "1gn→18Hz; 0.8mm 振幅至 ~25Hz (2gn); 2gn 至 200Hz",
+          "value": "1gn→18 Hz; 0.8 mm 振幅至 ~25 Hz (2gn); 2gn 至 200 Hz",
           "detail": "大型電池 (>12 kg)：7 Hz 起維持 1gn 加速度至 18 Hz；隨後維持 0.8 mm 振幅並增加頻率直至達 2gn（約 25 Hz）；再維持 2gn 加速度至 200 Hz。"
         },
         "sample_quantity": {
@@ -349,7 +349,7 @@
         },
         "cell_parameters": {
           "value": "150gn / 6ms；大型電芯可選 50gn / 11ms",
-          "detail": "每個電芯須承受峰值加速度 150gn、脈衝持續時間 6 毫秒之半正弦衝擊。大型電芯 (Large cells, >500g) 可替代選用峰值加速度 50gn、脈衝持續時間 11 毫秒。"
+          "detail": "每個電芯須承受峰值加速度 150gn、脈衝持續時間 6 毫秒之半正弦衝擊。大型電芯 (Large cells, >500 g) 可替代選用峰值加速度 50gn、脈衝持續時間 11 毫秒。"
         },
         "small_battery_parameters": {
           "value": "150gn 或 √(100850/mass) gn（取小值），6ms",
@@ -553,50 +553,33 @@
         "CELL"
       ],
       "conditions": {
-        "applicability": {
-          "value": "方形、軟包、鈕扣電芯及圓柱形直徑 < 18.0 mm",
-          "detail": "本擠壓測試適用於方形 (Prismatic)、軟包 (Pouch)、鈕扣 (Coin/Button) 電芯及直徑小於 18.0 mm 之圓柱形電芯。"
+        "soc": {
+          "value": "一次電芯：未放電與完全放電；二次電芯：首循環 50% 設計容量",
+          "detail": "原電芯（Primary）：5 個未放電＋5 個完全放電；充電電芯（Rechargeable）：5 個第 1 循環 50% 設計額定容量，組件電芯同上數量（依 38.3.3(c)）。受測電芯／組件電芯不得為先前已接受其他測試之全新樣品（38.3.4）。"
         },
-        "apparatus": {
-          "value": "兩個平面間擠壓",
-          "detail": "電芯或組件電芯置於兩個平面之間進行擠壓 (crushed between two flat surfaces)。"
+        "force": {
+          "value": "13 ± 0.78 kN",
+          "detail": "施加力達 13 ± 0.78 kN（等效液壓缸 32 mm 活塞壓力 17 MPa）。"
         },
         "crush_speed": {
           "value": "≈ 1.5 cm/s",
           "detail": "擠壓為漸進式，首次接觸點的速度約為 1.5 cm/s。"
         },
-        "termination_criteria": {
-          "value": "13 kN ± 0.78 kN 或 100 mV 壓降 或 50% 形變（先到為止）",
-          "detail": "擠壓持續直至下列三項條件中最先達成者：(a) 施加力達 13 kN ± 0.78 kN（等效液壓缸 32 mm 活塞壓力 17 MPa）；(b) 電芯電壓下降至少 100 mV；(c) 電芯形變達原始厚度之 50% 或以上。達到條件後釋放壓力。"
+        "apparatus": {
+          "value": "兩個平面間擠壓",
+          "detail": "電芯或組件電芯置於兩個平面之間進行擠壓。原文：crushed between two flat surfaces."
         },
-        "orientation_prismatic": {
-          "value": "力施加於最寬面",
-          "detail": "方形或軟包電芯：力施加於最寬側面 (widest side)。"
+        "orientation": {
+          "value": "圓柱形（< 18 mm）：力垂直於縱軸；方形／軟包：力施加於最寬面；鈕扣形：平坦面施壓",
+          "detail": "圓柱形電芯（< 18 mm）擠壓力垂直於縱軸；方形或軟包電芯力施加於最寬側面；鈕扣電芯力施加於平面。"
         },
-        "orientation_coin": {
-          "value": "力施加於平面",
-          "detail": "鈕扣電芯：力施加於平面 (flat surfaces)。"
+        "termination": {
+          "value": "達最大力 13 ± 0.78 kN、電壓降 ≥ 100 mV 或變形量 ≥ 50%（先到者釋放壓力）",
+          "detail": "擠壓持續直至下列三項條件中最先達成者：(a) 施加力達 13 ± 0.78 kN（等效液壓缸 32 mm 活塞壓力 17 MPa）；(b) 電芯電壓下降至少 100 mV；(c) 電芯形變達原始厚度之 50% 或以上。達到條件後釋放壓力。"
         },
-        "orientation_cylindrical": {
-          "value": "力垂直於縱軸",
-          "detail": "圓柱形電芯 (<18mm)：擠壓力垂直於縱軸 (perpendicular to the longitudinal axis)。"
-        },
-        "crush_count": {
-          "value": "單次擠壓",
-          "detail": "每個受測電芯或組件電芯僅承受 1 次擠壓 (one crush only)。"
-        },
-        "observation_period": {
-          "value": "測試後 6 小時",
-          "detail": "擠壓後測試樣品應進一步觀察 6 小時，且於試驗期間及試驗結束後 6 小時內不得解體與起火。",
-          "source_reference": "38.3.4.6.3；38.3.4.6.4"
-        },
-        "sample_state": {
-          "value": "原電芯：5 未放電 + 5 完放；充電電芯：5 個 50% 設計容量",
-          "detail": "原電芯 (Primary)：5 個未放電 + 5 個完全放電。充電電芯 (Rechargeable)：5 個第 1 循環 50% 設計額定容量。組件電芯同上數量。(依 38.3.3(c))"
-        },
-        "sample_requirement": {
-          "value": "全新樣品",
-          "detail": "受測電芯/組件電芯不得為先前已接受其他測試之樣品 (38.3.4)。"
+        "applicability": {
+          "value": "方形、軟包、鈕扣電芯及圓柱形直徑 < 18.0 mm（單次擠壓）",
+          "detail": "本擠壓測試適用於方形、軟包、鈕扣電芯及直徑小於 18.0 mm 之圓柱形電芯；每個受測電芯或組件電芯僅承受 1 次擠壓。"
         },
         "sample_quantity": {
           "value": "原電芯10顆；充電電芯5顆",
@@ -607,6 +590,11 @@
           "value": "未放電/完全放電/50%容量",
           "detail": "原電池電芯測試前需為未放電或完全放電狀態；充電電池電芯則需處於首循環 50% 設計額定容量狀態。",
           "source_reference": "38.3.3"
+        },
+        "observation_period": {
+          "value": "測試後 6 小時",
+          "detail": "擠壓後測試樣品應進一步觀察 6 小時，且於試驗期間及試驗結束後 6 小時內不得解體與起火。",
+          "source_reference": "38.3.4.6.3；38.3.4.6.4"
         }
       },
       "acceptance_criteria": {
@@ -642,12 +630,12 @@
           "detail": "充電電流為製造商建議之最大持續充電電流 (maximum continuous charge current) 的 2 倍。"
         },
         "voltage_rule_low": {
-          "value": "充電電壓 ≤ 18V 時：min(2 × 最高充電電壓, 22V)",
-          "detail": "當製造商建議充電電壓不超過 18V 時，測試最低電壓為以下兩者中較小值：(a) 2 倍最高充電電壓，或 (b) 22V。"
+          "value": "充電電壓 ≤ 18 V 時：min(2 × 最高充電電壓, 22 V)",
+          "detail": "當製造商建議充電電壓不超過 18 V 時，測試最低電壓為以下兩者中較小值：(a) 2 倍最高充電電壓，或 (b) 22 V。"
         },
         "voltage_rule_high": {
-          "value": "充電電壓 > 18V 時：1.2 × 最高充電電壓",
-          "detail": "當製造商建議充電電壓超過 18V 時，測試最低電壓為 1.2 倍最高充電電壓。"
+          "value": "充電電壓 > 18 V 時：1.2 × 最高充電電壓",
+          "detail": "當製造商建議充電電壓超過 18 V 時，測試最低電壓為 1.2 倍最高充電電壓。"
         },
         "temperature": {
           "value": "環境溫度 (Ambient)",
@@ -702,8 +690,8 @@
       ],
       "conditions": {
         "power_supply": {
-          "value": "12V 直流電源串聯",
-          "detail": "每個電芯與 12V 直流電源 (12 V D.C. power supply) 串聯連接。"
+          "value": "12 V 直流電源串聯",
+          "detail": "每個電芯與 12 V 直流電源 (12 V D.C. power supply) 串聯連接。"
         },
         "initial_current": {
           "value": "製造商規定之最大放電電流",
