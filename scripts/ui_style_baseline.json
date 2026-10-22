@@ -1,0 +1,8 @@
+{
+  "color": {},
+  "bilingual": {
+    "frontend/src/components/GlobalMatrixModal.jsx": 1,
+    "frontend/src/components/GlobalSearchModal.jsx": 1,
+    "frontend/src/components/StandardMatrix.jsx": 7
+  }
+}

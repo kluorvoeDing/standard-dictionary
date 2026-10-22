@@ -356,7 +356,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
                 ) : (
                   <ReactMarkdown
                     remarkPlugins={[remarkGfm, remarkMath]}
-                    rehypePlugins={[[rehypeKatex, { throwOnError: false, errorColor: '#cc3333' }]]}
+                    rehypePlugins={[[rehypeKatex, { throwOnError: false, errorColor: 'var(--danger-color)' }]]}
                     components={{
                     p: ({node, ...props}) => <p style={{ margin: '0 0 0.75rem 0' }} {...props} />,
                     ul: ({node, ...props}) => <ul style={{ margin: '0 0 0.75rem 0', paddingLeft: '1.5rem' }} {...props} />,

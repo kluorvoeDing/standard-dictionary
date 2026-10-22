@@ -115,20 +115,8 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
             role="button"
             tabIndex={0}
             onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); onOpenSearch?.(); } }}
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'space-between',
-              padding: isMobile ? '0.65rem 0.9rem' : '0.8rem 1.25rem',
-              backgroundColor: 'var(--bg-panel)',
-              border: '1.5px solid var(--border-color)',
-              borderRadius: '12px',
-              cursor: 'pointer',
-              boxShadow: 'var(--shadow-sm)',
-              transition: 'all 0.2s ease',
-            }}
-            onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--accent-color)'; e.currentTarget.style.boxShadow = '0 0 0 3px rgba(59, 130, 246, 0.15)'; }}
-            onMouseLeave={e => { e.currentTarget.style.borderColor = 'var(--border-color)'; e.currentTarget.style.boxShadow = 'var(--shadow-sm)'; }}
+            className="sm-searchbar"
+            style={{ padding: isMobile ? '0.65rem 0.9rem' : '0.8rem 1.25rem' }}
           >
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', minWidth: 0, color: 'var(--text-muted)' }}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" style={{ flexShrink: 0 }}>
@@ -338,22 +326,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
             </div>
             <button
               onClick={() => setSelectedDocs([])}
-              style={{
-                backgroundColor: 'rgba(239, 68, 68, 0.1)',
-                color: '#ef4444',
-                border: '1px solid #ef4444',
-                padding: '0.2rem 0.6rem',
-                borderRadius: '12px',
-                fontSize: '0.8rem',
-                fontWeight: 'bold',
-                cursor: 'pointer',
-                marginLeft: '0.5rem',
-                whiteSpace: 'nowrap',
-                flexShrink: 0,
-                transition: 'all 0.2s'
-              }}
-              onMouseEnter={e => { e.currentTarget.style.backgroundColor = '#ef4444'; e.currentTarget.style.color = 'white'; }}
-              onMouseLeave={e => { e.currentTarget.style.backgroundColor = 'rgba(239, 68, 68, 0.1)'; e.currentTarget.style.color = '#ef4444'; }}
+              className="sm-clear"
             >
               ✕ 清空
             </button>
@@ -371,7 +344,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
               cursor: 'pointer',
               whiteSpace: 'nowrap',
               flexShrink: 0,
-              boxShadow: '0 4px 10px rgba(59, 130, 246, 0.4)',
+              boxShadow: 'var(--shadow-md)',
               transition: 'transform 0.1s'
             }}
             onMouseDown={e => e.currentTarget.style.transform = 'scale(0.95)'}

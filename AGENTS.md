@@ -59,7 +59,7 @@
 > 4. **沿用既有元件**：機構色用 `utils/orgColors.js`，參數名稱用 `utils/parameterDictionary.js`（新欄位名要補中文標籤或別名），彈窗用 `.modal-backdrop` / `.modal-panel`。
 > 5. **文字精簡、用中文**，不要中英並列的標題（例如「只看差異 (Diff Only)」）或【】括號。
 >
-> CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/` 不得出現 emoji，並確認前端能建置。
+> CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/`：不得出現 emoji、不得新增寫死的顏色（`#rrggbb`／`rgba()`，白色與純黑白遮罩除外）、不得新增中英並列標題，並確認前端能建置。既有違規記在 `scripts/ui_style_baseline.json`（每檔上限，只能降不能升）；清掉後執行 `node scripts/check_ui_style.mjs --update-baseline` 降低基準線。
 
 ## 2026-10-21 (Data - 跨標準條件欄位與數值寫法統一 D3 全庫 30 份標準完成)
 - 事件：完成工作 D 的 D3 階段，將全庫 30 份標準、24 組共有測試之條件欄位鍵與數值寫法統一至 `data/field_schema.json` 規範，達成跨標準橫向比對規格表緊湊對齊與 0 數值遺失。

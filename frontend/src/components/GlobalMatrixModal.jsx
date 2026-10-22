@@ -14,9 +14,9 @@ function normalizeStandardData(data) {
 const LEVEL_KEYS = ['CELL', 'MODULE', 'PACK_SYSTEM'];
 
 const TYPE_COLORS = {
-  'ELEC': '#ef4444', 
-  'MECH': '#ef4444',
-  'THERM': '#ef4444',
+  'ELEC': 'var(--danger-color)',
+  'MECH': 'var(--danger-color)',
+  'THERM': 'var(--danger-color)',
 };
 
 const TYPE_LABELS = {
@@ -339,7 +339,7 @@ export default function GlobalMatrixModal({ isOpen, onClose, catalog }) {
           }
           #matrix-table th, #matrix-table td {
             color: black !important;
-            border: 1px solid #ddd !important;
+            border: 1px solid var(--border-hover) !important;
             padding: 4px 8px !important;
           }
           #matrix-table thead {

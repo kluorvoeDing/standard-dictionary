@@ -73,6 +73,7 @@
   --org-intl-solid: #d97706; --org-intl-text: #b45309; --org-intl-fill: rgba(217,119,6,0.11); --org-intl-border: rgba(217,119,6,0.32);
   --org-other-solid: #2563eb;--org-other-text: #2563eb;--org-other-fill: rgba(37,99,235,0.09);--org-other-border: rgba(37,99,235,0.30);
   --row-hover: rgba(0,0,0,0.022);
+  --glass-bg: rgba(255, 255, 255, 0.7);
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
@@ -134,6 +135,7 @@
   --org-intl-solid: #f59e0b; --org-intl-text: #fcd34d; --org-intl-fill: rgba(245,158,11,0.14); --org-intl-border: rgba(245,158,11,0.32);
   --org-other-solid: #3b82f6;--org-other-text: #93c5fd;--org-other-fill: rgba(59,130,246,0.16);--org-other-border: rgba(59,130,246,0.34);
   --row-hover: rgba(255,255,255,0.035);
+  --glass-bg: rgba(30, 41, 59, 0.7);
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
@@ -302,12 +304,9 @@ button {
 
 /* Glassmorphism */
 .glass {
-  background: rgba(255, 255, 255, 0.7);
+  background: var(--glass-bg);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-}
-[data-theme='dark'] .glass {
-  background: rgba(30, 41, 59, 0.7);
 }
 
 /* ───────── Standard Domain Browser (應用領域導覽) ───────── */
@@ -384,6 +383,36 @@ button {
   font-weight: 600;
 }
 .sm-filter:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+
+.sm-searchbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-panel);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.sm-searchbar:hover { border-color: var(--accent-color); box-shadow: 0 0 0 3px var(--accent-bg); }
+.sm-searchbar:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
+
+.sm-clear {
+  background-color: var(--danger-bg);
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+  padding: 0.2rem 0.6rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+.sm-clear:hover { background-color: var(--danger-color); color: #fff; }
+.sm-clear:focus-visible { outline: 2px solid var(--danger-color); outline-offset: 2px; }
 
 /* ───────── Comparison view (橫向對比視圖) ───────── */
 .cmp-back {
@@ -629,14 +658,14 @@ button {
   height: 40px;
   padding: 0 1.15rem;
   border-radius: 9999px;
-  background: linear-gradient(135deg, var(--accent-color) 0%, #8b5cf6 100%);
+  background: var(--accent-color);
   color: #fff;
   font-weight: 700;
   white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(139, 92, 246, 0.35);
-  transition: box-shadow 0.15s ease, transform 0.15s ease;
+  box-shadow: var(--shadow-md);
+  transition: background-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
 }
-.topbar-ai:hover { box-shadow: 0 6px 20px rgba(139, 92, 246, 0.55); transform: translateY(-1px); }
+.topbar-ai:hover { background: var(--accent-hover); box-shadow: var(--shadow-lg); transform: translateY(-1px); }
 .topbar-ai:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 2px; }
 @media (max-width: 767px) {
   .topbar-label { display: none; }

@@ -7,6 +7,7 @@ on:
       - 'frontend/**'
       - 'api/**'
       - 'scripts/check_ui_style.mjs'
+      - 'scripts/ui_style_baseline.json'
       - '.github/workflows/ui-check.yml'
   pull_request:
     paths:
