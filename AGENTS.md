@@ -59,7 +59,21 @@
 > 4. **沿用既有元件**：機構色用 `utils/orgColors.js`，參數名稱用 `utils/parameterDictionary.js`（新欄位名要補中文標籤或別名），彈窗用 `.modal-backdrop` / `.modal-panel`。
 > 5. **文字精簡、用中文**，不要中英並列的標題（例如「只看差異 (Diff Only)」）或【】括號。
 >
-> CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/`：不得出現 emoji、不得新增寫死的顏色（`#rrggbb`／`rgba()`，白色與純黑白遮罩除外）、不得新增中英並列標題，並確認前端能建置。既有違規記在 `scripts/ui_style_baseline.json`（每檔上限，只能降不能升）；清掉後執行 `node scripts/check_ui_style.mjs --update-baseline` 降低基準線。
+> CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/`：不得出現 emoji、不得新增寫死的顏色（`#rrggbb`／`rgba()`，白色與純黑白遮罩除外）、不得新增中英並列標題、不得有小於 12px 的字級（請用 `--fs-*` token），並確認前端能建置。既有違規記在 `scripts/ui_style_baseline.json`（每檔上限，只能降不能升）；清掉後執行 `node scripts/check_ui_style.mjs --update-baseline` 降低基準線。
+
+## 2026-10-22 (UI - 視覺升級：數字、空狀態、差異色、深色暖色調、字級與圓角 token)
+- 事件：依視覺點評完成升級，並把規範寫進 `lint:ui`。
+- 背景：點評發現 gg sans 的數字是比例寬度、沒有 `tnum`，全站原有的 `tabular-nums` 其實無效；差異色（琥珀）與 IEC·UN 機構色撞色；比對表的三種「沒有資料」都顯示成「—」；深色模式是冷藍 slate、與淺色的暖米白不同調；多處字級低於 12px。（比對表欄頭原本就是 sticky，不需處理。）
+- 內容：
+  - 數字：新增只含數字與 ± ° × 的 `gg num` 字型（對應系統字型，其數字等寬），只套在比對表的值欄與欄頭資訊（標準代號與標題維持 gg sans，因系統字型沒有對應的粗體，數字會比字母細）；值中的數字後單位與 ± 以次要灰顯示（`utils/UnitText.jsx`，文字內容不變）。
+  - 空狀態分三種：標準未涵蓋該測試＝斜線底紋、此層級不適用＝平塗底色、有涵蓋但未規定該參數＝「—」。
+  - 差異色改為墨色（`--text-primary` 的粗體標籤加 3px 色條與淺底），不再佔用任何色相；`.tag-warn` 改用新增的 `--warning-text`；類別標籤改為中性底加 3px 類別色條；總覽矩陣的類別色改用 `--cat-*-text`。
+  - 欄頭加一行資訊（年份、該標準在目前畫面的測試數、「有新版」）；首頁標準列以空心圓點標示有新版（圖例同步）。
+  - 深色模式改為暖炭灰；淺色 `--text-muted` 由 `#8c8c8c` 加深為 `#6f6f6f`（對白底約 5:1）。
+  - 新增 token：`--radius-xs/sm/md/lg/pill`、`--fs-2xs/xs/sm/md/lg`（最小 12px）、`--hatch`、`--warning-text`。比對表、首頁與詳細視窗的圓角與字級已改用 token；`AiConsultantChat.jsx`、`GlobalSearchModal.jsx`、`GlobalMatrixModal.jsx` 的圓角與其餘字級仍是舊寫法。
+  - `lint:ui` 新增：不得有小於 12px 的字級（零容忍）。
+- 影響：全頁文字節點最小字級 12px；`lint:ui` 與前端建置通過；淺色、深色、手機寬度皆以截圖驗收。
+- 後續：首頁「待核對」標記未做（catalog 沒有核對狀態欄位，需先載入各標準資料或補欄位）；領域名稱的中英並列需連同 `catalog.json` 一起改。
 
 ## 2026-10-21 (Data - 跨標準條件欄位與數值寫法統一 D3 全庫 30 份標準完成)
 - 事件：完成工作 D 的 D3 階段，將全庫 30 份標準、24 組共有測試之條件欄位鍵與數值寫法統一至 `data/field_schema.json` 規範，達成跨標準橫向比對規格表緊湊對齊與 0 數值遺失。

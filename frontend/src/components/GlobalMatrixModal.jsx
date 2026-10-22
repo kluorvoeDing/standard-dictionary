@@ -14,9 +14,9 @@ function normalizeStandardData(data) {
 const LEVEL_KEYS = ['CELL', 'MODULE', 'PACK_SYSTEM'];
 
 const TYPE_COLORS = {
-  'ELEC': 'var(--danger-color)',
-  'MECH': 'var(--danger-color)',
-  'THERM': 'var(--danger-color)',
+  'ELEC': 'var(--cat-elec-text)',
+  'MECH': 'var(--cat-mech-text)',
+  'THERM': 'var(--cat-therm-text)',
 };
 
 const TYPE_LABELS = {

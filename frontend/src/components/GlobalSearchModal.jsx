@@ -349,7 +349,7 @@ export default function GlobalSearchModal({
             </button>
           )}
           <span style={{
-            fontSize: '0.72rem',
+            fontSize: 'var(--fs-2xs)',
             padding: '0.2rem 0.45rem',
             borderRadius: '6px',
             backgroundColor: 'var(--bg-panel)',
@@ -525,7 +525,7 @@ export default function GlobalSearchModal({
                                   {highlightMatches(c.value, query)}
                                 </div>
                                 {c.detail && c.detail !== c.value && (
-                                  <div style={{ color: 'var(--text-muted)', fontSize: '0.73rem', marginTop: '0.15rem' }}>
+                                  <div style={{ color: 'var(--text-muted)', fontSize: 'var(--fs-2xs)', marginTop: '0.15rem' }}>
                                     {highlightMatches(c.detail, query)}
                                   </div>
                                 )}

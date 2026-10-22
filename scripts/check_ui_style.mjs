@@ -21,7 +21,8 @@ const ALLOWED = new Set([...'✓✕←→↑↓↺ⓘ⌘✦']);
 const EMOJI = /[\p{Extended_Pictographic}\u{1F1E6}-\u{1F1FF}]/gu;
 const COLOR = /#[0-9a-fA-F]{3,8}\b|rgba?\([^)]*\)/g;
 const NEUTRAL_COLOR = /^(#fff(fff)?|rgba?\(\s*(0\s*,\s*0\s*,\s*0|255\s*,\s*255\s*,\s*255)\s*(,[^)]*)?\))$/i;
-const BILINGUAL = /[一-鿿][^'"`\n]*?[（(][A-Za-z\- ]*[a-z][A-Za-z\- ]*[)）]/g;
+const FONT_SIZE = /(?:font-size:\s*|fontSize:\s*[^,}]*?)(\d*\.?\d+)(rem|px)/g;
+const BILINGUAL =/[一-鿿][^'"`\n]*?[（(][A-Za-z\- ]*[a-z][A-Za-z\- ]*[)）]/g;
 
 const UPDATE = process.argv.includes('--update-baseline');
 
@@ -37,6 +38,7 @@ function walk(dir) {
 const isComment = (line) => /^\s*(\/\/|\/\*|\*)/.test(line);
 
 const emoji = [];
+const smallFont = [];
 const found = { color: {}, bilingual: {} };
 const details = { color: [], bilingual: [] };
 
@@ -60,6 +62,11 @@ for (const target of TARGETS) {
         if (inTokens) return;
       }
       if (isComment(line)) return;
+
+      for (const m of line.matchAll(FONT_SIZE)) {
+        const px = m[2] === 'rem' ? parseFloat(m[1]) * 16 : parseFloat(m[1]);
+        if (px < 12) smallFont.push(`${rel}:${i + 1}  ${m[0].trim()}  ${line.trim().slice(0, 70)}`);
+      }
 
       const colors = (line.match(COLOR) || []).filter((c) => !NEUTRAL_COLOR.test(c));
       if (colors.length) record('color', rel, i, line, colors.join(' '));
@@ -87,6 +94,12 @@ if (emoji.length) {
   failed = true;
   console.error(`✗ 發現 ${emoji.length} 處 emoji（請改用 Icon.jsx 線條圖示或純文字）：`);
   emoji.forEach((h) => console.error('   ' + h));
+}
+
+if (smallFont.length) {
+  failed = true;
+  console.error(`✗ 發現 ${smallFont.length} 處小於 12px 的字級（請用 var(--fs-2xs) 以上的字級 token）：`);
+  smallFont.forEach((h) => console.error('   ' + h));
 }
 
 for (const rule of ['color', 'bilingual']) {

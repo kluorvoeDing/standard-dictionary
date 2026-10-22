@@ -303,7 +303,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
           </svg>
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.2, minWidth: 0 }}>
             <span style={{ fontWeight: 700, fontSize: '1rem' }}>AI 小幫手</span>
-            <span style={{ fontSize: '0.72rem', opacity: 0.9, whiteSpace: 'nowrap' }}>
+            <span style={{ fontSize: 'var(--fs-2xs)', opacity: 0.9, whiteSpace: 'nowrap' }}>
               {selectedDocs.length > 0 ? `已載入 ${selectedDocs.length} 份標準` : `全庫檢索模式（${libraryCount} 份標準）`}
             </span>
           </div>
@@ -376,7 +376,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
                           style={{
                             position: 'absolute', top: '4px', right: '4px', zIndex: 2,
                             background: 'var(--accent-color)', color: '#fff', border: 'none',
-                            borderRadius: '6px', padding: '0.2rem 0.5rem', fontSize: '0.72rem',
+                            borderRadius: '6px', padding: '0.2rem 0.5rem', fontSize: 'var(--fs-2xs)',
                             cursor: 'pointer', opacity: 0.85, boxShadow: 'var(--shadow-sm)'
                           }}
                         ><Icon name="expand" size={12} style={{ marginRight: '0.25rem', verticalAlign: '-1px' }} />放大</button>
@@ -475,7 +475,7 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
           </button>
         </div>
         {cooldown > 0 && (
-          <div style={{ fontSize: '0.7rem', color: 'var(--text-muted)', textAlign: 'right' }}>
+          <div style={{ fontSize: 'var(--fs-2xs)', color: 'var(--text-muted)', textAlign: 'right' }}>
             為保護額度，發問間隔需等待 5 秒
           </div>
         )}

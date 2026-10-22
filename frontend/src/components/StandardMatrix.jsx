@@ -93,18 +93,22 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
             <h2 style={{ fontSize: isMobile ? '1.5rem' : '1.9rem', fontWeight: 700, letterSpacing: '-0.02em', lineHeight: 1.1, marginBottom: '0.45rem', color: 'var(--text-primary)' }}>
               標準應用領域導覽
             </h2>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '0.98rem', margin: 0 }}>
+            <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--fs-md)', margin: 0 }}>
               依應用領域瀏覽，點擊標準加入比對，選滿 2 份開始橫向對比。
               <span style={{ color: 'var(--text-muted)', marginLeft: '0.5rem' }}>共 {count} 份標準</span>
             </p>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.9rem', alignItems: 'center' }}>
             {LEGEND.map(l => (
-              <span key={l.label} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.8rem', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}>
-                <span style={{ width: '9px', height: '9px', borderRadius: '3px', backgroundColor: l.solid, flexShrink: 0 }} />
+              <span key={l.label} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}>
+                <span style={{ width: '9px', height: '9px', borderRadius: 'var(--radius-xs)', backgroundColor: l.solid, flexShrink: 0 }} />
                 {l.label}
               </span>
             ))}
+            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)', whiteSpace: 'nowrap' }}>
+              <span className="sm-newver" />
+              有新版
+            </span>
           </div>
         </div>
 
@@ -123,16 +127,16 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
-              <span style={{ fontSize: isMobile ? '0.88rem' : '0.98rem', color: 'var(--text-secondary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              <span style={{ fontSize: isMobile ? 'var(--fs-sm)' : 'var(--fs-md)', color: 'var(--text-secondary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
                 快速檢索全庫測試條款與參數（如「6V」、「3C」、「7天」、「80mΩ」、「擠壓」）...
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
               <kbd style={{
-                fontSize: '0.75rem',
+                fontSize: 'var(--fs-2xs)',
                 fontWeight: 600,
                 padding: '0.2rem 0.5rem',
-                borderRadius: '6px',
+                borderRadius: 'var(--radius-sm)',
                 backgroundColor: 'var(--bg-color)',
                 border: '1px solid var(--border-color)',
                 color: 'var(--text-muted)',
@@ -146,7 +150,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
 
         {/* Level filter */}
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center', marginBottom: '1.4rem' }}>
-          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginRight: '0.2rem' }}>樣品層級</span>
+          <span style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-muted)', marginRight: '0.2rem' }}>樣品層級</span>
           {['ALL', ...levels].map(lv => (
             <button
               key={lv}
@@ -172,8 +176,8 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
             return (
               <section key={app} className="sm-card">
                 <header style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '0.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.6rem', marginBottom: '0.35rem' }}>
-                  <h3 style={{ margin: 0, fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-primary)' }}>{app}</h3>
-                  <span style={{ fontSize: '0.76rem', color: 'var(--text-muted)', whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums' }}>{visible.length} 份</span>
+                  <h3 style={{ margin: 0, fontSize: 'var(--fs-md)', fontWeight: 700, color: 'var(--text-primary)' }}>{app}</h3>
+                  <span style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-muted)', whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums' }}>{visible.length} 份</span>
                 </header>
 
                 {visible.map(({ doc, baseId, levels: docLevels }) => {
@@ -192,17 +196,20 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                       onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); select(); } }}
                     >
                       <span style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', minWidth: 0 }}>
-                        <span style={{ width: '8px', height: '8px', borderRadius: '2.5px', backgroundColor: colors.solid, flexShrink: 0 }} />
-                        <span style={{ fontSize: '0.84rem', fontWeight: 600, letterSpacing: '0.01em', fontVariantNumeric: 'tabular-nums', color: isSelected ? colors.solid : 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                        <span style={{ width: '8px', height: '8px', borderRadius: 'var(--radius-xs)', backgroundColor: colors.solid, flexShrink: 0 }} />
+                        <span style={{ fontSize: 'var(--fs-xs)', fontWeight: 600, letterSpacing: '0.01em', fontVariantNumeric: 'tabular-nums', color: isSelected ? colors.solid : 'var(--text-primary)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                           {baseId}
                         </span>
+                        {doc.is_latest === false && (
+                          <span className="sm-newver" title={`有新版：最新為 ${doc.latest_version || '更新版本'}`} role="img" aria-label="有新版" />
+                        )}
                       </span>
                       <span style={{ display: 'flex', alignItems: 'center', gap: '0.25rem', flexShrink: 0 }}>
                         {isSelected ? (
-                          <span style={{ color: colors.solid, fontWeight: 700, fontSize: '0.85rem', lineHeight: 1 }}>✓</span>
+                          <span style={{ color: colors.solid, fontWeight: 700, fontSize: 'var(--fs-sm)', lineHeight: 1 }}>✓</span>
                         ) : (
                           docLevels.map(lv => (
-                            <span key={lv} style={{ fontSize: '0.62rem', padding: '0.1rem 0.34rem', borderRadius: '4px', backgroundColor: 'var(--bg-color)', color: 'var(--text-muted)', border: '1px solid var(--border-color)', fontWeight: 500, whiteSpace: 'nowrap' }}>
+                            <span key={lv} style={{ fontSize: 'var(--fs-2xs)', padding: '0.1rem 0.34rem', borderRadius: 'var(--radius-xs)', backgroundColor: 'var(--bg-color)', color: 'var(--text-muted)', border: '1px solid var(--border-color)', fontWeight: 500, whiteSpace: 'nowrap' }}>
                               {lv}
                             </span>
                           ))
@@ -257,13 +264,13 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
         }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <h3 style={{ margin: 0, color: 'var(--text-primary)', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ width: '10px', height: '10px', borderRadius: '3px', backgroundColor: activeInfoNode.colors.solid, flexShrink: 0 }} />
+              <span style={{ width: '10px', height: '10px', borderRadius: 'var(--radius-xs)', backgroundColor: activeInfoNode.colors.solid, flexShrink: 0 }} />
               {activeInfoNode.baseId}
             </h3>
             <button onClick={() => setActiveInfoNode(null)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '1.2rem' }}>✕</button>
           </div>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: '0.9rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: 'var(--fs-sm)' }}>
             <div>
               <strong style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '0.25rem' }}>全名</strong>
               <span style={{ color: 'var(--text-primary)' }}>{activeInfoNode.full_name || activeInfoNode.display_name}</span>
@@ -313,12 +320,12 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
           animation: 'slideUp 0.3s ease-out'
         }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', minWidth: 0, flexShrink: 1 }}>
-            {!isMobile && <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', fontWeight: '500' }}>已選取:</span>}
+            {!isMobile && <span style={{ color: 'var(--text-secondary)', fontSize: 'var(--fs-sm)', fontWeight: '500' }}>已選取:</span>}
             <div style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto', minWidth: 0 }}>
               {selectedDocs.map(id => {
                 const colors = getOrgColor(id);
                 return (
-                  <span key={id} style={{ backgroundColor: colors.solid, color: '#fff', padding: '0.25rem 0.7rem', borderRadius: '8px', fontSize: '0.85rem', fontWeight: 'bold', boxShadow: '0 2px 5px rgba(0,0,0,0.1)', whiteSpace: 'nowrap', flexShrink: 0 }}>
+                  <span key={id} style={{ backgroundColor: colors.solid, color: '#fff', padding: '0.25rem 0.7rem', borderRadius: 'var(--radius-md)', fontSize: 'var(--fs-sm)', fontWeight: 'bold', boxShadow: '0 2px 5px rgba(0,0,0,0.1)', whiteSpace: 'nowrap', flexShrink: 0 }}>
                     {id}
                   </span>
                 )
@@ -338,8 +345,8 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
               color: 'white',
               border: 'none',
               padding: isMobile ? '0.5rem 0.9rem' : '0.6rem 1.25rem',
-              borderRadius: '20px',
-              fontSize: isMobile ? '0.9rem' : '1rem',
+              borderRadius: 'var(--radius-pill)',
+              fontSize: isMobile ? 'var(--fs-sm)' : 'var(--fs-md)',
               fontWeight: 'bold',
               cursor: 'pointer',
               whiteSpace: 'nowrap',

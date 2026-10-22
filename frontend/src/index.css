@@ -23,14 +23,22 @@
   font-style: normal;
 }
 
+/* gg sans has proportional digits and no tnum feature, so digits and number symbols
+   come from a system face whose digits are tabular. Falls back to gg sans if none exists. */
+@font-face {
+  font-family: 'gg num';
+  src: local('Helvetica Neue'), local('Segoe UI'), local('Roboto'), local('Arial');
+  unicode-range: U+0030-0039, U+00B1, U+00B0, U+00D7;
+}
+
 :root {
   /* Light Theme (Claude-like Beige) */
   --bg-color: #f7f7f5;
   --bg-panel: #ffffff;
   --text-primary: #2d2d2d;
   --text-secondary: #5a5a5a;
-  --text-muted: #8c8c8c;
-  
+  --text-muted: #6f6f6f;
+
   --border-color: #e5e5e0;
   --border-hover: #d5d5d0;
   
@@ -42,6 +50,7 @@
   --danger-bg: #fef2f2;
   --warning-color: #f59e0b;
   --warning-bg: #fffbeb;
+  --warning-text: #b45309;
   --success-color: #10b981;
   --success-bg: #ecfdf5;
 
@@ -61,10 +70,11 @@
   --cat-other: #f1f1ee;
   --cat-other-text: #5a5a5a;
 
-  /* Comparison diff + search highlight */
-  --diff-accent: #f59e0b;
-  --diff-text: #b45309;
-  --diff-bg: rgba(245, 158, 11, 0.07);
+  /* Comparison diff: ink, not a hue, so it never collides with org / category colors. */
+  --diff-accent: var(--text-primary);
+  --diff-text: var(--text-primary);
+  --diff-bg: rgba(0, 0, 0, 0.045);
+  --hatch: rgba(0, 0, 0, 0.07);
   --mark-bg: rgba(234, 179, 8, 0.28);
 
   /* Standard-body org colors (matrix chips + legend) — light */
@@ -79,24 +89,34 @@
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
   
-  --radius-sm: 0.25rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-pill: 999px;
+
+  /* Type scale: nothing below 12px. */
+  --fs-2xs: 0.75rem;
+  --fs-xs: 0.8125rem;
+  --fs-sm: 0.875rem;
+  --fs-md: 1rem;
+  --fs-lg: 1.25rem;
 
   --transition-fast: 0.15s ease;
   --transition-normal: 0.3s ease;
 }
 
 [data-theme='dark'] {
-  --bg-color: #0f172a;
-  --bg-panel: #1e293b;
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8;
-  --text-muted: #64748b;
-  
-  --border-color: #334155;
-  --border-hover: #475569;
-  
+  /* Warm charcoal, matching the light theme's warm beige. Muted text is 5:1+ on the panel. */
+  --bg-color: #1c1b19;
+  --bg-panel: #262522;
+  --text-primary: #f3f1ec;
+  --text-secondary: #b8b4aa;
+  --text-muted: #98948b;
+
+  --border-color: #3a3833;
+  --border-hover: #4d4a43;
+
   --accent-color: #60a5fa;
   --accent-hover: #93c5fd;
   --accent-bg: rgba(59, 130, 246, 0.1);
@@ -105,6 +125,7 @@
   --danger-bg: rgba(239, 68, 68, 0.1);
   --warning-color: #fbbf24;
   --warning-bg: rgba(245, 158, 11, 0.1);
+  --warning-text: #fbbf24;
   --success-color: #34d399;
   --success-bg: rgba(16, 185, 129, 0.1);
 
@@ -122,11 +143,12 @@
   --cat-bms: rgba(224, 231, 255, 0.1);
   --cat-bms-text: #a5b4fc;
   --cat-other: rgba(255, 255, 255, 0.06);
-  --cat-other-text: #94a3b8;
+  --cat-other-text: #b8b4aa;
 
-  --diff-accent: #f59e0b;
-  --diff-text: #fbbf24;
-  --diff-bg: rgba(245, 158, 11, 0.09);
+  --diff-accent: #f3f1ec;
+  --diff-text: #f3f1ec;
+  --diff-bg: rgba(255, 255, 255, 0.06);
+  --hatch: rgba(255, 255, 255, 0.08);
   --mark-bg: rgba(250, 204, 21, 0.25);
 
   /* Standard-body org colors (matrix chips + legend) — dark (brighter text for contrast) */
@@ -135,7 +157,7 @@
   --org-intl-solid: #f59e0b; --org-intl-text: #fcd34d; --org-intl-fill: rgba(245,158,11,0.14); --org-intl-border: rgba(245,158,11,0.32);
   --org-other-solid: #3b82f6;--org-other-text: #93c5fd;--org-other-fill: rgba(59,130,246,0.16);--org-other-border: rgba(59,130,246,0.34);
   --row-hover: rgba(255,255,255,0.035);
-  --glass-bg: rgba(30, 41, 59, 0.7);
+  --glass-bg: rgba(38, 37, 34, 0.7);
 
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
@@ -182,7 +204,7 @@ body {
 
 .scrollable::-webkit-scrollbar-thumb {
   background-color: var(--border-color);
-  border-radius: 10px;
+  border-radius: var(--radius-md);
 }
 
 /* Typography */
@@ -194,7 +216,7 @@ h1, h2, h3, h4 {
 
 h1 { font-size: 1.5rem; }
 h2 { font-size: 1.25rem; }
-h3 { font-size: 1.1rem; }
+h3 { font-size: var(--fs-md); }
 
 /* Buttons & Inputs */
 button {
@@ -213,7 +235,7 @@ button {
   padding: 0.5rem 1rem;
   border-radius: var(--radius-md);
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: var(--fs-sm);
 }
 
 .btn-primary {
@@ -297,8 +319,8 @@ button {
   display: inline-flex;
   align-items: center;
   padding: 0.125rem 0.5rem;
-  border-radius: 9999px;
-  font-size: 0.7rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-2xs);
   font-weight: 500;
 }
 
@@ -331,7 +353,7 @@ button {
   width: 100%;
   text-align: left;
   padding: 0.45rem 0.5rem;
-  border-radius: 8px;
+  border-radius: var(--radius-md);
   background: transparent;
   border: 1px solid transparent;
   cursor: pointer;
@@ -354,7 +376,7 @@ button {
   border: 1px solid transparent;
   color: var(--text-muted);
   cursor: pointer;
-  font-size: 0.72rem;
+  font-size: var(--fs-2xs);
   font-weight: 700;
   line-height: 1;
   opacity: 0.55;
@@ -366,11 +388,11 @@ button {
 
 .sm-filter {
   padding: 0.32rem 0.8rem;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   border: 1px solid var(--border-color);
   background: var(--bg-panel);
   color: var(--text-secondary);
-  font-size: 0.8rem;
+  font-size: var(--fs-xs);
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.15s ease, border-color 0.15s ease, color 0.15s ease;
@@ -390,7 +412,7 @@ button {
   justify-content: space-between;
   background-color: var(--bg-panel);
   border: 1.5px solid var(--border-color);
-  border-radius: 12px;
+  border-radius: var(--radius-lg);
   cursor: pointer;
   box-shadow: var(--shadow-sm);
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -403,8 +425,8 @@ button {
   color: var(--danger-color);
   border: 1px solid var(--danger-color);
   padding: 0.2rem 0.6rem;
-  border-radius: 12px;
-  font-size: 0.8rem;
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-xs);
   font-weight: bold;
   margin-left: 0.5rem;
   white-space: nowrap;
@@ -463,18 +485,18 @@ button {
 }
 .cmp-group-title {
   margin: 0;
-  font-size: 0.98rem;
+  font-size: var(--fs-md);
   font-weight: 700;
   color: var(--text-primary);
   letter-spacing: 0.01em;
 }
 .cmp-group-en {
-  font-size: 0.76rem;
+  font-size: var(--fs-xs);
   color: var(--text-muted);
 }
 .cmp-group-meta {
   margin-left: auto;
-  font-size: 0.76rem;
+  font-size: var(--fs-xs);
   color: var(--text-muted);
   white-space: nowrap;
   font-variant-numeric: tabular-nums;
@@ -484,7 +506,7 @@ button {
 .cmp-cell {
   padding: 0.5rem 0.75rem;
   border-top: 1px solid var(--border-color);
-  font-size: 0.84rem;
+  font-size: var(--fs-xs);
   line-height: 1.45;
   color: var(--text-primary);
   min-width: 0;
@@ -497,17 +519,66 @@ button {
   z-index: 1;
   background: var(--bg-panel);
   color: var(--text-secondary);
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   box-shadow: inset -1px 0 0 var(--border-color);
+}
+/* Regular-weight value text only: the system digits have no bold face here, so they would
+   look lighter than the letters in IDs and headings, which therefore stay pure gg sans. */
+.cmp-val, .cmp-group-meta, .cmp-colmeta {
+  font-family: 'gg num', 'gg sans', 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 .cmp-val { font-variant-numeric: tabular-nums; }
 .cmp-val.is-empty { color: var(--text-muted); }
 .cmp-row-diff.cmp-label {
   color: var(--diff-text);
-  box-shadow: inset 2px 0 0 var(--diff-accent), inset -1px 0 0 var(--border-color);
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 var(--diff-accent), inset -1px 0 0 var(--border-color);
 }
 .cmp-row-diff.cmp-val { background: var(--diff-bg); }
+
+/* Three kinds of "nothing here":
+   uncovered  = the standard has no such test        -> hatched, no text
+   level      = the test exists, not at this level   -> flat tint, no text
+   unspecified = covered, parameter not specified    -> a dash */
+.cmp-val.is-uncovered {
+  background-image: repeating-linear-gradient(135deg, transparent 0 6px, var(--hatch) 6px 7px);
+}
+.cmp-val.is-level { background-color: var(--bg-color); }
+.cmp-val.is-uncovered.cmp-row-diff, .cmp-val.is-level.cmp-row-diff { background-color: transparent; }
+.cmp-val.is-level.cmp-row-diff { background-color: var(--bg-color); }
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.cmp-unit, .cmp-op { color: var(--text-muted); }
+.cmp-unit { margin-left: 0.1em; }
+
+.cmp-colmeta {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+  font-size: var(--fs-2xs);
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+}
+.cmp-colmeta .tag { font-size: var(--fs-2xs); }
+
+/* Ring, not a fill and not amber: amber already means the IEC / UN body. */
+.sm-newver {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1.5px solid var(--text-secondary);
+  flex-shrink: 0;
+}
 .cmp-entry + .cmp-entry { margin-top: 0.35rem; }
 .cmp-entry--more {
   display: inline;
@@ -537,12 +608,12 @@ button {
 .cmp-entry--more:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
 }
 .cmp-entry-info {
   display: inline-block;
   margin-left: 0.28rem;
-  font-size: 0.72rem;
+  font-size: var(--fs-2xs);
   color: var(--text-muted);
   vertical-align: baseline;
   transition: color 0.15s ease;
@@ -558,17 +629,17 @@ button {
 .cmp-entry-clause {
   display: inline-block;
   margin-right: 0.35rem;
-  font-size: 0.7rem;
+  font-size: var(--fs-2xs);
   color: var(--text-muted);
   font-variant-numeric: tabular-nums;
 }
 .cmp-clause {
   padding: 0.05rem 0.4rem;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
   background: var(--bg-color);
   color: var(--text-primary);
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   font-variant-numeric: tabular-nums;
   cursor: pointer;
@@ -576,7 +647,7 @@ button {
 }
 .cmp-clause:hover { border-color: var(--accent-color); color: var(--accent-color); }
 .cmp-clause:focus-visible { outline: 2px solid var(--accent-color); outline-offset: 1px; }
-.cmp-note { font-size: 0.76rem; color: var(--text-muted); }
+.cmp-note { font-size: var(--fs-xs); color: var(--text-muted); }
 .cmp-criteria {
   display: -webkit-box;
   -webkit-line-clamp: 3;
@@ -592,7 +663,7 @@ button {
   border-top: 1px solid var(--border-color);
   background: var(--bg-color);
   color: var(--text-secondary);
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 600;
   text-align: left;
   cursor: pointer;
@@ -610,17 +681,18 @@ button {
   display: inline-flex;
   align-items: center;
   padding: 0.05rem 0.4rem;
-  border-radius: 5px;
+  border-radius: var(--radius-sm);
   border: 1px solid var(--border-color);
   background: var(--bg-color);
   color: var(--text-secondary);
-  font-size: 0.66rem;
+  font-size: var(--fs-2xs);
   font-weight: 600;
   line-height: 1.5;
   white-space: nowrap;
 }
-.tag-warn { border-color: transparent; background: var(--warning-bg); color: var(--diff-text); }
-.tag-cat { border-color: transparent; }
+.tag-warn { border-color: transparent; background: var(--warning-bg); color: var(--warning-text); }
+/* Category is a thin colored bar on a neutral tag, so color stays a hint, not a fill. */
+.tag-cat { border-left: 3px solid var(--c-cat, var(--cat-other-text)); }
 .status-dot {
   display: inline-block;
   width: 8px;
@@ -637,12 +709,12 @@ button {
   gap: 0.45rem;
   height: 40px;
   padding: 0 1rem;
-  border-radius: 9999px;
+  border-radius: var(--radius-pill);
   border: 1px solid var(--border-color);
   background: var(--bg-panel);
   color: var(--text-primary);
   box-shadow: var(--shadow-sm);
-  font-size: 0.88rem;
+  font-size: var(--fs-sm);
   font-weight: 600;
   white-space: nowrap;
   transition: border-color 0.15s ease, box-shadow 0.15s ease, color 0.15s ease;
@@ -657,7 +729,7 @@ button {
   gap: 0.5rem;
   height: 40px;
   padding: 0 1.15rem;
-  border-radius: 9999px;
+  border-radius: var(--radius-pill);
   background: var(--accent-color);
   color: #fff;
   font-weight: 700;
@@ -676,11 +748,11 @@ button {
   align-items: center;
   gap: 0.3rem;
   padding: 0.2rem 0.6rem;
-  border-radius: 9999px;
+  border-radius: var(--radius-pill);
   border: 1px solid var(--border-color);
   background: var(--bg-panel);
   color: var(--text-secondary);
-  font-size: 0.75rem;
+  font-size: var(--fs-2xs);
   font-weight: 600;
   white-space: nowrap;
   transition: border-color 0.15s ease, color 0.15s ease, background-color 0.15s ease;
@@ -689,9 +761,9 @@ button {
 .btn-pill.is-on { border-color: var(--accent-color); color: var(--accent-color); background: var(--accent-bg); }
 .btn-text {
   padding: 0.2rem 0.35rem;
-  border-radius: 6px;
+  border-radius: var(--radius-sm);
   color: var(--accent-color);
-  font-size: 0.75rem;
+  font-size: var(--fs-2xs);
   font-weight: 600;
   white-space: nowrap;
 }
@@ -748,7 +820,7 @@ button {
 .modal-section-title {
   display: block;
   margin-bottom: 0.45rem;
-  font-size: 0.78rem;
+  font-size: var(--fs-xs);
   font-weight: 700;
   letter-spacing: 0.04em;
   color: var(--text-muted);
@@ -768,7 +840,7 @@ mark.hl {
   background: var(--mark-bg);
   color: inherit;
   padding: 0 2px;
-  border-radius: 3px;
+  border-radius: var(--radius-xs);
 }
 
 /* ───────── AI 小幫手 chat ───────── */

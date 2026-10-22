@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useId } from 'react';
 import Icon from './Icon';
 import { hasExemptions } from '../utils/testRecord';
 import { levelLabel } from '../utils/orgColors';
+import UnitText from '../utils/UnitText';
 
 // One test (e.g. ELEC-SC-EXT) rendered as an aligned spec table:
 // a row per parameter, a column per selected standard.
@@ -49,7 +50,7 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
   );
 
   const renderEntries = (entries, multi, rowLabel, baseId) => {
-    if (!entries.length) return <span aria-label="未規定">—</span>;
+    if (!entries.length) return <span aria-label="此標準未規定此條件">—</span>;
     return entries.map((e, i) => {
       const hasDetail = Boolean(e.detail && e.detail !== e.value) || Boolean(e.source_reference);
       if (hasDetail) {
@@ -68,7 +69,7 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
             }, ev.currentTarget)}
           >
             {multi && e.clause && <span className="cmp-entry-clause">§{e.clause}</span>}
-            {e.value}
+            <UnitText text={e.value} />
             <span className="cmp-entry-info" aria-hidden="true">ⓘ</span>
           </button>
         );
@@ -76,11 +77,16 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
       return (
         <div key={i} className="cmp-entry">
           {multi && e.clause && <span className="cmp-entry-clause">§{e.clause}</span>}
-          {e.value}
+          <UnitText text={e.value} />
         </div>
       );
     });
   };
+
+  // Empty cells say why: the standard has no such test, the test is not at the
+  // selected level, or it is covered but this parameter is not specified.
+  const coverage = (col) => (col.status === 'none' ? 'is-uncovered' : col.status === 'level' ? 'is-level' : '');
+  const coverageNote = (col) => (col.status === 'none' ? '此標準未涵蓋這項測試' : '此層級不適用');
 
   const valueRow = (row, extraClass = '') => {
     const rowClass = row.state === 'diff' ? 'cmp-row-diff' : '';
@@ -88,11 +94,15 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
       <div key={`${row.key}-l`} className={`cmp-cell cmp-label ${rowClass} ${extraClass}`}>
         {row.label}
       </div>,
-      ...row.cells.map((entries, ci) => (
-        <div key={`${row.key}-${ci}`} className={`cmp-cell cmp-val ${rowClass} ${extraClass} ${entries.length ? '' : 'is-empty'}`}>
-          {renderEntries(entries, columns[ci].records.length > 1, row.label, columns[ci].baseId)}
-        </div>
-      )),
+      ...row.cells.map((entries, ci) => {
+        const col = columns[ci];
+        const blank = col.status !== 'ok';
+        return (
+          <div key={`${row.key}-${ci}`} className={`cmp-cell cmp-val ${rowClass} ${extraClass} ${entries.length ? '' : 'is-empty'} ${coverage(col)}`}>
+            {blank ? <span className="sr-only">{coverageNote(col)}</span> : renderEntries(entries, col.records.length > 1, row.label, col.baseId)}
+          </div>
+        );
+      }),
     ];
   };
 
@@ -100,7 +110,7 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
     <section className="cmp-group" aria-label={group.nameZh}>
       <header className="cmp-group-head">
         <h3 className="cmp-group-title">{group.nameZh}</h3>
-        <span className="tag tag-cat" style={{ background: `var(--cat-${catKey}, var(--cat-other))`, color: `var(--cat-${catKey}-text, var(--cat-other-text))` }}>
+        <span className="tag tag-cat" style={{ '--c-cat': `var(--cat-${catKey}-text, var(--cat-other-text))` }}>
           {group.id}
         </span>
         {group.nameEn && <span className="cmp-group-en">{group.nameEn}</span>}
@@ -113,7 +123,7 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
         {/* 條款列 */}
         {labelCell('條款', 'is-first')}
         {columns.map(col => (
-          <div key={col.baseId} className="cmp-cell cmp-val is-first cmp-clause-cell">
+          <div key={col.baseId} className={`cmp-cell cmp-val is-first cmp-clause-cell ${coverage(col)}`}>
             <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.3rem 0.45rem' }}>
               {col.status === 'ok' ? col.records.map(rec => (
                 <span key={rec.id} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.3rem' }}>
@@ -162,7 +172,7 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
         {/* 判定要求列 */}
         {labelCell('判定要求')}
         {view.criteria.map((entries, ci) => (
-          <div key={`crit-${ci}`} className={`cmp-cell cmp-val ${entries.length ? '' : 'is-empty'}`}>
+          <div key={`crit-${ci}`} className={`cmp-cell cmp-val ${entries.length ? '' : 'is-empty'} ${coverage(columns[ci])}`}>
             {entries.length ? entries.map((e, i) => (
               <button
                 key={i}
@@ -181,7 +191,9 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
                 {e.summary}
                 <span className="cmp-entry-info" aria-hidden="true">ⓘ</span>
               </button>
-            )) : '—'}
+            )) : (columns[ci].status === 'ok'
+              ? <span aria-label="此標準未規定判定要求">—</span>
+              : <span className="sr-only">{coverageNote(columns[ci])}</span>)}
           </div>
         ))}
       </div>
@@ -202,22 +214,22 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
             </button>
 
             <div style={{ paddingRight: '2.5rem', marginBottom: '0.9rem' }}>
-              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.4rem', marginBottom: '0.25rem', fontSize: '0.8rem', color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.4rem', marginBottom: '0.25rem', fontSize: 'var(--fs-xs)', color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
                 <span style={{ fontWeight: 600, color: 'var(--text-secondary)' }}>{popover.baseId}</span>
                 {popover.clause && <span>§{popover.clause}</span>}
               </div>
-              <h4 id={dialogTitleId} style={{ margin: 0, fontSize: '1.05rem', fontWeight: 700, color: 'var(--text-primary)' }}>
+              <h4 id={dialogTitleId} style={{ margin: 0, fontSize: 'var(--fs-md)', fontWeight: 700, color: 'var(--text-primary)' }}>
                 {popover.label}
               </h4>
             </div>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
               <div className="modal-box">
-                <div style={{ fontWeight: 600, fontSize: '0.92rem', color: 'var(--text-primary)', lineHeight: 1.55 }}>
+                <div style={{ fontWeight: 600, fontSize: 'var(--fs-sm)', color: 'var(--text-primary)', lineHeight: 1.55 }}>
                   {popover.value}
                 </div>
                 {popover.detail && (
-                  <div style={{ marginTop: '0.45rem', paddingTop: '0.45rem', borderTop: '1px solid var(--border-color)', fontSize: '0.85rem', color: 'var(--text-secondary)', lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>
+                  <div style={{ marginTop: '0.45rem', paddingTop: '0.45rem', borderTop: '1px solid var(--border-color)', fontSize: 'var(--fs-sm)', color: 'var(--text-secondary)', lineHeight: 1.6, whiteSpace: 'pre-wrap' }}>
                     {popover.detail}
                   </div>
                 )}
@@ -226,7 +238,7 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
               {popover.source_reference && (
                 <div>
                   <span className="modal-section-title">出處</span>
-                  <div style={{ fontSize: '0.84rem', color: 'var(--text-secondary)', fontVariantNumeric: 'tabular-nums' }}>
+                  <div style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-secondary)', fontVariantNumeric: 'tabular-nums' }}>
                     §{popover.source_reference}
                   </div>
                 </div>

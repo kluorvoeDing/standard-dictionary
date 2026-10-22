@@ -125,12 +125,12 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
           <button type="button" className="modal-close" onClick={closeInfo} aria-label="關閉"><Icon name="x" size={16} /></button>
 
           <h2 style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', margin: '0 0 0.9rem', paddingRight: '2.5rem', fontSize: '1.4rem', fontWeight: 700, letterSpacing: '-0.01em' }}>
-            <span style={{ width: '12px', height: '12px', borderRadius: '3px', backgroundColor: getOrgColor(docData.id || '').solid, flexShrink: 0 }} />
+            <span style={{ width: '12px', height: '12px', borderRadius: 'var(--radius-xs)', backgroundColor: getOrgColor(docData.id || '').solid, flexShrink: 0 }} />
             {docData.id || docData.short_name}
           </h2>
 
           {catDoc && (
-            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 0.8rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', background: 'var(--bg-color)', fontSize: '0.86rem', color: 'var(--text-secondary)' }}>
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 0.8rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', background: 'var(--bg-color)', fontSize: 'var(--fs-sm)', color: 'var(--text-secondary)' }}>
               <span className="status-dot" style={{ background: catDoc.is_latest ? 'var(--success-color)' : 'var(--warning-color)' }} />
               {catDoc.is_latest
                 ? <span>收錄版本即最新版（{catDoc.latest_version}）</span>
@@ -141,8 +141,8 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginTop: '1.25rem' }}>
             <section>
               <span className="modal-section-title">標準名稱</span>
-              <div style={{ fontSize: '1.05rem', fontWeight: 600 }}>{docData.full_name_zh || '無中文名稱'}</div>
-              <div style={{ fontSize: '0.88rem', color: 'var(--text-muted)' }}>{docData.full_name || ''}</div>
+              <div style={{ fontSize: 'var(--fs-md)', fontWeight: 600 }}>{docData.full_name_zh || '無中文名稱'}</div>
+              <div style={{ fontSize: 'var(--fs-sm)', color: 'var(--text-muted)' }}>{docData.full_name || ''}</div>
             </section>
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
               <section>
@@ -157,7 +157,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
             {docData.scope && (
               <section>
                 <span className="modal-section-title">適用範圍</span>
-                <div className="modal-box" style={{ lineHeight: 1.65, fontSize: '0.92rem' }}>{docData.scope}</div>
+                <div className="modal-box" style={{ lineHeight: 1.65, fontSize: 'var(--fs-sm)' }}>{docData.scope}</div>
               </section>
             )}
             {docData.applicable_objects && (
@@ -180,13 +180,13 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
         <button
           className="cmp-back"
           onClick={() => setIsComparing && setIsComparing(false)}
-          style={{ padding: '0.45rem 0.9rem', display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'transparent', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', color: 'var(--text-primary)', cursor: 'pointer', fontWeight: 500, fontSize: '0.88rem', whiteSpace: 'nowrap', flexShrink: 0 }}
+          style={{ padding: '0.45rem 0.9rem', display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'transparent', border: '1px solid var(--border-color)', borderRadius: 'var(--radius-md)', color: 'var(--text-primary)', cursor: 'pointer', fontWeight: 500, fontSize: 'var(--fs-sm)', whiteSpace: 'nowrap', flexShrink: 0 }}
         >
           <span aria-hidden="true">←</span>{isMobile ? '' : ' 返回'}
         </button>
-        <h2 style={{ margin: 0, display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '0.1rem 0.55rem', fontSize: isMobile ? '1.05rem' : '1.25rem', fontWeight: 700, letterSpacing: '-0.01em', color: 'var(--text-primary)' }}>
+        <h2 style={{ margin: 0, display: 'flex', flexWrap: 'wrap', alignItems: 'baseline', gap: '0.1rem 0.55rem', fontSize: isMobile ? 'var(--fs-md)' : '1.25rem', fontWeight: 700, letterSpacing: '-0.01em', color: 'var(--text-primary)' }}>
           橫向對比
-          <span style={{ fontSize: '0.82rem', fontWeight: 500, color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
+          <span style={{ fontSize: 'var(--fs-xs)', fontWeight: 500, color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums', whiteSpace: 'nowrap' }}>
             {selectedDocIds.length} 份標準 · {visible.length} 項測試
           </span>
         </h2>
@@ -194,7 +194,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
 
       <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem 1.5rem', alignItems: 'center', padding: isMobile ? '0.85rem' : '0.85rem 1.5rem', borderBottom: '1px solid var(--border-color)' }}>
         <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap', alignItems: 'center' }}>
-          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginRight: '0.1rem' }}>測試類別</span>
+          <span style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-muted)', marginRight: '0.1rem' }}>測試類別</span>
           {['ALL', ...presentCategories].map(cat => (
             <button key={cat} className={`sm-filter${filterCategory === cat ? ' is-active' : ''}`} onClick={() => setFilterCategory(cat)}>
               {CATEGORY_LABELS[cat]}
@@ -205,7 +205,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
         <div style={{ width: '1px', height: '1.4rem', backgroundColor: 'var(--border-color)' }} />
 
         <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap', alignItems: 'center' }}>
-          <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', marginRight: '0.1rem' }}>樣品層級</span>
+          <span style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-muted)', marginRight: '0.1rem' }}>樣品層級</span>
           {OBJECT_TYPES.map(obj => {
             const isActive = filterObjects.includes(obj.id);
             return (
@@ -233,13 +233,14 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
           {/* 標準欄位標題（固定在上方） */}
           <div className="cmp-head">
             <div className="cmp-grid" style={{ gridTemplateColumns: gridTemplate, paddingTop: isMobile ? '0.75rem' : '1rem' }}>
-              <div style={{ padding: '0.7rem 0.75rem', fontSize: '0.8rem', fontWeight: 600, color: 'var(--text-muted)', alignSelf: 'center' }}>
+              <div style={{ padding: '0.7rem 0.75rem', fontSize: 'var(--fs-xs)', fontWeight: 600, color: 'var(--text-muted)', alignSelf: 'center' }}>
                 {diffOnly && hiddenIdentical > 0 ? `已隱藏 ${hiddenIdentical} 項完全相同的測試` : ''}
               </div>
               {selectedDocIds.map(baseId => {
                 const versions = versionsByBase[baseId] || [];
                 const doc = activeDocFor(baseId);
                 const colors = getOrgColor(baseId);
+                const testCount = visible.filter(v => v.columns.find(c => c.baseId === baseId)?.status === 'ok').length;
                 return (
                   <div key={baseId} style={{ padding: '0 0.3rem', minWidth: 0 }}>
                     <div
@@ -253,8 +254,8 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
                     >
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem' }}>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', minWidth: 0 }}>
-                          <span style={{ width: '8px', height: '8px', borderRadius: '2.5px', backgroundColor: colors.solid, flexShrink: 0 }} />
-                          <span style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: '0.92rem', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <span style={{ width: '8px', height: '8px', borderRadius: 'var(--radius-xs)', backgroundColor: colors.solid, flexShrink: 0 }} />
+                          <span style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: 'var(--fs-sm)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
                             {doc.display_name || baseId}
                           </span>
                         </span>
@@ -267,7 +268,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
                                   key={ver.document_id}
                                   className={`cmp-ver${isActive ? ' is-active' : ''}`}
                                   onClick={() => setActiveVersions(prev => ({ ...prev, [baseId]: ver.document_id }))}
-                                  style={{ padding: '0.15rem 0.45rem', fontSize: '0.7rem', borderRadius: '6px', whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums', backgroundColor: isActive ? colors.solid : 'transparent', color: isActive ? '#fff' : 'var(--text-secondary)', border: `1px solid ${isActive ? colors.solid : 'var(--border-color)'}` }}
+                                  style={{ padding: '0.15rem 0.45rem', fontSize: 'var(--fs-2xs)', borderRadius: 'var(--radius-sm)', whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums', backgroundColor: isActive ? colors.solid : 'transparent', color: isActive ? '#fff' : 'var(--text-secondary)', border: `1px solid ${isActive ? colors.solid : 'var(--border-color)'}` }}
                                 >
                                   {String(new Date(ver.publication_date).getFullYear())}
                                 </button>
@@ -275,6 +276,11 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
                             })}
                           </span>
                         )}
+                      </div>
+                      <div className="cmp-colmeta">
+                        {versions.length <= 1 && /^\d{4}/.test(String(doc.publication_date)) && <span>{String(doc.publication_date).slice(0, 4)}</span>}
+                        <span>{testCount} 項測試</span>
+                        {doc.is_latest === false && <span className="tag tag-warn" title={`最新為 ${doc.latest_version || '更新版本'}`}>有新版</span>}
                       </div>
                     </div>
                   </div>
@@ -297,7 +303,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
           ))}
 
           {visible.length === 0 && (
-            <div style={{ padding: '3rem 1rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: '0.9rem' }}>
+            <div style={{ padding: '3rem 1rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: 'var(--fs-sm)' }}>
               {filterObjects.length === 0 ? '請至少選擇一個樣品層級。' : diffOnly ? '目前條件下，各標準的測試條件完全相同。' : '目前條件下沒有可比較的測試。'}
             </div>
           )}
