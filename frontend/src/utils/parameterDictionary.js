@@ -472,6 +472,12 @@ export const PARAMETER_DICTIONARY = {
   water_condition: { label: '水條件', category: 'environmental', priority: 19 },
   whole_drop_count: { label: '完整跌落次數', category: 'mechanical', priority: 46 },
   wires: { label: '導線', category: 'practical', priority: 57 },
+  projectile: { label: '彈丸規格', category: 'mechanical', priority: 36 },
+  velocity: { label: '彈丸初速', category: 'mechanical', priority: 37 },
+  shots: { label: '射擊發數', category: 'timing', priority: 23 },
+  discharge_points: { label: '放電部位', category: 'practical', priority: 57 },
+  pulse_count: { label: '脈衝次數', category: 'timing', priority: 23 },
+  cutoff_temperature: { label: '切斷保護溫度', category: 'environmental', priority: 19 },
 };
 
 // Raw keys that mean exactly the same thing as a dictionary key. Every entry was checked against the

@@ -1475,5 +1475,101 @@
     "base_standard_id": "IEC62660-3",
     "prerequisites": {},
     "application": "電動汽車 (EV)"
+  },
+  {
+    "document_id": "SAE-J2464",
+    "document_type": "guidance",
+    "document_strength": "recommended_practice",
+    "comparison_ready": true,
+    "display_name": "SAE J2464",
+    "full_name": "SAE J2464:2021 Electric and Hybrid Electric Vehicle Rechargeable Energy Storage System (RESS) Safety and Abuse Testing",
+    "publisher": "SAE International",
+    "publication_date": "2021-08",
+    "li_applicable": true,
+    "item_count": 17,
+    "available_objects": [
+      "CELL",
+      "MODULE",
+      "PACK_SYSTEM"
+    ],
+    "test_type": null,
+    "normativity": "informative",
+    "important_note": "本文件為電動與混合動力車 RESS 濫用測試推薦實踐指南，不設定合格／不合格判據，採危害嚴重度等級 (HSL 0–7) 評估。",
+    "schema_v2_json": "data/SAE-J2464.json",
+    "test_count_v2": 17,
+    "is_latest": true,
+    "latest_version": "2021-08 (Revised)",
+    "versions_behind": 0,
+    "base_standard_id": "SAE-J2464",
+    "prerequisites": {},
+    "application": "電動汽車 (EV)",
+    "edition_history": "1999-03 (Issued), 2009-11 (Revised), 2021-08 (Revised)"
+  },
+  {
+    "document_id": "MIL-PRF-32565",
+    "document_type": "standard",
+    "document_strength": "standard",
+    "comparison_ready": true,
+    "display_name": "MIL-PRF-32565",
+    "full_name": "MIL-PRF-32565C w/ Amendment 2 Performance Specification: Battery, Rechargeable, Sealed, 6T Lithium-Ion",
+    "publisher": "U.S. Department of Defense (DoD)",
+    "publication_date": "2022-08-04",
+    "li_applicable": true,
+    "item_count": 26,
+    "available_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
+    "test_type": null,
+    "normativity": "normative",
+    "important_note": "美軍地面車輛 6T 28V 鋰離子電池性能規範；依 SAE J2464 危害嚴重度等級分為 Type 1 (HSL ≤ 4) 與 Type 2 (HSL ≤ 6)。",
+    "schema_v2_json": "data/MIL-PRF-32565.json",
+    "test_count_v2": 26,
+    "is_latest": true,
+    "latest_version": "MIL-PRF-32565C w/ Amendment 2 (2022)",
+    "versions_behind": 0,
+    "base_standard_id": "MIL-PRF-32565",
+    "prerequisites": {
+      "CELL": [
+        "SAE J2464"
+      ]
+    },
+    "application": "電動汽車 (EV)",
+    "edition_history": "MIL-PRF-32565B (2018-08-14), MIL-PRF-32565C (2020-02-19), w/ Amendment 1 (2022-02-15), w/ Amendment 2 (2022-08-04)"
+  },
+  {
+    "document_id": "MIL-PRF-32383",
+    "document_type": "standard",
+    "document_strength": "standard",
+    "comparison_ready": true,
+    "display_name": "MIL-PRF-32383",
+    "full_name": "MIL-PRF-32383A Performance Specification: Batteries, Rechargeable, Sealed, General Specification For",
+    "publisher": "U.S. Department of Defense (DoD)",
+    "publication_date": "2021-12-09",
+    "li_applicable": true,
+    "item_count": 25,
+    "available_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
+    "test_type": null,
+    "normativity": "normative",
+    "important_note": "美軍攜帶式通訊電子設備用密封可充電電池通用性能規範。",
+    "schema_v2_json": "data/MIL-PRF-32383.json",
+    "test_count_v2": 25,
+    "is_latest": true,
+    "latest_version": "MIL-PRF-32383A (2021)",
+    "versions_behind": 0,
+    "base_standard_id": "MIL-PRF-32383",
+    "prerequisites": {
+      "CELL": [
+        "UL 1642"
+      ],
+      "PACK_SYSTEM": [
+        "UN 38.3"
+      ]
+    },
+    "application": "便攜式電子 (Portable)",
+    "edition_history": "MIL-PRF-32383 (2011-06-16), MIL-PRF-32383A (2021-12-09)"
   }
 ]
