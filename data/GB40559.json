@@ -1475,7 +1475,7 @@
     },
     {
       "id": "GB40559-9.8",
-      "normalized_id": "THERM-ABUSE",
+      "normalized_id": "BMS-TEMP-CTRL",
       "name_zh": "充電溫度保護 (電池組)",
       "name_en": "Charging Temperature Protection (Battery System)",
       "section": "9.8",
@@ -1529,7 +1529,7 @@
     },
     {
       "id": "GB40559-9.9",
-      "normalized_id": "THERM-ABUSE",
+      "normalized_id": "BMS-TEMP-CTRL",
       "name_zh": "放電溫度保護 (電池組)",
       "name_en": "Discharging Temperature Protection (Battery System)",
       "section": "9.9",
@@ -1582,7 +1582,7 @@
     },
     {
       "id": "GB40559-9.10",
-      "normalized_id": "ELEC-OC",
+      "normalized_id": "ELEC-FD",
       "name_zh": "反向充電保護 (電池組)",
       "name_en": "Reverse Charging Protection (Battery System)",
       "section": "9.10",

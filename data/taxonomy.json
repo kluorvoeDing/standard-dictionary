@@ -75,10 +75,10 @@
     {
       "normalized_id": "ELEC-IR",
       "category": "ELEC",
-      "name_zh": "絕緣電阻",
-      "name_en": "Insulation Resistance",
-      "synonyms_en": ["insulation resistance", "isolation resistance"],
-      "synonyms_zh": ["絕緣電阻", "隔離電阻"]
+      "name_zh": "絕緣、耐壓與導通",
+      "name_en": "Insulation, Withstand Voltage and Continuity",
+      "synonyms_en": ["insulation resistance", "isolation resistance", "dielectric voltage withstand", "withstand voltage", "grounding continuity"],
+      "synonyms_zh": ["絕緣電阻", "隔離電阻", "耐壓", "介電耐壓", "接地連續性", "導通性"]
     },
     {
       "normalized_id": "ELEC-CC",
@@ -117,8 +117,8 @@
       "category": "MECH",
       "name_zh": "擠壓",
       "name_en": "Crush",
-      "synonyms_en": ["crush", "crush test", "static force", "compression"],
-      "synonyms_zh": ["擠壓", "壓碎"]
+      "synonyms_en": ["crush", "crush test", "static force", "compression", "round bar crush"],
+      "synonyms_zh": ["擠壓", "壓碎", "圓棒擠壓"]
     },
     {
       "normalized_id": "MECH-DROP",
@@ -147,10 +147,10 @@
     {
       "normalized_id": "MECH-PROJ",
       "category": "MECH",
-      "name_zh": "拋射體 / 子彈測試",
-      "name_en": "Projectile / Bullet Test",
-      "synonyms_en": ["projectile", "bullet test"],
-      "synonyms_zh": ["拋射體", "子彈測試"]
+      "name_zh": "燃燒拋射體試驗",
+      "name_en": "Burning Projectile Test",
+      "synonyms_en": ["projectile", "bullet test", "burn and projectile", "burning jet"],
+      "synonyms_zh": ["拋射體", "子彈測試", "燃燒噴射", "加熱拋射"]
     },
     {
       "normalized_id": "MECH-STRESS",
@@ -230,7 +230,7 @@
       "name_zh": "濕熱循環",
       "name_en": "Damp Heat / Humidity Cycling",
       "synonyms_en": ["damp heat", "humidity cycling", "moisture"],
-      "synonyms_zh": ["濕熱循環", "濕度測試"]
+      "synonyms_zh": ["濕熱循環", "濕度測試", "交變濕熱"]
     },
     {
       "normalized_id": "THERM-SALT",
@@ -238,7 +238,7 @@
       "name_zh": "鹽霧",
       "name_en": "Salt Spray / Salt Mist",
       "synonyms_en": ["salt spray", "salt mist", "salt fog"],
-      "synonyms_zh": ["鹽霧", "鹽霧測試"]
+      "synonyms_zh": ["鹽霧", "鹽霧測試", "鹽霧性能"]
     },
     {
       "normalized_id": "THERM-HOTUSE",
@@ -253,8 +253,8 @@
       "category": "BMS",
       "name_zh": "充放電溫度控制",
       "name_en": "Charge / Discharge Temperature Control",
-      "synonyms_en": ["charge/discharge temperature control"],
-      "synonyms_zh": ["充放電溫度控制"]
+      "synonyms_en": ["charge/discharge temperature control", "charging temperature protection", "discharging temperature protection"],
+      "synonyms_zh": ["充放電溫度控制", "充電溫度保護", "放電溫度保護"]
     },
     {
       "normalized_id": "BMS-ALARM",
@@ -263,6 +263,142 @@
       "name_en": "BMS Alarm and Protection",
       "synonyms_en": ["alarm and protection"],
       "synonyms_zh": ["報警和保護功能"]
+    },
+    {
+      "normalized_id": "ENV-H2",
+      "category": "ENV",
+      "name_zh": "氫氣排放",
+      "name_en": "Hydrogen Emission",
+      "synonyms_en": ["hydrogen emission"],
+      "synonyms_zh": ["氫氣排放"]
+    },
+    {
+      "normalized_id": "MECH-SWALLOW",
+      "category": "MECH",
+      "name_zh": "吞嚥量規檢查",
+      "name_en": "Swallowing Gauge Check",
+      "synonyms_en": ["swallowing gauge", "ingestion gauge"],
+      "synonyms_zh": ["吞嚥量規", "警示說明"]
+    },
+    {
+      "normalized_id": "THERM-BALLPRESS",
+      "category": "THERM",
+      "name_zh": "耐異常熱（球壓）",
+      "name_en": "Resistance to Abnormal Heat (Ball Pressure)",
+      "synonyms_en": ["ball pressure", "abnormal heat"],
+      "synonyms_zh": ["耐異常熱", "球壓試驗"]
+    },
+    {
+      "normalized_id": "THERM-TEMPTEST",
+      "category": "THERM",
+      "name_zh": "運作溫度測試",
+      "name_en": "Operating Temperature Test",
+      "synonyms_en": ["temperature test", "temperature rise"],
+      "synonyms_zh": ["溫度測試", "溫升"]
+    },
+    {
+      "normalized_id": "THERM-COOLFAIL",
+      "category": "THERM",
+      "name_zh": "冷卻失效",
+      "name_en": "Cooling System Failure",
+      "synonyms_en": ["cooling failure", "blocked vents", "fan failure"],
+      "synonyms_zh": ["冷卻系統失效", "風扇斷開", "通風口阻塞"]
+    },
+    {
+      "normalized_id": "ELEC-PLATING",
+      "category": "ELEC",
+      "name_zh": "析鋰檢查",
+      "name_en": "Lithium Plating Check",
+      "synonyms_en": ["lithium plating"],
+      "synonyms_zh": ["析鋰"]
+    },
+    {
+      "normalized_id": "ELEC-ESD",
+      "category": "ELEC",
+      "name_zh": "靜電放電",
+      "name_en": "Electrostatic Discharge",
+      "synonyms_en": ["electrostatic discharge", "ESD"],
+      "synonyms_zh": ["靜電放電"]
+    },
+    {
+      "normalized_id": "ELEC-FAULT",
+      "category": "ELEC",
+      "name_zh": "零件故障",
+      "name_en": "Component Fault",
+      "synonyms_en": ["component fault", "single fault"],
+      "synonyms_zh": ["零件故障"]
+    },
+    {
+      "normalized_id": "ELEC-RELAY",
+      "category": "ELEC",
+      "name_zh": "繼電器燒毀",
+      "name_en": "Relay and Solenoid Burnout",
+      "synonyms_en": ["relay burnout", "solenoid burnout"],
+      "synonyms_zh": ["繼電器", "電磁閥燒毀"]
+    },
+    {
+      "normalized_id": "ELEC-IR-ALT",
+      "category": "ELEC",
+      "name_zh": "高海拔絕緣電阻",
+      "name_en": "High Altitude Insulation Resistance",
+      "synonyms_en": ["insulation resistance at altitude"],
+      "synonyms_zh": ["高海拔絕緣"]
+    },
+    {
+      "normalized_id": "ELEC-WV-ALT",
+      "category": "ELEC",
+      "name_zh": "高海拔耐壓",
+      "name_en": "High Altitude Withstand Voltage",
+      "synonyms_en": ["withstand voltage at altitude"],
+      "synonyms_zh": ["高海拔耐壓"]
+    },
+    {
+      "normalized_id": "MECH-CONN",
+      "category": "MECH",
+      "name_zh": "接插件防反插",
+      "name_en": "Anti-reverse Connector",
+      "synonyms_en": ["reverse connection prevention", "connector polarization"],
+      "synonyms_zh": ["防反插", "防呆接口"]
+    },
+    {
+      "normalized_id": "MECH-PRESS",
+      "category": "MECH",
+      "name_zh": "液冷管路耐壓",
+      "name_en": "Cooling Pipeline Pressure Withstand",
+      "synonyms_en": ["coolant pipe pressure test"],
+      "synonyms_zh": ["液冷管路耐壓"]
+    },
+    {
+      "normalized_id": "BMS-MONITOR",
+      "category": "BMS",
+      "name_zh": "BMS 監測與記錄",
+      "name_en": "BMS Monitoring and Logging",
+      "synonyms_en": ["intelligent management", "BMS logging"],
+      "synonyms_zh": ["智能管理", "狀態記錄"]
+    },
+    {
+      "normalized_id": "BMS-COMM",
+      "category": "BMS",
+      "name_zh": "BMS 互認協同",
+      "name_en": "BMS Mutual Recognition",
+      "synonyms_en": ["mutual recognition", "charger-battery communication"],
+      "synonyms_zh": ["互認協同"]
+    },
+    {
+      "normalized_id": "BMS-UVLOCK",
+      "category": "BMS",
+      "name_zh": "欠壓禁用",
+      "name_en": "Under-voltage Lockout",
+      "synonyms_en": ["under voltage disable"],
+      "synonyms_zh": ["欠壓禁用"]
+    },
+    {
+      "normalized_id": "THERM-ADIA",
+      "category": "THERM",
+      "name_zh": "絕熱溫升",
+      "name_en": "Adiabatic Temperature Rise",
+      "synonyms_en": ["adiabatic temperature rise"],
+      "synonyms_zh": ["絕熱溫升特性"]
     }
   ],
   "test_objects": [

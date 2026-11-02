@@ -1004,7 +1004,8 @@
         "details": [
           "試驗後樣品應無破裂、無起火、無爆炸。"
         ]
-      }
+      },
+      "normalized_id": "ELEC-SC-EXT"
     },
     {
       "id": "GB44240-9.5",
@@ -1043,7 +1044,8 @@
         "details": [
           "試驗後樣品應無破裂、無起火、無爆炸。"
         ]
-      }
+      },
+      "normalized_id": "ELEC-FD"
     },
     {
       "id": "GB44240-9.6",
@@ -1057,7 +1059,7 @@
       ],
       "exemptions": [],
       "conditions": {
-        "pretreatment": {
+        "humidity_conditioning": {
           "value": "濕熱處理",
           "detail": "在進行抗電強度測試前，需先進行濕熱處理。"
         },
@@ -1081,7 +1083,8 @@
         "details": [
           "符合 GB 4943.1—2022 中 5.4.9 規定抗電強度試驗要求。"
         ]
-      }
+      },
+      "normalized_id": "ELEC-IR"
     },
     {
       "id": "GB44240-9.1",
@@ -1112,7 +1115,8 @@
       "exemptions": [
         "如果透過對材料物理特性的檢查能清楚地看出其將滿足本試驗的要求，則不進行試驗。"
       ],
-      "related_tests": []
+      "related_tests": [],
+      "normalized_id": "THERM-BALLPRESS"
     },
     {
       "id": "GB44240-9.2",
@@ -1137,7 +1141,8 @@
         ]
       },
       "exemptions": [],
-      "related_tests": []
+      "related_tests": [],
+      "normalized_id": "THERM-FIRE"
     },
     {
       "id": "GB44240-9.3",

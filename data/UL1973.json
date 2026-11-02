@@ -357,7 +357,7 @@
     },
     {
       "id": "UL1973-24",
-      "normalized_id": "THERM-ABUSE",
+      "normalized_id": "THERM-COOLFAIL",
       "name_zh": "冷卻系統失效測試 (Cooling System Failure)",
       "name_en": "Failure of Cooling/Thermal Stability System Test",
       "section": "24",

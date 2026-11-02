@@ -674,7 +674,7 @@
     },
     {
       "id": "UL1642-T20",
-      "normalized_id": "THERM-FIRE",
+      "normalized_id": "MECH-PROJ",
       "name_zh": "拋射體測試 (Projectile Test / Fire Exposure)",
       "name_en": "Projectile Test (Fire Exposure Test)",
       "section": "20",

@@ -787,7 +787,8 @@
         "僅適用於可更換型電池組"
       ],
       "related_tests": [],
-      "source_reference": "7.12"
+      "source_reference": "7.12",
+      "normalized_id": "MECH-SWALLOW"
     },
     {
       "id": "GB31241.4-7.13",
@@ -882,7 +883,8 @@
       },
       "exemptions": [],
       "related_tests": [],
-      "source_reference": "7.14"
+      "source_reference": "7.14",
+      "normalized_id": "MECH-STRESS"
     },
     {
       "id": "GB31241.4-7.15",
@@ -971,7 +973,8 @@
         "固態電池等無法分離負極片的，本試驗不適用"
       ],
       "related_tests": [],
-      "source_reference": "7.16"
+      "source_reference": "7.16",
+      "normalized_id": "ELEC-PLATING"
     },
     {
       "id": "GB31241.4-8.2",
@@ -1306,7 +1309,7 @@
     },
     {
       "id": "GB31241.4-8.8",
-      "normalized_id": "THERM-ABUSE",
+      "normalized_id": "BMS-TEMP-CTRL",
       "name_zh": "充電溫度保護試驗 (電池組)",
       "name_en": "Charging Temperature Protection Test (Battery Pack)",
       "section": "8.8",
@@ -1359,7 +1362,7 @@
     },
     {
       "id": "GB31241.4-8.9",
-      "normalized_id": "THERM-ABUSE",
+      "normalized_id": "BMS-TEMP-CTRL",
       "name_zh": "放電溫度保護試驗 (電池組)",
       "name_en": "Discharging Temperature Protection Test (Battery Pack)",
       "section": "8.9",

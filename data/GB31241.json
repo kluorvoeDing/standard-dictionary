@@ -628,7 +628,7 @@
     },
     {
       "id": "GB31241-7.9",
-      "normalized_id": "THERM-FIRE",
+      "normalized_id": "MECH-PROJ",
       "name_zh": "燃燒噴射試驗 (Burning Jet)",
       "name_en": "Test 7.9: Burning Jet / Fire Exposure (Cell)",
       "section": "7.9",

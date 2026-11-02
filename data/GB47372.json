@@ -358,7 +358,7 @@
     },
     {
       "id": "GB47372-6.8",
-      "normalized_id": "ELEC-BMS",
+      "normalized_id": "BMS-MONITOR",
       "name_zh": "智能管理 (移動電源)",
       "name_en": "Intelligent Management (Power Bank)",
       "section": "6.8",
@@ -701,7 +701,7 @@
     },
     {
       "id": "GB47372-7.5",
-      "normalized_id": "ELEC-CC",
+      "normalized_id": "ELEC-PLATING",
       "name_zh": "析鋰 (電池)",
       "name_en": "Lithium Plating (Battery)",
       "section": "7.5",

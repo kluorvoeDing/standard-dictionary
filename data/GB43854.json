@@ -490,7 +490,7 @@
     },
     {
       "id": "GB43854-T10",
-      "normalized_id": "THERM-ABUSE",
+      "normalized_id": "BMS-TEMP-CTRL",
       "name_zh": "電池組 - 溫度保護試驗",
       "name_en": "Pack - Temperature Protection Test",
       "section": "5.2.1.6, 6.4.1.6",

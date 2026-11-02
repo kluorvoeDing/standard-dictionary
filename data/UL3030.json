@@ -64,7 +64,8 @@
           "不得超過 Table 28.1 規定的零組件最高溫度限制。",
           "使用者可觸及之外部表面不得超過 Table 28.2 規定的溫度限制（例如 70 °C）。"
         ]
-      }
+      },
+      "normalized_id": "THERM-TEMPTEST"
     },
     {
       "id": "UL3030-32.10",
@@ -241,7 +242,7 @@
     },
     {
       "id": "UL3030-32.4",
-      "normalized_id": "THERM-VENT",
+      "normalized_id": "THERM-COOLFAIL",
       "name_zh": "風扇斷開與通風口阻塞試驗",
       "name_en": "Disconnected fans/blocked vents",
       "section": "32.4",
@@ -347,7 +348,8 @@
           "無人員受傷",
           "通過 Dielectric Voltage Withstand Test (29) (若具危險電壓)"
         ]
-      }
+      },
+      "normalized_id": "ELEC-FD"
     },
     {
       "id": "UL3030-32.6",

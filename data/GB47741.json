@@ -1319,7 +1319,7 @@
     },
     {
       "id": "GB47741-9.4",
-      "normalized_id": "ELEC-COMM",
+      "normalized_id": "BMS-COMM",
       "name_zh": "互認協同 (鋰/鈉電池組)",
       "name_en": "Mutual recognition (Li/Na Pack)",
       "section": "9.4",
@@ -1355,7 +1355,7 @@
     },
     {
       "id": "GB47741-9.5.2",
-      "normalized_id": "ELEC-UDIS",
+      "normalized_id": "BMS-UVLOCK",
       "name_zh": "欠壓禁用 (鋰/鈉電池組)",
       "name_en": "Under voltage disable (Li/Na Pack)",
       "section": "9.5.2",
@@ -1426,7 +1426,7 @@
     },
     {
       "id": "GB47741-9.9",
-      "normalized_id": "ELEC-TEMP-PROT-C",
+      "normalized_id": "BMS-TEMP-CTRL",
       "name_zh": "充電溫度保護 (鋰/鈉電池組)",
       "name_en": "Charging temperature protection (Li/Na Pack)",
       "section": "9.9",
@@ -1474,7 +1474,7 @@
     },
     {
       "id": "GB47741-9.10",
-      "normalized_id": "ELEC-TEMP-PROT-D",
+      "normalized_id": "BMS-TEMP-CTRL",
       "name_zh": "放電溫度保護 (鋰/鈉電池組)",
       "name_en": "Discharging temperature protection (Li/Na Pack)",
       "section": "9.10",

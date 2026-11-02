@@ -17,7 +17,7 @@ import { PROCEDURE_FIELDS as FIELDS } from './review/fields.mjs';
 
 const ROOT = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'data');
-const SYSTEM_FILES = new Set(['catalog.json', 'taxonomy.json']);
+const SYSTEM_FILES = new Set(['catalog.json', 'taxonomy.json', 'field_schema.json']);
 const TEMPLATE_SHARE = 0.8;
 const TEMPLATE_MIN_TESTS = 3;
 

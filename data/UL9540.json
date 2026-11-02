@@ -419,7 +419,7 @@
     },
     {
       "id": "UL9540-40.4",
-      "normalized_id": "THERM-STAB",
+      "normalized_id": "MECH-STRESS",
       "name_zh": "模具應力測試",
       "name_en": "Mold Stress",
       "section": "40.4",

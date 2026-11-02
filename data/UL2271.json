@@ -331,7 +331,7 @@
     },
     {
       "id": "UL2271-T28",
-      "normalized_id": "THERM-ABUSE",
+      "normalized_id": "THERM-TEMPTEST",
       "name_zh": "溫度測試 (Temperature Test)",
       "name_en": "Temperature Test",
       "section": "28",

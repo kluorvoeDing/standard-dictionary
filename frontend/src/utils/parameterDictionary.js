@@ -6,8 +6,9 @@
 //               as one generic sentence per standard (Phase 2) and have not been checked against the
 //               source text yet, so the table keeps them in a collapsed section and never diff-marks them.
 export const PARAMETER_DICTIONARY = {
+  humidity_conditioning: { label: '濕熱處理', category: 'environmental', priority: 30 },
   // ── 電氣條件 ──
-  soc: { label: '荷電狀態 (SOC)', category: 'electrical', priority: 1 },
+  soc: { label: '荷電狀態', category: 'electrical', priority: 1 },
   pre_condition: { label: '樣品初始狀態', category: 'electrical', priority: 1 },
   voltage: { label: '試驗電壓', category: 'electrical', priority: 2 },
   charging_voltage: { label: '充電電壓', category: 'electrical', priority: 2 },
@@ -476,6 +477,14 @@ export const PARAMETER_DICTIONARY = {
 // Raw keys that mean exactly the same thing as a dictionary key. Every entry was checked against the
 // values it carries in data/*.json before being merged.
 export const ALIASES = {
+  // 2026-11-02 依跨標準整併審核加入（只在同類測試中出現，意義與目標鍵相同）
+  speed: 'crush_speed',
+  height: 'drop_height',
+  post_test_conditioning: 'post_storage',
+  heating: 'burner',
+  heat_source: 'burner',
+  spray_storage_cycles: 'cycles',
+  fan_disconnected: 'cooling',
   state_of_charge: 'soc',
   test_voltage: 'voltage',
   charge_voltage: 'charging_voltage',

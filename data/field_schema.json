@@ -261,6 +261,42 @@
             "sample_requirement"
           ],
           "value_style": "3 次"
+        },
+        {
+          "key": "charging_current",
+          "label_zh": "充電電流",
+          "order": 14,
+          "merged_from": [
+            "charging_current"
+          ],
+          "value_style": "僅部分標準規定"
+        },
+        {
+          "key": "procedure",
+          "label_zh": "試驗程序",
+          "order": 15,
+          "merged_from": [
+            "procedure"
+          ],
+          "value_style": "僅部分標準規定"
+        },
+        {
+          "key": "scenario1",
+          "label_zh": "情境一",
+          "order": 16,
+          "merged_from": [
+            "scenario1"
+          ],
+          "value_style": "僅部分標準規定"
+        },
+        {
+          "key": "scenario2",
+          "label_zh": "情境二",
+          "order": 17,
+          "merged_from": [
+            "scenario2"
+          ],
+          "value_style": "僅部分標準規定"
         }
       ]
     },
@@ -374,6 +410,33 @@
             "pre_condition"
           ],
           "value_style": "接地端子與可觸及金屬部件間之阻抗"
+        },
+        {
+          "key": "humidity_conditioning",
+          "label_zh": "濕熱處理",
+          "order": 12,
+          "merged_from": [
+            "humidity_conditioning"
+          ],
+          "value_style": "僅部分標準規定"
+        },
+        {
+          "key": "dc_voltage",
+          "label_zh": "直流試驗電壓",
+          "order": 13,
+          "merged_from": [
+            "dc_voltage"
+          ],
+          "value_style": "僅部分標準規定"
+        },
+        {
+          "key": "ac_voltage",
+          "label_zh": "交流試驗電壓",
+          "order": 14,
+          "merged_from": [
+            "ac_voltage"
+          ],
+          "value_style": "僅部分標準規定"
         }
       ]
     },
@@ -1130,6 +1193,24 @@
             "method"
           ],
           "value_style": "方形、軟包、鈕扣電芯及圓柱形直徑 < 18.0 mm（單次擠壓）"
+        },
+        {
+          "key": "bar_diameter",
+          "label_zh": "圓棒直徑",
+          "order": 11,
+          "merged_from": [
+            "bar_diameter"
+          ],
+          "value_style": "僅部分標準規定"
+        },
+        {
+          "key": "preload_pressure",
+          "label_zh": "預壓力",
+          "order": 12,
+          "merged_from": [
+            "preload_pressure"
+          ],
+          "value_style": "僅部分標準規定"
         }
       ]
     },
@@ -2203,6 +2284,15 @@
             "fault_condition"
           ],
           "value_style": "明確排氣路徑：距排氣口 40 ± 5 mm；無明確排氣路徑：多點火源覆蓋"
+        },
+        {
+          "key": "standard",
+          "label_zh": "依據標準",
+          "order": 10,
+          "merged_from": [
+            "standard"
+          ],
+          "value_style": "僅部分標準規定"
         }
       ]
     },
@@ -2261,6 +2351,33 @@
             "soc"
           ],
           "value_style": "最高工作荷電狀態（100% SOC）"
+        },
+        {
+          "key": "high_temp_phase",
+          "label_zh": "高溫高濕段",
+          "order": 6,
+          "merged_from": [
+            "high_temp_phase"
+          ],
+          "value_style": "僅部分標準規定"
+        },
+        {
+          "key": "low_temp_phase",
+          "label_zh": "低溫高濕段",
+          "order": 7,
+          "merged_from": [
+            "low_temp_phase"
+          ],
+          "value_style": "僅部分標準規定"
+        },
+        {
+          "key": "temp_ramp_rate",
+          "label_zh": "升降溫速率",
+          "order": 8,
+          "merged_from": [
+            "temp_ramp_rate"
+          ],
+          "value_style": "僅部分標準規定"
         }
       ]
     },
@@ -2456,6 +2573,15 @@
             "power_on_monitoring"
           ],
           "value_style": "低壓上電監控（單個循環之第 4 至第 5 小時）"
+        },
+        {
+          "key": "total_macro_cycles",
+          "label_zh": "總循環數",
+          "order": 8,
+          "merged_from": [
+            "total_macro_cycles"
+          ],
+          "value_style": "僅部分標準規定"
         }
       ]
     },

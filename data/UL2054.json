@@ -679,7 +679,7 @@
     },
     {
       "id": "UL2054-T26",
-      "normalized_id": "THERM-FIRE",
+      "normalized_id": "MECH-PROJ",
       "name_zh": "拋射體測試 (Projectile Test)",
       "name_en": "Projectile Test",
       "section": "26",

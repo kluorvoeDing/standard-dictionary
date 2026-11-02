@@ -290,7 +290,7 @@
     },
     {
       "id": "GBT36276-6.7.1.6",
-      "normalized_id": "ELEC-WV",
+      "normalized_id": "ELEC-IR",
       "name_zh": "耐壓性能試驗 (Withstand Voltage)",
       "name_en": "Withstand Voltage Test",
       "section": "6.7.1.6",
@@ -731,7 +731,7 @@
     },
     {
       "id": "GBT36276-6.7.3.1",
-      "normalized_id": "ENV-SALT",
+      "normalized_id": "THERM-SALT",
       "name_zh": "鹽霧性能試驗",
       "name_en": "Salt Mist Performance Test",
       "section": "6.7.3.1",
@@ -799,7 +799,7 @@
     },
     {
       "id": "GBT36276-6.7.3.2",
-      "normalized_id": "ENV-DAMP",
+      "normalized_id": "THERM-HUMID",
       "name_zh": "交變濕熱性能試驗",
       "name_en": "Damp Heat Cyclic Performance Test",
       "section": "6.7.3.2",

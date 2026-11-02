@@ -16,6 +16,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import url from 'node:url';
+// 欄位同義對照與前端共用（純 ESM、無相依套件）
+import { canonicalKey } from '../frontend/src/utils/parameterDictionary.js';
 
 const ROOT = path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), '..');
 const DATA = path.join(ROOT, 'data');
@@ -70,6 +72,7 @@ function loadJSON(p) {
 // ── 載入 taxonomy 作為合法 token 的權威來源 ──────────────────────
 let okCategories = new Set();
 let okObjects = new Set();
+let okNids = new Set();
 {
   const { data: tax, error } = loadJSON(path.join(DATA, 'taxonomy.json'));
   if (error) {
@@ -77,6 +80,7 @@ let okObjects = new Set();
   } else {
     okCategories = new Set(Object.keys(tax.categories || {}));
     okObjects = new Set((tax.test_objects || []).map((o) => o.id).filter(Boolean));
+    okNids = new Set((tax.test_types || []).map((o) => o.normalized_id).filter(Boolean));
   }
 }
 
@@ -173,6 +177,19 @@ for (const f of onDisk) {
     else if (seenTestIds.has(t.id)) err(f, `測試 id 重複：${t.id}`);
     else seenTestIds.add(t.id);
     if (!t.name_zh && !t.name_en) err(tag, `${t.id || '?'} 缺少名稱 (name_zh/name_en)`);
+    // 橫向比對靠 normalized_id 分組：缺少或未登記就永遠找不到對照對象
+    if (!t.normalized_id) err(tag, `${t.id} 缺少 normalized_id`);
+    else if (okNids.size && !okNids.has(t.normalized_id))
+      err(tag, `${t.id} 的 normalized_id「${t.normalized_id}」未在 taxonomy.json 登記`);
+    // 同一測試內兩個鍵對到同一個標準欄位，比對表會在同一格疊出兩個（常互相矛盾）的值
+    if (t.conditions && typeof t.conditions === 'object') {
+      const seen = new Map();
+      for (const rk of Object.keys(t.conditions)) {
+        const ck = canonicalKey(rk);
+        if (seen.has(ck)) err(tag, `${t.id} 的條件鍵「${seen.get(ck)}」與「${rk}」是同一欄位（${ck}），只能留一個`);
+        else seen.set(ck, rk);
+      }
+    }
 
     // 警告級
     if (t.category && okCategories.size && !okCategories.has(t.category))
@@ -194,7 +211,7 @@ for (const f of onDisk) {
         }
       }
       for (const rk of Object.keys(t.conditions)) {
-        if (!allowedKeys.has(rk)) {
+        if (!allowedKeys.has(rk) && !allowedKeys.has(canonicalKey(rk))) {
           warn(tag, `${t.id} (${t.normalized_id}) 的條件鍵「${rk}」不在 field_schema.json 規範清單中`);
         }
       }

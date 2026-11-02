@@ -271,7 +271,7 @@
     },
     {
       "id": "UL2056-16",
-      "normalized_id": "THERM-ABUSE",
+      "normalized_id": "THERM-TEMPTEST",
       "name_zh": "溫度測試與 BMS 驗證 (Temperature Test and BMS Verification)",
       "name_en": "Section 16: Temperature Test and BMS Verification",
       "section": "16",
@@ -627,7 +627,7 @@
     },
     {
       "id": "UL2056-24",
-      "normalized_id": "THERM-STAB",
+      "normalized_id": "MECH-STRESS",
       "name_zh": "模具應力釋放測試 (Mold Stress Relief Test)",
       "name_en": "Section 24: Mold Stress Relief Test",
       "section": "24",

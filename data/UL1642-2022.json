@@ -387,7 +387,7 @@
     },
     {
       "id": "UL1642-T14A",
-      "normalized_id": "MECH-RBCR",
+      "normalized_id": "MECH-CRUSH",
       "name_zh": "圓柱體擠壓測試 (Round Bar Crush Test)",
       "name_en": "Round Bar Crush Test",
       "section": "14A",
@@ -742,7 +742,7 @@
     },
     {
       "id": "UL1642-T20",
-      "normalized_id": "THERM-FIRE",
+      "normalized_id": "MECH-PROJ",
       "name_zh": "拋射體測試 (Projectile Test / Fire Exposure)",
       "name_en": "Projectile Test (Fire Exposure Test)",
       "section": "20",

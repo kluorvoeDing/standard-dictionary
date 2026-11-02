@@ -215,7 +215,7 @@
     },
     {
       "id": "ULC2580-T28",
-      "normalized_id": "THERM-CYCLE",
+      "normalized_id": "THERM-TEMPTEST",
       "name_zh": "溫度測試 (Temperature)",
       "name_en": "Temperature Test",
       "section": "28",
@@ -469,7 +469,7 @@
           "電阻不大於 0.1 Ω。"
         ]
       },
-      "normalized_id": "ELEC-CONTINUITY",
+      "normalized_id": "ELEC-IR",
       "source_reference": "Section 32",
       "original_text_snippet": "The grounding system of an electric energy storage assembly shall have no more than 0.1-Ω resistance between any two parts of the system...",
       "taxonomy": {
@@ -479,7 +479,7 @@
     },
     {
       "id": "ULC2580-T33",
-      "normalized_id": "THERM-ABUSE",
+      "normalized_id": "THERM-COOLFAIL",
       "name_zh": "冷卻/熱管理系統失效測試 (Failure of Cooling System)",
       "name_en": "Failure of Cooling/Thermal Stability System Test",
       "section": "33",
@@ -1483,7 +1483,7 @@
         ]
       },
       "original_text_snippet": "",
-      "normalized_id": "THERM-PROJECTILE"
+      "normalized_id": "MECH-PROJ"
     }
   ],
   "test_sequence": {
