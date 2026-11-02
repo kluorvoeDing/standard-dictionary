@@ -12,6 +12,8 @@
 > 4. **若不小心提交了機密：** 立刻（a）到對應平台作廢該金鑰／token，（b）用 `git filter-repo` 從歷史中清除，（c）force-push。光是刪檔再 commit **沒有用**，舊 commit 仍讀得到。
 >
 > 完整的環境設定說明見 [`README.md`](./README.md)。
+>
+> **動手前也要讀 [`MAINTENANCE.md`](./MAINTENANCE.md)**：分工、提交前檢查（`npm run check:all`）、資料欄位與分類規則、前端規則、腳本規則。
 
 ---
 

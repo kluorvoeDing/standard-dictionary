@@ -8,7 +8,11 @@
     "normalize": "node scripts/normalize_data.mjs --write",
     "normalize:check": "node scripts/normalize_data.mjs --check",
     "lint:ui": "node scripts/check_ui_style.mjs",
-    "audit:enrichment": "node scripts/audit_enrichment.mjs"
+    "audit:enrichment": "node scripts/audit_enrichment.mjs",
+    "check:catalog": "node scripts/sync_catalog.mjs --check",
+    "sync:catalog": "node scripts/sync_catalog.mjs",
+    "check:search": "node scripts/check_search.mjs",
+    "check:all": "npm run validate && npm run normalize:check && npm run check:catalog && npm run check:search && npm run lint:ui"
   },
   "devDependencies": {
     "cheerio": "^1.2.0"

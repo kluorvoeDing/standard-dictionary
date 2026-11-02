@@ -8,12 +8,18 @@ on:
       - 'data/**'
       - 'scripts/validate_data.mjs'
       - 'scripts/normalize_data.mjs'
+      - 'scripts/sync_catalog.mjs'
+      - 'scripts/check_search.mjs'
+      - 'frontend/src/utils/**'
       - '.github/workflows/data-integrity.yml'
   pull_request:
     paths:
       - 'data/**'
       - 'scripts/validate_data.mjs'
       - 'scripts/normalize_data.mjs'
+      - 'scripts/sync_catalog.mjs'
+      - 'scripts/check_search.mjs'
+      - 'frontend/src/utils/**'
   workflow_dispatch: # 允許從 Actions UI 手動觸發
 
 jobs:
@@ -36,3 +42,11 @@ jobs:
       # 若有檔案待正規化，cron 應在生成資料後執行 `npm run normalize`。
       - name: Check data is normalized
         run: node scripts/normalize_data.mjs --check
+
+      # catalog.json 的測試數、樣品層級、日期格式必須與資料一致
+      - name: Check catalog is in sync
+        run: node scripts/sync_catalog.mjs --check
+
+      # 搜尋範例必須真的搜得到東西
+      - name: Check search examples
+        run: node scripts/check_search.mjs
