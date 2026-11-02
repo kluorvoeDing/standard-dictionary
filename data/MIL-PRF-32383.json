@@ -1,0 +1,1495 @@
+{
+  "document": {
+    "id": "MIL-PRF-32383",
+    "full_name": "MIL-PRF-32383A - Performance Specification: Batteries, Rechargeable, Sealed, General Specification For",
+    "full_name_zh": "MIL-PRF-32383A 軍用密封式二次可充電電池通用性能規範",
+    "short_name": "MIL-PRF-32383",
+    "publisher": "U.S. Department of Defense (DoD)",
+    "publication_date": "2021-12-09",
+    "edition_history": "MIL-PRF-32383 (2011-06-16), MIL-PRF-32383A (2021-12-09)",
+    "type": "standard",
+    "scope": "本規範涵蓋軍用密封式二次（可充電）電池之通用要求與驗證測試。依化學成分分為鎳鎘 (Type I)、鎳氫 (Type II) 與鋰離子 (Type III)；依結構分為單體電芯 (Cells)、外殼 (Cases) 與組裝電池組 (Batteries)；規範內容包含第一件認可檢驗 (First Article Inspection, FAI) 與品質符合檢驗 (Conformance Inspection) 之環境試驗（高海拔、溫度衝擊、機械衝擊、振動、浸水、跌落、衝擊、鹽霧、靜電放電、快速減壓、溫濕高綜合環境等）與安全濫用試驗（過充電、短路、強制放電、電芯針刺、電芯擠壓、絕緣電阻、高溫切斷、射彈試驗、電池組針刺、武器射擊試驗等）。",
+    "applicable_objects": [
+      "CELL",
+      "PACK_SYSTEM"
+    ],
+    "source_pdf": "MIL-PRF-32383.pdf"
+  },
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "MIL-PRF-32383 Verification Pipeline",
+    "created_date": "2026-11-02",
+    "extraction_method": "Extracted from authoritative text .review-work/src/MIL-PRF-32383.txt (MIL-PRF-32383A)",
+    "total_test_entries": 25,
+    "parameter_review": [
+      "2026-11-02：依原文補齊試驗參數（MIL-PRF-32383-4.7.3.4、MIL-PRF-32383-4.7.3.5、MIL-PRF-32383-4.7.3.6、MIL-PRF-32383-4.7.3.7、MIL-PRF-32383-4.7.3.8.1、MIL-PRF-32383-4.7.3.8.2、MIL-PRF-32383-4.7.3.9.1、MIL-PRF-32383-4.7.3.9.2、MIL-PRF-32383-4.7.3.11、MIL-PRF-32383-4.7.3.13、MIL-PRF-32383-4.7.3.14、MIL-PRF-32383-4.7.3.16、MIL-PRF-32383-4.7.3.18、MIL-PRF-32383-4.7.4.1、MIL-PRF-32383-4.7.4.2、MIL-PRF-32383-4.7.4.3、MIL-PRF-32383-4.7.4.4、MIL-PRF-32383-4.7.4.5、MIL-PRF-32383-4.7.4.6、MIL-PRF-32383-4.7.4.7、MIL-PRF-32383-4.7.4.8、MIL-PRF-32383-4.7.4.9、MIL-PRF-32383-4.7.4.11、MIL-PRF-32383-4.7.4.12、MIL-PRF-32383-4.7.4.13），出處見各欄位 source_reference。"
+    ]
+  },
+  "terms": [
+    {
+      "term_en": "Battery",
+      "term_zh": "電池",
+      "definition": "用於儲存能量之電化學裝置。為單體電芯或完整電芯組件之通稱。(An electrochemical device used to store energy. The general term for a cell or completed cell assembly. - 6.4.1)"
+    },
+    {
+      "term_en": "Cell",
+      "term_zh": "單體電芯",
+      "definition": "能夠將化學能轉化為電能的基本電化學單元，包含正極、負極、電解液、隔膜及外殼。(The basic electrochemical unit used to generate electrical energy. - 6.4.2)"
+    },
+    {
+      "term_en": "Primary battery or cell",
+      "term_zh": "一次電池（不可充電）",
+      "definition": "不可充電（一次性使用）之電池或單體電芯。(A battery or cell that is not rechargeable. - 6.4.3)"
+    },
+    {
+      "term_en": "Rechargeable or secondary battery or cell",
+      "term_zh": "二次電池（可充電）",
+      "definition": "能在放電後藉由施加反向電流恢復至初始充電狀態之電池或電芯。(A battery or cell capable of being recharged. - 6.4.4)"
+    },
+    {
+      "term_en": "Sealed battery or cell",
+      "term_zh": "密封式電池",
+      "definition": "在正常工作條件下完全密封且無游離氣體或液體洩漏之電池或電芯。(A cell or battery that is free of gas or liquid release under normal operating conditions. - 6.4.5)"
+    },
+    {
+      "term_en": "State of charge (SOC)",
+      "term_zh": "荷電狀態 (SOC)",
+      "definition": "以百分比表示之電池剩餘可用容量相對於額定容量的比率。(The available capacity in a battery expressed as a percentage of its rated capacity. - 6.4.6)"
+    },
+    {
+      "term_en": "Depth of discharge (DOD)",
+      "term_zh": "放電深度 (DOD)",
+      "definition": "以百分比表示之已放電容量相對於額定容量的比率。(The percentage of capacity that has been discharged from a battery. - 6.4.7)"
+    },
+    {
+      "term_en": "C rate",
+      "term_zh": "C 倍率",
+      "definition": "以電池額定容量值為基準之充放電電流倍率（例如額定容量為 2 Ah 時，1C 為 2 A）。(A charge or discharge current expressed as a multiple of the rated capacity in ampere-hours. - 6.4.8)"
+    },
+    {
+      "term_en": "First article inspection (FAI)",
+      "term_zh": "第一件認可檢驗 (FAI)",
+      "definition": "用於驗證製造商生產工藝與產品完全符合本規範各項要求之初始認可檢驗。(Inspection and testing used to determine that the manufacturer has produced a product conforming to specification. - 6.4.9)"
+    },
+    {
+      "term_en": "Conformance inspection",
+      "term_zh": "品質符合檢驗",
+      "definition": "生產過程中用以確認批量產品持續符合規範之定期或逐批檢驗。(Periodic or lot-by-lot inspection to confirm ongoing conformance to specification requirements. - 6.4.10)"
+    },
+    {
+      "term_en": "Thermal runaway",
+      "term_zh": "熱失控",
+      "definition": "電池內部放熱反應速率超過散熱能力，導致溫度劇烈升高且失控自加速的危險狀態。(An uncontrollable rapid increase of battery temperature caused by exothermic internal reactions. - 6.4.11)"
+    },
+    {
+      "term_en": "Venting",
+      "term_zh": "排氣",
+      "definition": "電池內部壓力超過預設閥值時，經由洩壓排氣閥釋放內部氣體以防止外殼破裂的保護動作。(The release of excessive internal pressure through an engineered venting mechanism. - 6.4.12)"
+    },
+    {
+      "term_en": "Explosion",
+      "term_zh": "爆炸",
+      "definition": "電池外殼發生災難性破裂，伴隨衝擊波、碎片拋射或瞬間劇烈能量釋放之現象。(Catastrophic rupture of the battery or cell casing with release of energy and fragmentation. - 6.4.13)"
+    }
+  ],
+  "test_sequence": {
+    "description": "MIL-PRF-32383A Table IX (電芯、組件第一件認可檢驗) 與 Table X (電池組第一件認可檢驗) 試驗分組及順序規定。",
+    "sequences": [
+      {
+        "group_name": "Table IX (電芯第一件認可檢驗組)",
+        "sample_size": "不大於 10 顆電芯",
+        "test_order": [
+          "MIL-PRF-32383-4.7.4.1 (過充電)",
+          "MIL-PRF-32383-4.7.4.2 (外部短路)",
+          "MIL-PRF-32383-4.7.4.3 (強制放電)",
+          "MIL-PRF-32383-4.7.4.4 (針刺)",
+          "MIL-PRF-32383-4.7.4.5 (擠壓)"
+        ]
+      },
+      {
+        "group_name": "Table X Group 1 (電池組基本功能與環境組)",
+        "sample_size": "不少於 12 組電池",
+        "test_order": [
+          "MIL-PRF-32383-4.7.4.6 (絕緣電阻)",
+          "MIL-PRF-32383-4.7.3.4 (高海拔)",
+          "MIL-PRF-32383-4.7.3.5 (溫度衝擊)",
+          "MIL-PRF-32383-4.7.3.6 (機械衝擊)",
+          "MIL-PRF-32383-4.7.3.7 (振動)",
+          "MIL-PRF-32383-4.7.3.8.1 (淺水浸水)",
+          "MIL-PRF-32383-4.7.3.9.1 (正常運送跌落)"
+        ]
+      },
+      {
+        "group_name": "Table X Group 4 & Group 5 (電池組安全與極限試驗組)",
+        "sample_size": "由規格單指定試驗樣品分配",
+        "test_order": [
+          "MIL-PRF-32383-4.7.4.7 (過充電)",
+          "MIL-PRF-32383-4.7.4.8 (短路保護)",
+          "MIL-PRF-32383-4.7.4.9 (高溫切斷)",
+          "MIL-PRF-32383-4.7.4.11 (射彈試驗)",
+          "MIL-PRF-32383-4.7.4.12 (電池組針刺)",
+          "MIL-PRF-32383-4.7.4.13 (武器射擊試驗)"
+        ]
+      }
+    ]
+  },
+  "tests": [
+    {
+      "id": "MIL-PRF-32383-4.7.3.4",
+      "normalized_id": "THERM-ALT",
+      "name_zh": "高海拔試驗",
+      "name_en": "Altitude",
+      "section": "4.7.3.4",
+      "category": "THERM",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 UN 測試與標準手冊規定充至滿充電狀態並記錄開路電壓 (OCV)",
+          "detail": "依 4.6 充電程序完成充電，記錄重量與初始開路電壓",
+          "source_reference": "4.7.3.4；4.6"
+        },
+        "pressure": {
+          "value": "依 UN 測試與標準手冊規定",
+          "detail": "UN 測試與標準手冊第 38.3 節試驗 T.1 規定氣壓 ≤ 11.6 kPa",
+          "source_reference": "4.7.3.4"
+        },
+        "duration": {
+          "value": "依 UN 測試與標準手冊規定",
+          "detail": "UN 測試與標準手冊第 38.3 節試驗 T.1 規定至少 6 小時",
+          "source_reference": "4.7.3.4"
+        },
+        "temperature": {
+          "value": "20 ± 5 °C",
+          "detail": "依 UN 測試與標準手冊規定之常溫環境",
+          "source_reference": "4.7.3.4"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "試驗完成後依 4.7.1.1 檢查外觀並在滿電狀態下進行 4.7.2.2 電壓測試",
+          "source_reference": "4.7.3.4；3.6.2"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "無質量損失、無洩漏、無排氣、無拆解、無破裂及無起火，且試驗後開路電壓 (OCV) 符合要求",
+        "details": [
+          "符合 3.6 通用環境要求：無洩漏、無排氣、無起火、無爆炸",
+          "滿充電狀態下符合 3.5.2 電池電壓要求",
+          "無有害形變或電氣損壞"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.5",
+      "normalized_id": "THERM-SHOCK",
+      "name_zh": "溫度衝擊試驗",
+      "name_en": "Temperature Shock",
+      "section": "4.7.3.5",
+      "category": "THERM",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 規定充電至滿充狀態",
+          "detail": "允許使用 4.6.3 替代充電方法",
+          "source_reference": "4.7.3.5；4.6"
+        },
+        "high_temperature": {
+          "value": "75 °C",
+          "detail": "高溫極限不低於 167 °F (75 °C)",
+          "source_reference": "4.7.3.5；3.6.3"
+        },
+        "low_temperature": {
+          "value": "-59 °C",
+          "detail": "低溫極限不大於 -75 °F (-59 °C)",
+          "source_reference": "4.7.3.5；3.6.3"
+        },
+        "transition_time": {
+          "value": "依 MIL-STD-810 方法 503 程序 1-B 規定",
+          "detail": "在極限溫度間快速轉換",
+          "source_reference": "4.7.3.5"
+        },
+        "dwell_time": {
+          "value": "2 小時",
+          "detail": "在每個極限溫度保持不少於 2 小時",
+          "source_reference": "4.7.3.5"
+        },
+        "cycles": {
+          "value": "依 MIL-STD-810 方法 503 程序 1-B 規定",
+          "detail": "按標準溫度衝擊循環進行",
+          "source_reference": "4.7.3.5"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "試驗後依 4.7.2.3 進行放電容量測試",
+          "source_reference": "4.7.3.5；3.6.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電池不得膨脹、開裂、破損、洩漏電解液、破裂、燃燒或爆炸，且滿足容量要求",
+        "details": [
+          "不得膨脹、開裂、破損、洩漏電解液、破裂、燃燒或爆炸",
+          "符合 3.5.3 容量放電要求",
+          "符合 3.5.8 與 3.6 之各項性能與環境規定"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.6",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "機械衝擊試驗",
+      "name_en": "Mechanical Shock",
+      "section": "4.7.3.6",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 規定充電至滿充狀態",
+          "detail": "允許使用 4.6.3 替代充電方法",
+          "source_reference": "4.7.3.6；4.6"
+        },
+        "waveform": {
+          "value": "半正弦波 (依 MIL-STD-810 方法 516 程序 I 規定)",
+          "detail": "以螺栓或專用夾具牢固固定於試驗台車上",
+          "source_reference": "4.7.3.6"
+        },
+        "acceleration_peak": {
+          "value": "40 gn",
+          "detail": "加速度不小於 40 gn (重力加速度)",
+          "source_reference": "4.7.3.6；3.6.4"
+        },
+        "pulse_duration": {
+          "value": "18 ms",
+          "detail": "脈衝持續時間不小於 18 毫秒",
+          "source_reference": "4.7.3.6"
+        },
+        "direction": {
+          "value": "3 個相互垂直軸向（共 6 個空間方向）",
+          "detail": "三個互相垂直的直角坐標軸",
+          "source_reference": "4.7.3.6"
+        },
+        "shock_count": {
+          "value": "18 次",
+          "detail": "每個軸向施加 3 次衝擊，3 軸共 18 次",
+          "source_reference": "4.7.3.6"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "試驗後檢查結構與電氣狀態",
+          "source_reference": "4.7.3.6；3.6.4"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "能耐受機械衝擊環境而不承受物理或電氣損壞，符合容量與安全規定",
+        "details": [
+          "無物理結構損壞或電氣性能失效",
+          "符合 3.5.3 放電容量要求",
+          "符合 3.6 通用環境耐受性要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.7",
+      "normalized_id": "MECH-VIB",
+      "name_zh": "振動試驗",
+      "name_en": "Vibration",
+      "section": "4.7.3.7",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 規定充電至滿充狀態",
+          "detail": "允許使用 4.6.3 替代充電方法",
+          "source_reference": "4.7.3.7；4.6"
+        },
+        "waveform": {
+          "value": "隨機振動與散裝貨物振動 (依 MIL-STD-810 方法 514 規定)",
+          "detail": "最小完整性曲線 (程序 I) 與散裝貨物振動 (程序 II)",
+          "source_reference": "4.7.3.7"
+        },
+        "axes": {
+          "value": "3 個互相垂直方向",
+          "detail": "三個互相垂直的坐標軸向",
+          "source_reference": "4.7.3.7"
+        },
+        "test_duration": {
+          "value": "散裝貨物振動不少於 20 分鐘",
+          "detail": "程序 II 散裝貨物振動不少於 20 分鐘；程序 I 依規格單規定",
+          "source_reference": "4.7.3.7"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "振動過程中與完成後進行電氣與結構檢查",
+          "source_reference": "4.7.3.7；3.6.5"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "能耐受振動環境而不承受物理或電氣損壞，振動期間無電壓波動，符合容量要求",
+        "details": [
+          "振動過程中不得出現任何電壓波動異常",
+          "無物理破裂、零部件鬆脫或電解液洩漏",
+          "符合 3.5.3 放電容量要求與 3.6 環境要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.8.1",
+      "normalized_id": "THERM-WATER",
+      "name_zh": "淺水浸水試驗",
+      "name_en": "Immersion, Shallow",
+      "section": "4.7.3.8.1",
+      "category": "THERM",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 充至滿充狀態並稱重記錄",
+          "detail": "浸水前樣品溫度應高於水溫 27 °C (49 °F)",
+          "source_reference": "4.7.3.8.1；4.6"
+        },
+        "depth": {
+          "value": "3 英尺 (0.91 m)",
+          "detail": "水深不少於 3 英尺 (符合性檢驗組 A 為 1 公尺)",
+          "source_reference": "4.7.3.8.1"
+        },
+        "liquid": {
+          "value": "依 ASTM D-1141 配製之鹽水或去離子水",
+          "detail": "依 MIL-STD-810 方法 512 程序 I 規定",
+          "source_reference": "4.7.3.8.1"
+        },
+        "temperature_diff": {
+          "value": "高於水溫 27 °C",
+          "detail": "電池溫度應高於水溫 49 °F (27 °C)",
+          "source_reference": "4.7.3.8.1"
+        },
+        "duration": {
+          "value": "2 小時",
+          "detail": "浸水時間不少於 2 小時 (組 A 檢驗不少於 30 分鐘)",
+          "source_reference": "4.7.3.8.1"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "取出拭乾外表面後重新稱重，依 4.7.2.3 進行放電容量測試",
+          "source_reference": "4.7.3.8.1；3.6.6"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "外殼無水份滲入，增重不大於 0.3 g，符合容量與環境要求",
+        "details": [
+          "外殼內部無任何水份滲入跡象",
+          "試驗後增重不大於 0.01 oz (0.3 g)",
+          "符合 3.5.3 放電容量要求與 3.6 環境要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.8.2",
+      "normalized_id": "THERM-WATER",
+      "name_zh": "深水浸水試驗",
+      "name_en": "Immersion, Deep",
+      "section": "4.7.3.8.2",
+      "category": "THERM",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 充至滿充狀態並稱重記錄",
+          "detail": "依規範要求完成標準預處理",
+          "source_reference": "4.7.3.8.2；4.6"
+        },
+        "depth": {
+          "value": "等效深度不少於 33 英尺 (10 m)",
+          "detail": "浸入等效深度不少於 33 英尺之 ASTM D-1141 人工鹽水中",
+          "source_reference": "4.7.3.8.2"
+        },
+        "liquid": {
+          "value": "依 ASTM D-1141 配製之人工鹽水",
+          "detail": "符合 ASTM D-1141 鹽水替代物規定",
+          "source_reference": "4.7.3.8.2"
+        },
+        "duration": {
+          "value": "5 分鐘與 12 小時",
+          "detail": "33 英尺浸泡不少於 5 分鐘；隨後以 3 英尺深度浸泡不少於 12 小時",
+          "source_reference": "4.7.3.8.2"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "取出後重新稱重並驗證各項性能指標",
+          "source_reference": "4.7.3.8.2；3.6.6"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "深水浸水後外殼無進水，增重不大於 0.3 g，滿足容量與規格單要求",
+        "details": [
+          "電池外殼內部無任何水份滲入",
+          "重量增加不大於 0.01 oz (0.3 g)",
+          "滿足 3.6 環境要求與規格單要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.9.1",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "正常運送跌落試驗",
+      "name_en": "Transit Drop, Normal",
+      "section": "4.7.3.9.1",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 充至滿充電狀態",
+          "detail": "分別在 55 ± 1.1 °C 及 -29 ± 1.1 °C 下保溫 4 小時後跌落",
+          "source_reference": "4.7.3.9.1；4.6"
+        },
+        "drop_height": {
+          "value": "不少於 30 英吋 (0.76 m)",
+          "detail": "跌落高度不小於 30 英吋",
+          "source_reference": "4.7.3.9.1"
+        },
+        "drop_surface": {
+          "value": "養護混凝土表面 (cured concrete)",
+          "detail": "平整堅硬之養護混凝土面",
+          "source_reference": "4.7.3.9.1"
+        },
+        "orientation": {
+          "value": "最小側面垂直於連接器面跌落",
+          "detail": "圓柱形電池軸線與混凝土表面平行",
+          "source_reference": "4.7.3.9.1"
+        },
+        "temperature": {
+          "value": "55 ± 1.1 °C 與 -29 ± 1.1 °C",
+          "detail": "高溫 130 ± 2 °F (55 ± 1.1 °C) 與低溫 -20 ± 2 °F (-29 ± 1.1 °C)",
+          "source_reference": "4.7.3.9.1"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "跌落後依 Table XIV 檢查外觀並進行電壓與漏電測試",
+          "source_reference": "4.7.3.9.1；3.6.7"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "耐受高低溫跌落而不發生物理或電氣損壞，符合容量與環境要求",
+        "details": [
+          "無起火、爆炸、破裂或電解液洩漏",
+          "符合 Table XIV 外觀缺陷判定",
+          "符合 3.5.3 容量放電要求與 3.6 環境要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.9.2",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "嚴苛運送跌落試驗",
+      "name_en": "Transit Drop, Severe",
+      "section": "4.7.3.9.2",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "10 組電池",
+          "detail": "5 組在高溫測試，5 組在低溫測試",
+          "source_reference": "4.7.3.9.2"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 充至滿充電狀態並驗證電量指示器正常",
+          "detail": "5 組在 55 ± 1.1 °C 保溫 4 小時，5 組在 -29 ± 1.1 °C 保溫 4 小時",
+          "source_reference": "4.7.3.9.2；4.6"
+        },
+        "drop_height": {
+          "value": "不少於 48 英吋 (1.22 m)",
+          "detail": "跌落高度不小於 48 英吋",
+          "source_reference": "4.7.3.9.2"
+        },
+        "drop_surface": {
+          "value": "背襯混凝土之鋼板 (MIL-STD-810 方法 516 程序 IV)",
+          "detail": "平整堅固鋼質抗衝擊地面",
+          "source_reference": "4.7.3.9.2"
+        },
+        "orientation": {
+          "value": "每個面、邊及角各跌落 1 次，共 26 次跌落",
+          "detail": "依 Table XV 規定之面、邊與角順序進行 26 次跌落",
+          "source_reference": "4.7.3.9.2"
+        },
+        "temperature": {
+          "value": "55 ± 1.1 °C 與 -29 ± 1.1 °C",
+          "detail": "高低溫極限保溫後 10 分鐘內執行跌落",
+          "source_reference": "4.7.3.9.2"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "試驗後依 4.7.2.2 檢驗開路電壓及依 4.7.4.7e 進行電氣洩漏測試",
+          "source_reference": "4.7.3.9.2；3.6.7"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "26 次嚴苛跌落後無致命損壞，滿足容量與通用環境安全標準",
+        "details": [
+          "無起火、爆炸或危險碎片拋射",
+          "允許微量可返修之輕微形變（除 Table XIV 缺陷 106 外）",
+          "符合 3.5.3 容量放電要求與 3.6 環境要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.11",
+      "normalized_id": "MECH-IMPACT",
+      "name_zh": "撞擊試驗",
+      "name_en": "Impact",
+      "section": "4.7.3.11",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 充至滿充電狀態並驗證電量指示器正常",
+          "detail": "常溫滿充電",
+          "source_reference": "4.7.3.11；4.6"
+        },
+        "impact_mass": {
+          "value": "16 磅 (7.26 kg) 保齡球或等效重物",
+          "detail": "PBA 認證 16 磅保齡球或等效重錘",
+          "source_reference": "4.7.3.11"
+        },
+        "drop_height": {
+          "value": "不少於 36 英吋 (0.91 m)",
+          "detail": "自不少於 36 英吋高度自由落體落下",
+          "source_reference": "4.7.3.11"
+        },
+        "temperature": {
+          "value": "常溫環境",
+          "detail": "撞擊電池中心點及左右中心線區域",
+          "source_reference": "4.3.1"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "撞擊後依 4.7.2.3 進行放電容量測試",
+          "source_reference": "4.7.3.11；3.6.9"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "承受撞擊後無物理或電氣損壞，滿足放電容量與環境要求",
+        "details": [
+          "無起火、無爆炸、無電解液外漏",
+          "外殼無穿透性破損（除 Table XIV 缺陷 106 外）",
+          "符合 3.5.3 放電容量要求與 3.6 環境要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.13",
+      "normalized_id": "THERM-SALT",
+      "name_zh": "鹽霧試驗",
+      "name_en": "Salt Fog",
+      "section": "4.7.3.13",
+      "category": "THERM",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 規定充電至滿充狀態",
+          "detail": "未連接、未插接且無防塵蓋保護之電源連接器狀態",
+          "source_reference": "4.7.3.13；3.6.11"
+        },
+        "salt_solution": {
+          "value": "依 MIL-STD-810 方法 509 配製之鹽水溶液",
+          "detail": "配製鹽水用水電阻率不大於 5 MΩ·cm",
+          "source_reference": "4.7.3.13"
+        },
+        "temperature": {
+          "value": "依 MIL-STD-810 方法 509 規定",
+          "detail": "標準鹽霧試驗箱控溫",
+          "source_reference": "4.7.3.13"
+        },
+        "cycles": {
+          "value": "4 個 24 小時循環 (共 96 小時)",
+          "detail": "交替進行 24 小時鹽霧暴露與 24 小時乾燥（兩濕兩乾）",
+          "source_reference": "4.7.3.13"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "試驗後依 4.7.2.3 進行放電容量測試",
+          "source_reference": "4.7.3.13；3.6.11"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "耐受鹽霧大氣而不發生物理或電氣損壞，符合容量與環境要求",
+        "details": [
+          "外殼與連接器無穿透性腐蝕損壞",
+          "符合 3.5.3 放電容量要求",
+          "符合 3.6 環境要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.14",
+      "normalized_id": "ELEC-ESD",
+      "name_zh": "靜電放電試驗",
+      "name_en": "Electrostatic Discharge (ESD)",
+      "section": "4.7.3.14",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 規定充電至滿充狀態",
+          "detail": "允許使用 4.6.3 替代充電方法",
+          "source_reference": "4.7.3.14；4.6"
+        },
+        "voltage": {
+          "value": "接觸放電 ±8 kV；空氣放電 ±15 kV",
+          "detail": "依 IEC 61000-4-2 等級 4 (Level 4) 規定",
+          "source_reference": "3.6.12；4.7.3.14"
+        },
+        "discharge_points": {
+          "value": "連接器外殼、電池外殼、接縫及數位顯示面板",
+          "detail": "包含所有表面、面板組件（含通氣孔）、充電接觸點或電源/數據連接器",
+          "source_reference": "4.7.3.14"
+        },
+        "pulse_count": {
+          "value": "依 IEC 61000-4-2 規定之正負極性脈衝次數",
+          "detail": "在無負載及指定負載下進行測試",
+          "source_reference": "4.7.3.14"
+        },
+        "temperature": {
+          "value": "常溫環境",
+          "detail": "放電後驗證指定負載維持至少 1 分鐘",
+          "source_reference": "4.7.3.14"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "放電後依 4.7.2.3 執行放電測試",
+          "source_reference": "4.7.3.14；3.6.12"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "未通電與通電狀態下耐受 ESD 放電，保護電路正常，滿足容量要求",
+        "details": [
+          "保護電路與通訊匯流排無永久損壞或死鎖",
+          "放電後能維持指定負載運作至少 1 分鐘",
+          "符合 3.6.12 靜電防護要求與 3.5.3 放電容量要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.16",
+      "normalized_id": "THERM-ALT",
+      "name_zh": "快速減壓試驗",
+      "name_en": "Rapid Decompression",
+      "section": "4.7.3.16",
+      "category": "THERM",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "半數樣品連接對接插頭，半數暴露插頭（無防塵蓋）",
+          "source_reference": "4.7.3.16"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6.2 規定充電至滿充狀態",
+          "detail": "允許使用 4.6.3 替代充電方法",
+          "source_reference": "4.7.3.16；4.6"
+        },
+        "duration": {
+          "value": "依 MIL-STD-810 方法 500 程序 III 規定",
+          "detail": "減壓後維持規定時間",
+          "source_reference": "4.7.3.16"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "試驗後依 4.7.2.3 執行容量放電測試",
+          "source_reference": "4.7.3.16；3.6.14"
+        },
+        "pressure": {
+          "value": "依 MIL-STD-810 方法 500 程序 III 規定",
+          "detail": "由初始高度模擬氣壓於數秒內急速減壓至高空模擬氣壓",
+          "source_reference": "4.7.3.16"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "能耐受快速減壓環境而不承受物理或電氣損壞，符合容量與環境要求",
+        "details": [
+          "無外殼破裂、密封失效或電解液噴濺",
+          "符合 3.5.3 放電容量要求",
+          "符合 3.6 環境要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.3.18",
+      "normalized_id": "THERM-HUMID",
+      "name_zh": "溫濕高綜合環境試驗",
+      "name_en": "Combined Temperature, Altitude, and Humidity",
+      "section": "4.7.3.18",
+      "category": "THERM",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6.2 規定充電至滿充狀態",
+          "detail": "允許使用 4.6.3 替代充電方法",
+          "source_reference": "4.7.3.18；4.6"
+        },
+        "high_temperature": {
+          "value": "-32 °C 至 52 °C",
+          "detail": "寒冷日任務 ≤ -32 °C，炎熱日任務 ≥ 52 °C，暖濕日 25 ± 2 °C",
+          "source_reference": "4.7.3.18；TABLE XVIII"
+        },
+        "humidity": {
+          "value": "最高不小於 95% RH",
+          "detail": "暖濕日任務相對濕度 ≥ 95%",
+          "source_reference": "4.7.3.18；TABLE XVIII"
+        },
+        "high_temp_phase": {
+          "value": "32,000 英尺 (9,754 m)",
+          "detail": "高空階段氣壓對應 32,000 英尺",
+          "source_reference": "4.7.3.18；TABLE XVIII"
+        },
+        "cycles": {
+          "value": "3 循環 (依 Table XVIII 規定)",
+          "detail": "包含寒冷日、炎熱日與暖濕日任務循環曲線",
+          "source_reference": "4.7.3.18"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "無輔助冷卻，依 4.7.2.2 檢查開路電壓",
+          "source_reference": "4.7.3.18；3.6.16"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "耐受溫濕高綜合極限環境而不發生損壞，開路電壓與放電容量符合規定",
+        "details": [
+          "無外殼開裂、破裂或電解液洩漏",
+          "符合 3.5.3 放電容量要求",
+          "符合 3.6 通用環境耐受性要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.1",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "電芯過充電試驗",
+      "name_en": "Cell Overcharge",
+      "section": "4.7.4.1",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "不大於 10 顆電芯 (依 Table IX 規定)",
+          "detail": "第一件認可檢驗 Table IX 電芯試驗組",
+          "source_reference": "4.4；TABLE IX"
+        },
+        "pre_conditioning": {
+          "value": "稱重至 0.1 mg 並貼附熱電偶",
+          "detail": "在電芯側面貼附熱電偶，連接電流及電壓監測導線",
+          "source_reference": "4.7.4.1"
+        },
+        "charging_current": {
+          "value": "C/2 恆定電流",
+          "detail": "在 25 ± 2.7 °C (77 ± 4.8 °F) 溫箱中以 C/2 恆流連續充電",
+          "source_reference": "4.7.4.1"
+        },
+        "charging_voltage": {
+          "value": "依測試迴路施加過充電流",
+          "detail": "持續加載過充電流直至達到規定時間",
+          "source_reference": "4.7.4.1"
+        },
+        "duration": {
+          "value": "不少於 8 小時",
+          "detail": "連續恆流過充電不少於 8 小時",
+          "source_reference": "4.7.4.1"
+        },
+        "temperature": {
+          "value": "25 ± 2.7 °C",
+          "detail": "溫控箱設定為 77 ± 4.8 °F (25 ± 2.7 °C)",
+          "source_reference": "4.7.4.1"
+        },
+        "observation_period": {
+          "value": "試驗結束後外觀檢查並稱重",
+          "detail": "測量並記錄電芯溫度、電壓與電流",
+          "source_reference": "4.7.4.1；3.7.1.1.1"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電芯在過充過程中不得洩漏、排氣、燃燒或爆炸，失重不大於 0.1 g",
+        "details": [
+          "不得洩漏、排氣、燃燒或爆炸",
+          "試驗後質量損失不大於 0.003 oz (0.1 g)",
+          "符合 3.7.1.1 電芯安全通用要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.2",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "電芯外部短路試驗",
+      "name_en": "Cell Short Circuit",
+      "section": "4.7.4.2",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "不大於 10 顆電芯 (依 Table IX 規定)",
+          "detail": "第一件認可檢驗 Table IX 電芯試驗組",
+          "source_reference": "4.4；TABLE IX"
+        },
+        "pre_conditioning": {
+          "value": "依 4.3.1 條件完全充電並在常溫靜置不少於 1 小時",
+          "detail": "充電終止後在常溫下穩定至少 1 小時，稱重至 0.1 mg",
+          "source_reference": "4.7.4.2；4.3.1"
+        },
+        "external_resistance": {
+          "value": "長度不大於 8 英吋之 AWG 16 銅線",
+          "detail": "使用長度不大於 8 英吋且線徑不小於 AWG 16 之銅導線短路正負極",
+          "source_reference": "4.7.4.2"
+        },
+        "temperature": {
+          "value": "23 ± 5 °C (4.3.1 常溫條件)",
+          "detail": "常溫環境下進行短路",
+          "source_reference": "4.3.1"
+        },
+        "duration": {
+          "value": "短路放電至電芯電壓不大於 0.2 V",
+          "detail": "持續短路直到電芯端電壓降至 0.2 V 以下",
+          "source_reference": "4.7.4.2"
+        },
+        "observation_period": {
+          "value": "試驗後外觀檢查並稱重",
+          "detail": "檢查電芯外觀並稱重至 0.1 mg",
+          "source_reference": "4.7.4.2；3.7.1.1.2"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電芯不得燃燒、爆炸，外殼溫度不得超過 160 °C，失重不大於 0.1 g",
+        "details": [
+          "不得燃燒、爆炸",
+          "外殼最高表面溫度不得超過 320 °F (160 °C)",
+          "試驗後失重不大於 0.003 oz (0.1 g)",
+          "符合 3.7.1.1 電芯安全要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.3",
+      "normalized_id": "ELEC-FD",
+      "name_zh": "電芯強制放電試驗",
+      "name_en": "Cell Forced-Discharge",
+      "section": "4.7.4.3",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "不大於 10 顆電芯 (依 Table IX 規定)",
+          "detail": "第一件認可檢驗 Table IX 電芯試驗組",
+          "source_reference": "4.4；TABLE IX"
+        },
+        "pre_conditioning": {
+          "value": "稱重後以 C/5 放電至電壓不大於 0.2 V",
+          "detail": "完全放電至截止狀態",
+          "source_reference": "4.7.4.3"
+        },
+        "forced_discharge_current": {
+          "value": "C/5 電流反向強制放電",
+          "detail": "串聯 12 V 直流電源以 C/5 電流強制放電",
+          "source_reference": "4.7.4.3"
+        },
+        "power_supply": {
+          "value": "12 V 直流電源串聯",
+          "detail": "外加 12-volt DC 電源強制反充",
+          "source_reference": "4.7.4.3"
+        },
+        "duration": {
+          "value": "不少於 5 小時",
+          "detail": "反向強制放電持續時間不少於 5 小時",
+          "source_reference": "4.7.4.3"
+        },
+        "temperature": {
+          "value": "常溫環境",
+          "detail": "在常溫條件下執行",
+          "source_reference": "4.3.1"
+        },
+        "observation_period": {
+          "value": "試驗後外觀檢查並稱重",
+          "detail": "目視檢查外觀並稱重至 0.1 mg",
+          "source_reference": "4.7.4.3；3.7.1.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電芯在強制放電過程中不得燃燒或爆炸，失重不大於 0.1 g",
+        "details": [
+          "強制放電過程中不得燃燒或爆炸",
+          "試驗後重量損失不大於 0.003 oz (0.1 g)",
+          "符合 3.7.1.1 電芯安全要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.4",
+      "normalized_id": "MECH-NAIL",
+      "name_zh": "電芯針刺試驗",
+      "name_en": "Nail Penetration, Cell",
+      "section": "4.7.4.4",
+      "category": "MECH",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "2 顆電芯 (由規格單指定)",
+          "detail": "1 顆完全刺穿，1 顆刺入 2/3 寬度",
+          "source_reference": "4.7.4.4"
+        },
+        "pre_conditioning": {
+          "value": "充電至規格單指定荷電狀態 (SOC)",
+          "detail": "依規格單規定充電並架設高畫質攝影機與熱成像儀",
+          "source_reference": "4.7.4.4"
+        },
+        "nail_diameter": {
+          "value": "0.113 英吋 (2.87 mm) 不鏽鋼釘",
+          "detail": "長度超過電芯寬度或直徑之標準 0.113 英吋不鏽鋼釘",
+          "source_reference": "4.7.4.4"
+        },
+        "penetration_speed": {
+          "value": "不少於 0.25 ft/sec (76 mm/s)",
+          "detail": "等速垂直於電極表面刺入電芯中心點附近 (±15%)",
+          "source_reference": "4.7.4.4"
+        },
+        "penetration": {
+          "value": "完全刺穿 (樣品 1) 與 2/3 寬度 (樣品 2)",
+          "detail": "樣品 1 完全刺穿；樣品 2 深度達電芯寬度之 2/3",
+          "source_reference": "4.7.4.4"
+        },
+        "hold_duration": {
+          "value": "鋼釘留在電芯內 24 小時",
+          "detail": "刺入後鋼釘保持在電芯內部 24 小時",
+          "source_reference": "4.7.4.4"
+        },
+        "temperature": {
+          "value": "常溫環境",
+          "detail": "持續記錄電芯溫度、電壓與任何煙霧、起火事件",
+          "source_reference": "4.7.4.4"
+        },
+        "observation_period": {
+          "value": "24 小時 (錄影至少持續至最後一根釘刺入後 10 分鐘)",
+          "detail": "刺入後持續觀察並依 MIL-STD-882 評估安全風險",
+          "source_reference": "4.7.4.4；3.7.1.2"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電芯在針刺試驗中不得燃燒或爆炸",
+        "details": [
+          "電芯不得燃燒",
+          "電芯不得爆炸",
+          "依 MIL-STD-882 進行安全評估報告納入評審"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.5",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "電芯擠壓試驗",
+      "name_en": "Crush, Cell",
+      "section": "4.7.4.5",
+      "category": "MECH",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "不大於 10 顆電芯 (依 Table IX 規定)",
+          "detail": "第一件認可檢驗 Table IX 電芯試驗組",
+          "source_reference": "4.4；TABLE IX"
+        },
+        "pre_conditioning": {
+          "value": "依 4.3.1 條件完全充電",
+          "detail": "標準預處理",
+          "source_reference": "4.7.4.5"
+        },
+        "force": {
+          "value": "依 UL 1642 擠壓試驗規定",
+          "detail": "依 UL 1642 規定施加擠壓力 (13 ± 0.78 kN)",
+          "source_reference": "4.7.4.5"
+        },
+        "crush_speed": {
+          "value": "依 UL 1642 擠壓試驗規定",
+          "detail": "等速液壓推進",
+          "source_reference": "4.7.4.5"
+        },
+        "termination": {
+          "value": "僅在單一方向對電芯施加擠壓力",
+          "detail": "電芯縱軸與擠壓裝置平坦表面平行，單向施壓",
+          "source_reference": "4.7.4.5"
+        },
+        "temperature": {
+          "value": "常溫環境",
+          "detail": "依 UL 1642 常溫環境條件",
+          "source_reference": "4.3.1"
+        },
+        "observation_period": {
+          "value": "依規格單規定",
+          "detail": "擠壓結束後持續觀察安全狀態",
+          "source_reference": "4.7.4.5；3.7.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電芯耐受擠壓而無燃燒或爆炸",
+        "details": [
+          "電芯不得燃燒",
+          "電芯不得爆炸",
+          "符合 3.7.1.3 電芯擠壓安全要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.6",
+      "normalized_id": "ELEC-IR",
+      "name_zh": "絕緣電阻試驗",
+      "name_en": "Insulation Resistance",
+      "section": "4.7.4.6",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "不少於 12 組電池 (Table X Group 1)",
+          "detail": "第一件認可檢驗 Table X Group 1",
+          "source_reference": "4.4"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 充電至滿充狀態",
+          "detail": "常溫標準完全充電",
+          "source_reference": "4.6.1"
+        },
+        "voltage": {
+          "value": "不小於 500 V 直流 (DC)",
+          "detail": "施加不小於 500 Vdc 電位",
+          "source_reference": "4.7.4.6"
+        },
+        "duration": {
+          "value": "加壓至讀數穩定 (不少於 3 處位置測試)",
+          "detail": "以大於待測表面之銅板接觸外殼，在不少於 3 處位置測試",
+          "source_reference": "4.7.4.6"
+        },
+        "conditioning": {
+          "value": "常溫環境",
+          "detail": "在所有具外殼接縫的表面及圓柱周向不少於 3 處測試",
+          "source_reference": "4.3.1"
+        },
+        "observation_period": {
+          "value": "記錄絕緣阻抗值",
+          "detail": "測量端子間及端子與外殼間之直流阻抗",
+          "source_reference": "4.7.4.6；3.7.2.1"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "任何兩個未電氣連通的端子間以及端子與外殼間的絕緣電阻不得小於 10 MΩ",
+        "details": [
+          "端子間絕緣電阻不小於 10 MΩ (3.7.2.1)",
+          "端子與外殼間絕緣電阻不小於 10 MΩ (3.7.2.1)",
+          "加壓過程中無擊穿或閃絡現象"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.7",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "電池組過充電與電氣漏電試驗",
+      "name_en": "Overcharge / Electrical Leakage",
+      "section": "4.7.4.7",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 充至滿充狀態 (不可使用 4.6.3 替代充電)",
+          "detail": "常溫標準完全充電",
+          "source_reference": "4.7.4.7；4.6"
+        },
+        "charging_current": {
+          "value": "依規格單指定倍率進行過充電",
+          "detail": "以規格單指定速率連續過充電不少於 21 小時",
+          "source_reference": "4.7.4.7"
+        },
+        "charging_voltage": {
+          "value": "依規格單規定",
+          "detail": "連續監控並記錄充電端子與外殼間電壓",
+          "source_reference": "4.7.4.7"
+        },
+        "duration": {
+          "value": "不少於 21 小時過充，重複 10 次循環",
+          "detail": "每次過充不少於 21 小時，常溫靜置 2 小時後放電，共重複 10 次循環",
+          "source_reference": "4.7.4.7"
+        },
+        "temperature": {
+          "value": "常溫環境",
+          "detail": "常溫條件下進行過充與靜置",
+          "source_reference": "4.7.4.7"
+        },
+        "observation_period": {
+          "value": "10 循環完成後依 Table XIV 檢查外觀並驗證容量",
+          "detail": "檢查外觀缺陷並依 4.7.2.3 進行容量驗證",
+          "source_reference": "4.7.4.7；3.7.2.2"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "過充過程中不得燃燒或爆炸，充電端子與外殼間無電壓，符合容量要求",
+        "details": [
+          "不得燃燒或爆炸",
+          "充電端子與外殼間不得呈現任何電壓",
+          "符合 3.6 環境要求與 3.5.3 放電容量要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.8",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "電池組短路保護試驗",
+      "name_en": "Short Circuit Protection",
+      "section": "4.7.4.8",
+      "category": "ELEC",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 充至滿充狀態並記錄開路電壓 (OCV)",
+          "detail": "允許使用 4.6.3 替代充電方法",
+          "source_reference": "4.7.4.8；4.6"
+        },
+        "external_resistance": {
+          "value": "總外部負載電阻不大於 50 mΩ",
+          "detail": "連接所有正負極端子進行外部短路",
+          "source_reference": "4.7.4.8"
+        },
+        "temperature": {
+          "value": "常溫環境",
+          "detail": "在常溫條件下執行",
+          "source_reference": "4.7.4.8；4.3.1"
+        },
+        "duration": {
+          "value": "1 小時",
+          "detail": "短路 1 小時後移除短路負載，測量記錄 OCV 並在常溫下穩定不少於 2 小時",
+          "source_reference": "4.7.4.8"
+        },
+        "observation_period": {
+          "value": "解除短路穩定 2 小時後重新充電並放電驗證容量",
+          "detail": "重新充電穩定 2 小時後依 4.7.2.3 放電",
+          "source_reference": "4.7.4.8；3.7.2.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "短路過程中不得燃燒、爆炸，外殼溫度不得超過 93 °C (200 °F)，失重不大於 0.3 g",
+        "details": [
+          "不得燃燒、爆炸",
+          "外殼最高溫度不得超過 200 °F (93 °C)",
+          "試驗後失重不大於 0.01 oz (0.3 g)",
+          "試驗後重新充電放電，滿足 3.5.3 放電容量要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.9",
+      "normalized_id": "BMS-TEMP-CTRL",
+      "name_zh": "高溫暫態與永久切斷保護試驗",
+      "name_en": "High Temperature Cutoff",
+      "section": "4.7.4.9",
+      "category": "BMS",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 規定充至滿充電狀態",
+          "detail": "允許使用 4.6.3 替代充電方法",
+          "source_reference": "4.7.4.9；4.6"
+        },
+        "cutoff_temperature": {
+          "value": "暫態切斷 75 ± 5 °C；永久切斷 95 ± 5 °C",
+          "detail": "暫態切斷於 167 ± 7 °F (75 ± 5 °C) 保溫不少於 2 小時；永久切斷於 203 ± 9 °F (95 ± 5 °C) 保溫不少於 2 小時",
+          "source_reference": "4.7.4.9；4.7.4.10"
+        },
+        "temperature": {
+          "value": "高溫保溫後冷卻至 40 +0/-5 °C",
+          "detail": "冷卻至 104 +0/-9 °F (40 +0/-5 °C) 驗證保護復歸與不可逆切斷特性",
+          "source_reference": "4.7.4.9"
+        },
+        "duration": {
+          "value": "暫態高溫重複 5 次循環",
+          "detail": "暫態切斷步驟重複 5 次循環；永久切斷執行 1 次",
+          "source_reference": "4.7.4.9"
+        },
+        "observation_period": {
+          "value": "冷卻後驗證充電與放電電流",
+          "detail": "在高溫下嘗試充電與放電，電流必須為零；暫態降溫後依 4.7.2.3 執行容量測試",
+          "source_reference": "4.7.4.9；3.7.2.4；3.7.2.5"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "在高溫觸發下電流必須為零，降溫後暫態保護正常復歸且容量達標；永久切斷後端子無電壓",
+        "details": [
+          "暫態切斷溫度下嘗試充電與放電，電流必須為零 (3.7.2.4)",
+          "降溫復歸後滿足 3.5.3 容量要求與 3.6 環境要求 (3.7.2.4)",
+          "永久切斷溫度下電流為零且降溫後端子間呈現無電壓狀態 (3.7.2.5)"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.11",
+      "normalized_id": "MECH-PROJ",
+      "name_zh": "射彈試驗",
+      "name_en": "Projectile",
+      "section": "4.7.4.11",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配",
+          "detail": "依 Table X 第一件認可檢驗或規格單規定",
+          "source_reference": "4.4；TABLE X"
+        },
+        "pre_conditioning": {
+          "value": "依規格單規定充電並以單根金屬絲固定於網罩上",
+          "detail": "架設高畫質攝影機與熱成像儀進行全程錄影",
+          "source_reference": "4.7.4.11"
+        },
+        "burner": {
+          "value": "依 UL 1642 燃燒拋射試驗規定",
+          "detail": "以明火燃燒器持續加熱電池直至起火或爆炸",
+          "source_reference": "4.7.4.11"
+        },
+        "apparatus": {
+          "value": "依 UL 1642 燃燒拋射試驗規定之金屬絲網罩",
+          "detail": "八角形金屬絲網罩防護裝置",
+          "source_reference": "4.7.4.11"
+        },
+        "temperature": {
+          "value": "明火燃燒加熱環境",
+          "detail": "持續記錄電池溫度與事件時間",
+          "source_reference": "4.7.4.11"
+        },
+        "observation_period": {
+          "value": "試驗結束後錄影持續至少 10 分鐘",
+          "detail": "記錄起火、爆炸、碎片等事件並依 MIL-STD-882 評估風險",
+          "source_reference": "4.7.4.11；3.7.2.8"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電池在承受 UL 1642 射彈試驗時不得發生爆炸",
+        "details": [
+          "電池本體或任何零件不得發生爆炸 (3.7.2.8)",
+          "無危險碎片穿透或穿出金屬保護網外",
+          "符合 3.7.2 電池安全要求"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.12",
+      "normalized_id": "MECH-NAIL",
+      "name_zh": "電池組針刺試驗",
+      "name_en": "Nail Penetration, Battery",
+      "section": "4.7.4.12",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配 (Table X Group 5)",
+          "detail": "單針刺穿或多針刺穿試驗",
+          "source_reference": "4.4"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 充電至滿充狀態並連接指定負載",
+          "detail": "架設高畫質攝影機與熱成像儀錄影",
+          "source_reference": "4.7.4.12；4.6"
+        },
+        "nail_diameter": {
+          "value": "不小於 0.113 英吋 (2.87 mm) 不鏽鋼釘",
+          "detail": "長度超過電池寬度或直徑之不鏽鋼釘",
+          "source_reference": "4.7.4.12"
+        },
+        "penetration_speed": {
+          "value": "不少於 0.25 ft/sec (76 mm/s)",
+          "detail": "等速穿透電池寬度",
+          "source_reference": "4.7.4.12"
+        },
+        "penetration": {
+          "value": "完全穿透電池兩側",
+          "detail": "鋼釘尖端穿透突出於電池另一側面",
+          "source_reference": "4.7.4.12"
+        },
+        "hold_duration": {
+          "value": "鋼釘留在電池內 24 小時",
+          "detail": "刺入後鋼釘保持在電池內 24 小時",
+          "source_reference": "4.7.4.12"
+        },
+        "temperature": {
+          "value": "常溫環境",
+          "detail": "不少於每 15 秒記錄一次環境與電池溫度",
+          "source_reference": "4.7.4.12"
+        },
+        "observation_period": {
+          "value": "24 小時 (錄影至最後一根釘刺入後 10 分鐘)",
+          "detail": "記錄煙霧、起火、解體等事件並依 MIL-STD-882 評估風險",
+          "source_reference": "4.7.4.12；3.7.2.9"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "電池在承受針刺試驗時不得燃燒或爆炸，外殼溫度符合規定",
+        "details": [
+          "電池不得燃燒或爆炸 (3.7.2.9)",
+          "外殼最高表面溫度符合規格單限制",
+          "符合 3.7.2 電池安全要求並納入 MIL-STD-882 安全評估報告"
+        ]
+      }
+    },
+    {
+      "id": "MIL-PRF-32383-4.7.4.13",
+      "normalized_id": "MECH-PROJ",
+      "name_zh": "武器射擊試驗",
+      "name_en": "Weapons Characterization",
+      "section": "4.7.4.13",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "由規格單指定試驗樣品分配 (Table X Group 5)",
+          "detail": "依 Table X Group 5 規定",
+          "source_reference": "4.4"
+        },
+        "pre_conditioning": {
+          "value": "依 4.6 充至滿充狀態並連接指定負載",
+          "detail": "標記最易引發反應之位置，確保至少擊中 1 顆電芯；射擊前 2 分鐘開始記錄功率輸出",
+          "source_reference": "4.7.4.13；4.6"
+        },
+        "projectile": {
+          "value": "依規格單及 TOP 01-2-608 規定之威脅槍彈",
+          "detail": "實彈射擊武器特性試驗",
+          "source_reference": "4.7.4.13"
+        },
+        "velocity": {
+          "value": "依軍用槍彈標準初速",
+          "detail": "依軍用槍彈標準規範飛行射速",
+          "source_reference": "4.7.4.13"
+        },
+        "temperature": {
+          "value": "常溫防爆靶場環境",
+          "detail": "以高畫質影片 (≥1080p 30fps) 及熱成像儀全程記錄",
+          "source_reference": "4.7.4.13"
+        },
+        "observation_period": {
+          "value": "射擊後持續記錄功率輸出至少 8 分鐘，錄影至最後一發射擊後 10 分鐘",
+          "detail": "射擊後評估功率殘存能力與安全反應嚴重度",
+          "source_reference": "4.7.4.13；3.7.2.11"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "承受彈頭穿透擊中時不得爆炸，符合 3.7.2.11 之危害反應等級限制",
+        "details": [
+          "電池承受槍彈射擊時不得發生爆炸 (3.7.2.11)",
+          "無劇烈解體或危害等級超標之噴射物",
+          "符合 3.7.2 安全要求並納入 MIL-STD-882 安全評估報告"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,1158 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "SAE-J2464",
+    "full_name": "SAE J2464:2021 - Electric and Hybrid Electric Vehicle Rechargeable Energy Storage System (RESS) Safety and Abuse Testing",
+    "full_name_zh": "SAE J2464:2021 電動與混合動力車可充電儲能系統 (RESS) 安全與濫用測試",
+    "short_name": "SAE J2464",
+    "publisher": "SAE International",
+    "publication_date": "2021-08",
+    "edition_history": "1999-03 (Issued), 2009-11 (Revised), 2021-08 (Revised)",
+    "type": "guidance",
+    "scope": "定義電動與混合動力車可充電儲能系統 (RESS) 之安全與濫用測試推薦實踐指南。目的在於建立通用測試架構，評估各類 RESS 技術（包含電芯、模組及電池包）在正常運作範圍以外之條件或事件下的回應特性，以表徵其濫用耐受性與潛在危害等級。本標準不設定合格／不合格判據。",
+    "applicable_objects": [
+      "CELL",
+      "MODULE",
+      "PACK_SYSTEM"
+    ],
+    "source_pdf": "SAE J2464.pdf"
+  },
+  "metadata": {
+    "enrichment": "2026-11-02 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。",
+    "parameter_review": [
+      "2026-11-02：依原文補齊試驗參數（SAE-J2464-4.2、SAE-J2464-4.3.1、SAE-J2464-4.3.2、SAE-J2464-4.3.3、SAE-J2464-4.3.4、SAE-J2464-4.3.5、SAE-J2464-4.3.6、SAE-J2464-4.3.7、SAE-J2464-4.4.1、SAE-J2464-4.4.2、SAE-J2464-4.4.3、SAE-J2464-4.4.4、SAE-J2464-4.4.5、SAE-J2464-4.5.1.1、SAE-J2464-4.5.1.2、SAE-J2464-4.5.2、SAE-J2464-4.5.3），出處見各欄位 source_reference。"
+    ]
+  },
+  "terms": [
+    {
+      "term_en": "Active Protection Device",
+      "term_zh": "主動保護裝置",
+      "definition": "電芯或電池固有之組件，需要外部控制採取措施以緩解製造商所定義的濫用及／或超出範圍之條件。(Components integral to the cell or battery that require external controls to take actions to mitigate abusive and/or out-of-range conditions as defined by the manufacturer.)"
+    },
+    {
+      "term_en": "Ambient Temperature",
+      "term_zh": "環境溫度",
+      "definition": "本文件定義之任何測試環境溫度應在 25 ± 5 °C 範圍內。(The ambient temperature for any test defined in this document shall be within the range of 25 °C ± 5 °C.)"
+    },
+    {
+      "term_en": "Cell",
+      "term_zh": "電芯",
+      "definition": "基本的電化學功能單元，至少由正極、負極和電解液組成。(A basic electrochemical functional unit that at minimum consists of a positive electrode, a negative electrode, and an electrolyte.)"
+    },
+    {
+      "term_en": "Device Under Test (DUT)",
+      "term_zh": "受測裝置",
+      "definition": "描述被測試裝置的通用術語，包含受測物件的所有整合層級，可指單一單元（電芯）、多單元組件（模組或電池包）或完整系統。(A general term used to describe the device being tested, including all levels of integration.)"
+    },
+    {
+      "term_en": "Energetic Failure",
+      "term_zh": "劇烈失效",
+      "definition": "能量之極快速釋放，足以產生壓力波及／或拋射物，可能依 RESS 大小造成相當大的結構及／或人身傷害。(Very fast release of energy sufficient to cause pressure waves and/or projectiles that may cause considerable structural and/or bodily damage.)"
+    },
+    {
+      "term_en": "Fire or Flame",
+      "term_zh": "起火或火焰",
+      "definition": "可燃氣體或液體之點燃與持續燃燒（持續起火 ≥ 1 秒）。火花或熾熱材料不視為起火或火焰。(Ignition and sustained combustion of flammable gas or liquid (≥1 second sustained fire). Sparks or incandescent material are not considered a fire or a flame.)"
+    },
+    {
+      "term_en": "Fully Charged",
+      "term_zh": "滿充電",
+      "definition": "100% 荷電狀態。受測件經製造商建議之充電程序後達到之狀態。(100% state of charge. The condition reached by a device when it is subjected to the manufacturer's recommended recharge algorithm.)"
+    },
+    {
+      "term_en": "Fully Discharged",
+      "term_zh": "完全放電",
+      "definition": "0% 荷電狀態。RESS 在零負載下達到製造商規定之最低電壓後之狀態。(0% state of charge. The state of a RESS after reaching the minimum voltage at zero load as specified by the RESS manufacturer.)"
+    },
+    {
+      "term_en": "Hazard Severity Level (HSL)",
+      "term_zh": "危害嚴重度等級",
+      "definition": "改編自 EUCAR 與 SAND2005-3123 之 0～7 級危害嚴重度分級標準，用以客觀記錄與評估 RESS 對濫用測試之反應。(Hazard severity levels 0-7 adapted from EUCAR and SAND2005-3123.)"
+    },
+    {
+      "term_en": "Leak or Leakage",
+      "term_zh": "洩漏",
+      "definition": "RESS 電芯容器氣密性喪失，導致氣體或液體緩慢逸出，但未觸發設計之排氣機構。(Loss of hermeticity of the RESS cell container leading to slow escape of gas or liquid without actuation of a designed vent.)"
+    },
+    {
+      "term_en": "Overcharge",
+      "term_zh": "過充電",
+      "definition": "對已滿充之電池持續充電，或超越製造商規定之特定限值進行充電之行為。(Continued charging of a fully charged battery, or charging beyond a certain limit specified by the manufacturer.)"
+    },
+    {
+      "term_en": "Overdischarge",
+      "term_zh": "過放電",
+      "definition": "強制放電超過電池製造商建議之零負載最低放電電壓。(Forced discharge beyond the minimum zero-load discharge voltage recommended by the battery manufacturer.)"
+    },
+    {
+      "term_en": "Passive Protection Device",
+      "term_zh": "被動保護裝置",
+      "definition": "電芯或電池固有之組件，不需要外部控制即可採取措施以緩解製造商所定義的濫用及／或超出範圍之條件（例如停機隔膜、壓力釋放閥、PTC）。(Components integral to the cell or battery that do not require external controls to take actions to mitigate abusive conditions.)"
+    },
+    {
+      "term_en": "Rechargeable Energy Storage System (RESS)",
+      "term_zh": "可充電儲能系統",
+      "definition": "任何具有充放電能力之可充電電能儲存裝置，例如電池與電容器。(Any type of rechargeable electrical energy storage device, such as batteries and capacitors.)"
+    },
+    {
+      "term_en": "RESS Module",
+      "term_zh": "RESS 模組",
+      "definition": "以串聯及／或並聯方式互連之電芯群組，裝配於具備端子、外殼或保護裝置之單一機械與電氣組件中。(A grouping of interconnected cells in series and/or parallel arrangement into a single mechanical and electrical assembly.)"
+    },
+    {
+      "term_en": "RESS Pack",
+      "term_zh": "RESS 電池包",
+      "definition": "互連之電芯或模組，包含外殼、控制硬體、熱管理及高壓保護子系統，可直接應用於車輛。(Interconnected cells or modules including enclosure, control hardware, thermal management, and safety subsystems.)"
+    },
+    {
+      "term_en": "Rupture",
+      "term_zh": "破裂",
+      "definition": "電芯外殼機械完整性喪失，導致內容物釋放，但釋放物之動能不足以對電池系統外部造成物理損壞。電芯排氣不屬於破裂。(Loss of mechanical integrity of the cell housing, resulting in release of contents without causing physical damage external to the battery system.)"
+    },
+    {
+      "term_en": "State of Charge (SOC)",
+      "term_zh": "荷電狀態",
+      "definition": "電池相對於其在特定溫度與放電倍率下之參考容量的電量水平表示，通常以百分比表示（例如 0% 為空電，100% 為滿充）。(The representation of the level of charge of a battery relative to its referenced capacity through time, typically expressed as a percentage.)"
+    },
+    {
+      "term_en": "Thermal Runaway",
+      "term_zh": "熱失控",
+      "definition": "由電池內部放熱反應引起之電池溫度不受控制升高現象。(An uncontrolled increase of battery temperature caused by exothermic reactions inside the battery.)"
+    },
+    {
+      "term_en": "Thermal Stability Limit",
+      "term_zh": "熱穩定性極限",
+      "definition": "RESS 可無限期保持穩定的最高溫度。(Maximum temperature at which RESS is stable indefinitely.)"
+    },
+    {
+      "term_en": "Venting",
+      "term_zh": "排氣",
+      "definition": "氣體以受控或不受控方式從電池中排出的事件。受控排氣可透過洩壓閥或防爆片等指定部件發生。(An event whereby gas is expelled in a controlled or uncontrolled manner from a battery.)"
+    }
+  ],
+  "tests": [
+    {
+      "id": "SAE-J2464-4.2",
+      "normalized_id": "ENV-H2",
+      "name_zh": "危害物質監測測試",
+      "name_en": "Hazardous Substance Monitoring Tests",
+      "section": "4.2",
+      "category": "ENV",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "電芯 1～3 顆、電池包 3 組",
+          "detail": "表 1 推薦樣品數：4.2.1.1 電解液蒸氣為 1 顆電芯；4.2.1.2 電芯強制排氣為 3 顆電芯；4.2.1.3 電芯熱失控強制排氣為 3 顆電芯；4.2.1.4 電池包級危害物質監測為 3 組模組或電池包。",
+          "source_reference": "Table 1；4.1.2"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC 並置於密閉試驗艙中",
+          "detail": "電芯於測試前應滿充電至 100% SOC，並置於適當尺寸的密閉試驗艙中，提供足夠空間容納排出的氣體。",
+          "source_reference": "4.2.1；4.1.3"
+        },
+        "observation_period": {
+          "value": "至少 1 小時",
+          "detail": "在規定的試驗後觀察期（1 小時）內，於試驗前、試驗中及試驗後收集數據，並利用公認的分析技術鑑定釋放的所有固體、液體和氣體。",
+          "source_reference": "4.2.2；4.1.3"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "使用電芯時，應充至 100% SOC 並放入密閉艙中。",
+          "source_reference": "4.2.1；4.1.3"
+        },
+        "temperature": {
+          "value": "電芯最高工作溫度或 50 °C（取較高者）",
+          "detail": "測試 1（電解液蒸氣分析）：在電芯最高工作溫度或 50 °C（取較高者）及 >90% 濕度下，將足以飽和氣體體積的電解液置於密閉艙中，恆溫 60 分鐘後取樣分析蒸氣。",
+          "source_reference": "4.2.1.1"
+        },
+        "heating_rate": {
+          "value": "5 °C/min 升溫至 400 °C（測試 3 範例）",
+          "detail": "測試 3（電芯熱失控強制排氣）：使電芯進入熱失控的方法由測試者決定，其中一種方法為以外部熱源以 5 °C/min 加熱試驗艙至 400 °C；另一方法為對電芯過充電。",
+          "source_reference": "4.2.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "依 4.1.4、4.1.5 與 4.2.2 進行定量危害物質識別與監測，分析釋放之空氣傳播揮發物與微粒，參照 ERPG-2 等級與燃燒上下限 (LFL/UFL) 評估潛在可燃性與毒性危害，並依表 3 判定 HSL 0–7。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.3.1",
+      "normalized_id": "MECH-SHOCK",
+      "name_zh": "機械衝擊測試",
+      "name_en": "Shock Tests",
+      "section": "4.3.1",
+      "category": "MECH",
+      "test_objects": [
+        "CELL",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "電池包 3 組（電芯依 UN 38.3）",
+          "detail": "表 1 規定電池包等級推薦樣品數為 3 組。電芯等級試驗依 UN 38.3 規定之樣品數。",
+          "source_reference": "Table 1；4.3.1.1"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC 且於 25 ± 5 °C 穩定",
+          "detail": "依 4.1.3，受測樣品應處於滿充電狀態 (100% SOC)，環境溫度於 25 ± 5 °C 穩定。安裝與支撐結構應盡可能符合製造商推薦之車輛安裝要求。",
+          "source_reference": "4.1.3；4.3"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）",
+          "detail": "試驗後至少觀察受測件 1 小時。試驗完成後 24 小時重複溫度、電壓與絕緣阻抗測量及目視檢查。",
+          "source_reference": "4.3.1.1；4.3.1.2"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "除另有規定外，受測樣品應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.1.3"
+        },
+        "acceleration_peak": {
+          "value": "25 g（電池包；電芯依 UN 38.3）",
+          "detail": "電池包等級加速度為 25 g（半正弦波，持續時間 15 ms）。電芯等級依 UN 38.3 規定（小型電芯 150 g / 6 ms，大型電芯 50 g / 11 ms）。",
+          "source_reference": "Table 4；4.3.1.1"
+        },
+        "pulse_duration": {
+          "value": "15 ms（電池包；電芯依 UN 38.3）",
+          "detail": "電池包等級脈衝持續時間為 15 ms（定義為峰值 10% 至 90% 之間的時間）。電芯等級依 UN 38.3 規定。",
+          "source_reference": "Table 4；4.3.1.1"
+        },
+        "waveform": {
+          "value": "半正弦波 (Half sine)",
+          "detail": "電池包等級衝擊脈衝波形為半正弦波 (Half sine)。電芯等級依 UN 38.3 規定。",
+          "source_reference": "Table 4"
+        },
+        "shock_count": {
+          "value": "18 次（3 軸正反方向各 3 次；電芯依 UN 38.3）",
+          "detail": "電池包等級總衝擊次數為 18 次，即在 3 個相互垂直軸向的正負兩個方向各重複 3 次。電芯等級依 UN 38.3 規定。",
+          "source_reference": "Table 4"
+        },
+        "direction": {
+          "value": "3 個相互垂直軸向（共 6 個空間方向）",
+          "detail": "在 3 個相互垂直軸向的正方向與負方向均進行衝擊。",
+          "source_reference": "Table 4"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "環境溫度應維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "記錄加速度、外殼變形量、溫度曲線、外殼對端子電壓與絕緣阻抗、質量變化（電芯）、高壓絕緣與互鎖狀態變化，並於 24 小時後重複檢查。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.3.2",
+      "normalized_id": "MECH-DROP",
+      "name_zh": "自由跌落測試",
+      "name_en": "Drop Test",
+      "section": "4.3.2",
+      "category": "MECH",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "3 組",
+          "detail": "表 1 規定電池包等級推薦樣品數為 3 組。本測試僅適用於電池包等級 (Pack Level Only)。",
+          "source_reference": "Table 1；4.3.2"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC 且於 25 ± 5 °C 穩定",
+          "detail": "受測樣品應滿充至 100% SOC，並於 25 ± 5 °C 環境溫度下達到熱穩定。",
+          "source_reference": "4.1.3"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）",
+          "detail": "跌落後至少觀察受測件 1 小時。試驗完成後 24 小時重複溫度、電壓與絕緣阻抗測量及目視檢查。",
+          "source_reference": "4.3.2.1；4.3.2.2"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "除另有規定外，受測樣品應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.1.3"
+        },
+        "drop_height": {
+          "value": "1 m（或實際現場使用程序規定之高度，取較大者）",
+          "detail": "將受測件從 1 m 高度或由實際現場使用程序規定的高度（取較大者）自由跌落至堅硬平坦表面。亦可採用具有等效撞擊速度與減速度的水平撞擊方式。",
+          "source_reference": "4.3.2.1"
+        },
+        "drop_surface": {
+          "value": "堅硬平坦表面",
+          "detail": "自由跌落至堅硬平坦表面上。亦可採用具有等效撞擊速度與減速度的水平撞擊方式。",
+          "source_reference": "4.3.2.1"
+        },
+        "orientation": {
+          "value": "最脆弱之方位",
+          "detail": "受測件應以最脆弱的方向跌落至衝擊表面。",
+          "source_reference": "4.3.2.1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "環境溫度應維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "測量外殼減速度（頻寬 ≥ 2 kHz）、變形量、溫度、端子與外殼間電壓及絕緣阻抗、高壓絕緣與互鎖狀態變化，並於 24 小時後複檢。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.3.3",
+      "normalized_id": "MECH-NAIL",
+      "name_zh": "針刺測試",
+      "name_en": "Penetration Test",
+      "section": "4.3.3",
+      "category": "MECH",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "電芯 5 顆、模組或電池包 3 組",
+          "detail": "表 1 推薦樣品數：電芯等級為 5 顆，模組或電池包等級為 3 組。若模組中使用並聯電芯，電芯等級測試應配置與受刺電芯相同數量的並聯電芯。",
+          "source_reference": "Table 1；4.3.3.1"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC 且於 25 ± 5 °C 穩定",
+          "detail": "受測件應處於滿充電狀態 (100% SOC)，環境溫度維持於 25 ± 5 °C。",
+          "source_reference": "4.1.3"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（鋼棒保持在原位，24 小時複檢）",
+          "detail": "針刺後鋼棒保持在原位，至少觀察受測件 1 小時。試驗完成後 24 小時重複變形、溫度、電壓與絕緣阻抗測量及目視檢查。",
+          "source_reference": "4.3.3.1；4.3.3.2"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "除另有規定外，受測樣品應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.1.3"
+        },
+        "nail_diameter": {
+          "value": "3 mm（電芯）／20 mm（模組與電池包）",
+          "detail": "表 5 規定：電芯使用直徑 3 mm 之低碳鋼（導電）圓棒，端部削尖成尖銳點；模組與電池包使用直徑 20 mm 之低碳鋼圓棒，端部削尖成尖銳點。",
+          "source_reference": "Table 5；4.3.3.1"
+        },
+        "penetration_speed": {
+          "value": "≥ 8 cm/s",
+          "detail": "表 5 規定：電芯、模組與電池包之針刺速度均為 8 cm/s 或更快 (8 cm/s or greater)。試驗期間應測量針刺速度。",
+          "source_reference": "Table 5；4.3.3.2"
+        },
+        "penetration": {
+          "value": "貫穿電芯（電芯）／貫穿 3 顆電芯或 100 mm（模組與包）",
+          "detail": "表 5 規定最小穿刺深度：電芯為完全貫穿電芯 (Through cell)；模組與電池包為貫穿 3 顆電芯或深度達 100 mm（取較大者）。針刺方向應垂直於電芯電極表面。",
+          "source_reference": "Table 5；4.3.3.1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "環境溫度應維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "依 4.1.5 配置火花源評估排出物可燃性，記錄受測件變形量、內外部溫度、端子對外殼電壓及絕緣阻抗、針刺速度與全程影像，並於 24 小時後複檢。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.3.4",
+      "normalized_id": "MECH-STRESS",
+      "name_zh": "翻滾測試",
+      "name_en": "Rollover Test",
+      "section": "4.3.4",
+      "category": "MECH",
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "3 組",
+          "detail": "表 1 規定模組或電池包等級推薦樣品數為 3 組。本測試適用於模組及電池包等級 (Module and Pack Level)。",
+          "source_reference": "Table 1；4.3.4"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC 且於 25 ± 5 °C 穩定",
+          "detail": "受測件應滿充至 100% SOC，並於 25 ± 5 °C 靜置穩定。",
+          "source_reference": "4.1.3"
+        },
+        "observation_period": {
+          "value": "各位置 1 小時，試驗後至少 1 小時（24 小時複檢）",
+          "detail": "在 90° 步進旋轉的每個位置觀察 1 小時，試驗結束後至少觀察 1 小時。試驗完成後 24 小時重複溫度、電壓與阻抗測量及目視檢查。",
+          "source_reference": "4.3.4.1；4.3.4.2"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "除另有規定外，受測樣品應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.1.3"
+        },
+        "test_type": {
+          "value": "連續慢滾 360°/1 分鐘，隨後以 90° 步進旋轉一週",
+          "detail": "以連續慢速滾動方式在 1 分鐘內完成一整週 (360°) 旋轉，觀察是否有物質洩漏。接著以 90° 增量步進旋轉一週，每個位置靜置觀察 1 小時。",
+          "source_reference": "4.3.4.1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "環境溫度應維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "記錄翻滾期間是否有電解液或其他物質洩漏、溫度與電壓阻抗隨時間之變化曲線、全程影像監控，並於 24 小時後重複檢查。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.3.5",
+      "normalized_id": "THERM-WATER",
+      "name_zh": "浸水測試",
+      "name_en": "Immersion Test",
+      "section": "4.3.5",
+      "category": "ENV",
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "3 組",
+          "detail": "表 1 規定模組或電池包等級推薦樣品數為 3 組。本測試適用於模組或電池包等級。",
+          "source_reference": "Table 1；4.3.5"
+        },
+        "pre_conditioning": {
+          "value": "正常工作方位與操作溫度，滿充至 100% SOC",
+          "detail": "受測件應處於正常操作方位與名義操作溫度，處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.3.5.1；4.1.3"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）",
+          "detail": "依 4.1.3 試驗後至少觀察 1 小時；試驗完成後 24 小時重複溫度、電壓阻抗測量及目視檢查。",
+          "source_reference": "4.3.5.2；4.1.3"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "除另有規定外，受測樣品應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.1.3"
+        },
+        "liquid": {
+          "value": "5% NaCl 鹽水",
+          "detail": "常溫鹽水溶液，濃度為 5% 重量比之 NaCl 水溶液 (5% by weight NaCl in H2O)。",
+          "source_reference": "4.3.5.1"
+        },
+        "depth": {
+          "value": "完全浸沒受測件",
+          "detail": "水深必須足以將受測件完全浸沒 (completely submerge the DUT)。受測件可直接置於充水槽中，或先置於空槽後注水浸沒。",
+          "source_reference": "4.3.5.1"
+        },
+        "duration": {
+          "value": "≥ 2 小時（或直到可見反應停止）",
+          "detail": "浸泡時間至少 2 小時，或直至任何可見反應完全停止為止。",
+          "source_reference": "4.3.5.1"
+        },
+        "temperature": {
+          "value": "環境溫度 (25 ± 5 °C)",
+          "detail": "使用環境溫度的鹽水溶液，試驗環境應在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.3.5.1；4.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "記錄浸水期間溫度與電壓阻抗隨時間之變化、氣體分析（測量鹽水電解產生的氫氣或氯氣等潛在氣體）、全程影像監控，並於 24 小時後複檢。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.3.6",
+      "normalized_id": "MECH-CRUSH",
+      "name_zh": "擠壓測試",
+      "name_en": "Crush Test",
+      "section": "4.3.6",
+      "category": "MECH",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "電芯 4～6 顆、模組或電池包 2～3 組",
+          "detail": "表 1 規定：電芯每軸向測試 2 次（軟包電芯僅在垂直於電極的扁平面軸向測試，共 4～6 顆）；電池包每軸向測試 1 次（至少測試 3 軸中之 2 軸，共 2～3 組）。若已依 UN T6、UL 1973 或 IEC 62619 執行電芯擠壓，無需重複測試。",
+          "source_reference": "Table 1；4.3.6.1"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC 且於 25 ± 5 °C 穩定",
+          "detail": "受測件應滿充至 100% SOC；所有整合控制與互連電路應就位並正常運作（適用於模組及電池包）。若在室外進行測試，風速應小於 3 mph。",
+          "source_reference": "4.1.3；4.3.6.1"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）",
+          "detail": "擠壓後依 4.1.3 至少觀察 1 小時。試驗完成後 24 小時重複溫度、電壓與絕緣阻抗測量及目視檢查。",
+          "source_reference": "4.3.6.2；4.1.3"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "除另有規定外，受測樣品應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.1.3"
+        },
+        "crush_speed": {
+          "value": "0.5～1 mm/min（電芯）／0.5～1 cm/min（電池包）",
+          "detail": "擠壓速度應足夠緩慢以判定短路來源及內部熱傳播速率：電池包介於 0.5 cm/min 至 1 cm/min；電芯介於 0.5 mm/min 至 1 mm/min。",
+          "source_reference": "4.3.6.1"
+        },
+        "force": {
+          "value": "最大限制為受測件重量的 1000 倍",
+          "detail": "擠壓力量上限為受測件重量的 1000 倍 (maximum of 1000 times the weight of the DUT)。",
+          "source_reference": "4.3.6.1"
+        },
+        "apparatus": {
+          "value": "半圓柱形壓板（模組與包）／圓柱形棒（圓柱電芯）／平面壓板（方形與軟包）",
+          "detail": "模組與電池包使用具半圓柱表面之壓板（半圓柱半徑例如 75 mm、間距 30 mm）；圓柱電芯使用直徑與電芯相當之單一圓柱棒（軸線與電芯垂直）；方形與軟包電芯壓具表面應平行接觸電芯受壓面。",
+          "source_reference": "4.3.6.1"
+        },
+        "termination": {
+          "value": "壓至初始尺寸 85% 保持 5 分鐘，續壓至 50% 保持 5 分鐘",
+          "detail": "第一階段擠壓至初始尺寸的 85% 並保持 5 分鐘；保持期結束後，繼續擠壓至初始尺寸的 50% 並保持 5 分鐘。",
+          "source_reference": "4.3.6.1"
+        },
+        "orientation": {
+          "value": "至少在 3 個軸向中的 2 個軸向進行（各軸使用不同樣品）",
+          "detail": "受測件應在 3 個軸向中至少 2 個軸向進行擠壓（每個軸向使用不同樣品），壓板長軸垂直於電芯主要維度以確保電芯變形而非僅被推開。軟包電芯僅在垂直於電極的扁平面擠壓。",
+          "source_reference": "4.3.6.1；Table 1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "環境溫度應維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "依 4.1.5 配置火花源評估排出物可燃性，記錄加速度力（頻寬 ≥ 2 kHz）、變形速率、受測件及上方空氣溫度、外殼對端子電壓與絕緣阻抗、電芯質量變化、高壓絕緣與互鎖狀態變化，並於 24 小時後複檢。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.3.7",
+      "normalized_id": "ELEC-SC-INT",
+      "name_zh": "模擬內部短路測試（參考性）",
+      "name_en": "Simulated Internal Short Circuit Test (Informational)",
+      "section": "4.3.7",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "5 顆",
+          "detail": "表 1 推薦樣品數為 5 顆電芯。本節為參考性內容 (Informational / for information only)，提供正在發展中的電芯內部短路測試程序介紹。",
+          "source_reference": "Table 1；4.3.7"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC 且於 25 ± 5 °C 穩定",
+          "detail": "依 4.1.3，電芯測試前應滿充電至 100% SOC 並於環境溫度穩定。未改裝電芯或內置短路裝置電芯應依選定程序準備。",
+          "source_reference": "4.1.3；4.3.7.1；4.3.7.2"
+        },
+        "observation_period": {
+          "value": "至少 1 小時",
+          "detail": "依 4.1.3 通則，測試後應觀察至少 1 小時或至受測件判定安全為止。",
+          "source_reference": "4.1.3"
+        },
+        "charging_procedure": {
+          "value": "100% SOC",
+          "detail": "除另有規定外，受測樣品應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.1.3"
+        },
+        "apparatus": {
+          "value": "鈍釘 (45°、半徑 0.9 mm)／雙大球／L 形鎳片／低熔點石蠟裝置",
+          "detail": "列舉 4 種測試方法：1. UL/NASA 鈍釘擠壓 (45° 角度、0.9 mm 半徑)；2. Motorola/ORNL 雙大球夾捏；3. JIS C 8714 / IEC 62133-2 植入 L 形鎳片加壓；4. NREL/NASA 植入低熔點石蠟微裝置加熱引發。",
+          "source_reference": "4.3.7.1；4.3.7.2"
+        },
+        "short_circuit_detection": {
+          "value": "開路電壓 (OCV) 降 100 mV（鈍釘法）",
+          "detail": "UL/NASA 鈍釘擠壓法以檢測到電芯開路電壓降達 100 mV 作為內部短路判定與擠壓終止條件。",
+          "source_reference": "4.3.7.1"
+        },
+        "applicability": {
+          "value": "僅供參考 (For Information Only)",
+          "detail": "本節僅供參考，旨在向讀者提供各機構正在制定的內部短路測試方法，本標準對此類測試的有效性或實用性不表示意見。",
+          "source_reference": "4.3.7"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "本測試為參考性程序，不設定合格判據。記錄電芯電壓降、溫度響應、是否引發熱失控，並依表 3 評估危害嚴重度等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.4.1",
+      "normalized_id": "THERM-FIRE",
+      "name_zh": "高溫危害測試（模擬燃油火災）",
+      "name_en": "High Temperature Hazard Test",
+      "section": "4.4.1",
+      "category": "THERM",
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "3 組",
+          "detail": "表 1 規定模組或電池包等級推薦樣品數為 3 組。本測試適用於模組及電池包等級。",
+          "source_reference": "Table 1；4.4.1"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC，不包覆絕熱層或防護",
+          "detail": "受測件處於 100% SOC。除非受測件標準配置包含絕熱或防護，否則不得包裹絕熱材料或防護裝置。",
+          "source_reference": "4.4.1.1"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）",
+          "detail": "依 4.1.3 通則至少觀察 1 小時。試驗完成後 24 小時重複溫度、電壓與阻抗測量及目視檢查。",
+          "source_reference": "4.4.1.2；4.1.3"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "受測件應處於 100% SOC 滿充電狀態。",
+          "source_reference": "4.4.1.1"
+        },
+        "apparatus": {
+          "value": "輻射加熱試驗夾具（薄壁圓柱金屬、石英燈陣列）或管式爐",
+          "detail": "建議使用輻射加熱夾具（薄壁圓柱金屬內壁塗黑體塗層，外壁由石英燈陣列加熱，受測件置於中心不接觸壁面）；或使用能使受測件暴露於 590 °C ± 5% 輻射表面的非接觸加熱設備（如管式爐及輸送機構）。",
+          "source_reference": "4.4.1.1"
+        },
+        "fire_exposure": {
+          "value": "5 分鐘內升至 590 °C ± 5% 並保持 20 分鐘",
+          "detail": "熱箱環境應在 5 分鐘內由室溫升至 590 °C（模擬燃油火災溫度），並保持 20 分鐘，或至發生阻止試驗完成的其他狀況為止。",
+          "source_reference": "4.4.1.1"
+        },
+        "termination": {
+          "value": "保持 20 分鐘或發生阻止試驗完成狀況",
+          "detail": "達到 590 °C 後保持 20 分鐘，或至發生阻止試驗完成的狀況（如嚴重破裂或劇烈反應）為止。若受測件起火，可在試驗完成後以適當方法滅火。",
+          "source_reference": "4.4.1.1"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "建議同時進行電池包級危害物質監測 (4.2.4)。記錄溫度、電壓阻抗、可燃氣體點燃情況、受測件拋射物證據，並於 24 小時後複檢。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.4.2",
+      "normalized_id": "THERM-STAB",
+      "name_zh": "熱穩定性測試",
+      "name_en": "Thermal Stability Test",
+      "section": "4.4.2",
+      "category": "THERM",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "3 顆",
+          "detail": "表 1 推薦樣品數為 3 顆電芯。本測試僅適用於電芯等級。",
+          "source_reference": "Table 1；4.4.2"
+        },
+        "pre_conditioning": {
+          "value": "滿充電狀態且處於正常操作溫度",
+          "detail": "電芯在試驗開始時應處於滿充電狀態且處於正常工作溫度。夾具應模擬模組或包內的機械與熱環境。受測件不保溫並暴露於箱內靜態空氣中。若已知主要放熱反應起始溫度，試驗可自低於該溫度 25 °C 處開始。",
+          "source_reference": "4.4.2.1"
+        },
+        "observation_period": {
+          "value": "至少 1 小時",
+          "detail": "依 4.1.3 通則，測試後應觀察至少 1 小時或至受測件判定安全為止。",
+          "source_reference": "4.1.3"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "電芯在試驗開始時應處於滿充電狀態 (100% SOC)。若製造商有資料顯示在其他 SOC 下熱穩定性較差，亦可在其他 SOC 下測試。",
+          "source_reference": "4.4.2.1"
+        },
+        "temperature": {
+          "value": "升至電芯最高工作溫度以上 300 °C",
+          "detail": "加熱設備或試驗艙應能將電芯加熱至其最高工作溫度以上 300 °C。",
+          "source_reference": "4.4.2.1"
+        },
+        "heating_profile": {
+          "value": "升溫速率 ≥ 5 °C/min，以 5 °C 階距遞增並每階保持 30 分鐘",
+          "detail": "升溫速率至少為 5 °C/min。溫度以 5 °C 遞增，每個溫度階梯保持 30 分鐘或直至檢測到自發熱。若檢測到自發熱 (>1.0 °C/min)，試驗艙溫度保持恆定，直至電芯溫度穩定（±2 °C 保持 30 分鐘）或達最高工作溫度 +300 °C 或發生災難性事件。",
+          "source_reference": "4.4.2.1"
+        },
+        "thermocouple_placement": {
+          "value": "電芯端子處",
+          "detail": "電芯溫度應在電芯端子 (cell terminal) 處進行測量。",
+          "source_reference": "4.4.2.1"
+        },
+        "exotherm_threshold_example": {
+          "value": "自發熱速率 > 1.0 °C/min",
+          "detail": "當電芯溫度超過環境試驗溫度且自發熱速率 > 1.0 °C/min 時，判定為自發熱起始。",
+          "source_reference": "4.4.2.1"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "記錄電芯溫度曲線、試驗艙溫度、排氣與發煙溫度、電芯無限期穩定的最高溫度、自發熱速率超過 10 °C/min 的溫度、電壓阻抗、質量變化，依 4.1.5 評估可燃性，依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.4.3",
+      "normalized_id": "THERM-COOLFAIL",
+      "name_zh": "無熱管理循環測試",
+      "name_en": "Cycling without Thermal Management",
+      "section": "4.4.3",
+      "category": "THERM",
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "3 組",
+          "detail": "表 1 規定模組或電池包等級推薦樣品數為 3 組。本測試適用於模組及電池包等級。",
+          "source_reference": "Table 1；4.4.3"
+        },
+        "pre_conditioning": {
+          "value": "名義工作溫度，滿充電，靜態空氣密閉空間，禁用主次動態熱控制",
+          "detail": "受測件處於名義工作溫度，滿充電 (100% SOC)，容納於靜態空氣的密閉容積中，並停用所有主動熱控制系統（主級與次級）。",
+          "source_reference": "4.4.3.1"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）",
+          "detail": "依 4.1.3 通則至少觀察 1 小時。試驗完成後 24 小時重複溫度、電壓阻抗測量及目視檢查。",
+          "source_reference": "4.4.3.2；4.1.3"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "受測件在試驗開始前應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.4.3.1"
+        },
+        "cycles": {
+          "value": "20 次充放電循環",
+          "detail": "依製造商規定的充電演算法充電，隨後以相當於目標應用的放電倍率放電，充放電之間無靜置時間，共連續進行 20 次完整充放電循環。",
+          "source_reference": "4.4.3.1"
+        },
+        "cooling_disabled": {
+          "value": "主級與次級主動熱控制均停用",
+          "detail": "受測件置於靜態空氣密閉空間中，所有主動熱控制裝置（primary and secondary active thermal controls）均處於禁用狀態。",
+          "source_reference": "4.4.3.1"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "記錄受測件溫度與電壓阻抗隨時間之變化曲線、全程影像監控，依 4.1.5 分析排出固體、液體與氣體的可燃性，並於 24 小時後複檢。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.4.4",
+      "normalized_id": "THERM-SHOCK",
+      "name_zh": "熱衝擊循環測試",
+      "name_en": "Thermal Shock Cycling",
+      "section": "4.4.4",
+      "category": "THERM",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "電芯 3 顆、模組或電池包 3 組",
+          "detail": "表 1 推薦樣品數：電芯等級為 3 顆，模組或電池包等級為 3 組。",
+          "source_reference": "Table 1；4.4.4"
+        },
+        "pre_conditioning": {
+          "value": "最大操作 SOC，密閉空間，禁用主動熱控制，試驗前後各執行 3 次 C/3 循環",
+          "detail": "受測件處於最大工作荷電狀態，置於密閉空間中，主動熱控制停用。在 25 °C 環境溫度下以 C/3 充放電 3 次（使用製造商充電演算法）作為試驗前後之容量比對基準。",
+          "source_reference": "4.4.4.1"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）",
+          "detail": "熱循環結束後檢查密封件損壞與控制電路功能，並依 4.1.3 觀察至少 1 小時。試驗完成後 24 小時重複溫度、電壓與絕緣阻抗測量及目視檢查。",
+          "source_reference": "4.4.4.1；4.4.4.2"
+        },
+        "soc": {
+          "value": "最大操作荷電狀態 (100% SOC)",
+          "detail": "受測件處於最大工作荷電狀態 (maximum operating state of charge)。",
+          "source_reference": "4.4.4.1"
+        },
+        "high_temperature": {
+          "value": "70 °C",
+          "detail": "高溫極限為 70 °C。",
+          "source_reference": "4.4.4.1"
+        },
+        "low_temperature": {
+          "value": "-40 °C",
+          "detail": "低溫極限為 -40 °C。",
+          "source_reference": "4.4.4.1"
+        },
+        "transition_time": {
+          "value": "≤ 15 分鐘",
+          "detail": "試驗艙環境溫度達到各極端溫度的轉換時間應在 15 分鐘以內；可使用快速響應試驗艙，或在兩台設定於極端溫度的試驗艙之間轉移樣品。",
+          "source_reference": "4.4.4.1"
+        },
+        "dwell_time": {
+          "value": "電芯 ≥ 1 小時、模組 ≥ 6 小時、電池包達溫度均勻 (±5 °C)",
+          "detail": "受測件在每個溫度極限的保持時間：電芯至少 1 小時；模組至少 6 小時；電池包達到溫度均勻 (±5 °C) 所需之時間。",
+          "source_reference": "4.4.4.1"
+        },
+        "cycles": {
+          "value": "5 次循環",
+          "detail": "總共進行 5 次冷熱衝擊循環。循環完成後檢查受測件損壞，特別注意密封件及控制電路是否正常運作。",
+          "source_reference": "4.4.4.1"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "記錄受測件溫度、電壓與絕緣阻抗、排氣現象、試驗前後容量變化、電芯質量變化、高壓絕緣與互鎖狀態變化，並於 24 小時後複檢。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.4.5",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "單一電芯失效蔓延耐受測試",
+      "name_en": "Passive Propagation Resistance Test",
+      "section": "4.4.5",
+      "category": "THERM",
+      "test_objects": [
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "3 組",
+          "detail": "表 1 規定模組或電池包等級推薦樣品數為 3 組。建議製造商先於模組級進行測試。",
+          "source_reference": "Table 1；4.4.5"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC，斷電無負載，加熱至最高工作溫度穩定",
+          "detail": "受測件充至 100% SOC 並斷電（無負載）。所有外部電路、冷卻系統或其他裝置關閉或斷開（若使用液冷，冷卻液可留在受測件內但不循環）。將受測件加熱直至電芯穩定在最高工作溫度。",
+          "source_reference": "4.4.5.1"
+        },
+        "observation_period": {
+          "value": "觸發後觀察 1 小時",
+          "detail": "觸發電芯達到 400 °C 或進入熱失控後關閉加熱器，觀察受測件 1 小時。",
+          "source_reference": "4.4.5.1"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "受測件應充電至 100% SOC。",
+          "source_reference": "4.4.5.1"
+        },
+        "trigger": {
+          "value": "以最短可行時間原位加熱至 400 °C 或直至電芯進入熱失控",
+          "detail": "將受測件內的一顆電芯（觸發電芯）以盡可能短的時間原位加熱至 400 °C 或直至電芯進入熱失控（例如使用電阻加熱或外部熱源導熱）。允許使用其他引發熱失控的方法，但選擇的方法應盡量減少對鄰近電芯或配置的影響。",
+          "source_reference": "4.4.5.1"
+        },
+        "trigger_location": {
+          "value": "幾何角落／邊緣中點／單一面中心",
+          "detail": "建議在以下不同熱環境位置重複程序：a. 模組或電池包的幾何角落；b. 邊緣的中點；c. 單一面的中心。",
+          "source_reference": "4.4.5.1"
+        },
+        "temperature": {
+          "value": "受測件最高工作溫度",
+          "detail": "試驗前將受測件整體加熱至電芯穩定在最高工作溫度。",
+          "source_reference": "4.4.5.1"
+        },
+        "termination_for_trigger": {
+          "value": "觸發電芯達 400 °C 或進入熱失控即關閉加熱器",
+          "detail": "觸發電芯加熱達到 400 °C 或進入熱失控後，立即關閉加熱器並開始 1 小時觀察。",
+          "source_reference": "4.4.5.1"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "記錄觸發電芯與最近鄰電芯之溫度曲線、受測件電壓與外殼絕緣阻抗、火焰或拋射物紀錄，試驗後進行拆解以檢查熱失控蔓延程度。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.5.1.1",
+      "normalized_id": "ELEC-SC-EXT",
+      "name_zh": "短路測試",
+      "name_en": "Short Circuit Tests",
+      "section": "4.5.1.1",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "電芯 5 顆、模組或電池包 3 組",
+          "detail": "表 1 推薦樣品數（表 1 標示為 4.5.1）：電芯等級為 5 顆，模組或電池包等級為 3 組。硬短路受測樣品在修復並確認功能後可用於軟短路測試。",
+          "source_reference": "Table 1；4.5.1"
+        },
+        "pre_conditioning": {
+          "value": "名義工作溫度，滿充電，冷卻介質就位，禁用主動保護裝置",
+          "detail": "受測件處於名義工作溫度，滿充電 (100% SOC)，冷卻介質就位。試驗前所有主動保護裝置均應停用；被動保護裝置保持運作。可選重複執行主動保護裝置啟用的測試。",
+          "source_reference": "4.5；4.5.1.1"
+        },
+        "observation_period": {
+          "value": "額外觀察 1 小時（試驗後 24 小時複檢）",
+          "detail": "短路 60 分鐘結束後，繼續觀察額外 1 小時。試驗完成後 24 小時重複溫度、電壓與絕緣阻抗測量及目視檢查。",
+          "source_reference": "4.5.1.1；4.5.1.1.7"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "除另有規定外，所有電氣濫用測試開始時受測件應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.5"
+        },
+        "external_resistance": {
+          "value": "硬短路 ≤ 5 mΩ；軟短路電流為保護跳脫額定之 85%～100% (≥ 10 mΩ)",
+          "detail": "包含兩種方法：1. 硬短路：外部電阻 ≤ 5 mΩ 且遠小於受測件直流內阻；2. 軟短路：受測件直流內阻相當但 ≥ 10 mΩ，調整外電路電阻使最大電流介於過電流保護跳脫額定（若為保險絲則為 2.0 × In）的 85% 至 100% 之間。",
+          "source_reference": "4.5.1；4.5.1.1.1；4.5.1.1.2"
+        },
+        "duration": {
+          "value": "60 分鐘",
+          "detail": "在小於 1 秒內在正負極端子間施加短路，並維持 60 分鐘，或至發生阻止試驗完成的其他狀況為止。",
+          "source_reference": "4.5.1.1"
+        },
+        "termination": {
+          "value": "短路維持 60 分鐘或零件熔斷／保險絲開路／PTC 動作",
+          "detail": "施加短路並保持 60 分鐘，或直至發生阻止測試完成的狀況（如零件熔斷、保險絲開路、PTC 動作等）。",
+          "source_reference": "4.5.1.1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "測試在名義工作溫度下開始，環境溫度應維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.5；4.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "依 4.1.5 配置火花源評估排出物可燃性，記錄受測件至少 3 處之溫度曲線、電流、電壓（包級監控單體電壓）、外殼絕緣阻抗、排氣現象、質量變化，並於 24 小時後複檢。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.5.1.2",
+      "normalized_id": "ELEC-OC",
+      "name_zh": "過充電測試",
+      "name_en": "Overcharge Test",
+      "section": "4.5.1.2",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL",
+        "MODULE",
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "電芯 5 顆、模組或電池包 3 組",
+          "detail": "表 1 推薦樣品數（表 1 標示為 4.5.2）：電芯等級為 5 顆，模組或電池包等級為 3 組。電芯進行兩種倍率測試，模組或電池包進行一種倍率測試。",
+          "source_reference": "Table 1；4.5.1.2.1"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC，名義工作溫度，禁用主動保護裝置",
+          "detail": "受測件應滿充電至 100% SOC。被動整合過充電保護裝置保持運作，所有主動保護裝置在試驗前均應停用。夾具配置應模擬模組或電池包環境。",
+          "source_reference": "4.5.1.2.1；4.5"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）",
+          "detail": "依 4.1.3 通則至少觀察 1 小時。試驗完成後 24 小時重複溫度、電壓測量及目視檢查。",
+          "source_reference": "4.5.1.2.2；4.1.3"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "受測件在過充電試驗開始前應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.5.1.2.1"
+        },
+        "charging_current": {
+          "value": "1 C 恆流（電芯與包）；電芯另以正常運作最差工況最大電流",
+          "detail": "電芯進行兩種倍率測試：(a) 1 C 恆流，(b) 正常工作條件最差工況下的最大電流高倍率過充（如回生煞車或充電系統最大電流，多電芯並聯時按電芯比例縮放）。模組與電池包以 1 C 恆流充電。",
+          "source_reference": "4.5.1.2.1"
+        },
+        "charging_voltage": {
+          "value": "≥ 150% 最高充電電壓（電芯及 <400 V 包）／≥ 120%（≥400 V 包）",
+          "detail": "電芯充電至至少 150% 最高充電電壓；模組與電池包若電壓小於 400 V 則充電至 150% 最高充電電壓，若電壓在 400 V 以上則充電至 120% 最高充電電壓；且充電電壓不得低於保護裝置跳脫電壓的 95%。",
+          "source_reference": "4.5.1.2.1"
+        },
+        "termination": {
+          "value": "達到目標電壓或 200% SOC 或熱失控（取時間較長者）",
+          "detail": "持續充電直至達到規定的最高充電電壓百分比，或達到 200% SOC，或因破壞性因素（如熱失控）終止測試，以時間較長者為準。",
+          "source_reference": "4.5.1.2.1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "環境溫度應維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.5；4.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "依 4.1.5 配置火花源評估排出物可燃性，記錄受測件溫度（電池包至少 3 處）、電流與電壓（電池包監控單體電壓）、外殼絕緣阻抗、質量變化、照片記錄，並於 24 小時後複檢。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.5.2",
+      "normalized_id": "ELEC-FD",
+      "name_zh": "過放電（強制放電）測試",
+      "name_en": "Overdischarge (Forced Discharge) Test",
+      "section": "4.5.2",
+      "category": "ELEC",
+      "test_objects": [
+        "CELL",
+        "MODULE"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "電芯 5 顆、模組 3 組",
+          "detail": "表 1 推薦樣品數（表 1 標示為 4.5.3）：電芯等級為 5 顆，模組等級為 3 組。本測試適用於電芯與模組等級。",
+          "source_reference": "Table 1；4.5.2"
+        },
+        "pre_conditioning": {
+          "value": "電芯滿充；模組將 1 顆完全放電電芯與其餘滿充電芯串聯",
+          "detail": "電芯等級：以滿充電芯 (100% SOC) 開始。模組等級：將 1 顆完全放電電芯 (0% SOC) 與模組中其餘滿充電芯（數量為總電芯數減 1）串聯連接。被動整合過放保護運作，所有主動保護裝置停用。",
+          "source_reference": "4.5.2.1；4.5.2.3"
+        },
+        "observation_period": {
+          "value": "至少 60 分鐘（試驗後 24 小時複檢）",
+          "detail": "試驗完成後觀察電芯或模組至少 60 分鐘。試驗完成後 24 小時重複溫度、電壓阻抗測量及目視檢查。",
+          "source_reference": "4.5.2.1；4.5.2.3；4.5.2.2"
+        },
+        "soc": {
+          "value": "100% SOC（電芯）；模組為 1 顆 0% SOC 與其餘 100% SOC",
+          "detail": "電芯開始時處於 100% SOC。模組開始時 1 顆電芯為 0% SOC，其餘電芯為 100% SOC。",
+          "source_reference": "4.5.2.1；4.5.2.3"
+        },
+        "forced_discharge_current": {
+          "value": "最大推薦連續電流",
+          "detail": "電芯與模組均以製造商規定的最大推薦連續電流 (maximum recommended continuous current) 進行強制放電。",
+          "source_reference": "4.5.2.1；4.5.2.3"
+        },
+        "duration": {
+          "value": "2 倍電芯額定容量時間（SOC 達 -100%），維持電壓 30 分鐘",
+          "detail": "電芯放電持續時間為兩倍電芯容量 (Ah) 除以放電電流（即試驗結束時 SOC 達到 -100%），強制放電結束時的電壓保持 30 分鐘。模組放電至負載下電壓達 0.0 ± 0.2 V，並保持該電壓 30 分鐘。",
+          "source_reference": "4.5.2.1；4.5.2.3"
+        },
+        "target_voltage": {
+          "value": "不超過 -Vmax（電芯）／0.0 ± 0.2 V（模組）",
+          "detail": "電芯施加的反向電壓不應超過 -Vmax（電芯最大推薦電壓）；模組在負載下放電至電壓達到 0.0 V ± 0.2 V，並維持 30 分鐘。",
+          "source_reference": "4.5.2.1；4.5.2.3"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C",
+          "detail": "環境溫度應維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.5；4.1.3"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "記錄受測件溫度、電流與電壓（模組記錄所有電芯電壓）、外殼絕緣阻抗、質量變化，依 4.1.5 分析可燃性，並於 24 小時後複檢。依表 3 判定 HSL 等級。"
+      }
+    },
+    {
+      "id": "SAE-J2464-4.5.3",
+      "normalized_id": "THERM-ABUSE",
+      "name_zh": "隔離膜關斷完整性測試",
+      "name_en": "Separator Shutdown Integrity Test",
+      "section": "4.5.3",
+      "category": "THERM",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "sample_quantity": {
+          "value": "3 顆",
+          "detail": "表 1 推薦樣品數（表 1 標示為 4.5.4）：推薦樣品數為 3 顆電芯。本測試僅適用於具有停機隔膜 (shutdown separator) 的電芯。第 1 顆電芯測定關斷溫度，第 2 顆電芯測試高壓耐受完整性。",
+          "source_reference": "Table 1；4.5.3；4.5.3.1"
+        },
+        "pre_conditioning": {
+          "value": "具有停機隔膜之電芯，最高測試溫度低於 4.4.2 熱穩定性溫度極限",
+          "detail": "本試驗僅適用於具有停機隔膜的電芯。最高測試溫度應低於 4.4.2 測得的熱穩定性溫度極限。",
+          "source_reference": "4.5.3"
+        },
+        "observation_period": {
+          "value": "至少 1 小時",
+          "detail": "依 4.1.3 通則，測試後應觀察至少 1 小時或至受測件判定安全為止。",
+          "source_reference": "4.1.3"
+        },
+        "soc": {
+          "value": "100% SOC",
+          "detail": "除另有規定外，受測樣品應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.1.3"
+        },
+        "heating_rate": {
+          "value": "1 °C/min（測定關斷溫度）",
+          "detail": "以 1 °C/min 低升溫速率加熱電芯，同時通以 5 mA 低電流，電壓上限為電芯最高電壓 + 1 V，以測定隔膜關斷溫度（電流下降且電壓升至上限時）。亦可使用製造商規定的關斷溫度。",
+          "source_reference": "4.5.3.1"
+        },
+        "target_temperature": {
+          "value": "關斷溫度以上至少 5 °C（穩定 60 分鐘）",
+          "detail": "將第 2 顆測試電芯加熱至比測得之關斷溫度至少高 5 °C，並在此溫度下穩定 60 分鐘。",
+          "source_reference": "4.5.3.1"
+        },
+        "duration": {
+          "value": "施加高電壓至少 30 分鐘（或至隔膜失效）",
+          "detail": "溫度穩定 60 分鐘後，施加高電壓（至少 20 V，限流約 1 C），維持所施加的電壓至少 30 分鐘或直至隔膜失效。",
+          "source_reference": "4.5.3.1"
+        },
+        "termination": {
+          "value": "維持高電壓 30 分鐘或隔膜失效",
+          "detail": "維持施加至少 20 V 高壓至少 30 分鐘，或直至隔膜破裂失效導致短路。",
+          "source_reference": "4.5.3.1"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "本標準為濫用測試程序指南，不設定合格／不合格判據；依表 3 危害嚴重度等級 (HSL 0–7) 記錄與評估測試結果",
+        "details": "記錄電芯溫度曲線、電壓與電流變化、照片記錄、電芯質量變化，評估停機隔膜在高溫與過電壓下的絕緣與關斷完整性，並依表 3 判定 HSL 等級。"
+      }
+    }
+  ],
+  "test_sequence": {
+    "description": "SAE J2464 為濫用測試推薦實踐指南，不設定強制測試順序。測試計畫應由測試組織、RESS 製造商與測試發起人共同制定。可對各項測試使用全新樣品，亦可在經濟或技術考量下對單一裝置進行多重測試，以研究連續事件之交互影響（例如機械衝擊後進行針刺、浸水或高溫測試）。",
+    "sequences": [
+      {
+        "group": "危害物質監測測試",
+        "tests": [
+          "SAE-J2464-4.2"
+        ],
+        "rule": "涵蓋電解液蒸氣分析、電芯未熱失控強制排氣、電芯熱失控強制排氣，以及電池包級燃燒危害物質監測。(Section 4.2)",
+        "source_reference": "4.2"
+      },
+      {
+        "group": "機械濫用測試",
+        "tests": [
+          "SAE-J2464-4.3.1",
+          "SAE-J2464-4.3.2",
+          "SAE-J2464-4.3.3",
+          "SAE-J2464-4.3.4",
+          "SAE-J2464-4.3.5",
+          "SAE-J2464-4.3.6",
+          "SAE-J2464-4.3.7"
+        ],
+        "rule": "涵蓋機械衝擊 (4.3.1)、自由跌落 (4.3.2)、針刺 (4.3.3)、翻滾 (4.3.4)、浸水 (4.3.5)、擠壓 (4.3.6) 及模擬內部短路參考測試 (4.3.7)。測試順序依測試計畫決定。(Section 4.3)",
+        "source_reference": "4.3"
+      },
+      {
+        "group": "熱濫用測試",
+        "tests": [
+          "SAE-J2464-4.4.1",
+          "SAE-J2464-4.4.2",
+          "SAE-J2464-4.4.3",
+          "SAE-J2464-4.4.4",
+          "SAE-J2464-4.4.5"
+        ],
+        "rule": "涵蓋高溫危害模擬燃油火災 (4.4.1)、電芯熱穩定性 (4.4.2)、無熱管理循環 (4.4.3)、熱衝擊循環 (4.4.4) 及單一電芯熱失控蔓延耐受測試 (4.4.5)。(Section 4.4)",
+        "source_reference": "4.4"
+      },
+      {
+        "group": "電氣濫用測試",
+        "tests": [
+          "SAE-J2464-4.5.1.1",
+          "SAE-J2464-4.5.1.2",
+          "SAE-J2464-4.5.2",
+          "SAE-J2464-4.5.3"
+        ],
+        "rule": "涵蓋外部短路 (4.5.1.1)、過充電 (4.5.1.2)、過放電強制放電 (4.5.2) 及停機隔膜完整性 (4.5.3)。(Section 4.5)",
+        "source_reference": "4.5"
+      }
+    ]
+  }
+}

@@ -63,6 +63,23 @@
 >
 > CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/`：不得出現 emoji、不得新增寫死的顏色（`#rrggbb`／`rgba()`，白色與純黑白遮罩除外）、不得新增中英並列標題、不得有小於 12px 的字級（請用 `--fs-*` token），並確認前端能建置。既有違規記在 `scripts/ui_style_baseline.json`（每檔上限，只能降不能升）；清掉後執行 `node scripts/check_ui_style.mjs --update-baseline` 降低基準線。
 
+## 2026-11-02 (Data - 新增 SAE J2464、MIL-PRF-32565C、MIL-PRF-32383A 三份標準與原文核對)
+- 事件：同步 GitHub 最新 `main` 分支（含 `MAINTENANCE.md` 與 `npm run check:all` 規範），並新增 `SAE J2464`（2021-08）、`MIL-PRF-32565C`（2022-08-04）、`MIL-PRF-32383A`（2021-12-09）三份標準至資料庫與前端網站。
+- 背景：擴充電動車濫用測試標準（SAE J2464）與美國軍用高壓 6T 鋰電池（MIL-PRF-32565C）、軍用便攜式可充電電池（MIL-PRF-32383A）標準。
+- 做法（主代理拆解與驗收，子代理平行建檔與逐字核對）：
+  - 以 PyMuPDF 擷取三份 PDF 全文文字層至 `.review-work/src/*.txt`（100% 可讀，零空頁），並渲染關鍵條款與樣品分配表頁面影像（SAE J2464 Table 1、MIL-PRF-32565C Table VII、MIL-PRF-32383A Table IX/X 及封面頁）由主代理親自檢視。
+  - 先派 `research` 子代理定位兩份軍規（共逾 15,000 行）之所有安全與環境測試條款、通則與樣品分配表行號；再平行分派 3 個子代理分別建立 `data/SAE-J2464.json`、`data/MIL-PRF-32565.json`、`data/MIL-PRF-32383.json` 並執行 `excerpts.py` → `decisions.json` → `verify.py` → `apply.mjs` 完整原文引文驗證流程。
+- 內容：
+  - 新增 `data/SAE-J2464.json`（17 項安全與濫用測試、21 筆術語、133 筆條件與程序欄位 100% 附 `source_reference` 與逐字引文驗證通過）。
+  - 新增 `data/MIL-PRF-32565.json`（26 項電芯與 6T 電池包安全／環境／濫用／彈道測試、12 筆術語、115 筆條件與程序欄位 100% 附 `source_reference` 與逐字引文驗證通過）。
+  - 新增 `data/MIL-PRF-32383.json`（25 項電芯與電池包安全／環境／濫用測試、13 筆術語、166 筆條件與程序欄位 100% 附 `source_reference` 與逐字引文驗證通過）。
+  - 欄位與分類對齊：所有測試項目 100% 對齊既有 `data/taxonomy.json`（零新增單一標準專用 `normalized_id`）與 `data/field_schema.json`；於 `frontend/src/utils/parameterDictionary.js` 補齊軍規與濫用測試新增參數鍵（`projectile`、`velocity`、`shots`、`discharge_points`、`pulse_count`、`cutoff_temperature`）之繁體中文標籤；擴充 `frontend/src/utils/compareRows.js` 將「充滿電後／滿充電狀態／滿電狀態」折疊為「滿充」，使全庫 `near_same.mjs` 寫法不一致列數由 489 降至 437（同步調降 `scripts/review/near_same_baseline.json`）。
+  - 註冊於 `data/catalog.json` 並通過 `npm run sync:catalog`，全站收錄標準數達 32 份（33 份資料檔）、569 項測試。
+- 影響：`npm run check:all`（含 `validate`、`normalize:check`、`check:catalog`、`check:search`、`lint:ui`、`check:wording`）全數 0 錯誤 0 警告通過；`node scripts/audit_enrichment.mjs` 驗證全庫 33 份標準樣板值 0 筆、重複欄位 0 筆、已核對 1,383 筆（100%）；桌機（1440px）與手機（390px）之淺色／深色模式皆以截圖驗收通過。
+- 後續（引用之外部標準無原文於工作區，僅保留引用標註）：
+  - `MIL-PRF-32565C` 引用之外部軍規：`ATPD 2404`（彈道測試程序）、`AECTP-400`、`MIL-STD-810`、`MIL-STD-461`（CS118 靜電放電）、`MIL-STD-202-301`／`302`、`NAVSEA S9310-AQ-SAF-010`（註：其引用之 `SAE J2464` 已收錄於本庫）。
+  - `MIL-PRF-32383A` 引用之外部標準：`MIL-STD-810`（Methods 500, 503, 509, 512, 514, 516, 520）、`IEC 61000-4-2`、`ASTM D-1141`、`TOP 01-2-608`、`NAVSEA S9310-AQ-SAF-010`、`MIL-STD-882`（註：其引用之 `UN 38.3` 與 `UL 1642` 已收錄於本庫，並已於 `detail` 補充對應參數）。
+
 ## 2026-11-02 (Review - 網站全面審查後的修正：視覺、功能、資料結構)
 - 事件：使用者要求審查視覺設計、功能、資料結構化，各列三點必修，並由 Claude 直接執行；同時制定給 Antigravity 的維護規則。
 - 做法：審查與修正都分派子代理（視覺、功能、比對頁、總覽矩陣、搜尋用 Sonnet；條款定位、資料統計用 Haiku），主代理驗收截圖、看原文頁面影像、跑檢查後才提交。
