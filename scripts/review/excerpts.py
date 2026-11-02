@@ -60,11 +60,14 @@ for tid in ids:
         problems.append(f'{tid}: found=false')
         continue
     text = block(t['start_line'], t['end_line'], tid)
-    if '···' in text or '…………' in text or re.search(r'\.{6,}', text):
+    # 公式編號前的點線（「…………(12)」）不是目錄，先排除再判斷
+    toc_text = re.sub(r'[.…·]{4,}\s*[（(]\s*[A-Z]?\.?\d+\s*[）)]', '', text)
+    if '···' in toc_text or '…………' in toc_text or re.search(r'\.{6,}', toc_text):
         problems.append(f"{tid}: 行 {t['start_line']}–{t['end_line']} 看起來是目錄")
     elif not re.search(r'[。，；：,;:]|\. ', text):
         problems.append(f"{tid}: 行 {t['start_line']}–{t['end_line']} 沒有完整句子，可能是目錄或只有標題")
-    elif t['end_line'] - t['start_line'] < 2:
+    # 標題加一句完整句（以句號結尾）的短條款是正常的，只有更短或沒有句號才算可疑
+    elif t['end_line'] - t['start_line'] < 2 and not re.search(r'[。.]\s*$', text.strip()):
         problems.append(f"{tid}: 行 {t['start_line']}–{t['end_line']} 只有 {t['end_line'] - t['start_line'] + 1} 行")
     # PyMuPDF 常把條款號拆成多行（「4.」「6.」「2 样品的数量」），所以只檢查數字有出現在開頭附近
     digits = re.sub(r'\D', '', t.get('clause', ''))
