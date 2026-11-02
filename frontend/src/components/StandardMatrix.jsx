@@ -1,6 +1,11 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import useIsMobile from '../hooks/useIsMobile';
 import { getOrgColor } from '../utils/orgColors';
+import Icon from './Icon';
+import '../styles/matrix.css';
+
+const LEVEL_ZH = { CELL: '電芯', MODULE: '模組', PACK_SYSTEM: '電池包與系統' };
+const stripEnglish = (x = '') => x.replace(/\s*[（(][A-Za-z][^)）]*[)）]/g, '').trim();
 
 // Map raw objects to major sample levels. PACK_SYSTEM (the taxonomy's pack / system level) maps to Pack.
 const getMajorLevel = (raw) => {
@@ -13,7 +18,8 @@ const getMajorLevel = (raw) => {
 };
 
 const MAJOR_LEVELS = ['Cell', 'Module', 'Pack', 'System', 'Other'];
-const LEVEL_FILTER_LABEL = { Pack: 'Pack / System' };
+const LEVEL_CHIP_LABEL = { Cell: '電芯', Module: '模組', Pack: '電池包', System: '系統', Other: '其他' };
+const LEVEL_FILTER_LABEL = { Cell: '電芯', Module: '模組', Pack: '電池包／系統', System: '系統', Other: '其他' };
 
 // Domain display order (most specific applications first, General last)
 const APP_ORDER = [
@@ -28,8 +34,18 @@ const APP_ORDER = [
   '一般應用 (General)',
 ];
 
-export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, setIsComparing, setSelectedDocs, onOpenSearch }) {
+export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, setIsComparing, setSelectedDocs, onOpenSearch, catalogError = false, onRetryCatalog }) {
   const [activeInfoNode, setActiveInfoNode] = useState(null);
+  const infoRef = useRef(null);
+
+  // 資訊視窗：Esc 關閉、焦點移入
+  useEffect(() => {
+    if (!activeInfoNode) return;
+    infoRef.current?.focus();
+    const onKey = (e) => { if (e.key === 'Escape') setActiveInfoNode(null); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [activeInfoNode]);
   const [levelFilter, setLevelFilter] = useState('ALL');
   const isMobile = useIsMobile();
 
@@ -95,7 +111,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
             </h2>
             <p style={{ color: 'var(--text-secondary)', fontSize: 'var(--fs-md)', margin: 0 }}>
               依應用領域瀏覽，點擊標準加入比對，選滿 2 份開始橫向對比。
-              <span style={{ color: 'var(--text-muted)', marginLeft: '0.5rem' }}>共 {count} 份標準</span>
+              {count > 0 && <span style={{ color: 'var(--text-muted)', marginLeft: '0.5rem' }}>共 {count} 份標準</span>}
             </p>
           </div>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.9rem', alignItems: 'center' }}>
@@ -111,6 +127,13 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
             </span>
           </div>
         </div>
+
+        {catalogError && count === 0 && (
+          <div className="sm-loaderr" role="alert">
+            <span>無法載入標準目錄，請重新整理</span>
+            <button type="button" className="btn-pill" onClick={() => (onRetryCatalog ? onRetryCatalog() : window.location.reload())}>重新載入</button>
+          </div>
+        )}
 
         {/* Prominent Search Bar */}
         <div style={{ marginBottom: '1.25rem' }}>
@@ -128,7 +151,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
               </svg>
               <span style={{ fontSize: isMobile ? 'var(--fs-sm)' : 'var(--fs-md)', color: 'var(--text-secondary)', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                快速檢索全庫測試條款與參數（如「6V」、「3C」、「7天」、「80mΩ」、「擠壓」）...
+                搜尋測試、參數或標準
               </span>
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', flexShrink: 0 }}>
@@ -168,7 +191,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
           gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))',
           gap: '1rem',
           alignItems: 'start',
-          paddingBottom: selectedDocs.length >= 2 ? '92px' : '0.5rem',
+          paddingBottom: selectedDocs.length >= 2 ? (isMobile ? '5.5rem' : '6.5rem') : '0.5rem',
         }}>
           {domains.map(({ app, items }) => {
             const visible = levelFilter === 'ALL' ? items : items.filter(it => it.levels.includes(levelFilter));
@@ -176,7 +199,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
             return (
               <section key={app} className="sm-card">
                 <header style={{ display: 'flex', alignItems: 'baseline', justifyContent: 'space-between', gap: '0.5rem', borderBottom: '1px solid var(--border-color)', paddingBottom: '0.6rem', marginBottom: '0.35rem' }}>
-                  <h3 style={{ margin: 0, fontSize: 'var(--fs-md)', fontWeight: 700, color: 'var(--text-primary)' }}>{app}</h3>
+                  <h3 style={{ margin: 0, fontSize: 'var(--fs-md)', fontWeight: 700, color: 'var(--text-primary)' }}>{stripEnglish(app)}</h3>
                   <span style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-muted)', whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums' }}>{visible.length} 份</span>
                 </header>
 
@@ -210,7 +233,7 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
                         ) : (
                           docLevels.map(lv => (
                             <span key={lv} style={{ fontSize: 'var(--fs-2xs)', padding: '0.1rem 0.34rem', borderRadius: 'var(--radius-xs)', backgroundColor: 'var(--bg-color)', color: 'var(--text-muted)', border: '1px solid var(--border-color)', fontWeight: 500, whiteSpace: 'nowrap' }}>
-                              {lv}
+                              {LEVEL_CHIP_LABEL[lv] || lv}
                             </span>
                           ))
                         )}
@@ -234,151 +257,83 @@ export default function StandardMatrix({ catalog, toggleDocument, selectedDocs, 
         </div>
       </div>
 
-      {/* Info Modal */}
+      {/* Info Modal：外觀與比對頁的標準資訊視窗一致 */}
       {activeInfoNode && (
-        <div
-          onClick={() => setActiveInfoNode(null)}
-          style={{
-            position: 'fixed', inset: 0,
-            backgroundColor: 'rgba(0,0,0,0.45)',
-            backdropFilter: 'blur(3px)',
-            zIndex: 1000,
-            display: 'flex',
-            alignItems: isMobile ? 'flex-end' : 'center',
-            justifyContent: 'center',
-            padding: isMobile ? 0 : '2rem',
-            animation: 'fadeIn 0.2s ease-out'
-          }}
-        >
-        <div
-          onClick={(e) => e.stopPropagation()}
-          style={{
-            backgroundColor: 'var(--bg-panel)',
-            border: '1px solid var(--border-color)',
-            padding: '1.5rem',
-            boxShadow: 'var(--shadow-lg)',
-            animation: 'slideIn 0.25s ease-out',
-            ...(isMobile
-              ? { width: '100%', borderRadius: 'var(--radius-lg) var(--radius-lg) 0 0' }
-              : { width: '360px', maxWidth: '100%', borderRadius: 'var(--radius-lg)' })
-        }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-            <h3 style={{ margin: 0, color: 'var(--text-primary)', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-              <span style={{ width: '10px', height: '10px', borderRadius: 'var(--radius-xs)', backgroundColor: activeInfoNode.colors.solid, flexShrink: 0 }} />
-              {activeInfoNode.baseId}
-            </h3>
-            <button onClick={() => setActiveInfoNode(null)} style={{ background: 'none', border: 'none', color: 'var(--text-muted)', cursor: 'pointer', fontSize: '1.2rem' }}>✕</button>
-          </div>
+        <div className="modal-backdrop" onClick={() => setActiveInfoNode(null)}>
+          <div
+            ref={infoRef}
+            tabIndex={-1}
+            className="modal-panel modal-panel--sm"
+            role="dialog"
+            aria-modal="true"
+            aria-labelledby="sm-info-title"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button type="button" className="modal-close" onClick={() => setActiveInfoNode(null)} aria-label="關閉"><Icon name="x" size={16} /></button>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem', fontSize: 'var(--fs-sm)' }}>
-            <div>
-              <strong style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '0.25rem' }}>全名</strong>
-              <span style={{ color: 'var(--text-primary)' }}>{activeInfoNode.full_name || activeInfoNode.display_name}</span>
+            <h2 id="sm-info-title" style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', margin: '0 0 0.9rem', paddingRight: '2.5rem', fontSize: '1.4rem', fontWeight: 700, letterSpacing: '-0.01em' }}>
+              <span style={{ width: '12px', height: '12px', borderRadius: 'var(--radius-xs)', backgroundColor: activeInfoNode.colors.solid, flexShrink: 0 }} />
+              {activeInfoNode.baseId}
+            </h2>
+
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.4rem 0.8rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-color)', background: 'var(--bg-color)', fontSize: 'var(--fs-sm)', color: 'var(--text-secondary)' }}>
+              <span className="status-dot" style={{ background: activeInfoNode.is_latest === false ? 'var(--warning-color)' : 'var(--success-color)' }} />
+              {activeInfoNode.is_latest === false
+                ? <span>已有更新版本：落後 <strong style={{ color: 'var(--text-primary)' }}>{activeInfoNode.versions_behind ?? 1}</strong> 版，最新為 <strong style={{ color: 'var(--text-primary)' }}>{activeInfoNode.latest_version || '更新版本'}</strong></span>
+                : <span>收錄版本即最新版{activeInfoNode.latest_version ? `（${activeInfoNode.latest_version}）` : ''}</span>}
             </div>
-            <div>
-              <strong style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '0.25rem' }}>應用領域</strong>
-              <span style={{ color: 'var(--text-primary)' }}>{activeInfoNode.application || '一般應用 (General)'}</span>
+
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.1rem', marginTop: '1.1rem' }}>
+              <section>
+                <span className="modal-section-title">標準名稱</span>
+                <div style={{ fontSize: 'var(--fs-md)', fontWeight: 600 }}>{activeInfoNode.full_name || activeInfoNode.display_name}</div>
+              </section>
+              <div className="sm-info-grid">
+                <section>
+                  <span className="modal-section-title">發布日期</span>
+                  <div style={{ fontVariantNumeric: 'tabular-nums' }}>{activeInfoNode.publication_date || '未記載'}</div>
+                </section>
+                <section>
+                  <span className="modal-section-title">測試項目</span>
+                  <div style={{ fontVariantNumeric: 'tabular-nums' }}>{activeInfoNode.test_count_v2 || activeInfoNode.item_count || 0} 項</div>
+                </section>
+              </div>
+              <section>
+                <span className="modal-section-title">應用領域</span>
+                <div>{stripEnglish(activeInfoNode.application || '一般應用')}</div>
+              </section>
+              {(activeInfoNode.available_objects || []).length > 0 && (
+                <section>
+                  <span className="modal-section-title">適用測試層級</span>
+                  <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
+                    {activeInfoNode.available_objects.map(obj => <span key={obj} className="tag">{LEVEL_ZH[obj] || obj}</span>)}
+                  </div>
+                </section>
+              )}
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }}>
-              <div>
-                <strong style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '0.25rem' }}>層級</strong>
-                <span style={{ color: 'var(--text-primary)' }}>{activeInfoNode.available_objects?.length || 0} 種</span>
-              </div>
-              <div>
-                <strong style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '0.25rem' }}>測試項目</strong>
-                <span style={{ color: 'var(--text-primary)' }}>{activeInfoNode.test_count_v2 || activeInfoNode.item_count} 項</span>
-              </div>
-            </div>
-            {activeInfoNode.publication_date && (
-              <div>
-                <strong style={{ color: 'var(--text-secondary)', display: 'block', marginBottom: '0.25rem' }}>發布日期</strong>
-                <span style={{ color: 'var(--text-primary)' }}>{activeInfoNode.publication_date}</span>
-              </div>
-            )}
           </div>
-        </div>
         </div>
       )}
 
       {/* Bottom Action Bar */}
       {selectedDocs.length >= 2 && (
-        <div style={{
-          position: 'fixed',
-          bottom: isMobile ? '1rem' : '1.5rem',
-          left: '50%',
-          transform: 'translateX(-50%)',
-          backgroundColor: 'var(--bg-panel)',
-          border: '1px solid var(--accent-color)',
-          borderRadius: isMobile ? '16px' : '50px',
-          padding: isMobile ? '0.5rem 0.75rem' : '0.75rem 1.5rem',
-          maxWidth: 'calc(100vw - 1.5rem)',
-          display: 'flex',
-          alignItems: 'center',
-          gap: isMobile ? '0.5rem' : '1.5rem',
-          boxShadow: '0 10px 25px rgba(0,0,0,0.2)',
-          zIndex: 20,
-          animation: 'slideUp 0.3s ease-out'
-        }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', minWidth: 0, flexShrink: 1 }}>
-            {!isMobile && <span style={{ color: 'var(--text-secondary)', fontSize: 'var(--fs-sm)', fontWeight: '500' }}>已選取:</span>}
-            <div style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto', minWidth: 0 }}>
-              {selectedDocs.map(id => {
-                const colors = getOrgColor(id);
-                return (
-                  <span key={id} style={{ backgroundColor: colors.solid, color: '#fff', padding: '0.25rem 0.7rem', borderRadius: 'var(--radius-md)', fontSize: 'var(--fs-sm)', fontWeight: 'bold', boxShadow: '0 2px 5px rgba(0,0,0,0.1)', whiteSpace: 'nowrap', flexShrink: 0 }}>
-                    {id}
-                  </span>
-                )
-              })}
-            </div>
-            <button
-              onClick={() => setSelectedDocs([])}
-              className="sm-clear"
-            >
-              ✕ 清空
-            </button>
+        <div className="sm-actionbar" role="region" aria-label="已選取的標準">
+          {!isMobile && <span className="sm-actionbar-label">已選取</span>}
+          <div className="sm-actionbar-list">
+            {selectedDocs.map(id => (
+              <span key={id} className="sm-chip" style={{ '--c-solid': getOrgColor(id).solid }}>
+                <span className="sm-chip-dot" />
+                {id}
+              </span>
+            ))}
           </div>
-          <button
-            onClick={() => setIsComparing(true)}
-            style={{
-              backgroundColor: 'var(--accent-color)',
-              color: 'white',
-              border: 'none',
-              padding: isMobile ? '0.5rem 0.9rem' : '0.6rem 1.25rem',
-              borderRadius: 'var(--radius-pill)',
-              fontSize: isMobile ? 'var(--fs-sm)' : 'var(--fs-md)',
-              fontWeight: 'bold',
-              cursor: 'pointer',
-              whiteSpace: 'nowrap',
-              flexShrink: 0,
-              boxShadow: 'var(--shadow-md)',
-              transition: 'transform 0.1s'
-            }}
-            onMouseDown={e => e.currentTarget.style.transform = 'scale(0.95)'}
-            onMouseUp={e => e.currentTarget.style.transform = 'scale(1)'}
-          >
-            確認比對 →
+          <button type="button" onClick={() => setSelectedDocs([])} className="sm-clear-link">清空</button>
+          <button type="button" onClick={() => setIsComparing(true)} className="sm-go">
+            確認比對
+            <Icon name="chevronRight" size={16} />
           </button>
         </div>
       )}
-
-      <style>{`
-        @keyframes slideIn {
-          from { transform: translateY(20px); opacity: 0; }
-          to { transform: translateY(0); opacity: 1; }
-        }
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @keyframes slideUp {
-          from { transform: translate(-50%, 50px); opacity: 0; }
-          to { transform: translate(-50%, 0); opacity: 1; }
-        }
-        @media (prefers-reduced-motion: reduce) {
-          [style*="slideIn"], [style*="slideUp"], [style*="fadeIn"] { animation: none !important; }
-        }
-      `}</style>
     </div>
   );
 }

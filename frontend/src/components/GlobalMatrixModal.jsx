@@ -1,6 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import useIsMobile from '../hooks/useIsMobile';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import Icon from './Icon';
+import '../styles/matrix.css';
 
 function normalizeStandardData(data) {
   if (!data || typeof data !== 'object') return data;
@@ -13,20 +14,27 @@ function normalizeStandardData(data) {
 
 const LEVEL_KEYS = ['CELL', 'MODULE', 'PACK_SYSTEM'];
 
+const LEVEL_HEAD = { CELL: '電芯', MODULE: '模組', PACK_SYSTEM: '電池包與系統' };
+
 const TYPE_COLORS = {
-  'ELEC': 'var(--cat-elec-text)',
-  'MECH': 'var(--cat-mech-text)',
-  'THERM': 'var(--cat-therm-text)',
+  ELEC: 'var(--cat-elec-text)',
+  MECH: 'var(--cat-mech-text)',
+  THERM: 'var(--cat-therm-text)',
+  ENV: 'var(--cat-env-text)',
+  FIRE: 'var(--cat-fire-text)',
+  BMS: 'var(--cat-bms-text)',
 };
 
 const TYPE_LABELS = {
-  'ELEC': 'Safety / Abuse-Electrical',
-  'MECH': 'Safety / Abuse-Mechanical',
-  'THERM': 'Safety / Abuse-Thermal',
+  ELEC: '電氣安全', MECH: '機械安全', THERM: '熱安全', ENV: '環境安全', FIRE: '火燒', BMS: 'BMS 功能', OTHER: '其他',
 };
 
+// 去掉名稱結尾的英文括號，例如「外部短路測試 (External Short-Circuit Test)」
+const stripEnglish = (x = '') => x.replace(/\s*[（(][A-Za-z][^)）]*[)）]/g, '').trim();
+
 export default function GlobalMatrixModal({ isOpen, onClose, catalog }) {
-  const isMobile = useIsMobile();
+  const panelRef = useRef(null);
+  const [failed, setFailed] = useState([]);
   const [loading, setLoading] = useState(true);
   const [flattenedTests, setFlattenedTests] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -55,7 +63,7 @@ export default function GlobalMatrixModal({ isOpen, onClose, catalog }) {
       
       const promises = uniqueDocs.map(doc => 
         fetch(`/${doc.schema_v2_json}`)
-          .then(res => res.json())
+          .then(res => { if (!res.ok) throw new Error(`HTTP ${res.status}`); return res.json(); })
           .then(data => ({
              doc,
              data: normalizeStandardData(data)
@@ -70,6 +78,7 @@ export default function GlobalMatrixModal({ isOpen, onClose, catalog }) {
       if (!isMounted) return;
 
       const rows = [];
+      setFailed(uniqueDocs.filter((_, i) => !results[i]).map(d => d.base_standard_id || d.document_id));
       results.forEach(res => {
         if (!res || !res.data || !res.data.tests) return;
         
@@ -88,7 +97,8 @@ export default function GlobalMatrixModal({ isOpen, onClose, catalog }) {
             docName,
             app,
             section: test.section || '-',
-            testName: test.name_zh || test.name_en || test.normalized_id,
+            testName: test.name_zh || test.name_en || test.normalized_id || '',
+            testTitle: stripEnglish(test.name_zh || test.name_en || test.normalized_id || ''),
             category: test.category || 'UNKNOWN',
             levels: levelMap
           });
@@ -112,30 +122,21 @@ export default function GlobalMatrixModal({ isOpen, onClose, catalog }) {
         r.docName.toLowerCase().includes(q) ||
         r.app.toLowerCase().includes(q) ||
         r.testName.toLowerCase().includes(q) ||
+        TYPE_LABELS[r.category]?.toLowerCase().includes(q) ||
         r.section.toLowerCase().includes(q)
       );
     }
     
-    // Group by docName to calculate docRowSpan and isFirstForDoc
-    const counts = {};
-    filtered.forEach(r => {
-      counts[r.docName] = (counts[r.docName] || 0) + 1;
-    });
-
     const seen = new Set();
     return filtered.map(r => {
       const isFirst = !seen.has(r.docName);
       seen.add(r.docName);
-      return {
-        ...r,
-        isFirstForDoc: isFirst,
-        docRowSpan: counts[r.docName]
-      };
+      return { ...r, isFirstForDoc: isFirst };
     });
   }, [flattenedTests, searchQuery]);
 
   const handleExportCSV = () => {
-    let csvContent = "Identifier,Application,Test Clause,Title & Topics,CL,ML,SL,Type\n";
+    let csvContent = "標準,應用領域,條款,測試名稱,電芯,模組,電池包與系統,分類\n";
     filteredAndProcessedRows.forEach(row => {
       const escape = (text) => `"${String(text || '').replace(/"/g, '""')}"`;
       const cl = row.levels.includes('CELL') ? 'x' : '';
@@ -145,9 +146,9 @@ export default function GlobalMatrixModal({ isOpen, onClose, catalog }) {
       
       const csvRow = [
         escape(row.docName),
-        escape(row.app),
+        escape(stripEnglish(row.app)),
         escape(row.section),
-        escape(row.testName),
+        escape(row.testTitle),
         cl, ml, sl,
         escape(typeLabel)
       ].join(',');
@@ -159,7 +160,7 @@ export default function GlobalMatrixModal({ isOpen, onClose, catalog }) {
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.setAttribute("href", url);
-    link.setAttribute("download", "Standard_Matrix_Export.csv");
+    link.setAttribute("download", "總覽矩陣.csv");
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -169,209 +170,103 @@ export default function GlobalMatrixModal({ isOpen, onClose, catalog }) {
     window.print();
   };
 
+  // Esc 關閉；開啟時焦點移到視窗內
+  useEffect(() => {
+    if (!isOpen) return;
+    panelRef.current?.focus();
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [isOpen, onClose]);
+
   if (!isOpen) return null;
 
-  return (
-    <div id="global-matrix-modal" style={{
-      position: 'fixed', inset: 0, zIndex: 1000,
-      backgroundColor: 'rgba(0,0,0,0.6)',
-      backdropFilter: 'blur(4px)',
-      display: 'flex', flexDirection: 'column',
-      padding: isMobile ? '1rem' : '3rem',
-      animation: 'fadeIn 0.2s ease-out'
-    }}>
-      <div id="global-matrix-content" style={{
-        backgroundColor: 'var(--bg-panel)',
-        borderRadius: '12px',
-        border: '1px solid var(--border-color)',
-        boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)',
-        display: 'flex', flexDirection: 'column',
-        height: '100%', width: '100%',
-        maxWidth: '1400px', margin: '0 auto',
-        overflow: 'hidden'
-      }}>
-        <div className="no-print" style={{
-          display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-          padding: '1.25rem 1.5rem', borderBottom: '1px solid var(--border-color)',
-          backgroundColor: 'var(--bg-color)',
-          flexWrap: 'wrap', gap: '1rem'
-        }}>
+  // 放到 body 底下：列印時才能隱藏其他頁面內容、讓表格完整分頁
+  return createPortal(
+    <div className="modal-backdrop mx-backdrop" onClick={onClose}>
+      <div
+        ref={panelRef}
+        tabIndex={-1}
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="mx-title"
+        className="modal-panel mx-panel"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button type="button" className="modal-close mx-noprint" onClick={onClose} aria-label="關閉"><Icon name="x" size={16} /></button>
+        <div className="mx-head">
           <div>
-            <h2 style={{ margin: 0, fontSize: '1.4rem', fontWeight: 700, color: 'var(--text-primary)' }}>
-              總覽矩陣
-            </h2>
-            <p style={{ margin: '0.25rem 0 0 0', fontSize: '0.9rem', color: 'var(--text-muted)' }}>
-              總結所有標準的測試層級與分類
-            </p>
+            <h2 id="mx-title" className="mx-title">總覽矩陣</h2>
+            <p className="mx-sub">所有標準的測試項目、適用層級與分類{!loading && `，共 ${filteredAndProcessedRows.length} 項`}</p>
           </div>
-          <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
+          <div className="mx-tools mx-noprint">
             <input
-              type="text"
-              placeholder="搜尋標準、項目..."
+              type="search"
+              className="mx-search"
+              placeholder="搜尋標準、條款、測試名稱"
+              aria-label="搜尋"
               value={searchQuery}
               onChange={e => setSearchQuery(e.target.value)}
-              style={{
-                padding: '0.5rem 1rem', borderRadius: '6px', border: '1px solid var(--border-color)',
-                backgroundColor: 'var(--bg-color)', color: 'var(--text-primary)',
-                minWidth: '200px'
-              }}
             />
-            <button onClick={handleExportCSV} style={actionBtnStyle}>
-              <Icon name="download" size={15} />
-              匯出 Excel (CSV)
+            <button type="button" className="topbar-btn" onClick={handleExportCSV} aria-label="匯出 CSV" title="匯出 CSV">
+              <Icon name="download" size={16} />
+              <span className="topbar-label">匯出 CSV</span>
             </button>
-            <button onClick={handleExportPDF} style={actionBtnStyle}>
-              <Icon name="printer" size={15} />
-              匯出 PDF
-            </button>
-            <button type="button" className="modal-close" onClick={onClose} aria-label="關閉" style={{ position: 'static', marginLeft: '0.25rem' }}>
-              <Icon name="x" size={16} />
+            <button type="button" className="topbar-btn" onClick={handleExportPDF} aria-label="列印" title="列印或存成 PDF">
+              <Icon name="printer" size={16} />
+              <span className="topbar-label">列印</span>
             </button>
           </div>
         </div>
+        {failed.length > 0 && !loading && (
+          <p className="mx-warn">有 {failed.length} 份標準載入失敗（{failed.join('、')}），表中未列出。</p>
+        )}
 
-        <div style={{ flex: 1, overflow: 'auto', padding: '1rem', backgroundColor: 'var(--bg-color)' }}>
+        <div className="mx-body">
           {loading ? (
-            <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100%', color: 'var(--text-muted)' }}>
-              載入中...
-            </div>
+            <div className="mx-state">載入中…</div>
           ) : (
-            <table id="matrix-table" style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.85rem' }}>
-              <thead style={{ position: 'sticky', top: 0, backgroundColor: 'var(--bg-panel)', zIndex: 10, boxShadow: '0 1px 2px rgba(0,0,0,0.1)' }}>
+            <table id="matrix-table" className="mx-table">
+              <thead>
                 <tr>
-                  <th style={thStyle}>Identifier</th>
-                  <th style={thStyle}>Application</th>
-                  <th style={thStyle}>Test Clause</th>
-                  <th style={thStyle}>Title & Topics</th>
-                  <th style={thStyle}>CL</th>
-                  <th style={thStyle}>ML</th>
-                  <th style={thStyle}>SL</th>
-                  <th style={thStyle}>Type</th>
+                  <th className="c-doc">標準</th>
+                  <th className="c-clause">條款</th>
+                  <th className="c-app">應用領域</th>
+                  <th>測試名稱</th>
+                  {LEVEL_KEYS.map(lk => <th key={lk} className="c-lv">{LEVEL_HEAD[lk]}</th>)}
+                  <th className="c-cat">分類</th>
                 </tr>
               </thead>
               <tbody>
                 {filteredAndProcessedRows.length === 0 ? (
-                  <tr>
-                    <td colSpan={8} style={{ textAlign: 'center', padding: '2rem', color: 'var(--text-muted)' }}>
-                      沒有找到符合的測試項目
-                    </td>
-                  </tr>
+                  <tr><td colSpan={8} className="mx-empty">沒有符合的測試項目</td></tr>
                 ) : (
-                  filteredAndProcessedRows.map(row => {
-                    const typeColor = TYPE_COLORS[row.category] || 'var(--text-muted)';
-                    const typeLabel = TYPE_LABELS[row.category] || row.category;
-                    
-                    return (
-                      <tr key={row.id} style={{ borderBottom: '1px solid var(--border-color)', backgroundColor: 'var(--bg-panel)' }}>
-                        {row.isFirstForDoc && (
-                          <td rowSpan={row.docRowSpan} style={{...tdStyle, fontWeight: 'bold', color: 'var(--accent-color)', verticalAlign: 'top', borderRight: '1px solid var(--border-color)'}}>
-                            {row.docName}
-                          </td>
-                        )}
-                        {row.isFirstForDoc && (
-                          <td rowSpan={row.docRowSpan} style={{...tdStyle, color: 'var(--text-secondary)', verticalAlign: 'top', borderRight: '1px solid var(--border-color)'}}>
-                            {row.app}
-                          </td>
-                        )}
-                        <td style={tdStyle}>{row.section}</td>
-                        <td style={{...tdStyle, color: 'var(--text-primary)'}}>
-                          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                            <span className="no-print" style={{ width: '12px', height: '12px', borderRadius: '2px', backgroundColor: typeColor, display: 'inline-block' }}></span>
-                            {row.testName}
-                          </div>
+                  filteredAndProcessedRows.map(row => (
+                    <tr key={row.id} className={row.isFirstForDoc ? 'is-first' : undefined}>
+                      <td className={`c-doc${row.isFirstForDoc ? '' : ' is-repeat'}`}>{row.docName}</td>
+                      <td className="c-clause">{row.section}</td>
+                      <td className={`c-app${row.isFirstForDoc ? '' : ' is-repeat'}`}>{stripEnglish(row.app)}</td>
+                      <td className="c-name">
+                        <span className="mx-name">
+                          <span className="mx-dot" style={{ backgroundColor: TYPE_COLORS[row.category] }} aria-hidden="true" />
+                          {row.testTitle}
+                        </span>
+                      </td>
+                      {LEVEL_KEYS.map(lk => (
+                        <td key={lk} className="c-lv">
+                          {row.levels.includes(lk) ? <span aria-label="適用">✓</span> : null}
                         </td>
-                        {LEVEL_KEYS.map(lk => {
-                          const hasLevel = row.levels.includes(lk);
-                          return (
-                            <td key={lk} style={{...tdStyle, textAlign: 'center', fontWeight: 'bold', color: hasLevel ? 'var(--text-primary)' : 'transparent'}}>
-                              {hasLevel ? 'x' : ''}
-                            </td>
-                          )
-                        })}
-                        <td style={{...tdStyle, color: 'var(--text-secondary)'}}>{typeLabel}</td>
-                      </tr>
-                    )
-                  })
+                      ))}
+                      <td className="c-cat">{TYPE_LABELS[row.category] || row.category}</td>
+                    </tr>
+                  ))
                 )}
               </tbody>
             </table>
           )}
         </div>
       </div>
-      <style>{`
-        @keyframes fadeIn {
-          from { opacity: 0; }
-          to { opacity: 1; }
-        }
-        @media print {
-          body * {
-            visibility: hidden;
-          }
-          #global-matrix-modal, #global-matrix-modal * {
-            visibility: visible;
-          }
-          #global-matrix-modal {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: auto;
-            padding: 0 !important;
-            background: white !important;
-          }
-          #global-matrix-content {
-            box-shadow: none !important;
-            border: none !important;
-            max-width: none !important;
-            height: auto !important;
-            overflow: visible !important;
-          }
-          .no-print {
-            display: none !important;
-          }
-          #matrix-table {
-            page-break-inside: auto;
-            width: 100% !important;
-          }
-          #matrix-table tr {
-            page-break-inside: avoid;
-            page-break-after: auto;
-          }
-          #matrix-table th, #matrix-table td {
-            color: black !important;
-            border: 1px solid var(--border-hover) !important;
-            padding: 4px 8px !important;
-          }
-          #matrix-table thead {
-            display: table-header-group;
-          }
-          #matrix-table tbody {
-            display: table-row-group;
-          }
-        }
-      `}</style>
-    </div>
+    </div>,
+    document.body
   );
 }
-
-const thStyle = {
-  padding: '0.75rem',
-  textAlign: 'left',
-  fontWeight: '600',
-  color: 'var(--text-secondary)',
-  borderBottom: '2px solid var(--border-color)'
-};
-
-const tdStyle = {
-  padding: '0.6rem 0.75rem',
-  borderBottom: '1px solid var(--border-color)'
-};
-
-const actionBtnStyle = {
-  padding: '0.5rem 1rem', borderRadius: '6px',
-  backgroundColor: 'var(--bg-panel)', color: 'var(--text-primary)',
-  border: '1px solid var(--border-color)', cursor: 'pointer',
-  display: 'flex', alignItems: 'center', gap: '0.4rem',
-  fontWeight: '600', fontSize: '0.85rem',
-  boxShadow: 'var(--shadow-sm)'
-};

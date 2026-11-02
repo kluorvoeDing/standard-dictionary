@@ -1,5 +1,6 @@
 import { Ratelimit } from '@upstash/ratelimit';
 import { Redis } from '@upstash/redis';
+import { canonicalKey, getParameterMeta, splitConditionValue } from '../frontend/src/utils/parameterDictionary.js';
 
 export const config = {
   runtime: 'edge',
@@ -20,6 +21,45 @@ if (process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN) 
     limiter: Ratelimit.slidingWindow(15, '60 s'), // 每 IP 每分鐘 15 次
     prefix: 'ratelimit:chat',
   });
+}
+
+
+// ── Context 精簡 ──────────────────────────────────────────
+// 每項測試只送一行：條款、中文名、層級、條件（中文標籤＝值）、判定摘要。
+// 不送原文片段、條件 detail、metadata、豁免條款與測試順序。
+// 全庫模式再省略「樣品數量／前置處理／靜置與觀察時間」這類程序欄位。
+// 實測（字元數）：全庫 29 份約 7.1 萬字（原 18.6 萬），指定 5 份最大組合約 2.8 萬字（原約 19.7 萬）；目標分別為 8 萬與 15 萬字以內。
+const LEVEL_ZH = { CELL: '電芯', MODULE: '模組', PACK_SYSTEM: '電池包與系統' };
+const PROCEDURE_KEYS = new Set(['sample_quantity', 'pre_conditioning', 'observation_period']);
+const oneLine = (x) => String(x ?? '').replace(/\s+/g, ' ').trim();
+const stripEnglishSuffix = (x) => oneLine(x).replace(/\s*\([A-Za-z][^)]*\)\s*$/, '');
+
+export function compactTest(t, { full = true } = {}) {
+  const parts = new Map();
+  if (t.conditions && typeof t.conditions === 'object') {
+    for (const [k, raw] of Object.entries(t.conditions)) {
+      const key = canonicalKey(k);
+      if (!full && PROCEDURE_KEYS.has(key)) continue;
+      const value = oneLine(splitConditionValue(raw).value);
+      if (!value) continue;
+      const label = stripEnglishSuffix(getParameterMeta(k).label);
+      // 同義欄位若已有值就保留較長者，避免重複
+      if (!parts.has(label) || parts.get(label).length < value.length) parts.set(label, value);
+    }
+  }
+  const ac = t.acceptance_criteria;
+  const pass = oneLine(ac?.summary || (Array.isArray(ac?.details) ? ac.details.filter(d => typeof d === 'string').join('；') : ''));
+  const levels = (t.test_objects || t.applicable_objects || []).map(l => LEVEL_ZH[String(l).toUpperCase()] || l).join('/');
+  const conds = [...parts].map(([k, v]) => `${k}=${v}`).join('；');
+  return `${t.section || t.id || '-'} ${stripEnglishSuffix(t.name_zh || t.name_en)}${levels ? `［${levels}］` : ''}${conds ? ` ${conds}` : ''}${pass ? ` => ${pass}` : ''}`;
+}
+
+// 一份標準 -> 送進模型的文字區塊
+export function compactDocument(catalogEntry, fullJson, opts = {}) {
+  const tests = (fullJson?.tests || fullJson?.test_items || []).map(t => compactTest(t, opts));
+  const title = oneLine(catalogEntry.display_name || catalogEntry.document_id);
+  const name = stripEnglishSuffix(catalogEntry.full_name || '');
+  return `# ${title}${name && name !== title ? ` ${name}` : ''}（${catalogEntry.application || '一般應用'}）\n${tests.join('\n')}`;
 }
 
 const json = (obj, status = 200, extraHeaders = {}) =>
@@ -98,7 +138,7 @@ export default async function handler(req) {
     const catalog = await catRes.json();
 
     if (isGlobalMode) {
-      // 全庫模式：萃取所有 30 份標準的精簡條款與條件摘要（~40-50KB）
+      // 全庫模式：所有標準的精簡條款與條件（只含值，不含 detail），約 7 萬字
       const baseMap = new Map();
       catalog.forEach(c => {
         const baseId = c.base_standard_id || c.document_id;
@@ -116,27 +156,7 @@ export default async function handler(req) {
             const r = await fetch(`${selfOrigin}/${c.schema_v2_json}`);
             if (!r.ok) return null;
             const fullJson = await r.json();
-            const tests = (fullJson.tests || fullJson.test_items || []).map(t => {
-              const conds = {};
-              if (t.conditions && typeof t.conditions === 'object') {
-                Object.entries(t.conditions).forEach(([k, v]) => {
-                  conds[k] = typeof v === 'string' ? v : (v?.value || '');
-                });
-              }
-              return {
-                section: t.section || '-',
-                name: t.name_zh || t.name_en || '',
-                category: t.category || '',
-                subcategory: t.subcategory || '',
-                conditions: conds,
-                pass: t.acceptance_criteria?.summary || ''
-              };
-            });
-            return [c.base_standard_id || c.document_id, {
-              name: c.display_name || c.full_name || '',
-              application: c.application || '',
-              tests
-            }];
+            return [c.base_standard_id || c.document_id, compactDocument(c, fullJson, { full: false })];
           } catch {
             return null;
           }
@@ -144,7 +164,7 @@ export default async function handler(req) {
       );
       for (const entry of loaded) if (entry) contextData[entry[0]] = entry[1];
     } else {
-      // 指定標準模式：載入選取標準的完整詳細規格
+      // 指定標準模式：同樣使用精簡格式，最多 5 份約 3 萬字以內
       const wanted = catalog.filter(
         (c) => c.schema_v2_json && c.comparison_ready !== false &&
           selectedDocIds.includes(c.base_standard_id || c.document_id)
@@ -154,7 +174,7 @@ export default async function handler(req) {
           try {
             const r = await fetch(`${selfOrigin}/${c.schema_v2_json}`);
             if (!r.ok) return null;
-            return [c.document_id, await r.json()];
+            return [c.document_id, compactDocument(c, await r.json())];
           } catch {
             return null;
           }
@@ -172,8 +192,8 @@ export default async function handler(req) {
     ? `您是電池法規資料庫的「AI 小幫手」。
 目前使用者未指定單一標準，系統已自動啟用「全庫檢索模式」。
 使用者正向您詢問全資料庫（涵蓋 ${libraryCount} 份國際與各國鋰電池安全標準）中的測試參數、特定數值、嚴苛程度比較或法規歸屬。
-以下是資料庫中所有 ${libraryCount} 份標準的測試條款、條件數值與判定摘要：
-${JSON.stringify(contextData)}
+以下是資料庫中所有 ${libraryCount} 份標準的測試條款。每行格式為「條款 測試名稱［適用層級］條件標籤=值；… => 判定摘要」，並省略樣品數量與前置處理等程序欄位：
+${Object.values(contextData).join('\n\n')}
 
 絕對遵守規則：
 1. 您代表整個標準字典知識庫。回答時請主動檢索上述所有規範的條件與數值。
@@ -187,8 +207,8 @@ ${JSON.stringify(contextData)}
 7. 回答中不要使用 emoji 或表情符號。`
     : `您是電池法規資料庫的「AI 小幫手」。
 目前使用者在畫面上勾選了以下標準：${selectedDocIds.join(', ')}。
-以下是這些標準的詳細條款與試驗條件內容：
-${JSON.stringify(contextData)}
+以下是這些標準的測試條款。每行格式為「條款 測試名稱［適用層級］條件標籤=值；… => 判定摘要」：
+${Object.values(contextData).join('\n\n')}
 
 絕對遵守規則：
 1. 請「優先」依據上方提供的標準內容來回答。

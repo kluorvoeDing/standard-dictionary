@@ -227,6 +227,9 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
           }
         }
       }
+      if (!aiResponseText.trim()) {
+        updateLastMessage(`${prefixMsg}沒有取得回覆，請換個問法再試`);
+      }
     } catch (err) {
       if (err.message.includes('504')) {
         updateLastMessage(aiResponseText ? (aiResponseText + `\n\n*(連線中斷：處理超時，僅列出部分結果)*`) : `連線異常：伺服器處理超時 (504)，請嘗試減少勾選的標準數量再試一次。`);
@@ -406,10 +409,10 @@ export default function AiConsultantChat({ isOpen, onClose, selectedDocs, testsD
             : selectedDocs.length === 1
               ? [`${selectedDocs[0]} 涵蓋哪些測試項目？`, `${selectedDocs[0]} 的適用範圍是什麼？`, '常見的鋰電池安全測試有哪些？']
               : [
-                  '有沒有哪一個規範過充條件是 3C 充電至 6V？',
-                  '有哪些標準的過充電壓規定達到 6V 以上？',
+                  '哪些標準規定以 6.0 V 進行過壓充電？',
                   '哪一份標準要求連續恆壓充電 7 天？',
-                  '各標準擠壓力道（如 13kN、100kN）有何差異？'
+                  '各標準的擠壓力道（13 kN、100 kN）有何差異？',
+                  '外部短路電阻 80 mΩ 出現在哪些標準？'
                 ];
           return (
             <div style={{ alignSelf: 'stretch', display: 'flex', flexDirection: 'column', gap: '0.5rem', marginTop: '0.25rem' }}>
