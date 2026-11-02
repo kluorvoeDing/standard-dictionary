@@ -59,7 +59,7 @@
     "source_json": "data/batch6/content/SAND2017_guidance.json",
     "batch": "batch6",
     "li_applicable": true,
-    "item_count": 15,
+    "item_count": 12,
     "available_objects": [
       "CELL",
       "MODULE",
@@ -104,12 +104,12 @@
     "display_name": "AIS-038",
     "full_name": "AIS-038 (Revision 2) - Specific Requirements for Electric Power Train of Vehicles (Part I: Vehicle Requirements, Part II: REESS Safety)",
     "publisher": "Automotive Industry Standards Committee (AISC), India / ARAI (Automotive Research Association of India)",
-    "publication_date": "2020-07-01 (Draft Finalized)",
+    "publication_date": "2020-07-01",
     "filename": "AIS-038_Rev.2.doc.md",
     "source_json": "data/batch3/content/AIS-038_structured.json",
     "batch": "batch3",
     "li_applicable": true,
-    "item_count": 16,
+    "item_count": 11,
     "available_objects": [
       "PACK_SYSTEM"
     ],
@@ -147,7 +147,8 @@
         "IS 16893"
       ]
     },
-    "application": "電動汽車 (EV)"
+    "application": "電動汽車 (EV)",
+    "edition_history": "2020-07-01 (Draft Finalized)"
   },
   {
     "document_id": "AIS-156",
@@ -157,12 +158,12 @@
     "display_name": "AIS-156",
     "full_name": "AIS-156 - Specific Requirements for L Category Electric Power Train Vehicles, Part I: Electrical Safety, Part II: REESS Safety",
     "publisher": "Automotive Industry Standards Committee (AISC), India / ARAI",
-    "publication_date": "2020-07-16 (finalized draft)",
+    "publication_date": "2020-07-16",
     "filename": "AIS-156.full.md",
     "source_json": "data/batch6/content/AIS-156_structured.json",
     "batch": "batch6",
     "li_applicable": true,
-    "item_count": 17,
+    "item_count": 10,
     "available_objects": [
       "PACK_SYSTEM"
     ],
@@ -189,7 +190,7 @@
     "source_pdf_text_layer": "present",
     "source_quality": "pdf-authoritative",
     "schema_v2_json": "data/AIS-156.json",
-    "test_count_v2": 9,
+    "test_count_v2": 10,
     "is_latest": true,
     "latest_version": "2020 (Amd 3)",
     "versions_behind": 0,
@@ -199,7 +200,8 @@
         "IS 16893"
       ]
     },
-    "application": "輕型電動車 (LEV)"
+    "application": "輕型電動車 (LEV)",
+    "edition_history": "2020-07-16 (finalized draft)"
   },
   {
     "document_id": "GB-43854",
@@ -209,12 +211,12 @@
     "display_name": "GB-43854",
     "full_name": "GB 43854-2024 電動自行車用鋰離子蓄電池安全技術規範 (Safety technical specification of lithium-ion battery for electric bicycle)",
     "publisher": "國家市場監督管理總局 / 國家標準化管理委員會",
-    "publication_date": "2024-04-25 发布，2024-11-01 实施",
+    "publication_date": "2024-04-25",
     "filename": "GB43854-2024_OCR.md",
     "source_json": "data/batch5/content/GB43854_structured.json",
     "batch": "batch5",
     "li_applicable": true,
-    "item_count": 21,
+    "item_count": 23,
     "available_objects": [
       "CELL",
       "PACK_SYSTEM"
@@ -248,7 +250,8 @@
     "versions_behind": 0,
     "base_standard_id": "GB-43854",
     "prerequisites": {},
-    "application": "一般應用 (General)"
+    "application": "一般應用 (General)",
+    "edition_history": "2024-04-25 發布，2024-11-01 實施"
   },
   {
     "document_id": "GB31241",
@@ -258,7 +261,7 @@
     "display_name": "GB31241",
     "full_name": "GB 31241-2022 便攜式電子產品用鋰離子電池和電池組安全技術規範 (Safety technical specification for lithium ion cells and batteries used in portable electronic equipments)",
     "publisher": null,
-    "publication_date": "2022-12-29 发布，2024-01-01 实施",
+    "publication_date": "2022-12-29",
     "filename": "GB31241-2022-1_OCR.md",
     "source_json": "data/batch2/content/GB31241_structured.json",
     "batch": "batch2",
@@ -298,7 +301,8 @@
     "versions_behind": 0,
     "base_standard_id": "GB31241",
     "prerequisites": {},
-    "application": "便攜式電子 (Portable)"
+    "application": "便攜式電子 (Portable)",
+    "edition_history": "2022-12-29 發布，2024-01-01 實施"
   },
   {
     "document_id": "GB38031",
@@ -308,12 +312,12 @@
     "display_name": "GB38031",
     "full_name": "GB 38031-2025 電動汽車用動力蓄電池安全要求 (Electric vehicle traction battery safety requirements)",
     "publisher": null,
-    "publication_date": "2025-03-28 发布，2026-07-01 实施",
+    "publication_date": "2025-03-28",
     "filename": "GB38031-2025.md",
     "source_json": "data/batch2/content/GB38031_structured.json",
     "batch": "batch2",
     "li_applicable": true,
-    "item_count": 23,
+    "item_count": 24,
     "available_objects": [
       "CELL",
       "PACK_SYSTEM"
@@ -347,7 +351,8 @@
     "versions_behind": 0,
     "base_standard_id": "GB38031",
     "prerequisites": {},
-    "application": "電動汽車 (EV)"
+    "application": "電動汽車 (EV)",
+    "edition_history": "2025-03-28 發布，2026-07-01 實施"
   },
   {
     "document_id": "GB44240",
@@ -357,12 +362,12 @@
     "display_name": "GB44240",
     "full_name": "GB 44240-2024 電能存儲系統用鋰蓄電池和電池組安全要求 (Secondary lithium cells and batteries used in electrical energy storage systems - Safety requirements)",
     "publisher": null,
-    "publication_date": "2024-07-24 发布，2025-08-01 实施",
+    "publication_date": "2024-07-24",
     "filename": "GB44240-2024.md",
     "source_json": "data/batch2/content/GB44240_structured.json",
     "batch": "batch2",
     "li_applicable": true,
-    "item_count": 18,
+    "item_count": 24,
     "available_objects": [
       "CELL",
       "PACK_SYSTEM"
@@ -390,13 +395,14 @@
     "source_pdf_text_layer": "present",
     "source_quality": "pdf-authoritative",
     "schema_v2_json": "data/GB44240.json",
-    "test_count_v2": 18,
+    "test_count_v2": 24,
     "is_latest": true,
     "latest_version": "2024版",
     "versions_behind": 0,
     "base_standard_id": "GB44240",
     "prerequisites": {},
-    "application": "儲能系統 (ESS)"
+    "application": "儲能系統 (ESS)",
+    "edition_history": "2024-07-24 發布，2025-08-01 實施"
   },
   {
     "document_id": "GBT-36276",
@@ -406,12 +412,12 @@
     "display_name": "GBT-36276",
     "full_name": "GB/T 36276-2023 電力儲能用鋰離子電池 (Lithium ion battery for electrical energy storage)",
     "publisher": "國家市場監督管理總局 / 國家標準化管理委員會",
-    "publication_date": "2023-12-28 发布，2024-07-01 实施",
+    "publication_date": "2023-12-28",
     "filename": "GBT 36276-2023.md",
     "source_json": "data/batch4/content/GBT36276_structured.json",
     "batch": "batch4",
     "li_applicable": true,
-    "item_count": 26,
+    "item_count": 19,
     "available_objects": [
       "CELL",
       "MODULE",
@@ -440,13 +446,14 @@
     "source_pdf_text_layer": "present",
     "source_quality": "pdf-authoritative",
     "schema_v2_json": "data/GBT36276.json",
-    "test_count_v2": 10,
+    "test_count_v2": 19,
     "is_latest": true,
     "latest_version": "2023版",
     "versions_behind": 0,
     "base_standard_id": "GBT-36276",
     "prerequisites": {},
-    "application": "儲能系統 (ESS)"
+    "application": "儲能系統 (ESS)",
+    "edition_history": "2023-12-28 發布，2024-07-01 實施"
   },
   {
     "document_id": "IEC62133-2",
@@ -456,12 +463,12 @@
     "display_name": "IEC62133-2",
     "full_name": "IEC 62133-2:2017+AMD1:2021 - Secondary cells and batteries containing alkaline or other non-acid electrolytes - Safety requirements for portable sealed secondary cells, and for batteries made from them, for use in portable applications - Part 2: Lithium systems",
     "publisher": "IEC (International Electrotechnical Commission)",
-    "publication_date": "2017-02 (Edition 1.0), 2021-07 (Amendment 1)",
+    "publication_date": "2021-07",
     "filename": "IEC 62133-2-2017 Amd 1-2021.md",
     "source_json": "data/batch3/content/IEC62133-2_structured.json",
     "batch": "batch3",
     "li_applicable": true,
-    "item_count": 13,
+    "item_count": 12,
     "available_objects": [
       "CELL",
       "PACK_SYSTEM"
@@ -495,7 +502,8 @@
     "versions_behind": 0,
     "base_standard_id": "IEC62133-2",
     "prerequisites": {},
-    "application": "便攜式電子 (Portable)"
+    "application": "便攜式電子 (Portable)",
+    "edition_history": "2017-02 (Edition 1.0), 2021-07 (Amendment 1)"
   },
   {
     "document_id": "IEC62619",
@@ -510,7 +518,7 @@
     "source_json": "data/batch1/content/IEC62619_structured.json",
     "batch": "batch1",
     "li_applicable": true,
-    "item_count": 10,
+    "item_count": 11,
     "available_objects": [
       "CELL",
       "MODULE",
@@ -555,12 +563,12 @@
     "display_name": "UL-1973",
     "full_name": "ANSI/CAN/UL 1973:2022 - Standard for Batteries for Use in Stationary and Motive Auxiliary Power Applications (Third Edition)",
     "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
-    "publication_date": "2013-02 (First), 2018-02 (Second), 2022-02-25 (Third)",
+    "publication_date": "2022-02-25",
     "filename": "s1973_3.md",
     "source_json": "data/batch4/content/UL1973_structured.json",
     "batch": "batch4",
     "li_applicable": true,
-    "item_count": 28,
+    "item_count": 21,
     "available_objects": [
       "CELL",
       "MODULE",
@@ -588,7 +596,7 @@
     "source_pdf_text_layer": "present",
     "source_quality": "pdf-authoritative",
     "schema_v2_json": "data/UL1973.json",
-    "test_count_v2": 13,
+    "test_count_v2": 21,
     "is_latest": true,
     "latest_version": "Third Edition (2022)",
     "versions_behind": 0,
@@ -603,7 +611,8 @@
         "UL 2580"
       ]
     },
-    "application": "儲能系統 (ESS)"
+    "application": "儲能系統 (ESS)",
+    "edition_history": "2013-02 (First), 2018-02 (Second), 2022-02-25 (Third)"
   },
   {
     "document_id": "UL-2054",
@@ -613,12 +622,12 @@
     "display_name": "UL-2054",
     "full_name": "UL 2054:2021 (R2022) - Standard for Safety for Household and Commercial Batteries (Third Edition)",
     "publisher": "UL (Underwriters Laboratories)",
-    "publication_date": "1997-05 (First), 2004-10 (Second), 2021-11-17 (Third), 2022-03-10 (Revisions)",
+    "publication_date": "2021-11-17",
     "filename": "s2054_3.md",
     "source_json": "data/batch5/content/UL2054_structured.json",
     "batch": "batch5",
     "li_applicable": true,
-    "item_count": 18,
+    "item_count": 14,
     "available_objects": [
       "CELL",
       "PACK_SYSTEM"
@@ -656,7 +665,8 @@
         "UL 1642"
       ]
     },
-    "application": "一般應用 (General)"
+    "application": "一般應用 (General)",
+    "edition_history": "1997-05 (First), 2004-10 (Second), 2021-11-17 (Third), 2022-03-10 (Revisions)"
   },
   {
     "document_id": "UL-2056",
@@ -666,12 +676,12 @@
     "display_name": "UL-2056",
     "full_name": "ANSI/CAN/UL 2056:2025 - Standard for Safety for Power Banks (First Edition)",
     "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
-    "publication_date": "2024-10-22 (First Edition), 2025-02-18 (Revisions)",
+    "publication_date": "2024-10-22",
     "filename": "s2056_1.md",
     "source_json": "data/batch5/content/UL2056_structured.json",
     "batch": "batch5",
     "li_applicable": true,
-    "item_count": 14,
+    "item_count": 12,
     "available_objects": [
       "CELL",
       "PACK_SYSTEM"
@@ -709,7 +719,8 @@
         "UL 1642"
       ]
     },
-    "application": "一般應用 (General)"
+    "application": "一般應用 (General)",
+    "edition_history": "2024-10-22 (First Edition), 2025-02-18 (Revisions)"
   },
   {
     "document_id": "UL-2271",
@@ -719,12 +730,12 @@
     "display_name": "UL-2271",
     "full_name": "ANSI/CAN/UL/ULC 2271:2023 - Standard for Batteries for Use In Light Electric Vehicle (LEV) Applications (Third Edition)",
     "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
-    "publication_date": "2013-12 (First), 2018-09 (Second), 2023-09-14 (Third)",
+    "publication_date": "2023-09-14",
     "filename": "s2271_3_20230914.md",
     "source_json": "data/batch4/content/UL2271_structured.json",
     "batch": "batch4",
     "li_applicable": true,
-    "item_count": 24,
+    "item_count": 23,
     "available_objects": [
       "MODULE",
       "PACK_SYSTEM"
@@ -764,7 +775,8 @@
         "UL 2580"
       ]
     },
-    "application": "輕型電動車 (LEV)"
+    "application": "輕型電動車 (LEV)",
+    "edition_history": "2013-12 (First), 2018-09 (Second), 2023-09-14 (Third)"
   },
   {
     "document_id": "UL-3030",
@@ -774,12 +786,12 @@
     "display_name": "UL-3030",
     "full_name": "ANSI/CAN/UL 3030:2018 (R2024) - Standard for Safety for Unmanned Aircraft Systems (First Edition, Reaffirmed 2024)",
     "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
-    "publication_date": "2018-09-18 (First Edition), 2024-08-30 (Reaffirmed)",
+    "publication_date": "2018-09-18",
     "filename": "s3030_1.md",
     "source_json": "data/batch5/content/UL3030_structured.json",
     "batch": "batch5",
     "li_applicable": true,
-    "item_count": 18,
+    "item_count": 17,
     "available_objects": [
       "PACK_SYSTEM"
     ],
@@ -806,7 +818,7 @@
     "source_pdf_text_layer": "present",
     "source_quality": "pdf-authoritative",
     "schema_v2_json": "data/UL3030.json",
-    "test_count_v2": 12,
+    "test_count_v2": 17,
     "is_latest": true,
     "latest_version": "First Edition (2018, reaff 2024)",
     "versions_behind": 0,
@@ -816,7 +828,8 @@
         "UL 1642"
       ]
     },
-    "application": "無人機 (UAS)"
+    "application": "無人機 (UAS)",
+    "edition_history": "2018-09-18 (First Edition), 2024-08-30 (Reaffirmed)"
   },
   {
     "document_id": "UL-9540",
@@ -826,12 +839,12 @@
     "display_name": "UL-9540",
     "full_name": "ANSI/CAN/UL 9540:2025 - Standard for Energy Storage Systems and Equipment (Third Edition)",
     "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
-    "publication_date": "2016-11 (First), 2020-02 (Second), 2023-06-28 (Third), 2025-03-07 (Latest Revision)",
+    "publication_date": "2023-06-28",
     "filename": "s9540_3.md",
     "source_json": "data/batch4/content/UL9540_structured.json",
     "batch": "batch4",
     "li_applicable": true,
-    "item_count": 24,
+    "item_count": 12,
     "available_objects": [
       "PACK_SYSTEM"
     ],
@@ -877,7 +890,8 @@
         "UL 1973"
       ]
     },
-    "application": "一般應用 (General)"
+    "application": "一般應用 (General)",
+    "edition_history": "2016-11 (First), 2020-02 (Second), 2023-06-28 (Third), 2025-03-07 (Latest Revision)"
   },
   {
     "document_id": "UL1642",
@@ -887,7 +901,7 @@
     "display_name": "UL1642",
     "full_name": "UL Standard for Safety for Lithium Batteries, UL 1642, Sixth Edition",
     "publisher": null,
-    "publication_date": "September 29, 2020",
+    "publication_date": "2020-09-29",
     "filename": "UL 1642-2020.md",
     "source_json": "data/batch1/content/UL1642_structured.json",
     "batch": "batch1",
@@ -924,7 +938,8 @@
     "versions_behind": 1,
     "base_standard_id": "UL1642",
     "prerequisites": {},
-    "application": "一般應用 (General)"
+    "application": "一般應用 (General)",
+    "edition_history": "September 29, 2020"
   },
   {
     "document_id": "ULC-2580",
@@ -934,12 +949,12 @@
     "display_name": "ULC-2580",
     "full_name": "ANSI/CAN/UL/ULC 2580:2022 - Standard for Batteries for Use In Electric Vehicles (Third Edition)",
     "publisher": "UL (Underwriters Laboratories) / ULC Standards / ANSI / SCC",
-    "publication_date": "2011-10 (First), 2013-12 (Second), 2020-03 (Third), 2022-06-28 (Latest Revision)",
+    "publication_date": "2020-03",
     "filename": "ULC-2580-2022-en.md",
     "source_json": "data/batch3/content/ULC-2580_structured.json",
     "batch": "batch3",
     "li_applicable": true,
-    "item_count": 22,
+    "item_count": 29,
     "available_objects": [
       "CELL",
       "MODULE",
@@ -968,7 +983,7 @@
     "source_pdf_text_layer": "present",
     "source_quality": "pdf-authoritative",
     "schema_v2_json": "data/ULC2580.json",
-    "test_count_v2": 18,
+    "test_count_v2": 29,
     "is_latest": true,
     "latest_version": "Third Edition (2020, rev 2022)",
     "versions_behind": 0,
@@ -979,7 +994,8 @@
         "UL 2271"
       ]
     },
-    "application": "電動汽車 (EV)"
+    "application": "電動汽車 (EV)",
+    "edition_history": "2011-10 (First), 2013-12 (Second), 2020-03 (Third), 2022-06-28 (Latest Revision)"
   },
   {
     "document_id": "UN38.3",
@@ -989,12 +1005,12 @@
     "display_name": "UN38.3",
     "full_name": "UN Manual of Tests and Criteria, Sixth Revised Edition, Sub-Section 38.3: Lithium metal and lithium ion batteries",
     "publisher": null,
-    "publication_date": "Sixth Revised Edition (2015), with February 2016 Corrigendum",
+    "publication_date": "2015",
     "filename": "UN38.3 sub section.md",
     "source_json": "data/batch1/content/UN38.3_structured.json",
     "batch": "batch1",
     "li_applicable": true,
-    "item_count": 8,
+    "item_count": 9,
     "available_objects": [
       "CELL",
       "PACK_SYSTEM"
@@ -1027,7 +1043,8 @@
     "versions_behind": 2,
     "base_standard_id": "UN38.3",
     "prerequisites": {},
-    "application": "運輸安全 (Transport)"
+    "application": "運輸安全 (Transport)",
+    "edition_history": "Sixth Revised Edition (2015), with February 2016 Corrigendum"
   },
   {
     "document_id": "UL-9540A",
@@ -1037,7 +1054,7 @@
     "display_name": "UL-9540A",
     "full_name": "ANSI/CAN/UL 9540A:2025 - Standard for Test Method for Evaluating Thermal Runaway Fire Propagation in Battery Energy Storage Systems (Fifth Edition)",
     "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
-    "publication_date": "2017-11 (First), 2018-01 (Second), 2018-06 (Third), 2019-11 (Fourth), 2025-03-12 (Fifth)",
+    "publication_date": "2025-03-12",
     "filename": "s9540A_5.md",
     "source_json": "data/batch4/content/UL9540A_structured.json",
     "batch": "batch4",
@@ -1090,7 +1107,8 @@
         "UL 1973"
       ]
     },
-    "application": "儲能系統 (ESS)"
+    "application": "儲能系統 (ESS)",
+    "edition_history": "2017-11 (First), 2018-01 (Second), 2018-06 (Third), 2019-11 (Fourth), 2025-03-12 (Fifth)"
   },
   {
     "document_id": "UL1642-2022",
@@ -1105,7 +1123,7 @@
     "source_json": "data/batch1/content/UL1642_structured.json",
     "batch": "batch1",
     "li_applicable": true,
-    "item_count": 11,
+    "item_count": 12,
     "available_objects": [
       "CELL"
     ],
@@ -1205,7 +1223,7 @@
     "display_name": "GB31241.4",
     "full_name": "GB 31241.4-2026 電子電氣產品用鋰離子電池和電池組安全 第4部分：玩具用鋰離子電池和電池組",
     "publisher": "國家市場監督管理總局 / 國家標準化管理委員會",
-    "publication_date": "2026",
+    "publication_date": "2026-03-31",
     "filename": "GB 31241.4-2026.md",
     "source_json": null,
     "batch": "batch_new",
@@ -1241,7 +1259,8 @@
     "versions_behind": 0,
     "base_standard_id": "GB31241.4",
     "prerequisites": {},
-    "application": "便攜式電子 (Portable)"
+    "application": "便攜式電子 (Portable)",
+    "edition_history": "2026"
   },
   {
     "document_id": "GB40165",
@@ -1251,7 +1270,7 @@
     "display_name": "GB40165",
     "full_name": "GB 40165-2021 固定式電子設備用鋰離子電池和電池組 安全技術規範",
     "publisher": "國家市場監督管理總局 / 國家標準化管理委員會",
-    "publication_date": "2021",
+    "publication_date": "2021-04-30",
     "filename": "GB 40165-2021.md",
     "source_json": null,
     "batch": "batch_new",
@@ -1287,7 +1306,8 @@
     "versions_behind": 0,
     "base_standard_id": "GB40165",
     "prerequisites": {},
-    "application": "工業應用 (Industrial)"
+    "application": "工業應用 (Industrial)",
+    "edition_history": "2021"
   },
   {
     "document_id": "GB40559",
@@ -1297,12 +1317,12 @@
     "display_name": "GB40559",
     "full_name": "GB 40559-2024 平衡車和滑板車用鋰離子電池和電池組 安全技術規範",
     "publisher": "國家市場監督管理總局 / 國家標準化管理委員會",
-    "publication_date": "2024",
+    "publication_date": "2024-07-24",
     "filename": "GB 40559-2024.md",
     "source_json": null,
     "batch": "batch_new",
     "li_applicable": true,
-    "item_count": 0,
+    "item_count": 30,
     "available_objects": [
       "CELL",
       "PACK_SYSTEM"
@@ -1327,13 +1347,14 @@
     "source_pdf_text_layer": "present",
     "source_quality": "pdf-authoritative",
     "schema_v2_json": "data/GB40559.json",
-    "test_count_v2": 0,
+    "test_count_v2": 30,
     "is_latest": true,
     "latest_version": "2024版",
     "versions_behind": 0,
     "base_standard_id": "GB40559",
     "prerequisites": {},
-    "application": "輕型電動車 (LEV)"
+    "application": "輕型電動車 (LEV)",
+    "edition_history": "2024"
   },
   {
     "document_id": "GB47372",
@@ -1343,12 +1364,12 @@
     "display_name": "GB47372",
     "full_name": "GB 47372-2026 移動電源安全技術規範",
     "publisher": "國家市場監督管理總局 / 國家標準化管理委員會",
-    "publication_date": "2026",
+    "publication_date": "2026-03-31",
     "filename": "GB 47372-2026.md",
     "source_json": null,
     "batch": "batch_new",
     "li_applicable": true,
-    "item_count": 14,
+    "item_count": 16,
     "available_objects": [
       "CELL",
       "PACK_SYSTEM"
@@ -1373,13 +1394,14 @@
     "source_pdf_text_layer": "present",
     "source_quality": "pdf-authoritative",
     "schema_v2_json": "data/GB47372.json",
-    "test_count_v2": 14,
+    "test_count_v2": 16,
     "is_latest": true,
     "latest_version": "2026版",
     "versions_behind": 0,
     "base_standard_id": "GB47372",
     "prerequisites": {},
-    "application": "便攜式電子 (Portable)"
+    "application": "便攜式電子 (Portable)",
+    "edition_history": "2026"
   },
   {
     "document_id": "GB47741",
@@ -1389,12 +1411,12 @@
     "display_name": "GB47741",
     "full_name": "GB 47741-2026 電動輪椅車用電池安全技術規範",
     "publisher": "國家市場監督管理總局 / 國家標準化管理委員會",
-    "publication_date": "2026",
+    "publication_date": "2026-05-25",
     "filename": "GB 47741-2026.md",
     "source_json": null,
     "batch": "batch_new",
     "li_applicable": true,
-    "item_count": 31,
+    "item_count": 37,
     "available_objects": [
       "CELL",
       "PACK_SYSTEM"
@@ -1419,13 +1441,14 @@
     "source_pdf_text_layer": "present",
     "source_quality": "pdf-authoritative",
     "schema_v2_json": "data/GB47741.json",
-    "test_count_v2": 31,
+    "test_count_v2": 37,
     "is_latest": true,
     "latest_version": "2026版",
     "versions_behind": 0,
     "base_standard_id": "GB47741",
     "prerequisites": {},
-    "application": "輕型電動車 (LEV)"
+    "application": "輕型電動車 (LEV)",
+    "edition_history": "2026"
   },
   {
     "document_id": "IEC62660-3",
