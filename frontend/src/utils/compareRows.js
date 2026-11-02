@@ -1,9 +1,12 @@
+import { levelLabel } from './orgColors.js';
 import { canonicalKey, getParameterMeta, splitConditionValue } from './parameterDictionary.js';
 import { toText } from './testRecord.js';
 
-// Values are compared after Unicode compatibility folding (Ω vs Ω, full-width digits),
+// Values are compared after Unicode compatibility folding (Ω vs Ω, ℃ vs °C, full-width digits),
 // unifying slash/tilde/arrow/times variants, whitespace removal and lower-casing,
+// dropping English-only explanations in brackets, and folding "fully charged" synonyms,
 // so formatting-only differences never count as a difference.
+// A tolerance ("-40 ± 2 °C") is a real difference from a bare value ("-40 °C") and is kept.
 export function normalizeForCompare(value) {
   return String(value ?? '')
     .normalize('NFKC')
@@ -12,7 +15,10 @@ export function normalizeForCompare(value) {
     .replace(/->/g, '→')
     .replace(/✕/g, '×')
     .replace(/\s+/g, '')
-    .toLowerCase();
+    .toLowerCase()
+    .replace(/\([a-z\-/,.]{3,}\)/g, '')
+    .replace(/(100%)?(標準充電後|充滿電|滿充電|滿電|滿充|100%soc)/g, '滿充')
+    .replace(/滿充\(?滿充\)?/g, '滿充');
 }
 
 /**
@@ -23,14 +29,12 @@ export function normalizeForCompare(value) {
  *   records are already limited to the active version and the selected sample levels.
  *
  * Row state (technical rows only):
- *   'diff'    – at least two standards specify it and their value sets differ
- *   'partial' – some covering standards specify it, others do not
- *   'same'    – every covering standard specifies the same value(s)
- *   'single'  – only one standard covers this test, nothing to compare
+ *   'diff' – at least two standards specify it and their values differ
+ *   'same' – at least two standards specify it and all values agree
+ *   'only' – just one standard specifies it, nothing to compare
  * Procedure rows (sample quantity, pre-conditioning, observation) are never diff-marked.
  */
 export function buildGroupRows(columns) {
-  const coveredCount = columns.filter(c => c.records.length > 0).length;
   const rows = new Map();
 
   columns.forEach((col, ci) => {
@@ -54,14 +58,13 @@ export function buildGroupRows(columns) {
 
   const withState = [...rows.values()].map(row => {
     if (row.category === 'procedure') return { ...row, state: 'procedure' };
-    if (coveredCount < 2) return { ...row, state: 'single' };
     const specified = row.cells.filter(cell => cell.length > 0);
     const signatures = new Set(
       specified.map(cell => [...new Set(cell.map(e => normalizeForCompare(e.value)))].sort().join('\u0000'))
     );
     let state = 'same';
-    if (specified.length >= 2 && signatures.size > 1) state = 'diff';
-    else if (specified.length < coveredCount) state = 'partial';
+    if (specified.length < 2) state = 'only';
+    else if (signatures.size > 1) state = 'diff';
     return { ...row, state };
   });
 
@@ -86,8 +89,15 @@ export function buildGroupRows(columns) {
     procedure,
     criteria,
     diffCount: technical.filter(r => r.state === 'diff').length,
-    procedureChecked: procedure.length > 0 && procedure.every(r => r.cells.flat().every(e => e.checked)),
-    // Nothing to see in diff-only mode: every standard covers the test and all technical rows agree.
-    identical: columns.every(c => c.status === 'ok') && technical.every(r => r.state === 'same'),
   };
+}
+
+// 樣品層級的中文名稱（比對頁一律只顯示中文）。
+export function levelLabelZh(obj = '') {
+  return levelLabel(obj);
+}
+
+// 測試名稱只留中文：去掉結尾括號內的英文說明。
+export function stripEnglishNote(name = '') {
+  return String(name).replace(/\s*[(（][^()（）]*[A-Za-z][^()（）]*[)）]\s*$/, '').trim();
 }

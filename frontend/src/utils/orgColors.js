@@ -6,11 +6,15 @@ export function getOrgColor(baseId = '') {
   return { solid: 'var(--org-other-solid)', text: 'var(--org-other-text)', fill: 'var(--org-other-fill)', border: 'var(--org-other-border)' };
 }
 
-// Display name for a test_objects / available_objects token.
+// 樣品層級的中文名稱（test_objects / available_objects 的值）。
+const LEVEL_LABELS = {
+  CELL: '電芯',
+  MODULE: '模組',
+  PACK_SYSTEM: '電池包／系統',
+  SINGLE_CELL_BATTERY: '單電芯電池',
+  COMPONENT_CELL: '組件電芯',
+  BATTERY_SYSTEM: '電池系統',
+};
 export function levelLabel(obj = '') {
-  if (obj === 'PACK_SYSTEM') return 'Pack / System';
-  if (obj === 'SINGLE_CELL_BATTERY') return 'Single Cell';
-  if (obj === 'COMPONENT_CELL') return 'Comp. Cell';
-  if (obj === 'BATTERY_SYSTEM') return 'Batt. System';
-  return obj.toLowerCase().split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+  return LEVEL_LABELS[obj] || obj;
 }

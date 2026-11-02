@@ -3,7 +3,7 @@ import ComparisonGroup from './ComparisonGroup';
 import TestDetailModal from './TestDetailModal';
 import Icon from './Icon';
 import useIsMobile from '../hooks/useIsMobile';
-import { buildGroupRows } from '../utils/compareRows';
+import { buildGroupRows, levelLabelZh, stripEnglishNote } from '../utils/compareRows';
 import { getOrgColor } from '../utils/orgColors';
 
 const CATEGORY_ORDER = ['ELEC', 'MECH', 'THERM', 'ENV', 'FIRE', 'BMS', 'OTHER'];
@@ -11,9 +11,9 @@ const CATEGORY_LABELS = {
   ALL: '全部', ELEC: '電氣安全', MECH: '機械安全', THERM: '熱安全', ENV: '環境安全', FIRE: '火燒', BMS: 'BMS 功能', OTHER: '其他',
 };
 const OBJECT_TYPES = [
-  { id: 'CELL', label: 'Cell（電芯）' },
-  { id: 'MODULE', label: 'Module（模組）' },
-  { id: 'PACK_SYSTEM', label: 'Pack / System（電池包／系統）' },
+  { id: 'CELL', label: levelLabelZh('CELL') },
+  { id: 'MODULE', label: levelLabelZh('MODULE') },
+  { id: 'PACK_SYSTEM', label: levelLabelZh('PACK_SYSTEM') },
 ];
 
 function categoryOf(test) {
@@ -33,12 +33,12 @@ function prerequisitesFor(doc, filterObjects) {
   return [...new Set(list)];
 }
 
-export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, setIsComparing }) {
+export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, setIsComparing, viewState, setViewState }) {
   const isMobile = useIsMobile();
-  const [filterCategory, setFilterCategory] = useState('ALL');
-  const [filterObjects, setFilterObjects] = useState(['CELL']);
-  const [diffOnly, setDiffOnly] = useState(false);
-  const [activeVersions, setActiveVersions] = useState({});
+  const { category: filterCategory, objects: filterObjects, diffOnly, versions: activeVersions } = viewState;
+  const setFilterCategory = (category) => setViewState(prev => ({ ...prev, category }));
+  const setDiffOnly = (update) => setViewState(prev => ({ ...prev, diffOnly: typeof update === 'function' ? update(prev.diffOnly) : update }));
+  const setActiveVersion = (baseId, docId) => setViewState(prev => ({ ...prev, versions: { ...prev.versions, [baseId]: docId } }));
   const [infoModalDocId, setInfoModalDocId] = useState(null);
   const [detail, setDetail] = useState(null);
 
@@ -46,7 +46,10 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
   const closeInfo = useCallback(() => setInfoModalDocId(null), []);
 
   const toggleObjectFilter = (objId) => {
-    setFilterObjects(prev => prev.includes(objId) ? prev.filter(o => o !== objId) : [...prev, objId]);
+    setViewState(prev => ({
+      ...prev,
+      objects: prev.objects.includes(objId) ? prev.objects.filter(o => o !== objId) : [...prev.objects, objId],
+    }));
   };
 
   // All catalog versions of each selected standard, newest first.
@@ -78,8 +81,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
             map.set(key, {
               key,
               id: test.normalized_id || test.id,
-              nameZh: rawZh.replace(/\s*\(.*?\)\s*$/, '').replace(/(試驗|測試)/g, ''),
-              nameEn: test.name_en || test.item_name_en || '',
+              nameZh: stripEnglishNote(rawZh).replace(/(試驗|測試)/g, ''),
               category: categoryOf(test),
               records: {},
             });
@@ -107,11 +109,12 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
 
   const presentCategories = CATEGORY_ORDER.filter(cat => views.some(v => v.group.category === cat));
   const inCategory = views.filter(v => filterCategory === 'ALL' || v.group.category === filterCategory);
-  const visible = diffOnly ? inCategory.filter(v => !v.view.identical) : inCategory;
+  // 只看差異：沒有任何數值不同的測試整組隱藏。
+  const visible = diffOnly ? inCategory.filter(v => v.view.diffCount > 0) : inCategory;
   const hiddenIdentical = inCategory.length - visible.length;
 
   const gridTemplate = isMobile
-    ? `minmax(96px, 110px) repeat(${selectedDocIds.length}, minmax(170px, 1fr))`
+    ? `84px repeat(${selectedDocIds.length}, minmax(150px, 1fr))`
     : `minmax(150px, 190px) repeat(${selectedDocIds.length}, minmax(240px, 1fr))`;
 
   const renderInfoModal = () => {
@@ -164,7 +167,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
               <section>
                 <span className="modal-section-title">適用測試層級</span>
                 <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
-                  {docData.applicable_objects.map(obj => <span key={obj} className="tag">{obj}</span>)}
+                  {docData.applicable_objects.map(obj => <span key={obj} className="tag">{levelLabelZh(obj)}</span>)}
                 </div>
               </section>
             )}
@@ -192,9 +195,9 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
         </h2>
       </div>
 
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem 1.5rem', alignItems: 'center', padding: isMobile ? '0.85rem' : '0.85rem 1.5rem', borderBottom: '1px solid var(--border-color)' }}>
-        <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap', alignItems: 'center' }}>
-          <span style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-muted)', marginRight: '0.1rem' }}>測試類別</span>
+      <div className="cmp-filters">
+        <div className="cmp-filter-group">
+          <span className="cmp-filter-label">測試類別</span>
           {['ALL', ...presentCategories].map(cat => (
             <button key={cat} className={`sm-filter${filterCategory === cat ? ' is-active' : ''}`} onClick={() => setFilterCategory(cat)}>
               {CATEGORY_LABELS[cat]}
@@ -202,10 +205,10 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
           ))}
         </div>
 
-        <div style={{ width: '1px', height: '1.4rem', backgroundColor: 'var(--border-color)' }} />
+        <div className="cmp-filter-sep" />
 
-        <div style={{ display: 'flex', gap: '0.45rem', flexWrap: 'wrap', alignItems: 'center' }}>
-          <span style={{ fontSize: 'var(--fs-xs)', color: 'var(--text-muted)', marginRight: '0.1rem' }}>樣品層級</span>
+        <div className="cmp-filter-group">
+          <span className="cmp-filter-label">樣品層級</span>
           {OBJECT_TYPES.map(obj => {
             const isActive = filterObjects.includes(obj.id);
             return (
@@ -216,26 +219,30 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
           })}
         </div>
 
-        <div style={{ width: '1px', height: '1.4rem', backgroundColor: 'var(--border-color)' }} />
+        <div className="cmp-filter-sep" />
 
         <button
-          className={`sm-filter${diffOnly ? ' is-active' : ''}`}
+          className={`sm-filter cmp-filter-diff${diffOnly ? ' is-active' : ''}`}
           onClick={() => setDiffOnly(v => !v)}
           aria-pressed={diffOnly}
-          title="只顯示各標準數值不同、或只有部分標準規定的條件"
+          title="只顯示各標準數值不同的條件"
         >
           {diffOnly ? '✓ ' : ''}只看差異
         </button>
       </div>
+
+      {diffOnly && (
+        <div className="cmp-hidden-note" role="status">
+          {hiddenIdentical > 0 ? `已隱藏 ${hiddenIdentical} 項沒有差異的測試` : '沒有隱藏任何測試'}
+        </div>
+      )}
 
       <div className="scrollable" style={{ flexGrow: 1, padding: isMobile ? '0 0.75rem 0.75rem' : '0 1rem 1rem', overflowX: 'auto' }}>
         <div style={{ minWidth: 'min-content' }}>
           {/* 標準欄位標題（固定在上方） */}
           <div className="cmp-head">
             <div className="cmp-grid" style={{ gridTemplateColumns: gridTemplate, paddingTop: isMobile ? '0.75rem' : '1rem' }}>
-              <div style={{ padding: '0.7rem 0.75rem', fontSize: 'var(--fs-xs)', fontWeight: 600, color: 'var(--text-muted)', alignSelf: 'center' }}>
-                {diffOnly && hiddenIdentical > 0 ? `已隱藏 ${hiddenIdentical} 項完全相同的測試` : ''}
-              </div>
+              <div />
               {selectedDocIds.map(baseId => {
                 const versions = versionsByBase[baseId] || [];
                 const doc = activeDocFor(baseId);
@@ -252,10 +259,10 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
                       title={`查看 ${doc.display_name || baseId} 詳細資訊`}
                       style={{ '--c-solid': colors.solid, backgroundColor: 'var(--bg-panel)', border: '1px solid var(--border-color)', borderLeft: `3px solid ${colors.solid}`, borderRadius: 'var(--radius-md)', padding: '0.6rem 0.75rem', boxShadow: 'var(--shadow-sm)', cursor: 'pointer' }}
                     >
-                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '0.5rem' }}>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'center', gap: '0.3rem 0.5rem' }}>
                         <span style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', minWidth: 0 }}>
                           <span style={{ width: '8px', height: '8px', borderRadius: 'var(--radius-xs)', backgroundColor: colors.solid, flexShrink: 0 }} />
-                          <span style={{ fontWeight: 700, color: 'var(--text-primary)', fontSize: 'var(--fs-sm)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                          <span className="cmp-colname">
                             {doc.display_name || baseId}
                           </span>
                         </span>
@@ -267,7 +274,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
                                 <button
                                   key={ver.document_id}
                                   className={`cmp-ver${isActive ? ' is-active' : ''}`}
-                                  onClick={() => setActiveVersions(prev => ({ ...prev, [baseId]: ver.document_id }))}
+                                  onClick={() => setActiveVersion(baseId, ver.document_id)}
                                   style={{ padding: '0.15rem 0.45rem', fontSize: 'var(--fs-2xs)', borderRadius: 'var(--radius-sm)', whiteSpace: 'nowrap', fontVariantNumeric: 'tabular-nums', backgroundColor: isActive ? colors.solid : 'transparent', color: isActive ? '#fff' : 'var(--text-secondary)', border: `1px solid ${isActive ? colors.solid : 'var(--border-color)'}` }}
                                 >
                                   {String(new Date(ver.publication_date).getFullYear())}
@@ -304,7 +311,7 @@ export default function SplitScreenGrid({ selectedDocIds, catalog, testsData, se
 
           {visible.length === 0 && (
             <div style={{ padding: '3rem 1rem', textAlign: 'center', color: 'var(--text-muted)', fontSize: 'var(--fs-sm)' }}>
-              {filterObjects.length === 0 ? '請至少選擇一個樣品層級。' : diffOnly ? '目前條件下，各標準的測試條件完全相同。' : '目前條件下沒有可比較的測試。'}
+              {filterObjects.length === 0 ? '請至少選擇一個樣品層級。' : diffOnly ? '目前條件下，各標準的測試條件沒有差異。' : '目前條件下沒有可比較的測試。'}
             </div>
           )}
         </div>

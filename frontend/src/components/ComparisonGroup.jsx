@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useId } from 'react';
 import Icon from './Icon';
 import { hasExemptions } from '../utils/testRecord';
-import { levelLabel } from '../utils/orgColors';
+import { levelLabelZh } from '../utils/compareRows';
 import UnitText from '../utils/UnitText';
 
 // One test (e.g. ELEC-SC-EXT) rendered as an aligned spec table:
@@ -12,10 +12,9 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
   const triggerRef = useRef(null);
   const dialogRef = useRef(null);
   const dialogTitleId = useId();
-  const catKey = group.category.toLowerCase();
-
-  const technicalRows = diffOnly ? view.technical.filter(r => r.state !== 'same') : view.technical;
-  const hiddenCount = view.technical.length - technicalRows.length;
+  
+  // 只看差異：只留數值不同的列（相同與只有單一標準規定的列隱藏）。
+  const technicalRows = diffOnly ? view.technical.filter(r => r.state === 'diff') : view.technical;
 
   const openPopover = (data, btnEl) => {
     triggerRef.current = btnEl;
@@ -70,7 +69,6 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
           >
             {multi && e.clause && <span className="cmp-entry-clause">§{e.clause}</span>}
             <UnitText text={e.value} />
-            <span className="cmp-entry-info" aria-hidden="true">ⓘ</span>
           </button>
         );
       }
@@ -110,10 +108,6 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
     <section className="cmp-group" aria-label={group.nameZh}>
       <header className="cmp-group-head">
         <h3 className="cmp-group-title">{group.nameZh}</h3>
-        <span className="tag tag-cat" style={{ '--c-cat': `var(--cat-${catKey}-text, var(--cat-other-text))` }}>
-          {group.id}
-        </span>
-        {group.nameEn && <span className="cmp-group-en">{group.nameEn}</span>}
         <span className={`cmp-group-meta${view.diffCount ? ' has-diff' : ''}`}>
           {view.diffCount ? `${view.diffCount} 項不同` : ''}
         </span>
@@ -130,7 +124,7 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
                   <button type="button" className="cmp-clause" title={`查看 ${rec.name_zh || rec.id} 的完整內容`} onClick={() => onOpenRecord(rec, col.baseId)}>
                     §{rec.section || rec.id}
                   </button>
-                  {showLevelTags && (rec.test_objects || []).map(obj => <span key={obj} className="tag">{levelLabel(obj)}</span>)}
+                  {showLevelTags && (rec.test_objects || []).map(obj => <span key={obj} className="tag">{levelLabelZh(obj)}</span>)}
                   {hasExemptions(rec) && <span className="tag tag-warn">豁免</span>}
                 </span>
               )) : (
@@ -145,11 +139,6 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
 
         {/* 技術參數列 */}
         {technicalRows.map(row => valueRow(row))}
-        {diffOnly && hiddenCount > 0 && (
-          <div className="cmp-cell cmp-note" style={{ gridColumn: '1 / -1' }}>
-            另有 {hiddenCount} 項條件各標準相同，已隱藏
-          </div>
-        )}
 
         {/* 試驗程序（預設收起，不標示差異） */}
         {view.procedure.length > 0 && (
@@ -162,9 +151,6 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
           >
             <Icon name="chevronRight" size={14} className="chev" />
             試驗程序
-            <span className="cmp-note">
-              {view.procedure.map(r => r.label).join('、')}（{view.procedureChecked ? '已對照原文' : '部分數值尚未核對原文'}，不標示差異）
-            </span>
           </button>
         )}
         {showProcedure && view.procedure.map(row => valueRow(row, 'cmp-proc'))}
@@ -189,7 +175,6 @@ export default function ComparisonGroup({ group, columns, view, diffOnly, showLe
               >
                 {columns[ci].records.length > 1 && <span className="cmp-entry-clause">§{e.clause}</span>}
                 {e.summary}
-                <span className="cmp-entry-info" aria-hidden="true">ⓘ</span>
               </button>
             )) : (columns[ci].status === 'ok'
               ? <span aria-label="此標準未規定判定要求">—</span>

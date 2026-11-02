@@ -71,9 +71,9 @@
   --cat-other-text: #5a5a5a;
 
   /* Comparison diff: ink, not a hue, so it never collides with org / category colors. */
-  --diff-accent: var(--text-primary);
+  --diff-accent: #a8957a;
   --diff-text: var(--text-primary);
-  --diff-bg: rgba(0, 0, 0, 0.045);
+  --diff-bg: rgba(168, 149, 122, 0.07);
   --hatch: rgba(0, 0, 0, 0.07);
   --mark-bg: rgba(234, 179, 8, 0.28);
 
@@ -145,9 +145,9 @@
   --cat-other: rgba(255, 255, 255, 0.06);
   --cat-other-text: #b8b4aa;
 
-  --diff-accent: #f3f1ec;
+  --diff-accent: #8f8671;
   --diff-text: #f3f1ec;
-  --diff-bg: rgba(255, 255, 255, 0.06);
+  --diff-bg: rgba(143, 134, 113, 0.1);
   --hatch: rgba(255, 255, 255, 0.08);
   --mark-bg: rgba(250, 204, 21, 0.25);
 
@@ -490,10 +490,6 @@ button {
   color: var(--text-primary);
   letter-spacing: 0.01em;
 }
-.cmp-group-en {
-  font-size: var(--fs-xs);
-  color: var(--text-muted);
-}
 .cmp-group-meta {
   margin-left: auto;
   font-size: var(--fs-xs);
@@ -533,9 +529,10 @@ button {
 .cmp-row-diff.cmp-label {
   color: var(--diff-text);
   font-weight: 700;
-  box-shadow: inset 3px 0 0 var(--diff-accent), inset -1px 0 0 var(--border-color);
+  box-shadow: inset 2px 0 0 var(--diff-accent), inset -1px 0 0 var(--border-color);
 }
 .cmp-row-diff.cmp-val { background: var(--diff-bg); }
+.cmp-row-diff.cmp-val.is-empty { background: transparent; }
 
 /* Three kinds of "nothing here":
    uncovered  = the standard has no such test        -> hatched, no text
@@ -592,6 +589,7 @@ button {
   line-height: inherit;
   text-align: left;
   cursor: pointer;
+  /* 幾乎每格都有補充說明，預設不畫底線以免滿版雜訊；滑過或鍵盤聚焦時才提示可點 */
   border-bottom: 1px dashed transparent;
   transition: border-color 0.15s ease, color 0.15s ease;
 }
@@ -601,25 +599,15 @@ button {
   display: block;
   margin-top: 0.35rem;
 }
-.cmp-entry--more:hover {
-  border-bottom-color: var(--accent-color);
-  color: var(--accent-color);
+.cmp-entry--more:hover,
+.cmp-entry--more:focus-visible {
+  border-bottom-color: var(--text-secondary);
+  color: var(--text-primary);
 }
 .cmp-entry--more:focus-visible {
   outline: 2px solid var(--accent-color);
   outline-offset: 2px;
   border-radius: var(--radius-xs);
-}
-.cmp-entry-info {
-  display: inline-block;
-  margin-left: 0.28rem;
-  font-size: var(--fs-2xs);
-  color: var(--text-muted);
-  vertical-align: baseline;
-  transition: color 0.15s ease;
-}
-.cmp-entry--more:hover .cmp-entry-info {
-  color: var(--accent-color);
 }
 .cmp-entry--more.cmp-criteria {
   display: -webkit-box;
@@ -675,6 +663,67 @@ button {
 .cmp-section-toggle .cmp-note { font-weight: 400; }
 .cmp-proc .cmp-label, .cmp-proc.cmp-val { background: var(--bg-color); }
 .cmp-proc.cmp-val { color: var(--text-secondary); }
+
+/* 比對頁篩選列 */
+.cmp-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1.5rem;
+  padding: 0.85rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+.cmp-filter-group { display: flex; flex-wrap: wrap; align-items: center; gap: 0.45rem; }
+.cmp-filter-label { font-size: var(--fs-xs); color: var(--text-muted); margin-right: 0.1rem; white-space: nowrap; }
+.cmp-filter-sep { width: 1px; height: 1.4rem; background: var(--border-color); }
+.cmp-hidden-note {
+  padding: 0.5rem 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+  font-size: var(--fs-xs);
+  color: var(--text-secondary);
+}
+.cmp-colname {
+  font-weight: 700;
+  color: var(--text-primary);
+  font-size: var(--fs-sm);
+  overflow-wrap: break-word;
+  line-height: 1.25;
+}
+
+/* 頁面內提示（取代 alert） */
+.app-notice {
+  position: fixed;
+  left: 50%;
+  bottom: 5.5rem;
+  transform: translateX(-50%);
+  z-index: 1300;
+  max-width: calc(100vw - 2rem);
+  padding: 0.45rem 0.9rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  background: var(--bg-panel);
+  color: var(--text-primary);
+  box-shadow: var(--shadow-md);
+  font-size: var(--fs-xs);
+}
+
+@media (max-width: 767px) {
+  .cmp-filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.6rem 1rem;
+    padding: 0.65rem 0.85rem;
+    scrollbar-width: none;
+  }
+  .cmp-filters::-webkit-scrollbar { display: none; }
+  .cmp-filter-group { flex-wrap: nowrap; flex-shrink: 0; }
+  .cmp-filter-sep { display: none; }
+  .cmp-filters .sm-filter, .cmp-filter-label { white-space: nowrap; flex-shrink: 0; }
+  .cmp-hidden-note { padding: 0.45rem 0.85rem; }
+  .cmp-cell { padding: 0.45rem 0.5rem; }
+  .cmp-colhead { padding: 0.5rem 0.55rem !important; }
+  .cmp-colname { font-size: var(--fs-xs); }
+}
 
 /* ───────── Tags ───────── */
 .tag {

@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import Icon from './Icon';
 import { sortConditionEntries } from '../utils/parameterDictionary';
-import { levelLabel } from '../utils/orgColors';
+import { levelLabelZh, stripEnglishNote } from '../utils/compareRows';
 import { toText, hasExemptions } from '../utils/testRecord';
 
 export default function TestDetailModal({ record, baseId, onClose }) {
@@ -13,7 +13,7 @@ export default function TestDetailModal({ record, baseId, onClose }) {
 
   const entries = sortConditionEntries(record.conditions);
   const criteria = record.acceptance_criteria;
-  const title = record.name_zh || record.name_en || '測試項目';
+  const title = stripEnglishNote(record.name_zh || '') || record.name_en || '測試項目';
 
   return (
     <div className="modal-backdrop" onClick={onClose}>
@@ -26,12 +26,9 @@ export default function TestDetailModal({ record, baseId, onClose }) {
           <div style={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center', gap: '0.4rem', marginBottom: '0.35rem', fontSize: 'var(--fs-xs)', color: 'var(--text-muted)', fontVariantNumeric: 'tabular-nums' }}>
             <span style={{ fontWeight: 600, color: 'var(--text-secondary)' }}>{baseId}</span>
             {record.section && <span>§{record.section}</span>}
-            {(record.test_objects || []).map(obj => <span key={obj} className="tag">{levelLabel(obj)}</span>)}
+            {(record.test_objects || []).map(obj => <span key={obj} className="tag">{levelLabelZh(obj)}</span>)}
           </div>
           <h3 style={{ margin: 0, fontSize: '1.2rem', fontWeight: 700, color: 'var(--text-primary)' }}>{title}</h3>
-          {record.name_en && record.name_zh && (
-            <div style={{ marginTop: '0.15rem', fontSize: 'var(--fs-xs)', color: 'var(--text-muted)' }}>{record.name_en}</div>
-          )}
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
