@@ -94,7 +94,13 @@ if (touched.size) {
 }
 
 if (work.mode === 'all-fields') {
-  const numErrors = checkStandardData(std, oldData, data);
+  // 原文的數字與資料不同時，主代理在 overrides.json 該筆加上
+  // "number_correction": {"old": "…", "new": "…", "reason": "…"}，該測試的數值變動才放行。
+  // 只認 overrides（主代理驗收後的修正），子代理的 decisions 不能自己放行。
+  const approved = new Map(overrides.filter((o) => o.number_correction).map((o) => [o.id, o.number_correction]));
+  const allErrors = checkStandardData(std, oldData, data);
+  const numErrors = allErrors.filter((m) => ![...approved.keys()].some((id) => m.includes(` · ${id}`)));
+  for (const [id, c] of approved) console.log(`已核准的數值更正：${id}「${c.old}」→「${c.new}」（${c.reason}）`);
   if (numErrors.length > 0) {
     numErrors.forEach((m) => console.error(`✗ ${m}`));
     console.error('check_numbers.mjs 發現數值遺失，沒有寫入。');
