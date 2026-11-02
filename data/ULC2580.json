@@ -53,16 +53,19 @@
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 25 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 d)：可用具代表性的次組件試驗。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "放完電至 EODV",
+          "detail": "25.2：樣品先完全放電至製造商規定的 EODV，再以最大規定充電速率充電。",
+          "source_reference": "25.2"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；25.3沒有另外規定。25.3 a)：保護電路中止充電時，DUT 依 18.5 與 20.2 監測。",
+          "source_reference": "18.5；25.3"
         }
       },
       "acceptance_criteria": {
@@ -119,16 +122,19 @@
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 26 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 d)：可用具代表性的次組件試驗。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電（MOSOC），於室溫達溫度平衡",
+          "detail": "26.1：在充滿電（依 18.1 的 MOSOC）樣品上試驗；26.4：室溫下試驗，接上端子前樣品須達平衡溫度。18.1：充電後試驗前可在室溫靜置最多 8 小時。",
+          "source_reference": "26.1；26.4；18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；26.5沒有另外規定。26.5 的 7 小時為判定試驗結束的條件，不是觀察期。",
+          "source_reference": "18.5；26.5"
         }
       },
       "acceptance_criteria": {
@@ -176,16 +182,19 @@
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 27 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 d)：可用具代表性的次組件試驗。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電（MOSOC）",
+          "detail": "27.1：在充滿電（依 18.1 的 MOSOC）樣品上試驗。18.1：充電後試驗前可在室溫靜置最多 8 小時。",
+          "source_reference": "27.1；18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；27.2沒有另外規定。",
+          "source_reference": "18.5；27.2"
         }
       },
       "acceptance_criteria": {
@@ -230,16 +239,19 @@
           "detail": "在最大充電與放電條件下，重複執行總共 5 次完整循環。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 28 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。第 28、30、31、32 章使用同一樣品（表注 a）。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "放完電至 EODV，於腔室上限充電溫度穩定",
+          "detail": "28.2：放完電至 EODV 的 EESA 放入設定為上限充電溫度的腔室，所有電芯溫度估計在腔室溫度 ±10 °C 內並維持 1 小時後才開始充電。28.3：充電完成（MOSOC）後，在腔室內再次穩定同樣條件後才放電。",
+          "source_reference": "28.2；28.3"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；28.5沒有另外規定。",
+          "source_reference": "18.5；28.5"
         }
       },
       "acceptance_criteria": {
@@ -280,16 +292,19 @@
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 29 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電後，除 1 個模組外全部放完電，該模組放至約 50% SOC",
+          "detail": "29.2：充滿電（MOSOC）的 EESA，其中 1 個模組以外的所有模組放電至規定的完全放電狀態，未放完的模組放電至其規定 SOC 的約 50%，形成不平衡後才充電。",
+          "source_reference": "29.2"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；29.5沒有另外規定。",
+          "source_reference": "18.5；29.5"
         }
       },
       "acceptance_criteria": {
@@ -334,16 +349,19 @@
           "detail": "測試電壓持續施加至少 1 分鐘。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "使用溫度試驗的同一樣品",
+          "detail": "Table 18.1：第 30 章欄位為「Use Temperature sample」；表注 a)：第 28、30、31、32 章使用同一樣品。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "依 18.1 於 MOSOC；使用第 28 章試驗後的同一樣品",
+          "detail": "18.1 通則：除另有規定，試驗時 EESA 為 MOSOC；本章未另規定充電狀態。表注 a)：與第 28、31、32 章使用同一樣品。",
+          "source_reference": "18.1；Table 18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；30沒有另外規定。",
+          "source_reference": "18.5；30"
         }
       },
       "acceptance_criteria": {
@@ -386,16 +404,19 @@
           "detail": "施加高於待測電路的直流電壓（至少為高壓直流母線的工作電壓）。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "使用溫度試驗的同一樣品",
+          "detail": "Table 18.1：第 31 章欄位為「Use Temperature sample」；表注 a)：第 28、30、31、32 章使用同一樣品。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電；(b) 先依 IEC 60068-2-30 濕熱調節",
+          "detail": "31.4：(a)、(b) 兩種量測都在充滿電狀態下進行。31.2：(a) 為接收狀態、不先做濕熱調節；(b) 先依 IEC 60068-2-30（Variant 1、最高溫 55 ±2 °C、6 次循環）調節，31.5：第 6 次循環後依該標準第 9 章受控恢復，並在恢復結束後 30 分鐘內量測。",
+          "source_reference": "31.2；31.4；31.5"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；31沒有另外規定。",
+          "source_reference": "18.5；31"
         }
       },
       "acceptance_criteria": {
@@ -426,16 +447,19 @@
           "detail": "施加最大額定電流的 150% 或 25A (取較大者) 維持 5 秒。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "使用溫度試驗的同一樣品",
+          "detail": "Table 18.1：第 32 章欄位為「Use Temperature sample」；表注 a)：第 28、30、31、32 章使用同一樣品。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "依 18.1 於 MOSOC；使用第 28 章試驗後的同一樣品",
+          "detail": "18.1 通則：除另有規定，試驗時 EESA 為 MOSOC；本章未另規定充電狀態。表注 a)：與第 28、30、31 章使用同一樣品。",
+          "source_reference": "18.1；Table 18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；32沒有另外規定。",
+          "source_reference": "18.5；32"
         }
       },
       "acceptance_criteria": {
@@ -487,16 +511,19 @@
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 33 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充電試驗先放完電至 EODV、放電試驗先充滿電，均於最高工作環境溫度調節 7 小時",
+          "detail": "33.2：放完電至 EODV 後，在規定最高工作環境溫度下調節 7 小時，仍在腔室內、冷卻／熱穩定系統停用下以最大規定充電速率充電。33.3：充滿電（MOSOC）後同樣調節 7 小時，再以最大放電速率放電。33.7：再以最低規定工作環境溫度重複。",
+          "source_reference": "33.2；33.3；33.7"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；33.6沒有另外規定。",
+          "source_reference": "18.5；33.6"
         }
       },
       "acceptance_criteria": {
@@ -540,16 +567,19 @@
           "detail": "測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 34 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 b)、c)：僅適用於非道路車輛用組件；可裝在具代表性的車輛框架上。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電（MOSOC）",
+          "detail": "34.2：樣品充電至 18.1 的 MOSOC 後旋轉。",
+          "source_reference": "34.2；18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；34.2沒有另外規定。",
+          "source_reference": "18.5；34.2"
         }
       },
       "acceptance_criteria": {
@@ -588,16 +618,19 @@
           "detail": "按照預期車輛的振動輪廓進行；若無，則使用 SAE J2380 標準。測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 35 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 d)：可用具代表性的次組件試驗。表注 c)：可裝在具代表性的車輛框架上。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電（MOSOC）",
+          "detail": "35.1：試驗用樣品為充滿電（依 18.1 的 MOSOC）。",
+          "source_reference": "35.1；18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後擱置 8～24 小時再檢查",
+          "detail": "35.5：試驗後 8～24 小時的靜置期結束、冷卻至接近室溫後，才檢查損壞並量測絕緣電阻。18.5 的 1 小時通則是否另行適用，原文未說明。",
+          "source_reference": "35.5；18.5"
         }
       },
       "acceptance_criteria": {
@@ -651,16 +684,19 @@
           "detail": "3 個互相垂直軸，每軸正負方向各 3 次。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 36 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 d)：可用具代表性的次組件試驗。表注 c)：可裝在具代表性的車輛框架上。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電（MOSOC）",
+          "detail": "36.3：充滿電（依 18.1 的 MOSOC）的樣品進行半正弦波衝擊。",
+          "source_reference": "36.3；18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "衝擊後擱置 6～24 小時再檢查",
+          "detail": "36.3、36.5：施加衝擊後，樣品接近室溫並經 6～24 小時靜置期，才檢查損壞並量測絕緣電阻。18.5 的 1 小時通則是否另行適用，原文未說明。",
+          "source_reference": "36.3；36.5"
         }
       },
       "acceptance_criteria": {
@@ -705,16 +741,19 @@
           "detail": "以最可能產生不利結果的位置跌落，模擬維護/拆卸時的實際情況。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 37 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 d)：可用具代表性的次組件試驗。37.9 例外：供拆下充電或更換的 EESA，同一樣品至少落下 3 次。",
+          "source_reference": "18.2；Table 18.1；37.9"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "室溫平衡後，於 MOSOC",
+          "detail": "37.2：EESA 在室溫平衡後，於 18.1 的 MOSOC 下落下。",
+          "source_reference": "37.2；18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "落下後 6～24 小時內檢查",
+          "detail": "37.7：落下後 6～24 小時內檢查損壞，期間監測溫度；若樣品回到或維持接近室溫才做絕緣電阻試驗。18.5 的 1 小時通則是否另行適用，原文未說明。",
+          "source_reference": "37.7；18.5"
         }
       },
       "acceptance_criteria": {
@@ -760,16 +799,19 @@
           "detail": "必須使用符合 SAE J2464 規範的肋條狀測試壓板 (ribbed test platen) 與固定平面進行擠壓。依樣品尺寸選用半徑 75 mm 之圓柱壓頭或平整鋼製壓板。測試期間必須使用火花點火源或氣體監測儀器來檢測可燃氣體。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 38 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 c)：可裝在具代表性的車輛框架；38.2：每個壓擠方向可使用不同樣品。",
+          "source_reference": "18.2；Table 18.1；38.2"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電",
+          "detail": "38.1：在充滿電的 EESA 上試驗。",
+          "source_reference": "38.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；38.3沒有另外規定。",
+          "source_reference": "18.5；38.3"
         }
       },
       "acceptance_criteria": {
@@ -813,16 +855,19 @@
           "detail": "使用 SAE J2464 流程，溫度為 85 °C 至 -40 °C。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 39 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 d)：可用具代表性的次組件試驗。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電（MOSOC）",
+          "detail": "39.2：充滿電（依 18.1 的 MOSOC）的 EESA 進行熱衝擊。",
+          "source_reference": "39.2；18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；39.3沒有另外規定。",
+          "source_reference": "18.5；39.3"
         }
       },
       "acceptance_criteria": {
@@ -858,16 +903,19 @@
           "detail": "依據 IEC 60068-2-52 或等效標準進行鹽霧暴露，並採用嚴酷等級 6 進行測試。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 40 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 d)：可用具代表性的次組件試驗。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電（MOSOC）",
+          "detail": "40.2：充滿電（依 18.1 的 MOSOC）的 EESA 進行鹽霧試驗。",
+          "source_reference": "40.2；18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "40.3：充放電循環後 DUT 應如預期運作，「followed by an observation period」，但未寫時間；沿用通則 18.5 的 1 小時。",
+          "source_reference": "40.3；18.5"
         }
       },
       "acceptance_criteria": {
@@ -917,16 +965,19 @@
           "detail": "在 5% 鹽水中完全浸沒 1 小時，或滿足 NEMA 60529 / UL 50E 的 IP 等級要求。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 41 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 d)：可用具代表性的次組件試驗。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電（MOSOC）",
+          "detail": "41.1：在充滿電（依 18.1 的 MOSOC）的 EESA 上試驗。",
+          "source_reference": "41.1；18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；41.2沒有另外規定。41.2 的浸水 1 小時（或至可見反應停止）是試驗本身，不是觀察期。",
+          "source_reference": "18.5；41.2"
         }
       },
       "acceptance_criteria": {
@@ -960,16 +1011,19 @@
           "detail": "暴露於 590 °C 以上之火焰中持續 20 分鐘，或按車輛預期的火災暴露條件進行。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 42 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 d)：可用具代表性的次組件試驗。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電（MOSOC）",
+          "detail": "42.2：充滿電（依 18.1 的 MOSOC）的 EESA 受火焰燒烤。",
+          "source_reference": "42.2；18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "試驗後觀察 1 小時",
+          "detail": "18.5：除個別試驗方法另有規定，試驗後須有 1 小時觀察時間才結束，並依 20.2 監測溫度；42.4沒有另外規定。42.4 的火焰維持 20 分鐘是試驗本身，不是觀察期。",
+          "source_reference": "18.5；42.4"
         }
       },
       "acceptance_criteria": {
@@ -1004,16 +1058,19 @@
           "detail": "使用內部短路或其他手段（見 Annex C）觸發至少一個電池發生熱失控。"
         },
         "sample_quantity": {
-          "value": "1 組代表性模組或電池包",
-          "detail": "電池包或系統級測試需 1 組完整代表性 DUT。"
+          "value": "1 個 EESA 樣品",
+          "detail": "18.2；Table 18.1：第 43 章為 1 個 EESA 樣品；試驗樣品為製造後 6 個月內的新鮮樣品。表注 d)：可用具代表性的次組件試驗。43.2.4 例外 1：位置不明時可用另一樣品、不同電芯位置重複試驗。",
+          "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "依試驗要求調整至 100% 或特定 SOC",
-          "detail": "依各測試章節要求調整初始荷電狀態。"
+          "value": "充滿電（MOSOC）；必要時維持在最高規定溫度 ±5 °C",
+          "detail": "43.2.4：充滿電（依 18.1 的 MOSOC）的 DUT 進行試驗；若會影響結果，樣品須在充電與運作時的最高規定溫度，容許誤差 ±5 °C 以內。",
+          "source_reference": "43.2.4；18.1"
         },
         "observation_period": {
-          "value": "測試完成後觀察 1 小時 (熱失控監控 2 小時)",
-          "detail": "試驗結束後外殼冷卻並在環境中觀察至少 1 小時；熱擴散試驗需監控 2 小時。"
+          "value": "熱失控啟動後，停止誘發方式並觀察 1 小時",
+          "detail": "43.2.4：熱失控一旦啟動，就停止或關閉誘發機制，DUT 進行 1 小時觀察。43.2.6 另提到「within specific time」，原文未給具體時間。",
+          "source_reference": "43.2.4"
         }
       },
       "acceptance_criteria": {
@@ -1049,16 +1106,14 @@
           "detail": "依據 IEC 62660-2 進行振動測試。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆電芯",
-          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+          "value": "3 個電芯",
+          "detail": "B1.1；Table B3.1：B2.1 為 3 個樣品；樣品須為製造後 6 個月內。",
+          "source_reference": "B1.1；B3.1；Table B3.1"
         },
         "pre_conditioning": {
-          "value": "常溫標準充放電確認容量後滿充",
-          "detail": "依製造商規定之標準充電程序充滿電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
+          "value": "鋰金屬陽極電芯先依附錄 D 充放電循環調理；試驗條件依 IEC 62660-2",
+          "detail": "B1.1.1：試驗前，鋰金屬陽極二次電芯須先依附錄 D 進行充放電循環調理。B1.2：試驗條件依 IEC 62660-2。B1.3：電芯容量依 D2.2 的容量檢查決定。",
+          "source_reference": "B1.1.1；B1.2；B1.3"
         }
       },
       "acceptance_criteria": {
@@ -1089,16 +1144,14 @@
           "detail": "依據 IEC 62660-2 進行衝擊測試。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆電芯",
-          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+          "value": "3 個電芯",
+          "detail": "B1.1；Table B3.1：B2.2 為 3 個樣品；樣品須為製造後 6 個月內。",
+          "source_reference": "B1.1；B3.1；Table B3.1"
         },
         "pre_conditioning": {
-          "value": "常溫標準充放電確認容量後滿充",
-          "detail": "依製造商規定之標準充電程序充滿電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
+          "value": "鋰金屬陽極電芯先依附錄 D 充放電循環調理；試驗條件依 IEC 62660-2",
+          "detail": "B1.1.1：試驗前，鋰金屬陽極二次電芯須先依附錄 D 進行充放電循環調理。B1.2：試驗條件依 IEC 62660-2。B1.3：電芯容量依 D2.2 的容量檢查決定。",
+          "source_reference": "B1.1.1；B1.2；B1.3"
         }
       },
       "acceptance_criteria": {
@@ -1137,16 +1190,19 @@
           "detail": "共 3 次跌落。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆電芯",
-          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+          "value": "3 個電芯",
+          "detail": "B1.1；Table B3.1：B2.3 為 3 個樣品；樣品須為製造後 6 個月內。",
+          "source_reference": "B1.1；B3.1；Table B3.1"
         },
         "pre_conditioning": {
-          "value": "常溫標準充放電確認容量後滿充",
-          "detail": "依製造商規定之標準充電程序充滿電。"
+          "value": "依製造商規格充電（依 IEC 62660-2 一般充電條件）",
+          "detail": "B2.3.1：電芯依製造商規格、並依 IEC 62660-2 的一般充電條件（General Charge Conditions, Electrical Measurement）充電後落下。B1.1.1：試驗前，鋰金屬陽極二次電芯須先依附錄 D 進行充放電循環調理。B1.2：試驗條件依 IEC 62660-2。B1.3：電芯容量依 D2.2 的容量檢查決定。",
+          "source_reference": "B2.3.1；B1.1.1；B1.2；B1.3"
         },
         "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
+          "value": "落下 3 次後觀察 1 小時再檢查",
+          "detail": "B2.3.2：從 1.0 m 落在平坦混凝土面 3 次（每次方位不同），之後觀察 1 小時再檢查是否合格。",
+          "source_reference": "B2.3.2"
         }
       },
       "acceptance_criteria": {
@@ -1177,16 +1233,14 @@
           "detail": "依據 IEC 62660-2 進行擠壓測試。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆電芯",
-          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+          "value": "3 個電芯",
+          "detail": "B1.1；Table B3.1：B2.4 為 3 個樣品；樣品須為製造後 6 個月內。",
+          "source_reference": "B1.1；B3.1；Table B3.1"
         },
         "pre_conditioning": {
-          "value": "常溫標準充放電確認容量後滿充",
-          "detail": "依製造商規定之標準充電程序充滿電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
+          "value": "鋰金屬陽極電芯先依附錄 D 充放電循環調理；試驗條件依 IEC 62660-2",
+          "detail": "B1.1.1：試驗前，鋰金屬陽極二次電芯須先依附錄 D 進行充放電循環調理。B1.2：試驗條件依 IEC 62660-2。B1.3：電芯容量依 D2.2 的容量檢查決定。",
+          "source_reference": "B1.1.1；B1.2；B1.3"
         }
       },
       "acceptance_criteria": {
@@ -1217,16 +1271,14 @@
           "detail": "依據 IEC 62660-2 進行高溫耐久性測試。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆電芯",
-          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+          "value": "3 個電芯",
+          "detail": "B1.1；Table B3.1：B2.5 為 3 個樣品；樣品須為製造後 6 個月內。",
+          "source_reference": "B1.1；B3.1；Table B3.1"
         },
         "pre_conditioning": {
-          "value": "常溫標準充放電確認容量後滿充",
-          "detail": "依製造商規定之標準充電程序充滿電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
+          "value": "鋰金屬陽極電芯先依附錄 D 充放電循環調理；試驗條件依 IEC 62660-2",
+          "detail": "B1.1.1：試驗前，鋰金屬陽極二次電芯須先依附錄 D 進行充放電循環調理。B1.2：試驗條件依 IEC 62660-2。B1.3：電芯容量依 D2.2 的容量檢查決定。",
+          "source_reference": "B1.1.1；B1.2；B1.3"
         }
       },
       "acceptance_criteria": {
@@ -1257,16 +1309,14 @@
           "detail": "依據 IEC 62660-2 進行溫度循環測試。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆電芯",
-          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+          "value": "3 個電芯",
+          "detail": "B1.1；Table B3.1：B2.6 為 3 個樣品；樣品須為製造後 6 個月內。",
+          "source_reference": "B1.1；B3.1；Table B3.1"
         },
         "pre_conditioning": {
-          "value": "常溫標準充放電確認容量後滿充",
-          "detail": "依製造商規定之標準充電程序充滿電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
+          "value": "鋰金屬陽極電芯先依附錄 D 充放電循環調理；試驗條件依 IEC 62660-2",
+          "detail": "B1.1.1：試驗前，鋰金屬陽極二次電芯須先依附錄 D 進行充放電循環調理。B1.2：試驗條件依 IEC 62660-2。B1.3：電芯容量依 D2.2 的容量檢查決定。",
+          "source_reference": "B1.1.1；B1.2；B1.3"
         }
       },
       "acceptance_criteria": {
@@ -1297,16 +1347,14 @@
           "detail": "依據 IEC 62660-2 進行外部短路測試。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆電芯",
-          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+          "value": "3 個電芯",
+          "detail": "B1.1；Table B3.1：B2.7 為 3 個樣品；樣品須為製造後 6 個月內。",
+          "source_reference": "B1.1；B3.1；Table B3.1"
         },
         "pre_conditioning": {
-          "value": "常溫標準充放電確認容量後滿充",
-          "detail": "依製造商規定之標準充電程序充滿電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
+          "value": "鋰金屬陽極電芯先依附錄 D 充放電循環調理；試驗條件依 IEC 62660-2",
+          "detail": "B1.1.1：試驗前，鋰金屬陽極二次電芯須先依附錄 D 進行充放電循環調理。B1.2：試驗條件依 IEC 62660-2。B1.3：電芯容量依 D2.2 的容量檢查決定。",
+          "source_reference": "B1.1.1；B1.2；B1.3"
         }
       },
       "acceptance_criteria": {
@@ -1341,16 +1389,14 @@
           "detail": "以最大充電電流恆流充電至 120% 最大電壓或 130% SOC。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆電芯",
-          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+          "value": "3 個電芯",
+          "detail": "B1.1；Table B3.1：B2.8 為 3 個樣品；樣品須為製造後 6 個月內。",
+          "source_reference": "B1.1；B3.1；Table B3.1"
         },
         "pre_conditioning": {
-          "value": "常溫標準充放電確認容量後滿充",
-          "detail": "依製造商規定之標準充電程序充滿電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
+          "value": "鋰金屬陽極電芯先依附錄 D 充放電循環調理；試驗條件依 IEC 62660-2",
+          "detail": "B1.1.1：試驗前，鋰金屬陽極二次電芯須先依附錄 D 進行充放電循環調理。B1.2：試驗條件依 IEC 62660-2。B1.3：電芯容量依 D2.2 的容量檢查決定。",
+          "source_reference": "B1.1.1；B1.2；B1.3"
         }
       },
       "acceptance_criteria": {
@@ -1381,16 +1427,14 @@
           "detail": "依據 IEC 62660-2 進行強制放電測試。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆電芯",
-          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+          "value": "3 個電芯",
+          "detail": "B1.1；Table B3.1：B2.9 為 3 個樣品；樣品須為製造後 6 個月內。",
+          "source_reference": "B1.1；B3.1；Table B3.1"
         },
         "pre_conditioning": {
-          "value": "常溫標準充放電確認容量後滿充",
-          "detail": "依製造商規定之標準充電程序充滿電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
+          "value": "鋰金屬陽極電芯先依附錄 D 充放電循環調理；試驗條件依 IEC 62660-2",
+          "detail": "B1.1.1：試驗前，鋰金屬陽極二次電芯須先依附錄 D 進行充放電循環調理。B1.2：試驗條件依 IEC 62660-2。B1.3：電芯容量依 D2.2 的容量檢查決定。",
+          "source_reference": "B1.1.1；B1.2；B1.3"
         }
       },
       "acceptance_criteria": {
@@ -1421,16 +1465,14 @@
           "detail": "將單電池置於金屬網上，使用 Meker 本生燈加熱，直到單電池爆炸或燃燒殆盡。"
         },
         "sample_quantity": {
-          "value": "每組 5 顆電芯",
-          "detail": "電芯級別測試依表 14.1 規定，每項條件使用 5 顆樣品（新鮮態或循環態）。"
+          "value": "3 個電芯（表中記為 3 (6)）",
+          "detail": "B1.1；Table B3.1：B2.10 樣品數記為「3 (6)」，括號內 6 的涵義原文未說明；樣品須為製造後 6 個月內。",
+          "source_reference": "B1.1；B3.1；Table B3.1"
         },
         "pre_conditioning": {
-          "value": "常溫標準充放電確認容量後滿充",
-          "detail": "依製造商規定之標準充電程序充滿電。"
-        },
-        "observation_period": {
-          "value": "外殼溫度恢復室溫 或 1 小時",
-          "detail": "持續觀察至電芯外殼溫度冷卻至室溫或至少觀察 1 小時。"
+          "value": "鋰金屬陽極電芯先依附錄 D 充放電循環調理；試驗條件依 IEC 62660-2",
+          "detail": "B1.1.1：試驗前，鋰金屬陽極二次電芯須先依附錄 D 進行充放電循環調理。B1.2：試驗條件依 IEC 62660-2。B1.3：電芯容量依 D2.2 的容量檢查決定。",
+          "source_reference": "B1.1.1；B1.2；B1.3"
         }
       },
       "acceptance_criteria": {
@@ -1508,6 +1550,7 @@
       "單電芯失效測試：Section 43 是強制核心項目"
     ],
     "total_test_entries": 18,
-    "note": "已排除 Annex B 中不適用的部分，但加入了 Annex B 的單電池(CELL)強制測試項目與系統的模組(MODULE)適用性。"
+    "note": "已排除 Annex B 中不適用的部分，但加入了 Annex B 的單電池(CELL)強制測試項目與系統的模組(MODULE)適用性。",
+    "enrichment": "2026-11-02 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
   }
 }
