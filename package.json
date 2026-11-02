@@ -12,7 +12,8 @@
     "check:catalog": "node scripts/sync_catalog.mjs --check",
     "sync:catalog": "node scripts/sync_catalog.mjs",
     "check:search": "node scripts/check_search.mjs",
-    "check:all": "npm run validate && npm run normalize:check && npm run check:catalog && npm run check:search && npm run lint:ui"
+    "check:all": "npm run validate && npm run normalize:check && npm run check:catalog && npm run check:search && npm run lint:ui && npm run check:wording",
+    "check:wording": "node scripts/review/near_same.mjs --check"
   },
   "devDependencies": {
     "cheerio": "^1.2.0"

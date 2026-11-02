@@ -50,3 +50,7 @@ jobs:
       # 搜尋範例必須真的搜得到東西
       - name: Check search examples
         run: node scripts/check_search.mjs
+
+      # 同義內容寫法不一致的列數只能降不能升（scripts/review/near_same_baseline.json）
+      - name: Check wording consistency
+        run: node scripts/review/near_same.mjs --check
