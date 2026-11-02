@@ -211,19 +211,19 @@
           "detail": "試驗後於 22 ± 5 °C 常溫穩定 6 小時。",
           "source_reference": "4.7.1.1"
         },
-        "duration": {
-          "value": "6 小時",
-          "detail": "試驗完成後於常溫環境穩定 6 小時。",
-          "source_reference": "4.7.1.1"
-        },
         "sample_quantity": {
           "value": "電池樣品 B6/10",
           "detail": "首件檢驗樣品分配：B6（資格檢驗）或 B10（初期生產檢驗 IPI）。",
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "按 4.4.6.1 執行全容量試驗並依 4.4.9 充電稱重",
+          "value": "先以 1 C 充放電測定全容量，再於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電並稱重",
           "detail": "執行全容量試驗，靜置 5 分鐘後依 4.4.9 充電並稱重，再分別於運作狀態及休眠狀態依 ATPD 2404 高空章節進行測試。",
+          "source_reference": "4.7.1.1"
+        },
+        "observation_period": {
+          "value": "於 22 ± 5 °C 常溫穩定 6 小時後測定全容量並稱重",
+          "detail": "試驗完成後於 22 ± 5 °C 穩定 6 小時，隨後執行 4.4.6.1 全容量測試並稱重。",
           "source_reference": "4.7.1.1"
         }
       },
@@ -260,7 +260,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "按 4.4.6.1 執行全容量試驗並依 4.4.9 充電稱重",
+          "value": "先以 1 C 充放電測定全容量，再於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電並稱重",
           "detail": "執行全容量試驗，靜置 5 分鐘後依 4.4.9 充電並稱重，置於休眠狀態 (Dormant State) 執行 ATPD 2404 快速減壓章節測試。",
           "source_reference": "4.7.1.2"
         }
@@ -298,7 +298,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "依 4.4.9 充電並置於休眠狀態",
+          "value": "於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電並置於休眠狀態",
           "detail": "依 4.4.9 充電後置於休眠狀態 (Dormant State)，依 ATPD 2404 溫度衝擊章節執行測試。",
           "source_reference": "4.7.3"
         }
@@ -330,7 +330,7 @@
           "source_reference": "4.7.4"
         },
         "mounting": {
-          "value": "依 4.3.2 使用專用安裝支架，不得使用減震器",
+          "value": "使用專用安裝支架固定，不得改造電池或使用減震器",
           "detail": "電池不得為了安裝測試而進行改造；若有專用安裝支架則應使用專用支架；不得使用減震器 (Vibration isolators shall not be used)。",
           "source_reference": "4.3.2"
         },
@@ -340,7 +340,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "按 4.4.6.1 執行全容量試驗並依 4.4.9 充電",
+          "value": "先以 1 C 充放電測定全容量，再於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電",
           "detail": "執行全容量試驗後依 4.4.9 充電，置於休眠狀態依 ATPD 2404 基礎衝擊與功能性衝擊章節執行測試。",
           "source_reference": "4.7.4"
         }
@@ -376,7 +376,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "按 4.4.6.1 執行全容量試驗並依 4.4.9 充電",
+          "value": "先以 1 C 充放電測定全容量，再於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電",
           "detail": "執行全容量試驗後依 4.4.9 充電，依 ATPD-2404 振動章節及 AECTP-400 砲塔尾艙與輕型車輛車體安裝振動譜型執行測試。",
           "source_reference": "4.7.5"
         }
@@ -418,7 +418,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "端子試驗後依 4.4.9 充電並稱重",
+          "value": "端子柱與螺紋套筒試驗後，於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電並稱重",
           "detail": "端子柱與螺紋套筒試驗 (3.3.3.1 / 4.4.2.4.1) 完成後，依 4.4.9 充電並稱重。",
           "source_reference": "4.7.6"
         }
@@ -461,7 +461,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "按 4.4.6.1 執行全容量試驗並依 4.4.9 充電",
+          "value": "先以 1 C 充放電測定全容量，再於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電",
           "detail": "執行全容量試驗後依 4.4.9 充電，置於休眠狀態依 ATPD 2404 濕度（系統儲存與運輸）章節測試。",
           "source_reference": "4.7.7"
         }
@@ -504,7 +504,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "按 4.4.6.1 執行全容量試驗並依 4.4.9 充電",
+          "value": "先以 1 C 充放電測定全容量，再於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電",
           "detail": "按 4.4.6.1 執行全容量試驗後，依 4.4.9 充電。",
           "source_reference": "4.7.9"
         }
@@ -562,7 +562,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "依 4.4.6.1 步驟 a.-d. 執行全容量試驗",
+          "value": "試驗前以 1 C 充放電測定全容量，並驗證通訊功能正常",
           "detail": "試驗前後執行全容量測試，並依 4.4.1 驗證通訊功能正常。",
           "source_reference": "4.9"
         }
@@ -589,19 +589,49 @@
         "CELL"
       ],
       "conditions": {
-        "sample_quantity": {
-          "value": "廠商合格證明 (適用 B1～B14 全部電池)",
-          "detail": "廠商須提供合格證明，證明用於組裝電池之電芯已依 SAE J2464 進行過充電特徵化測試。",
-          "source_reference": "Table VII；4.10.1.1"
+        "soc": {
+          "value": "100% SOC（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.2.1，受測電芯在過充電試驗開始前應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "3.11.1.1.1；4.10.1.1.1；SAE J2464 4.5.1.2.1"
+        },
+        "charging_voltage": {
+          "value": "≥ 150% 最高充電電壓（電芯及 <400 V 包）／≥ 120%（≥400 V 包）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.2.1，電芯充電至至少 150% 最高充電電壓（模組與電池包 <400 V 為 150%、≥400 V 為 120%），且不低於保護跳脫電壓之 95%。",
+          "source_reference": "3.11.1.1.1；4.10.1.1.1；SAE J2464 4.5.1.2.1"
         },
         "charging_current": {
-          "value": "依 SAE J2464 電芯過充電試驗規定",
-          "detail": "依 SAE J2464 過充電試驗（電芯及模組或電池包）章節執行測試。",
-          "source_reference": "4.10.1.1.1"
+          "value": "1 C 恆流（電芯與包）；電芯另以正常運作最差工況最大電流（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.2.1，電芯進行兩種倍率測試：(a) 1 C 恆流，(b) 正常運作條件最差工況下的最大電流高倍率過充。",
+          "source_reference": "3.11.1.1.1；4.10.1.1.1；SAE J2464 4.5.1.2.1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3 與 4.5，環境溫度維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "3.11.1.1.1；4.10.1.1.1；SAE J2464 4.1.3"
+        },
+        "termination": {
+          "value": "達到目標電壓或 200% SOC 或熱失控（取時間較長者）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.2.1，持續充電直至達到規定最高充電電壓百分比、200% SOC 或發生熱失控等破壞性反應（取時間較長者）。",
+          "source_reference": "3.11.1.1.1；4.10.1.1.1；SAE J2464 4.5.1.2.1"
+        },
+        "sample_quantity": {
+          "value": "廠商合格證明（電芯 5 顆，依 SAE J2464）",
+          "detail": "廠商須提供合格證明（適用 B1～B14 全部電池），證明組裝電池之電芯已依 SAE J2464 進行過充電特徵化測試（SAE J2464 表 1 推薦電芯樣品數為 5 顆）。",
+          "source_reference": "Table VII；4.10.1.1；SAE J2464 Table 1"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC，名義工作溫度，禁用主動保護裝置（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.2.1，受測電芯滿充至 100% SOC，被動保護保持運作，主動保護停用，夾具模擬電池包環境。",
+          "source_reference": "4.10.1.1.1；SAE J2464 4.5.1.2.1"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3 與 4.5.1.2.2，試驗後至少觀察 1 小時，並於 24 小時後重複溫度、電壓測量及目視檢查。",
+          "source_reference": "4.10.1.1.1；SAE J2464 4.5.1.2.2"
         }
       },
       "acceptance_criteria": {
-        "summary": "依 SAE J2464 特徵化測試並向資格審定機構報告危險嚴重度等級",
+        "summary": "不設定合格／不合格判據，依危害嚴重度等級 (HSL 0 無影響～HSL 7 爆炸) 記錄並向資格審定機構報告結果（依 SAE J2464 表 3）",
         "details": [
           "電芯應依 SAE J2464 過充電試驗章節完成特徵化 (3.11.1.1.1)",
           "廠商應向資格審定機構 (Qualifying Activity) 報告對應之危險嚴重度等級 (Hazard Severity Level) (4.10.1.1)"
@@ -620,19 +650,49 @@
         "CELL"
       ],
       "conditions": {
-        "sample_quantity": {
-          "value": "廠商合格證明 (適用 B1～B14 全部電池)",
-          "detail": "廠商須提供合格證明，證明電芯已依 SAE J2464 進行短路特徵化測試。",
-          "source_reference": "Table VII；4.10.1.1"
+        "soc": {
+          "value": "100% SOC（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5，電氣濫用測試開始時受測電芯應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "3.11.1.1.2；4.10.1.1.2；SAE J2464 4.5"
         },
         "external_resistance": {
-          "value": "依 SAE J2464 短路試驗規定",
-          "detail": "依 SAE J2464 短路試驗（電芯及模組或電池包）章節執行測試。",
-          "source_reference": "4.10.1.1.2"
+          "value": "硬短路 ≤ 5 mΩ；軟短路電流為保護跳脫額定之 85%～100% (≥ 10 mΩ)（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.1，包含硬短路（外部電阻 ≤ 5 mΩ 且遠小於受測件直流內阻）與軟短路（外電路電阻 ≥ 10 mΩ，電流為過電流保護跳脫額定之 85%～100%）。",
+          "source_reference": "3.11.1.1.2；4.10.1.1.2；SAE J2464 4.5.1.1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3 與 4.5，測試在名義工作溫度下開始，環境溫度維持在 25 ± 5 °C。",
+          "source_reference": "3.11.1.1.2；4.10.1.1.2；SAE J2464 4.1.3"
+        },
+        "duration": {
+          "value": "60 分鐘（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.1，於 < 1 秒內施加短路並維持 60 分鐘，或至發生阻止試驗完成之狀況為止。",
+          "source_reference": "3.11.1.1.2；4.10.1.1.2；SAE J2464 4.5.1.1"
+        },
+        "termination": {
+          "value": "短路維持 60 分鐘或零件熔斷／保險絲開路／PTC 動作（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.1，短路維持 60 分鐘或直至零件熔斷、保險絲開路或 PTC 動作。",
+          "source_reference": "3.11.1.1.2；4.10.1.1.2；SAE J2464 4.5.1.1"
+        },
+        "sample_quantity": {
+          "value": "廠商合格證明（電芯 5 顆，依 SAE J2464）",
+          "detail": "廠商須提供合格證明（適用 B1～B14 全部電池），證明電芯已依 SAE J2464 進行短路特徵化測試（SAE J2464 表 1 推薦電芯樣品數為 5 顆）。",
+          "source_reference": "Table VII；4.10.1.1；SAE J2464 Table 1"
+        },
+        "pre_conditioning": {
+          "value": "名義工作溫度，滿充電，冷卻介質就位，禁用主動保護裝置（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5 與 4.5.1.1，受測件處於名義工作溫度與 100% SOC，停用所有主動保護裝置，被動保護保持運作。",
+          "source_reference": "4.10.1.1.2；SAE J2464 4.5.1.1"
+        },
+        "observation_period": {
+          "value": "額外觀察 1 小時（試驗後 24 小時複檢）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.1，短路 60 分鐘結束後繼續觀察額外 1 小時，並於 24 小時後重複溫度、電壓、絕緣阻抗測量及目視檢查。",
+          "source_reference": "4.10.1.1.2；SAE J2464 4.5.1.1"
         }
       },
       "acceptance_criteria": {
-        "summary": "依 SAE J2464 特徵化測試並向資格審定機構報告危險嚴重度等級",
+        "summary": "不設定合格／不合格判據，依危害嚴重度等級 (HSL 0 無影響～HSL 7 爆炸) 記錄並向資格審定機構報告結果（依 SAE J2464 表 3）",
         "details": [
           "電芯應依 SAE J2464 短路試驗章節完成特徵化 (3.11.1.1.2)",
           "廠商應向資格審定機構報告對應之危險嚴重度等級 (4.10.1.1)"
@@ -651,19 +711,49 @@
         "CELL"
       ],
       "conditions": {
-        "sample_quantity": {
-          "value": "廠商合格證明 (適用 B1～B14 全部電池)",
-          "detail": "廠商須提供合格證明，證明電芯已依 SAE J2464 進行過放電特徵化測試。",
-          "source_reference": "Table VII；4.10.1.1"
+        "soc": {
+          "value": "100% SOC（電芯）；模組為 1 顆 0% SOC 與其餘 100% SOC（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.2.1，電芯開始時處於 100% SOC（模組為 1 顆 0% SOC 電芯與其餘 100% SOC 電芯串聯）。",
+          "source_reference": "3.11.1.1.3；4.10.1.1.3；SAE J2464 4.5.2.1"
         },
         "forced_discharge_current": {
-          "value": "依 SAE J2464 過放電試驗規定",
-          "detail": "依 SAE J2464 過放電（強制放電）試驗（電芯級及模組）章節執行測試。",
-          "source_reference": "4.10.1.1.3"
+          "value": "最大推薦連續電流（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.2.1，以製造商規定的最大推薦連續電流進行強制放電。",
+          "source_reference": "3.11.1.1.3；4.10.1.1.3；SAE J2464 4.5.2.1"
+        },
+        "duration": {
+          "value": "2 倍電芯額定容量時間（SOC 達 -100%），維持電壓 30 分鐘（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.2.1，電芯放電時間為 2 倍電芯容量除以放電電流（SOC 達 -100%），並將強制放電結束時之電壓維持 30 分鐘。",
+          "source_reference": "3.11.1.1.3；4.10.1.1.3；SAE J2464 4.5.2.1"
+        },
+        "target_voltage": {
+          "value": "不超過 -Vmax（電芯）／0.0 ± 0.2 V（模組）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.2.1，電芯施加之反向電壓不超過 -Vmax（電芯最大推薦電壓）；模組放電至負載下電壓達 0.0 ± 0.2 V。",
+          "source_reference": "3.11.1.1.3；4.10.1.1.3；SAE J2464 4.5.2.1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3 與 4.5，環境溫度維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "3.11.1.1.3；4.10.1.1.3；SAE J2464 4.1.3"
+        },
+        "sample_quantity": {
+          "value": "廠商合格證明（電芯 5 顆，依 SAE J2464）",
+          "detail": "廠商須提供合格證明（適用 B1～B14 全部電池），證明電芯已依 SAE J2464 進行過放電特徵化測試（SAE J2464 表 1 推薦電芯樣品數為 5 顆）。",
+          "source_reference": "Table VII；4.10.1.1；SAE J2464 Table 1"
+        },
+        "pre_conditioning": {
+          "value": "電芯滿充；模組將 1 顆完全放電電芯與其餘滿充電芯串聯（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.2.1，電芯以滿充電芯 (100% SOC) 開始，被動整合保護運作，主動保護停用。",
+          "source_reference": "4.10.1.1.3；SAE J2464 4.5.2.1"
+        },
+        "observation_period": {
+          "value": "至少 60 分鐘（試驗後 24 小時複檢）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.2.1 與 4.5.2.2，試驗完成後觀察至少 60 分鐘，並於 24 小時後重複溫度、電壓阻抗測量及目視檢查。",
+          "source_reference": "4.10.1.1.3；SAE J2464 4.5.2.1"
         }
       },
       "acceptance_criteria": {
-        "summary": "依 SAE J2464 特徵化測試並向資格審定機構報告危險嚴重度等級",
+        "summary": "不設定合格／不合格判據，依危害嚴重度等級 (HSL 0 無影響～HSL 7 爆炸) 記錄並向資格審定機構報告結果（依 SAE J2464 表 3）",
         "details": [
           "電芯應依 SAE J2464 過放電試驗章節完成特徵化 (3.11.1.1.3)",
           "廠商應向資格審定機構報告對應之危險嚴重度等級 (4.10.1.1)"
@@ -684,22 +774,47 @@
       "conditions": {
         "soc": {
           "value": "100% SOC 與 50% SOC",
-          "detail": "至少於 100% 及 50% 荷電狀態 (state of charge) 進行測試。",
-          "source_reference": "4.10.1.1.4"
+          "detail": "MIL-PRF-32565 3.11.1.1.4 與 4.10.1.1.4 規定至少於 100% 及 50% 荷電狀態 (SOC) 進行電芯穿刺特徵化測試。",
+          "source_reference": "3.11.1.1.4；4.10.1.1.4"
+        },
+        "nail_diameter": {
+          "value": "3 mm（電芯）／20 mm（模組與電池包）（依 SAE J2464）",
+          "detail": "依 SAE J2464 表 5，電芯使用直徑 3 mm 之低碳鋼導電圓棒（端部削尖）；模組與電池包使用直徑 20 mm 低碳鋼圓棒。",
+          "source_reference": "3.11.1.1.4；4.10.1.1.4；SAE J2464 Table 5"
+        },
+        "penetration_speed": {
+          "value": "≥ 8 cm/s（依 SAE J2464）",
+          "detail": "依 SAE J2464 表 5，針刺速度為 8 cm/s 或更快。",
+          "source_reference": "3.11.1.1.4；4.10.1.1.4；SAE J2464 Table 5"
         },
         "penetration": {
-          "value": "依 SAE J2464 穿刺試驗規定",
-          "detail": "依 SAE J2464 穿刺試驗（電芯級或以上）章節執行測試。",
-          "source_reference": "4.10.1.1.4"
+          "value": "貫穿電芯（電芯）／貫穿 3 顆電芯或 100 mm（模組與包）（依 SAE J2464）",
+          "detail": "依 SAE J2464 表 5，電芯最小穿刺深度為完全貫穿電芯（垂直於電極表面）；模組與電池包為貫穿 3 顆電芯或深度達 100 mm（取較大者）。",
+          "source_reference": "3.11.1.1.4；4.10.1.1.4；SAE J2464 Table 5"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3，環境溫度維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "3.11.1.1.4；4.10.1.1.4；SAE J2464 4.1.3"
         },
         "sample_quantity": {
-          "value": "廠商合格證明 (適用 B1～B14 全部電池)",
-          "detail": "廠商須提供合格證明，證明電芯已依 SAE J2464 進行針刺特徵化測試。",
-          "source_reference": "Table VII；4.10.1.1"
+          "value": "廠商合格證明（電芯 5 顆，依 SAE J2464）",
+          "detail": "廠商須提供合格證明（適用 B1～B14 全部電池），證明電芯已依 SAE J2464 進行針刺特徵化測試（SAE J2464 表 1 推薦電芯樣品數為 5 顆）。",
+          "source_reference": "Table VII；4.10.1.1；SAE J2464 Table 1"
+        },
+        "pre_conditioning": {
+          "value": "分別調整至 100% SOC 與 50% SOC 且於 25 ± 5 °C 穩定（依 SAE J2464）",
+          "detail": "依 4.10.1.1.4 及 SAE J2464 4.1.3，分別於 100% SOC 及 50% SOC、25 ± 5 °C 穩定後執行測試。",
+          "source_reference": "4.10.1.1.4；SAE J2464 4.1.3"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（鋼棒保持在原位，24 小時複檢）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.3.3.1 與 4.3.3.2，針刺後鋼棒留在原位觀察至少 1 小時，並於 24 小時後重複變形、溫度、電壓、絕緣阻抗測量及目視檢查。",
+          "source_reference": "4.10.1.1.4；SAE J2464 4.3.3.1"
         }
       },
       "acceptance_criteria": {
-        "summary": "依 SAE J2464 特徵化測試並向資格審定機構報告危險嚴重度等級",
+        "summary": "不設定合格／不合格判據，依危害嚴重度等級 (HSL 0 無影響～HSL 7 爆炸) 記錄並向資格審定機構報告結果（依 SAE J2464 表 3）",
         "details": [
           "電芯應依 SAE J2464 穿刺試驗章節於 100% 與 50% SOC 完成特徵化 (3.11.1.1.4)",
           "廠商應向資格審定機構報告對應之危險嚴重度等級 (4.10.1.1)"
@@ -718,19 +833,59 @@
         "CELL"
       ],
       "conditions": {
+        "soc": {
+          "value": "100% SOC（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3，受測電芯應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "3.11.1.1.5；4.10.1.1.5；SAE J2464 4.1.3"
+        },
+        "crush_speed": {
+          "value": "0.5～1 mm/min（電芯）／0.5～1 cm/min（電池包）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.3.6.1，電芯擠壓速度介於 0.5 mm/min 至 1 mm/min；電池包介於 0.5 cm/min 至 1 cm/min。",
+          "source_reference": "3.11.1.1.5；4.10.1.1.5；SAE J2464 4.3.6.1"
+        },
         "force": {
-          "value": "依 SAE J2464 擠壓試驗規定",
-          "detail": "依 SAE J2464 擠壓試驗（電芯級或以上）章節執行測試。",
-          "source_reference": "4.10.1.1.5"
+          "value": "≤ 1000 倍受測件重量（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.3.6.1，擠壓力量上限為受測件重量的 1000 倍。",
+          "source_reference": "3.11.1.1.5；4.10.1.1.5；SAE J2464 4.3.6.1"
+        },
+        "apparatus": {
+          "value": "半圓柱形壓板（模組與包）／圓柱形棒（圓柱電芯）／平面壓板（方形與軟包）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.3.6.1，圓柱電芯使用直徑與電芯相當之單一圓柱棒（軸線與電芯垂直）；方形與軟包電芯壓具表面平行接觸電芯受壓面；模組與包使用半圓柱表面壓板。",
+          "source_reference": "3.11.1.1.5；4.10.1.1.5；SAE J2464 4.3.6.1"
+        },
+        "termination": {
+          "value": "壓至初始尺寸 85% 保持 5 分鐘，續壓至 50% 保持 5 分鐘（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.3.6.1，第一階段擠壓至初始尺寸 85% 保持 5 分鐘，隨後繼續擠壓至初始尺寸 50% 保持 5 分鐘。",
+          "source_reference": "3.11.1.1.5；4.10.1.1.5；SAE J2464 4.3.6.1"
+        },
+        "orientation": {
+          "value": "至少在 3 個軸向中的 2 個軸向進行（各軸使用不同樣品）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.3.6.1，受測件在 3 個軸向中至少 2 個軸向進行擠壓（軟包電芯僅在垂直於電極的扁平面軸向測試）。",
+          "source_reference": "3.11.1.1.5；4.10.1.1.5；SAE J2464 4.3.6.1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3，環境溫度維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "3.11.1.1.5；4.10.1.1.5；SAE J2464 4.1.3"
         },
         "sample_quantity": {
-          "value": "廠商合格證明 (適用 B1～B14 全部電池)",
-          "detail": "廠商須提供合格證明，證明電芯已依 SAE J2464 進行擠壓特徵化測試。",
-          "source_reference": "Table VII；4.10.1.1"
+          "value": "廠商合格證明（電芯 4～6 顆，依 SAE J2464）",
+          "detail": "廠商須提供合格證明（適用 B1～B14 全部電池），證明電芯已依 SAE J2464 進行擠壓特徵化測試（SAE J2464 表 1 推薦電芯每軸向 2 顆，共 4～6 顆）。",
+          "source_reference": "Table VII；4.10.1.1；SAE J2464 Table 1"
+        },
+        "pre_conditioning": {
+          "value": "滿充至 100% SOC 且於 25 ± 5 °C 穩定（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3 與 4.3.6.1，受測件滿充至 100% SOC 並於 25 ± 5 °C 穩定。",
+          "source_reference": "4.10.1.1.5；SAE J2464 4.1.3"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3 與 4.3.6.2，擠壓後至少觀察 1 小時，並於 24 小時後重複溫度、電壓、絕緣阻抗測量及目視檢查。",
+          "source_reference": "4.10.1.1.5；SAE J2464 4.3.6.2"
         }
       },
       "acceptance_criteria": {
-        "summary": "依 SAE J2464 特徵化測試並向資格審定機構報告危險嚴重度等級",
+        "summary": "不設定合格／不合格判據，依危害嚴重度等級 (HSL 0 無影響～HSL 7 爆炸) 記錄並向資格審定機構報告結果（依 SAE J2464 表 3）",
         "details": [
           "電芯應依 SAE J2464 擠壓試驗章節完成特徵化 (3.11.1.1.5)",
           "廠商應向資格審定機構報告對應之危險嚴重度等級 (4.10.1.1)"
@@ -770,7 +925,7 @@
           "source_reference": "Table VII；4.10.1.2"
         },
         "pre_conditioning": {
-          "value": "於 4.3.1.1 常溫條件下充飽電並稱重",
+          "value": "於 22 ± 5 °C 常溫充飽電並稱重至 0.1 mg",
           "detail": "常溫下充飽電，以天平稱重至 0.1 mg (tenth of a milligram)。",
           "source_reference": "4.10.1.2"
         },
@@ -822,7 +977,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "按 4.4.6.1 執行全容量試驗並依 4.4.9 充電",
+          "value": "先以 1 C 充放電測定全容量，再於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電",
           "detail": "先執行全容量試驗（步驟 a.-d.），再依 4.4.9 充電。",
           "source_reference": "4.10.2.1"
         },
@@ -854,10 +1009,30 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
+        "soc": {
+          "value": "100% SOC（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.2.1，受測電池包在過充電試驗開始前處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.10.2.2；SAE J2464 4.5.1.2.1"
+        },
         "charging_voltage": {
           "value": "41.25 V",
-          "detail": "過充電電壓上限為 41.25 V（Type 1 或 Type 2 均適用）。",
+          "detail": "MIL-PRF-32565 4.10.2.2 規定過充電電壓上限為 41.25 V（Type 1 或 Type 2 均適用）。",
           "source_reference": "4.10.2.2"
+        },
+        "charging_current": {
+          "value": "1 C 恆流（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.2.1，電池包等級以 1 C 恆定電流進行過充電。",
+          "source_reference": "4.10.2.2；SAE J2464 4.5.1.2.1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3 與 4.5，環境溫度維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.10.2.2；SAE J2464 4.1.3"
+        },
+        "termination": {
+          "value": "達到目標電壓 41.25 V 或 200% SOC 或熱失控（取時間較長者）（依 SAE J2464）",
+          "detail": "依 4.10.2.2 與 SAE J2464 4.5.1.2.1，持續充電至過充電壓上限 41.25 V、200% SOC 或因破壞性反應終止測試（取時間較長者）。",
+          "source_reference": "4.10.2.2；SAE J2464 4.5.1.2.1"
         },
         "sample_quantity": {
           "value": "改裝電池樣品 MB1",
@@ -865,13 +1040,18 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "依 SAE J2464 模組/電池包過充電試驗執行",
-          "detail": "依 SAE J2464 過充電試驗（電芯及模組或電池包）章節執行過充電。",
-          "source_reference": "4.10.2.2"
+          "value": "滿充至 100% SOC，名義工作溫度，禁用主動保護裝置（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.5.1.2.1，受測電池包滿充至 100% SOC，被動保護保持運作，所有主動保護裝置停用。",
+          "source_reference": "4.10.2.2；SAE J2464 4.5.1.2.1"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3 與 4.5.1.2.2，試驗後至少觀察 1 小時，並於 24 小時後重複溫度、電壓測量及目視檢查。",
+          "source_reference": "4.10.2.2；SAE J2464 4.5.1.2.2"
         }
       },
       "acceptance_criteria": {
-        "summary": "Type 1 電池危險嚴重度等級不超過 4 級；Type 2 電池危險嚴重度等級不超過 6 級",
+        "summary": "Type 1 電池危害等級 ≤ 4（允許排氣／洩漏，無破裂、起火或爆炸）；Type 2 危害等級 ≤ 6（無高能爆炸）（依 SAE J2464 表 3）",
         "details": [
           "Type 1 電池危險嚴重度等級不得超過 SAE J2464 第 4 級 (3.11.2.2.1 a)",
           "Type 2 電池危險嚴重度等級不得超過 SAE J2464 第 6 級 (3.11.2.2.1 b)"
@@ -911,7 +1091,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "按 4.4.6.1 執行全容量試驗並依 4.4.9 充電",
+          "value": "先以 1 C 充放電測定全容量，再於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電",
           "detail": "執行全容量試驗後，依 4.4.9 充電。",
           "source_reference": "4.10.2.3"
         },
@@ -958,7 +1138,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "按 4.4.6.1 執行全容量試驗並依 4.4.9 充電",
+          "value": "先以 1 C 充放電測定全容量，再於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電",
           "detail": "執行全容量試驗後，依 4.4.9 充電。",
           "source_reference": "4.10.2.4"
         },
@@ -1005,7 +1185,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "依 4.4.9 充電並於 71 ± 3 °C 靜置至少 6 小時",
+          "value": "於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電，並於 71 ± 3 °C 靜置至少 6 小時",
           "detail": "充電後於 71 ± 3 °C 環境穩定不少於 6 小時，確認電池處於運作狀態。",
           "source_reference": "4.10.2.5"
         }
@@ -1094,15 +1274,40 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
-        "orientation": {
-          "value": "正常直立位置 (Z 軸，安裝端子柱轉接頭)",
-          "detail": "其中一個擠壓軸向應為安裝端子柱轉接頭之正常直立位置（Z 軸）。",
-          "source_reference": "4.10.2.8.1"
+        "soc": {
+          "value": "100% SOC（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3，受測電池包應處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.10.2.8.1；SAE J2464 4.1.3"
+        },
+        "crush_speed": {
+          "value": "0.5～1 mm/min（電芯）／0.5～1 cm/min（電池包）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.3.6.1，電池包擠壓速度介於 0.5 cm/min 至 1 cm/min（電芯為 0.5～1 mm/min）。",
+          "source_reference": "4.10.2.8.1；SAE J2464 4.3.6.1"
         },
         "force": {
-          "value": "依 SAE J2464 規定",
-          "detail": "依 SAE J2464 擠壓試驗（電芯級或以上）章節執行測試。",
-          "source_reference": "4.10.2.8.1"
+          "value": "≤ 1000 倍受測件重量（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.3.6.1，擠壓力量上限為受測件重量的 1000 倍。",
+          "source_reference": "4.10.2.8.1；SAE J2464 4.3.6.1"
+        },
+        "apparatus": {
+          "value": "半圓柱形壓板（模組與包）／圓柱形棒（圓柱電芯）／平面壓板（方形與軟包）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.3.6.1，模組與電池包使用具半圓柱表面之壓板（例如半圓柱半徑 75 mm、間距 30 mm）。",
+          "source_reference": "4.10.2.8.1；SAE J2464 4.3.6.1"
+        },
+        "termination": {
+          "value": "壓至初始尺寸 85% 保持 5 分鐘，續壓至 50% 保持 5 分鐘（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.3.6.1，第一階段擠壓至初始尺寸 85% 保持 5 分鐘，隨後繼續擠壓至初始尺寸 50% 保持 5 分鐘。",
+          "source_reference": "4.10.2.8.1；SAE J2464 4.3.6.1"
+        },
+        "orientation": {
+          "value": "至少測試 3 軸中之 2 軸，其中 1 軸為正常直立位置 Z 軸並安裝端子柱轉接頭（依 SAE J2464）",
+          "detail": "MIL-PRF-32565 4.10.2.8.1 規定其中一個擠壓軸向必須為安裝端子柱轉接頭之正常直立位置（Z 軸）；SAE J2464 4.3.6.1 規定至少在 3 軸中之 2 軸進行。",
+          "source_reference": "4.10.2.8.1；SAE J2464 4.3.6.1"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3，環境溫度維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.10.2.8.1；SAE J2464 4.1.3"
         },
         "sample_quantity": {
           "value": "電池樣品 B6/B14",
@@ -1110,13 +1315,18 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "依 SAE J2464 模組/電池包擠壓試驗執行",
-          "detail": "依 SAE J2464 擠壓試驗章節準備電池並安裝端子柱轉接頭。",
-          "source_reference": "4.10.2.8.1"
+          "value": "滿充至 100% SOC 且於 25 ± 5 °C 穩定，安裝端子柱轉接頭（依 SAE J2464）",
+          "detail": "依 4.10.2.8.1 與 SAE J2464 4.1.3、4.3.6.1，電池包滿充至 100% SOC，所有整合控制與互連電路就位並安裝端子柱轉接頭。",
+          "source_reference": "4.10.2.8.1；SAE J2464 4.3.6.1"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（試驗後 24 小時複檢）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3 與 4.3.6.2，擠壓後至少觀察 1 小時，並於 24 小時後重複溫度、電壓、絕緣阻抗測量及目視檢查。",
+          "source_reference": "4.10.2.8.1；SAE J2464 4.3.6.2"
         }
       },
       "acceptance_criteria": {
-        "summary": "Type 1 電池危險嚴重度等級不超過 4 級；Type 2 電池危險嚴重度等級不超過 6 級",
+        "summary": "Type 1 電池危害等級 ≤ 4（允許排氣／洩漏，無破裂、起火或爆炸）；Type 2 危害等級 ≤ 6（無高能爆炸）（依 SAE J2464 表 3）",
         "details": [
           "Type 1 電池危險嚴重度等級不得超過 SAE J2464 第 4 級 (3.11.2.7.1 a)",
           "Type 2 電池危險嚴重度等級不得超過 SAE J2464 第 6 級 (3.11.2.7.1 b)"
@@ -1135,10 +1345,30 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
+        "soc": {
+          "value": "100% SOC（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3，受測電池包處於滿充電狀態 (100% SOC)。",
+          "source_reference": "4.10.2.8.2.1；SAE J2464 4.1.3"
+        },
+        "nail_diameter": {
+          "value": "3 mm（電芯）／20 mm（模組與電池包）（依 SAE J2464）",
+          "detail": "依 SAE J2464 表 5，模組與電池包使用直徑 20 mm 之低碳鋼導電圓棒（端部削尖成尖銳點；電芯為 3 mm）。",
+          "source_reference": "4.10.2.8.2.1；SAE J2464 Table 5"
+        },
+        "penetration_speed": {
+          "value": "≥ 8 cm/s（依 SAE J2464）",
+          "detail": "依 SAE J2464 表 5，針刺速度為 8 cm/s 或更快。",
+          "source_reference": "4.10.2.8.2.1；SAE J2464 Table 5"
+        },
         "penetration": {
-          "value": "依 SAE J2464 規定",
-          "detail": "依 SAE J2464 穿刺試驗（電芯級或以上）章節執行針刺測試。",
-          "source_reference": "4.10.2.8.2.1"
+          "value": "貫穿電芯（電芯）／貫穿 3 顆電芯或 100 mm（模組與包）（依 SAE J2464）",
+          "detail": "依 SAE J2464 表 5，模組與電池包最小穿刺深度為貫穿 3 顆電芯或深度達 100 mm（取較大者），垂直於電芯電極表面刺入。",
+          "source_reference": "4.10.2.8.2.1；SAE J2464 Table 5"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3，環境溫度維持在 25 ± 5 °C 範圍內。",
+          "source_reference": "4.10.2.8.2.1；SAE J2464 4.1.3"
         },
         "sample_quantity": {
           "value": "電池樣品 B7",
@@ -1146,13 +1376,18 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "依 SAE J2464 針刺試驗規定",
-          "detail": "依 SAE J2464 穿刺試驗章節準備電池。",
-          "source_reference": "4.10.2.8.2.1"
+          "value": "滿充至 100% SOC 且於 25 ± 5 °C 穩定（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.1.3，受測電池包滿充至 100% SOC 並於 25 ± 5 °C 穩定。",
+          "source_reference": "4.10.2.8.2.1；SAE J2464 4.1.3"
+        },
+        "observation_period": {
+          "value": "至少 1 小時（鋼棒保持在原位，24 小時複檢）（依 SAE J2464）",
+          "detail": "依 SAE J2464 4.3.3.1 與 4.3.3.2，針刺後鋼棒保持在原位觀察至少 1 小時，並於 24 小時後重複變形、溫度、電壓、絕緣阻抗測量及目視檢查。",
+          "source_reference": "4.10.2.8.2.1；SAE J2464 4.3.3.1"
         }
       },
       "acceptance_criteria": {
-        "summary": "Type 1 電池危險嚴重度等級不超過 4 級；Type 2 電池危險嚴重度等級不超過 6 級",
+        "summary": "Type 1 電池危害等級 ≤ 4（允許排氣／洩漏，無破裂、起火或爆炸）；Type 2 危害等級 ≤ 6（無高能爆炸）（依 SAE J2464 表 3）",
         "details": [
           "Type 1 電池外殼被鋼釘穿刺時危險嚴重度等級不得超過 SAE J2464 第 4 級 (3.11.2.7.2 a)",
           "Type 2 電池外殼被鋼釘穿刺時危險嚴重度等級不得超過 SAE J2464 第 6 級 (3.11.2.7.2 b)"
@@ -1207,7 +1442,7 @@
           "source_reference": "4.10.2.8.2.2；Table VII"
         },
         "pre_conditioning": {
-          "value": "依 4.4.9 充電並直立固定，射擊前 ≤ 5 分鐘接上 30 ± 3 Ω 負載",
+          "value": "於 22 ± 5 °C 以 28.5 ± 0.25 V 恆壓充飽電並直立固定，射擊前 ≤ 5 分鐘接上 30 ± 3 Ω 負載",
           "detail": "充電後直立牢固固定，不阻礙彈丸路徑，射擊前 ≤ 5 分鐘接上負載。",
           "source_reference": "4.10.2.8.2.2"
         },
@@ -1218,7 +1453,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "Type 1 與 Type 2 電池危險嚴重度等級均不得超過 6 級，試驗期間超過 6 級即判為不合格",
+        "summary": "Type 1 與 Type 2 電池危害等級均 ≤ 6（允許起火，不得發生高能爆炸或飛散，依 SAE J2464 表 3）",
         "details": [
           "Type 1 電池外殼被彈丸穿透時危險嚴重度等級不得超過 SAE J2464 第 6 級 (3.11.2.7.2 a)",
           "Type 2 電池外殼被彈丸穿透時危險嚴重度等級不得超過 SAE J2464 第 6 級 (3.11.2.7.2 b)",
@@ -1269,7 +1504,7 @@
           "source_reference": "Table VII"
         },
         "pre_conditioning": {
-          "value": "按 4.4.6.1 執行全容量試驗並依 4.4.9 充電，於 85 ± 3 °C 或 -51 ± 3 °C 靜置至少 6 小時",
+          "value": "先以 1 C 充放電測定全容量，再以 28.5 ± 0.25 V 充飽電，於 85 ± 3 °C 或 -51 ± 3 °C 靜置 ≥ 6 小時",
           "detail": "執行全容量試驗後依 4.4.9 充電，置於休眠狀態並於極限溫度環境箱穩定至少 6 小時，取出後 10 分鐘內完成跌落。",
           "source_reference": "4.10.2.8.3；4.10.2.8.4"
         },
@@ -1280,7 +1515,7 @@
         }
       },
       "acceptance_criteria": {
-        "summary": "低處跌落前後容量變化在 3% 以內且無缺陷；高處跌落危險嚴重度等級不超過 2 級 (電池外殼內容許 3 級洩漏)，禁止排氣 (Venting)",
+        "summary": "低處跌落前後容量變化 ≤ 3% 且無缺陷；高處跌落危害等級 ≤ 2（外殼內容許 3 級電芯洩漏，禁止排氣，依 SAE J2464 表 3）",
         "details": [
           "低處跌落：符合 3.16 目視與機械檢查判定標準及 3.5.4 全容量要求 (3.11.2.7.3)",
           "低處跌落：試驗前後測量之全容量變化應在 3% 以內 (3.11.2.7.3)",

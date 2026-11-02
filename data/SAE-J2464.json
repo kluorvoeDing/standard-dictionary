@@ -193,8 +193,8 @@
       ],
       "conditions": {
         "sample_quantity": {
-          "value": "電池包 3 組（電芯依 UN 38.3）",
-          "detail": "表 1 規定電池包等級推薦樣品數為 3 組。電芯等級試驗依 UN 38.3 規定之樣品數。",
+          "value": "電池包 3 組；電芯 10 顆（依 UN 38.3）",
+          "detail": "表 1 規定電池包等級推薦樣品數為 3 組；電芯等級依 UN 38.3 T.4 規定可充電電芯為 10 顆。",
           "source_reference": "Table 1；4.3.1.1"
         },
         "pre_conditioning": {
@@ -213,12 +213,12 @@
           "source_reference": "4.1.3"
         },
         "acceleration_peak": {
-          "value": "25 g（電池包；電芯依 UN 38.3）",
+          "value": "電池包 25 g；小型電芯 150 gn、大型電芯 50 gn（依 UN 38.3）",
           "detail": "電池包等級加速度為 25 g（半正弦波，持續時間 15 ms）。電芯等級依 UN 38.3 規定（小型電芯 150 g / 6 ms，大型電芯 50 g / 11 ms）。",
           "source_reference": "Table 4；4.3.1.1"
         },
         "pulse_duration": {
-          "value": "15 ms（電池包；電芯依 UN 38.3）",
+          "value": "電池包 15 ms；小型電芯 6 ms、大型電芯 11 ms（依 UN 38.3）",
           "detail": "電池包等級脈衝持續時間為 15 ms（定義為峰值 10% 至 90% 之間的時間）。電芯等級依 UN 38.3 規定。",
           "source_reference": "Table 4；4.3.1.1"
         },
@@ -228,7 +228,7 @@
           "source_reference": "Table 4"
         },
         "shock_count": {
-          "value": "18 次（3 軸正反方向各 3 次；電芯依 UN 38.3）",
+          "value": "共 18 次（3 個互相垂直方向正反各 3 次）",
           "detail": "電池包等級總衝擊次數為 18 次，即在 3 個相互垂直軸向的正負兩個方向各重複 3 次。電芯等級依 UN 38.3 規定。",
           "source_reference": "Table 4"
         },
@@ -509,7 +509,7 @@
           "source_reference": "4.3.6.1"
         },
         "force": {
-          "value": "最大限制為受測件重量的 1000 倍",
+          "value": "≤ 1000 倍受測件重量",
           "detail": "擠壓力量上限為受測件重量的 1000 倍 (maximum of 1000 times the weight of the DUT)。",
           "source_reference": "4.3.6.1"
         },
