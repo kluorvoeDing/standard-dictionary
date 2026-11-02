@@ -71,14 +71,15 @@
   - 先派 `research` 子代理定位兩份軍規（共逾 15,000 行）之所有安全與環境測試條款、通則與樣品分配表行號；再平行分派 3 個子代理分別建立 `data/SAE-J2464.json`、`data/MIL-PRF-32565.json`、`data/MIL-PRF-32383.json` 並執行 `excerpts.py` → `decisions.json` → `verify.py` → `apply.mjs` 完整原文引文驗證流程。
 - 內容：
   - 新增 `data/SAE-J2464.json`（17 項安全與濫用測試、21 筆術語、133 筆條件與程序欄位 100% 附 `source_reference` 與逐字引文驗證通過）。
-  - 新增 `data/MIL-PRF-32565.json`（26 項電芯與 6T 電池包安全／環境／濫用／彈道測試、12 筆術語、115 筆條件與程序欄位 100% 附 `source_reference` 與逐字引文驗證通過）。
-  - 新增 `data/MIL-PRF-32383.json`（25 項電芯與電池包安全／環境／濫用測試、13 筆術語、166 筆條件與程序欄位 100% 附 `source_reference` 與逐字引文驗證通過）。
-  - 欄位與分類對齊：所有測試項目 100% 對齊既有 `data/taxonomy.json`（零新增單一標準專用 `normalized_id`）與 `data/field_schema.json`；於 `frontend/src/utils/parameterDictionary.js` 補齊軍規與濫用測試新增參數鍵（`projectile`、`velocity`、`shots`、`discharge_points`、`pulse_count`、`cutoff_temperature`）之繁體中文標籤；擴充 `frontend/src/utils/compareRows.js` 將「充滿電後／滿充電狀態／滿電狀態」折疊為「滿充」，使全庫 `near_same.mjs` 寫法不一致列數由 489 降至 437（同步調降 `scripts/review/near_same_baseline.json`）。
+  - 新增 `data/MIL-PRF-32565.json`（26 項電芯與 6T 電池包安全／環境／濫用／彈道測試、12 筆術語、176 筆條件與程序欄位 100% 附 `source_reference`）。
+  - 新增 `data/MIL-PRF-32383.json`（25 項電芯與電池包安全／環境／濫用測試、13 筆術語、177 筆條件與程序欄位 100% 附 `source_reference`）。
+  - 跨標準與內部引用具體化：將 `MIL-PRF-32565`（電芯與電池包引用 `SAE J2464` 之過充電、短路、過放電、針刺、擠壓，以及引用內部條款 `4.4.6.1`／`4.4.9`）、`MIL-PRF-32383`（引用 `UN 38.3` 低壓高空、`UL 1642` 擠壓与燃燒拋射，以及內部條款 `4.6`／`4.3.1`／規格單）與 `SAE-J2464`（電芯衝擊引用 `UN 38.3`）原本寫「依 ... 規定」之欄位，全數展開為具體數值與測試程序並括號註記 `（依 SAE J2464）`／`（依 UN 38.3）`／`（依 UL 1642）`；同步將 `SAE J2464` 表 3 危害嚴重度等級（HSL 2、HSL 4、HSL 6）具體內容寫入 `MIL-PRF-32565` 判定要求。
+  - 欄位與分類對齊：所有測試項目 100% 對齊既有 `data/taxonomy.json`（零新增單一標準專用 `normalized_id`）與 `data/field_schema.json`；於 `frontend/src/utils/parameterDictionary.js` 補齊軍規與濫用測試新增參數鍵（`projectile`、`velocity`、`shots`、`discharge_points`、`pulse_count`、`cutoff_temperature`）之繁體中文標籤；擴充 `frontend/src/utils/compareRows.js` 將「充滿電後／滿充電狀態／滿電狀態」折疊為「滿充」並自動忽略尾綴 `（依 SAE J2464／UL 1642／UN 38.3）` 註記，使全庫 `near_same.mjs` 寫法不一致列數由 489 降至 434（同步調降 `scripts/review/near_same_baseline.json`）。
   - 註冊於 `data/catalog.json` 並通過 `npm run sync:catalog`，全站收錄標準數達 32 份（33 份資料檔）、569 項測試。
-- 影響：`npm run check:all`（含 `validate`、`normalize:check`、`check:catalog`、`check:search`、`lint:ui`、`check:wording`）全數 0 錯誤 0 警告通過；`node scripts/audit_enrichment.mjs` 驗證全庫 33 份標準樣板值 0 筆、重複欄位 0 筆、已核對 1,383 筆（100%）；桌機（1440px）與手機（390px）之淺色／深色模式皆以截圖驗收通過。
+- 影響：`npm run check:all`（含 `validate`、`normalize:check`、`check:catalog`、`check:search`、`lint:ui`、`check:wording`）全數 0 錯誤 0 警告通過；`node scripts/audit_enrichment.mjs` 驗證全庫 33 份標準樣板值 0 筆、重複欄位 0 筆、已核對 1,396 筆（100%）；桌機（1440px）與手機（390px）之淺色／深色模式皆以截圖驗收通過。
 - 後續（引用之外部標準無原文於工作區，僅保留引用標註）：
-  - `MIL-PRF-32565C` 引用之外部軍規：`ATPD 2404`（彈道測試程序）、`AECTP-400`、`MIL-STD-810`、`MIL-STD-461`（CS118 靜電放電）、`MIL-STD-202-301`／`302`、`NAVSEA S9310-AQ-SAF-010`（註：其引用之 `SAE J2464` 已收錄於本庫）。
-  - `MIL-PRF-32383A` 引用之外部標準：`MIL-STD-810`（Methods 500, 503, 509, 512, 514, 516, 520）、`IEC 61000-4-2`、`ASTM D-1141`、`TOP 01-2-608`、`NAVSEA S9310-AQ-SAF-010`、`MIL-STD-882`（註：其引用之 `UN 38.3` 與 `UL 1642` 已收錄於本庫，並已於 `detail` 補充對應參數）。
+  - `MIL-PRF-32565C` 引用之外部軍規：`ATPD 2404`（彈道測試程序）、`AECTP-400`、`MIL-STD-810`、`MIL-STD-461`（CS118 靜電放電）、`MIL-STD-202-301`／`302`、`NAVSEA S9310-AQ-SAF-010`（註：其引用之 `SAE J2464` 已收錄於本庫並已全數展開具體條件）。
+  - `MIL-PRF-32383A` 引用之外部標準：`MIL-STD-810`（Methods 500, 503, 509, 512, 514, 516, 520）、`IEC 61000-4-2`、`ASTM D-1141`、`TOP 01-2-608`、`NAVSEA S9310-AQ-SAF-010`、`MIL-STD-882`（註：其引用之 `UN 38.3` 與 `UL 1642` 已收錄於本庫並已全數展開具體條件）。
 
 ## 2026-11-02 (Review - 網站全面審查後的修正：視覺、功能、資料結構)
 - 事件：使用者要求審查視覺設計、功能、資料結構化，各列三點必修，並由 Claude 直接執行；同時制定給 Antigravity 的維護規則。

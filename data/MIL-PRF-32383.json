@@ -145,34 +145,39 @@
         "PACK_SYSTEM"
       ],
       "conditions": {
+        "soc": {
+          "value": "100% SOC",
+          "detail": "依 4.7.3.4 與 UN 38.3 T.1，電池於滿充電狀態進行高空模擬測試。",
+          "source_reference": "4.7.3.4；3.6.2"
+        },
+        "pressure": {
+          "value": "≤ 11.6 kPa（依 UN 38.3）",
+          "detail": "依 UN 測試與標準手冊第 38.3 節試驗 T.1（高空模擬）規定，絕對氣壓 ≤ 11.6 kPa（模擬海拔 15,240 m）。",
+          "source_reference": "4.7.3.4；UN 38.3 38.3.4.1"
+        },
+        "duration": {
+          "value": "≥ 6 小時（依 UN 38.3）",
+          "detail": "依 UN 測試與標準手冊第 38.3 節試驗 T.1 規定，於 ≤ 11.6 kPa 低氣壓下保持至少 6 小時。",
+          "source_reference": "4.7.3.4；UN 38.3 38.3.4.1"
+        },
+        "temperature": {
+          "value": "20 ± 5 °C（依 UN 38.3）",
+          "detail": "依 UN 測試與標準手冊第 38.3 節試驗 T.1 規定之環境溫度 20 ± 5 °C。",
+          "source_reference": "4.7.3.4；UN 38.3 38.3.4.1"
+        },
         "sample_quantity": {
           "value": "由規格單指定試驗樣品分配",
           "detail": "依 Table X 第一件認可檢驗或規格單規定",
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 UN 測試與標準手冊規定充至滿充電狀態並記錄開路電壓 (OCV)",
-          "detail": "依 4.6 充電程序完成充電，記錄重量與初始開路電壓",
+          "value": "於 23 ± 5 °C 常溫充至滿電，稱重並記錄初始開路電壓 (OCV)（依 UN 38.3）",
+          "detail": "依 4.7.3.4 與 4.6 充電程序完成充電，於試驗前稱重並記錄開路電壓 (OCV)。",
           "source_reference": "4.7.3.4；4.6"
         },
-        "pressure": {
-          "value": "依 UN 測試與標準手冊規定",
-          "detail": "UN 測試與標準手冊第 38.3 節試驗 T.1 規定氣壓 ≤ 11.6 kPa",
-          "source_reference": "4.7.3.4"
-        },
-        "duration": {
-          "value": "依 UN 測試與標準手冊規定",
-          "detail": "UN 測試與標準手冊第 38.3 節試驗 T.1 規定至少 6 小時",
-          "source_reference": "4.7.3.4"
-        },
-        "temperature": {
-          "value": "20 ± 5 °C",
-          "detail": "依 UN 測試與標準手冊規定之常溫環境",
-          "source_reference": "4.7.3.4"
-        },
         "observation_period": {
-          "value": "依規格單規定",
-          "detail": "試驗完成後依 4.7.1.1 檢查外觀並在滿電狀態下進行 4.7.2.2 電壓測試",
+          "value": "試驗後稱重、記錄 OCV 與目視檢查，並於滿電狀態執行電池電壓測試",
+          "detail": "試驗完成後稱重並記錄 OCV，依 4.7.1.1 檢查外觀，並於滿電狀態下進行 4.7.2.2 電壓測試。",
           "source_reference": "4.7.3.4；3.6.2"
         }
       },
@@ -202,7 +207,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 規定充電至滿充狀態",
+          "value": "於 23 ± 5 °C 常溫以限流恆壓（鋰離子）或恆流（鎳系）充至滿電",
           "detail": "允許使用 4.6.3 替代充電方法",
           "source_reference": "4.7.3.5；4.6"
         },
@@ -232,7 +237,7 @@
           "source_reference": "4.7.3.5"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "試驗後執行放電容量測試與外觀檢查",
           "detail": "試驗後依 4.7.2.3 進行放電容量測試",
           "source_reference": "4.7.3.5；3.6.3"
         }
@@ -263,7 +268,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 規定充電至滿充狀態",
+          "value": "於 23 ± 5 °C 常溫以限流恆壓（鋰離子）或恆流（鎳系）充至滿電",
           "detail": "允許使用 4.6.3 替代充電方法",
           "source_reference": "4.7.3.6；4.6"
         },
@@ -293,7 +298,7 @@
           "source_reference": "4.7.3.6"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "試驗後執行放電容量測試與結構電氣檢查",
           "detail": "試驗後檢查結構與電氣狀態",
           "source_reference": "4.7.3.6；3.6.4"
         }
@@ -324,7 +329,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 規定充電至滿充狀態",
+          "value": "於 23 ± 5 °C 常溫以限流恆壓（鋰離子）或恆流（鎳系）充至滿電",
           "detail": "允許使用 4.6.3 替代充電方法",
           "source_reference": "4.7.3.7；4.6"
         },
@@ -334,7 +339,7 @@
           "source_reference": "4.7.3.7"
         },
         "axes": {
-          "value": "3 個互相垂直方向",
+          "value": "3 個相互垂直方向",
           "detail": "三個互相垂直的坐標軸向",
           "source_reference": "4.7.3.7"
         },
@@ -344,7 +349,7 @@
           "source_reference": "4.7.3.7"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "振動期間監測電壓無波動，試驗後執行放電容量測試與結構檢查",
           "detail": "振動過程中與完成後進行電氣與結構檢查",
           "source_reference": "4.7.3.7；3.6.5"
         }
@@ -375,7 +380,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 充至滿充狀態並稱重記錄",
+          "value": "於 23 ± 5 °C 常溫充至滿電並稱重，浸水前電池溫度高於水溫 27 °C",
           "detail": "浸水前樣品溫度應高於水溫 27 °C (49 °F)",
           "source_reference": "4.7.3.8.1；4.6"
         },
@@ -400,7 +405,7 @@
           "source_reference": "4.7.3.8.1"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "取出拭乾外表面後重新稱重，並執行放電容量測試",
           "detail": "取出拭乾外表面後重新稱重，依 4.7.2.3 進行放電容量測試",
           "source_reference": "4.7.3.8.1；3.6.6"
         }
@@ -431,7 +436,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 充至滿充狀態並稱重記錄",
+          "value": "於 23 ± 5 °C 常溫充至滿電並稱重記錄",
           "detail": "依規範要求完成標準預處理",
           "source_reference": "4.7.3.8.2；4.6"
         },
@@ -451,7 +456,7 @@
           "source_reference": "4.7.3.8.2"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "每次浸水取出後重新稱重，並驗證外觀與容量要求",
           "detail": "取出後重新稱重並驗證各項性能指標",
           "source_reference": "4.7.3.8.2；3.6.6"
         }
@@ -482,7 +487,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 充至滿充電狀態",
+          "value": "於 23 ± 5 °C 常溫充至滿電，分別於 55 ± 1.1 °C 及 -29 ± 1.1 °C 保溫 4 小時",
           "detail": "分別在 55 ± 1.1 °C 及 -29 ± 1.1 °C 下保溫 4 小時後跌落",
           "source_reference": "4.7.3.9.1；4.6"
         },
@@ -507,7 +512,7 @@
           "source_reference": "4.7.3.9.1"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "跌落後依表 XIV 檢查外觀，並執行開路電壓與電氣洩漏測試",
           "detail": "跌落後依 Table XIV 檢查外觀並進行電壓與漏電測試",
           "source_reference": "4.7.3.9.1；3.6.7"
         }
@@ -538,7 +543,7 @@
           "source_reference": "4.7.3.9.2"
         },
         "pre_conditioning": {
-          "value": "依 4.6 充至滿充電狀態並驗證電量指示器正常",
+          "value": "於 23 ± 5 °C 常溫充至滿電並確認電量指示器正常，5 組於 55 ± 1.1 °C、5 組於 -29 ± 1.1 °C 保溫 4 小時",
           "detail": "5 組在 55 ± 1.1 °C 保溫 4 小時，5 組在 -29 ± 1.1 °C 保溫 4 小時",
           "source_reference": "4.7.3.9.2；4.6"
         },
@@ -563,7 +568,7 @@
           "source_reference": "4.7.3.9.2"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "26 次跌落後檢查外觀，並執行開路電壓與電氣洩漏測試",
           "detail": "試驗後依 4.7.2.2 檢驗開路電壓及依 4.7.4.7e 進行電氣洩漏測試",
           "source_reference": "4.7.3.9.2；3.6.7"
         }
@@ -594,7 +599,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 充至滿充電狀態並驗證電量指示器正常",
+          "value": "於 23 ± 5 °C 常溫充至滿電並確認電量指示器正常",
           "detail": "常溫滿充電",
           "source_reference": "4.7.3.11；4.6"
         },
@@ -614,7 +619,7 @@
           "source_reference": "4.3.1"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "撞擊後檢查外觀，並執行放電容量測試",
           "detail": "撞擊後依 4.7.2.3 進行放電容量測試",
           "source_reference": "4.7.3.11；3.6.9"
         }
@@ -645,17 +650,17 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 規定充電至滿充狀態",
+          "value": "於 23 ± 5 °C 常溫充至滿電，電源連接器保持未插接且無防塵蓋保護",
           "detail": "未連接、未插接且無防塵蓋保護之電源連接器狀態",
           "source_reference": "4.7.3.13；3.6.11"
         },
         "salt_solution": {
-          "value": "依 MIL-STD-810 方法 509 配製之鹽水溶液",
+          "value": "水電阻率 ≤ 5 MΩ·cm 配製之鹽水溶液（依 MIL-STD-810 方法 509）",
           "detail": "配製鹽水用水電阻率不大於 5 MΩ·cm",
           "source_reference": "4.7.3.13"
         },
         "temperature": {
-          "value": "依 MIL-STD-810 方法 509 規定",
+          "value": "35 °C 鹽霧暴露與乾燥交替（依 MIL-STD-810 方法 509）",
           "detail": "標準鹽霧試驗箱控溫",
           "source_reference": "4.7.3.13"
         },
@@ -665,7 +670,7 @@
           "source_reference": "4.7.3.13"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "96 小時循環後檢查外觀，並執行放電容量測試",
           "detail": "試驗後依 4.7.2.3 進行放電容量測試",
           "source_reference": "4.7.3.13；3.6.11"
         }
@@ -696,7 +701,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 規定充電至滿充狀態",
+          "value": "於 23 ± 5 °C 常溫以限流恆壓（鋰離子）或恆流（鎳系）充至滿電",
           "detail": "允許使用 4.6.3 替代充電方法",
           "source_reference": "4.7.3.14；4.6"
         },
@@ -711,7 +716,7 @@
           "source_reference": "4.7.3.14"
         },
         "pulse_count": {
-          "value": "依 IEC 61000-4-2 規定之正負極性脈衝次數",
+          "value": "於無負載與指定負載下施加正負極性放電（依 IEC 61000-4-2 等級 4）",
           "detail": "在無負載及指定負載下進行測試",
           "source_reference": "4.7.3.14"
         },
@@ -721,7 +726,7 @@
           "source_reference": "4.7.3.14"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "放電後維持指定負載至少 1 分鐘，隨後充電並執行放電容量測試",
           "detail": "放電後依 4.7.2.3 執行放電測試",
           "source_reference": "4.7.3.14；3.6.12"
         }
@@ -752,7 +757,7 @@
           "source_reference": "4.7.3.16"
         },
         "pre_conditioning": {
-          "value": "依 4.6.2 規定充電至滿充狀態",
+          "value": "於 23 ± 5 °C 常溫充至滿電，半數接對接插頭、半數暴露插頭（無防塵蓋）",
           "detail": "允許使用 4.6.3 替代充電方法",
           "source_reference": "4.7.3.16；4.6"
         },
@@ -762,7 +767,7 @@
           "source_reference": "4.7.3.16"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "減壓試驗後檢查外觀，並執行放電容量測試",
           "detail": "試驗後依 4.7.2.3 執行容量放電測試",
           "source_reference": "4.7.3.16；3.6.14"
         },
@@ -798,7 +803,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6.2 規定充電至滿充狀態",
+          "value": "於 23 ± 5 °C 常溫充至滿電，試驗期間不使用輔助冷卻",
           "detail": "允許使用 4.6.3 替代充電方法",
           "source_reference": "4.7.3.18；4.6"
         },
@@ -823,7 +828,7 @@
           "source_reference": "4.7.3.18"
         },
         "observation_period": {
-          "value": "依規格單規定",
+          "value": "3 循環完成後檢查外觀與開路電壓 (OCV)",
           "detail": "無輔助冷卻，依 4.7.2.2 檢查開路電壓",
           "source_reference": "4.7.3.18；3.6.16"
         }
@@ -910,7 +915,7 @@
           "source_reference": "4.4；TABLE IX"
         },
         "pre_conditioning": {
-          "value": "依 4.3.1 條件完全充電並在常溫靜置不少於 1 小時",
+          "value": "於 23 ± 5 °C 常溫完全充電，充電終止後靜置穩定至少 1 小時並稱重至 0.1 mg",
           "detail": "充電終止後在常溫下穩定至少 1 小時，稱重至 0.1 mg",
           "source_reference": "4.7.4.2；4.3.1"
         },
@@ -1073,39 +1078,49 @@
         "CELL"
       ],
       "conditions": {
+        "soc": {
+          "value": "100% SOC",
+          "detail": "依 4.7.4.5 與 UL 1642，電芯於滿充電狀態進行擠壓測試。",
+          "source_reference": "4.7.4.5；UL 1642 13"
+        },
+        "force": {
+          "value": "13 ± 0.78 kN（依 UL 1642）",
+          "detail": "依 4.7.4.5 引用之 UL 1642 擠壓試驗規定，兩平面壓板施加擠壓力 13 ± 0.78 kN (3,000 ± 175 lbf)。",
+          "source_reference": "4.7.4.5；UL 1642 13.1"
+        },
+        "apparatus": {
+          "value": "兩平面壓板（依 UL 1642）",
+          "detail": "依 4.7.4.5 與 UL 1642，使用兩個平坦表面之液壓擠壓裝置，電芯縱軸與壓板平坦表面平行。",
+          "source_reference": "4.7.4.5；UL 1642 13.1"
+        },
+        "termination": {
+          "value": "達最大擠壓力 13 kN 即釋放（單向施壓，依 UL 1642）",
+          "detail": "依 4.7.4.5 與 UL 1642，僅在單一方向對電芯施加擠壓力，一旦達到最大規定力量即釋放壓力。",
+          "source_reference": "4.7.4.5；UL 1642 13.1"
+        },
+        "orientation": {
+          "value": "電芯縱軸與擠壓裝置平坦表面平行，僅單一方向施壓",
+          "detail": "Crush each sample cell with its longitudinal axis parallel to the flat surfaces of the crushing apparatus. Subject each sample cell to a crushing force in only one direction.",
+          "source_reference": "4.7.4.5"
+        },
+        "temperature": {
+          "value": "23 ± 5 °C",
+          "detail": "依 4.3.1 常溫條件 (23 ± 5 °C) 執行。",
+          "source_reference": "4.3.1；4.7.4.5"
+        },
         "sample_quantity": {
           "value": "不大於 10 顆電芯 (依 Table IX 規定)",
           "detail": "第一件認可檢驗 Table IX 電芯試驗組",
           "source_reference": "4.4；TABLE IX"
         },
         "pre_conditioning": {
-          "value": "依 4.3.1 條件完全充電",
-          "detail": "標準預處理",
-          "source_reference": "4.7.4.5"
-        },
-        "force": {
-          "value": "依 UL 1642 擠壓試驗規定",
-          "detail": "依 UL 1642 規定施加擠壓力 (13 ± 0.78 kN)",
-          "source_reference": "4.7.4.5"
-        },
-        "crush_speed": {
-          "value": "依 UL 1642 擠壓試驗規定",
-          "detail": "等速液壓推進",
-          "source_reference": "4.7.4.5"
-        },
-        "termination": {
-          "value": "僅在單一方向對電芯施加擠壓力",
-          "detail": "電芯縱軸與擠壓裝置平坦表面平行，單向施壓",
-          "source_reference": "4.7.4.5"
-        },
-        "temperature": {
-          "value": "常溫環境",
-          "detail": "依 UL 1642 常溫環境條件",
-          "source_reference": "4.3.1"
+          "value": "於 23 ± 5 °C 常溫完全充電",
+          "detail": "依 4.3.1 常溫條件將電芯完全充電。",
+          "source_reference": "4.7.4.5；4.3.1"
         },
         "observation_period": {
-          "value": "依規格單規定",
-          "detail": "擠壓結束後持續觀察安全狀態",
+          "value": "擠壓期間及結束後觀察電芯是否起火或爆炸",
+          "detail": "依 3.7.1.3 與 4.7.4.5，觀察電芯在擠壓試驗中是否發生燃燒或爆炸。",
           "source_reference": "4.7.4.5；3.7.1.3"
         }
       },
@@ -1135,12 +1150,12 @@
           "source_reference": "4.4"
         },
         "pre_conditioning": {
-          "value": "依 4.6 充電至滿充狀態",
+          "value": "於 23 ± 5 °C 常溫以限流恆壓（鋰離子）或恆流（鎳系）充至滿電",
           "detail": "常溫標準完全充電",
           "source_reference": "4.6.1"
         },
         "voltage": {
-          "value": "不小於 500 V 直流 (DC)",
+          "value": "直流 ≥ 500 V",
           "detail": "施加不小於 500 Vdc 電位",
           "source_reference": "4.7.4.6"
         },
@@ -1186,7 +1201,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 充至滿充狀態 (不可使用 4.6.3 替代充電)",
+          "value": "於 23 ± 5 °C 常溫以限流恆壓（鋰離子）或恆流（鎳系）充至滿電，電池間距 ≥ 40 英吋",
           "detail": "常溫標準完全充電",
           "source_reference": "4.7.4.7；4.6"
         },
@@ -1242,7 +1257,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 充至滿充狀態並記錄開路電壓 (OCV)",
+          "value": "於 23 ± 5 °C 常溫充至滿電並測量記錄開路電壓 (OCV)",
           "detail": "允許使用 4.6.3 替代充電方法",
           "source_reference": "4.7.4.8；4.6"
         },
@@ -1294,7 +1309,7 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依 4.6 規定充至滿充電狀態",
+          "value": "於 23 ± 5 °C 常溫以限流恆壓（鋰離子）或恆流（鎳系）充至滿電",
           "detail": "允許使用 4.6.3 替代充電方法",
           "source_reference": "4.7.4.9；4.6"
         },
@@ -1345,19 +1360,19 @@
           "source_reference": "4.4；TABLE X"
         },
         "pre_conditioning": {
-          "value": "依規格單規定充電並以單根金屬絲固定於網罩上",
+          "value": "充至滿電並以單根金屬絲繞樣品綁固於金屬絲網平台上，架設 ≥1080p 30fps 攝影機與熱成像儀",
           "detail": "架設高畫質攝影機與熱成像儀進行全程錄影",
           "source_reference": "4.7.4.11"
         },
         "burner": {
-          "value": "依 UL 1642 燃燒拋射試驗規定",
-          "detail": "以明火燃燒器持續加熱電池直至起火或爆炸",
-          "source_reference": "4.7.4.11"
+          "value": "本生燈明火持續加熱至電池爆炸或起火（依 UL 1642）",
+          "detail": "依 3.7.2.8、4.7.4.11 引用之 UL 1642 燃燒拋射試驗規定，將樣品置於圓孔平台上以本生燈明火持續加熱，直至樣品爆炸或起火燃燒。",
+          "source_reference": "3.7.2.8；4.7.4.11；UL 1642 20"
         },
         "apparatus": {
-          "value": "依 UL 1642 燃燒拋射試驗規定之金屬絲網罩",
-          "detail": "八角形金屬絲網罩防護裝置",
-          "source_reference": "4.7.4.11"
+          "value": "孔徑 102 mm 圓孔平台覆蓋每英吋 20 孔鋼絲網，外罩對邊 610 mm、高 305 mm 八角形鋁絲網罩（依 UL 1642）",
+          "detail": "依 3.7.2.8、4.7.4.11 與 UL 1642 第 20 節，平台中央有直徑 102 mm (4 in) 圓孔並覆蓋每英吋 20 孔鋼絲網；周圍設置對邊寬 610 mm (24 in)、高 305 mm (12 in) 之八角形鋁絲網罩（0.25 mm 鋁絲，每英吋 16～18 孔），電池以單根金屬絲固定於網上。",
+          "source_reference": "3.7.2.8；4.7.4.11；UL 1642 20"
         },
         "temperature": {
           "value": "明火燃燒加熱環境",
@@ -1396,7 +1411,7 @@
           "source_reference": "4.4"
         },
         "pre_conditioning": {
-          "value": "依 4.6 充電至滿充狀態並連接指定負載",
+          "value": "於 23 ± 5 °C 常溫充至滿電並連接指定負載，標記穿刺點並架設 ≥1080p 30fps 攝影機與熱成像儀",
           "detail": "架設高畫質攝影機與熱成像儀錄影",
           "source_reference": "4.7.4.12；4.6"
         },
@@ -1457,7 +1472,7 @@
           "source_reference": "4.4"
         },
         "pre_conditioning": {
-          "value": "依 4.6 充至滿充狀態並連接指定負載",
+          "value": "於 23 ± 5 °C 常溫充至滿電並連接指定負載，標記至少擊中 1 顆電芯之位置，射擊前 ≥ 2 分鐘開始記錄輸出功率",
           "detail": "標記最易引發反應之位置，確保至少擊中 1 顆電芯；射擊前 2 分鐘開始記錄功率輸出",
           "source_reference": "4.7.4.13；4.6"
         },
