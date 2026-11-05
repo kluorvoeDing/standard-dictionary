@@ -63,19 +63,23 @@
       "conditions": {
         "force": {
           "value": "13 ± 1 kN",
-          "detail": "施加壓力上限為 13 ± 1 kN。達到此壓力時應立即釋放。直徑 150 mm 之平整鋼板，以液壓平穩加壓至 13 kN。"
+          "detail": "施加壓力上限為 13 ± 1 kN，達到最大力、電壓降至 1/3 或高度變形 10% 時釋放（5.2.2）。",
+          "source_reference": "5.2.2"
         },
         "temperature": {
-          "value": "45 °C 與 10 °C",
-          "detail": "所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。"
+          "value": "20 ± 5 °C",
+          "detail": "將依 5.1 於上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 充電之單電池置於周圍溫度 20 ± 5 °C 之環境下實施（4、5.1、5.2.2）。",
+          "source_reference": "5.1；5.2.2"
         },
         "apparatus": {
-          "value": "直徑 150 mm 平面鋼製壓板",
-          "detail": "直徑 150 mm 之平整鋼板，以液壓平穩加壓至 13 kN。"
+          "value": "2 枚平板",
+          "detail": "將單電池置於 2 枚平板之間進行擠壓（5.2.2）。",
+          "source_reference": "5.2.2"
         },
         "termination": {
-          "value": "三條件先達者：13 ± 1 kN、壓降至初始 1/3、或變形達 10%",
-          "detail": "滿足以下任一條件時，應立即釋放壓力：(1) 達到 13 ± 1 kN 最大壓力；(2) 電壓降至初始電壓的 1/3 以下；(3) 電池高度變形量達到 10%。"
+          "value": "達最大力、電壓降至 1/3 或高度變形 10% 即釋放",
+          "detail": "加壓力釋放條件為：達到最大壓力後、電壓驟降至試驗開始時之 1/3、或電池高度變形達 10%（5.2.2）。",
+          "source_reference": "5.2.2"
         },
         "sample_quantity": {
           "value": "各試驗溫度 5 個（角形共 10 個）",
@@ -115,16 +119,19 @@
       ],
       "conditions": {
         "temperature": {
-          "value": "55 ± 5 °C（電芯試驗溫度：45 °C 與 10 °C）",
-          "detail": "電芯外部短絡測試在 55 ± 5 °C 環境溫度條件下進行。所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。"
+          "value": "55 ± 5 °C",
+          "detail": "將依 5.1 於上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 充電後之單電池置於周圍溫度 55 ± 5 °C 環境下（4、5.1、5.3.2）。",
+          "source_reference": "5.3.2"
         },
         "external_resistance": {
           "value": "80 ± 20 mΩ",
-          "detail": "外部短絡電阻為 80 ± 20 mΩ。(External short circuit resistance: 80 ± 20 mΩ.)"
+          "detail": "正負極端子連接總電阻 80 ± 20 mΩ 之外部電阻進行短路（5.3.2）。",
+          "source_reference": "5.3.2"
         },
         "duration": {
-          "value": "24 小時或外殼溫降 20%（取先到者）",
-          "detail": "持續 24 小時，或直到電芯表面溫度與環境溫度的差值降至其最大值的 20% 以下，以較短者為準。(Maintained for 24 hours or until the difference between cell surface and ambient drops to 20% of max)."
+          "value": "24 小時或電池表面溫差降至最大值 20% 以下",
+          "detail": "短路持續至 24 小時或單電池表面溫度與環境溫差降至最大值 20% 以下（取較短者）（5.3.2）。",
+          "source_reference": "5.3.2"
         },
         "sample_quantity": {
           "value": "各試驗溫度 5 個",
@@ -172,15 +179,18 @@
       "conditions": {
         "heating_rate": {
           "value": "5 ± 2 °C/min",
-          "detail": "加熱速率為 5 ± 2 °C/min。(Heating rate: 5 ± 2 °C/min.)"
+          "detail": "恆溫槽以 5 ± 2 °C/min 之升溫速率升溫至 130 ± 2 °C（5.4.2）。",
+          "source_reference": "5.4.2"
         },
         "target_temperature": {
           "value": "130 ± 2 °C",
-          "detail": "升溫至 130 ± 2 °C。所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。"
+          "detail": "恆溫槽溫度升至 130 ± 2 °C；試驗前樣品依 5.1 於上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 充飽電（4、5.1、5.4.2）。",
+          "source_reference": "5.4.2"
         },
         "duration": {
           "value": "保持 10 分鐘",
-          "detail": "達到目標溫度後保持 10 分鐘。(Hold at target temperature for 10 minutes.)"
+          "detail": "於 130 ± 2 °C 下保持 10 分鐘（5.4.2）。",
+          "source_reference": "5.4.2"
         },
         "sample_quantity": {
           "value": "各試驗溫度 5 個",
@@ -222,31 +232,38 @@
       "conditions": {
         "crush_speed": {
           "value": "0.1 mm/s",
-          "detail": "加壓速度為 0.1 mm/s。(Pressing speed is 0.1 mm/s.)"
+          "detail": "加壓治具以 0.1 mm/s 之速度下降壓入（5.5.2）。",
+          "source_reference": "5.5.2"
         },
         "force_limit": {
           "value": "圓柱形 800 N；方形 400 N",
-          "detail": "圓柱形電芯之壓力上限為 800 N；方形電芯之壓力上限為 400 N。若達到上限壓力仍未發生短絡，樣品數量可追加至最多 10 個。"
+          "detail": "圓柱形電池加壓上限為 800 N，方形電池加壓上限為 400 N（5.5.2）。",
+          "source_reference": "5.5.2"
         },
         "short_circuit_detection": {
           "value": "電壓降 ≥ 50 mV",
-          "detail": "若偵測到電壓降 ≥ 50 mV：停止加壓，30 秒後釋放壓力。若壓力達到上限值（圓柱形 800 N / 方形 400 N）：停止加壓並釋放壓力。"
+          "detail": "觀測到 50 mV 以上之電壓降或達到壓力上限時停止加壓（5.5.2）。",
+          "source_reference": "5.5.2"
         },
         "hold_after_short": {
           "value": "30 秒後釋放壓力",
-          "detail": "若偵測到電壓降 ≥ 50 mV：停止加壓 (stop pressurizing)，30 秒後釋放壓力。"
+          "detail": "停止加壓後保持 30 秒即釋放壓力（5.5.2、A.4.2.1）。",
+          "source_reference": "附属書A A.4.4"
         },
         "apparatus": {
           "value": "直徑 10 mm 壓頭 與 微型小鎳片（10×10 mm 丁腈橡膠 + 5×5 mm 壓克力板）",
-          "detail": "使用包含 10x10 mm 丁腈橡膠與 5x5 mm 壓克力板的加壓治具。直徑 10 mm 壓頭加壓治具，內置高 0.2 mm、寬 0.1 mm、長 1.0 mm L 型微小鎳片。將鎳片 (Nickel piece) 插入電芯內部，以誘發內部短路。操作環境露點 ≤ -25 °C，解體至重新密封須在 30 分鐘內完成，電芯置於測試腔預熱 45 ± 15 分鐘 (Annex A.4.1)，治具設置須在 2 分鐘內完成 (Annex A.4.2.1)。"
+          "detail": "高 0.2 mm、寬 0.1 mm、長各邊 1 mm 之 L 字形鎳小片；加壓治具含直徑 10 mm 壓頭、10×10 mm 丁腈橡膠與 5×5 mm 壓克力板；露點 ≤ -25 °C 環境下解體，恆溫預熱 45 ± 15 分鐘（附錄 A.4.1、5.5.2、表 3）。",
+          "source_reference": "5.5.2；表3"
         },
         "temperature": {
           "value": "20 ± 5 °C（電芯試驗溫度：45 °C 與 10 °C）",
-          "detail": "所有電芯測試需針對上限試驗溫度 (45 °C) 與下限試驗溫度 (10 °C) 分別進行。Disassembly process must be performed at ambient temperature 20±5 °C."
+          "detail": "解體環境為周圍溫度 20 ± 5 °C 且露點 ≤ -25 °C；電芯於上限試驗溫度 (45 °C) 或下限試驗溫度 (10 °C) 下靜置 45 ± 15 分鐘後測試（5.5.2、表 2）。",
+          "source_reference": "5.5.2；表2"
         },
         "extended_sampling": {
           "value": "最多追加至 10 個",
-          "detail": "若達到上限壓力仍未發生短絡，樣品數量可追加至最多 10 個。(If short circuit does not occur at upper limit pressure, sample count may be extended up to 10.)"
+          "detail": "達到壓力上限仍未確認發生短路時，樣品數最多追加至 10 個（A.1）。",
+          "source_reference": "附属書A A.1"
         },
         "sample_quantity": {
           "value": "各試驗溫度 5 至 10 個",
@@ -288,15 +305,18 @@
       "conditions": {
         "drop_height": {
           "value": "依 JIS C 6950/6065",
-          "detail": "跌落高度依照 JIS C 6950（資訊科技設備）或 JIS C 6065（音訊/視訊設備）規定。具體高度取決於設備類別與重量。(Drop height per JIS C 6950 or JIS C 6065)."
+          "detail": "依使用之攜帶電子設備適用之 JIS C 6950 或 JIS C 6065 規定高度跌落（5.6.2）。",
+          "source_reference": "5.6.2"
         },
         "drop_surface": {
           "value": "混凝土或鋼板",
-          "detail": "跌落面為混凝土面或鋼板面 (concrete or steel plate surface)。"
+          "detail": "跌落至混凝土床或鐵板上，沿最可能產生不利影響之方向（5.6.2）。",
+          "source_reference": "5.6.2"
         },
         "drop_count": {
           "value": "1 次",
-          "detail": "每個樣品跌落 1 次。(Each sample is dropped once.)"
+          "detail": "組電池跌落 1 次（5.6.2）。",
+          "source_reference": "5.6.2"
         },
         "sample_quantity": {
           "value": "3 個",
@@ -337,15 +357,18 @@
       "conditions": {
         "temperature": {
           "value": "20 ± 5 °C",
-          "detail": "組電池外部短絡測試在 20 ± 5 °C（室溫）環境溫度條件下進行。與電芯層級 (55 ± 5 °C) 不同。(Battery-level external short circuit test conducted at 20 ± 5 °C ambient)."
+          "detail": "組電池置於周圍溫度 20 ± 5 °C 之環境下實施外部短路試驗（電芯層級為 55 ± 5 °C）（5.7.2）。",
+          "source_reference": "5.7.2"
         },
         "external_resistance": {
           "value": "80 ± 20 mΩ",
-          "detail": "外部短絡電阻為 80 ± 20 mΩ，與電芯層級相同。(External short circuit resistance: 80 ± 20 mΩ, same as cell level.)"
+          "detail": "正負極端子連接總電阻 80 ± 20 mΩ 之外部電阻進行短路（5.7.2）。",
+          "source_reference": "5.7.2"
         },
         "duration": {
-          "value": "24 小時或外殼溫降 20%（取先到者）",
-          "detail": "Maintain short circuit for 24 hours OR until the temperature difference drops to 20% of its maximum."
+          "value": "24 小時或溫降 20%（電流中斷則 1 小時）",
+          "detail": "短路持續至 24 小時或組電池容器溫度與環境溫差降至最大值 20% 以下；若電流被保護電路遮斷則維持 1 小時（5.7.2）。",
+          "source_reference": "5.7.2"
         },
         "sample_quantity": {
           "value": "各試驗溫度 5 個",
@@ -391,16 +414,19 @@
       ],
       "conditions": {
         "charging_voltage": {
-          "value": "不超上限電壓 (4.25 V)",
-          "detail": "驗證組電池內的單電芯或電池塊在充電過程中不得超過上限充電電壓（通常為 4.25 V）。(Verify that individual cells or battery blocks within the battery pack do not exceed upper limit charging voltage, typically 4.25 V)."
+          "value": "連續通電直到保護電路動作",
+          "detail": "對單電池或電池模組施加超過表 2 上限充電電壓 (4.25 V) 之電壓，測定充電停止時之電壓（5.8.2、表 2）。",
+          "source_reference": "5.8.2"
         },
         "temperature": {
           "value": "20 ± 5 °C",
-          "detail": "Test must be performed at ambient temperature 20±5 °C."
+          "detail": "於周圍溫度 20 ± 5 °C 下實施試驗（5.8.2）。",
+          "source_reference": "5.8.2"
         },
         "cycles": {
-          "value": "單級測量充電電壓；串聯方法 A（強制放電測其餘）或方法 B（施加超壓測停止電壓）",
-          "detail": "單級電池（單電芯/單電池塊組成的組電池）：直接測量充電電壓。串聯電池 (2 級以上) 方法 A：充電時強制放電其中一個電池塊，測量其餘電池塊電壓是否超過上限。串聯電池 (2 級以上) 方法 B：對單電芯施加超過上限充電電壓的電壓，測量充電停止時的電壓。"
+          "value": "2 個以上串聯連接構造",
+          "detail": "組電池為 2 個以上單電池或電池模組直列串聯構造時，量測充電保護特性（5.8.2）。",
+          "source_reference": "5.8.2"
         },
         "sample_quantity": {
           "value": "1 個",
@@ -495,6 +521,10 @@
     ],
     "total_test_entries": 7,
     "note": "JIS C 8714:2007 共 7 項測試（電芯層級 4 項 + 組電池層級 3 項）。本標準為日本特有之鋰離子二次電池安全性標準，與 IEC 62133-2 範圍類似但包含日本特有的強制內部短絡測試 (Forced Internal Short Circuit) 及雙溫度條件 (45°C/10°C) 要求。因僅有單一來源 (Gemini markdown)，建議後續補充原始 PDF 驗證。",
-    "enrichment": "2026-09-26 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
+    "enrichment": "2026-09-26 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。",
+    "parameter_review": [
+      "2026-11-05：依原文補齊試驗參數（JISC8714-CRUSH、JISC8714-CELL-SC、JISC8714-HEAT、JISC8714-FISC、JISC8714-DROP、JISC8714-PACK-SC、JISC8714-OCP），出處見各欄位 source_reference。",
+      "2026-11-05：依原文補齊試驗參數（JISC8714-HEAT），出處見各欄位 source_reference。"
+    ]
   }
 }
