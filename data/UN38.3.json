@@ -129,19 +129,23 @@
       "conditions": {
         "pressure": {
           "value": "≤ 11.6 kPa",
-          "detail": "受測電芯及電池須存放於壓力 11.6 kPa 或以下之環境中。此壓力模擬約 15,000 公尺 (49,000 英尺) 之高空環境。"
+          "detail": "受測電芯及電池須存放於壓力 11.6 kPa 或以下之環境中。此壓力模擬約 15,000 公尺 (49,000 英尺) 之高空環境。",
+          "source_reference": "38.3.4.1.2"
         },
         "duration": {
           "value": "≥ 6 小時",
-          "detail": "在低壓環境中存放至少 6 小時。"
+          "detail": "在低壓環境中存放至少 6 小時。",
+          "source_reference": "38.3.4.1.2"
         },
         "temperature": {
           "value": "20 ± 5 °C",
-          "detail": "環境溫度維持於 20 ± 5 °C (Ambient temperature)。"
+          "detail": "環境溫度維持於 20 ± 5 °C (Ambient temperature)。",
+          "source_reference": "38.3.4.1.2"
         },
         "soc": {
           "value": "原電池：未放電/完全放電；充電電池：滿充",
-          "detail": "原電池需有未放電 (undischarged) 及完全放電 (fully discharged) 兩組樣品。充電電池需處於第一循環滿充狀態。"
+          "detail": "原電池需有未放電 (undischarged) 及完全放電 (fully discharged) 兩組樣品。充電電池需處於第一循環滿充狀態。",
+          "source_reference": "38.3.3"
         },
         "sample_quantity": {
           "value": "原電芯20顆/充電電芯10顆；電池依大小4至8組",
@@ -193,27 +197,33 @@
       "conditions": {
         "high_temperature": {
           "value": "72 ± 2 °C",
-          "detail": "高溫段存放溫度為 72 ± 2 °C。注意：第六版原文為 75±2 °C，已由 2016 年 2 月勘誤 (Corrigendum 1) 更正為 72±2 °C。"
+          "detail": "高溫段存放溫度為 72 ± 2 °C。注意：第六版原文為 75±2 °C，已由 2016 年 2 月勘誤 (Corrigendum 1) 更正為 72±2 °C。",
+          "source_reference": "38.3.4.2.2"
         },
         "low_temperature": {
           "value": "-40 ± 2 °C",
-          "detail": "低溫段存放溫度為 -40 ± 2 °C。"
+          "detail": "低溫段存放溫度為 -40 ± 2 °C。",
+          "source_reference": "38.3.4.2.2"
         },
         "dwell_time": {
           "value": "小型 ≥ 6 小時；大型 ≥ 12 小時",
-          "detail": "小型電芯及電池在高溫段及低溫段存放至少 6 小時；大型電芯及電池 (Large cells and batteries) 存放至少 12 小時。所有循環完成後，樣品須在環境溫度 (20 ± 5 °C) 下存放 24 小時。"
+          "detail": "小型電芯及電池在高溫段及低溫段存放至少 6 小時；大型電芯及電池 (Large cells and batteries) 存放至少 12 小時。所有循環完成後，樣品須在環境溫度 (20 ± 5 °C) 下存放 24 小時。",
+          "source_reference": "38.3.4.2.2"
         },
         "transition_time": {
           "value": "≤ 30 分鐘",
-          "detail": "高低溫之間的最大轉換時間為 30 分鐘。"
+          "detail": "高低溫之間的最大轉換時間為 30 分鐘。",
+          "source_reference": "38.3.4.2.2"
         },
         "cycles": {
           "value": "10 次循環",
-          "detail": "完整執行 10 次高低溫循環。"
+          "detail": "完整執行 10 次高低溫循環。",
+          "source_reference": "38.3.4.2.2"
         },
         "post_test_storage": {
           "value": "24 小時, 20 ± 5 °C",
-          "detail": "所有循環完成後，樣品須在環境溫度 (20 ± 5 °C) 下存放 24 小時。"
+          "detail": "所有循環完成後，樣品須在環境溫度 (20 ± 5 °C) 下存放 24 小時。",
+          "source_reference": "38.3.4.2.2"
         },
         "sample_quantity": {
           "value": "原電芯20顆/充電電芯10顆；電池依大小4至8組",
@@ -265,27 +275,33 @@
       "conditions": {
         "waveform": {
           "value": "正弦波對數掃頻",
-          "detail": "振動波形為正弦波 (Sinusoidal waveform)，以對數掃頻 (Logarithmic sweep) 在 7 Hz 至 200 Hz 間往返。"
+          "detail": "振動波形為正弦波 (Sinusoidal waveform)，以對數掃頻 (Logarithmic sweep) 在 7 Hz 至 200 Hz 間往返。",
+          "source_reference": "38.3.4.3.2"
         },
         "vibration_frequency": {
           "value": "7 Hz～200 Hz",
-          "detail": "頻率範圍為 7 Hz 至 200 Hz 後再返回 7 Hz。"
+          "detail": "頻率範圍為 7 Hz 至 200 Hz 後再返回 7 Hz。",
+          "source_reference": "38.3.4.3.2"
         },
         "acceleration_peak": {
           "value": "電芯與小型電池：8 gn（7～18 Hz 為 1 gn，至 50 Hz 為 8 gn）；大型電池：2 gn（至 25 Hz 為 2 gn）",
-          "detail": "電芯及小型電池 (≤12 kg)：7 Hz 起維持 1gn 加速度至 18 Hz；隨後維持 0.8 mm 振幅（總振幅 1.6 mm）並增加頻率直至達 8gn（約 50 Hz）；再維持 8gn 加速度至 200 Hz。大型電池 (>12 kg)：7 Hz 起維持 1gn 加速度至 18 Hz；隨後維持 0.8 mm 振幅並增加頻率直至達 2gn（約 25 Hz）；再維持 2gn 加速度至 200 Hz。"
+          "detail": "電芯及小型電池 (≤12 kg)：7 Hz 起維持 1gn 加速度至 18 Hz；隨後維持 0.8 mm 振幅（總振幅 1.6 mm）並增加頻率直至達 8gn（約 50 Hz）；再維持 8gn 加速度至 200 Hz。大型電池 (>12 kg)：7 Hz 起維持 1gn 加速度至 18 Hz；隨後維持 0.8 mm 振幅並增加頻率直至達 2gn（約 25 Hz）；再維持 2gn 加速度至 200 Hz。",
+          "source_reference": "38.3.4.3.2"
         },
         "sweep_rate": {
           "value": "15 分鐘/循環（對數掃頻）",
-          "detail": "每次掃頻（7→200→7 Hz）耗時 15 分鐘。"
+          "detail": "每次掃頻（7→200→7 Hz）耗時 15 分鐘。",
+          "source_reference": "38.3.4.3.2"
         },
         "test_duration": {
           "value": "每軸 12 次循環（共 3 小時/軸，3 軸向總計 9 小時）",
-          "detail": "每個軸向重複 12 次掃頻，每軸合計 3 小時。總計 9 小時。"
+          "detail": "每個軸向重複 12 次掃頻，每軸合計 3 小時。總計 9 小時。",
+          "source_reference": "38.3.4.3.2"
         },
         "axes": {
           "value": "3 個互相垂直方向（含垂直端子面）",
-          "detail": "在三個互相垂直的安裝方向 (mutually perpendicular mounting positions) 上分別執行，其中一個方向必須垂直於端子面 (terminal face)。"
+          "detail": "在三個互相垂直的安裝方向 (mutually perpendicular mounting positions) 上分別執行，其中一個方向必須垂直於端子面 (terminal face)。",
+          "source_reference": "38.3.4.3.2"
         },
         "sample_quantity": {
           "value": "原電芯20顆/充電電芯10顆；電池依大小4至8組",
@@ -337,23 +353,28 @@
       "conditions": {
         "waveform": {
           "value": "半正弦波",
-          "detail": "衝擊波形為半正弦波 (Half-sine shock)。"
+          "detail": "衝擊波形為半正弦波 (Half-sine shock)。",
+          "source_reference": "38.3.4.4.2"
         },
         "acceleration_peak": {
           "value": "電芯：150 gn（大型電芯可選 50 gn）；電池：≤ 12 kg 為 150 gn 或公式值；> 12 kg 為 50 gn 或公式值",
-          "detail": "每個電芯須承受峰值加速度 150gn、脈衝持續時間 6 毫秒之半正弦衝擊。大型電芯 (Large cells, >500 g) 可替代選用峰值加速度 50gn、脈衝持續時間 11 毫秒。小型電池 (≤12 kg)：承受 150gn / 6ms 或計算加速度（150gn 與 √(100850/質量) 取小者）/ 計算持續時間（6ms 與 √(100850/質量) 之對應值取大者）。大型電池 (>12 kg)：承受 50gn / 11ms 或計算加速度（50gn 與 √(30000/質量) 取小者）/ 計算持續時間（11ms 與對應值取大者）。"
+          "detail": "每個電芯須承受峰值加速度 150gn、脈衝持續時間 6 毫秒之半正弦衝擊。大型電芯 (Large cells, >500 g) 可替代選用峰值加速度 50gn、脈衝持續時間 11 毫秒。小型電池 (≤12 kg)：承受 150gn / 6ms 或計算加速度（150gn 與 √(100850/質量) 取小者）/ 計算持續時間（6ms 與 √(100850/質量) 之對應值取大者）。大型電池 (>12 kg)：承受 50gn / 11ms 或計算加速度（50gn 與 √(30000/質量) 取小者）/ 計算持續時間（11ms 與對應值取大者）。",
+          "source_reference": "38.3.4.4.2"
         },
         "pulse_duration": {
           "value": "電芯與小型電池：6 ms（大型電芯/大型電池：11 ms，或公式計算）",
-          "detail": "脈衝持續時間依質量與規格為 6 ms 或 11 ms，或按公式計算。"
+          "detail": "脈衝持續時間依質量與規格為 6 ms 或 11 ms，或按公式計算。",
+          "source_reference": "38.3.4.4.2"
         },
         "shock_count": {
           "value": "每個方向正反各 3 次（共 18 次）",
-          "detail": "每個電芯或電池須在三個互相垂直安裝方向的正反兩向各承受 3 次衝擊，總計 18 次衝擊。"
+          "detail": "每個電芯或電池須在三個互相垂直安裝方向的正反兩向各承受 3 次衝擊，總計 18 次衝擊。",
+          "source_reference": "38.3.4.4.2"
         },
         "direction": {
           "value": "3 個互相垂直方向（正反兩向）",
-          "detail": "在三個互相垂直安裝方向的正反兩向執行。"
+          "detail": "在三個互相垂直安裝方向的正反兩向執行。",
+          "source_reference": "38.3.4.4.2"
         },
         "sample_quantity": {
           "value": "原電芯20顆/充電電芯10顆；電池依大小4至8組",
@@ -405,15 +426,18 @@
       "conditions": {
         "temperature": {
           "value": "57 ± 4 °C",
-          "detail": "受測電芯或電池須加熱至外殼達到均勻穩定溫度 57 ± 4 °C。加熱時間視電芯/電池尺寸及設計而定，需評估並記錄。若無法評估，小型電芯/電池至少 6 小時，大型電芯/電池至少 12 小時。短路及冷卻降溫階段須至少在環境溫度 (ambient temperature) 條件下進行。"
+          "detail": "受測電芯或電池須加熱至外殼達到均勻穩定溫度 57 ± 4 °C。加熱時間視電芯/電池尺寸及設計而定，需評估並記錄。若無法評估，小型電芯/電池至少 6 小時，大型電芯/電池至少 12 小時。短路及冷卻降溫階段須至少在環境溫度 (ambient temperature) 條件下進行。",
+          "source_reference": "38.3.4.5.2"
         },
         "external_resistance": {
           "value": "< 0.1 Ω",
-          "detail": "以總外部電阻小於 0.1 歐姆 (ohm) 之短路條件施加於電芯或電池。"
+          "detail": "以總外部電阻小於 0.1 歐姆 (ohm) 之短路條件施加於電芯或電池。",
+          "source_reference": "38.3.4.5.2"
         },
         "duration": {
           "value": "外殼溫降回 57 ± 4 °C 後再維持 1 小時（或溫升半值降幅至少 1 小時）",
-          "detail": "短路條件持續至電芯/電池外殼溫度回落至 57 ± 4 °C 後至少 1 小時；或對大型電池，持續至溫度下降幅度達最大溫升之一半且維持低於該值後至少 1 小時。"
+          "detail": "短路條件持續至電芯/電池外殼溫度回落至 57 ± 4 °C 後至少 1 小時；或對大型電池，持續至溫度下降幅度達最大溫升之一半且維持低於該值後至少 1 小時。",
+          "source_reference": "38.3.4.5.2"
         },
         "sample_quantity": {
           "value": "原電芯20顆/充電電芯10顆；電池依大小4至8組",
@@ -467,27 +491,33 @@
       "conditions": {
         "applicability": {
           "value": "直徑 ≥ 18.0 mm 圓柱形電芯",
-          "detail": "撞擊試驗僅適用於直徑不小於 18.0 mm 之圓柱形電芯（包含 18650 等）。原電芯未放電與完全放電各 5 顆；充電電芯首循環 50% 設計額定容量 5 顆（依 38.3.3(c) 與 38.3.4）。受測電芯須為全新樣品。"
+          "detail": "撞擊試驗僅適用於直徑不小於 18.0 mm 之圓柱形電芯（包含 18650 等）。原電芯未放電與完全放電各 5 顆；充電電芯首循環 50% 設計額定容量 5 顆（依 38.3.3(c) 與 38.3.4）。受測電芯須為全新樣品。",
+          "source_reference": "38.3.4.6.2"
         },
         "steel_bar": {
           "value": "直徑 15.8 ± 0.1 mm，長度 ≥ 60 mm (6 cm) Type 316 不鏽鋼棒",
-          "detail": "使用直徑 15.8 ± 0.1 mm、長度至少 6 cm（60 mm，或電芯最長尺寸，取大值）之 Type 316 不銹鋼棒，置於樣品中央。"
+          "detail": "使用直徑 15.8 ± 0.1 mm、長度至少 6 cm（60 mm，或電芯最長尺寸，取大值）之 Type 316 不銹鋼棒，置於樣品中央。",
+          "source_reference": "38.3.4.6.2"
         },
         "impact_mass": {
           "value": "9.1 ± 0.1 kg",
-          "detail": "9.1 ± 0.1 kg 之重錘。"
+          "detail": "9.1 ± 0.1 kg 之重錘。",
+          "source_reference": "38.3.4.6.2"
         },
         "drop_height": {
           "value": "610 ± 25 mm (61 ± 2.5 cm)",
-          "detail": "從 61 ± 2.5 cm (610 ± 25 mm) 高度以近無摩擦之垂直滑軌或通道控制落下。垂直導軌須與水平支撐面成 90 度。"
+          "detail": "從 61 ± 2.5 cm (610 ± 25 mm) 高度以近無摩擦之垂直滑軌或通道控制落下。垂直導軌須與水平支撐面成 90 度。",
+          "source_reference": "38.3.4.6.2"
         },
         "orientation": {
           "value": "縱軸平行平面且垂直於鋼棒",
-          "detail": "受測樣品縱軸平行於平坦表面，且垂直於橫置之 15.8 mm 鋼棒。"
+          "detail": "受測樣品縱軸平行於平坦表面，且垂直於橫置之 15.8 mm 鋼棒。",
+          "source_reference": "38.3.4.6.2"
         },
         "impact_count": {
           "value": "每個樣品 1 次",
-          "detail": "每個受測電芯或組件電芯僅承受 1 次撞擊。"
+          "detail": "每個受測電芯或組件電芯僅承受 1 次撞擊。",
+          "source_reference": "38.3.4.6.2"
         },
         "sample_quantity": {
           "value": "原電芯10顆；充電電芯5顆",
@@ -535,31 +565,38 @@
       "conditions": {
         "soc": {
           "value": "一次電芯：未放電與完全放電；二次電芯：首循環 50% 設計容量",
-          "detail": "原電芯（Primary）：5 個未放電＋5 個完全放電；充電電芯（Rechargeable）：5 個第 1 循環 50% 設計額定容量，組件電芯同上數量（依 38.3.3(c)）。受測電芯／組件電芯不得為先前已接受其他測試之全新樣品（38.3.4）。"
+          "detail": "原電芯（Primary）：5 個未放電＋5 個完全放電；充電電芯（Rechargeable）：5 個第 1 循環 50% 設計額定容量，組件電芯同上數量（依 38.3.3(c)）。受測電芯／組件電芯不得為先前已接受其他測試之全新樣品（38.3.4）。",
+          "source_reference": "38.3.3；Table 38.3.1"
         },
         "force": {
           "value": "13 ± 0.78 kN",
-          "detail": "施加力達 13 ± 0.78 kN（等效液壓缸 32 mm 活塞壓力 17 MPa）。"
+          "detail": "施加力達 13 ± 0.78 kN（等效液壓缸 32 mm 活塞壓力 17 MPa）。",
+          "source_reference": "38.3.4.6.3"
         },
         "crush_speed": {
           "value": "≈ 1.5 cm/s",
-          "detail": "擠壓為漸進式，首次接觸點的速度約為 1.5 cm/s。"
+          "detail": "擠壓為漸進式，首次接觸點的速度約為 1.5 cm/s。",
+          "source_reference": "38.3.4.6.3"
         },
         "apparatus": {
           "value": "兩個平面間擠壓",
-          "detail": "電芯或組件電芯置於兩個平面之間進行擠壓。原文：crushed between two flat surfaces."
+          "detail": "電芯或組件電芯置於兩個平面之間進行擠壓。原文：crushed between two flat surfaces.",
+          "source_reference": "38.3.4.6.3"
         },
         "orientation": {
           "value": "圓柱形（< 18 mm）：力垂直於縱軸；方形／軟包：力施加於最寬面；鈕扣形：平坦面施壓",
-          "detail": "圓柱形電芯（< 18 mm）擠壓力垂直於縱軸；方形或軟包電芯力施加於最寬側面；鈕扣電芯力施加於平面。"
+          "detail": "圓柱形電芯（< 18 mm）擠壓力垂直於縱軸；方形或軟包電芯力施加於最寬側面；鈕扣電芯力施加於平面。",
+          "source_reference": "38.3.4.6.3"
         },
         "termination": {
           "value": "達最大力 13 ± 0.78 kN、電壓降 ≥ 100 mV 或變形量 ≥ 50%（先到者釋放壓力）",
-          "detail": "擠壓持續直至下列三項條件中最先達成者：(a) 施加力達 13 ± 0.78 kN（等效液壓缸 32 mm 活塞壓力 17 MPa）；(b) 電芯電壓下降至少 100 mV；(c) 電芯形變達原始厚度之 50% 或以上。達到條件後釋放壓力。"
+          "detail": "擠壓持續直至下列三項條件中最先達成者：(a) 施加力達 13 ± 0.78 kN（等效液壓缸 32 mm 活塞壓力 17 MPa）；(b) 電芯電壓下降至少 100 mV；(c) 電芯形變達原始厚度之 50% 或以上。達到條件後釋放壓力。",
+          "source_reference": "38.3.4.6.3"
         },
         "applicability": {
           "value": "方形、軟包、鈕扣電芯及圓柱形直徑 < 18.0 mm（單次擠壓）",
-          "detail": "本擠壓測試適用於方形、軟包、鈕扣電芯及直徑小於 18.0 mm 之圓柱形電芯；每個受測電芯或組件電芯僅承受 1 次擠壓。"
+          "detail": "本擠壓測試適用於方形、軟包、鈕扣電芯及直徑小於 18.0 mm 之圓柱形電芯；每個受測電芯或組件電芯僅承受 1 次擠壓。",
+          "source_reference": "38.3.4.6.3"
         },
         "sample_quantity": {
           "value": "原電芯10顆；充電電芯5顆",
@@ -607,19 +644,23 @@
       "conditions": {
         "charging_current": {
           "value": "2 倍最大持續充電電流",
-          "detail": "充電電流為製造商建議之最大持續充電電流 (maximum continuous charge current) 的 2 倍。"
+          "detail": "充電電流為製造商建議之最大持續充電電流 (maximum continuous charge current) 的 2 倍。",
+          "source_reference": "38.3.4.7.2"
         },
         "charging_voltage": {
           "value": "充電電壓 ≤ 18 V 時：min(2 × 最高充電電壓, 22 V)；> 18 V 時：1.2 × 最高充電電壓",
-          "detail": "當製造商建議充電電壓不超過 18 V 時，測試最低電壓為以下兩者中較小值：(a) 2 倍最高充電電壓，或 (b) 22 V。當製造商建議充電電壓超過 18 V 時，測試最低電壓為 1.2 倍最高充電電壓。"
+          "detail": "當製造商建議充電電壓不超過 18 V 時，測試最低電壓為以下兩者中較小值：(a) 2 倍最高充電電壓，或 (b) 22 V。當製造商建議充電電壓超過 18 V 時，測試最低電壓為 1.2 倍最高充電電壓。",
+          "source_reference": "38.3.4.7.2"
         },
         "temperature": {
           "value": "環境溫度",
-          "detail": "測試於環境溫度下進行 (ambient temperature)。"
+          "detail": "測試於環境溫度下進行 (ambient temperature)。",
+          "source_reference": "38.3.4.7.2"
         },
         "duration": {
           "value": "24 小時",
-          "detail": "測試持續時間為 24 小時。"
+          "detail": "測試持續時間為 24 小時。",
+          "source_reference": "38.3.4.7.2"
         },
         "sample_quantity": {
           "value": "小型電池8組；大型電池4組",
@@ -667,27 +708,33 @@
       "conditions": {
         "forced_discharge_current": {
           "value": "初始放電電流等於製造商規定最大連續放電電流",
-          "detail": "初始電流等於製造商指定之最大放電電流 (maximum discharge current specified by the manufacturer)。"
+          "detail": "初始電流等於製造商指定之最大放電電流 (maximum discharge current specified by the manufacturer)。",
+          "source_reference": "38.3.4.8.2"
         },
         "external_resistance": {
           "value": "依放電電流串聯適當電阻負載",
-          "detail": "以適當大小及額定功率之電阻性負載 (resistive load) 與受測電芯串聯，以獲得指定之放電電流。"
+          "detail": "以適當大小及額定功率之電阻性負載 (resistive load) 與受測電芯串聯，以獲得指定之放電電流。",
+          "source_reference": "38.3.4.8.2"
         },
         "power_supply": {
           "value": "12 V 直流電源串聯",
-          "detail": "每個電芯與 12 V 直流電源 (12 V D.C. power supply) 串聯連接。"
+          "detail": "每個電芯與 12 V 直流電源 (12 V D.C. power supply) 串聯連接。",
+          "source_reference": "38.3.4.8.2"
         },
         "duration": {
           "value": "時間 (小時) = 額定容量 (Ah) / 初始電流 (A)",
-          "detail": "每個電芯之強制放電時間（以小時計）等於其額定容量（Ah）除以初始測試電流（A）。"
+          "detail": "每個電芯之強制放電時間（以小時計）等於其額定容量（Ah）除以初始測試電流（A）。",
+          "source_reference": "38.3.4.8.2"
         },
         "temperature": {
           "value": "環境溫度",
-          "detail": "測試於環境溫度下進行 (ambient temperature)。"
+          "detail": "測試於環境溫度下進行 (ambient temperature)。",
+          "source_reference": "38.3.4.8.2"
         },
         "applicability": {
           "value": "全新樣品",
-          "detail": "受測電芯須為未經其他測試之樣品 (38.3.4)。"
+          "detail": "受測電芯須為未經其他測試之樣品 (38.3.4)。",
+          "source_reference": "38.3.4.8.1"
         },
         "sample_quantity": {
           "value": "原電芯10顆；充電電芯20顆",
@@ -847,6 +894,9 @@
     ],
     "total_test_entries": 9,
     "note": "UN 38.3 共 8 項測試 (T.1~T.8)，其中 T.6 因有兩種子測試程序 (Impact 及 Crush)，拆分為 2 個條目，故 JSON 中共有 9 個測試條目",
-    "enrichment": "2026-09-26 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
+    "enrichment": "2026-09-26 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。",
+    "parameter_review": [
+      "2026-11-05：依原文補齊試驗參數（UN38.3-T1、UN38.3-T2、UN38.3-T3、UN38.3-T4、UN38.3-T5、UN38.3-T6a、UN38.3-T6b、UN38.3-T7、UN38.3-T8），出處見各欄位 source_reference。"
+    ]
   }
 }
