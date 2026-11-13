@@ -1,0 +1,563 @@
+# AGENTS
+
+> ## ⛔ 鐵律：版控安全（所有維護 / 定時 agent 務必先讀，再動手）
+>
+> **這個 GitHub repo 是 _公開（public）_ 的。** 任何 commit 進來的內容，全世界（含 Google、GitHub、各種掃描機器人）都看得到。曾發生 Gemini API key 與 Vercel OIDC token 外洩、key 被 Google 自動停用「不到一天就失效」的事故，已於 2026-06-06 清除歷史。請嚴守以下規則：
+>
+> 1. **絕對不要 commit 任何機密。** 包含但不限於：`.env`、`.env.*`（如 `.env.production.local`）、API 金鑰、`*.pem`、`*.key`、token、密碼。
+>    - 金鑰一律設定在 **Vercel 環境變數**（Project → Settings → Environment Variables）或本地 `.env`（已被 `.gitignore` 忽略）。
+>    - 前端會用到的金鑰也**不可**加 `VITE_` 前綴 —— 那會被打包進瀏覽器端 JS 而外洩。金鑰只能在伺服器端（`api/`）透過 `process.env` 讀取。
+> 2. **絕對不要 commit 依賴或垃圾檔。** 包含 `node_modules/`（任何層級）、`dist/`、`build/`、`.DS_Store`、`*.log`。這些都已在 `.gitignore` 中。
+> 3. **commit 前一定要檢查 `git status`**，確認沒有把上述檔案加進去。新增環境變數時，只更新 `.env.example`（放變數名稱、不放值）。
+> 4. **若不小心提交了機密：** 立刻（a）到對應平台作廢該金鑰／token，（b）用 `git filter-repo` 從歷史中清除，（c）force-push。光是刪檔再 commit **沒有用**，舊 commit 仍讀得到。
+>
+> 完整的環境設定說明見 [`README.md`](./README.md)。
+>
+> **動手前也要讀 [`MAINTENANCE.md`](./MAINTENANCE.md)**：分工、提交前檢查（`npm run check:all`）、資料欄位與分類規則、前端規則、腳本規則。
+
+---
+
+用來記錄這個專案的重要事件、決策與里程碑。
+
+## 使用方式
+
+- 以日期為主，持續新增新條目
+- 每則紀錄盡量包含背景、變更內容、影響範圍與後續行動
+- 若是臨時討論或未定案事項，可標註為 `待確認`
+
+## 紀錄格式
+
+```md
+## YYYY-MM-DD
+- 事件：
+- 背景：
+- 內容：
+- 影響：
+- 後續：
+```
+
+## 紀錄
+
+> **[提示]** 關於 21 份標準的詳細交叉稽核與修復歷史 (破曉大隊)，已歸檔至 [`AUDIT_LOGS.md`](./AUDIT_LOGS.md) 備查。
+
+> ## 📐 資料維護鐵律：產生資料後一定要正規化
+>
+> 不同 batch / agent 產出的標準 JSON 容易在格式上分歧（h vs 小時、℃ vs °C、`acceptance_criteria.details` 混入物件、孤兒判定鍵…）。**Dawn Audit / 任何會改 `data/*.json` 的維護流程，在寫入資料後務必執行：**
+>
+> ```bash
+> npm run normalize       # = node scripts/normalize_data.mjs --write（冪等、只動格式、絕不改數值）
+> npm run validate        # 結構完整性驗證
+> ```
+>
+> CI（`data-integrity.yml`）會以 `normalize:check` 把關：只要有檔案未正規化就會 fail。正規化器預設會**略過 git-dirty 檔**以免干擾進行中的工作；要全部處理加 `--all`。標準形：時間用繁中（小時／分鐘／秒）、溫度用 `°C`。
+
+> ## UI 風格鐵律：新功能要長得像首頁
+>
+> 首頁「標準應用領域導覽」是全站的風格基準：米白底、細框線、8px 機構色塊、灰階文字層次、藥丸形篩選按鈕。**任何 agent 新增或修改前端時必須遵守：**
+>
+> 1. **不用 emoji**（介面文字、按鈕、標題、AI 提示詞都一樣）。需要圖示時用 `frontend/src/components/Icon.jsx` 的單色線條圖示；`✓ ✕ ← ⓘ ⌘` 這類文字符號可以用。
+> 2. **顏色只用 `frontend/src/index.css` 的 token**（`--text-*`、`--border-color`、`--org-*`、`--cat-*`、`--diff-*`…），不要寫死 `#d97706`、`rgba(...)`，否則深色模式會壞。
+> 3. **互動樣式寫成 CSS class**（`.sm-*`、`.cmp-*`、`.topbar-btn`、`.btn-pill`、`.modal-*`），不要用 `onMouseEnter` 改 style。
+> 4. **沿用既有元件**：機構色用 `utils/orgColors.js`，參數名稱用 `utils/parameterDictionary.js`（新欄位名要補中文標籤或別名），彈窗用 `.modal-backdrop` / `.modal-panel`。
+> 5. **文字精簡、用中文**，不要中英並列的標題（例如「只看差異 (Diff Only)」）或【】括號。
+>
+> CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/`：不得出現 emoji、不得新增寫死的顏色（`#rrggbb`／`rgba()`，白色與純黑白遮罩除外）、不得新增中英並列標題、不得有小於 12px 的字級（請用 `--fs-*` token），並確認前端能建置。既有違規記在 `scripts/ui_style_baseline.json`（每檔上限，只能降不能升）；清掉後執行 `node scripts/check_ui_style.mjs --update-baseline` 降低基準線。
+
+## 2026-11-05 (Data & Review - Batch 5 技術參數出處核對與寫法統一完成)
+- 事件：完成交接清單 Batch 5 全數 9 份標準（370 筆技術參數條件欄位）之原文出處核對（`source_reference` 覆蓋率達 100%）、工程數值零遺失校驗，以及跨標準近同義寫法統一，降低 `near_same` 基準線。
+- 背景：接續交接文檔 `Antigravity_交接_參數出處核對.md`，針對 `UN 38.3`、`IEC 62660-3`、`JIS C 8714`、`UL 9540A`、`UL 2743`、`UL 9540`、`IEC 62619`、`JIS C 8715-2`、`IEC 62133-2` 進行技術參數原文逐字引文驗證與跨標準規格統一。
+- 內容：
+  - 9 份標準全部 370 筆條件欄位完成原文引文核驗並補齊 `source_reference`：
+    - `UL 2743`：19 筆，修正跌落表面為混凝土表面（原硬木板為誤記，核准更正）。
+    - `UL 9540A`：30 筆，保留工程數值細節。
+    - `JIS C 8714`：42 筆，修正擠壓設備為 2 枚平板（排除 150 mm 誤記，核准更正）。
+    - `IEC 62660-3`：53 筆，全部 8 項測試條款對齊 IEC 62660-3:2022 原文。
+    - `UN 38.3`：70 筆，T1～T8 全部 9 項測試核對 38.3.3 / 38.3.4.1～38.3.4.8 原文。
+    - `UL 9540`：62 筆，12 項測試對齊 ANSI/CAN/UL 9540:2025 原文。
+    - `IEC 62619`：89 筆，11 項測試對齊 IEC 62619:2022 原文。
+    - `JIS C 8715-2`：85 筆，對齊 JIS C 8715-2:2019 原文，統一跌落次數／方向／短路治具寫法。
+    - `IEC 62133-2`：95 筆，12 項測試全數對照 IEC 62133-2:2017+AMD1:2021 正文。
+  - 工程數值完整性防線：所有標準通過 `check_numbers.mjs` 嚴格校驗，舊有數值 100% 保留於 `value` 或 `detail` 中，核准之數值更正均留存出處依據。
+  - 寫法統一與基準線更新：全庫 `near_same.mjs` 寫法不一致列數自 434 降至 429（`scripts/review/near_same_baseline.json` 同步調降）。
+  - 全庫補強品質驗收：`node scripts/audit_enrichment.mjs` 顯示全庫 33 份標準樣板值 0 筆、重複欄位 0 筆、已核對 1,397 筆（100%）。
+- 影響：`npm run check:all` 全數 0 錯誤 0 警告通過；Vite 前端建置成功。
+
+## 2026-11-02 (Data - 新增 SAE J2464、MIL-PRF-32565C、MIL-PRF-32383A 三份標準與原文核對)
+- 事件：同步 GitHub 最新 `main` 分支（含 `MAINTENANCE.md` 與 `npm run check:all` 規範），並新增 `SAE J2464`（2021-08）、`MIL-PRF-32565C`（2022-08-04）、`MIL-PRF-32383A`（2021-12-09）三份標準至資料庫與前端網站。
+- 背景：擴充電動車濫用測試標準（SAE J2464）與美國軍用高壓 6T 鋰電池（MIL-PRF-32565C）、軍用便攜式可充電電池（MIL-PRF-32383A）標準。
+- 做法（主代理拆解與驗收，子代理平行建檔與逐字核對）：
+  - 以 PyMuPDF 擷取三份 PDF 全文文字層至 `.review-work/src/*.txt`（100% 可讀，零空頁），並渲染關鍵條款與樣品分配表頁面影像（SAE J2464 Table 1、MIL-PRF-32565C Table VII、MIL-PRF-32383A Table IX/X 及封面頁）由主代理親自檢視。
+  - 先派 `research` 子代理定位兩份軍規（共逾 15,000 行）之所有安全與環境測試條款、通則與樣品分配表行號；再平行分派 3 個子代理分別建立 `data/SAE-J2464.json`、`data/MIL-PRF-32565.json`、`data/MIL-PRF-32383.json` 並執行 `excerpts.py` → `decisions.json` → `verify.py` → `apply.mjs` 完整原文引文驗證流程。
+- 內容：
+  - 新增 `data/SAE-J2464.json`（17 項安全與濫用測試、21 筆術語、133 筆條件與程序欄位 100% 附 `source_reference` 與逐字引文驗證通過）。
+  - 新增 `data/MIL-PRF-32565.json`（26 項電芯與 6T 電池包安全／環境／濫用／彈道測試、12 筆術語、176 筆條件與程序欄位 100% 附 `source_reference`）。
+  - 新增 `data/MIL-PRF-32383.json`（25 項電芯與電池包安全／環境／濫用測試、13 筆術語、177 筆條件與程序欄位 100% 附 `source_reference`）。
+  - 跨標準與內部引用具體化：將 `MIL-PRF-32565`（電芯與電池包引用 `SAE J2464` 之過充電、短路、過放電、針刺、擠壓，以及引用內部條款 `4.4.6.1`／`4.4.9`）、`MIL-PRF-32383`（引用 `UN 38.3` 低壓高空、`UL 1642` 擠壓与燃燒拋射，以及內部條款 `4.6`／`4.3.1`／規格單）與 `SAE-J2464`（電芯衝擊引用 `UN 38.3`）原本寫「依 ... 規定」之欄位，全數展開為具體數值與測試程序並括號註記 `（依 SAE J2464）`／`（依 UN 38.3）`／`（依 UL 1642）`；同步將 `SAE J2464` 表 3 危害嚴重度等級（HSL 2、HSL 4、HSL 6）具體內容寫入 `MIL-PRF-32565` 判定要求。
+  - 欄位與分類對齊：所有測試項目 100% 對齊既有 `data/taxonomy.json`（零新增單一標準專用 `normalized_id`）與 `data/field_schema.json`；於 `frontend/src/utils/parameterDictionary.js` 補齊軍規與濫用測試新增參數鍵（`projectile`、`velocity`、`shots`、`discharge_points`、`pulse_count`、`cutoff_temperature`）之繁體中文標籤；擴充 `frontend/src/utils/compareRows.js` 將「充滿電後／滿充電狀態／滿電狀態」折疊為「滿充」並自動忽略尾綴 `（依 SAE J2464／UL 1642／UN 38.3）` 註記，使全庫 `near_same.mjs` 寫法不一致列數由 489 降至 434（同步調降 `scripts/review/near_same_baseline.json`）。
+  - 註冊於 `data/catalog.json` 並通過 `npm run sync:catalog`，全站收錄標準數達 32 份（33 份資料檔）、569 項測試。
+- 影響：`npm run check:all`（含 `validate`、`normalize:check`、`check:catalog`、`check:search`、`lint:ui`、`check:wording`）全數 0 錯誤 0 警告通過；`node scripts/audit_enrichment.mjs` 驗證全庫 33 份標準樣板值 0 筆、重複欄位 0 筆、已核對 1,396 筆（100%）；桌機（1440px）與手機（390px）之淺色／深色模式皆以截圖驗收通過。
+- 後續（引用之外部標準無原文於工作區，僅保留引用標註）：
+  - `MIL-PRF-32565C` 引用之外部軍規：`ATPD 2404`（彈道測試程序）、`AECTP-400`、`MIL-STD-810`、`MIL-STD-461`（CS118 靜電放電）、`MIL-STD-202-301`／`302`、`NAVSEA S9310-AQ-SAF-010`（註：其引用之 `SAE J2464` 已收錄於本庫並已全數展開具體條件）。
+  - `MIL-PRF-32383A` 引用之外部標準：`MIL-STD-810`（Methods 500, 503, 509, 512, 514, 516, 520）、`IEC 61000-4-2`、`ASTM D-1141`、`TOP 01-2-608`、`NAVSEA S9310-AQ-SAF-010`、`MIL-STD-882`（註：其引用之 `UN 38.3` 與 `UL 1642` 已收錄於本庫並已全數展開具體條件）。
+
+## 2026-11-02 (Review - 網站全面審查後的修正：視覺、功能、資料結構)
+- 事件：使用者要求審查視覺設計、功能、資料結構化，各列三點必修，並由 Claude 直接執行；同時制定給 Antigravity 的維護規則。
+- 做法：審查與修正都分派子代理（視覺、功能、比對頁、總覽矩陣、搜尋用 Sonnet；條款定位、資料統計用 Haiku），主代理驗收截圖、看原文頁面影像、跑檢查後才提交。
+- 視覺：
+  - 比對頁、總覽矩陣、首頁一律只顯示中文，不再露出 `normalized_id` 代碼、英文副標、`CELL`／`PACK_SYSTEM`。
+  - 手機版比對頁：篩選列改單行、欄寬縮小、欄頭完整顯示。
+  - 拿掉每格的 ⓘ、「尚未核對原文」等維護狀態文字、搜尋視窗重複的說明。
+  - 首頁資訊視窗改用共用彈窗樣式。
+- 功能：
+  - 快速檢索：數值依「數字＋單位」比對（6V 找得到 6.0 V，1m 不會命中 1 mm）；範例改為真的搜得到的 6 個，由 `scripts/check_search.mjs` 在 CI 驗證；加上「/」快捷鍵、方向鍵捲動、Ctrl/⌘+Enter 加入比對。
+  - 「只看差異」真的會隱藏沒有差異的列與測試；「滿充」與「100% SOC」視為相同。
+  - 比對狀態寫在網址上，重新整理、上一頁都正常；`alert()` 改為頁內提示；目錄載入失敗會顯示。
+  - 總覽矩陣列印由 1 頁改為完整輸出；AI 全庫模式送出的資料由 26.5 萬位元組降到 15.3 萬（約 7.1 萬字）。
+- 資料：
+  - 完成其餘 6 份標準的試驗程序欄位核對（GB38031、GB43854、GB44240、GBT36276、ULC2580、GB31241）：全庫樣板值 351 → 0、重複欄位 53 → 0。GB43854 曾同時寫「靜置 6 小時」與「觀察 1 小時」等互相矛盾的重複欄位。
+  - 驗收時修正子代理：GB44240 8.5／8.6／9.5 的前置處理把試驗步驟寫進去、起始狀態寫錯；GBT36276 熱失控樣品分配改註明為推定；ULC2580 B2.3 前置處理去掉試驗步驟。
+  - `normalized_id`：補上 11 項缺漏、登記 21 種未登記代碼，並把方法相同的試驗併成同一代碼（鹽霧、濕熱、充放電溫度保護、燃燒拋射、應力消除等），只有一份標準使用的代碼 27 → 19。
+  - `catalog.json`：21 份測試數不符（GB40559 登記 0 項，實際 30 項）；`publication_date` 改為只寫版次日期（UL 1973 2022 版曾顯示成 2013），沿革移到 `edition_history`。新增 `scripts/sync_catalog.mjs` 並納入 CI。
+  - 條件出處（`source_reference`）覆蓋率 25% → 37%，沒有任何一份標準是 0%。
+- 防再犯：
+  - 新增 `MAINTENANCE.md`（分工、提交前檢查、資料與前端規則、腳本規則、定期檢查）。
+  - `npm run check:all`；驗證器對「缺少或未登記的 normalized_id」「同一測試兩個鍵對到同一欄位」報錯。
+  - 移除 18 支一次性 `batch*.mjs` 與寫死本機路徑的截圖腳本。
+  - 同日追加：使用者發現 ULC2580 對 IEC62660-3 的「只看差異」仍出現同義不同寫法（「500 m/s²」對「500 m/s² (≈ 51 gn)」等 5 處），已統一；IEC62660-3 衝擊次數原寫「6 個空間方向全部試驗」與原文不符（僅方向無法確認時才全部六向），一併更正。新增 `scripts/review/near_same.mjs`：用比對頁同一套邏輯列出「判為不同、但數字與單位相同」的列（全庫 489 列），CI 以基準線擋下增加。
+  - `apply.mjs`：技術參數核對時，原文數字與資料不同，需主代理在 `overrides.json` 標 `number_correction` 才放行，子代理不能自行放行。
+- 後續（需要使用者決定或提供）：
+  - IEC 62660-2 原文：ULC2580 附錄 B 的 B2.1 振動、B2.4 擠壓、B2.5 加熱、B2.9 強制放電仍只能寫「依 IEC 62660-2」。B2.2 衝擊、B2.6 溫度循環、B2.7 外部短路已於同日依「IEC 62660-3 部門中文閱讀版」整合的 IEC 62660-2:2018 條件補上參數（出處註明「閱讀版」；溫度循環的高低溫保持時間由表 4 累積時間相減得出）；三項的起始 SOC（62660-2 的 5.3）閱讀版未載明，待原文確認。
+  - UN38.3 已有第 8 版（2023），資料仍是第 6 版。
+  - 其餘 63% 的技術參數尚未逐項附出處，照 `scripts/review/` 流程（任務 R）分批核對。
+  - 前端 ESLint 有 19 個既有錯誤（主要在 AiConsultantChat.jsx），未納入 CI。
+
+## 2026-10-22 (UI - 視覺升級：數字、空狀態、差異色、深色暖色調、字級與圓角 token)
+- 事件：依視覺點評完成升級，並把規範寫進 `lint:ui`。
+- 背景：點評發現 gg sans 的數字是比例寬度、沒有 `tnum`，全站原有的 `tabular-nums` 其實無效；差異色（琥珀）與 IEC·UN 機構色撞色；比對表的三種「沒有資料」都顯示成「—」；深色模式是冷藍 slate、與淺色的暖米白不同調；多處字級低於 12px。（比對表欄頭原本就是 sticky，不需處理。）
+- 內容：
+  - 數字：新增只含數字與 ± ° × 的 `gg num` 字型（對應系統字型，其數字等寬），只套在比對表的值欄與欄頭資訊（標準代號與標題維持 gg sans，因系統字型沒有對應的粗體，數字會比字母細）；值中的數字後單位與 ± 以次要灰顯示（`utils/UnitText.jsx`，文字內容不變）。
+  - 空狀態分三種：標準未涵蓋該測試＝斜線底紋、此層級不適用＝平塗底色、有涵蓋但未規定該參數＝「—」。
+  - 差異色改為墨色（`--text-primary` 的粗體標籤加 3px 色條與淺底），不再佔用任何色相；`.tag-warn` 改用新增的 `--warning-text`；類別標籤改為中性底加 3px 類別色條；總覽矩陣的類別色改用 `--cat-*-text`。
+  - 欄頭加一行資訊（年份、該標準在目前畫面的測試數、「有新版」）；首頁標準列以空心圓點標示有新版（圖例同步）。
+  - 深色模式改為暖炭灰；淺色 `--text-muted` 由 `#8c8c8c` 加深為 `#6f6f6f`（對白底約 5:1）。
+  - 新增 token：`--radius-xs/sm/md/lg/pill`、`--fs-2xs/xs/sm/md/lg`（最小 12px）、`--hatch`、`--warning-text`。比對表、首頁與詳細視窗的圓角與字級已改用 token；`AiConsultantChat.jsx`、`GlobalSearchModal.jsx`、`GlobalMatrixModal.jsx` 的圓角與其餘字級仍是舊寫法。
+  - `lint:ui` 新增：不得有小於 12px 的字級（零容忍）。
+- 影響：全頁文字節點最小字級 12px；`lint:ui` 與前端建置通過；淺色、深色、手機寬度皆以截圖驗收。
+- 後續：首頁「待核對」標記未做（catalog 沒有核對狀態欄位，需先載入各標準資料或補欄位）；領域名稱的中英並列需連同 `catalog.json` 一起改。
+
+## 2026-10-21 (Data - 跨標準條件欄位與數值寫法統一 D3 全庫 30 份標準完成)
+- 事件：完成工作 D 的 D3 階段，將全庫 30 份標準、24 組共有測試之條件欄位鍵與數值寫法統一至 `data/field_schema.json` 規範，達成跨標準橫向比對規格表緊湊對齊與 0 數值遺失。
+- 背景：在 D1 盤查（抓出 6 大類跨標準分歧問題）與 D2 三組樣板驗收通過後，將其餘 21 組測試與全庫 30 份標準全面改寫，消除因欄位鍵不一或數值單位格式差異產生的假性差異列。
+- 內容：
+  - 分 4 批次逐標準改寫與獨立 git commit：
+    - Batch 1（國際與外國 7 份）：IEC62133-2, IEC62619, JISC8715-2, JISC8714, UN38.3, IEC62660-3, SAND2017
+    - Batch 2（UL 系列 10 份）：UL1642, UL1642-2022, UL2054, UL2056, UL1973, UL2271, UL2743, UL3030, UL9540, UL9540A
+    - Batch 3（車用與儲能 5 份）：AIS-038, AIS-156, ULC2580, GBT36276, GB38031
+    - Batch 4（國標消費與輕型車 8 份）：GB31241, GB31241.4, GB40165, GB40559, GB43854, GB44240, GB47372, GB47741
+  - 數值完整性防線：所有 30 份標準改寫前後均以 `node scripts/review/check_numbers.mjs --all` 逐字元與舊版對照，確認舊 `value`＋`detail` 中的所有數值 100% 被保留於新版資料中（30/30 通過，0 遺失）。
+  - 自動化與規範升級：新增 `scripts/review/batch1_harmonize.mjs` 至 `batch4_harmonize.mjs` 確定性批次改寫工具；正規化器 (`npm run normalize -- --all`) 與驗證器 (`npm run validate`) 0 錯誤 0 警告；UI 無 emoji (`npm run lint:ui`) 且 Vite 建置成功。
+  - 比對表成效量化（`buildGroupRows`）：
+    - IEC62133-2 vs IEC62619：`ELEC-SC-INT` 差異自 7 項降至 3 項，5 項參數（短路判定、保持時間、擠壓速度、治具、截止力）完全對齊；`ELEC-FD` 9 列收斂至 5 列；`THERM-ABUSE` 11 列收斂至 6 列。
+    - GB31241 vs IEC62133-2：`ELEC-OC` 25 列散列大幅壓縮至 10 列緊湊對齊；`MECH-CRUSH` 13 ± 0.78 kN 完美對齊，差異降為 1 項；`MECH-SHOCK` 13 列收斂至 7 列。
+    - UL1642 vs UN38.3：`THERM-CYCLE` 10 列散列縮減為 5 列且 10 循環完全對齊；`MECH-IMPACT` 9 列收斂至 7 列。
+  - Playwright 截圖驗收：於 Light / Dark 模式下截取 7 組關鍵比對畫面（`ELEC-SC-INT`, `MECH-DROP`, `MECH-CRUSH`, `THERM-ABUSE`, `THERM-CYCLE`, `MECH-SHOCK`），確認版面無溢出、無破版、無 emoji，且差異紅底與提示圖示正常顯示。
+- 影響：跨標準橫向比對規格表真正具備左右精準對齊能力，徹底消除假性「—」散列與格式假差異；全庫 30 份標準資料結構一致性達 100%。
+- 後續：分支 `data/harmonize-fields` 待使用者確認後合併至 `main`。
+
+## 2026-10-21 (Data & Tooling - 跨標準條件欄位與數值寫法統一 D1 盤查與 D2 三組樣板完成)
+- 事件：完成工作 D 的 D1 全庫 24 組共有測試盤查、制定 `data/field_schema.json` 規範、新增 `scripts/review/check_numbers.mjs` 數值完整性防線，並完成 `ELEC-SC-INT`、`MECH-CRUSH`、`MECH-DROP` 三組樣板改寫與 Playwright 截圖驗收。
+- 背景：跨標準比對時，同一物理量常因使用不同欄位鍵（如 `force_limit` vs `stop_criteria_force_cylindrical`）、一邊寫程序代號一邊寫參數，或整張表塞在 `detail`（如 `mass_based_conditions`），導致相同內容分列顯示「—」或被誤判為差異。
+- 內容：
+  - 新增 `scripts/review/field_inventory.mjs` 產出 `.review-work/out/field_inventory.json`，並由 5 個子代理完成 24 組共有 `normalized_id` 的問題盤查（`.review-work/out/harmonize/*.json`）。
+  - 制定 `data/field_schema.json`（涵蓋全部 24 組共有測試之標準欄位鍵、繁中標籤、排序、`merged_from` 與 `value_style` 範例），並將被合併之舊鍵加入 `frontend/src/utils/parameterDictionary.js` 的 `ALIASES`。
+  - 新增 `scripts/review/check_numbers.mjs` 並整合進 `scripts/review/apply.mjs`，確保改寫前後舊 `value`＋`detail` 中的所有數字 100% 保留於新資料中（0 遺失）。
+  - 升級 `scripts/normalize_data.mjs`（數值與單位間補空格、`圓柱型`→`圓柱形`、`方型`→`方形`、`->`→`→`）、`scripts/validate_data.mjs`（檢查條件鍵是否在 `field_schema.json` 清單中）與 `frontend/src/utils/compareRows.js`（正規化比對折疊 `／`、`～`、`→`、`✕`）。
+  - 完成 `ELEC-SC-INT`、`MECH-CRUSH`、`MECH-DROP` 三組樣板改寫（`IEC62133-2`、`IEC62619`、`GB31241`、`UL1642`、`UN38.3`、`GB38031`、`IEC62660-3`），通過 `check_numbers.mjs --all` 0 遺失、`npm run validate` 0 錯誤 0 警告。
+- 後續：待使用者確認 D1 盤查結果與 D2 三組樣板截圖方向後，啟動 D3 擴展至全部 24 組測試與全庫標準。
+
+## 2026-10-21 (UI - 工作 E：比對表懸浮提示改為點擊彈窗)
+- 事件：將 `ComparisonGroup.jsx` 中原本依賴 HTML `title` 屬性的補充說明（參數 `detail`、判定要求 `summary`）改為可點擊的窄版彈窗（`.modal-panel--sm`），並移除差異列多餘的 `title` 提示。
+- 背景：原生 `title` 提示框無法調整樣式、需要滑鼠懸停延遲才會出現，且在手機與平板上完全無法查看。
+- 內容：
+  - `ComparisonGroup.jsx`：有 `detail` 或 `source_reference` 的參數格，以及判定要求格，改為 `<button class="cmp-entry cmp-entry--more">`，文字旁加上 `ⓘ` 記號，hover 時顯示虛線底線與強調色。
+  - 點擊後開啟窄版彈窗 `.modal-panel--sm`（沿用 `.modal-backdrop`／`.modal-panel`），依序顯示：標準代號與條款（§）、參數中文名、`value`、`detail`、以及 `source_reference`（出處）。
+  - 無障礙與鍵盤互動：彈窗具 `role="dialog"`、`aria-modal="true"`、`aria-labelledby`，開啟時焦點移至彈窗，按 Esc 或點擊背景關閉後焦點回到原觸發按鈕。
+  - 盤點全站 `title=` 屬性：其餘皆為按鈕用途說明或同內容截斷提示，無其他「只靠 title 才看得到隱藏內容」之處。
+- 影響：`npm run lint:ui` 與前端建置通過；桌機（1440px）與手機（390px）之淺色／深色模式皆經 Playwright 截圖驗收。
+- 後續：已合併至 main。
+
+## 2026-10-21 (Fix - 工作 C：AI 小幫手限流器 fail-open 與環境變數模型設定)
+- 事件：修復 `/api/chat` 因 Upstash Redis 異常導致整條 API 回傳 500 `internal error` 的問題，並將 Gemini 模型名稱改為環境變數可配置。
+- 背景：Vercel runtime logs 顯示 `/api/chat` 在 `await ratelimit.limit(ip)` 拋出未捕捉例外，導致尚未呼叫 Gemini 即中斷服務。
+- 內容：
+  - `api/chat.js`：`ratelimit.limit(ip)` 包入 `try/catch` 並加上 `Promise.race` 1.5 秒逾時；若 Upstash 連線失敗或逾時，記錄 `console.error('ratelimit unavailable', err)` 後自動放行（fail-open），不阻斷問答服務。
+  - 新增 `GEMINI_MODEL_PRIMARY`（預設 `gemini-3.5-flash`）與 `GEMINI_MODEL_BACKUP`（預設 `gemini-3.1-flash-lite`）環境變數支援，並更新 `.env.example`（僅列變數名）。
+  - 強化錯誤日誌與中文錯誤提示：記錄引擎名稱與 HTTP 狀態碼，針對 404（模型不存在或已停用）與 429（額度達上限）回傳明確的繁體中文說明；前端 `AiConsultantChat.jsx` 直接呈現清楚的中文錯誤訊息並移除 `【】` 括號。
+- 影響：`npm run lint:ui` 與前端建置通過；Upstash 故障或憑證失效時不再阻斷 AI 小幫手。
+- 後續：已合併至 main。
+
+## 2026-09-26 (Data - 試驗程序欄位核對第三批：9 份國際與各國標準)
+- 事件：工作 A 第三批完成。IEC62133-2、IEC62619、JISC8715-2、JISC8714、UN38.3、SAND2017、AIS-038、AIS-156、IEC62660-3 等 9 份標準之樣品數量／前置處理／觀察期（共 91 項測試、298 筆欄位）逐項對照原文核對與改寫，重複欄位全數清除。
+- 背景：Phase 2 補強值多為樣板句（如「每項 5 顆」、「滿充電」、「觀察 1 小時」），且存在 `sample_size`、`observation`、`rest_time`、`observation_time` 等重複欄位。
+- 做法（子代理定位與判定，主 agent 抽查驗收與覆寫修正）：
+  - 原文轉文字：以 PyMuPDF 文字層擷取（IEC62133-2 採 Part 2 Final Version 101–146 頁以避開 Redline 劃線舊條文干擾；JISC8715-2 / JISC8714 採日文原文；IEC62660-3 採 OCR 權威文字）。
+  - Flash 子代理（locator）定位通則與各測試條款行號，`excerpts.py` 產出逐字摘錄（9 份 0 錯誤）。
+  - Pro 子代理（reviewer）逐項審查 `sample_quantity`、`pre_conditioning`、`observation_period` 與重複欄位，附逐字引文、條款號出處與處置說明。
+  - 驗收與覆寫：`verify.py` 檢查引文逐字存在、無簡體字、標準繁中時間單位與 `°C` 溫度；主 agent 抽查並修正模型偏差：
+    * 修正 IEC62133-2 7.3.1 / 7.3.2 短路試驗將 24 小時/溫降 20% 之終止條件誤作觀察期的錯誤（改為 delete，動態終止保留於 termination 欄位）。
+    * 修正 IEC62619 子代理因原文 PDF 缺少 Section 6/7.1 而誤刪全部樣品與前處理的重大偏差：對照各條款本文及 JIS C 8715-2 Table 1 原文補齊 11 項測試之精確樣品數量、各條款內文規定之充放電預處理，並將 7.2.3 / 7.3.3 重複欄位清理回歸標準觀察期。
+    * 核實 UN38.3 T.5 (6 小時)、T.6 (6 小時)、T.7 (7 天)、T.8 (7 天) 之試驗後觀察期規定。
+    * 核實 JISC8714 5.3.2 / 5.7.2 放置 24 小時或溫降 20% 之觀察期規定。
+    * 核實 AIS-156 Annex 8C 跌落試驗得使用最多 6 組 REESS 之彈性規定。
+  - 以確定性腳本 `apply.mjs` 落地寫入 `data/*.json`，更新 `metadata.enrichment`。
+- 內容：
+  - 改寫後的欄位均標註 `source_reference`，`scripts/audit_enrichment.mjs` 正式標記為「已核對」。
+  - 9 份標準之重複欄位全數清除（0 筆重複）。
+- 影響：`npm run validate` 0 錯誤、0 警告；全庫累計已核對項目由 613 筆躍升至 836 筆（佔比大幅攀升至 68%）；全庫含樣板標準自 13 份降至僅剩 6 份；`npm run lint:ui` 通過，Vite build 通過。
+- 後續：待使用者核准後合併分支 `review/procedure-batch3`；續行批次 4（5 份國標：GB38031, GB44240, GBT36276, GB31241, GB43854）或工作 B 引用條款展開。
+
+## 2026-09-26 (Data - 試驗程序欄位核對第二批：10 份 UL 標準)
+- 事件：工作 A 第二批完成。UL1642、UL1642-2022、UL2054、UL2056、UL2271、UL1973、UL3030、UL9540、UL9540A、UL2743 等 10 份 UL 標準之樣品數量／前置處理／觀察期（共 129 項測試、422 筆欄位）逐項對照原文核對與改寫，重複欄位全數清除。
+- 背景：Phase 2 補強值多為整份標準套用樣板句（如「每項 5 顆」、「滿充電」、「觀察 1 小時」），且存在 `sample_size`、`observation` 等重複欄位。
+- 做法（子代理文本定位與判定，主 agent 抽查驗收與修正）：
+  - 原文轉文字：10 份標準全部以 PyMuPDF 擷取文字層（零空頁、零遺失）。
+  - Haiku 子代理（locator）定位通則（樣品表、充電通用條款、預處理與觀察通則）與各測試條款行號。
+  - Pro 子代理（reviewer）逐項審查 `sample_quantity`、`pre_conditioning`、`observation_period` 與重複欄位，附原文逐字引文、條款號出處與處置說明。
+  - 驗收：`verify.py` 檢查引文逐字存在、無簡體字、標準繁中時間單位與 `°C` 溫度；主 agent 人工抽查並修正模型偏差：
+    * 修正 UL1642-2022 / UL1642 短路試驗將終止判據（殼溫回常溫或放電達標）誤當觀察期的錯誤（改為 delete，動態終止保留於 termination 欄位）。
+    * 修正 UL2054 將 Section 9.2 人員安全防護（冷卻至室溫方可靠近）誤作觀察期的錯誤（改為 delete）。
+    * 補齊 UL2054 Section 28.1 f) 溫度循環後於 20 ± 5 °C 靜置至少 24 小時之規定。
+    * 核實 UL1973 Section 42.2.4 熱失控擴展試驗之 24 小時觀察期與 Annex E.1 電芯每組 2 顆規範。
+    * 核實 UL9540A Section 10.3.15 之 24 小時復燃監控觀察期。
+  - 以確定性腳本落地寫入 `data/*.json`，更新 `metadata.enrichment`。
+- 內容：
+  - 改寫後的欄位均標註 `source_reference`，`scripts/audit_enrichment.mjs` 正式標記為「已核對」。
+  - 10 份 UL 標準之重複欄位全數清除（0 筆重複）。
+- 影響：`npm run validate` 0 錯誤、0 警告；全庫累計已核對項目由 298 筆躍升至 613 筆；`npm run lint:ui` 通過，Vite build 通過。
+- 後續：待使用者核准後合併分支 `review/procedure-batch2`；續行批次 3（9 份 IEC / JIS / UN / AIS / SAND 標準）或工作 B 引用條款展開。
+
+## 2026-09-26 (Tooling - 原文核對工具收進 repo)
+- 事件：把第一批核對用的暫存腳本整理成 `scripts/review/`，讓後續接手的 agent（含 Antigravity）照同一流程核對其餘標準。
+- 內容：
+  - `extract_text.py`：原文轉文字，並判斷文字層是否可讀；不可讀時用 `--ocr`（存頁面影像）。
+  - `make_worklist.mjs`：工作單，分試驗程序欄位與 `--all-fields`（補齊只寫參照的測試）兩種。
+  - `excerpts.py`：依定位行號逐字擷取摘錄，並擋下指到目錄的範圍。
+  - `verify.py`：機械驗收；簡體字改用 OpenCC `s2tw` 判斷，也檢查主代理的覆寫檔。
+  - `apply.mjs`：寫入前先跑 `verify.py`；`keep` 附條款時補上 `source_reference`；新欄位缺中文標籤會提醒。
+  - `render_page.py`：輸出單頁影像，供核對表格與數值。
+  - `SPEC.md`：子代理規格；`README.md`：主代理流程與驗收清單。
+  - 中間檔放在 `.review-work/`（已加入 `.gitignore`），內含標準原文，不可進版控。
+  - `audit_enrichment.mjs` 改從 `scripts/review/fields.mjs` 讀欄位清單。
+- 驗證：以第一批 GB47372 的實際結果重跑，`verify.py` 0 問題、`apply.mjs --dry` 0 變更；刻意放入簡體字、非標準單位、缺條款、缺決定、目錄範圍，都有擋下。
+
+## 2026-09-26 (Data - 試驗程序欄位核對第一批：5 份國標)
+- 事件：事項 2 第一批完成。GB40559、GB47741、GB31241.4、GB47372、GB40165 的樣品數量／前置處理／觀察期（共 134 項測試）逐項對照原文改寫。
+- 背景：Phase 2 補強值多是整份標準套用同一句（電芯一律「每項 5 顆」、電池組「每項 3 組」、每項都「試驗後觀察 1 小時」），大多沒有原文依據。
+- 做法（文本解析交給子代理，主 agent 拆解、驗收）：
+  - 原文轉文字：4 份用 PyMuPDF 文字層（markitdown 會把表格裡的數字弄丟，例如「表1和表2」變成「表 和表」），GB40165 以 RapidOCR 產生文字，數值一律看頁面影像。
+  - Haiku 子代理定位條款行號（GB47741 第一次指到目錄，退回重做），由腳本逐字擷取摘錄；Sonnet 子代理依原文判斷每個欄位（保留／改寫／刪除），附原文引文。
+  - 驗收：`verify.py` 檢查每個欄位都有決定、引文確實在原文中、無簡體字（OpenCC）；主 agent 親自看頁面影像核對所有樣品表與關鍵條款。GB47372 已知錯誤（表 2 移動電源每項 1 個，6.10 為 2 個）子代理在未被告知的情況下正確修掉。
+  - 驗收時修正子代理的錯誤：GB47372 7.5 d)、GB47741 7.10 d) 把「析鋰判定合格則更換 3 個全新樣品」寫反；GB40559 漏了電池組的靜電放電預處理；GB40165 8.4 跌落沿用 7.5 的「整體跌落後擱置 1 小時」。
+- 內容：
+  - 改寫後的欄位加上 `source_reference`（條款號）；`scripts/audit_enrichment.mjs` 把帶 `source_reference` 的值視為已核對，不再算樣板。
+  - 前置處理統一寫成「預處理後，按 4.5.1 充滿電」這類格式，`detail` 先寫預處理條款、再寫該條款的起始狀態；鉛酸、鎳系電池依 4.5.3 用製造商方法、不做 4.6.4 預處理。
+  - 觀察期只保留原文有寫的（例：保護裝置動作後靜置 1 分鐘、鋼針停留觀察 1 小時、浸水後擱置 24 小時），其餘刪除。
+- 影響：`npm run validate` 0 錯誤、0 警告；這 5 份的三個欄位稽核結果全部為「已核對」。
+- 後續：其餘 25 份（含 GB31241、GB43854 需影像判讀）照同一流程分批處理；核對完成後再決定「試驗程序」區是否回到比對表主體參與差異比對。
+
+## 2026-09-25 (Data - GB 31241 補齊至 39 項測試)
+- 事件：GB31241 原本只收錄 13 項測試（原文約 37 項），補齊缺漏並修正既有錯誤。
+- 背景：原文 PDF 的內文字型沒有 ToUnicode 對照表，PyMuPDF 與 markitdown 抽出的都是亂碼，只能以頁面影像判讀。
+- 做法（依使用者要求，文本解析交給子代理，主 agent 負責拆解與驗收）：
+  - 以 RapidOCR 產出 OCR 文字（只用來找位置）與 44 頁頁面影像。
+  - 3 個 Sonnet 子代理分章轉寫（第 6～7 章、第 8～9 章、第 10～12 章＋附錄 B），另 1 個 Sonnet 子代理逐項對照影像獨立核對：27 項中找到 1 個錯誤（7.3 位移 0.8 mm 應屬 f2～f3 區間）與 2 個小問題，已修正。
+  - 主 agent 抽查 9 項（約 1/3）對照影像，並親自確認 4.7.2「每個試驗項目的樣品為 3 個」、9.4「(n×0.15) V」等關鍵值。
+- 內容：
+  - 新增 27 項：7.3～7.5、7.7～7.9、8.3～8.5、8.7、8.9、9.3～9.5、9.7、10.1～10.5、11.1～11.5、12.2.1、12.2.2。
+  - 原本合併的 `GB31241-10`（「保護電路 500 次循環」）改為 10.1～10.5 五個獨立條款；原文並無一句統括的 500 次規定。
+  - 修正既有 12 項的樣品數量：Phase 1 補強寫的「每組 5 顆」與原文不符，依 4.7.2 與 4.7.5 表 1～表 3 改為每項 3 個（附樣品編號）；8.8 依附錄 B 為 3 個新樣品。
+  - 移除 6.2、9.2 無原文依據的「觀察 1 小時」；補齊 9.2 試驗電壓「或者可能承受的最高電壓值（兩者取較高者）」。
+  - 依 4.7.6 與附錄 B（圖 B.1～B.3）重寫 `test_sequence`。
+  - `taxonomy.json` 新增 `THERM-HOTUSE`（8.7 高溫使用）、`BMS-TEMP-CTRL`（11.5 充放電溫度控制），並補登既有的 `BMS-ALARM`。
+- 影響：`npm run validate` 為 0 錯誤、0 警告；catalog 的 GB31241 測試數更新為 39。
+- 後續：GB31241 的前置處理欄位（「按 4.5.1 規定的充電方法滿充」）仍屬 Phase 1 補強值，併入事項 2 一起核對。
+
+## 2026-09-25 (UI Overhaul - 橫向比對改為對齊規格表、全站移除 emoji)
+- 事件：重做 2026-09-24 加入的鍵值卡片、只看差異與全域搜尋的介面，讓它們回到首頁的設計風格。
+- 背景：使用者反映新功能「每行開頭都有 emoji」「整片橘色」，與全站風格不一致；另外發現差異計算本身有錯：以原始欄位名比對，導致 `temp` 與 `temperature` 對不起來；又把沒顯示的舊版本、其他樣品層級也算進去；約 30% 欄位沒有中文名稱，畫面出現「• Temp」。
+- 內容：
+  - 比對改為**對齊的規格表**（`ComparisonGroup.jsx`、`utils/compareRows.js`）：每個參數一列、每份標準一欄，沒規定的顯示「—」；只有數值真的不同的列加一條細線，不再整片橘色。「只看差異」會隱藏相同的列與完全相同的測試。
+  - 樣品數量／前置處理／觀察期收進預設收起的「試驗程序」區，不標示差異（這批值尚未核對原文，見事項 2）。
+  - `parameterDictionary.js`：移除 emoji 圖示；新增 `ALIASES`／`canonicalKey()` 合併同義欄位；全部 476 種欄位都有中文標籤（由子代理依實際數值整理、人工驗收）。
+  - 全站去 emoji：工具列、⌘K 搜尋、AI 小幫手、總覽矩陣、詳細視窗改用 `Icon.jsx` 線條圖示；AI 提示詞要求不使用 emoji，寫死的「30 份」改由實際標準數計算。
+  - `PACK_SYSTEM` 在首頁與比對頁改稱「Pack / System」；手機版工具列改為只顯示圖示，不再蓋住標題。
+  - 新增「UI 風格鐵律」（本檔頂部）、`npm run lint:ui` 與 CI `ui-check.yml`。
+- 影響：比對畫面可以左右對照同一參數；深淺色與手機版都經 Playwright 截圖驗收。
+- 後續：事項 2 核對完 Phase 2 補強值後，再決定「試驗程序」是否回到比對表主體並參與差異比對。
+
+## 2026-09-24 (Data Fix - 驗證器警告清零與試驗順序補齊)
+- 事件：處理 `npm run validate` 的 17 個警告，並補上驗證器原本沒抓到的錯誤引用。
+- 內容：
+  - `taxonomy.json` 登記 `ENV`、`BMS` 兩個分類（AIS-156-H2、GBT36276-6.7.5 已在使用）。
+  - AIS-156-H2 的層級 `REESS` 改為 `PACK_SYSTEM`（原本因層級不在篩選選項內，比對畫面看不到這項測試）；catalog 移除 AIS-156 的 `REESS`、UL-3030 多餘的 `PACK`。注意：首頁「樣品層級」的 Pack 篩選原本只靠 UL-3030 這個多餘標記出現，現在會消失（所有電池包層級都統一為 `PACK_SYSTEM`）。
+  - 驗證器：「未知／N/A／null」只在整個值就是這個詞時才算佔位值（修正 SAND2017-T07「未知 DUT 電阻時」誤報）；新增檢查 `test_sequence` 引用不存在的測試 id。
+  - JISC8715-2：`test_sequence`、豁免條款、BMS 區塊原本引用 11 個 `IEC62619-*` id，已改為 `JISC8715-2-*`；`metadata` 改寫為真實來歷，並註明「JIS C 8715-2:2019 對應 IEC 62619:2017，但基底資料取自 IEC 62619:2022，差異未逐條核對」。
+  - 依 `docs/source_pdfs/` 原文的樣品表與附錄 A 試驗順序圖，補上 GB40559、GB47741、GB31241.4、GB47372、GB40165、UL2743 的 `test_sequence`（各組附條款出處）。GB40165 與 GB31241 的 PDF 文字層是亂碼，以頁面影像判讀。
+  - 補上 GB31241.4、GB40165、GB47372、GB47741、UL2743 的 `metadata`（只寫可查證的來歷，並註明 Phase 2 補強值尚未核對原文）。
+- 影響：驗證器由 17 個警告降為 1 個。
+- 後續（待處理）：
+  - GB31241 資料只收錄 13 項測試，原文約 37 項（缺振動、加速度衝擊、跌落、重物衝擊、熱濫用、燃燒噴射及多數電池組試驗）；剩下的 1 個警告就是 `test_sequence` 引用到其中 4 項。PDF 文字層為亂碼，補齊需以頁面影像判讀。
+  - Phase 2 補強的樣品數量／前置處理／觀察期多為整份標準套用同一句，且有 39 筆前置處理、54 筆觀察期與原有欄位重複並存，需逐條對照原文核對（例：GB47372 表 2 的移動電源試驗每項以 1 個樣品進行（6.10 為 2 個），資料卻全部寫「每項 3 組完整移動電源」）。
+
+## 2026-09-24 (Feature - Phase 2 資料全量精煉完成：全庫 30 份標準補齊實務四要素)
+- 事件：完成剩餘 24 份標準之資料精煉（Batch A/B/C 共 406 項測試條款），與 Phase 1 核心 6 大標準共同達成「全庫 30 份標準 100% 結構化精煉」。
+- 背景：因初期各標準建置時間與模型批次不同，導致不同標準之欄位顆粒度不一，缺乏樣品數量、前置循環與觀察靜置期等實務關鍵資訊。
+- 變更：
+  - 批次 A（車用/輕型車 7 份）：`AIS-038`, `ULC2580`, `IEC62660-3`, `AIS-156`, `GB40559`, `GB47741`, `UL2271`（148 項測試補齊四要素）。
+  - 批次 B（儲能 ESS 6 份）：`JISC8715-2`, `SAND2017`, `GB44240`, `GBT36276`, `UL1973`, `UL9540A`（91 項測試補齊電芯/模組/系統層級樣品數、熱失控監控 2 小時、壓頭與加熱器規格）。
+  - 批次 C（消費/工業/更新 11 份）：`GB43854`, `GB40165`, `GB31241.4`, `GB47372`, `JISC8714`, `UL2054`, `UL2056`, `UL9540`, `UL3030`, `UL2743`, `UL1642-2022`（167 項測試補齊充放電預處理、靜置觀察期與專用治具）。
+  - 自動化腳本歸檔至 `scripts/data_tools/enrich_phase2_batchA.mjs`, `enrich_phase2_batchB.mjs`, `enrich_phase2_batchC.mjs`。
+  - 通過 `npm run normalize -- --all` 零異動（100% 符合規範）、`npm run validate` 0 硬錯誤驗證，以及 Vite 前端建置成功。
+- 影響：全站 30 份標準橫向對齊能力達到空前一致，無論在「橫向 Key-Value 比對視圖」、「⚡ 只看差異」或「全域即時檢索 (Cmd+K)」中，均能完整檢視樣品數量、前置處理與觀察期。
+
+## 2026-09-24 (Feature - 資訊密度與結構化顆粒度全面升級 Phase 1)
+- 事件：實作「高密度 Key-Value 參數網格」、「跨標準參數差異 (Diff Only) 引擎」並精煉 6 大核心指標標準之實務四要素。
+- 背景：原比對表格中參數僅以純文字無標籤列出，橫向無法平行對照；且缺乏樣品數量、前置循環與觀察靜置期等實務資訊。
+- 變更：
+  - 新增 `parameterDictionary.js`：收錄電氣、環境、機械與實務四要素等 60+ 種條件鍵之標準繁中標籤、圖示與優先序映射。
+  - 重構 `StandardColumn.jsx`：卡片全面改為結構化「參數鍵值對 (Key-Value) 網格」，橫向同類參數直接平行對齊，分歧條件標註「⚡ 差異」徽章；彈出詳細視窗改為專業分區卡片。
+  - 升級 `SplitScreenGrid.jsx`：新增「⚡ 只看差異 (Diff Only)」切換器，即時比對同行中各標準數值，一鍵收合相同條件並凸顯規格分歧。
+  - 深度精煉 6 大核心標準（`GB 38031`, `GB 31241`, `UL 1642`, `IEC 62133-2`, `UN 38.3`, `IEC 62619`）：補齊「樣品數量 (sample_quantity)」、「前置處理 (pre_conditioning)」、「靜置與觀察期 (observation_period)」與「治具規格 (apparatus)」。
+- 影響：大幅提升比對視圖的專業感與資訊密度，讓工程師在 3 秒內掌握標準間真正的技術分歧。
+
+## 2026-09-24 (Feature - 全域參數即時檢索與 AI 全庫智慧檢索)
+- 事件：實作「全域參數即時檢索面板 (Spotlight / Cmd+K)」與升級「AI 小幫手全庫檢索模式」。
+- 背景：使用者反映在面對主管臨時提問特定測試條件（例如「有沒有哪一個規範過充條件是 3C 充電至 6V 然後維持 7 天？」）時，原系統只能仰賴手動勾選比對，無法快速跨標準檢索參數數值。
+- 變更：
+  - 新增 `GlobalSearchModal.jsx`：支援 `Cmd+K` / `Ctrl+K` 快速喚起、多詞空白搜尋（如「過充 6V」或「3C 7天」）、即時關鍵字高亮、命中條件預覽、一鍵加入比對與快速帶入 AI 諮詢。
+  - 首頁 `StandardMatrix.jsx`：在應用領域矩陣上方新增顯眼的搜尋導覽列。
+  - 升級 `api/chat.js`：解除必須勾選標準的限制，當未選取標準時自動啟用【全庫智慧檢索模式】，後端動態組裝全庫 30 份標準的精簡條款與條件摘要（~45KB），賦予 AI 一眼縱覽全庫 30 份規範並精準解構跨標準參數混雜的能力。
+  - 升級 `AiConsultantChat.jsx`：顯示「🌐 全庫智慧檢索模式」視覺狀態，並提供跨標準熱門測試問題推薦。
+- 影響：徹底解決了觀測站長期以來「缺乏全域參數檢索」的最大痛點，大幅提升工程師與主管在法規查詢與技術選型上的速度。
+
+## 2026-08-07 (Feature - 新增 JIS C 8715-2:2019 + 總覽矩陣)
+- 事件：收錄第 30 份標準 JIS C 8715-2:2019（產業用鋰二次電池之單電池及電池系統 – 第 2 部：安全性要求事項），並新增「總覽矩陣」。（本條為 2026-09-24 補記，依 commit `3b4899d` 內容整理）
+- 背景：JIS C 8715-2 是 IEC 62619 的日本修改採用版（MOD），差異集中在附錄 JA。原始 PDF 存於 `docs/source_pdfs/2026-08-06/`。
+- 內容：
+  - **資料產生方式**：以暫存腳本 `scratch_generate_jis.cjs` 複製 `data/IEC62619.json`，改寫文件資訊與測試 id（`IEC62619-*` → `JISC8715-2-*`），再依附錄 JA 修改 5 項測試：7.2.3 跌落（7 kg 以上依製造商指定底面朝下、靜置 1 小時）、7.2.5 過充電（並聯時充電電流除以並聯數）、7.2.6 強制放電（25 ± 5 °C、0.2 It A 放電至終止電壓）、7.3.2 內部短路（判定改為「無起火」）、8.2.2 過充電壓控制（0.2 It A 放電前處理）。共 11 項測試，歸入「儲能系統 (ESS)」。
+  - `catalog.json`：新增 JIS C 8715-2；各標準改以 `application` 欄位標示應用領域，`StandardMatrix.jsx` 不再寫死分類。
+  - 新增 `GlobalMatrixModal.jsx`「總覽矩陣」（可匯出 CSV／PDF），右上工具列加入入口按鈕。
+  - 前端讀取 catalog 與標準 JSON 時加上時間戳，避免瀏覽器快取舊資料。
+  - `AUDIT_LOGS.md` 歸檔 Cron Audit Iteration 87–96 的稽核紀錄。
+- 已知問題：JIS 檔的 `test_sequence` 仍引用 11 個 `IEC62619-*` 測試 id、`metadata` 仍描述 IEC 62619 的來源。2026-09-24 已修正。
+- 後續：暫存腳本已於 2026-09-24 刪除（git 歷史 `3b4899d` 仍可查）。
+
+## 2026-07-15 (Feature - 新增 IEC 62660-3:2022)
+- 事件：收錄第 29 份標準 IEC 62660-3:2022（電動道路車輛推進用二次鋰離子電芯 - 第 3 部：安全要求）。
+- 背景：使用者提供 OCR 全文與部門中文閱讀版 HTML（無原始 PDF）；HTML 版已整合 IEC 62660-2:2018 的引用試驗條件（機械衝擊、溫度循環、外部短路）。
+- 變更：
+  - 新增 `data/IEC62660-3.json`（schema 2.0）：8 項電芯層級測試（6.2.1 機械衝擊、6.2.2 擠壓、6.3.1 高溫耐受、6.3.2 溫度循環、6.4.1 外部短路、6.4.2 過充電、6.4.3 強制放電、6.4.4 內部短路含附錄 C 替代法），依 `無`-canonical 用語與標準單位撰寫（normalizer 零變更）。
+  - 註冊入 `catalog.json`；前端 `StandardMatrix.jsx` 將其歸入「電動汽車 (EV)」領域。
+  - 品質把關：normalize:check 通過、validator 0 錯誤；由 Sonnet 子代理逐數值稽核（對照 OCR 權威來源）**PASS**（僅 1 個 MINOR 條款歸屬問題，已修正）；瀏覽器實測導覽與橫向比對（vs GB38031）渲染正常。
+- 註記：2022 第二版相對 2016 第一版：新增替代內部短路試驗（附錄 C）、刪除振動試驗、修訂過充電條件。原始 PDF 未取得，數值以 OCR 為準。
+
+## 2026-06-26 (Data Normalization 收尾 + GB40559 schema 修復)
+- 事件：確認 Dawn Audit cron 已停擺（最後活動 6/25 03:03，排程清單已無此任務），收尾其留下的孤兒改動並補齊資料一致性。
+- 變更：
+  - 將 cron 最後一輪未提交的 4 個檔（GB31241.4 / GB40165 / GB40559 / GB47372，含其新增的 6.8/6.9 測試等內容）一併正規化後落地。
+  - **`GB40559.json` 轉新 schema**：`test_items`→`tests`、由 `document_info` 重建 `document` 區塊（含 `applicable_objects`）；validator 由 2 硬錯誤 → **0 錯誤**。
+  - 修 `catalog.json` 中 GB40559 的 `available_objects`（原為 `[]`，導致導覽頁無層級標籤）→ `[CELL, PACK_SYSTEM]`。
+  - 全 28 檔現已正規化，`normalize:check` 通過、CI 轉綠。
+- 後續行動：若 Dawn Audit 之後重啟，務必遵守上方「資料維護鐵律」：產生資料後跑 `npm run normalize`。
+
+## 2026-06-25 (Data Normalization)
+- 事件：建立確定性資料格式正規化器，全面收斂橫向比對內容的格式不一致
+- 背景：不同 batch / AI agent 處理的標準，在「單位、記法、結構」上各寫各的——時間混用 `h`/`小時`/`min`/`分鐘`、溫度混用 `°C`/`℃`/`度`、`acceptance_criteria.details` 陣列混入 `{id,rule_zh,rule_en}` 物件、還有 UI 從不渲染的孤兒判定鍵（`no_venting` 等），導致同一測試在不同標準間看起來格式雜亂。
+- 變更：
+  - 新增 `scripts/normalize_data.mjs`：以「數字緊鄰」為錨的單位正規化（標準形＝繁中時間單位＋`°C`），攤平 details 物件、把孤兒判定鍵折進 `details`。**冪等、語意安全（經 5219 條字串驗證：0 數值變動、0 動到 mAh/Wh/mm·s⁻¹/ms 等受保護單位）**。
+  - 對 24 個 clean 檔套用（238 筆測試項目）；4 個 cron 進行中的 git-dirty 檔暫時略過。
+  - `package.json` 加 `normalize` / `normalize:check` / `validate` scripts；CI 加 `normalize:check` 把關。
+- 後續行動：
+  - ⚠️ `data/GB40559.json` 仍是舊 schema（`test_items`/`document_info`），validator 會報硬錯誤；前端已能容錯，但正解是重新產生為新 schema（`tests`/`document`）。
+  - Phase 2：Haiku 跨標準用語稽核（24 組 normalized_id，唯讀）完成，確認 GB 用「不」、UL/IEC/AIS 用「無」的系統性分裂。**經使用者核定，判定用語統一為「無」**（無起火、無爆炸、無洩漏），已加入 normalizer 的 `HAZARD_MAP`（白名單式，功能性「不」如不超過/不能/不應一律不動）並套用於 24 個 clean 檔。
+  - 顆粒度落差與中英混雜屬「內容深度」，未機械式拉平，留作日後人工補強。
+
+## 2026-06-25 (UI Polish & Bug Fix)
+- 事件：移除首頁冗餘的側邊選擇器、新增 5 份國標分類並修復繁體中文化轉換 Bug
+- 背景：
+  1. 使用者認為首頁的側邊欄（標準選擇器）過於冗餘，希望直接依賴「應用領域矩陣」來選取比對。
+  2. 新增的 5 份國標未被歸類到對應的應用領域中（全預設為一般應用），且簡介卡片僅顯示編號。
+  3. 發現所有 GB 國標的全名與新 JSON 資料仍殘留簡體字。
+- 內容：
+  - 完全移除 `Sidebar.jsx` 元件，將主題切換按鈕獨立移至右上方與 AI 小幫手並排。
+  - 修改 `StandardMatrix.jsx` 的分類邏輯，將新國標（玩具、移動電源、平衡車、電動輪椅、固定式電子）精確歸類。
+  - 在 `catalog.json` 補齊 5 份新國標的繁體中文全名。
+  - 修正 `convert_gb.cjs` 中屬性指定的 Typo (`full_name_zh` 改為 `full_name`)，並重新編譯執行，將所有新舊 GB 標準的 JSON 資料與目錄標題徹底轉換為台灣繁體中文。
+- 影響：大幅簡化了使用者的導覽操作流程；解決了新國標無類別可歸的問題；確保了全站文字用語的在地化（100% 繁體中文）。
+- 後續：觀察完全移除側邊欄後，使用者在查找特定標準編號時是否會遇到困難。
+
+## 2026-06-25 (Feature & Recovery)
+- 事件：大量匯入 5 份新版 GB 國標並重啟背景稽核
+- 背景：使用者新增了 5 份 GB 國標文件。同時，系統發現背景排程曾因伺服器重啟而中斷。
+- 內容：
+  - 依照 `SOP_NEW_STANDARD.md`，派遣 5 名萃取子代理人平行解析 PDF，將 `GB31241.4`, `GB40165`, `GB40559`, `GB47372`, `GB47741` 成功結構化為 Schema v2.0 JSON 格式。
+  - 將這 5 份新標準註冊入 `catalog.json`，完成前端資料綁定，並將它們加入 `audit_state.json` 待查核清單。
+  - 成功驗證了前端專案的建置 (Vite Build)。
+  - 重新排程了每 3 小時一次的 Dawn Audit 稽核機制（接續 Iteration 46），確保背景品質監控不間斷。
+- 影響：資料庫新增了大量新國標，且系統排程恢復正常運作。
+- 後續：觀察新標準在前端的呈現是否正常，並讓 Dawn Audit 自動抽測新成員。
+
+## 2026-06-06 (Security)
+- 事件：清除外洩機密、重寫 git 歷史並建立版控安全防線
+- 背景：AI 小幫手的 Gemini API key「不到一天就失效」，追查發現 key 曾以 `VITE_` 前綴與 `.env` 形式 commit 進 _公開_ repo，被 Google 自動停用；另發現 `.env.production.local`（含 `VERCEL_OIDC_TOKEN`）、`data/node_modules/`、多個 `.DS_Store` 也被誤上傳。
+- 內容：
+  - 使用者於 Google AI Studio 作廢所有舊金鑰。
+  - 以 `git filter-repo` 從**整個歷史**抹除 `.env` 與 `.env.production.local`，並 redact 殘留的 `AIza` 字串；force-push 覆寫遠端（備份 bundle 已另存）。
+  - 取消追蹤 `data/node_modules/` 與 `.DS_Store`（保留磁碟檔，不入版控）。
+  - 重寫 `.gitignore` 為完整版（涵蓋 `.env*`、`node_modules/`、`.DS_Store`、build 產物等）。
+  - 新增 `.env.example` 範本；於本檔頂部新增「版控安全鐵律」、`README.md` 新增環境變數與機密管理章節。
+- 影響：repo 不再含任何外洩機密；新金鑰只放 Vercel 環境變數，杜絕再次被自動停用。
+- 後續：維護 / 定時 agent commit 前務必遵守頂部鐵律，並檢查 `git status`。
+
+## 2026-05-26 (Bug Fix)
+- 事件：將 AI 小幫手的 Gemini 預設模型升級至 `gemini-3.1-flash`
+- 背景：原使用的 `gemini-1.5-flash` 在 2026 年的 API 環境中已被標示為棄用 (404 Not Found)，導致 AI 小幫手無法正常回覆。
+- 內容：修改 `api/chat.js`，將 API URL 中的模型字串從 `gemini-1.5-flash` 更換為最新的 `gemini-3.1-flash`。
+- 影響：成功恢復 AI 小幫手的連線，讓使用者可以繼續查詢法規細節。
+- 後續：觀察 `gemini-3.1-flash` 在法規問答上的準確度是否有顯著提升。
+
+
+## 2026-05-25 (UI Polish & Bug Fix)
+- 事件：修復 AI 小幫手連線錯誤並優化領域導覽矩陣
+- 背景：
+  1. AI 小幫手在正式環境回傳 404 與 504 錯誤，因為模型名稱錯誤且未妥善攔截錯誤狀態碼。
+  2. 矩陣視圖的膠囊寬度不均，且部分標準（如 UL2271、UL1973、UL2580）的層級標籤與實際對比視圖不一致（幽靈標籤）。
+  3. 缺乏一鍵清空選取清單的功能。
+- 內容：
+  - 更新 `api/chat.js` 模型名稱為正確的 `gemini-1.5-flash`，並解析與回傳詳細的 JSON 錯誤訊息，取代原本模糊的 500/404 狀態。
+  - 將 `UL2271.json` 各測試項目補上 `MODULE` 標籤。
+  - 撰寫 `sync_objects.js` 自動化腳本，將 `catalog.json` 內的 `available_objects` 陣列與各 v2 JSON 內實際存在的 `test_objects` 進行 100% 同步，消除 UL1973 與 ULC2580 不存在的 `CELL` 標籤。
+  - 於 `StandardMatrix.jsx` 將矩陣的 X 軸按照應用領域電池尺寸（由小到大）重新排序。
+  - 統一矩陣標準膠囊的 CSS `max-width` 讓排版整齊，並於購物車增加「✕ 清空」按鈕。
+- 影響：大幅改善前端視覺一致性與直覺性，並有效解決了前端導覽與後端資料庫層級不一致的問題；同時為 AI 小幫手增加了強健的防錯機制。
+- 後續：無。
+
+## 2026-05-24 (Feature)
+- 事件：實作「AI 小幫手 (AI Consultant Chat)」並升級為 Vercel 全端架構
+- 背景：
+  1. 使用者希望能有一個浮動視窗，可以根據當前選取的標準直接進行交叉比對與法規問答。
+  2. 原先純前端架構若直接串接 Gemini API 會有金鑰外洩的嚴重資安風險。
+- 內容：
+  - 開發 `AiConsultantChat.jsx` 懸浮聊天視窗，實作 Context-Aware（僅讀取畫面上勾選的標準）的 Prompt 機制。
+  - 將專案升級為 Serverless 架構，建立 `api/chat.js` Vercel Edge Function，將 Gemini API 的調用邏輯移至後端代理。
+  - 實作雙 API 鑰匙的 Fallback 機制，當第一把鑰匙遇到 429 限制時，自動切換至第二把鑰匙。
+  - 處理 SSE (Server-Sent Events) 串流斷字 bug（加入字串 Buffer 機制）。
+  - 在系統指令中加入防護力場 (Prompt Injection 防禦)，嚴禁 AI 洩漏內部 Metadata 與 JSON 架構。
+- 影響：成功賦予觀測站強大的 AI 諮詢能力，同時確保 100% 的金鑰安全與對話品質。
+- 後續：觀察 Vercel 免費額度的使用狀況與 API 呼叫頻率。
+
+## 2026-05-23 (UI Polish)
+- 事件：升級標準矩陣表互動體驗，實作預選與比對流程分離
+- 背景：原先選取滿 2 份標準會強制進入橫向比對，導致使用者在矩陣中探索與選取時缺乏緩衝與掌控感。且矩陣在未選取時視覺色彩較為單調。
+- 內容：
+  - 在 `App.jsx` 導入 `isComparing` 狀態，終止強制跳轉。
+  - 為矩陣中未選取的膠囊加入各體系的低透明度色彩，豐富視覺層次。
+  - 在矩陣畫面正下方實作「底部動作條 (Bottom Action Bar)」，當選取滿 2 份時滑出，並具備「確認比對」按鈕。
+  - 恢復點擊膠囊時於右下角顯示詳細資訊簡介卡片。
+  - 於橫向比對視圖 (`SplitScreenGrid`) 左上角加入「← 返回標準矩陣」按鈕，允許無縫退回探索模式。
+- 影響：大幅改善操作的流暢度與心理預期，使系統兼具「購物車預覽」與「主動結帳比對」的專業感。
+- 後續：無。
+
+## 2026-05-23 (Feature)
+- 事件：實作首頁空狀態的「應用領域矩陣對照表」
+- 背景：
+  1. 使用者認為原本的網路關聯圖雖然酷炫，但缺乏尋找特定應用標準的直覺性。
+  2. 系統首頁的空狀態應更傾向於「實用的導航面板」。
+- 內容：
+  - 移除 `react-force-graph-2d` 套件與 `NetworkGraph.jsx`。
+  - 新增 `StandardMatrix.jsx` 元件，動態生成 X 軸為「應用領域 (EV, ESS...)」、Y 軸為「樣品層級 (Cell, Pack...)」的交叉比對表格。
+  - 將標準渲染為可點擊的徽章 (Badge) 按鈕，點選後能即時將標準加入比對佇列。
+  - 同一標準若支援多層級，會在所屬應用的不同列儲存格中重複顯示，方便檢索。
+- 影響：拋棄華而不實的視覺特效，大幅提升系統導航直覺性與找資料的效率；並使專案依賴輕量化。
+- 後續：觀察矩陣表格在未來標準大量增加時的橫向與直向擴展體驗。
+
+
+## 2026-05-23 (UI Polish)
+- 事件：優化標準選擇器膠囊排版與大小寫格式轉換
+- 背景：
+  1. 使用者發現 `UN38.3` 的膠囊包含過長的文字（如 `SINGLE_CELL_BATTERY`），導致在標準選擇器中換行到第三行，破壞卡片高度的一致性。
+  2. 原有從資料庫讀取的層級標籤皆為全大寫（如 `CELL`, `INSTALLATION`），視覺上略顯剛硬且有壓迫感。
+- 內容：
+  - 加寬 `Sidebar.jsx` 選擇器 Modal 視窗（`width: 95vw`, `maxWidth: 1500px`），給予卡片更多水平伸展空間。
+  - 建立字眼縮寫對應表，將 `SINGLE_CELL_BATTERY` 縮寫為 `Single Cell`，`COMPONENT_CELL` 縮寫為 `Comp. Cell` 等。
+  - 實作正規化邏輯（Title Case 轉換），將所有層級標籤的首字母自動大寫（如 `INSTALLATION` 轉為 `Installation`）。
+  - 將樣品篩選按鈕（Filter Buttons）與比對網格卡片內的標籤同步更新。
+- 影響：卡片高度統一不再參差不齊；全面改善了介面元素的現代感與易讀性。
+- 後續：無。
+
+## 2026-05-23 (Update)
+- 事件：優化前端網格排版與實作標準版本追蹤功能
+- 背景：
+  1. 使用者反映前端橫向對比視圖的卡片寬度過度拉伸，且版面利用率不佳。
+  2. 需要明確提示使用者所閱讀的標準是否為最新版本，避免參考過時的測試條件。
+  3. 建立未來匯入新標準的標準作業流程。
+- 內容：
+  - 重構 `SplitScreenGrid.jsx` 的 CSS Grid 佈局，改用 `minmax(280px, 1fr)` 搭配自動換行，解決長文字無限撐開版面的問題。
+  - 盤點 21 份標準最新發布年份，並透過腳本更新 `catalog.json`，加入 `is_latest`, `latest_version` 與 `versions_behind` 欄位。
+  - 於前端 `InfoModal` 實作動態版本警示列（綠色最新標章 / 橘黃色過時警告）。
+  - 建立並制定 `SOP_NEW_STANDARD.md`，明文規範未來新標準匯入的處理流程與 UI 分頁呈現原則。
+- 影響：大幅改善前端閱讀體驗；提升系統的合規性提示能力；確保未來的資料擴充有明確的架構依循。
+- 後續：待使用者實際匯入新版標準後，驗證同卡片內切換新舊版分頁的 UI 實作。
+
+## 2026-05-23
+- 事件：修復前端比對表格的測試覆蓋 Bug 與完成 GB 標準繁體中文化
+- 背景：
+  1. 使用者發現 GB38031 在選擇 Cell 層級篩選時，無任何測試項目顯示。
+  2. 使用者希望閱讀全繁體中文的 GB 標準，不想看到簡體字。
+- 內容：
+  - 發現前端 `SplitScreenGrid.jsx` 在處理相同 `normalized_id`（如 `ELEC-SC-EXT` 外部短路）但不同層級（如 Cell 與 Pack）的測試時，直接覆寫了物件。
+  - 重構前端資料綁定結構，改用陣列 (Array) 來裝載同一個格子內的所有測試項目，並升級 `StandardColumn.jsx` 支援動態疊加多張卡片。
+  - 使用 `opencc-js` 撰寫自動化腳本 (`convert_gb.js`)，將 `GB31241`, `GB38031`, `GB43854`, `GB44240`, `GBT36276` 以及 `catalog.json` 中的 GB 資訊全部從簡體中文轉換為繁體中文 (Taiwan)。
+- 影響：解決了同標準內測試項目層級互相覆寫的嚴重 Bug；全面提升台灣使用者的閱讀體驗。
+- 後續：持續觀察多重卡片在同一個欄位疊加的排版體驗，有需要再做樣式微調。
+
+## 2026-05-22
+- 事件：完成所有 21 份標準的 Schema v2.0 結構化轉換
+- 背景：原有的 Batch JSON 信心度不足，需要透過三源交叉比對（PDF OCR、Gemini MD、舊 Batch JSON）重新結構化為 v2.0 格式。
+- 內容：
+  - 成功執行子代理自動化批次處理（Pilot, Batch A~F）。
+  - 所有 21 份標準均完成了 Schema v2.0 JSON 轉換。
+  - 修正了舊版 JSON 中大量的錯誤（例如 GB31241 的短路電阻、擠壓力數值錯誤，UL9540A 的安裝層級豁免條件等）。
+  - 對齊了 `taxonomy.json` 分類體系。
+  - 更新了 `catalog.json` 加入 `schema_v2_json` 和 `test_count_v2` 欄位。
+- 影響：大幅提升了資料庫的準確性與一致性，為後續的前端橫向比對提供穩固基礎。
+- 後續：進入前端介面開發與比對功能實作階段。
+
+
+## 2026-05-22
+- 事件：結構化 GB31241 標準（Schema v2.0）
+- 背景：依照 Schema v2.0 Pilot 的格式，進一步擴展轉換 GB 31241 (2022) 便攜式電子產品用鋰離子電池標準。
+- 內容：
+  - 將 GB 31241 納入 v2.0 JSON 格式。
+  - 交叉驗證原有 Batch JSON、Gemini MD 以及原始 OCR markdown，修正多處 Batch JSON 中的錯誤數據（如：短路電阻從 < 0.1 Ω 修正為 80 ± 20 mΩ，擠壓力從 100 kN 修正為 13.0 ± 0.78 kN，溫度循環高溫從 70°C 修正為 72°C，明確化過充電壓判斷條件）。
+  - 提取了 13 項核心測試參數與相關條件。
+- 影響：完成第 4 份標準的 v2.0 JSON 轉換，產出 `data/GB31241.json`。
+- 後續：繼續結構化剩下的標準檔案。
+
+## 2026-05-21
+- 事件：完成 Schema v2.0 資料庫重新結構化（Pilot 階段）
+- 背景：原有 batch1-6 結構化 JSON（351 rows）由 OCR/翻譯產生，準確度存疑。使用者要求以三層交叉比對（PDF → Gemini markdown → batch JSON）重新結構化
+- 內容：
+  - 設計全新 JSON Schema v2.0（結構化條件物件 + 嵌入式豁免條款）
+  - 建立新分類體系 `data/taxonomy.json`（ELEC/MECH/THERM 三大類 27 子類別）
+  - 完成 3 份 pilot 標準：`UN38.3.json`(9測試/38KB)、`UL1642.json`(11測試/37KB)、`IEC62133-2.json`(12測試/54KB)
+  - 所有參數均經三源交叉驗證，發現並修正 6 處差異
+- 影響：`data/` 目錄新增 4 個 JSON 檔案，為前端橫向比對提供準確的結構化資料基礎
+- 後續：用戶審核 pilot 品質後，擴展至剩餘 18 份標準
+
+## 2026-05-04
+- 事件：建立專案事件紀錄文件
+- 背景：需要一份固定位置的檔案，方便後續追蹤重要變更
+- 內容：新增 `AGENTS.md` 作為專案時間線與決策記錄入口
+- 影響：提供後續維護與回顧的統一格式
+- 後續：依重要事件持續補充
