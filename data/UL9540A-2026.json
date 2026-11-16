@@ -1,0 +1,709 @@
+{
+  "schema_version": "2.0",
+  "document": {
+    "id": "UL9540A-2026",
+    "full_name": "ANSI/CAN/UL 9540A:2026 - Standard for Test Method for Evaluating Thermal Runaway Fire Propagation in Battery Energy Storage Systems (Sixth Edition)",
+    "full_name_zh": "評估電池儲能系統熱失控火災蔓延的測試方法",
+    "short_name": "UL 9540A",
+    "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
+    "publication_date": "2026-03-13",
+    "edition_history": "First Edition – November, 2017; Second Edition – January, 2018; Third Edition – June, 2018; Fourth Edition – November, 2019; Fifth Edition – March, 2025; Sixth Edition – March 13, 2026",
+    "type": "standard",
+    "scope": "評估電池技術發生熱失控之能力，並針對可發生熱失控的電池儲能系統（BESS）量化其火災與爆炸危害特徵，以支援系統間距及消防、防爆等安裝要求（配合 NFPA 855、NFPA 70、UL 9540、IFC 等法規）。",
+    "applicable_objects": [
+      "CELL",
+      "MODULE",
+      "PACK_SYSTEM"
+    ],
+    "source_pdf": "s9540A_6.pdf"
+  },
+  "terms": [
+    {
+      "term_en": "ACTIVE FIRE PROTECTION SYSTEMS",
+      "term_zh": "主動式消防保護系統",
+      "definition": "需要機械或電氣啟動以執行偵測、通報或滅火等動作的消防保護系統，依安裝標準或主管火災法規（如 NFPA 或 IFC）安裝與維護。",
+      "section": "4.2"
+    },
+    {
+      "term_en": "ACTIVE THERMAL RUNAWAY PROPAGATION PREVENTION SYSTEMS",
+      "term_zh": "主動式熱失控傳播抑制系統",
+      "definition": "利用機械或電氣啟動來減緩或防止電池系統內熱失控傳播的系統（例如安裝於模組內的直接噴射冷卻系統）。",
+      "section": "4.3"
+    },
+    {
+      "term_en": "BATTERY ENERGY STORAGE SYSTEM (BESS)",
+      "term_zh": "電池儲能系統",
+      "definition": "接收電能並利用電池儲存該電能以供日後供電的固定式設備，至少由一個或多個模組、電力調節系統 (PCS)、電池管理系統 (BMS) 及周邊平衡系統組件構成。",
+      "section": "4.4"
+    },
+    {
+      "term_en": "INITIATING BATTERY ENERGY STORAGE SYSTEM UNIT (INITIATING BESS)",
+      "term_zh": "啟動電池儲能系統單元",
+      "definition": "配備電阻加熱器以在安裝級／單元級測試中產生電芯間熱失控傳播的 BESS 單元。",
+      "section": "4.4(a)"
+    },
+    {
+      "term_en": "TARGET BATTERY ENERGY STORAGE SYSTEM UNIT (TARGET BESS)",
+      "term_zh": "目標電池儲能系統單元",
+      "definition": "在物理上支撐或容納 BESS 組件的外殼與／或機架硬體，不含儲能組件（或依規定配置），用於安裝儀表以量測啟動單元的熱暴露。",
+      "section": "4.4(b)"
+    },
+    {
+      "term_en": "BATTERY SYSTEM",
+      "term_zh": "電池系統",
+      "definition": "BESS 的組成部分，由通常呈機架配置的一個或多個模組、BMS 等控制裝置以及冷卻系統、斷路器與保護裝置等系統組件構成。",
+      "section": "4.5"
+    },
+    {
+      "term_en": "CELL",
+      "term_zh": "電芯",
+      "definition": "包含電極、電解質、隔離膜、外殼與端子的基本功能電化學單元，透過直接轉換化學能提供電能。",
+      "section": "4.6"
+    },
+    {
+      "term_en": "CELL, INITIATING",
+      "term_zh": "啟動電芯",
+      "definition": "透過熱、電氣或機械方式施加故障以建立熱失控狀態的電芯。",
+      "section": "4.7"
+    },
+    {
+      "term_en": "COMBUSTIBLE GAS CONCENTRATION REDUCTION SYSTEMS",
+      "term_zh": "可燃氣體濃度稀釋系統",
+      "definition": "設計用於將密閉空間內可燃及易燃氣體濃度維持在爆炸下限 (LFL) 以下的通風系統，通常依 NFPA 69 設計。",
+      "section": "4.8"
+    },
+    {
+      "term_en": "DEDICATED-USE",
+      "term_zh": "專用用途空間",
+      "definition": "專為儲能及附屬設備設計與使用、未預期同時供其他用途佔用的建築物或防火分隔空間。",
+      "section": "4.9"
+    },
+    {
+      "term_en": "DEVELOPED FIRE CONDITION",
+      "term_zh": "充分發展火災狀態",
+      "definition": "涉及電池、熱失控排氣及周圍可燃物的自持火災狀態，導致火災在單一 BESS 外殼或群組內蔓延。",
+      "section": "4.10"
+    },
+    {
+      "term_en": "ENCLOSURE",
+      "term_zh": "外殼／箱體",
+      "definition": "設計用於容納、支撐或包覆一個或多個 BESS 組件的實體結構，提供環境與物理防護、防火阻隔及組件空間配置。",
+      "section": "4.12"
+    },
+    {
+      "term_en": "FLEXIBLE FILM HEATERS",
+      "term_zh": "柔性薄膜加熱器",
+      "definition": "呈薄膜、膠帶或其他薄片狀結構、易於貼合電芯表面的電阻加熱器。",
+      "section": "4.16"
+    },
+    {
+      "term_en": "GROUP",
+      "term_zh": "電池系統群組",
+      "definition": "不共用單一外殼、且透過淨距、走道或防火屏障與其他 BESS 外殼、單元、堆疊或機架隔開的室內 BESS 排列或群組。",
+      "section": "4.18"
+    },
+    {
+      "term_en": "MAXIMUM OPERATING STATE OF CHARGE (MOSOC)",
+      "term_zh": "最大運行荷電狀態",
+      "definition": "BESS、電池組、電池模組或電芯製造商所規定之可用容量佔額定容量的百分比。",
+      "section": "4.19"
+    },
+    {
+      "term_en": "MAXIMUM SURFACE TEMPERATURE END POINT",
+      "term_zh": "最高表面溫度終點",
+      "definition": "採用外部加熱器法使電芯達到熱失控時，在熱斜坡後於電芯外殼量測到的最終保持溫度。",
+      "section": "4.20"
+    },
+    {
+      "term_en": "MODULE",
+      "term_zh": "電池模組",
+      "definition": "BESS 的次組件，由一組以串聯與／或並聯連接的電芯或電化學電容器構成，可含或不含保護裝置與監測電路。",
+      "section": "4.21"
+    },
+    {
+      "term_en": "NON-DEDICATED USE",
+      "term_zh": "非專用用途空間",
+      "definition": "儲能系統鄰近非專供儲能使用的其他佔用或用途區域（如零售、醫療、多戶住宅、商業、工業、停車結構、機房或公用空間）安裝的建築或區域。",
+      "section": "4.23"
+    },
+    {
+      "term_en": "NON-RESIDENTIAL USE",
+      "term_zh": "非住宅用途",
+      "definition": "預期用於第 4.27 條所定義住宅用途以外建築結構的設備。",
+      "section": "4.24"
+    },
+    {
+      "term_en": "OF ORIGIN",
+      "term_zh": "起火源頭位置",
+      "definition": "指充分發展火災狀態被啟動的特定位置，例如起火模組或起火外殼。",
+      "section": "4.25"
+    },
+    {
+      "term_en": "RESIDENTIAL USE",
+      "term_zh": "住宅用途",
+      "definition": "適用於獨立單戶與雙戶住宅及連棟住宅的設備。",
+      "section": "4.27"
+    },
+    {
+      "term_en": "STACK",
+      "term_zh": "堆疊配置",
+      "definition": "垂直排列的多個外殼，包含透過支撐結構或安裝硬體連接的配置；堆疊高度由製造商安裝說明書定義。",
+      "section": "4.28"
+    },
+    {
+      "term_en": "TARGETS",
+      "term_zh": "目標受測物",
+      "definition": "包含：(a) 目標外殼／群組／堆疊：置於起火外殼／群組／堆疊周圍設定間距處並裝設量測儀表，以評估熱失控傳播風險；(b) 目標結構：置於設定間距處並裝設儀表，以評估對相鄰結構或平台的熱暴露。",
+      "section": "4.29"
+    },
+    {
+      "term_en": "THERMAL RUNAWAY",
+      "term_zh": "熱失控",
+      "definition": "電化學電芯透過自發熱以不可控方式升高溫度的事件；當電芯產熱速率大於散熱速率時熱失控持續進展，可能導致起火、爆炸與／或釋放氣體。",
+      "section": "4.30"
+    },
+    {
+      "term_en": "THERMAL RUNAWAY PROPAGATION",
+      "term_zh": "熱失控傳播",
+      "definition": "一個或多個處於熱失控狀態的電芯所釋放的能量，在無任何額外啟動機制下誘導其他電芯發生熱失控。",
+      "section": "4.31"
+    },
+    {
+      "term_en": "UNIT",
+      "term_zh": "BESS 單元",
+      "definition": "由完整功能 BESS 構成的框架、機架或外殼，包含電芯、模組、BMS、通風裝置及其他附屬設備等組件與次組件。",
+      "section": "4.32"
+    }
+  ],
+  "tests": [
+    {
+      "id": "UL9540A-2026-CELL",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "電池級熱失控判定測試",
+      "name_en": "Cell Level Thermal Runaway Determination Test",
+      "section": "7",
+      "category": "THERM",
+      "subcategory": "熱蔓延 (Thermal Propagation)",
+      "test_objects": [
+        "CELL"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "100% SOC",
+          "detail": "電芯須充電至 100% SOC 或製造商指定之滿充電壓並靜置至少 1 小時；試驗前須量測並記錄開路電壓，若未處於滿充狀態須依 7.2.2 重新充電並記錄數值（7.2.2、7.2.3）。",
+          "source_reference": "7.2.2；7.2.3"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C，50 ± 25% RH",
+          "detail": "室內實驗室環境條件於前處理與試驗開始時皆須維持 25 ± 5 °C (77 ± 9 °F) 與 50 ± 25% RH（7.2.1、7.3.1.1）。",
+          "source_reference": "7.2.1；7.3.1.1"
+        },
+        "trigger": {
+          "value": "薄膜加熱器 4～7 °C/min 升溫；未觸發時改用電氣、替代加熱或穿刺應力",
+          "detail": "以貼附式柔性薄膜加熱器施加 4～7 °C/min (7.2～12.6 °F/min) 升溫斜坡。鋰離子電芯預設保持溫度須高於隔離膜熔點（依 UL 2591 / UL 746A DSC）至少 5 °C (9 °F)，若維持 4 小時未熱失控則恢復升溫斜坡；若無隔離膜資料或依製造商決定，可採連續熱斜坡不設保持點。若薄膜加熱器無法觸發，改採：(a) 電氣應力（過充、外部短路、過放）；(b) 替代加熱（加熱板、插棒加熱、烘箱等）；或 (c) 機械濫用（針刺等內部短路）（7.3.1.2、7.3.1.5、7.3.1.6）。",
+          "source_reference": "7.3.1.2；7.3.1.5；7.3.1.6"
+        },
+        "termination_for_trigger": {
+          "value": "持續加熱或施加應力至發生熱失控（溫升率超過外部輸入）",
+          "detail": "使用外部加熱法時，當電芯表面溫度變化率超過外部施加熱輸入且呈現不可控自發熱（不得與單純過熱排氣混淆）即判定熱失控起始；若先排氣仍須持續加熱或施加機械／電氣應力至熱失控起始，排氣時若溫度短暫下降須提高熱輸入以維持升溫速率（7.3.1.11、7.3.1.12）。",
+          "source_reference": "7.3.1.11；7.3.1.12"
+        },
+        "apparatus": {
+          "value": "薄膜加熱器、Type-K 熱電偶、壓力艙（建議 82 L）與 GC／氫氣分析儀",
+          "detail": "軟包與方形電芯須約束以模擬 BESS 模組約束並防過度膨脹（7.2.4）。以 24 AWG 或更細之 Type-K 熱電偶連續量測（不作 60 秒平均），至少設於加熱器下方中心、加熱器旁電芯表面及排氣區域（6.3、7.3.1.7）。排氣收集於建議 82 L (21.7 gal) 耐壓艙（起始為大氣壓且氧氣 < 1% vol），並以氣相層析儀 (GC) 及可測 > 30% vol 之氫氣感測器分析成分（7.4.1、7.4.2）。",
+          "source_reference": "6.3；7.2.4；7.3.1.7；7.4.1；7.4.2"
+        },
+        "method": {
+          "value": "測定排氣溫度、熱失控起始溫度、排氣成分、LFL、燃燒速度與 Pmax",
+          "detail": "記錄首次排氣溫度與熱失控起始溫度（不含氣體收集樣品取平均值作為後續層級限值）（7.3.1.10、7.3.1.13）。以合成複製氣體依 ASTM E918 於常溫及排氣溫度測爆炸下限 (LFL)、依 ISO 817 附錄測層流燃燒速度、依 EN 15967 測最大爆炸壓力 Pmax（7.4.3～7.4.5）。",
+          "source_reference": "7.3.1.10；7.3.1.13；7.4.3；7.4.4；7.4.5"
+        },
+        "sample_quantity": {
+          "value": "至少 1 顆觸發樣品＋ 3 顆重複性測試電芯＋ 1 顆氣體收集樣品",
+          "detail": "若電芯發生熱失控，須以相同方法額外測試 3 顆電芯以證明重複性；排氣溫度與熱失控起始溫度平均值不包含氣體收集樣品（7.3.1.13、7.4.1）。",
+          "source_reference": "7.3.1.13；7.4.1"
+        },
+        "pre_conditioning": {
+          "value": "至少 2 次充放電循環後滿充至 100% SOC 並靜置至少 1 小時",
+          "detail": "試驗前於 25 ± 5 °C、50 ± 25% RH 下依製造商指定方法完成至少 2 次充至 100% SOC 再放至 EODV 之循環以驗證功能，隨後充至 100% SOC 或滿充電壓並於試驗前靜置至少 1 小時（7.2.1、7.2.2）。",
+          "source_reference": "7.2.1；7.2.2"
+        },
+        "post_test": {
+          "value": "試驗結束後依製造商規格放電並依當地法規處置",
+          "detail": "依第 6.2 條通用要求，試驗結束後樣品須依製造商規格放電，並依當地法規處置所有樣品（6.2）。",
+          "source_reference": "6.2"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "特徵化測試：確立可重複觸發電芯熱失控之方法，並測定排氣溫度、熱失控起始溫度與排氣燃燒爆炸特性。",
+        "details": [
+          "本項為特徵化測試，非單純通過／失敗判定，須記錄首次排氣溫度、熱失控起始溫度及不含氣體收集樣品之平均值。",
+          "須記錄排氣成分（含烴類與氫氣濃度）、LFL（常溫及排氣溫度）、層流燃燒速度與最大爆炸壓力 Pmax。",
+          "若同時符合 (a) 無法在電芯誘發熱失控，且 (b) 依 ASTM E918 於常溫及排氣溫度下電芯排氣與任何比例空氣混合均無可燃性危害，則免除第 8 章模組級測試（7.8.1）。"
+        ]
+      },
+      "exemptions": [
+        "若無法誘發電芯熱失控且排氣依 ASTM E918 於常溫及排氣溫度均不可燃，則免除第 8 章模組級測試（7.8.1）。"
+      ],
+      "related_tests": [
+        "UL9540A-2026-MODULE"
+      ],
+      "source_reference": "7.1～7.4, 7.7.1, 7.8.1",
+      "original_text_snippet": "Module level testing in Section 8 is not required if the following performance conditions are met: a) Thermal runaway cannot be induced in the cell; and b) The cell vent gas does not present a flammability hazard when mixed with any volume of air, as determined in accordance with ASTM E918 at both ambient and vent temperatures."
+    },
+    {
+      "id": "UL9540A-2026-MODULE",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "模組級熱傳播測試",
+      "name_en": "Module Level Thermal Propagation Test",
+      "section": "8",
+      "category": "THERM",
+      "subcategory": "熱蔓延 (Thermal Propagation)",
+      "test_objects": [
+        "MODULE"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "100% SOC",
+          "detail": "受測模組須充至 100% SOC 或製造商規格之滿充電壓並靜置至少 1 小時；試驗前量測端電壓，若未處於滿充狀態須依 8.1.2 重新充電並記錄（8.1.2、8.1.3）。",
+          "source_reference": "8.1.2；8.1.3"
+        },
+        "temperature": {
+          "value": "25 ± 5 °C，50 ± 25% RH",
+          "detail": "室內實驗室環境條件（含前處理與試驗開始時）須維持 25 ± 5 °C (77 ± 9 °F) 與 50 ± 25% RH（8.1.1、8.2.1）。",
+          "source_reference": "8.1.1；8.2.1"
+        },
+        "trigger": {
+          "value": "依第 7.3 節方法觸發 1 顆或多顆電芯建立電芯間熱失控傳播",
+          "detail": "使用第 7.3 節驗證之方法觸發模組內 1 顆或多顆電芯，目標使至少 1 顆非觸發電芯進入熱失控（僅排氣不算傳播）。未達傳播時須增加觸發電芯數重試（例：> 10 Ah 電芯模組不超過 3 顆、< 10 Ah 電芯模組不超過相當於 30 Ah 電芯）；若仍未傳播則判定無法發生熱失控傳播（8.2.4、8.2.5、8.2.7、8.2.8）。",
+          "source_reference": "8.2.4；8.2.5；8.2.7；8.2.8"
+        },
+        "trigger_location": {
+          "value": "對鄰近非觸發電芯產生最大熱暴露之位置",
+          "detail": "選擇對鄰近非觸發電芯熱傳導最大、通風冷卻受限且遠離熱感測器／偵測與滅火釋放點之位置（8.2.4）。必要時可移除加熱器與啟動電芯間之隔熱或電氣絕緣材以安裝加熱器（8.2.5 Note）。",
+          "source_reference": "8.2.4"
+        },
+        "apparatus": {
+          "value": "集煙罩、耗氧量熱儀、Type-K 熱電偶、FID／Pd-Ni 氫氣感測器與煙霧光測系統",
+          "detail": "模組依最終安裝方位放置於不可燃水平面並置於集煙罩下（8.2.2、8.2.9）。排氣管配置順磁性氧氣分析儀、NDIR CO2/CO 分析儀、流速計、Type-K 熱電偶、FID 烴類偵測器、Pd-Ni 固態氫氣感測器（或製造商選配解析度 ≥ 1 cm⁻¹、光程 ≥ 2 m 之 FTIR）及白光光電煙霧系統；並於啟動電芯、鄰近非觸發電芯及最接近觸發點之模組外殼表面配置熱電偶（8.2.6、8.2.12、8.2.14～8.2.16）。",
+          "source_reference": "8.2.2；8.2.6；8.2.9；8.2.12；8.2.14～8.2.16"
+        },
+        "method": {
+          "value": "建立電芯間熱傳播並量測化學釋熱率 (HRR)、氣體生成、產煙率與失重",
+          "detail": "不依賴 BMS 等電子與軟體控制（8.1.4）；以持續高於 7.3.1.11 電芯熱失控起始溫度驗證熱失控（8.2.8）；全程以耗氧量熱法計算化學釋熱率 (HRR)、量測烴類與氫氣濃度、計算產煙率 (SRR)，並記錄試驗前後模組重量損失（若燒毀則於報告註明）（8.2.3、8.2.10～8.2.17）。",
+          "source_reference": "8.1.4；8.2.3；8.2.8；8.2.10～8.2.17"
+        },
+        "sample_quantity": {
+          "value": "至少 1 組完整模組（未達成熱傳播時增加觸發電芯重複測試）",
+          "detail": "以完整模組樣品測試；若未達成電芯間熱失控傳播，須增加觸發電芯數重複試驗至確認傳播或證實無法傳播（8.1.1、8.2.5）。",
+          "source_reference": "8.1.1；8.2.5"
+        },
+        "pre_conditioning": {
+          "value": "至少 2 次充放電循環（中間最長靜置 8 小時）後滿充並靜置至少 1 小時",
+          "detail": "試驗前於 25 ± 5 °C、50 ± 25% RH 下依製造商方法完成至少 2 次充至 100% SOC（最長靜置 8 小時）再放至 EODV 之循環以驗證功能，隨後充至 100% SOC 或滿充電壓並於試驗前靜置至少 1 小時（8.1.1、8.1.2）。",
+          "source_reference": "8.1.1；8.1.2"
+        },
+        "post_test": {
+          "value": "試驗結束後依製造商規格放電並依當地法規處置",
+          "detail": "依第 6.2 條通用要求，試驗結束後樣品須依製造商規格放電，並依當地法規處置所有樣品（6.2）。",
+          "source_reference": "6.2"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "特徵化測試：評估模組內電芯間熱傳播特性、釋熱率、產氣與外部火焰／飛散物危害；符合 8.5.1 三項條件可免除單元級測試。",
+        "details": [
+          "須記錄隨時間變化之化學釋熱率、可燃氣體生成與成分、峰值與總產煙率、飛散物／爆炸性排氣、火花／電弧、熱失控電芯位置、模組外火焰延伸與持續時間及模組失重（8.4.1）。",
+          "若同時符合 (a) 電池級測試判定排氣不可燃、(b) 模組外無火焰蔓延、且 (c) 在預期最大熱暴露之觸發電芯鄰近處量測之模組外表面溫度不超過電芯排氣溫度，則免除第 9 章單元級測試（8.5.1）。"
+        ]
+      },
+      "exemptions": [
+        "若同時符合排氣不可燃、模組外無火焰蔓延及模組外表面溫度不超過電芯排氣溫度，可免除第 9 章單元級測試（8.5.1）。"
+      ],
+      "related_tests": [
+        "UL9540A-2026-CELL",
+        "UL9540A-2026-UNIT"
+      ],
+      "source_reference": "8.1, 8.2, 8.4.1, 8.5.1",
+      "original_text_snippet": "Unit level testing in Section 9 is not required if all of the following performance conditions are met during the module level test: a) Vent gas is nonflammable as determined by the cell level test; b) There is no spread of flame outside of the module; and c) The module exterior surface temperature does not exceed the cell venting temperature as measured adjacent to the initiating cell where the greatest thermal exposure is anticipated."
+    },
+    {
+      "id": "UL9540A-2026-UNIT",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "單元級火災傳播測試",
+      "name_en": "Unit Level Fire Propagation Test",
+      "section": "9",
+      "category": "THERM",
+      "subcategory": "熱蔓延 (Thermal Propagation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "最大運行充電狀態 (MOSOC)",
+          "detail": "啟動 BESS 單元須依製造商規格充至最大運行充電狀態 (MOSOC) 並於室溫靜置至少 1 小時；試驗前量測啟動模組電壓，若壓降 > 0.1% 滿充電壓須依 9.1.11 重新充電並記錄（9.1.11、9.1.12）。",
+          "source_reference": "9.1.11；9.1.12"
+        },
+        "temperature": {
+          "value": "室內 10 °C 至 32 °C；室外例外 10 °C 至 40 °C",
+          "detail": "室內試驗於無氣流干擾之測試室進行，起始室溫為 10 °C 至 32 °C (50 °F 至 90 °F)（9.2.1）。僅供室外安裝之產品可於室外執行，須設擋風牆維持風速 ≤ 12 mph、氣溫 10 °C 至 40 °C (50 °F 至 104 °F)、濕度 < 90% RH 且無降水（9.1.4 Exception）。",
+          "source_reference": "9.1.4；9.2.1"
+        },
+        "trigger": {
+          "value": "於啟動單元內單一模組建立電芯間熱失控蔓延",
+          "detail": "依第 8.2.4 節模組級程序及第 8 章相同觸發設備（類型、數量與位置），於啟動 BESS 單元內單一模組建立電芯間熱失控傳播（9.1.4、9.2.22）。",
+          "source_reference": "9.1.4；9.2.22"
+        },
+        "trigger_location": {
+          "value": "依模組級試驗結果對相鄰模組產生最大熱暴露之位置",
+          "detail": "依第 8 章模組級試驗結果，選擇對相鄰模組（上方、下方或側向）造成最大熱暴露的模組位置作為啟動模組（9.2.22(a)）。",
+          "source_reference": "9.2.22"
+        },
+        "apparatus": {
+          "value": "耗氧與對流熱釋放率量熱儀、集煙罩、儀器化牆段、熱通量計與 Type-K 熱電偶",
+          "detail": "啟動單元置於耗氧量熱儀集煙罩下（以 3.8、7.6、11.4、15.2 L/min 庚烷擴散燃燒器校準，並配熱電堆、流速計、白光產煙系統、FID 與 Pd-Ni 氫氣分析儀；可選配 ≥ 1 cm⁻¹ 解析度、≥ 2 m 光程 FTIR）（9.2.7～9.2.12、9.2.23、9.2.24）。室內設兩面塗平光黑漆之 ≥ 13 mm 石膏板牆段（高於單元 ≥ 0.61 m 且離地 ≥ 2.13 m、水平超出目標單元 ≥ 0.49 m），牆面每 152 mm 垂直布設 24 AWG Type-K 熱電偶陣列並於牆面及目標單元迎火面各裝設至少 2 個水冷式 Schmidt-Boelter 或 Gardon 熱通量計；室外用 3.66 m 高 19.05 mm 夾板牆與 0.3 m 屋簷，室內壁掛用 ≥ 2.44 m 高寬石膏板牆與 0.3 m 天花板（9.2.3～9.2.6、9.2.15～9.2.20、9.3.3、9.4.2、9.5.2）。",
+          "source_reference": "9.2.3～9.2.20；9.2.23；9.3.3；9.4.2；9.5.2"
+        },
+        "flame_indicator": {
+          "value": "單層未處理粗棉布（住宅用 BESS 覆蓋，26～28 m²/kg）",
+          "detail": "住宅用 BESS（室內落地、室內壁掛、室外壁掛等）受測品須覆蓋單層未處理純棉粗棉布作為引燃指示物，規格為 26～28 m²/kg，每 6.45 cm² (1 in²) 面積任一方向含 28～32 根紗線（9.2.21、9.4.7、9.5.6）。",
+          "source_reference": "9.2.21；9.4.7；9.5.6"
+        },
+        "termination": {
+          "value": "連續 3 次（每 15 分鐘）溫度下降、低於 60 °C 或火災蔓延至相鄰單元／牆壁",
+          "detail": "符合下列任一條件即終止試驗：(a) 啟動單元內各模組連續 3 次每隔 15 分鐘溫度下降；(b) 模組溫度低於 60 °C (140 °F)；(c) 火災蔓延至相鄰單元或牆壁；(d) 出現危害人員或設施之狀況；或 (e) 測試室外觀察到火焰（9.2.25）。",
+          "source_reference": "9.2.25"
+        },
+        "method": {
+          "value": "僅限第 9.1.1 條五類適用對象，依實際安裝配置執行",
+          "detail": "第 6 版新增第 9.1.1～9.1.2 條：單元級測試僅適用於五類電化學 BESS：(a) 住宅用 > 20 kWh；(b) 住宅用間距 < 0.9 m (3 ft)；(c) 住宅用 > 1 kWh 屋內安裝；(d) 住宅用非金屬外殼；(e) 整合主動式熱失控傳播抑制系統之 BESS（其餘直接做第 10 章測試）。測試配置依實際安裝方式（室內外、落地、壁掛、屋頂、開放式停車庫）；不依賴 BMS，且若產品將內建滅火系統列為選配則受測品不得配備（9.1.1～9.1.3、9.1.13、9.1.14、9.2～9.6）。",
+          "source_reference": "9.1.1～9.1.4；9.1.13；9.1.14；9.2～9.6"
+        },
+        "sample_quantity": {
+          "value": "1 組啟動 BESS 單元與代表性相鄰目標 BESS 單元",
+          "detail": "須備 1 組含完整代表性組件及互連可燃物之啟動 BESS 單元，與依最小安裝間距配置之目標 BESS 單元（含外殼、機架與模組外殼，並可於最高溫處裝設 1 個通電滿配模組）（9.1.4、9.1.9、9.1.10）。",
+          "source_reference": "9.1.4；9.1.9；9.1.10"
+        },
+        "pre_conditioning": {
+          "value": "充至最大運行充電狀態 (MOSOC) 並靜置至少 1 小時",
+          "detail": "啟動 BESS 單元須充至 MOSOC 並於室溫環境靜置至少 1 小時；測試開始及期間所有檢修門與面板須關閉並上鎖（9.1.11、9.2.2）。",
+          "source_reference": "9.1.11；9.2.2"
+        },
+        "observation_period": {
+          "value": "觀察至降溫（< 60 °C 或連 3 次每 15 分鐘降溫）或發生危害而終止",
+          "detail": "全程連續量測 60 秒平均溫度、熱通量、釋熱率與復燃現象，直至各模組低於 60 °C 或連續 3 次每 15 分鐘降溫，或觸發蔓延／危害終止條件（6.3、6.4、9.2.25）。",
+          "source_reference": "9.2.25"
+        },
+        "post_test": {
+          "value": "試驗結束後依製造商規格放電並依當地法規處置",
+          "detail": "依第 6.2 條通用要求，試驗結束後樣品須依製造商規格放電，並依當地法規處置所有樣品（6.2）。",
+          "source_reference": "6.2"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "特徵化測試：評估 BESS 單元間火災蔓延、牆面溫升、熱通量與爆燃風險；第 6 版第 9.8.1 條限定僅住宅用 BESS 符合表 9.1 性能準則時可免除第 10 章大規模火災測試。",
+        "details": [
+          "相鄰目標 BESS 模組表面溫度（60 秒平均）≤ 7.3.1.10 測得之電芯熱排氣溫度 (T_vent)",
+          "目標牆面、天花板、屋簷或可燃屋頂表面溫升 ≤ 97 °C (175 °F)",
+          "無爆燃或爆轟等爆炸危害",
+          "室外、開放式停車庫及室外壁掛安裝於最小逃生路徑距離處測得之熱通量 ≤ 1.3 kW/m²",
+          "非住宅室內及住宅室外落地：啟動單元外部無火焰；住宅室內：粗棉布無焦化或引燃，且最小規定安裝房間內可燃氣體濃度 ≤ 25% LFL",
+          "第 6 版重要修訂（9.8.1）：僅住宅用 BESS 符合表 9.1 性能準則時，方可免除第 10 章安裝級大規模火災測試"
+        ]
+      },
+      "exemptions": [
+        "第 6 版第 9.1.2 條：不屬於第 9.1.1 條 (a)～(e) 五類條件之電化學 BESS 不須執行單元級測試，直接進行第 10 章安裝級大規模火災測試。",
+        "第 6 版第 9.8.1 條：僅住宅用 BESS 若符合表 9.1 所列性能準則，可免除第 10 章安裝級大規模火災測試。"
+      ],
+      "related_tests": [
+        "UL9540A-2026-MODULE",
+        "UL9540A-2026-INSTALL"
+      ],
+      "source_reference": "9.1～9.8, Table 9.1",
+      "original_text_snippet": "The Installation Level – Large Scale Fire Test in Section 10 is not required if the following performance conditions outlined in Table 9.1 are met for residential-use BESS during the unit level test."
+    },
+    {
+      "id": "UL9540A-2026-INSTALL",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "安裝級大規模火災測試",
+      "name_en": "Installation Level – Large Scale Fire Test",
+      "section": "10",
+      "category": "THERM",
+      "subcategory": "熱蔓延 (Thermal Propagation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "MOSOC，靜置前壓降 > 1.0% 須補充電",
+          "detail": "啟動櫃體與目標電芯／模組充至最大運行荷電狀態 (MOSOC) 後靜置至少 1 小時，並於最長 24 小時內記錄基準開路電壓；啟動測試前若啟動模組壓降 > 1.0% 須重新充電，目標電芯／模組須於測試前 72 小時內充至 MOSOC（逾時壓降 > 1.0% 亦須重充）（10.2.12–10.2.14）。",
+          "source_reference": "10.2.12；10.2.13；10.2.14"
+        },
+        "temperature": {
+          "value": "戶外測試：外部環境 ≥ 0 °C、風速 ≤ 19.3 km/h、濕度 < 90% RH",
+          "detail": "室內測試為首選（開放式停車場採室內方法，屋頂採戶外方法，10.2.10）；戶外測試須於上風面量測風速 ≤ 19.3 km/h (12 mph，可用防風屏)、環境溫度 ≥ 0 °C (32 °F)、相對濕度 < 90% RH、無降水且管制周邊植被與可燃物（10.2.11）。",
+          "source_reference": "10.2.10；10.2.11"
+        },
+        "trigger": {
+          "value": "加熱器／電氣機械濫用加輔助點火源，或燃燒器",
+          "detail": "於啟動櫃體／群組內建立已發展火災並確保點燃可燃排氣：可採 (a) 加熱器加輔助點火源（火星塞、預熱塞、火花束或引燃火焰）、(b) 電氣或機械濫用加輔助點火源，或 (c) 燃燒器（擴散、預混、半預混，須記錄燃氣流量）；若排氣管路引離模組，須同時於模組旁與管路出口設點火源（10.6.1–10.6.5）。",
+          "source_reference": "10.6.1；10.6.2；10.6.3；10.6.4；10.6.5"
+        },
+        "trigger_location": {
+          "value": "對相鄰模組與目標櫃體產生最大熱應力之位置",
+          "detail": "依通風位置、附屬設備、外殼隔熱設計、與灑水頭距離及火勢成長進行結構審查，選定對相鄰模組與目標外殼產生最大熱應力處；通常位於最高儲能容量隔間、靠近外殼邊界及最低或次低垂直位置（10.6.7）。",
+          "source_reference": "10.6.7"
+        },
+        "termination_for_trigger": {
+          "value": "自測試開始持續運作至達成已發展火災狀態",
+          "detail": "啟動裝置須自測試開始持續運作至達成已發展火災（10.6.6）：戶外至少涵蓋啟動櫃體內整組垂直模組群（10.6.8），室內至少涵蓋單一完整模組完全熱失控蔓延及內部可燃物起火（10.6.9）；若因被動屏障或主動消防控制使火勢受限仍屬有效測試（10.6.10）。",
+          "source_reference": "10.6.6；10.6.8；10.6.9；10.6.10"
+        },
+        "termination": {
+          "value": "熄火、內部 < 100 °C 持續 3 小時、目標降溫 3 小時與觀察期滿；或失敗終止",
+          "detail": "須同時符合下列條件方得結束測試：(a) 啟動櫃體內外明火熄滅、(b) 發展火災與熱失控後內部溫度持續 3 小時 < 100 °C (212 °F)、(c) 目標 BESS 降溫趨近環境溫度且低於 10.10 限值至少 3 小時、(d) 具水基滅火系統者斷水後監控 12 小時、(e) 堆疊 BESS 於熄火後監控 24 小時；若發生 (f) 目標熱失控蔓延、(g) 堆疊倒塌、(h) 鋼角樑或目標超溫、或 (i) 危險狀況須介入，則終止（針對 (g) 介入者判定不合格）（10.9.1–10.9.2）。",
+          "source_reference": "10.9.1；10.9.2"
+        },
+        "apparatus": {
+          "value": "1 Hz 採樣、≤ 0.61 m 熱電偶網格、K=8.0 直立灑水系統（室內）",
+          "detail": "以 1 Hz 採樣；目標依分級法設置 ≥ 24 AWG K 型熱電偶（≤ 0.61 m × 0.61 m 網格，10.5.1–10.5.10）或 ≥ 13 mm 平光黑漆石膏板儀器化牆面（Option A 高 H+L；Option B 高 H 配 1/4 L 頂板，10.5.12）；評估可燃結構間距於最小間距設熱通量計（10.5.14）。室內設無受限非燃平滑天花板與斷開牆（距頂 ≥ 30.5 cm，垂直 152 mm 熱電偶陣列；壁掛式則相連）及 1.2 m 長 50×50×6 mm 鋼角樑（5 支 K 型熱電偶）（10.7.2–10.7.10）；預設 4 具 UL 199 直立標準灑水頭（K=8.0 gpm/psi^(1/2)、5-mm 93 °C 玻璃球、間距 3.05 m、距頂 30.5 cm、密度 12.22 mm/min、供水 90 分鐘）（10.7.14–10.7.19）。",
+          "source_reference": "10.5.1；10.5.4；10.5.10；10.5.12；10.5.14；10.7.2；10.7.4；10.7.8；10.7.14"
+        },
+        "method": {
+          "value": "模擬爆燃後開門／洩壓通風狀態（NFPA 68、Annex C 或開門方案）",
+          "detail": "模擬可燃排氣點燃與一次性滅火耗盡後的已發展火災（10.1.3–10.1.4）；啟動外殼所有爆燃洩壓區於測試前須開啟：可依 (1) 獨立 NFPA 68 報告設計開啟洩壓區（10.3.2–10.3.3）、(2) 依 Annex C 大規模爆燃測試開啟受影響之門扇／洩壓區（10.3.4–10.3.5），或 (3) 預先開啟全部設計洩壓區及至少一扇門／雙開門以產生最大持續熱暴露（10.3.6）；正常／熱失控通風口（如 NFPA 69）亦須開啟，目標外殼維持正常狀態（10.3.7–10.3.8）。",
+          "source_reference": "10.1.3；10.3.2；10.3.3；10.3.4；10.3.5；10.3.6；10.3.7；10.3.8"
+        },
+        "active_passive_controls": {
+          "value": "啟動端停用主動防蔓延與熱管理；主動消防可運作",
+          "detail": "主動消防系統可納入並運作（10.4.1）；主動熱失控蔓延抑制系統於戶外啟動櫃體須停用（10.4.2），於室內啟動模組及機械相連模組須停用（10.4.3），於符合 UL 9540 之目標櫃體須保持啟用（10.4.4）；冷水機組、熱管理與可燃氣體降濃系統於啟動櫃體不運作（10.4.5）；液冷／浸沒系統須排空啟動模組內不可燃冷卻液，保留可燃冷卻液與其餘模組冷卻液且不循環（10.4.6）。",
+          "source_reference": "10.4.1；10.4.2；10.4.3；10.4.4；10.4.5；10.4.6"
+        },
+        "configurations": {
+          "value": "最小允許間距實裝配置；多容量採最高能量；支援堆疊滿載",
+          "detail": "依安裝手冊最小允許間距配置啟動與目標外殼／群組／壁掛單元／結構（10.2.2–10.2.4）；若多種容量採用相同電芯模組且結構等效，以最高儲能容量為代表（10.2.7）；堆疊式 BESS 須裝設最大層數與滿載重量（10.8.1），上層目標底面須設 ≤ 0.61 m 間距熱電偶（10.8.3），亦可經製造商要求將整座堆疊視為啟動外殼（10.8.4）。",
+          "source_reference": "10.2.2；10.2.4；10.2.7；10.8.1；10.8.3；10.8.4"
+        },
+        "applicability": {
+          "value": "非住宅用室內／戶外／屋頂／停車場／堆疊 BESS",
+          "detail": "不涵蓋住宅用 BESS 單元或堆疊系統（10.1.7）；亦不要求用於水系電池（鉛酸、鎳鎘、金屬空氣、鎳鋅）、液流電池或經第 7 章電芯級證明不會熱失控之電池（10.1.8）。開放式停車場依室內測試、屋頂依戶外測試（10.2.10）。",
+          "source_reference": "10.1.7；10.1.8；10.2.10"
+        },
+        "sample_quantity": {
+          "value": "1 座全滿載啟動外殼／群組＋相鄰目標外殼或儀器化牆",
+          "detail": "啟動外殼或群組須全數裝填電池、內部附屬設備可燃物（HVAC、變流器、冷水機等）、電纜架與被動隔熱材（10.2.5–10.2.6）；目標外殼可為完整實裝、僅裝填靠啟動側電芯、空模組／熱質量、代表性樣品或儀器化牆面（10.2.8、10.5.5、10.5.11–10.5.12）。",
+          "source_reference": "10.2.5；10.2.6；10.2.8；10.5.5；10.5.11"
+        },
+        "pre_conditioning": {
+          "value": "充至 MOSOC 並靜置 ≥ 1 小時（24 小時內記錄基準 OCV）",
+          "detail": "啟動與目標 BESS 電芯／模組依規格充至 MOSOC 並靜置至少 1 小時，於 24 小時內記錄基準開路電壓；啟動前壓降 > 1.0% 須補充電，目標須於測試前 72 小時內充電（10.2.12–10.2.14）。",
+          "source_reference": "10.2.12；10.2.13；10.2.14"
+        },
+        "observation_period": {
+          "value": "停水／熄火後觀察復燃 12 小時（堆疊另須觀察倒塌 24 小時）",
+          "detail": "灑水或其他滅火系統停止運作後（或無滅火系統者於外部明火熄滅後）觀察 12 小時確認無復燃或再次熱失控（10.9.1(d)、10.10.2.11）；堆疊 BESS 於內外明火熄滅後觀察 24 小時確認無倒塌（10.9.1(e)、10.10.1.10、10.10.2.12）。",
+          "source_reference": "10.9.1；10.10.1.10；10.10.2.11；10.10.2.12"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "依戶外 (10.10.1 / Table 10.1) 與室內 (10.10.2 / Table 10.2) 判定目標無熱失控蔓延、溫度與熱通量不超限、結構不倒塌且無復燃。",
+        "details": [
+          "戶外 (10.10.1 & Table 10.1)：目標外殼內電芯／模組無排氣與無熱失控；未裝填電芯之目標無火焰經互連路徑竄入。",
+          "戶外與室內目標溫度（60 秒平均，以最接近電芯測點為準）：目標電芯與目標模組表面 ≤ 第 7 章平均電芯排氣溫度 (T_vent)；目標外殼內表面及戶外儀器化牆面 ≤ 110% 平均 T_vent（攝氏為準；戶外非電芯測點可累計 ≤ 5 分鐘超過限值但不超過 120%）。",
+          "可燃結構間距熱通量（60 秒平均，戶外 10.10.1.9 / 室內 10.10.2.9）：≤ 12.5 kW/m²（對齊 NFPA 80A）。",
+          "室內 (10.10.2 & Table 10.2)：熱失控須限縮於啟動外殼或啟動垂直模組群（少於 3 排並排時可限於緊鄰左右及上層，Fig 10.25），且走道對側或啟動群組外目標無火勢蔓延、排氣或熱失控。",
+          "室內牆面與天花板：儀器化牆面溫升 ≤ 97 °C (175 °F)；天花板鋼角樑最大 1 分鐘平均溫度 ≤ 538 °C (1000 °F)。",
+          "室內飛散與復燃：燃燒碎片不得超出啟動群組外或目標間距（取較大者）1.5 m (5 ft)；停水／熄火後 12 小時內未涉入區域無復燃或熱失控。",
+          "堆疊式 BESS（10.10.1.10 & 10.10.2.12）：24 小時觀察期後啟動外殼、堆疊目標與支撐結構無倒塌。"
+        ]
+      },
+      "exemptions": [
+        "不適用於住宅用 BESS 單元或堆疊系統（10.1.7）。",
+        "豁免水系電池（鉛酸、鎳鎘、金屬空氣、鎳鋅）、液流電池或經第 7 章電芯級測試證明不可能發生熱失控之化學體系（10.1.8）。"
+      ],
+      "related_tests": [
+        "UL9540A-2026-UNIT",
+        "UL9540A-2026-ANNEX-C"
+      ],
+      "source_reference": "10.1–10.11, Table 10.1, Table 10.2",
+      "original_text_snippet": "This installation level test covers testing of a battery energy storage system (BESS) installation by initiating a developed fire condition within the BESS enclosure, involving batteries and surrounding combustibles, and observing the effects on surrounding BESS or structures."
+    },
+    {
+      "id": "UL9540A-2026-ANNEX-C",
+      "normalized_id": "THERM-PROP",
+      "name_zh": "大規模爆燃測試（儲能外殼）",
+      "name_en": "Large Scale Deflagration Test for BESS Enclosures",
+      "section": "Annex C",
+      "category": "THERM",
+      "subcategory": "熱蔓延 (Thermal Propagation)",
+      "test_objects": [
+        "PACK_SYSTEM"
+      ],
+      "conditions": {
+        "soc": {
+          "value": "氣源電芯 MOSOC；DUT 內實模組電芯建議 ≤ 30% SOC",
+          "detail": "以實電池為燃料氣體來源時電芯須充至 MOSOC（C1.2）；DUT 若裝入完整終端模組（允許省略電氣互連），建議模組內電芯 SOC 不超過 30%（C1.5(a)）。",
+          "source_reference": "C1.2；C1.5"
+        },
+        "trigger": {
+          "value": "MOSOC 電芯排氣或等效合成可燃氣體＋空氣混合點火",
+          "detail": "使用 MOSOC 電芯或合成可燃氣體（層流燃燒速度與密閉容器最大爆燃壓力須 ≥ 第 7 章熱失控氣體實測值）並以空氣為氧化劑形成可燃混合氣（C1.2、C1.8）。",
+          "source_reference": "C1.2；C1.8"
+        },
+        "trigger_location": {
+          "value": "對設計爆燃洩壓區構成最大挑戰之釋放與點火位置",
+          "detail": "可燃混合氣應於對設計爆燃洩壓面積（deflagration vents）造成最大挑戰之位置釋放並點火（C1.12）。",
+          "source_reference": "C1.12"
+        },
+        "method": {
+          "value": "全體積（最大層流燃速濃度）或部分體積爆燃試驗",
+          "detail": "依第 7 章與第 8 章結果決定氣體釋放率與體積（代表失效電芯數不得少於第 8 章觀察值或點火前失效數，C1.3）；氣量足夠時於外殼自由體積內建立對應最大層流燃燒速度之均勻全體積爆燃（C1.9），否則建立部分體積爆燃（C1.10）。",
+          "source_reference": "C1.1；C1.3；C1.9；C1.10"
+        },
+        "apparatus": {
+          "value": "具內部障礙物與設計爆燃洩壓口之代表性 BESS 外殼",
+          "detail": "DUT 須代表實際 BESS 外殼、模組與內部障礙物，並包含所有設計爆燃洩壓區（C1.4、C1.7）；氣體管線與儀表穿孔改裝須最小化並受保護，不可成為失效點或爆燃開口（C1.11）。",
+          "source_reference": "C1.4；C1.7；C1.11"
+        },
+        "measurements": {
+          "value": "外殼破裂／主件分離與洩壓口開啟狀態；可選測超壓與灑水影響",
+          "detail": "記錄 DUT 是否災難性破裂、門板／洩壓口開啟狀態及外部 HVAC 等主件是否脫離（C1.14）；另可於 BESS 內部、相鄰 BESS、建築或人員暴露區量測入射超壓（C1.15），室內安裝可加測結構壓力衝擊及爆燃可能觸發之灑水頭數量（C1.16）。",
+          "source_reference": "C1.14；C1.15；C1.16"
+        },
+        "termination": {
+          "value": "點火失敗時調整氣體釋放、點火位置或混合條件重測",
+          "detail": "若未能成功點火，應重複測試並視需要調整初始氣體釋放位置、點火位置及／或混合氣條件以達成點火（C1.13）。",
+          "source_reference": "C1.13"
+        },
+        "applicability": {
+          "value": "無符合 NFPA 68 驗證之設計爆燃洩壓區時執行（支援 10.3.4）",
+          "detail": "當 BESS 外殼無符合 10.3.2–10.3.3（NFPA 68 報告驗證）之設計爆燃洩壓區且未採 10.3.6 開門方案時，須執行 Annex C 測試以決定大規模火災測試之爆燃後通風開口條件（10.3.4–10.3.5、C1.1）。",
+          "source_reference": "C1.1；10.3.4；10.3.5"
+        },
+        "sample_quantity": {
+          "value": "1 座代表性 BESS 外殼（模組可用實模組、密封空殼或金屬塊）",
+          "detail": "模組裝填可選用或混用：(a) 完整 BESS 模組（可省略互連，建議電芯 SOC ≤ 30%）、(b) 密封原電芯開口之空模組殼體，或 (c) 同尺寸、安裝位置與間距之堅固封閉金屬物件（C1.5）。",
+          "source_reference": "C1.4；C1.5"
+        },
+        "pre_conditioning": {
+          "value": "檢修門、艙門與蓋板依正常運行狀態關閉並鎖緊",
+          "detail": "測試開始時 DUT 之檢修門、艙門及／或蓋板應依正常運行設計關閉並鎖緊（C1.6）。",
+          "source_reference": "C1.6"
+        }
+      },
+      "acceptance_criteria": {
+        "summary": "外殼不得發生災難性或失控破裂且主要組件不得脫離，方可進入第 10 章大規模火災測試。",
+        "details": [
+          "DUT 不得發生災難性或失控破裂（若發生則不得進行大規模火災測試，C1.14）。",
+          "門板或檢修口開啟及設計爆燃洩壓區啟動屬於允許現象（C1.14）。",
+          "DUT 之主要組件（例如外部 HVAC 設備）不得與外殼分離（C1.14）。",
+          "爆燃後開啟之洩壓區、門扇或開口，須於後續第 10 章大規模火災測試開始時保持開啟（若部分設計洩壓區開啟，則全部設計洩壓區皆須開啟，10.3.5）。"
+        ]
+      },
+      "exemptions": [
+        "若外殼具備符合 NFPA 68 獨立報告驗證之設計爆燃洩壓區（10.3.2–10.3.3），或採用預先開啟全部設計洩壓區及至少一扇門之方案（10.3.6），則無須執行 Annex C 爆燃測試。"
+      ],
+      "related_tests": [
+        "UL9540A-2026-INSTALL"
+      ],
+      "source_reference": "Annex C (C1.1–C1.16), 10.3.4, 10.3.5",
+      "original_text_snippet": "The Large Fire Scale Test shall not proceed if the DUT ruptures catastrophically or in an uncontrolled fashion. Opening of doors or access points and the activation of designed deflagration pressure relief areas are permitted. Major components of the DUT, such as exterior HVAC equipment, shall not be separated from the enclosure."
+    }
+  ],
+  "test_sequence": {
+    "description": "UL 9540A:2026 為遞進式四級測試架構，輔以第 10.3 節之 Annex C 大規模爆燃測試（當外殼無 NFPA 68 設計洩壓區且未採預開門方案時）",
+    "sequences": [
+      {
+        "group": "層級遞進",
+        "tests": [
+          "UL9540A-2026-CELL",
+          "UL9540A-2026-MODULE",
+          "UL9540A-2026-UNIT",
+          "UL9540A-2026-INSTALL"
+        ],
+        "rule": "依 Figure 1.1 逐級推進：若電芯級無法誘發熱失控且排氣不可燃（7.8.1），免除模組級；若模組級滿足 8.5.1 三項條件，免除單元級；第 6 版第 9.1.1 條限定單元級僅適用五類對象（住宅 > 20 kWh、間距 < 0.9 m、屋內 > 1 kWh、非金屬外殼或含主動防蔓延系統），其餘直入第 10 章；且第 9.8.1 條限定僅住宅用 BESS 符合 Table 9.1 時可免除第 10 章。",
+        "source_reference": "Figure 1.1 Schematic of Test Sequence, 7.8.1, 8.5.1, 9.1.1, 9.8.1"
+      },
+      {
+        "group": "爆燃與大規模火災聯動",
+        "tests": [
+          "UL9540A-2026-ANNEX-C",
+          "UL9540A-2026-INSTALL"
+        ],
+        "rule": "第 10.3.4 條規定無 NFPA 68 驗證之爆燃洩壓區且未採預開門方案（10.3.6）時，須先執行 Annex C 大規模爆燃測試，確認外殼不災難性破裂且主件不脫離，並依爆燃後開啟之門板／洩壓口狀態執行第 10 章大規模火災測試。",
+        "source_reference": "10.3.1–10.3.8, Annex C"
+      }
+    ]
+  },
+  "global_exemptions": [
+    {
+      "id": "GE-01",
+      "description": "若電芯級測試無法誘發熱失控，且排氣依 ASTM E918 於常溫及排氣溫度均無可燃性危害，免除第 8 章模組級測試。",
+      "applicable_tests": [
+        "UL9540A-2026-MODULE",
+        "UL9540A-2026-UNIT",
+        "UL9540A-2026-INSTALL"
+      ],
+      "source_reference": "7.8.1"
+    },
+    {
+      "id": "GE-02",
+      "description": "若模組級測試同時符合排氣不可燃、模組外無火焰蔓延、且模組外表面溫度不超過電芯排氣溫度，免除第 9 章單元級測試。",
+      "applicable_tests": [
+        "UL9540A-2026-UNIT",
+        "UL9540A-2026-INSTALL"
+      ],
+      "source_reference": "8.5.1"
+    },
+    {
+      "id": "GE-03",
+      "description": "不屬於第 9.1.1 條 (a)～(e) 五類條件之電化學 BESS（非住宅系統且未整合主動熱失控傳播抑制系統等）免除單元級測試，直接執行第 10 章安裝級大規模火災測試。",
+      "applicable_tests": [
+        "UL9540A-2026-UNIT"
+      ],
+      "source_reference": "9.1.1, 9.1.2"
+    },
+    {
+      "id": "GE-04",
+      "description": "僅住宅用 BESS 於單元級測試符合 Table 9.1 性能準則時，可免除第 10 章安裝級大規模火災測試（第 6 版第 9.8.1 條收緊非住宅用系統免除資格）。",
+      "applicable_tests": [
+        "UL9540A-2026-INSTALL"
+      ],
+      "source_reference": "9.8.1"
+    },
+    {
+      "id": "GE-05",
+      "description": "住宅用 BESS 單元或堆疊系統不適用第 10 章安裝級大規模火災測試（須於單元級滿足 Table 9.1）。",
+      "applicable_tests": [
+        "UL9540A-2026-INSTALL"
+      ],
+      "source_reference": "10.1.7"
+    },
+    {
+      "id": "GE-06",
+      "description": "水系電池（鉛酸、鎳鎘、金屬空氣、鎳鋅）、液流電池或經第 7 章電芯級證明無法發生熱失控之化學體系，無須執行安裝級大規模火災測試。",
+      "applicable_tests": [
+        "UL9540A-2026-INSTALL"
+      ],
+      "source_reference": "10.1.8"
+    },
+    {
+      "id": "GE-07",
+      "description": "高溫電池室外貨櫃安裝豁免單元級測試，直接依 10.12–10.14 執行安裝級測試（本資料庫依收錄範圍排除高溫電池及液流／水系電池專屬條款）。",
+      "applicable_tests": [
+        "UL9540A-2026-UNIT"
+      ],
+      "source_reference": "9.1.5"
+    }
+  ],
+  "metadata": {
+    "schema_version": "2.0",
+    "created_by": "Swarm Extraction & Integration Pipeline",
+    "created_date": "2026-11-16",
+    "extraction_method": "PyMuPDF full-text extraction + page image verification from s9540A_6.pdf with verbatim quote checking",
+    "total_test_entries": 5,
+    "enrichment": "2026-11-16 建檔即依原文逐項核對全部試驗參數與程序欄位，100% 附 source_reference 條款出處（含 Clauses 1–10 及規範性附錄 Annex C；排除液流／鉛酸／高溫電池專屬條款）。",
+    "parameter_review": [
+      "2026-11-16：依 s9540A_6.pdf 原文建檔並核對全部 54 筆條件欄位（UL9540A-2026-CELL、UL9540A-2026-MODULE、UL9540A-2026-UNIT、UL9540A-2026-INSTALL、UL9540A-2026-ANNEX-C），出處見各欄位 source_reference。"
+    ]
+  }
+}
