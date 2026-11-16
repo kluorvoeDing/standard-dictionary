@@ -102,6 +102,13 @@ export default function Palette({ library, ready, selected, onClose, onOpenTest,
                   </span>
                 )}
               </button>
+              {item.kind !== 'std' && (
+                <button type="button" className="v-hit-add" title="請 AI 小幫手解析這項測試"
+                  onClick={() => onAskAi(`請解析 ${baseId} 第 ${item.result.item.section} 節（${cleanTestName(item.result.item.nameZh)}）的試驗條件與判定依據，並標明條款。`)}
+                  aria-label={`問 AI：${baseId} § ${item.result.item.section}`}>
+                  <Icon name="sparkles" size={13} />問 AI
+                </button>
+              )}
               <button type="button" className={`v-hit-add${isOn ? ' is-on' : ''}`} onClick={() => onToggle(baseId)} disabled={!isOn && selected.length >= MAX_COMPARE}
                 aria-label={isOn ? `取消比對 ${baseId}` : `把 ${baseId} 加入比對`}>
                 <Icon name={isOn ? 'check' : 'plus'} size={13} />{isOn ? '已選' : '比對'}

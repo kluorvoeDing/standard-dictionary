@@ -43,7 +43,6 @@ test('數值、單位、限定詞都相同，只是寫法不同：wording（stat
     ['13 ± 0.78 kN', '13.0 ± 0.78 kN'],
     ['1.0 m', '1 m'],
     ['0.8 mm (0.03 in)，最大總行程 1.6 mm (0.06 in)', '0.8 mm (0.030 in) 振幅，最大總行程 1.6 mm (0.060 in)'],
-    ['7 Hz～200 Hz～7 Hz (交越點 17.62 Hz、49.84 Hz)', '7 Hz～200 Hz'],
     ['直徑 150 mm 平面鋼壓板', '兩個平面間擠壓（直徑 150 mm 平面鋼壓板）'],
     ['至爆炸或燃燒殆盡', '至爆炸或燃燒完畢'],
   ]) {
@@ -108,4 +107,18 @@ test('CSV：每列含判定與各標準的值、出處與空白類型', () => {
   const lines = comparisonToCsv(comparison).split('\r\n');
   assert.equal(lines.length, 3);
   assert.equal(lines[1], '"外部短路","外部電阻","僅一份規定","80 ""mΩ""","6.1","未涵蓋此測試",""');
+});
+
+test('括號內的條件不得被當成換算忽略', () => {
+  const tier = (a, b) => judgeRow([[{ value: a }], [{ value: b }]]).tier;
+  assert.equal(tier('-40 ± 2 °C (≥ 6 小時)', '-40 ± 2 °C'), 'differ');
+  assert.equal(tier('1.0 m', '1 m（或實際現場使用程序規定之高度，取較大者）'), 'differ');
+  assert.equal(tier('≤ 5 mΩ (含接線)', '≤ 5 mΩ'), 'differ');
+  assert.equal(tier('圓錐角 45° (45°～60°)', '圓錐角 45°'), 'differ');
+  assert.equal(tier('7 Hz～200 Hz～7 Hz (交越點 17.62 Hz、49.84 Hz)', '7 Hz～200 Hz'), 'differ');
+  assert.equal(tier('溫度較峰值下降 20% 或短路持續 24 小時', '溫度降至峰值 20% 或短路持續 24 小時'), 'differ');
+  assert.equal(tier('1 It 恆流放電至 Ude', '1It 恆流放電'), 'differ');
+  assert.equal(tier('7 Hz～200 Hz～7 Hz', '7 Hz～200 Hz'), 'differ');
+  assert.equal(tier('610 ± 25 mm', '610 ± 25 mm (24 ± 1 in)'), 'wording');
+  assert.equal(tier('1.0 m', '1 m (3.28 ft)'), 'wording');
 });

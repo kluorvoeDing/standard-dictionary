@@ -1,4 +1,5 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { flushSync } from 'react-dom';
 import Icon from '../components/Icon';
 import { Modal, IconButton, Source, Value } from '../lib/ui';
 import { getOrgColor, levelLabel } from '../utils/orgColors';
@@ -52,19 +53,21 @@ function Row({ group, row, names, baseIds, hidden, open, onToggle }) {
   );
 }
 
-function GroupCard({ group, comparison, diffOnly, showProcedure, multiLevel, onOpenViewer }) {
+function GroupCard({ group, comparison, diffOnly, showProcedure, multiLevel, printing, onOpenViewer }) {
   const [expanded, setExpanded] = useState(false);
   const [procOpen, setProcOpen] = useState(false);
   const [openRows, setOpenRows] = useState(() => new Set());
   const [soleOpen, setSoleOpen] = useState(false);
   const sole = soleOwner(group);
+  // 列印時一律展開獨有測試，不讓內容因收合而漏印。
+  const soleShown = soleOpen || printing;
   const names = comparison.columns.map(c => c.doc.display_name || c.baseId);
   const baseIds = comparison.columns.map(c => c.baseId);
   const span = comparison.columns.length + 1;
   const { counts } = group;
   const rest = counts.same + counts.wording + counts.only;
   const hideRest = diffOnly && !expanded;
-  const collapsed = (hideRest && counts.differ === 0) || (sole >= 0 && !soleOpen);
+  const collapsed = (hideRest && counts.differ === 0) || (sole >= 0 && !soleShown);
   const showProc = procOpen || showProcedure;
   const toggleRow = (key) => setOpenRows(prev => {
     const next = new Set(prev);
@@ -119,10 +122,10 @@ function GroupCard({ group, comparison, diffOnly, showProcedure, multiLevel, onO
 
           {group.technical.map(row => (
             <Row key={row.key} group={group} row={row} names={names} baseIds={baseIds}
-              hidden={(hideRest && row.tier !== 'differ') || (sole >= 0 && !soleOpen)} open={openRows.has(row.key)} onToggle={() => toggleRow(row.key)} />
+              hidden={(hideRest && row.tier !== 'differ') || (sole >= 0 && !soleShown)} open={openRows.has(row.key)} onToggle={() => toggleRow(row.key)} />
           ))}
 
-          {diffOnly && rest > 0 && !(sole >= 0 && !soleOpen) && (
+          {diffOnly && rest > 0 && !(sole >= 0 && !soleShown) && (
             <tr className="c-more">
               <td colSpan={span}>
                 <button type="button" onClick={() => setExpanded(v => !v)} aria-expanded={expanded}>
@@ -200,6 +203,14 @@ function Picker({ library, selected, onAdd, onClose }) {
 export default function Compare({ library, selected, view, setView, onBack, onRemove, onAdd, onOpenViewer, onNotice }) {
   const [showProcedure, setShowProcedure] = useState(false);
   const [picking, setPicking] = useState(false);
+  const [printing, setPrinting] = useState(false);
+  useEffect(() => {
+    const before = () => flushSync(() => setPrinting(true));
+    const after = () => setPrinting(false);
+    window.addEventListener('beforeprint', before);
+    window.addEventListener('afterprint', after);
+    return () => { window.removeEventListener('beforeprint', before); window.removeEventListener('afterprint', after); };
+  }, []);
   const comparison = useMemo(() => buildComparison(selected, library, view), [selected, library, view]);
   const allCategories = useMemo(
     () => buildComparison(selected, library, { ...view, category: 'ALL' }).groups.map(g => g.category),
@@ -329,7 +340,7 @@ export default function Compare({ library, selected, view, setView, onBack, onRe
 
           {groups.map(g => (
             <GroupCard key={`${g.key}:${selected.join()}`} group={g} comparison={comparison} diffOnly={view.diffOnly}
-              showProcedure={showProcedure} multiLevel={view.levels.length > 1} onOpenViewer={onOpenViewer} />
+              showProcedure={showProcedure} multiLevel={view.levels.length > 1} printing={printing} onOpenViewer={onOpenViewer} />
           ))}
 
           {comparison.groups.length === 0 && (

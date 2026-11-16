@@ -61,7 +61,15 @@ const QUALIFIERS = [
   '每', '共', '總', '平均', '峰', '有效值', '半正弦', '正弦', '隨機', '對數',
   '垂直', '水平', '縱', '橫', '長軸', '短軸', '寬面', '窄面', '正', '反',
   '表面', '內部', '外部', '環境', '製造商', '直到', '之前', '之後', '試驗後', '循環壽命', '靜置',
+  // 終點與增減方向：「下降 20%」與「降至 20%」意義不同；「放電至 Ude」比「放電」多了截止條件。
+  '至', '下降', '上升', '紋理', '平板', '顆粒',
 ];
+
+const CONVERSION_STRIP = new RegExp(`\\d+(?:\\.\\d+)?|${CJK_UNITS}|[±.,·×/%°A-Za-zΩμ²³≈=\\s-]`, 'g');
+/** 括號內容是否只是單位換算：拿掉數字、單位與 ± 等符號後什麼都不剩。 */
+function isConversion(inner) {
+  return /\d/.test(inner) && inner.replace(CONVERSION_STRIP, '') === '';
+}
 
 /**
  * 取出文字中的「數值＋單位」與意義標記，排序後串成指紋。
@@ -69,9 +77,16 @@ const QUALIFIERS = [
  */
 export function numericSignature(value) {
   const text = String(value ?? '').normalize('NFKC').replace(/\s+/g, '').replace(/℃/g, '°C').replace(/[~〜～]/g, '~');
-  // 括號內多半是補充說明（英制換算、掃頻範圍、依據）：數值只取括號外的，限定詞仍看全文。
-  const outside = text.replace(/\([^()]*\)/g, ' ');
+  // 括號內若只是單位換算（例如「(24±1in)」「(1.2倍)」）就忽略；
+  // 含中文說明、比較符號、範圍或「或」的括號會改變條件，整段納入指紋。
+  const notes = [];
+  const outside = text.replace(/\(([^()]*)\)/g, (all, inner) => {
+    if (!isConversion(inner)) notes.push(inner);
+    return ' ';
+  });
+  // 括號外沒有數值時（例如「兩平面擠壓（直徑 150 mm 鋼壓板）」），括號內就是主體。
   const main = /\d/.test(outside) ? outside : text;
+  if (main === text) notes.length = 0;
   const quantities = new Set();
   let rest = text;
   for (const m of main.matchAll(QUANT)) {
@@ -85,11 +100,13 @@ export function numericSignature(value) {
   let scan = main;
   for (const [name, re] of MARKERS) {
     const hits = scan.match(re);
-    if (hits) marks.push(name === '範圍' ? name : `${name}${hits.length}`);
+    if (hits) marks.push(`${name}${hits.length}`);
     scan = scan.replace(re, ' ');
   }
-  const quals = QUALIFIERS.filter(q => rest.includes(q));
-  return [[...quantities].sort().join('|'), marks.join(''), quals.join(',')].join('#');
+  // 先拿掉比較詞（「至少」「至多」、範圍的「至」），再找限定詞。
+  const plain = MARKERS.reduce((t, [, re]) => t.replace(re, ' '), rest);
+  const quals = QUALIFIERS.filter(q => plain.includes(q));
+  return [[...quantities].sort().join('|'), marks.join(''), quals.join(','), notes.sort().join('|')].join('#');
 }
 
 // 人工審閱過的同義寫法（純文字或指紋判不出來的），每一組內的寫法視為同義。

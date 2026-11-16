@@ -24,6 +24,8 @@
   --top-h: 52px;
   --bar-h: 49px;
 }
+/* 深色只用於螢幕；列印一律用淺色，避免白字印在白紙上。 */
+@media screen {
 [data-theme='dark'] {
   --page: #141517;
   --card: #202226;
@@ -46,6 +48,7 @@
   --brand-bg: #1e2b44;
   --warn: #f4b466;
   --warn-bg: #3d2c14;
+}
 }
 
 html { scroll-padding-top: calc(var(--top-h) + var(--bar-h) + 96px); }
@@ -356,6 +359,14 @@ td.is-na { background: var(--void-na); }
   .c-colmeta > .v-seg { display: inline-flex; }
   .c-legend { margin: 8px 0; gap: 2px 12px; }
   .c-row { border-top: 1px solid var(--line); }
+  /* 觸控：主要控制項至少 40–44px 高。 */
+  .v-iconbtn { width: 44px; height: 44px; }
+  .v-seg button { height: 40px; min-width: 44px; }
+  .v-seg.is-tiny button { height: 32px; }
+  .v-btn, .c-check, .c-more button { min-height: 44px; }
+  .c-colx { width: 32px; height: 32px; top: 2px; right: 0; }
+  .c-colhead { padding-right: 34px; }
+  .c-clausebtn, button.c-label { min-height: 36px; display: inline-flex; align-items: center; }
   .c-row:first-child { border-top: 0; }
   .c-row th { border: 0; padding: 7px 12px 3px; background: transparent; }
   .c-row td { border: 0; padding: 3px 12px 7px 12px; display: grid; grid-template-columns: 86px minmax(0, 1fr); column-gap: 8px; }
@@ -371,7 +382,7 @@ td.is-na { background: var(--void-na); }
 @media print {
   @page { size: A4 landscape; margin: 10mm; }
   html, body { background: #fff; font-size: 12px; }
-  .v-top, .c-toolbar, .c-toc, .v-tray, .v-notice, .c-colx, .c-head-corner button, .c-more, button.c-label svg { display: none !important; }
+  .v-top, .c-toolbar, .c-toc, .v-tray, .v-notice, .c-colx, .c-head-corner button, .c-more, button.c-label svg, .c-sole svg { display: none !important; }
   .c-layout { display: block; padding: 0; max-width: none; }
   .c-head { position: static; background: none; }
   .c-head th { padding-top: 0; }

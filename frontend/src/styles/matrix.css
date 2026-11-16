@@ -96,7 +96,7 @@
 }
 
 @media print {
-  body > *:not(.mx-backdrop) { display: none !important; }
+  body:has(> .mx-backdrop) > *:not(.mx-backdrop) { display: none !important; }
   html, body { height: auto !important; overflow: visible !important; background: Canvas !important; }
   .modal-backdrop.mx-backdrop {
     position: static;
