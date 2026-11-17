@@ -7,6 +7,8 @@
 - **主代理**：拆解任務、跑這些腳本、看頁面影像驗收、寫覆寫檔、寫入與提交。
 - **子代理**：依 [`SPEC.md`](./SPEC.md) 定位條款、判斷數值。
 
+多代理並行（Swarm）時的角色對應、重試上限與停止條件，見 `MAINTENANCE.md` 第 7 節。
+
 ## 安裝
 
 ```bash
@@ -40,10 +42,10 @@ python3 scripts/review/extract_text.py UL2054 docs/source_pdfs/s2054_3.pdf
 node scripts/review/make_worklist.mjs UL2054                                   # 試驗程序欄位（任務 P）
 node scripts/review/make_worklist.mjs ULC2580 --tests ULC2580-B2-1,ULC2580-B2-2 --all-fields   # 補參數（任務 R）
 
-# 3. 定位子代理（SPEC 任務 L）產生 locate.json，再切摘錄；問題必須為 0
+# 3. 定位子代理（SPEC 任務 L）產生 locate.json，再切摘錄；問題必須為 0（最多 3 輪，見下方「卡住時」）
 python3 scripts/review/excerpts.py UL2054
 
-# 4. 判斷子代理（SPEC 任務 P 或 R）產生 decisions.json，再做機械驗收；問題必須為 0
+# 4. 判斷子代理（SPEC 任務 P 或 R）產生 decisions.json，再做機械驗收；問題必須為 0（最多 3 輪）
 python3 scripts/review/verify.py UL2054
 
 # 5. 主代理人工驗收（見下一節），有錯就寫 overrides.json，再跑一次 verify.py
@@ -55,6 +57,12 @@ node scripts/normalize_data.mjs --write --all
 npm run validate
 node scripts/audit_enrichment.mjs        # 該標準的三個欄位應顯示「已核對」
 ```
+
+### 卡住時
+
+- 同一步驟重做 3 輪仍不過，就停止這份標準，標為「未完成」並記下原因，不可修改 `verify.py`、`check_numbers.mjs` 或放寬規則。
+- 只有少數幾筆過不了時（例如 OCR 文字裡找不到引文），把那幾筆從 `decisions.json` 移到 `uncertain`，其餘照常寫入。
+- `apply.mjs` 在全部欄位模式下，只要有一筆數字和舊值不同、又沒有核准標記，**整份標準都不會寫入**。待使用者核准的數值更正，先把那筆改回 `keep`（附 `clauses`、維持原值），列入回報清單，等核准後另開一輪處理。
 
 看某一頁的影像：
 
@@ -94,6 +102,8 @@ node scripts/review/make_worklist.mjs UL2054 --all-fields     # 不加 --tests �
   "number_correction": {"old": "24 小時", "new": "4 小時", "reason": "6.4.3.3 原文為靜置 4 h（第 12 頁影像）"}
   ```
   只有 overrides 裡的這個標記能放行，子代理的 decisions 不能自己放行。每一筆更正都要列在回報裡給使用者。
+- 注意：核准標記以**測試 id** 為單位，會放行該測試內所有數值變動。加標記前先確認同一測試內沒有其他未核對的數字改動。
+- 使用者要求數值更正須經其本人核准時，先把該筆改回 `keep`、維持原值，見上方「卡住時」。
 - **ULC2580** 的附錄 B 引用 IEC 62660-2，部分條件出自「IEC 62660-3 部門中文閱讀版」。核對 ULC2580 前，把閱讀版文字接在原文後面，引文才查得到：
   ```bash
   python3 scripts/review/extract_text.py ULC2580 docs/source_pdfs/ULC-2580-2022-en.pdf
@@ -126,4 +136,4 @@ node scripts/review/near_same.mjs --json     # 給子代理當工作單
 - `keep` 附條款：原值不變，補上 `source_reference`。
 - `delete`：欄位移除。
 
-比對頁「試驗程序」旁的附註依 `source_reference` 判斷：同一測試的程序欄位都有出處時，顯示「已對照原文」。
+比對頁欄頭的「出處 x%」與查閱視窗裡的「待補」，都是依 `source_reference` 計算的。

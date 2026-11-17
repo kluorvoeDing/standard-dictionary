@@ -26,8 +26,9 @@
    ```bash
    npm run normalize          # 有改 data/ 時
    npm run sync:catalog       # 有新增、刪除測試或標準時
-   npm run check:all          # validate、normalize:check、check:catalog、check:search、lint:ui
+   npm run check:all          # validate、normalize:check、check:catalog、check:search、lint:ui、check:wording
    cd frontend && npx vite build
+   npm run test:acceptance    # 有改 frontend/ 時（Playwright 公開驗收）
    git status                 # 確認沒有 node_modules、dist、.env、*.log、原文檔
    ```
 4. 每完成一件工作，在 `AGENTS.md` 新增一則條目（日期、事件、內容、影響、後續）。
@@ -84,7 +85,7 @@
 2. **少寫說明文字**：介面看得懂就不加說明；同一件事只說一次；不寫「建議：…」「支援…」。placeholder 在手機寬度不能被截斷。
 3. **範例要有效**：搜尋範例、AI 建議問題、文件中的範例查詢，都要用腳本確認真的有結果。搜尋範例由 `scripts/check_search.mjs` 驗證，新增範例要一併加進去。（快速檢索的「過充 6V」在全庫搜不到任何東西）
 4. **快捷鍵**：只用 ⌘K／Ctrl+K 與「/」開搜尋、Esc 關閉、方向鍵與 Enter 操作清單。不搶占瀏覽器常用組合，手機上不顯示快捷鍵提示。
-5. **彈窗**：一律用 `.modal-backdrop`／`.modal-panel`。Esc 可關閉，開啟時焦點進入、關閉時回到原按鈕。不用 `alert()`／`confirm()`。
+5. **彈窗**：導覽、查閱、比對、搜尋一律用 `frontend/src/lib/ui.jsx` 的 `Modal`（`.v-modal`）；總覽矩陣與 AI 小幫手沿用 `.modal-backdrop`／`.modal-panel`。Esc 可關閉，開啟時焦點進入、關閉時回到原按鈕。不用 `alert()`／`confirm()`。
 6. **狀態可還原**：比對中的標準、篩選放在網址上，重新整理和上一頁都要正常。
 7. **每次前端改動都要截圖驗收**：桌機 1440 與手機 390、淺色與深色，至少包含改動的畫面。截圖給使用者看，不進 repo。
 8. 送進 AI 的資料要控制大小：全庫模式 8 萬字以內（2026-11 約 7.1 萬字），不要把整份 JSON 原樣送出。
@@ -103,7 +104,18 @@
   - Upstash 免費資料庫 14 天沒使用會被刪除。程式已改成限流失效時照常服務，但要提醒使用者重建。
 - `catalog.json` 中 `is_latest: false` 的標準：列給使用者，請他提供新版原文。
 
-## 7. 回報給使用者
+## 7. 多代理並行（Swarm）
+
+多個代理同時工作時，照下面分工，避免互相覆寫或卡在重做迴圈。
+
+- **角色對應**：協調者＝本檔與 `scripts/review/README.md` 的「主代理」；工作者＝「子代理」，照 `scripts/review/SPEC.md` 做；驗收者是另一個子代理，不可驗收自己產出的結果。
+- **誰能寫 repo**：只有協調者能改 `data/` 與其他 repo 檔案，並負責執行 `apply.mjs`、commit。工作者只寫 `.review-work/out/`。一次只寫入一份標準，寫完跑完檢查再換下一份。
+- **要讀什麼**：協調者讀 `AGENTS.md` 頂部鐵律（不必讀完下方歷史紀錄）、本檔、`scripts/review/README.md`；工作者只讀 `scripts/review/SPEC.md` 和自己那份標準的工作檔。
+- **重試上限**：同一份標準、同一個步驟最多重做 3 輪（`excerpts.py`、`verify.py`、`apply.mjs`、驗收者退回都算）。第 3 輪仍不過，就把那份標準標為「未完成」，寫下卡在哪裡，換下一份。不可修改檢查腳本或放寬規則來讓它通過。
+- **等使用者決定的事不阻塞**：需要使用者核准或提供原文的項目（數值更正、外部標準原文），從這一輪的決定中拿掉、維持原值，列入回報清單，其餘照常寫入。
+- **進度要能接續**：每份標準結束時，把狀態寫進 `.review-work/progress.md`（完成、未完成與原因、待使用者決定），中斷後從這個檔案接續，不重做已完成的標準。
+
+## 8. 回報給使用者
 
 - 第一句寫結果：完成了什麼、還缺什麼。
 - 附數字：例如改了幾筆、「N 項不同」前後、檢查結果。
