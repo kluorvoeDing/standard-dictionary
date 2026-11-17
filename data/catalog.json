@@ -1089,9 +1089,9 @@
     "source_quality": "pdf-authoritative",
     "schema_v2_json": "data/UL9540A.json",
     "test_count_v2": 4,
-    "is_latest": true,
-    "latest_version": "Fifth Edition (2025)",
-    "versions_behind": 0,
+    "is_latest": false,
+    "latest_version": "Sixth Edition (2026)",
+    "versions_behind": 1,
     "base_standard_id": "UL-9540A",
     "prerequisites": {
       "CELL": [
@@ -1109,6 +1109,48 @@
     },
     "application": "儲能系統 (ESS)",
     "edition_history": "2017-11 (First), 2018-01 (Second), 2018-06 (Third), 2019-11 (Fourth), 2025-03-12 (Fifth)"
+  },
+  {
+    "document_id": "UL-9540A-2026",
+    "document_type": "test_method",
+    "document_strength": "test_method",
+    "comparison_ready": true,
+    "display_name": "UL-9540A (2026)",
+    "full_name": "ANSI/CAN/UL 9540A:2026 - Standard for Test Method for Evaluating Thermal Runaway Fire Propagation in Battery Energy Storage Systems (Sixth Edition)",
+    "publisher": "UL (Underwriters Laboratories) / ANSI / SCC",
+    "publication_date": "2026-03-13",
+    "li_applicable": true,
+    "item_count": 5,
+    "available_objects": [
+      "CELL",
+      "MODULE",
+      "PACK_SYSTEM"
+    ],
+    "test_type": "測試方法標準 (Test Method Standard)",
+    "normativity": "normative",
+    "important_note": null,
+    "schema_v2_json": "data/UL9540A-2026.json",
+    "test_count_v2": 5,
+    "is_latest": true,
+    "latest_version": "Sixth Edition (2026)",
+    "versions_behind": 0,
+    "base_standard_id": "UL-9540A",
+    "prerequisites": {
+      "CELL": [
+        "UL 1973"
+      ],
+      "MODULE": [
+        "UL 1973"
+      ],
+      "PACK": [
+        "UL 1973"
+      ],
+      "SYSTEM": [
+        "UL 1973"
+      ]
+    },
+    "application": "儲能系統 (ESS)",
+    "edition_history": "2017-11 (First), 2018-01 (Second), 2018-06 (Third), 2019-11 (Fourth), 2025-03-12 (Fifth), 2026-03-13 (Sixth)"
   },
   {
     "document_id": "UL1642-2022",

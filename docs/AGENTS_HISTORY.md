@@ -63,6 +63,20 @@
 >
 > CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/`：不得出現 emoji、不得新增寫死的顏色（`#rrggbb`／`rgba()`，白色與純黑白遮罩除外）、不得新增中英並列標題、不得有小於 12px 的字級（請用 `--fs-*` token），並確認前端能建置。既有違規記在 `scripts/ui_style_baseline.json`（每檔上限，只能降不能升）；清掉後執行 `node scripts/check_ui_style.mjs --update-baseline` 降低基準線。
 
+## 2026-11-16 (Data - 新增 ANSI/CAN/UL 9540A:2026 第六版與第 5 版並存)
+- 事件：新增 `ANSI/CAN/UL 9540A:2026`（Sixth Edition，2026-03-13）至資料庫（`data/UL9540A-2026.json`）與目錄（`data/catalog.json`），保留第 5 版（`data/UL9540A.json`）形成新舊版並存對照。
+- 背景：第 6 版對單元級適用範圍、安裝級大規模火災測試 (LSFT) 與規範性附錄 Annex C 大規模爆燃測試進行大幅修訂。
+- 內容：
+  - 新增 `data/UL9540A-2026.json`：收錄核心 4 層級（Cell / Module / Unit / Installation）及 Annex C 大規模爆燃測試共 5 項測試（均對齊 `THERM-PROP`）、26 項術語、54 筆條件欄位（100% 附 `source_reference` 並完成 `s9540A_6.pdf` 原文逐字引文驗證），依範圍排除液流／水系（鉛酸、鎳鎘等）與高溫電池（10.12–10.14）條款。
+  - 更新 `data/catalog.json`：第 5 版 `UL-9540A` 與第 6 版 `UL-9540A-2026` 共用 `base_standard_id: "UL-9540A"`，第 5 版標記 `is_latest: false`、`versions_behind: 1`、`latest_version: "Sixth Edition (2026)"`；第 6 版設 `display_name: "UL-9540A (2026)"`、`publication_date: "2026-03-13"`、`is_latest: true`、`versions_behind: 0`、`application: "儲能系統 (ESS)"`。
+  - 5th vs 6th 關鍵變更摘要：
+    1. **Clause 3–4**：新增 NFPA 80A 與 UL/ULC 199 引用；新增 11 項術語並以 MOSOC（4.19）取代 SOC。
+    2. **Clause 7–8**：電芯與模組級測試方法無實質變更（註：第 5 版庫內 7.4 誤記 FTIR，第 6 版忠實記錄為 GC／氫氣感測器）。
+    3. **Clause 9（9.1.1–9.1.2、9.8.1）**：單元級測試收斂為僅適用 5 類對象（住宅 > 20 kWh、住宅間距 < 0.9 m、住宅屋內 > 1 kWh、住宅非金屬外殼、或整合主動式熱失控傳播抑制系統之 BESS），其餘直入第 10 章；且第 9.8.1 條限定僅「住宅用 BESS」符合 Table 9.1 方可免除第 10 章。
+    4. **Clause 10（LSFT）**：全面納入戶外／屋頂／室內／停車場／堆疊 BESS（10.1.7 排除所有住宅用 BESS、10.1.8 豁免水系／液流／不熱失控化學體系、移除 UL 2556 電纜架）；新增 10.3 爆燃後通風條件（NFPA 68、Annex C 或開門）、10.4 主動防蔓延停用與液冷不可燃冷卻液排空、10.6 強制輔助點火源與已發展火災規模要求（戶外整組垂直模組群／室內單一完整模組）、10.7 無受限非燃平滑天花板＋1.2 m 鋼角樑＋UL 199 K=8.0 直立灑水頭 90 分鐘供水（取代原 6.10 m 房間與 K=5.6）、10.8 堆疊滿載測試；10.10 依戶外（Table 10.1）與室內（Table 10.2）訂定目標 100%/110% T_vent、可燃結構熱通量 ≤ 12.5 kW/m²（原 1.3 kW/m² 逃生路徑）、鋼角樑 ≤ 538 °C、燃燒碎片 ≤ 1.5 m 與停水後 12 小時（堆疊 24 小時）觀察期。
+    5. **Annex C（新增規範性附錄）**：儲能外殼大規模爆燃測試（MOSOC 電芯或等效合成可燃氣體點火），驗證外殼不發生災難性破裂且主要組件不脫離，以決定第 10 章測試開啟開口。
+- 影響：`npm run check:all`（含 `validate`、`normalize:check`、`check:catalog`、`check:search`、`lint:ui`、`check:wording`）0 錯誤 0 警告通過；`node scripts/audit_enrichment.mjs` 確認全庫 34 份標準樣板值 0 筆、重複欄位 0 筆、已核對 1,409 筆（100%）；Vite 前端建置成功。
+
 ## 2026-11-05 (Data & Review - Batch 5 技術參數出處核對與寫法統一完成)
 - 事件：完成交接清單 Batch 5 全數 9 份標準（370 筆技術參數條件欄位）之原文出處核對（`source_reference` 覆蓋率達 100%）、工程數值零遺失校驗，以及跨標準近同義寫法統一，降低 `near_same` 基準線。
 - 背景：接續交接文檔 `Antigravity_交接_參數出處核對.md`，針對 `UN 38.3`、`IEC 62660-3`、`JIS C 8714`、`UL 9540A`、`UL 2743`、`UL 9540`、`IEC 62619`、`JIS C 8715-2`、`IEC 62133-2` 進行技術參數原文逐字引文驗證與跨標準規格統一。
