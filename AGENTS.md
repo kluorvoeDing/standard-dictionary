@@ -63,6 +63,17 @@
 >
 > CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/`：不得出現 emoji、不得新增寫死的顏色（`#rrggbb`／`rgba()`，白色與純黑白遮罩除外）、不得新增中英並列標題、不得有小於 12px 的字級（請用 `--fs-*` token），並確認前端能建置。既有違規記在 `scripts/ui_style_baseline.json`（每檔上限，只能降不能升）；清掉後執行 `node scripts/check_ui_style.mjs --update-baseline` 降低基準線。
 
+## 2026-11-17 (Data & Review - 第二輪技術參數出處補齊、錯置欄位修正與寫法統一 T1–T4)
+- 事件：依 `docs/ANTIGRAVITY_資料工作單.md`（T1～T4）於分支 `data/sources-round2` 完成第二輪 21 份標準技術參數出處補齊、錯置欄位修正、`UL1642-2022` 測試代號唯一化及跨標準同義寫法統一。
+- 背景：前次審查後尚有 21 份標準未完成逐項原文出處核對，且 `UL1642-2022` 與 `UL1642` 共用 `UL1642-T10`～`T20` 代號、跨標準存在部分錯置欄位及同義不同寫法。
+- 內容：
+  - **T3（代號唯一化）**：將 `data/UL1642-2022.json` 測試代號 `UL1642-T10`～`T20`（含 `T14A`、`test_sequence`、`global_exemptions`、`venting_leakage_criteria`、`cross_references`）改為 `UL1642-2022-T10`～`T20`。
+  - **T1（出處補齊與原文驗證）**：完成 21 份指定標準全部技術參數欄位原文引文核對與 `source_reference` 補齊（21 份標準全數達 100%，其中 `ULC2580` 含 5 筆外部引用 `uncertain` 項；`GB40165` 掃描版先以 `tesseract chi_sim+eng` 建立文字層並依頁面影像逐項校驗）；同步於 `data/field_schema.json` 為 `ELEC-OD` 與 `THERM-PROP` 補入 `operating_conditions`。凡原文數字或敘述與庫內資料不同者皆維持原值與 `clauses`、不加 `number_correction`，彙整於待使用者核准清單。
+  - **T2（錯置欄位修正）**：以 `field_inventory.mjs` 盤查後修正 8 筆具原文佐證之錯置欄位（`ULC2580-T27`、`ULC2580-T33`、`GB47741-7.9`、`GB43854-T5`、`MIL-PRF-32383-4.7.4.9`、`JISC8714-OCP`、`UL2271-T40`、`UL9540A-2026-ANNEX-C`），並補齊 `data/field_schema.json` 對應類別欄位。
+  - **T4（寫法統一）**：依 `near_same.mjs` 候選統一 21 份標準中嚴格同義但寫法不同之參數文字（保留 `>` 與 `≥`、`<` 與 `≤` 等不同語意及待核准項），更新 `scripts/review/near_same_baseline.json` 由 429 降至 257。
+- 影響：全庫 34 份標準 `source_reference` 覆蓋率達 100%；`npm run check:all`（含 `validate`、`normalize:check`、`check:catalog`、`check:search`、`lint:ui`、`check:wording`）0 錯誤 0 警告、`check_numbers.mjs --all` 0 數值遺失、`audit_enrichment.mjs` 樣板值 0 筆、重複欄位 0 筆。
+- 後續：待使用者審核 `data/sources-round2` 分支內容，並決議待核准數值／敘述更正清單與 `ULC2580` 外部引用 `uncertain` 項後，再決定是否合併回 `main`。
+
 ## 2026-11-17 (UI - v2 改版上線：導覽、查閱、比對三個畫面重寫)
 - 事件：使用者對 Antigravity 製作的 A／A′／B 三版不滿意，改由 Claude 重做 v2（分支 `exp/v2-fable`），經使用者在預覽版檢視後核准合併回 `main`，取代舊版介面。
 - 內容：
