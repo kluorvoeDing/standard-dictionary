@@ -32,24 +32,23 @@
       "conditions": {
         "temperature": {
           "value": "57 ± 4 °C",
-          "detail": "放置在 57 ± 4 °C 的環境中，待電池達到溫度後再放置 30 分鐘。"
+          "detail": "放置在 57 ± 4 °C 的環境中，待電池達到溫度後再放置 30 分鐘。",
+          "source_reference": "6.1"
         },
         "external_resistance": {
           "value": "≤ 5 mΩ",
-          "detail": "用導線連接電池正負極端，確保全部外部電阻不高於 5 mΩ。"
+          "detail": "用導線連接電池正負極端，確保全部外部電阻不高於 5 mΩ。",
+          "source_reference": "6.1"
         },
         "termination": {
           "value": "溫度下降至峰值溫升 80% 或短接時間達 6 小時",
-          "detail": "當電池溫度下降值達到峰值溫升的 80% 或短接時間達到 6 小時 時終止（選較嚴者）。"
-        },
-        "apparatus": {
-          "value": "達溫後再放置 30 分鐘",
-          "detail": "待電池達到溫度後再放置 30 分鐘。"
+          "detail": "當電池溫度下降值達到峰值溫升的 80% 或短接時間達到 6 小時 時終止（選較嚴者）。",
+          "source_reference": "6.1"
         },
         "sample_quantity": {
           "value": "3 個（樣品 1～3）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：6.1 為樣品 1～3。依附錄 A 圖 A.1，樣品 1～3 依序進行 7.1、7.2、7.3、7.4、6.1，五項共用同一組樣品。",
-          "source_reference": "4.6.2；表 1；6.1"
+          "source_reference": "4.6.2；表1；附錄A；6.1"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.1 充滿電",
@@ -87,20 +86,23 @@
       "conditions": {
         "charging_current": {
           "value": "最大充電電流",
-          "detail": "用製造商規定的最大充電電流充電。"
+          "detail": "用製造商規定的最大充電電流充電。",
+          "source_reference": "6.2"
         },
         "charging_voltage": {
           "value": "1.5 倍充電限制電壓",
-          "detail": "充電至 1.5 倍的充電限制電壓後持續恆壓充電 1 小時，或總充電時間達到 1.5 小時。"
+          "detail": "充電至 1.5 倍的充電限制電壓後持續恆壓充電 1 小時，或總充電時間達到 1.5 小時。",
+          "source_reference": "6.2"
         },
         "termination": {
           "value": "恆壓 1 小時或總充電時間達 1.5 小時",
-          "detail": "充電至 1.5 倍的充電限制電壓後持續恆壓充電 1 小時，或總充電時間達到 1.5 小時。"
+          "detail": "充電至 1.5 倍的充電限制電壓後持續恆壓充電 1 小時，或總充電時間達到 1.5 小時。",
+          "source_reference": "6.2"
         },
         "sample_quantity": {
           "value": "3 個（樣品 4～6）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：6.2 為樣品 4～6。",
-          "source_reference": "4.6.2；表 1；6.2"
+          "source_reference": "4.6.2；表1；6.2"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.1 充滿電",
@@ -133,16 +135,18 @@
       "conditions": {
         "current": {
           "value": "1 It 反向充電 (若 Im < 1 It 則以 Im 充電，t = (1It / Im) * 90)",
-          "detail": "以 1 It 的電流進行反向充電至負的充電上限電壓（-Uup）。若最大放電電流小於 1 It，則以最大放電電流反向充電，時間 t = (1It / Im) * 90。 如果在反向充電 90 分鐘 內，電壓達到負的充電上限電壓（－Uup），應通過減小電流保持該電壓繼續進行反向充電。"
+          "detail": "以 1 It 的電流進行反向充電至負的充電上限電壓（-Uup）。若最大放電電流小於 1 It，則以最大放電電流反向充電，時間 t = (1It / Im) * 90。 如果在反向充電 90 分鐘 內，電壓達到負的充電上限電壓（－Uup），應通過減小電流保持該電壓繼續進行反向充電。",
+          "source_reference": "6.3"
         },
         "duration": {
           "value": "90 分鐘",
-          "detail": "反向充電時間共計 90 分鐘。"
+          "detail": "反向充電時間共計 90 分鐘。",
+          "source_reference": "6.3"
         },
         "sample_quantity": {
           "value": "3 個（樣品 7～9）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：6.3 為樣品 7～9。",
-          "source_reference": "4.6.2；表 1；6.3"
+          "source_reference": "4.6.2；表1；6.3"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.2 放完電",
@@ -175,20 +179,23 @@
       "conditions": {
         "pressure": {
           "value": "11.6 kPa",
-          "detail": "抽真空將箱內壓強降低至 11.6 kPa。"
+          "detail": "抽真空將箱內壓強降低至 11.6 kPa。",
+          "source_reference": "7.1"
         },
         "temperature": {
           "value": "20 ± 5 °C",
-          "detail": "放置於 20 ± 5 °C 的真空箱中。"
+          "detail": "放置於 20 ± 5 °C 的真空箱中。",
+          "source_reference": "7.1"
         },
         "duration": {
           "value": "6 小時",
-          "detail": "保持 6 小時。"
+          "detail": "保持 6 小時。",
+          "source_reference": "7.1"
         },
         "sample_quantity": {
           "value": "3 個（樣品 1～3）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：7.1 為樣品 1～3。依附錄 A 圖 A.1，樣品 1～3 依序進行 7.1、7.2、7.3、7.4、6.1，五項共用同一組樣品。",
-          "source_reference": "4.6.2；表 1；7.1"
+          "source_reference": "4.6.2；表1；附錄A；7.1"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.1 充滿電",
@@ -221,28 +228,33 @@
       "conditions": {
         "high_temperature": {
           "value": "72 ± 2 °C (保持 6 小時)",
-          "detail": "72 ± 2 °C 保持 6 小時，然後 -40 ± 2 °C 保持 6 小時。每兩個溫度之間的轉換時間應不大於 30 分鐘。"
+          "detail": "72 ± 2 °C 保持 6 小時，然後 -40 ± 2 °C 保持 6 小時。每兩個溫度之間的轉換時間應不大於 30 分鐘。",
+          "source_reference": "7.2"
         },
         "low_temperature": {
           "value": "-40 ± 2 °C (保持 6 小時)",
-          "detail": "-40 ± 2 °C 保持 6 小時。每兩個溫度之間的轉換時間應不大於 30 分鐘。"
+          "detail": "-40 ± 2 °C 保持 6 小時。每兩個溫度之間的轉換時間應不大於 30 分鐘。",
+          "source_reference": "7.2"
         },
         "transition_time": {
           "value": "≤ 30 分鐘",
-          "detail": "每兩個溫度之間的轉換時間應不大於 30 分鐘。"
+          "detail": "每兩個溫度之間的轉換時間應不大於 30 分鐘。",
+          "source_reference": "7.2"
         },
         "dwell_time": {
           "value": "大型電池暴露極端溫度時間至少 12 小時",
-          "detail": "大型電池暴露極端溫度時間至少 12 小時。"
+          "detail": "大型電池暴露極端溫度時間至少 12 小時。",
+          "source_reference": "7.2"
         },
         "cycles": {
           "value": "10 次循環",
-          "detail": "重複 10 次循環。"
+          "detail": "重複 10 次循環。",
+          "source_reference": "7.2"
         },
         "sample_quantity": {
           "value": "3 個（樣品 1～3）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：7.2 為樣品 1～3。依附錄 A 圖 A.1，樣品 1～3 依序進行 7.1、7.2、7.3、7.4、6.1，五項共用同一組樣品。",
-          "source_reference": "4.6.2；表 1；7.2"
+          "source_reference": "4.6.2；表1；附錄A；7.2"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.1 充滿電",
@@ -275,24 +287,28 @@
       "conditions": {
         "waveform": {
           "value": "正弦振動 (7 Hz → 200 Hz → 7 Hz)",
-          "detail": "正弦振動測試，頻率 7 Hz ~ 200 Hz ~ 7 Hz。圓柱形 2 個方向，方形和軟包 3 個方向。"
+          "detail": "正弦振動測試，頻率 7 Hz ~ 200 Hz ~ 7 Hz。圓柱形 2 個方向，方形和軟包 3 個方向。",
+          "source_reference": "7.3；表4"
         },
         "vibration_frequency": {
           "value": "7 Hz～200 Hz～7 Hz",
-          "detail": "正弦振動測試，頻率 7 Hz ~ 200 Hz ~ 7 Hz。"
+          "detail": "正弦振動測試，頻率 7 Hz ~ 200 Hz ~ 7 Hz。",
+          "source_reference": "7.3；表4"
         },
         "test_duration": {
           "value": "每個方向 12 個循環 (共 3 小時)",
-          "detail": "每個方向進行 12 個循環，每個方向循環時間共計 3 小時。圓柱形 2 個方向，方形和軟包 3 個方向。"
+          "detail": "每個方向進行 12 個循環，每個方向循環時間共計 3 小時。圓柱形 2 個方向，方形和軟包 3 個方向。",
+          "source_reference": "7.3；表4"
         },
         "axes": {
           "value": "圓柱形 2 個方向；方形和軟包 3 個方向",
-          "detail": "圓柱形 2 個方向，方形和軟包 3 個方向。"
+          "detail": "圓柱形 2 個方向，方形和軟包 3 個方向。",
+          "source_reference": "7.3"
         },
         "sample_quantity": {
           "value": "3 個（樣品 1～3）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：7.3 為樣品 1～3。依附錄 A 圖 A.1，樣品 1～3 依序進行 7.1、7.2、7.3、7.4、6.1，五項共用同一組樣品。",
-          "source_reference": "4.6.2；表 1；7.3"
+          "source_reference": "4.6.2；表1；附錄A；7.3"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.1 充滿電",
@@ -325,28 +341,33 @@
       "conditions": {
         "waveform": {
           "value": "半正弦脈衝",
-          "detail": "半正弦脈衝，峰值 150 gn ± 25 gn，持續 6 ms ± 1 ms。大型電池 50 gn ± 8 gn，持續 11 ms ± 2 ms。"
+          "detail": "半正弦脈衝，峰值 150 gn ± 25 gn，持續 6 ms ± 1 ms。大型電池 50 gn ± 8 gn，持續 11 ms ± 2 ms。",
+          "source_reference": "7.4"
         },
         "acceleration_peak": {
           "value": "150 gn ± 25 gn (大型電池 50 gn ± 8 gn)",
-          "detail": "峰值 150 gn ± 25 gn。大型電池 50 gn ± 8 gn。"
+          "detail": "峰值 150 gn ± 25 gn。大型電池 50 gn ± 8 gn。",
+          "source_reference": "7.4"
         },
         "pulse_duration": {
           "value": "6 ms ± 1 ms (大型電池 11 ms ± 2 ms)",
-          "detail": "持續 6 ms ± 1 ms。大型電池持續 11 ms ± 2 ms。"
+          "detail": "持續 6 ms ± 1 ms。大型電池持續 11 ms ± 2 ms。",
+          "source_reference": "7.4"
         },
         "shock_count": {
           "value": "圓柱 12 次；方形軟包 18 次",
-          "detail": "每個方向進行三次衝擊，接著反方向三次。圓柱 12 次，方形軟包 18 次。"
+          "detail": "每個方向進行三次衝擊，接著反方向三次。圓柱 12 次，方形軟包 18 次。",
+          "source_reference": "7.4"
         },
         "direction": {
           "value": "每個方向正反各 3 次",
-          "detail": "每個方向進行三次衝擊，接著反方向三次。"
+          "detail": "每個方向進行三次衝擊，接著反方向三次。",
+          "source_reference": "7.4"
         },
         "sample_quantity": {
           "value": "3 個（樣品 1～3）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：7.4 為樣品 1～3。依附錄 A 圖 A.1，樣品 1～3 依序進行 7.1、7.2、7.3、7.4、6.1，五項共用同一組樣品。",
-          "source_reference": "4.6.2；表 1；7.4"
+          "source_reference": "4.6.2；表1；附錄A；7.4"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.1 充滿電",
@@ -379,28 +400,33 @@
       "conditions": {
         "soc": {
           "value": "放電至額定容量 50%",
-          "detail": "試驗前需將樣品放電至額定容量的 50%。"
+          "detail": "試驗前需將樣品放電至額定容量的 50%。",
+          "source_reference": "7.5"
         },
         "steel_bar": {
           "value": "直徑 15.8 ± 0.1 mm 金屬棒",
-          "detail": "直徑 15.8 ± 0.1 mm 鋼棒橫置於電芯中心（電池幾何中心表面）。方形和軟包電池僅對其寬面進行衝擊。"
+          "detail": "直徑 15.8 ± 0.1 mm 鋼棒橫置於電芯中心（電池幾何中心表面）。方形和軟包電池僅對其寬面進行衝擊。",
+          "source_reference": "7.5"
         },
         "impact_mass": {
           "value": "9.1 ± 0.1 kg 重物",
-          "detail": "採用質量為 9.1 kg ± 0.1 kg 的重物（9.1 ± 0.1 kg 重錘）。"
+          "detail": "採用質量為 9.1 kg ± 0.1 kg 的重物（9.1 ± 0.1 kg 重錘）。",
+          "source_reference": "7.5"
         },
         "drop_height": {
           "value": "610 ± 25 mm 自由落體",
-          "detail": "從 610 mm ± 25 mm 高度自由落體撞擊（自 610 ± 25 mm 落下）。"
+          "detail": "從 610 mm ± 25 mm 高度自由落體撞擊（自 610 ± 25 mm 落下）。",
+          "source_reference": "7.5"
         },
         "orientation": {
           "value": "圓柱縱軸向與重物表面平行，金屬棒與縱軸垂直；方形和軟包僅對寬面衝擊",
-          "detail": "圓柱形電池衝擊時使其縱軸向與重物表面平行，金屬棒與電池縱軸向垂直且盡量與衝擊面平行。方形和軟包電池僅對其寬面進行衝擊。"
+          "detail": "圓柱形電池衝擊時使其縱軸向與重物表面平行，金屬棒與電池縱軸向垂直且盡量與衝擊面平行。方形和軟包電池僅對其寬面進行衝擊。",
+          "source_reference": "7.5"
         },
         "sample_quantity": {
           "value": "3 個（樣品 10～12）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：7.5 為樣品 10～12。",
-          "source_reference": "4.6.2；表 1；7.5"
+          "source_reference": "4.6.2；表1；7.5"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.1 充滿電、靜置 10 分鐘，再按 4.5.2 放出額定容量的 50%",
@@ -438,32 +464,38 @@
       "conditions": {
         "force": {
           "value": "50 kN",
-          "detail": "施加 50 kN ± 1 kN 擠壓力，速度 0.1 mm/s。"
+          "detail": "施加 50 kN ± 1 kN 擠壓力，速度 0.1 mm/s。",
+          "source_reference": "7.6"
         },
         "apparatus": {
           "value": "半徑 75 mm 半圓柱體",
-          "detail": "鋼質半圓柱體置於寬面擠壓。"
+          "detail": "鋼質半圓柱體置於寬面擠壓。",
+          "source_reference": "7.6"
         },
         "termination": {
           "value": "達最大力或電壓降 1/3",
-          "detail": "壓力達最大值或電池電壓下降 1/3 時停止。"
+          "detail": "壓力達最大值或電池電壓下降 1/3 時停止。",
+          "source_reference": "7.6"
         },
         "crush_params": {
           "value": "半圓柱體長度大於電池尺寸",
-          "detail": "擠壓工具半圓柱體的長度必須大於電池尺寸。 半圓柱體縱軸須經過寬面幾何中心且與電池極耳方向垂直。"
+          "detail": "擠壓工具半圓柱體的長度必須大於電池尺寸。 半圓柱體縱軸須經過寬面幾何中心且與電池極耳方向垂直。",
+          "source_reference": "7.6"
         },
         "response_time": {
           "value": "反應時間 ≤ 100 ms",
-          "detail": "達到停止條件後至設備實際停止的間隔時間應 ≤ 100 ms。"
+          "detail": "達到停止條件後至設備實際停止的間隔時間應 ≤ 100 ms。",
+          "source_reference": "7.6"
         },
         "orientation": {
           "value": "依據電池形狀放置",
-          "detail": "圓柱形電池擠壓時使其縱軸向與平面平行。"
+          "detail": "圓柱形電池擠壓時使其縱軸向與平面平行。",
+          "source_reference": "7.6"
         },
         "sample_quantity": {
           "value": "3 個（樣品 13～15）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：7.6 為樣品 13～15。",
-          "source_reference": "4.6.2；表 1；7.6"
+          "source_reference": "4.6.2；表1；7.6"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.1 充滿電",
@@ -501,20 +533,23 @@
       "conditions": {
         "apparatus": {
           "value": "Φ 5 mm 鋼針",
-          "detail": "耐高溫鋼針，圓錐角 45°。"
+          "detail": "耐高溫鋼針，圓錐角 45°。",
+          "source_reference": "7.7"
         },
         "speed": {
           "value": "0.1 mm/s",
-          "detail": "刺入速度 0.1 mm/s。"
+          "detail": "刺入速度 0.1 mm/s。",
+          "source_reference": "7.7"
         },
         "depth": {
           "value": "10 mm 或 30% 厚度",
-          "detail": "針刺深度應扣除外殼厚度，對於電池外殼厚度小於或等於 10 mm 的，按 10 mm 計入。"
+          "detail": "針刺深度應扣除外殼厚度，對於電池外殼厚度小於或等於 10 mm 的，按 10 mm 計入。",
+          "source_reference": "7.7"
         },
         "sample_quantity": {
           "value": "3 個（樣品 16～18）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：7.7 為樣品 16～18。",
-          "source_reference": "4.6.2；表 1；7.7"
+          "source_reference": "4.6.2；表1；7.7"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.1 充滿電",
@@ -552,20 +587,23 @@
       "conditions": {
         "heating_rate": {
           "value": "5 ± 2 °C/min",
-          "detail": "升溫速率 5 ± 2 °C/min，達 130 ± 2 °C 後恆溫。"
+          "detail": "升溫速率 5 ± 2 °C/min，達 130 ± 2 °C 後恆溫。",
+          "source_reference": "7.8"
         },
         "target_temperature": {
           "value": "130 ± 2 °C",
-          "detail": "升溫速率 5 ± 2 °C/min，達 130 ± 2 °C 後恆溫。"
+          "detail": "升溫速率 5 ± 2 °C/min，達 130 ± 2 °C 後恆溫。",
+          "source_reference": "7.8"
         },
         "duration": {
           "value": "持續 1 小時",
-          "detail": "持續 1 小時。"
+          "detail": "持續 1 小時。",
+          "source_reference": "7.8"
         },
         "sample_quantity": {
           "value": "3 個（樣品 19～21）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：7.8 為樣品 19～21。",
-          "source_reference": "4.6.2；表 1；7.8"
+          "source_reference": "4.6.2；表1；7.8"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.1 充滿電",
@@ -599,29 +637,33 @@
       "conditions": {
         "height": {
           "value": "視質量而定 (2.5 ~ 100 cm)",
-          "detail": "<7 kg: 100 cm(自由); 7~20 kg: 100 cm(底面); 20~50 kg: 100-5*(m-20)/3 cm; 50~100 kg: 5 cm; ≥100 kg: 2.5 cm。"
+          "detail": "<7 kg: 100 cm(自由); 7~20 kg: 100 cm(底面); 20~50 kg: 100-5*(m-20)/3 cm; 50~100 kg: 5 cm; ≥100 kg: 2.5 cm。",
+          "source_reference": "7.9.1；表5"
         },
         "surface": {
           "value": "混凝土板或金屬板",
-          "detail": "自由落體跌落於混凝土板或金屬板上。"
+          "detail": "自由落體跌落於混凝土板或金屬板上。",
+          "source_reference": "7.9.1；7.9.2；7.9.3"
         },
         "soc": {
           "value": "以 0.2It 放電至安裝/維護 SOC",
-          "detail": "跌落前，需以 0.2It 的電流將樣品放電至安裝或維護狀態下的 SOC。"
+          "detail": "跌落前，需以 0.2It 的電流將樣品放電至安裝或維護狀態下的 SOC。",
+          "source_reference": "7.9.2；7.9.3"
         },
         "orientation": {
           "value": "質量 ≥ 50 kg 需包含邊和角跌落",
-          "detail": "針對質量 ≥ 50 kg 的樣品，需測試邊和角方向，且重複 2 次。"
+          "detail": "針對質量 ≥ 50 kg 的樣品，需測試邊和角方向，且重複 2 次。",
+          "source_reference": "7.9.3；表5"
         },
         "sample_quantity": {
           "value": "電池 3 個（樣品 22～24）；電池組 1 個（樣品 1）",
           "detail": "4.6.2：電池 3 個、電池組 1 個；表 1：樣品 22～24；表 2：樣品 1。表 5 注 a：樣品質量為三個樣品實測值的平均值。",
-          "source_reference": "4.6.2；表 1；表 2；7.9"
+          "source_reference": "4.6.2；表1；表2；表5；7.9"
         },
         "pre_conditioning": {
           "value": "預處理後，按 4.5.1 充滿電；電池組不做靜電放電",
           "detail": "4.6.4 a)：按 4.5 的充放電程序進行 2 個完整充放電循環，循環之間靜置 10 分鐘（大型電池 30 分鐘）；注 2：跌落樣品不做靜電放電預處理（電池組只做 a)，不做 b)）；7.9.1：按 4.5.1 充滿電；7.9.2、7.9.3：充滿電後以 0.2 It 恆流放電至製造商規定的安裝或維護荷電狀態，製造商未規定則不放電。",
-          "source_reference": "4.6.4；注 2；4.5.1；7.9.1；7.9.2；7.9.3"
+          "source_reference": "4.6.4；注2；4.5.1；7.9.1；7.9.2；7.9.3"
         },
         "observation_period": {
           "value": "跌落後靜置至少 1 小時並目測檢查",
@@ -654,28 +696,33 @@
       "conditions": {
         "charging_current": {
           "value": "推薦最大充電電流",
-          "detail": "用推薦最大充電電流充電。BMS 應控制充電電壓不超過充電上限電壓。"
+          "detail": "用推薦最大充電電流充電。BMS 應控制充電電壓不超過充電上限電壓。",
+          "source_reference": "8.3"
         },
         "charging_voltage": {
           "value": "≥ 1.1 倍充電上限電壓",
-          "detail": "充電電壓設定為大於等於上限電壓的 1.1 倍。如果電壓超過 103% 或過充時間達到 1 分鐘，則停止。"
+          "detail": "充電電壓設定為大於等於上限電壓的 1.1 倍。如果電壓超過 103% 或過充時間達到 1 分鐘，則停止。",
+          "source_reference": "8.3"
         },
         "termination": {
           "value": "BMS 控制電壓不超上限；電壓超 103% 或時間達 1 分鐘停止",
-          "detail": "BMS 應控制充電電壓不超過充電上限電壓。如果電壓超過 103% 或過充時間達到 1 分鐘，則停止。"
+          "detail": "BMS 應控制充電電壓不超過充電上限電壓。如果電壓超過 103% 或過充時間達到 1 分鐘，則停止。",
+          "source_reference": "8.3"
         },
         "cycles": {
           "value": "連續重複試驗 3 次",
-          "detail": "依上述步驟連續重複試驗 3 次。"
+          "detail": "依上述步驟連續重複試驗 3 次。",
+          "source_reference": "8.3"
         },
         "operating_conditions": {
           "value": "BMS 控制充電電壓不超過充電上限電壓",
-          "detail": "BMS 應控制充電電壓不超過充電上限電壓。"
+          "detail": "BMS 應控制充電電壓不超過充電上限電壓。",
+          "source_reference": "8.3"
         },
         "sample_quantity": {
           "value": "1 個電池組或電池組系統（樣品 2）",
           "detail": "4.6.2：電池組樣品 1 個；表 2：8.3 為樣品 2；表注 b：樣品是電池組或電池組系統二者之一。8.3～8.6 在表 2 皆為樣品 2（同一樣品編號）。8.3 規定將樣品進行 3 次測試。",
-          "source_reference": "4.6.2；表 2；8.3"
+          "source_reference": "4.6.2；表2；8.3"
         },
         "pre_conditioning": {
           "value": "完成 4.6.4 預處理後，按 4.5.2 放完電",
@@ -715,24 +762,28 @@
       "conditions": {
         "current": {
           "value": "比最大充電電流大 20% (1.2 倍)",
-          "detail": "以比最大充電電流大 20% 的電流進行充電。BMS 應控制充電電流不超過最大充電電流。"
+          "detail": "以比最大充電電流大 20% 的電流進行充電。BMS 應控制充電電流不超過最大充電電流。",
+          "source_reference": "8.4"
         },
         "termination": {
           "value": "BMS 控制充電電流不超過最大充電電流",
-          "detail": "BMS 應控制充電電流不超過最大充電電流。"
+          "detail": "BMS 應控制充電電流不超過最大充電電流。",
+          "source_reference": "8.4"
         },
         "cycles": {
           "value": "連續重複試驗 3 次",
-          "detail": "依上述步驟連續重複試驗 3 次。"
+          "detail": "依上述步驟連續重複試驗 3 次。",
+          "source_reference": "8.4"
         },
         "operating_conditions": {
           "value": "BMS 控制充電電流不超過最大充電電流",
-          "detail": "BMS 應控制充電電流不超過最大充電電流。"
+          "detail": "BMS 應控制充電電流不超過最大充電電流。",
+          "source_reference": "8.4"
         },
         "sample_quantity": {
           "value": "1 個電池組或電池組系統（樣品 2）",
           "detail": "4.6.2：電池組樣品 1 個；表 2：8.4 為樣品 2；表注 b：樣品是電池組或電池組系統二者之一。8.3～8.6 在表 2 皆為樣品 2（同一樣品編號）。8.4 規定將樣品進行 3 次測試。",
-          "source_reference": "4.6.2；表 2；8.4"
+          "source_reference": "4.6.2；表2；8.4"
         },
         "pre_conditioning": {
           "value": "完成 4.6.4 預處理後，按 4.5.2 放完電",
@@ -772,24 +823,23 @@
       "conditions": {
         "discharge_current": {
           "value": "最大放電電流",
-          "detail": "使用最大放電電流進行測試。BMS 應控制放電電壓不低於放電截止電壓。"
+          "detail": "使用最大放電電流進行測試。BMS 應控制放電電壓不低於放電截止電壓。",
+          "source_reference": "8.5"
         },
         "termination": {
           "value": "BMS 控制放電電壓不低於放電截止電壓",
-          "detail": "BMS 應控制放電電壓不低於放電截止電壓。"
+          "detail": "BMS 應控制放電電壓不低於放電截止電壓。",
+          "source_reference": "8.5"
         },
         "cycles": {
           "value": "連續重複試驗 3 次",
-          "detail": "依上述步驟連續重複試驗 3 次。"
-        },
-        "precondition": {
-          "value": "放電至 30% 容量",
-          "detail": "試驗前以 0.2It 放電至 額定容量的 30%。"
+          "detail": "依上述步驟連續重複試驗 3 次。",
+          "source_reference": "8.5"
         },
         "sample_quantity": {
           "value": "1 個電池組或電池組系統（樣品 2）",
           "detail": "4.6.2：電池組樣品 1 個；表 2：8.5 為樣品 2；表注 b：樣品是電池組或電池組系統二者之一。8.3～8.6 在表 2 皆為樣品 2（同一樣品編號）。8.5 規定將樣品進行 3 次測試。",
-          "source_reference": "4.6.2；表 2；8.5"
+          "source_reference": "4.6.2；表2；8.5"
         },
         "pre_conditioning": {
           "value": "預處理後，充滿電再放電至額定容量 30%",
@@ -831,20 +881,23 @@
       "conditions": {
         "soc": {
           "value": "預先充電至 50% SOC",
-          "detail": "試驗前預先充電至 50% SOC。"
+          "detail": "試驗前預先充電至 50% SOC。",
+          "source_reference": "8.6"
         },
         "target_temperature": {
           "value": "高於最高工作溫度 5 °C",
-          "detail": "將環境溫度升高至高於最高工作溫度 5 °C。BMS 應控制溫度不超過上限充放電溫度。"
+          "detail": "使樣品的溫度上升至比最高工作溫度高 5 °C，在此高溫下繼續充電至 BMS 終止充電（最高工作溫度指電池或電池組的上限充電溫度值，取較小者）。",
+          "source_reference": "8.6"
         },
         "operation": {
-          "value": "BMS 控制溫度不超過上限充放電溫度",
-          "detail": "BMS 應控制溫度不超過上限充放電溫度。"
+          "value": "BMU/BMS 發現過高溫度並終止充電",
+          "detail": "BMU/BMS 應能發現過高溫度並終止充電。",
+          "source_reference": "8.6"
         },
         "sample_quantity": {
           "value": "1 個電池組或電池組系統（樣品 2）",
           "detail": "4.6.2：電池組樣品 1 個；表 2：8.6 為樣品 2；表注 b：樣品是電池組或電池組系統二者之一。8.3～8.6 在表 2 皆為樣品 2（同一樣品編號）。",
-          "source_reference": "4.6.2；表 2；8.6"
+          "source_reference": "4.6.2；表2；8.6"
         },
         "pre_conditioning": {
           "value": "預處理後，放完電再充電至額定容量 50%",
@@ -883,20 +936,23 @@
       "conditions": {
         "trigger": {
           "value": "加熱功率依單電池能量縮放 (30 W 至 >600 W)",
-          "detail": "加熱功率依據 Appendix B (Table B.1) 的單電池能量進行縮放（範圍從 30W 至大於 600W 不等）。"
+          "detail": "加熱功率依據附錄 B（表 B.1）的單電池能量進行縮放（範圍從 30 W 至大於 600 W 不等），使用平面狀或棒狀加熱裝置。",
+          "source_reference": "9.7.1；B.2.2；表B.1"
         },
         "heating_power": {
           "value": "30 W 至大於 600 W (依附錄 B 表 B.1)",
-          "detail": "加熱功率依據 Appendix B (Table B.1) 的單電池能量進行縮放（範圍從 30W 至大於 600W 不等）。"
+          "detail": "加熱功率依據附錄 B（表 B.1）的單電池能量進行縮放（範圍從 30 W 至大於 600 W 不等：E<100 Wh 為 30～300 W，100≤E<400 Wh 為 300～1000 W，400≤E<800 Wh 為 300～2000 W，E≥800 Wh 為 >600 W）。",
+          "source_reference": "B.2.2；表B.1"
         },
         "termination_for_trigger": {
-          "value": "溫度達到 300 °C 時停止加熱",
-          "detail": "當溫度達到 300 °C 時停止加熱。"
+          "value": "發生熱失控或溫度達 300 °C 時停止加熱",
+          "detail": "當發生熱失控或 B.2.2 定義的監測點溫度達到 300 °C 時，停止觸發，關閉加熱裝置。",
+          "source_reference": "B.2.3"
         },
         "sample_quantity": {
           "value": "3 個（樣品 25～27）",
           "detail": "4.6.2：電池每項試驗樣品 3 個；表 1：9.7.1 為樣品 25～27。",
-          "source_reference": "4.6.2；表 1；9.7.1"
+          "source_reference": "4.6.2；表1；9.7.1"
         },
         "pre_conditioning": {
           "value": "預處理後，充滿電（附錄 B）",
@@ -934,12 +990,13 @@
       "conditions": {
         "trigger": {
           "value": "激光加熱為首選 (或其他觸發單體，依附錄 C、D)",
-          "detail": "按照附錄 C、D 進行熱擴散試驗程序。激光加熱為首選。"
+          "detail": "按照附錄 C、D 進行熱擴散試驗程序。激光加熱為首選。",
+          "source_reference": "9.7.2；附錄C；附錄D"
         },
         "sample_quantity": {
           "value": "1 個電池組或電池組系統（樣品 6）",
           "detail": "4.6.2：電池組樣品 1 個；表 2：9.7.2 為樣品 6；表注 b：樣品是電池組或電池組系統二者之一。",
-          "source_reference": "4.6.2；表 2；9.7.2"
+          "source_reference": "4.6.2；表2；9.7.2"
         },
         "pre_conditioning": {
           "value": "完成 4.6.4 預處理後，按 4.5.1 充滿電",
@@ -978,20 +1035,23 @@
       "conditions": {
         "temp": {
           "value": "25 ± 5 °C",
-          "detail": "樣品放置在室溫下，直至樣品溫度穩定在 25 ± 5 °C。"
+          "detail": "樣品放置在室溫下，直至樣品溫度穩定在 25 ± 5 °C。",
+          "source_reference": "9.4"
         },
         "resistance": {
           "value": "依結構係數計算",
-          "detail": "短路電阻應為 (30 mΩ ± 10 mΩ) × 模組結構係數，或 ≤ 5 mΩ，以較高者為準，但最高不超過 100 mΩ。"
+          "detail": "短路電阻應為 (30 mΩ ± 10 mΩ) × 模組結構係數，或 ≤ 5 mΩ，以較高者為準，但最高不超過 100 mΩ。",
+          "source_reference": "9.4"
         },
         "termination": {
           "value": "降溫或 6 小時",
-          "detail": "持續測試直到電池溫度下降到峰值的 80% 或是持續 6 小時為止。"
+          "detail": "當外殼溫度下降值達到峰值溫升的 80%，或短接時間達到 6 小時時終止試驗（當有爭議時選較嚴者）。",
+          "source_reference": "9.4"
         },
         "sample_quantity": {
           "value": "1 個電池組或電池組系統（樣品 3）",
           "detail": "4.6.2：電池組樣品 1 個；表 2：9.4 為樣品 3；表注 b：樣品是電池組或電池組系統二者之一。9.4 注：電池組系統若為運輸方便分為多個部分，每個部分也需通過該試驗。",
-          "source_reference": "4.6.2；表 2；9.4"
+          "source_reference": "4.6.2；表2；9.4"
         },
         "pre_conditioning": {
           "value": "完成 4.6.4 預處理後，按 4.5.1 充滿電",
@@ -1021,12 +1081,13 @@
       "conditions": {
         "procedure": {
           "value": "依標準充放電程序",
-          "detail": "將電池放電至運輸 SOC，以反向極性連接並充電至滿電或保護，靜置 1 小時後，以最大電流放電至截止條件，再靜置 1 小時。"
+          "detail": "將電池放電至運輸 SOC，以反向極性連接並充電至滿電或保護，靜置 1 小時後，以最大電流放電至截止條件，再靜置 1 小時。",
+          "source_reference": "9.5"
         },
         "sample_quantity": {
           "value": "1 個電池組或電池組系統（樣品 4）",
           "detail": "4.6.2：電池組樣品 1 個；表 2：9.5 為樣品 4；表注 b：樣品是電池組或電池組系統二者之一。",
-          "source_reference": "4.6.2；表 2；9.5"
+          "source_reference": "4.6.2；表2；9.5"
         },
         "pre_conditioning": {
           "value": "預處理後，充滿電再放電至運輸或維護荷電狀態",
@@ -1061,16 +1122,18 @@
       "conditions": {
         "humidity_conditioning": {
           "value": "濕熱處理",
-          "detail": "在進行抗電強度測試前，需先進行濕熱處理。"
+          "detail": "在進行抗電強度測試前，需先進行濕熱處理。",
+          "source_reference": "9.6"
         },
         "standard": {
           "value": "依 GB 4943.1",
-          "detail": "抗電強度測試依據 GB 4943.1—2022 進行。"
+          "detail": "抗電強度測試依據 GB 4943.1—2022 進行。",
+          "source_reference": "9.6"
         },
         "sample_quantity": {
           "value": "1 個電池組或電池組系統（樣品 5）",
           "detail": "4.6.2：電池組樣品 1 個；表 2：9.6 為樣品 5；表注 b：樣品是電池組或電池組系統二者之一。",
-          "source_reference": "4.6.2；表 2；9.6"
+          "source_reference": "4.6.2；表2；9.6"
         },
         "pre_conditioning": {
           "value": "完成 4.6.4 預處理",
@@ -1099,11 +1162,13 @@
       "conditions": {
         "temperature": {
           "value": "（ΔT+Tmax+15 °C）±2 °C",
-          "detail": "試驗在溫度為（ΔT+Tmax+15 °C）±2 °C 的加熱箱中進行。"
+          "detail": "試驗在溫度為（ΔT+Tmax+15 °C）±2 °C 的加熱箱中進行。",
+          "source_reference": "9.1"
         },
         "standard": {
           "value": "GB/T 5169.21",
-          "detail": "根據 GB/T 5169.21，透過對零件進行球壓試驗來檢查合規性。"
+          "detail": "根據 GB/T 5169.21，透過對零件進行球壓試驗來檢查合規性。",
+          "source_reference": "9.1"
         }
       },
       "acceptance_criteria": {
@@ -1131,7 +1196,8 @@
       "conditions": {
         "standard": {
           "value": "GB/T 5169.16",
-          "detail": "材料在最薄使用厚度下根據 GB/T 5169.16 進行試驗。"
+          "detail": "材料在最薄使用厚度下根據 GB/T 5169.16 進行試驗。",
+          "source_reference": "9.2"
         }
       },
       "acceptance_criteria": {
@@ -1158,15 +1224,18 @@
       "conditions": {
         "voltage": {
           "value": "直流 500 V",
-          "detail": "施加直流 500 V 電壓 60 秒。"
+          "detail": "施加直流 500 V 電壓 60 秒。",
+          "source_reference": "9.3"
         },
         "duration": {
           "value": "60 秒",
-          "detail": "施加直流 500 V 電壓 60 秒。"
+          "detail": "施加直流 500 V 電壓 60 秒。",
+          "source_reference": "9.3"
         },
         "method": {
           "value": "按照 GB 4943.1—2022 規定",
-          "detail": "相關檢驗方法按照 GB 4943.1—2022 的規定。"
+          "detail": "相關檢驗方法按照 GB 4943.1—2022 的規定。",
+          "source_reference": "9.3"
         }
       },
       "acceptance_criteria": {
@@ -1211,6 +1280,9 @@
       "Identified 18 major test entries covering electrical, environmental, and thermal requirements."
     ],
     "total_test_entries": 21,
-    "enrichment": "2026-11-02 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
+    "enrichment": "2026-11-02 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。",
+    "parameter_review": [
+      "2026-11-17：依原文補齊試驗參數（GB44240-6.1、GB44240-6.2、GB44240-6.3、GB44240-7.1、GB44240-7.2、GB44240-7.3、GB44240-7.4、GB44240-7.5、GB44240-7.6、GB44240-7.7、GB44240-7.8、GB44240-7.9、GB44240-8.3、GB44240-8.4、GB44240-8.5、GB44240-8.6、GB44240-9.7.1、GB44240-9.7.2、GB44240-9.4、GB44240-9.5、GB44240-9.6、GB44240-9.1、GB44240-9.2、GB44240-9.3），出處見各欄位 source_reference。"
+    ]
   }
 }
