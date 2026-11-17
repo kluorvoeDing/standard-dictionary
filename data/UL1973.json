@@ -908,7 +908,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "100%",
+          "value": "100% SOC",
           "detail": "充滿電狀態。",
           "source_reference": "E5.1"
         },
@@ -963,7 +963,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "100% (完全充電)",
+          "value": "100% SOC",
           "detail": "單電池在加熱測試前必須完全充電 (100% SOC)。",
           "source_reference": "E6.1；E1.4"
         },
@@ -1189,7 +1189,7 @@
           "source_reference": "38.2"
         },
         "low_temperature": {
-          "value": "-40 ± 2 °C，維持 6 小時",
+          "value": "-40 ± 2 °C (保持 6 小時)",
           "detail": "30 分鐘內降溫至 -40 ± 2 °C 並維持 6 小時（38.2(c)）。",
           "source_reference": "38.2"
         },

@@ -33,7 +33,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "滿電狀態 (100% SOC)",
+          "value": "100% SOC",
           "detail": "按照 6.2.4.1.1 完成初始化充電。",
           "source_reference": "6.7.1.1；6.2.4.1"
         },

@@ -171,7 +171,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "放完電後 (0% SOC)",
+          "value": "0% SOC (放電至終止電壓)",
           "detail": "按照 4.5.2 規定的試驗方法放完電後。",
           "source_reference": "6.3；4.5.2"
         },
@@ -236,7 +236,7 @@
           "source_reference": "7.1"
         },
         "duration": {
-          "value": "保持 6 小時",
+          "value": "6 小時",
           "detail": "保持 6 小時。",
           "source_reference": "7.1"
         },
@@ -343,7 +343,7 @@
           "source_reference": "7.3；4.5.1"
         },
         "waveform": {
-          "value": "正弦振動 (7 Hz → 200 Hz → 7 Hz)",
+          "value": "正弦波對數掃頻 (7 Hz → 200 Hz → 7 Hz)",
           "detail": "按表 4 中的參數進行正弦振動測試 (7 Hz~200 Hz~7 Hz，加速度幅值高達 8 gn)。",
           "source_reference": "7.3；7.3 表 4"
         },
@@ -530,12 +530,12 @@
           "source_reference": "7.6.1"
         },
         "impact_mass": {
-          "value": "9.1 ± 0.1 kg 重物",
+          "value": "9.1 ± 0.1 kg",
           "detail": "9.1 kg 重物（9.1 ± 0.1 kg 重錘）。",
           "source_reference": "7.6.1"
         },
         "drop_height": {
-          "value": "610 ± 25 mm 自由落體",
+          "value": "610 ± 25 mm",
           "detail": "從 610 mm 高處（自 610 ± 25 mm 自由落下）撞擊。",
           "source_reference": "7.6.1"
         },
@@ -866,7 +866,7 @@
           "source_reference": "8.3；7.4"
         },
         "shock_count": {
-          "value": "總共 18 次 (3 個相互垂直方向正反各 3 次)",
+          "value": "共 18 次（3 個互相垂直方向正反各 3 次）",
           "detail": "依 8.3：按照 3 個相互垂直的方向依次進行；依 7.4：每個方向正反各進行 3 次衝擊，共計 18 次。",
           "source_reference": "8.3；7.4"
         }
@@ -1334,7 +1334,7 @@
           "source_reference": "9.9；4.5.2"
         },
         "target_temperature": {
-          "value": "比最大工作溫度高 5 °C",
+          "value": "最高操作溫度 + 5 °C",
           "detail": "使樣品的溫度上升至比最大工作溫度高 5 °C。在此高溫下繼續充電至 BMU/BMS 終止充電。",
           "source_reference": "9.9"
         },

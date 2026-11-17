@@ -716,7 +716,7 @@
           "source_reference": "36.3；Table 36.2"
         },
         "shock_count": {
-          "value": "18 次（3 個互相垂直軸，每軸正負方向各 3 次）",
+          "value": "共 18 次（3 個互相垂直方向正反各 3 次）",
           "detail": "3 個互相垂直軸，每軸正負方向各 3 次，共 18 次衝擊。",
           "source_reference": "36.3；Table 36.2"
         },
@@ -1268,7 +1268,7 @@
           "source_reference": "B2.3.2"
         },
         "drop_count": {
-          "value": "共 3 次",
+          "value": "3 次",
           "detail": "共 3 次跌落。",
           "source_reference": "B2.3.2"
         },

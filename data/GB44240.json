@@ -286,7 +286,7 @@
       ],
       "conditions": {
         "waveform": {
-          "value": "正弦振動 (7 Hz → 200 Hz → 7 Hz)",
+          "value": "正弦波對數掃頻 (7 Hz → 200 Hz → 7 Hz)",
           "detail": "正弦振動測試，頻率 7 Hz ~ 200 Hz ~ 7 Hz。圓柱形 2 個方向，方形和軟包 3 個方向。",
           "source_reference": "7.3；表4"
         },
@@ -399,7 +399,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "放電至額定容量 50%",
+          "value": "50% 額定容量",
           "detail": "試驗前需將樣品放電至額定容量的 50%。",
           "source_reference": "7.5"
         },
@@ -409,12 +409,12 @@
           "source_reference": "7.5"
         },
         "impact_mass": {
-          "value": "9.1 ± 0.1 kg 重物",
+          "value": "9.1 ± 0.1 kg",
           "detail": "採用質量為 9.1 kg ± 0.1 kg 的重物（9.1 ± 0.1 kg 重錘）。",
           "source_reference": "7.5"
         },
         "drop_height": {
-          "value": "610 ± 25 mm 自由落體",
+          "value": "610 ± 25 mm",
           "detail": "從 610 mm ± 25 mm 高度自由落體撞擊（自 610 ± 25 mm 落下）。",
           "source_reference": "7.5"
         },
@@ -710,7 +710,7 @@
           "source_reference": "8.3"
         },
         "cycles": {
-          "value": "連續重複試驗 3 次",
+          "value": "測試 3 次",
           "detail": "依上述步驟連續重複試驗 3 次。",
           "source_reference": "8.3"
         },
@@ -771,7 +771,7 @@
           "source_reference": "8.4"
         },
         "cycles": {
-          "value": "連續重複試驗 3 次",
+          "value": "測試 3 次",
           "detail": "依上述步驟連續重複試驗 3 次。",
           "source_reference": "8.4"
         },
@@ -832,7 +832,7 @@
           "source_reference": "8.5"
         },
         "cycles": {
-          "value": "連續重複試驗 3 次",
+          "value": "測試 3 次",
           "detail": "依上述步驟連續重複試驗 3 次。",
           "source_reference": "8.5"
         },
@@ -880,12 +880,12 @@
       ],
       "conditions": {
         "soc": {
-          "value": "預先充電至 50% SOC",
+          "value": "50% SOC",
           "detail": "試驗前預先充電至 50% SOC。",
           "source_reference": "8.6"
         },
         "target_temperature": {
-          "value": "高於最高工作溫度 5 °C",
+          "value": "最高操作溫度 + 5 °C",
           "detail": "使樣品的溫度上升至比最高工作溫度高 5 °C，在此高溫下繼續充電至 BMS 終止充電（最高工作溫度指電池或電池組的上限充電溫度值，取較小者）。",
           "source_reference": "8.6"
         },
@@ -945,7 +945,7 @@
           "source_reference": "B.2.2；表B.1"
         },
         "termination_for_trigger": {
-          "value": "發生熱失控或溫度達 300 °C 時停止加熱",
+          "value": "發生熱失控或溫度達 300 °C",
           "detail": "當發生熱失控或 B.2.2 定義的監測點溫度達到 300 °C 時，停止觸發，關閉加熱裝置。",
           "source_reference": "B.2.3"
         },

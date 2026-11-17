@@ -519,7 +519,7 @@
           "source_reference": "7.3.4 b)"
         },
         "duration": {
-          "value": "保持 30 分鐘",
+          "value": "30 分鐘",
           "detail": "電池在 130 ± 2 °C 下維持 30 分鐘後結束測試。原文：cell remains at this temperature for 30 minutes before the test is terminated.",
           "source_reference": "7.3.4 b)"
         },

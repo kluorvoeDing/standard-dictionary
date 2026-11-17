@@ -704,12 +704,12 @@
           "source_reference": "25.2"
         },
         "drop_count": {
-          "value": "每個樣品 3 次",
+          "value": "3 次",
           "detail": "每個樣品跌落 3 次，以可能產生最不利結果的方向跌落。",
           "source_reference": "25.2"
         },
         "cold_conditioning": {
-          "value": "塑膠外殼預期用於 0 °C 時：跌落前 0 °C 處理 3 小時",
+          "value": "塑膠外殼預期用於 0 °C 時：跌落前 0 °C 調節 3 小時",
           "detail": "如果電池組使用塑膠外殼，且預期會在 0 °C 下使用，則跌落前必須在 0 °C 下進行 3 小時的低溫預處理。",
           "source_reference": "25.1"
         },
@@ -874,7 +874,7 @@
           "source_reference": "28.1"
         },
         "transition_time": {
-          "value": "30 分鐘內",
+          "value": "≤ 30 分鐘",
           "detail": "各溫階之間須於 30 分鐘內完成轉換。",
           "source_reference": "28.1"
         },

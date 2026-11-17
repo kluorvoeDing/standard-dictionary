@@ -155,7 +155,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "標準放電後 (0% SOC)",
+          "value": "0% SOC (放電至終止電壓)",
           "detail": "按照 4.5.2 規定的試驗方法放完電後。",
           "source_reference": "6.3；4.5.2"
         },
@@ -225,7 +225,7 @@
           "source_reference": "7.2"
         },
         "duration": {
-          "value": "保持 6 小時",
+          "value": "6 小時",
           "detail": "保持 6 小時。",
           "source_reference": "7.2"
         },
@@ -266,7 +266,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "標準充電後 (100% SOC)",
+          "value": "100% SOC",
           "detail": "將充滿電的樣品放置在試驗箱內。",
           "source_reference": "7.3"
         },
@@ -337,7 +337,7 @@
           "source_reference": "7.4"
         },
         "waveform": {
-          "value": "正弦對數掃頻 (7 Hz → 200 Hz → 7 Hz)",
+          "value": "正弦波對數掃頻 (7 Hz → 200 Hz → 7 Hz)",
           "detail": "對數掃頻循環 7 Hz ~ 200 Hz ~ 7 Hz，時間 15 分鐘，加速度幅值 1 gn 至 8 gn，位移幅值 0.8 mm。",
           "source_reference": "7.4；表4"
         },
@@ -347,7 +347,7 @@
           "source_reference": "7.4；表4"
         },
         "amplitude": {
-          "value": "位移幅值 0.8 mm",
+          "value": "振幅 0.8 mm",
           "detail": "位移幅值 0.8 mm。",
           "source_reference": "7.4；表4"
         },
@@ -357,12 +357,12 @@
           "source_reference": "7.4；表4"
         },
         "sweep_rate": {
-          "value": "對數掃頻時間 15 分鐘",
+          "value": "15 分鐘/循環（對數掃頻）",
           "detail": "對數掃頻循環 7 Hz ~ 200 Hz ~ 7 Hz，時間 15 分鐘。",
           "source_reference": "7.4；表4"
         },
         "test_duration": {
-          "value": "每個方向 12 個循環 (共計 3 小時)",
+          "value": "每個方向 12 個循環 (共 3 小時)",
           "detail": "每個方向進行 12 個循環，共計 3 小時。圓柱形/扣式 2 個方向，方形/軟包 3 個方向。",
           "source_reference": "7.4"
         },
@@ -607,12 +607,12 @@
           "source_reference": "7.8"
         },
         "impact_mass": {
-          "value": "9.1 ± 0.1 kg 重物",
+          "value": "9.1 ± 0.1 kg",
           "detail": "9.1 kg ± 0.1 kg 重物。",
           "source_reference": "7.8"
         },
         "drop_height": {
-          "value": "610 ± 25 mm 自由落體",
+          "value": "610 ± 25 mm",
           "detail": "從 610 mm ± 25 mm 高處自由落體。",
           "source_reference": "7.8"
         },
@@ -658,7 +658,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "標準充電後 (100% SOC)",
+          "value": "100% SOC",
           "detail": "將電池充滿電後放入室溫試驗箱中。",
           "source_reference": "7.9；4.5.1"
         },
@@ -673,7 +673,7 @@
           "source_reference": "7.9"
         },
         "duration": {
-          "value": "持續 60 分鐘",
+          "value": "60 分鐘",
           "detail": "持續 60 分鐘。",
           "source_reference": "7.9"
         },
@@ -859,7 +859,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "標準充電後 (100% SOC)",
+          "value": "100% SOC",
           "detail": "將電池組充滿電後。",
           "source_reference": "7.13；4.5.1"
         },
@@ -1353,7 +1353,7 @@
           "source_reference": "8.7"
         },
         "cycles": {
-          "value": "3 次測試",
+          "value": "測試 3 次",
           "detail": "進行 3 次測試。",
           "source_reference": "8.7"
         },

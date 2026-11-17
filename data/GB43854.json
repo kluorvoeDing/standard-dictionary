@@ -107,7 +107,7 @@
           "source_reference": "6.3.2"
         },
         "duration": {
-          "value": "持續 90 分鐘",
+          "value": "90 分鐘",
           "detail": "共持續 90 分鐘。",
           "source_reference": "6.3.2"
         },
@@ -212,7 +212,7 @@
           "source_reference": "6.3.4"
         },
         "duration": {
-          "value": "恆溫保持 60 分鐘",
+          "value": "60 分鐘",
           "detail": "保持 60 分鐘。",
           "source_reference": "6.3.4"
         },
@@ -944,7 +944,7 @@
           "source_reference": "6.4.3.1"
         },
         "duration": {
-          "value": "保持 6 小時",
+          "value": "6 小時",
           "detail": "保持 6 小時。",
           "source_reference": "6.4.3.1"
         },
@@ -986,12 +986,12 @@
       ],
       "conditions": {
         "high_temperature": {
-          "value": "72 ± 2 °C (存放 6 小時)",
+          "value": "72 ± 2 °C (保持 6 小時)",
           "detail": "在溫度為 (72±2) °C 的環境下存放 6 小時。兩個溫度之間的轉換時間不超過 30 分鐘。",
           "source_reference": "6.4.3.2"
         },
         "low_temperature": {
-          "value": "-40 ± 2 °C (存放 6 小時)",
+          "value": "-40 ± 2 °C (保持 6 小時)",
           "detail": "在溫度為 (-40±2) °C 的環境下存放 6 小時。兩個溫度之間的轉換時間不超過 30 分鐘。",
           "source_reference": "6.4.3.2"
         },

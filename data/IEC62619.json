@@ -100,7 +100,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "100% 滿充電",
+          "value": "100% SOC",
           "detail": "電芯需滿充後在 25 ± 5 °C 環境中穩定。原文：Fully charged cells are stored in an ambient temperature of 25 °C ± 5 °C.",
           "source_reference": "7.2.1 b)"
         },
@@ -294,7 +294,7 @@
       ],
       "conditions": {
         "soc": {
-          "value": "100% 滿充電",
+          "value": "100% SOC",
           "detail": "完全充電的電芯在 25 ± 5 °C 環境溫度下穩定。原文：Each fully charged cell, stabilized in an ambient temperature of 25 °C ± 5 °C.",
           "source_reference": "7.2.4 b)"
         },

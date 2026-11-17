@@ -504,7 +504,7 @@
           "source_reference": "16.2"
         },
         "sweep_rate": {
-          "value": "1 Hz/min 掃頻速率",
+          "value": "1 Hz/min",
           "detail": "頻率變化速率為 1 Hz/min (Section 16.1)。",
           "source_reference": "16.2"
         },
@@ -628,7 +628,7 @@
           "source_reference": "18.1"
         },
         "transition_time": {
-          "value": "轉換時間 ≤ 30 分鐘",
+          "value": "≤ 30 分鐘",
           "detail": "在 30 分鐘內完成升降溫轉換 (Section 18.1b/d)。",
           "source_reference": "18.1"
         },

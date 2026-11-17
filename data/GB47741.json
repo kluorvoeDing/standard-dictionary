@@ -127,7 +127,7 @@
           "source_reference": "6.3"
         },
         "duration": {
-          "value": "共計 90 分鐘",
+          "value": "90 分鐘",
           "source_reference": "6.3"
         },
         "sample_quantity": {
@@ -309,7 +309,7 @@
           "source_reference": "7.4"
         },
         "shock_count": {
-          "value": "每個方向 3 次",
+          "value": "每方向 3 次",
           "source_reference": "7.4"
         },
         "sample_quantity": {
@@ -438,7 +438,7 @@
           "source_reference": "7.7"
         },
         "termination": {
-          "value": "最大力或電壓降三分之一 (1/3)",
+          "value": "達最大力或電壓降 1/3",
           "source_reference": "7.7"
         },
         "observation": {
@@ -485,7 +485,7 @@
           "source_reference": "7.8"
         },
         "duration": {
-          "value": "恆溫 60 分鐘",
+          "value": "60 分鐘",
           "source_reference": "7.8"
         },
         "sample_quantity": {
