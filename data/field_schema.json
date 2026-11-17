@@ -832,6 +832,13 @@
             "overvoltage"
           ],
           "value_style": "單一故障條件"
+        },
+        {
+          "key": "operating_conditions",
+          "label_zh": "運行條件",
+          "order": 8,
+          "merged_from": [],
+          "value_style": "正常操作條件，冷卻系統運作"
         }
       ]
     },
