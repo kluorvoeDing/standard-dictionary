@@ -34,34 +34,38 @@
       "conditions": {
         "soc": {
           "value": "0% SOC (EODV)",
-          "detail": "放電至製造商規定的 EODV (End of Discharge Voltage)。"
+          "detail": "放電至製造商規定的 EODV (End of Discharge Voltage)。",
+          "source_reference": "15.2"
         },
         "charging_current": {
           "value": "最大充電速率",
-          "detail": "使用電池組規定的最大充電速率。"
+          "detail": "使用電池組規定的最大充電速率。",
+          "source_reference": "15.2"
         },
         "fault_condition": {
           "value": "充電電路單一故障",
-          "detail": "Single fault condition in the charging protection/control circuit."
+          "detail": "在系統充電保護或控制電路施加單一故障條件（已依 7.9 評估功能安全者除外）。",
+          "source_reference": "15.2"
         },
         "termination": {
           "value": "充電至 110% 或保護啟動",
-          "detail": "測試持續至保護電路終止充電、充電至最大規定電壓之 110% 或發生起火/爆炸。"
+          "detail": "測試持續至保護電路終止充電、充電至最大規定電壓之 110% 或發生起火/爆炸。",
+          "source_reference": "15.2；15.3"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；15.2"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；15.3；15.5"
         }
       },
       "acceptance_criteria": {
@@ -100,30 +104,33 @@
       "conditions": {
         "soc": {
           "value": "0% SOC (EODV)",
-          "detail": "放電至製造商規定的 EODV。"
+          "detail": "放電至製造商規定的 EODV。",
+          "source_reference": "16.2"
         },
         "current": {
           "value": "高倍率（高於最大充電速率 20%）",
-          "detail": "20% greater than the maximum specified charging rate."
+          "detail": "測試電源設備提供高於電池最大規定充電速率 20% 之電流。",
+          "source_reference": "16.2"
         },
         "fault_condition": {
-          "value": "充電電路單一故障（可能導致高倍率充電）",
-          "detail": "充電電路單一故障（可能導致高倍率充電）。"
+          "value": "過電流充電保護電路單一故障",
+          "detail": "對過電流充電保護裝置或控制電路施加單一故障條件（已依 7.9 評估功能安全者除外）。",
+          "source_reference": "16.2"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；16.2"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；16.3；16.5"
         }
       },
       "acceptance_criteria": {
@@ -154,30 +161,33 @@
       "conditions": {
         "soc": {
           "value": "100% SOC (MOSOC)",
-          "detail": "充滿電 (Maximum Operating State of Charge, MOSOC)。"
+          "detail": "充滿電 (Maximum Operating State of Charge, MOSOC)。",
+          "source_reference": "17.1；8.1"
         },
         "external_resistance": {
           "value": "≤ 20 mΩ",
-          "detail": "外部短路電阻不大於 20 mΩ。"
+          "detail": "外部短路電阻不大於 20 mΩ。",
+          "source_reference": "17.2；17.3"
         },
         "fault_condition": {
           "value": "放電保護電路單一故障",
-          "detail": "放電電路中引入單一元件故障。"
+          "detail": "放電電路中引入單一元件故障。",
+          "source_reference": "17.6"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；17.1；17.4"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；17.8"
         }
       },
       "acceptance_criteria": {
@@ -209,30 +219,33 @@
       "conditions": {
         "soc": {
           "value": "100% SOC",
-          "detail": "充滿電狀態。"
+          "detail": "充滿電狀態。",
+          "source_reference": "18.1；8.1"
         },
         "current": {
           "value": "過載放電（90% 過電流保護值，主保險絲 135% 或例外 150%）",
-          "detail": "90% of the rated overcurrent protection value, and 135% of the main fuse rating (or 150% for Exception 1)."
+          "detail": "條件 1 為 BMS（二次保護）額定過電流保護值之 90%；條件 2 為主保險絲額定值之 135%（例外 1 為一次過電流保護器額定值之 150%）。",
+          "source_reference": "18.2；18.3；18.6；18.7"
         },
         "fault_condition": {
           "value": "放電電路單一故障",
-          "detail": "放電電路中引入單一元件故障。"
+          "detail": "放電電路中引入單一元件故障。",
+          "source_reference": "18.5；18.9"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；18.1"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；18.11"
         }
       },
       "acceptance_criteria": {
@@ -262,34 +275,38 @@
       "conditions": {
         "soc": {
           "value": "100% SOC",
-          "detail": "從充滿電開始放電。"
+          "detail": "從充滿電開始放電。",
+          "source_reference": "19.1；8.1"
         },
         "discharge_current": {
           "value": "最大放電速率",
-          "detail": "以最大放電速率放電。"
+          "detail": "以最大放電速率放電。",
+          "source_reference": "19.2"
         },
         "fault_condition": {
           "value": "放電控制保護電路單一故障",
-          "detail": "在放電保護電路中施加單一故障。"
+          "detail": "在放電保護電路中施加單一故障。",
+          "source_reference": "19.1"
         },
         "termination": {
           "value": "至保護啟動、最低電壓/最高溫度保護，或達正常放電極限後繼續 30 分鐘",
-          "detail": "放電直到保護裝置啟動，或電池達到最低電壓/最高溫度保護，或在達到規定的正常放電極限後繼續放電 30 分鐘為止。"
+          "detail": "放電直到保護裝置啟動，或電池達到最低電壓/最高溫度保護，或在達到規定的正常放電極限後繼續放電 30 分鐘為止。",
+          "source_reference": "19.2"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；19.1"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；19.4"
         }
       },
       "acceptance_criteria": {
@@ -320,26 +337,28 @@
       "conditions": {
         "target_temperature": {
           "value": "上限充電與放電溫度",
-          "detail": "在製造商規定的上限充電溫度及上限放電溫度下運行。"
+          "detail": "在製造商規定的上限充電溫度及上限放電溫度下運行。",
+          "source_reference": "20.2；20.3"
         },
         "operation": {
           "value": "依指定最大充放電參數進行至少 2 次完整充放電循環",
-          "detail": "依指定的最大充電與放電參數，進行至少兩次完整的充放電循環 (至少 2 次)。"
+          "detail": "依指定的最大充電與放電參數，進行至少兩次完整的充放電循環 (至少 2 次)。",
+          "source_reference": "20.2；20.3；20.4"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；20.2；8.3"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；20.4"
         }
       },
       "acceptance_criteria": {
@@ -370,26 +389,28 @@
       "conditions": {
         "soc": {
           "value": "0% 或 100% SOC",
-          "detail": "測試充電及放電過程。"
+          "detail": "測試充電及放電過程。",
+          "source_reference": "24.2；24.3"
         },
         "operation": {
           "value": "在最高及最低額定環境溫度下關閉冷卻系統充放電",
-          "detail": "在最高及最低額定環境溫度下，關閉冷卻系統進行充放電。"
+          "detail": "在最高及最低額定環境溫度下，關閉冷卻系統進行充放電。",
+          "source_reference": "24.2；24.3；24.7"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
-          "value": "滿充至 MOSOC 後靜置",
-          "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "value": "依 24.2/24.3 放電或滿充至 MOSOC 並恆溫 7 小時（或熱穩定）",
+          "detail": "充電測試 (24.2) 先放電至 EODV；放電測試 (24.3) 依 8.1 充至 MOSOC 後靜置最多 8 小時（鋰電池視情況可達 36 小時）。兩者皆於最高／最低工作環境溫度調質 7 小時或至依 8.3 達熱穩定（以較短者為準）。",
+          "source_reference": "24.2；24.3；24.7；8.1；8.3"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；24.5"
         }
       },
       "acceptance_criteria": {
@@ -421,26 +442,28 @@
       "conditions": {
         "soc": {
           "value": "100% SOC",
-          "detail": "充滿電 (MOSOC) 狀態。"
+          "detail": "充滿電 (MOSOC) 狀態。",
+          "source_reference": "28.3；8.1"
         },
         "waveform": {
-          "value": "車輛振動輪廓（符合 IEC 61373 或 UL/ULC 2271 / UL/ULC 2580）",
-          "detail": "根據預期的車輛或輕軌應用環境的振動頻譜。Specific compliance with IEC 61373 for LER, and explicitly UL/ULC 2271 or UL/ULC 2580 for VAP applications."
+          "value": "車輛或輕軌振動輪廓（IEC 61373 或 UL/ULC 2271 / 2580）",
+          "detail": "輕軌 (LER) 應用依 IEC 61373 模擬長壽命增強隨機振動測試（依鐵路安裝之對應類別與等級），車輛輔助電源 (VAP) 應用依 UL/ULC 2271 或 UL/ULC 2580 振動耐久測試，於 3 個互相垂直方向施加（28.3、28.4）。",
+          "source_reference": "28.3；28.4"
         },
         "sample_quantity": {
           "value": "1 組樣品",
-          "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "detail": "依據 Table 8.1，振動測試需使用 1 組樣品進行測試。",
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；28.3"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；28.6"
         }
       },
       "acceptance_criteria": {
@@ -472,38 +495,43 @@
       "conditions": {
         "soc": {
           "value": "100% SOC",
-          "detail": "充滿電狀態。"
+          "detail": "充滿電狀態。",
+          "source_reference": "29.3；8.1"
         },
         "waveform": {
-          "value": "半正弦波或其他（符合 IEC 61373 或 UL/ULC 2271 / 2580）",
-          "detail": "Both positive and negative direction shocks shall be applied in each of 3 mutually perpendicular directions for a total of 18 shocks. 測試應符合 IEC 61373，或對於 VAP 應用符合 UL/ULC 2271 或 UL/ULC 2580 (Section 29.3)。"
+          "value": "符合 IEC 61373 或 UL/ULC 2271 / 2580 衝擊測試規定",
+          "detail": "依 IEC 61373（輕軌應用對應類別與等級）或 UL/ULC 2271 / UL/ULC 2580（VAP 應用）之衝擊測試規定執行，於 3 個互相垂直方向之正負兩向施加共 18 次衝擊（29.2、29.3、29.4）。",
+          "source_reference": "29.2；29.3；29.4"
         },
         "shock_count": {
           "value": "共 18 次（3 個互相垂直方向正反各 3 次）",
-          "detail": "在 3 個相互垂直的方向上，每個方向正負向各施加 3 次衝擊，共 18 次。"
+          "detail": "在 3 個相互垂直的方向上，每個方向正負向各施加 3 次衝擊，共 18 次。",
+          "source_reference": "29.4"
         },
         "direction": {
           "value": "3 個互相垂直方向（正反兩向）",
-          "detail": "在 3 個互相垂直方向的正反兩向施加衝擊。"
+          "detail": "在 3 個互相垂直方向的正反兩向施加衝擊。",
+          "source_reference": "29.4"
         },
         "mounting": {
           "value": "直徑 15.8 mm 鋼棒 與 9.1 kg 重錘落錘 (610 ± 25 mm)",
-          "detail": "直徑 15.8 ± 0.1 mm 鋼棒橫置於樣品表面，9.1 ± 0.1 kg (9.1 ± 0.46 kg) 重錘自 610 ± 25 mm 落下。"
+          "detail": "直徑 15.8 ± 0.1 mm 鋼棒橫置於樣品表面，9.1 ± 0.1 kg (9.1 ± 0.46 kg) 重錘自 610 ± 25 mm 落下。",
+          "source_reference": "29.2"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；29.3"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；29.6"
         }
       },
       "acceptance_criteria": {
@@ -535,34 +563,38 @@
       "conditions": {
         "soc": {
           "value": "100% SOC",
-          "detail": "充滿電狀態。"
+          "detail": "充滿電狀態。",
+          "source_reference": "30.1；8.1"
         },
         "force": {
           "value": "100 ± 6 kN",
-          "detail": "Crush between a fixed surface and a ribbed test platen in accordance with the test fixture described in SAE J2464, applied in 3 mutually perpendicular directions of press (or 2 directions for systems with 2 axes of symmetry like cylindrical designs)."
+          "detail": "依 SAE J2464 所述測試治具，於固定表面與肋狀壓板間施壓，最大施力為 100 ± 6 kN，依 3 個互相垂直方向擠壓（僅具 2 軸對稱者如圓柱形設計則為 2 個方向）。",
+          "source_reference": "30.2"
         },
         "apparatus": {
           "value": "SAE J2464 肋狀壓板、半徑 75 mm 半圓柱壓頭 或 直徑 150 mm 平板",
-          "detail": "半徑 75 mm 之鋼製半圓柱壓板或直徑 150 mm 之平整鋼板。固定表面與依 SAE J2464 描述之試驗治具壓板之間擠壓。"
+          "detail": "半徑 75 mm 之鋼製半圓柱壓板或直徑 150 mm 之平整鋼板。固定表面與依 SAE J2464 描述之試驗治具壓板之間擠壓。",
+          "source_reference": "30.2"
         },
         "orientation": {
           "value": "3 個互相垂直方向（若具 2 軸對稱則為 2 個方向）",
-          "detail": "applied in 3 mutually perpendicular directions of press (or 2 directions for systems with 2 axes of symmetry like cylindrical designs)."
+          "detail": "依 3 個互相垂直的施壓方向進行（僅具 2 軸對稱之電池系統如圓柱形設計，則依 2 個互相垂直方向施壓）。",
+          "source_reference": "30.2"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；30.1"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；30.3"
         }
       },
       "acceptance_criteria": {
@@ -593,26 +625,28 @@
       "conditions": {
         "soc": {
           "value": "100% SOC",
-          "detail": "充滿電狀態。"
+          "detail": "充滿電狀態。",
+          "source_reference": "33.2；8.1"
         },
         "drop_height": {
           "value": "≤ 7 kg 為 100 cm；> 7 kg 且 < 100 kg 為 10 cm；> 100 kg 為 2.5 cm",
-          "detail": "100 cm for 7 kg or less, 10 cm for >7 kg but less than 100 kg, and 2.5 cm for > 100 kg."
+          "detail": "產品重量 ≤ 7 kg 者至少 100 cm；> 7 kg 且 < 100 kg 者至少 10 cm；> 100 kg 者至少 2.5 cm，跌落至混凝土或金屬表面。",
+          "source_reference": "33.2"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；33.2"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；33.5"
         }
       },
       "acceptance_criteria": {
@@ -645,34 +679,38 @@
       "conditions": {
         "soc": {
           "value": "0% SOC",
-          "detail": "未充電狀態。"
+          "detail": "未充電狀態。",
+          "source_reference": "35.2"
         },
         "test_type": {
           "value": "高溫外殼應力釋放測試",
-          "detail": "在烤箱中維持該溫度持續 7 小時。"
+          "detail": "在烤箱中維持該溫度持續 7 小時。",
+          "source_reference": "35.1；35.2"
         },
         "temperature": {
           "value": "最高測得溫度 + 10 °C (≥ 70 °C)",
-          "detail": "最高測得溫度 + 10 °C (≥ 70 °C)。在烤箱中維持該溫度持續 7 小時。"
+          "detail": "最高測得溫度 + 10 °C (≥ 70 °C)。在烤箱中維持該溫度持續 7 小時。",
+          "source_reference": "35.2"
         },
         "duration": {
           "value": "7 小時",
-          "detail": "在烤箱中維持該溫度持續 7 小時。"
+          "detail": "在烤箱中維持該溫度持續 7 小時。",
+          "source_reference": "35.2"
         },
         "sample_quantity": {
           "value": "1 組樣品",
-          "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "detail": "依據 Table 8.1 及 35.2，使用 1 組完整樣品進行測試。",
+          "source_reference": "8.2；Table 8.1；35.2"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；35.2"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；35.3"
         }
       },
       "acceptance_criteria": {
@@ -703,29 +741,33 @@
       "conditions": {
         "soc": {
           "value": "100% SOC",
-          "detail": "充滿電狀態。"
+          "detail": "充滿電狀態。",
+          "source_reference": "42.2.4；8.1"
         },
         "trigger": {
           "value": "內部短路或加熱器誘發單一電芯熱失控",
-          "detail": "在最大額定操作溫度下，於最嚴苛位置使用內部短路或加熱器觸發單一電芯熱失控。Cells must be within ±10 °C (±18 °F) of the max specified temperature just before inducing the mechanism, and once thermal runaway is shut off/stopped, the DUT is subjected to a 24-h observation period."
+          "detail": "可採用加熱器、針刺、過充電等方式於最嚴苛位置誘發單一電芯熱失控；若會影響結果，誘發前電芯溫度須位於最高額定操作溫度 ±10 °C（±18 °F）內，熱失控啟動後即停止誘發機制並對 DUT 進行 24 小時觀察（42.2.2、42.2.4）。",
+          "source_reference": "42.2.2；42.2.4"
         },
         "temperature": {
           "value": "最大額定操作溫度 ±10 °C (±18 °F)",
-          "detail": "Cells must be within ±10 °C (±18 °F) of the max specified temperature just before inducing the mechanism."
+          "detail": "若溫度會影響結果，樣品應處於充電及操作最高規定溫度，且誘發熱失控機制前電芯須位於最高規定溫度 ±10 °C（±18 °F）內（42.2.4）。",
+          "source_reference": "42.2.4"
         },
         "termination_for_trigger": {
-          "value": "觸發後關閉或停止熱失控機制，進行 24 小時觀察",
-          "detail": "once thermal runaway is shut off/stopped, the DUT is subjected to a 24-h (24 小時) observation period."
+          "value": "引發熱失控後停止誘發機制，進行 24 小時觀察",
+          "detail": "一旦引發熱失控，即關閉或停止用以引發熱失控的機制，並對 DUT 進行 24 小時觀察期（42.2.4）。",
+          "source_reference": "42.2.4"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充至 MOSOC 後靜置",
           "detail": "依據製造商規格充電至最大操作荷電狀態 (MOSOC) 後，在室溫下靜置最多 8 小時（鋰電池視情況可達 36 小時）。",
-          "source_reference": "8.1"
+          "source_reference": "8.1；42.2.4"
         },
         "observation_period": {
           "value": "觀察 24 小時",
@@ -761,25 +803,29 @@
       ],
       "conditions": {
         "soc": {
-          "value": "100% (MOSOC)",
-          "detail": "充滿電 (MOSOC) 狀態。"
+          "value": "100% (滿充調質)",
+          "detail": "依 E1.4 完成調質之充滿電單電池（E3.1）。",
+          "source_reference": "E3.1；E1.4"
         },
         "external_resistance": {
           "value": "≤ 20 mΩ",
-          "detail": "外部電阻小於等於 20 mΩ。"
+          "detail": "外部電阻小於等於 20 mΩ。",
+          "source_reference": "E3.1"
         },
         "temperature": {
           "value": "25 ± 5 °C",
-          "detail": "Test ambient temperature 25 ± 5 °C."
+          "detail": "測試環境溫度為 25 ± 5 °C，存放至外殼達到環境溫度後進行短路（E3.1）。",
+          "source_reference": "E3.1"
         },
         "duration": {
           "value": "7 小時或殼溫降至環境 ±10 °C",
-          "detail": "Apply the short for 7 小時 or until temperatures on the cell cool to within ±10 °C."
+          "detail": "外部電阻持續連接於單電池端子 7 小時，或直到單電池溫度冷卻至環境條件 ±10 °C 內（E3.2）。",
+          "source_reference": "E3.2"
         },
         "sample_quantity": {
           "value": "共 2 顆（上下限溫度各 1 顆）",
           "detail": "依據 Table E.1，測試共使用 2 顆代表性樣品，分別在充電上限溫度與下限溫度下進行調質。",
-          "source_reference": "Table E.1"
+          "source_reference": "Table E.1；E1.2；E3.3"
         },
         "pre_conditioning": {
           "value": "放電後充至最高上限電壓",
@@ -813,20 +859,23 @@
       "conditions": {
         "soc": {
           "value": "100%",
-          "detail": "充滿電狀態。"
+          "detail": "充滿電狀態。",
+          "source_reference": "E4.1；E1.4"
         },
         "waveform": {
           "value": "重錘落下撞擊橫置鋼棒",
-          "detail": "Explicitly requires a 15.8 ±0.1-mm bar, a 9.1 ±0.46-kg weight, and a drop height of 610 ±25 mm."
+          "detail": "將直徑 15.8 ± 0.1 mm 鋼棒橫置於電芯樣品中心，並使 9.1 ± 0.46 kg 重錘自 610 ± 25 mm 高度落下撞擊（E4.1 依 E11.4.1）。",
+          "source_reference": "E4.1；E11.4.1"
         },
         "mounting": {
           "value": "直徑 15.8 ± 0.1 mm 鋼棒 與 9.1 ± 0.46 kg (9.1 ± 0.1 kg) 重錘 (落高 610 ± 25 mm)",
-          "detail": "直徑 15.8 ± 0.1 mm 鋼棒橫置於樣品表面，9.1 ± 0.1 kg (9.1 ± 0.46 kg) 重錘自 610 ± 25 mm 落下。"
+          "detail": "直徑 15.8 ± 0.1 mm 鋼棒橫置於樣品表面，9.1 ± 0.1 kg (9.1 ± 0.46 kg) 重錘自 610 ± 25 mm 落下。",
+          "source_reference": "E4.1；E11.4.1"
         },
         "sample_quantity": {
           "value": "共 2 顆（上下限溫度各 1 顆）",
           "detail": "依據 Table E.1，測試共使用 2 顆代表性樣品，分別在充電上限溫度與下限溫度下進行調質。",
-          "source_reference": "Table E.1"
+          "source_reference": "Table E.1；E1.2；E4.2"
         },
         "pre_conditioning": {
           "value": "放電後充至最高上限電壓",
@@ -860,20 +909,23 @@
       "conditions": {
         "soc": {
           "value": "100%",
-          "detail": "充滿電狀態。"
+          "detail": "充滿電狀態。",
+          "source_reference": "E5.1"
         },
         "drop_height": {
           "value": "1.0 m",
-          "detail": "從 1.0 m 高度跌落 3 次。"
+          "detail": "從 1.0 m 高度跌落 3 次。",
+          "source_reference": "E5.1"
         },
         "drop_count": {
           "value": "3 次",
-          "detail": "跌落 3 次。"
+          "detail": "跌落 3 次。",
+          "source_reference": "E5.1"
         },
         "sample_quantity": {
           "value": "共 2 顆",
           "detail": "依據 Table E.1，測試共使用 2 顆代表性樣品，不需在上下限溫度下分別調質。",
-          "source_reference": "Table E.1"
+          "source_reference": "Table E.1；E1.2；E5.4"
         },
         "pre_conditioning": {
           "value": "滿充狀態",
@@ -912,24 +964,28 @@
       "conditions": {
         "soc": {
           "value": "100% (完全充電)",
-          "detail": "單電池在加熱測試前必須完全充電 (100% SOC)。"
+          "detail": "單電池在加熱測試前必須完全充電 (100% SOC)。",
+          "source_reference": "E6.1；E1.4"
         },
         "heating_rate": {
           "value": "5 ± 2 °C/min",
-          "detail": "Rate of 5 ±2 °C per minute."
+          "detail": "烤箱升溫速率為每分鐘 5 ± 2 °C（E6.1 依 E11.7.1）。",
+          "source_reference": "E6.1；E11.7.1"
         },
         "target_temperature": {
           "value": "130 ± 2 °C；Tmax > 100 °C 時為最高溫度 +30 ± 2 °C",
-          "detail": "to a temperature of 130 ±2 °C. Temperature remain for 10 分鐘. Exception for cells > 500 g to be held for 30 分鐘 rather than 10 分鐘. Cells with Tmax > 100 °C to be tested at 30 ±2 °C above the manufacturers maximum specified temperature."
+          "detail": "升溫至 130 ± 2 °C 並維持 10 分鐘（電芯重量 > 500 g 者維持 30 分鐘）；若電芯規定溫度高於 100 °C，則試驗溫度為製造商最高規定溫度 + 30 ± 2 °C（E6.1 依 E11.7.1）。",
+          "source_reference": "E6.1；E11.7.1"
         },
         "duration": {
           "value": "保持 10 分鐘（電芯 > 500 g 保持 30 分鐘）",
-          "detail": "Temperature remain for 10 分鐘. Exception for cells > 500 g to be held for 30 分鐘 rather than 10 分鐘."
+          "detail": "達到目標溫度後維持 10 分鐘；重量大於 500 g 之電芯則維持 30 分鐘（E6.1 依 E11.7.1）。",
+          "source_reference": "E6.1；E11.7.1"
         },
         "sample_quantity": {
           "value": "共 2 顆（上下限溫度各 1 顆）",
           "detail": "依據 Table E.1，測試共使用 2 顆代表性樣品，分別在充電上限溫度與下限溫度下進行調質。",
-          "source_reference": "Table E.1"
+          "source_reference": "Table E.1；E1.2；E6.2"
         },
         "pre_conditioning": {
           "value": "放電後充至最高上限電壓",
@@ -939,7 +995,7 @@
         "observation_period": {
           "value": "回復至室溫",
           "detail": "加熱試驗完成後，樣品應靜置並冷卻，直到回復至室溫（25 ±5 °C）再進行檢查。",
-          "source_reference": "E11.7.2"
+          "source_reference": "E11.7.2；E6.1"
         }
       },
       "acceptance_criteria": {
@@ -968,25 +1024,28 @@
       "conditions": {
         "soc": {
           "value": "0% SOC (完全放電)",
-          "detail": "在過充測試之前，單電池必須放電至指定的終止電壓 (0% SOC)。"
+          "detail": "在過充測試之前，單電池必須放電至指定的終止電壓 (0% SOC)。",
+          "source_reference": "E7.1"
         },
         "charging_current": {
           "value": "最大充電電流恆流充電",
-          "detail": "以最大充電電流恆流充電。"
+          "detail": "以最大充電電流恆流充電。",
+          "source_reference": "E7.2"
         },
         "termination": {
           "value": "120% 最大規定電壓或 130% SOC",
-          "detail": "充電至 120% 最大規定電壓或 130% SOC。"
+          "detail": "充電至 120% 最大規定電壓或 130% SOC。",
+          "source_reference": "E7.2"
         },
         "sample_quantity": {
           "value": "共 2 顆（上下限溫度各 1 顆）",
           "detail": "依據 Table E.1，測試共使用 2 顆代表性樣品，分別在充電上限溫度與下限溫度下進行調質。",
-          "source_reference": "Table E.1"
+          "source_reference": "Table E.1；E1.2；E7.3"
         },
         "pre_conditioning": {
-          "value": "放電後充至最高上限電壓",
-          "detail": "樣品先放電至製造商指定的截止電壓，然後在規定的上下限溫度下，使用製造商指定的最大充電電流充滿電至上限充電電壓。",
-          "source_reference": "E1.4"
+          "value": "依 E1.4 調質後再放電至規定截止電壓",
+          "detail": "依 E1.4 先放電並於上下限溫度以最大充電電流充至上限充電電壓，試驗前再依 E7.1 放電至製造商規定截止電壓。",
+          "source_reference": "E1.4；E7.1"
         },
         "observation_period": {
           "value": "溫度回復至環境溫度 ±10 °C",
@@ -1020,20 +1079,23 @@
       "conditions": {
         "soc": {
           "value": "0% SOC",
-          "detail": "放電至截止電壓 (0%)。"
+          "detail": "放電至截止電壓 (0%)。",
+          "source_reference": "E8.1"
         },
         "duration": {
           "value": "90 分鐘",
-          "detail": "Discharge voltage limit not to exceed the numerical value of the upper limit charging voltage specified for the cell. If the discharge voltage limit is reached before the 90 分鐘, the cell shall be discharged at a constant voltage discharge equal to the manufacturer’s determined low voltage cutoff."
+          "detail": "以 1.0 It A 恆流強制放電 90 分鐘，放電電壓限值不超過上限充電電壓數值；若在 90 分鐘前達到該限值，則改以製造商所定低電壓截止值進行恆壓放電直至滿 90 分鐘（E8.2）。",
+          "source_reference": "E8.2"
         },
         "termination": {
-          "value": "放電電壓達到上限充電電壓或 90 分鐘後以截止電壓恆壓放電",
-          "detail": "Discharge voltage limit not to exceed the numerical value of the upper limit charging voltage specified for the cell. If the discharge voltage limit is reached before the 90 分鐘, the cell shall be discharged at a constant voltage discharge equal to the manufacturer’s determined low voltage cutoff."
+          "value": "強制放電滿 90 分鐘（達電壓限值則轉恆壓至滿 90 分鐘）",
+          "detail": "強制放電總時長 90 分鐘，放電電壓限值不得超過電芯上限充電電壓數值；若於 90 分鐘前達到放電電壓限值，則改以製造商所定低電壓截止值恆壓放電（電流依需要遞減）直至滿 90 分鐘（E8.2）。",
+          "source_reference": "E8.2"
         },
         "sample_quantity": {
           "value": "共 2 顆",
           "detail": "依據 Table E.1，測試共使用 2 顆代表性樣品，不需在上下限溫度下分別調質。",
-          "source_reference": "Table E.1"
+          "source_reference": "Table E.1；E1.2；E8.3"
         },
         "pre_conditioning": {
           "value": "充飽電後放電至指定截止電壓",
@@ -1067,27 +1129,29 @@
       ],
       "conditions": {
         "soc": {
-          "value": "不平衡狀態（1 個電芯/模組完放，其餘放電至約 50%）",
-          "detail": "All of its modules/cells with the exception of one discharged to its specified fully discharged condition. The undischarged module/cell shall be discharged to approximately 50%."
+          "value": "不平衡狀態（僅 1 個電芯/模組約 50% SOC，其餘完放）",
+          "detail": "先充至 MOSOC，再將僅 1 個以外之其餘所有模組／單電池放電至完全放電狀態，該未完放之模組／單電池放電至約 50% SOC（依 21.2）。",
+          "source_reference": "21.2"
         },
         "fault_condition": {
           "value": "主動保護裝置處於單一故障條件 (Section 21.3)",
-          "detail": "主動保護裝置應處於單一故障條件下 (Section 21.3)。"
+          "detail": "主動保護裝置應處於單一故障條件下 (Section 21.3)。",
+          "source_reference": "21.3"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充狀態 (MOSOC) 後放電製造不平衡",
-          "detail": "樣品先依規定充至最大操作荷電狀態 (MOSOC)，然後將其中一個模組或單電池放電至完全放電狀態，其餘未放電者放電至約 50% SOC。",
-          "source_reference": "21.2"
+          "detail": "樣品先依 8.1 充至最大操作荷電狀態 (MOSOC)，再將除了其中一個模組／單電池以外之其餘所有模組／單電池放電至完全放電狀態，該未完放之模組／單電池則放電至約 50% SOC（21.2）。",
+          "source_reference": "21.2；8.1"
         },
         "observation_period": {
           "value": "觀察 1 小時",
           "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "source_reference": "8.5；21.5"
         }
       },
       "acceptance_criteria": {
@@ -1116,38 +1180,43 @@
       "conditions": {
         "soc": {
           "value": "100% SOC (完全充電)",
-          "detail": "在開始溫度循環之前，電池系統必須完全充電 (100% SOC)。"
+          "detail": "在開始溫度循環之前，電池系統必須完全充電 (100% SOC)。",
+          "source_reference": "38.2；8.1"
         },
         "high_temperature": {
           "value": "+75 ± 2 °C，維持 6 小時",
-          "detail": "+75 ± 2 °C for 6 小時。"
+          "detail": "30 分鐘內升溫至 +75 ± 2 °C 並維持 6 小時（38.2(a)）。",
+          "source_reference": "38.2"
         },
         "low_temperature": {
           "value": "-40 ± 2 °C，維持 6 小時",
-          "detail": "-40 ± 2 °C for 6 小時。"
+          "detail": "30 分鐘內降溫至 -40 ± 2 °C 並維持 6 小時（38.2(c)）。",
+          "source_reference": "38.2"
         },
         "dwell_time": {
           "value": "高溫 6 小時；低溫 6 小時；常溫 2 小時 (20 ± 2 °C)",
-          "detail": "Strict temperature profile: +75 ±2 °C for 6 小時, 20 ±2 °C for 2 小時, -40 ±2 °C for 6 小時, and 20 ±2 °C, repeated for a total of 10 cycles."
+          "detail": "溫度循環曲線：+75 ± 2 °C 維持 6 小時、20 ± 2 °C 維持 2 小時、-40 ± 2 °C 維持 6 小時、再回升至 20 ± 2 °C，共執行 10 次循環（38.2）。",
+          "source_reference": "38.2"
         },
         "cycles": {
           "value": "10 次循環",
-          "detail": "repeated for a total of 10 cycles."
+          "detail": "依 38.2(a)–(d) 執行 1 次後再重複 9 次，共計 10 次循環。",
+          "source_reference": "38.2"
         },
         "sample_quantity": {
           "value": "1 組樣品",
           "detail": "依據 Table 8.1，系統層級試驗需使用 1 組代表性系統或模組進行測試。",
-          "source_reference": "Table 8.1"
+          "source_reference": "8.2；Table 8.1"
         },
         "pre_conditioning": {
           "value": "滿充狀態 (MOSOC)",
           "detail": "電池系統需先充電至最大操作荷電狀態 (MOSOC)。",
-          "source_reference": "38.2"
+          "source_reference": "38.2；8.1"
         },
         "observation_period": {
-          "value": "觀察 1 小時",
-          "detail": "依據第 8.5 節的規定，試驗完成後必須進行至少 1 小時的觀察期並監控溫度，再結束測試。",
-          "source_reference": "8.5"
+          "value": "循環後室溫靜置 24 小時，充放電後依 8.5 觀察 1 小時",
+          "detail": "依 38.2 循環結束後於室溫 25 ± 5 °C 靜置 24 小時；依 38.3 若樣品仍可運作須進行充放電循環後再依 8.5 觀察 1 小時。",
+          "source_reference": "38.2；38.3；8.5"
         }
       },
       "acceptance_criteria": {
@@ -1197,6 +1266,9 @@
       "Mold Stress test requires max temp + 10C (min 70C) for 7h as noted in Gemini MD, and only applies to polymeric materials.",
       "Single Cell Failure Test (Thermal Propagation) must show no fire outside enclosure and no explosion; internal fire is acceptable."
     ],
-    "enrichment": "2026-09-24 Phase 2 以腳本補上 sample_quantity、pre_conditioning、observation_period；2026-09-26 已逐項對照原文核對：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
+    "enrichment": "2026-09-24 Phase 2 以腳本補上 sample_quantity、pre_conditioning、observation_period；2026-09-26 已逐項對照原文核對：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。",
+    "parameter_review": [
+      "2026-11-17：依原文補齊試驗參數（UL1973-15、UL1973-16、UL1973-17、UL1973-18、UL1973-19、UL1973-20、UL1973-24、UL1973-28、UL1973-29、UL1973-30、UL1973-33、UL1973-35、UL1973-42.2、UL1973-E3、UL1973-E4、UL1973-E5、UL1973-E6、UL1973-E7、UL1973-E8、UL1973-21、UL1973-38），出處見各欄位 source_reference。"
+    ]
   }
 }
