@@ -56,12 +56,25 @@
 > 首頁「標準應用領域導覽」是全站的風格基準：米白底、細框線、8px 機構色塊、灰階文字層次、藥丸形篩選按鈕。**任何 agent 新增或修改前端時必須遵守：**
 >
 > 1. **不用 emoji**（介面文字、按鈕、標題、AI 提示詞都一樣）。需要圖示時用 `frontend/src/components/Icon.jsx` 的單色線條圖示；`✓ ✕ ← ⓘ ⌘` 這類文字符號可以用。
-> 2. **顏色只用 `frontend/src/index.css` 的 token**（`--text-*`、`--border-color`、`--org-*`、`--cat-*`、`--diff-*`…），不要寫死 `#d97706`、`rgba(...)`，否則深色模式會壞。
-> 3. **互動樣式寫成 CSS class**（`.sm-*`、`.cmp-*`、`.topbar-btn`、`.btn-pill`、`.modal-*`），不要用 `onMouseEnter` 改 style。
+> 2. **顏色只用 token**：導覽、查閱、比對、搜尋用 `frontend/src/v2.css` 頂部的 token（`--ink-*`、`--line`、`--differ-*`、`--src`…）；總覽矩陣與 AI 小幫手沿用 `frontend/src/index.css` 的 token。不要在元件或規則裡寫死 `#d97706`、`rgba(...)`，否則深色模式會壞。
+> 3. **互動樣式寫成 CSS class**（`.v-*`、`.c-*`，矩陣與 AI 小幫手為 `.mx-*`、`.modal-*`），不要用 `onMouseEnter` 改 style。
 > 4. **沿用既有元件**：機構色用 `utils/orgColors.js`，參數名稱用 `utils/parameterDictionary.js`（新欄位名要補中文標籤或別名），彈窗用 `.modal-backdrop` / `.modal-panel`。
 > 5. **文字精簡、用中文**，不要中英並列的標題（例如「只看差異 (Diff Only)」）或【】括號。
 >
 > CI（`ui-check.yml`）會以 `npm run lint:ui` 檢查 `frontend/src` 與 `api/`：不得出現 emoji、不得新增寫死的顏色（`#rrggbb`／`rgba()`，白色與純黑白遮罩除外）、不得新增中英並列標題、不得有小於 12px 的字級（請用 `--fs-*` token），並確認前端能建置。既有違規記在 `scripts/ui_style_baseline.json`（每檔上限，只能降不能升）；清掉後執行 `node scripts/check_ui_style.mjs --update-baseline` 降低基準線。
+
+## 2026-11-17 (UI - v2 改版上線：導覽、查閱、比對三個畫面重寫)
+- 事件：使用者對 Antigravity 製作的 A／A′／B 三版不滿意，改由 Claude 重做 v2（分支 `exp/v2-fable`），經使用者在預覽版檢視後核准合併回 `main`，取代舊版介面。
+- 內容：
+  - 導覽頁：依應用領域分組的密集清單，點整列加入比對，「查閱」開彈窗（Esc／點外面關閉）；拿掉提醒文字與重複的領域標籤，搜尋只留頂列一個。
+  - 查閱視窗：左側測試目錄、右側結構化細節，另有「標準資訊」頁與版本切換；網址 `?doc=…&test=…`。
+  - 比對頁：每項測試一張卡片；差異分「差異」與「寫法不同」兩級（同義寫法不計入差異，同義表 `frontend/src/lib/equivalents.json`，單元測試 `frontend/src/lib/compare.test.mjs`）；只看差異時非差異列收合成一行；只有一份標準有的測試排在類別最後並收合；欄頭等高、點標準名稱開標準資訊；拿掉「未載明出處」，與測試條款重複的細項出處收在參數名稱下。
+  - 頁面寬度填滿視窗；差異色改為柔和米黃（深色模式為暗金）；列印為 A4 橫向，修正總覽矩陣列印樣式全域生效導致比對頁印出空白的舊錯誤。
+  - `api/chat.js`：AI 回答引用數值須標「標準代號 §條款」，資料沒有的內容回答「本庫資料未收錄」。
+  - 新增 `acceptance/`（Playwright 公開驗收，`npm run test:acceptance`）；舊元件 `SplitScreenGrid`、`ComparisonGroup`、`StandardMatrix`、`GlobalSearchModal`、`TestDetailModal` 已移除。
+  - 交付說明：`docs/V2_REDESIGN.md`；後續資料工作單：`docs/ANTIGRAVITY_資料工作單.md`。
+- 影響：`npm run check:all` 與公開驗收 6/6 通過；隱藏驗收 80 個測試、515 個條件 0 遺漏 0 錯值；`data/` 未修改。
+- 後續：AI 條款引用規則未在本機實測（無金鑰）；資料出處補強與錯置欄位依工作單交給 Antigravity。
 
 ## 2026-11-16 (Data - 新增 ANSI/CAN/UL 9540A:2026 第六版與第 5 版並存)
 - 事件：新增 `ANSI/CAN/UL 9540A:2026`（Sixth Edition，2026-03-13）至資料庫（`data/UL9540A-2026.json`）與目錄（`data/catalog.json`），保留第 5 版（`data/UL9540A.json`）形成新舊版並存對照。

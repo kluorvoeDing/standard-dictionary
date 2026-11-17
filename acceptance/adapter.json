@@ -1,0 +1,5 @@
+{
+  "compareUrl": "/?c={ids}&lv={levels}&diff={diff}",
+  "testUrl": "/?test={testId}",
+  "sourceReveal": "inline"
+}

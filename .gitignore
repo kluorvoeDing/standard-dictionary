@@ -58,3 +58,7 @@ __pycache__/
 #  原文核對工作區（scripts/review/）：含標準原文文字與頁面影像，有版權，不可進版控
 # ───────────────────────────────────────────────────────────
 .review-work/
+
+# Playwright
+test-results/
+playwright-report/
