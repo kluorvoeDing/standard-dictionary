@@ -24,14 +24,24 @@ function Empty({ status, baseId, showText }) {
   );
 }
 
+// 出處就是該測試條款本身或其下的細項（例如測試 §38.3.4.8、出處 §38.3.4.8.2）時，
+// 條款列已經寫了，平常不重複顯示；展開該列才顯示。指向其他條款的出處照常顯示。
+const clauseKey = (s) => String(s || '').replace(/§/g, '').replace(/\s+/g, '').trim();
+function impliedByClause(source, clause) {
+  const s = clauseKey(source);
+  const c = clauseKey(clause);
+  if (!s || !c || /[；;，,、]/.test(s)) return false;
+  return s === c || s.startsWith(`${c}.`);
+}
+
 function Row({ group, row, names, baseIds, hidden, open, onToggle }) {
-  const hasDetail = row.cells.some(cell => cell.some(e => e.detail));
+  const hasDetail = row.cells.some(cell => cell.some(e => e.detail || impliedByClause(e.source, e.clause)));
   const rowId = `${group.key}/${row.key}`;
   return (
     <tr className={`c-row is-${row.tier}${open ? ' is-open' : ''}`} hidden={hidden}>
       <th scope="row">
         {hasDetail
-          ? <button type="button" className="c-label" onClick={onToggle} aria-expanded={open} title="顯示補充說明">{row.label}<Icon name="chevronDown" size={12} /></button>
+          ? <button type="button" className="c-label" onClick={onToggle} aria-expanded={open} title="顯示補充說明與各值出處">{row.label}<Icon name="chevronDown" size={12} /></button>
           : <span className="c-label">{row.label}</span>}
         {row.tier === 'differ' && <span className="c-tier is-differ">差異</span>}
         {row.tier === 'wording' && <span className="c-tier is-wording" title="數值、單位與條件相同，只有寫法不同">寫法不同</span>}
@@ -43,7 +53,7 @@ function Row({ group, row, names, baseIds, hidden, open, onToggle }) {
             <div key={i} className="c-entry">
               {cell.length > 1 && <span className="c-clause">§ {e.clause}</span>}
               <Value entry={e} state={row.state} row={rowId} />
-              <Source testId={e.testId} param={e.param} text={e.source} />
+              <Source testId={e.testId} param={e.param} text={e.source} hidden={!open && impliedByClause(e.source, e.clause)} />
               {open && e.detail && <p className="v-detail">{e.detail}</p>}
             </div>
           ))}
@@ -335,7 +345,7 @@ export default function Compare({ library, selected, view, setView, onBack, onRe
             <span><i className="is-uncovered" />未涵蓋此測試</span>
             <span><i className="is-na" />此層級不適用</span>
             <span>— 有此測試但未規定該參數</span>
-            <span>§ 已附原文條款；未標示者尚待補上出處</span>
+            <span>§ 數值出處；屬於本測試條款細項的出處收在參數名稱下，點開可看</span>
           </p>
 
           {groups.map(g => (

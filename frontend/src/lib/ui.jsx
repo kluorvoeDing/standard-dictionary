@@ -44,9 +44,9 @@ export function IconButton({ icon, label, onClick, active, className = '', ...re
 }
 
 /** 條款出處。有出處才顯示；文字含資料的 source_reference 全文。 */
-export function Source({ testId, param, text }) {
+export function Source({ testId, param, text, hidden = false }) {
   if (!text) return null;
-  return <span className="v-src" data-sd-source data-test={testId} data-param={param} title="原文條款出處">§ {text}</span>;
+  return <span className="v-src" hidden={hidden} data-sd-source data-test={testId} data-param={param} title="原文條款出處">§ {text}</span>;
 }
 
 /** 一個條件值。文字內容就是資料的 value（單位以較淡顏色呈現，文字不變）。 */
