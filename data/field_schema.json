@@ -2505,6 +2505,13 @@
             "wall_setup"
           ],
           "value_style": "住宅：單層粗棉布；火焰：電纜托盤"
+        },
+        {
+          "key": "operating_conditions",
+          "label_zh": "運行條件",
+          "order": 11,
+          "merged_from": [],
+          "value_style": "主動與被動熱管理系統運行條件"
         }
       ]
     },
