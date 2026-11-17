@@ -33,19 +33,23 @@
       "conditions": {
         "soc": {
           "value": "放電至 EODV 再過充",
-          "detail": "測試前樣品先放電至 EODV (End of Discharge Voltage)，再進行過充電。"
+          "detail": "測試前樣品先放電至 EODV (End of Discharge Voltage)，再進行過充電。",
+          "source_reference": "23.2"
         },
         "charging_current": {
           "value": "最大充電電流",
-          "detail": "以製造商規定的最大充電電流進行恆流充電。"
+          "detail": "以製造商規定的最大充電電流進行恆流充電。",
+          "source_reference": "23.2"
         },
         "fault_condition": {
           "value": "單一故障",
-          "detail": "在充電電路中引入單一故障條件。"
+          "detail": "在充電電路中引入單一故障條件。",
+          "source_reference": "23.2"
         },
         "termination": {
           "value": "電壓達 110% 且靜置 2 小時",
-          "detail": "測試持續至保護電路終止充電，或電壓達到規定的 110 % 且溫度恢復至環境溫度/穩定狀態，並額外靜置 2 小時（或發生起火/爆炸）。"
+          "detail": "23.4：測試持續至電壓達到規定最大電壓限值的 110% 且監測溫度恢復至環境溫度或穩態並再經過 2 小時，或發生起火／爆炸。",
+          "source_reference": "23.4"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -60,7 +64,7 @@
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；23.4"
         }
       },
       "acceptance_criteria": {
@@ -97,15 +101,18 @@
       "conditions": {
         "soc": {
           "value": "放電至 EODV",
-          "detail": "測試前樣品放電至終止電壓 (EODV)。"
+          "detail": "測試前樣品放電至終止電壓 (EODV)。",
+          "source_reference": "24.2"
         },
         "current": {
-          "value": "高於最大充電速率 20% (20% greater)",
-          "detail": "以高於規定的最大充電速率 20% (20 % greater) 進行充電。"
+          "value": "高於最大充電速率 20%",
+          "detail": "24.2：以高於製造商規定最大充電速率 20% 的電流進行充電；若過電流保護限值高於最大充電速率的 120%，則試驗電源電流應高於該過電流保護限值 5%（例外 2）。",
+          "source_reference": "24.2"
         },
         "fault_condition": {
           "value": "單一故障條件",
-          "detail": "過充電流保護裝置或控制器需處於單一故障條件下。"
+          "detail": "過充電流保護裝置或控制器需處於單一故障條件下。",
+          "source_reference": "24.2"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -120,7 +127,7 @@
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；24.3；24.5"
         }
       },
       "acceptance_criteria": {
@@ -159,15 +166,18 @@
       "conditions": {
         "soc": {
           "value": "滿充 (MOSOC)",
-          "detail": "樣品處於滿充狀態。"
+          "detail": "樣品處於滿充狀態。",
+          "source_reference": "25.2；18.1"
         },
         "external_resistance": {
           "value": "≤ 20 mΩ",
-          "detail": "外部短路電阻不大於 20 mΩ。"
+          "detail": "外部短路電阻不大於 20 mΩ。",
+          "source_reference": "25.2"
         },
         "fault_condition": {
           "value": "單一故障",
-          "detail": "在放電保護電路中引入單一元件故障。"
+          "detail": "25.3：在影響外部短路的 DUT 保護電路中引入單一故障條件（經評估為可靠之保護元件或電路依 18.5 可不施加故障）。",
+          "source_reference": "25.3"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -182,7 +192,7 @@
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；25.5"
         }
       },
       "acceptance_criteria": {
@@ -217,19 +227,23 @@
       "conditions": {
         "soc": {
           "value": "滿充 (MOSOC)",
-          "detail": "樣品處於滿充狀態。"
+          "detail": "樣品處於滿充狀態。",
+          "source_reference": "26.1；18.1"
         },
         "current": {
-          "value": "過載放電（90% BMS 保護值，或 135% 主熔斷器，或例外 150%）",
-          "detail": "高於正常放電速率進行放電（以 90 % BMS 過流保護值，或 135 % 主熔斷器額定值，或 Exception 1 的 150 %）。"
+          "value": "過載放電（90% BMS 保護值，或 135% 主熔斷器／斷路器，或例外 150%）",
+          "detail": "26.3：條件 1 以 90% BMS 額定過電流保護值放電；26.7：條件 2 以 135% 主熔斷器或斷路器額定值放電（若 BMS 致動元件經評估可承受高於 135% 過載電流，依例外 1 以 150% 測試）。",
+          "source_reference": "26.3；26.7"
         },
         "fault_condition": {
           "value": "單一故障",
-          "detail": "放電電路單一故障（可能導致過載）。"
+          "detail": "放電電路單一故障（可能導致過載）。",
+          "source_reference": "26.5；26.9"
         },
         "duration": {
           "value": "持續至完放或靜置 7 小時",
-          "detail": "測試持續至完全放電，或保護啟動/溫度穩定後並已經過 7 小時。"
+          "detail": "測試持續至完全放電，或保護啟動/溫度穩定後並已經過 7 小時。",
+          "source_reference": "26.4；26.8"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -239,12 +253,12 @@
         "pre_conditioning": {
           "value": "充至 MOSOC，靜置最多 8 小時",
           "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
-          "source_reference": "18.1"
+          "source_reference": "18.1；26.1"
         },
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；26.10"
         }
       },
       "acceptance_criteria": {
@@ -280,19 +294,23 @@
       "conditions": {
         "soc": {
           "value": "滿充 (MOSOC)",
-          "detail": "樣品處於滿充狀態。"
+          "detail": "樣品處於滿充狀態。",
+          "source_reference": "27.2；18.1"
         },
         "discharge_current": {
           "value": "最大放電速率",
-          "detail": "以最大放電速率進行放電。"
+          "detail": "以最大放電速率進行放電。",
+          "source_reference": "27.2"
         },
         "fault_condition": {
           "value": "單一故障條件",
-          "detail": "過放電保護控制處於單一故障條件。"
+          "detail": "過放電保護控制處於單一故障條件。",
+          "source_reference": "27.2"
         },
         "termination": {
           "value": "放電至 0 V 或保護跳脫",
-          "detail": "持續放電直到保護裝置啟動或放電至 0 V。"
+          "detail": "持續放電直到保護裝置啟動或放電至 0 V。",
+          "source_reference": "27.3"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -307,7 +325,7 @@
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；27.3"
         }
       },
       "acceptance_criteria": {
@@ -344,11 +362,13 @@
       "conditions": {
         "target_temperature": {
           "value": "上限充電溫度",
-          "detail": "在上限充電溫度下進行充放電。"
+          "detail": "在上限充電溫度下進行充放電。",
+          "source_reference": "28.2"
         },
         "operation": {
           "value": "≥ 2 次循環（充放電至溫度增加 ≤ 2 °C）",
-          "detail": "至少 2 次完整充放電循環，直到連續循環電池溫度增加不超過 2 °C。"
+          "detail": "至少 2 次完整充放電循環，直到連續循環電池溫度增加不超過 2 °C。",
+          "source_reference": "28.4"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -356,14 +376,14 @@
           "source_reference": "18.2；Table 18.1"
         },
         "pre_conditioning": {
-          "value": "充至 MOSOC，靜置最多 8 小時",
-          "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
-          "source_reference": "18.1"
+          "value": "預處理後，試驗前放電至 EODV",
+          "detail": "18.1：依製造商規格充電至最大工作電量 (MOSOC)，並於 25 ± 5 °C 下靜置最多 8 小時；28.2：試驗前須將樣品完全放電至終止電壓 (EODV)，再置於上限充電溫度試驗箱中調節。",
+          "source_reference": "18.1；28.2"
         },
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；28.7"
         }
       },
       "acceptance_criteria": {
@@ -402,15 +422,13 @@
       "conditions": {
         "soc": {
           "value": "人工不平衡狀態（除 1 個外完放，未放者放電至約 50% SOC）",
-          "detail": "除一個電池/電池組外全部放電至完全放電狀態，未放電電池放電至約 50% SOC。"
+          "detail": "29.2：將滿充 DUT 除一個電芯／電芯組外其餘全部放電至完全放電狀態，該未完全放電之電芯／電芯組放電至約 50% SOC。",
+          "source_reference": "29.2"
         },
         "charge": {
           "value": "按製造商規格充電",
-          "detail": "在不平衡狀態下依正常規格充電。"
-        },
-        "soc_preparation": {
-          "value": "人工不平衡狀態",
-          "detail": "除一個電池/電池組外全部放電至完全放電狀態，未放電電池放電至約 50% SOC。"
+          "detail": "在不平衡狀態下依正常規格充電。",
+          "source_reference": "29.3"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -425,7 +443,7 @@
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；29.4"
         }
       },
       "acceptance_criteria": {
@@ -462,15 +480,18 @@
       "conditions": {
         "applicability": {
           "value": "≥ 60 Vdc 系統",
-          "detail": "僅適用於額定電壓 60 Vdc 及以上的電路。"
+          "detail": "僅適用於額定電壓 60 Vdc 及以上的電路。",
+          "source_reference": "30.2"
         },
         "voltage": {
           "value": "2 倍額定電壓 × 1.414（連接 AC 則為 1000 V + 2 倍額定）",
-          "detail": "施加 2 倍額定電壓的電壓 (直流需乘以 1.414)。若連接至 AC 電網，則為 1000 V + 2 倍額定電壓。"
+          "detail": "30.2：施加 2 倍額定電壓 × 1.414 之直流電壓（例外 1：可改施 60 Hz 交流 2 倍額定電壓）；例外 2：連接交流市電電源之電路為 60 Hz 交流 1000 V + 2 倍額定電壓（若採直流則為其 1.414 倍）。",
+          "source_reference": "30.2"
         },
         "duration": {
-          "value": "1 分鐘",
-          "detail": "維持 1 分鐘。"
+          "value": "≥ 1 分鐘",
+          "detail": "30.6：施加測試電壓至少 1 分鐘（測試時須斷開電芯／模組以避免充電）。",
+          "source_reference": "30.6"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -512,15 +533,18 @@
       "conditions": {
         "method": {
           "value": "系統 ≥ 120 V 按 ISO 6469-1；< 120 V 施加 500 Vdc 60 秒",
-          "detail": "系統 ≥ 120 V 按 ISO 6469-1 測試。系統 < 120 V 施加 500 Vdc 60 秒。"
+          "detail": "系統 ≥ 120 V 按 ISO 6469-1 測試。系統 < 120 V 施加 500 Vdc 60 秒。",
+          "source_reference": "31.1.2；31.2.3"
         },
         "voltage": {
           "value": "500 Vdc (< 120 V 系統)",
-          "detail": "施加 500 Vdc 60 秒。"
+          "detail": "施加 500 Vdc 60 秒。",
+          "source_reference": "31.2.3"
         },
         "duration": {
           "value": "60 秒",
-          "detail": "施加 500 Vdc 60 秒。"
+          "detail": "施加 500 Vdc 60 秒。",
+          "source_reference": "31.2.3"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -530,7 +554,7 @@
         "pre_conditioning": {
           "value": "充至 MOSOC，靜置最多 8 小時",
           "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
-          "source_reference": "18.1"
+          "source_reference": "18.1；31.1.2"
         }
       },
       "acceptance_criteria": {
@@ -560,11 +584,13 @@
       "conditions": {
         "current": {
           "value": "1.5 倍 Ic 或 25 A (取較大者)",
-          "detail": "施加 150% (1.5 倍) 最大充電電流或 25 A，取較大者。"
+          "detail": "施加 150% (1.5 倍) 最大充電電流或 25 A，取較大者。",
+          "source_reference": "32.3"
         },
         "duration": {
           "value": "5 秒",
-          "detail": "持續 5 秒。"
+          "detail": "持續 5 秒。",
+          "source_reference": "32.3"
         },
         "pre_conditioning": {
           "value": "充至 MOSOC，靜置最多 8 小時",
@@ -598,19 +624,23 @@
       "conditions": {
         "waveform": {
           "value": "按 ISO 6469-1 隨機振動",
-          "detail": "按 ISO 6469-1 進行隨機振動測試。"
+          "detail": "按 ISO 6469-1 進行隨機振動測試。",
+          "source_reference": "33.1；33.2"
         },
         "vibration_frequency": {
           "value": "5～200 Hz",
-          "detail": "隨機振動頻率範圍 5-200 Hz。"
+          "detail": "隨機振動頻率範圍 5-200 Hz。",
+          "source_reference": "33.3；Table 33.1"
         },
         "test_duration": {
           "value": "每軸 12 小時（X、Y、Z 三方向共 36 小時）",
-          "detail": "X、Y、Z 三方向各 12 小時。"
+          "detail": "X、Y、Z 三方向各 12 小時。",
+          "source_reference": "33.2；33.3"
         },
         "axes": {
           "value": "X、Y、Z 三方向",
-          "detail": "X、Y、Z 三方向各 12 小時。"
+          "detail": "X、Y、Z 三方向各 12 小時。",
+          "source_reference": "33.2；33.3；Table 33.1"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -625,7 +655,7 @@
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；33.4"
         }
       },
       "acceptance_criteria": {
@@ -661,15 +691,18 @@
       "conditions": {
         "waveform": {
           "value": "半正弦波",
-          "detail": "依重量不同，加速度為 50 gn/11 ms (≤ 12 kg)、25 gn/15 ms (12–100 kg)、10 gn/20 ms (> 100 kg)。"
+          "detail": "依重量不同，加速度為 50 gn/11 ms (≤ 12 kg)、25 gn/15 ms (12–100 kg)、10 gn/20 ms (> 100 kg)。",
+          "source_reference": "34.3；Table 34.1"
         },
         "acceleration_peak": {
           "value": "50 gn (≤ 12 kg) / 25 gn (12–100 kg) / 10 gn (> 100 kg)",
-          "detail": "依重量不同，加速度為 50 gn/11 ms (≤ 12 kg)、25 gn/15 ms (12–100 kg)、10 gn/20 ms (> 100 kg)。"
+          "detail": "依重量不同，加速度為 50 gn/11 ms (≤ 12 kg)、25 gn/15 ms (12–100 kg)、10 gn/20 ms (> 100 kg)。",
+          "source_reference": "34.3；Table 34.1"
         },
         "pulse_duration": {
           "value": "11 ms (≤ 12 kg) / 15 ms (12–100 kg) / 20 ms (> 100 kg)",
-          "detail": "脈衝持續時間依重量分別為 11 ms、15 ms、20 ms。"
+          "detail": "脈衝持續時間依重量分別為 11 ms、15 ms、20 ms。",
+          "source_reference": "34.3；Table 34.1"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -679,12 +712,12 @@
         "pre_conditioning": {
           "value": "充至 MOSOC，靜置最多 8 小時",
           "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
-          "source_reference": "18.1"
+          "source_reference": "18.1；34.2"
         },
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；34.5"
         }
       },
       "acceptance_criteria": {
@@ -720,27 +753,33 @@
       "conditions": {
         "applicability": {
           "value": "僅適用於道路用輕型電動車（滑板車、摩托車）",
-          "detail": "僅適用於道路用輕型電動車（如滑板車、摩托車）。"
+          "detail": "僅適用於道路用輕型電動車（如滑板車、摩托車）。",
+          "source_reference": "35.1"
         },
         "force": {
           "value": "1000 倍重量或 100 kN",
-          "detail": "使用半徑 75 mm 肋狀壓板擠壓，施加至 1000 倍 DUT 重量或 100 kN（取較早者），或 50% 變形。"
+          "detail": "使用半徑 75 mm 肋狀壓板擠壓，施加至 1000 倍 DUT 重量或 100 kN（取較早者），或 50% 變形。",
+          "source_reference": "35.3；35.4；35.5"
         },
         "crush_speed": {
           "value": "約 1.5 cm/s",
-          "detail": "以大約 1.5 cm/s 的速度進行擠壓。"
+          "detail": "以大約 1.5 cm/s 的速度進行擠壓。",
+          "source_reference": "35.4"
         },
         "apparatus": {
-          "value": "半徑 75 mm 半圓柱鋼製壓板（肋狀壓板）",
-          "detail": "平滑半圓柱鋼製壓板，長度足以覆蓋整個被測表面。使用半徑 75 mm 肋狀壓板擠壓。"
+          "value": "半徑 75 mm 肋狀壓板（凸起間距 30 mm）",
+          "detail": "35.3：置於固定平面與肋狀試驗壓板之間擠壓，壓板面配置半徑 75 mm (2.95 in)、彼此相距 30 mm (1.2 in) 之半圓柱形凸起（見圖 35.1）。",
+          "source_reference": "35.3"
         },
         "soc": {
           "value": "完全充電",
-          "detail": "測試前樣品需處於完全充電狀態。"
+          "detail": "測試前樣品需處於完全充電狀態。",
+          "source_reference": "35.2"
         },
         "termination": {
           "value": "達 1000 倍重量、100 kN 或 50% 變形（取較早者）",
-          "detail": "施加至 1000 倍 DUT 重量或 100 kN（取較早者），或 50% 變形。"
+          "detail": "施加至 1000 倍 DUT 重量或 100 kN（取較早者），或 50% 變形。",
+          "source_reference": "35.4；35.5"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -755,7 +794,7 @@
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；35.6"
         }
       },
       "acceptance_criteria": {
@@ -791,27 +830,28 @@
       "conditions": {
         "soc": {
           "value": "完全充電",
-          "detail": "測試前樣品需處於完全充電狀態。"
+          "detail": "測試前樣品需處於完全充電狀態。",
+          "source_reference": "36.1.2"
         },
         "drop_height": {
-          "value": "1.0 m (±0.01 m 公差)",
-          "detail": "從 1 公尺高度跌落至混凝土表面 (±0.01 m tolerance)。"
+          "value": "1.0 ± 0.01 m",
+          "detail": "36.1.2：從 1.0 ± 0.01 m（1 公尺）高度跌落至平坦混凝土表面。",
+          "source_reference": "36.1.2"
         },
         "drop_surface": {
           "value": "混凝土表面",
-          "detail": "從 1 公尺高度跌落至混凝土表面。"
+          "detail": "從 1 公尺高度跌落至混凝土表面。",
+          "source_reference": "36.1.2"
         },
         "drop_count": {
           "value": "3 次",
-          "detail": "進行 3 次跌落。"
+          "detail": "進行 3 次跌落。",
+          "source_reference": "36.1.2"
         },
         "cold_conditioning": {
           "value": "塑膠外殼預期用於 0 °C 時：在 0 °C 下調節 3 小時",
-          "detail": "若外殼為塑膠且預期用於 0 °C 環境 (intended for use in 0 °C temperatures)，需在 0 °C 下調節 3 小時。"
-        },
-        "cold_condition": {
-          "value": "低溫預處理",
-          "detail": "若外殼為塑膠且預期用於 0 °C 環境 (intended for use in 0 °C temperatures)，需在 0 °C 下調節 3 小時。"
+          "detail": "36.1.2 例外：若外殼為塑膠且預期用於 0 °C 環境，須在 0 °C（若規定溫度低於 0 °C 則依規定溫度）下調節至少 3 小時後立即試驗。",
+          "source_reference": "36.1.2"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -826,7 +866,7 @@
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；36.1.2；36.1.3"
         }
       },
       "acceptance_criteria": {
@@ -867,19 +907,23 @@
       "conditions": {
         "soc": {
           "value": "完全充電",
-          "detail": "測試前樣品需處於完全充電狀態。"
+          "detail": "測試前樣品需處於完全充電狀態。",
+          "source_reference": "36.2.2"
         },
         "drop_height": {
           "value": "≥ 1.0 m",
-          "detail": "從至少 1 公尺高度跌落至混凝土表面。"
+          "detail": "從至少 1 公尺高度跌落至混凝土表面。",
+          "source_reference": "36.2.2"
         },
         "drop_surface": {
           "value": "混凝土表面",
-          "detail": "跌落至混凝土表面。"
+          "detail": "跌落至混凝土表面。",
+          "source_reference": "36.2.2；36.2.5"
         },
         "drop_count": {
-          "value": "依平放與非平放邏輯進行跌落",
-          "detail": "根據平放與非平放跌落的條件邏輯進行跌落測試。"
+          "value": "至少 1 次（單次須非平放；含平放則至少 2 次）",
+          "detail": "36.2.4：至少跌落 1 次；36.2.3：若僅進行 1 次跌落試驗，不得為平放跌落；若其中 1 次為平放跌落，則至少須再進行 1 次非平放跌落。",
+          "source_reference": "36.2.3；36.2.4"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -889,12 +933,12 @@
         "pre_conditioning": {
           "value": "充至 MOSOC，靜置最多 8 小時",
           "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
-          "source_reference": "18.1"
+          "source_reference": "18.1；36.2.2"
         },
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；36.2.6"
         }
       },
       "acceptance_criteria": {
@@ -929,19 +973,23 @@
       "conditions": {
         "soc": {
           "value": "完全放電",
-          "detail": "在進行溫度調節前，樣品需處於完全放電狀態。為了防止受電電池過熱造成危險，樣品在調節前應完全放電。"
+          "detail": "在進行溫度調節前，樣品需處於完全放電狀態。為了防止受電電池過熱造成危險，樣品在調節前應完全放電。",
+          "source_reference": "37.3"
         },
         "test_type": {
           "value": "高溫外殼應力釋放測試",
-          "detail": "放置於 70 °C 烤箱中（若最高工作溫度超過 60 °C，則為 T_max + 10 °C）。持續 7 小時。"
+          "detail": "放置於 70 °C 烤箱中（若最高工作溫度超過 60 °C，則為 T_max + 10 °C）。持續 7 小時。",
+          "source_reference": "37.1；37.2"
         },
         "temperature": {
           "value": "70 °C 或 T_max + 10 °C",
-          "detail": "放置於 70 °C 烤箱中（若最高工作溫度超過 60 °C，則為 T_max + 10 °C）。"
+          "detail": "放置於 70 °C 烤箱中（若最高工作溫度超過 60 °C，則為 T_max + 10 °C）。",
+          "source_reference": "37.2"
         },
         "duration": {
           "value": "7 小時",
-          "detail": "持續 7 小時。"
+          "detail": "持續 7 小時。",
+          "source_reference": "37.2"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -981,15 +1029,18 @@
       "conditions": {
         "test_type": {
           "value": "把手提把拉力應力測試",
-          "detail": "對把手施加 4 倍 DUT 重量的拉力。保持 1 分鐘。"
+          "detail": "對把手施加 4 倍 DUT 重量的拉力。保持 1 分鐘。",
+          "source_reference": "38.1；38.2"
         },
         "force": {
           "value": "4 倍 DUT 重量",
-          "detail": "對把手施加 4 倍 DUT 重量的拉力。"
+          "detail": "對把手施加 4 倍 DUT 重量的拉力。",
+          "source_reference": "38.2；38.3"
         },
         "duration": {
           "value": "1 分鐘",
-          "detail": "保持 1 分鐘。"
+          "detail": "保持 1 分鐘。",
+          "source_reference": "38.2"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -1030,11 +1081,13 @@
       "conditions": {
         "soc": {
           "value": "完全充電",
-          "detail": "測試前樣品需處於完全充電狀態。"
+          "detail": "測試前樣品需處於完全充電狀態。",
+          "source_reference": "39.2；18.1"
         },
         "orientation": {
           "value": "在 3 個互相垂直方向各以每 15 秒 90° 的速度旋轉 360°",
-          "detail": "在 3 個互相垂直方向各以每 15 秒 90° 的速度旋轉 360°。"
+          "detail": "39.2：在 3 個互相垂直方向各以每 15 秒 90° 的連續速率旋轉 360°（僅具 2 對稱軸之設計如圓柱形則為 2 個互相垂直方向）。",
+          "source_reference": "39.2"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -1049,7 +1102,7 @@
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；39.3"
         }
       },
       "acceptance_criteria": {
@@ -1087,19 +1140,23 @@
       "conditions": {
         "test_type": {
           "value": "電線拉力與推回測試",
-          "detail": "施加 2 倍 DUT 重量（最大 156 N）拉力持續 1 分鐘。將電線向內推回 (25.4-mm increments)。"
+          "detail": "40.2：施加 2 倍 DUT 重量（不超過 156 N）拉力持續 1 分鐘；40.3：以 25.4 mm 為增量將電線向內推回直到彎折或推力超過 26.7 N。",
+          "source_reference": "40.2.2；40.3.4"
         },
         "force": {
           "value": "2 倍 DUT 重量（最大 156 N）拉力",
-          "detail": "施加 2 倍 DUT 重量（最大 156 N）拉力持續 1 分鐘。"
+          "detail": "施加 2 倍 DUT 重量（最大 156 N）拉力持續 1 分鐘。",
+          "source_reference": "40.2.2"
         },
         "duration": {
           "value": "1 分鐘",
-          "detail": "持續 1 分鐘。"
+          "detail": "持續 1 分鐘。",
+          "source_reference": "40.2.2"
         },
         "apparatus": {
-          "value": "推回增量 25.4 mm (25.4-mm increments)",
-          "detail": "將電線向內推回 (25.4-mm increments)。"
+          "value": "推回增量 25.4 mm（推力上限 26.7 N）",
+          "detail": "40.3.3–40.3.4：於距出線處 25.4 mm 處夾持（一體式護套則夾持護套），以 25.4 mm 為增量將電線推回產品內，直到電線彎折或推力超過 26.7 N。",
+          "source_reference": "40.3.3；40.3.4"
         },
         "sample_quantity": {
           "value": "2 個測試樣品或完整 EESA",
@@ -1142,19 +1199,23 @@
       "conditions": {
         "soc": {
           "value": "完全充電",
-          "detail": "測試前樣品需處於完全充電狀態。"
+          "detail": "測試前樣品需處於完全充電狀態。",
+          "source_reference": "41.1；18.1"
         },
         "liquid": {
           "value": "5% NaCl 鹽水",
-          "detail": "浸入 5% 鹽水中。"
+          "detail": "浸入 5% 鹽水中。",
+          "source_reference": "41.2"
         },
         "method": {
           "value": "完全淹沒",
-          "detail": "完全淹沒至少 2 小時，或直到可見反應停止。"
+          "detail": "完全淹沒至少 2 小時，或直到可見反應停止。",
+          "source_reference": "41.2"
         },
         "duration": {
           "value": "≥ 2 小時（或直到可見反應停止）",
-          "detail": "完全淹沒至少 2 小時，或直到可見反應停止。"
+          "detail": "完全淹沒至少 2 小時，或直到可見反應停止。",
+          "source_reference": "41.2"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -1164,7 +1225,7 @@
         "pre_conditioning": {
           "value": "充至 MOSOC，靜置最多 8 小時",
           "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
-          "source_reference": "18.1"
+          "source_reference": "18.1；41.1"
         }
       },
       "acceptance_criteria": {
@@ -1198,15 +1259,18 @@
       "conditions": {
         "soc": {
           "value": "完全充電",
-          "detail": "測試前樣品需處於完全充電狀態。"
+          "detail": "測試前樣品需處於完全充電狀態。",
+          "source_reference": "42.2；18.1"
         },
         "liquid": {
           "value": "清水（IPX3 噴水或更高）",
-          "detail": "按 IEC 60529 進行 IPX3 噴水測試（或按製造商宣稱之更高防護等級）。"
+          "detail": "按 IEC 60529 進行 IPX3 噴水測試（或按製造商宣稱之更高防護等級）。",
+          "source_reference": "42.2"
         },
         "method": {
           "value": "按 IEC 60529 進行 IPX3 噴水測試（或更高等級）",
-          "detail": "按 IEC 60529 進行 IPX3 噴水測試（或按製造商宣稱之更高防護等級）。"
+          "detail": "按 IEC 60529 進行 IPX3 噴水測試（或按製造商宣稱之更高防護等級）。",
+          "source_reference": "42.2"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -1216,12 +1280,12 @@
         "pre_conditioning": {
           "value": "充至 MOSOC，靜置最多 8 小時",
           "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
-          "source_reference": "18.1"
+          "source_reference": "18.1；42.2"
         },
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；42.3"
         }
       },
       "acceptance_criteria": {
@@ -1257,23 +1321,28 @@
       "conditions": {
         "soc": {
           "value": "完全充電",
-          "detail": "測試前樣品需處於完全充電狀態。"
+          "detail": "測試前樣品需處於完全充電狀態。",
+          "source_reference": "43.2；18.1"
         },
         "high_temperature": {
           "value": "85 ± 2 °C (按 SAE J2464)",
-          "detail": "在 85 ± 2 °C 與 -40 ± 2 °C 之間進行 5 次循環（按 SAE J2464 熱衝擊測試程序）。"
+          "detail": "在 85 ± 2 °C 與 -40 ± 2 °C 之間進行 5 次循環（按 SAE J2464 熱衝擊測試程序）。",
+          "source_reference": "43.2"
         },
         "low_temperature": {
           "value": "-40 ± 2 °C",
-          "detail": "-40 ± 2 °C。"
+          "detail": "-40 ± 2 °C。",
+          "source_reference": "43.2"
         },
         "dwell_time": {
           "value": "按 SAE J2464 熱衝擊程序",
-          "detail": "按 SAE J2464 熱衝擊測試程序。"
+          "detail": "按 SAE J2464 熱衝擊測試程序。",
+          "source_reference": "43.2"
         },
         "cycles": {
           "value": "5 次循環",
-          "detail": "進行 5 次循環（參考 Gemini md 記載的 5 次）。"
+          "detail": "43.2：依所援引之 SAE J2464 熱衝擊測試程序進行 5 次循環（UL 2271 本文未載明循環次數，須對照 SAE J2464 原文確認）。",
+          "source_reference": "43.2"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -1283,12 +1352,12 @@
         "pre_conditioning": {
           "value": "充至 MOSOC，靜置最多 8 小時",
           "detail": "電池應依製造商規格完全充電至最大工作電量 (MOSOC)。充電後與測試前，電池應在 25 ± 5 °C 下靜置最多 8 小時。",
-          "source_reference": "18.1"
+          "source_reference": "18.1；43.2"
         },
         "observation_period": {
           "value": "至少觀察 1 小時並監控溫度",
           "detail": "測試結束前，應至少有 1 小時的觀察期，並依據 18.6 節監控溫度。",
-          "source_reference": "18.7"
+          "source_reference": "18.7；43.3"
         }
       },
       "acceptance_criteria": {
@@ -1326,11 +1395,13 @@
       "conditions": {
         "trigger": {
           "value": "觸發單電池熱失控（依 UL 2580 單電池失效測試方法）",
-          "detail": "依 UL 2580 單電池失效測試方法，誘發單一電芯熱失控。"
+          "detail": "依 UL 2580 單電池失效測試方法，誘發單一電芯熱失控。",
+          "source_reference": "45.1；45.2"
         },
         "method": {
           "value": "僅適用於額定能量 > 1 kWh 之二次鋰電池系統",
-          "detail": "僅適用於額定能量 > 1 kWh 的二次鋰電池系統。"
+          "detail": "僅適用於額定能量 > 1 kWh 的二次鋰電池系統。",
+          "source_reference": "45.2"
         },
         "sample_quantity": {
           "value": "1 個 EESA",
@@ -1366,6 +1437,9 @@
       "The mapping to schema v2.0 normalizes test names strictly based on taxonomy constraints."
     ],
     "total_test_entries": 21,
-    "enrichment": "2026-09-24 Phase 2 以腳本補上 sample_quantity、pre_conditioning、observation_period；2026-09-26 已逐項對照原文核對：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
+    "enrichment": "2026-09-24 Phase 2 以腳本補上 sample_quantity、pre_conditioning、observation_period；2026-09-26 已逐項對照原文核對：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。",
+    "parameter_review": [
+      "2026-11-17：依原文補齊試驗參數（UL2271-T23、UL2271-T24、UL2271-T25、UL2271-T26、UL2271-T27、UL2271-T28、UL2271-T29、UL2271-T30、UL2271-T31、UL2271-T32、UL2271-T33、UL2271-T34、UL2271-T35、UL2271-T36a、UL2271-T36b、UL2271-T37、UL2271-T38、UL2271-T39、UL2271-T40、UL2271-T41、UL2271-T42、UL2271-T43、UL2271-T45），出處見各欄位 source_reference。"
+    ]
   }
 }
