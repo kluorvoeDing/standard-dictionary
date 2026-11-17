@@ -519,12 +519,8 @@
       "conditions": {
         "nail_diameter": {
           "value": "直徑 Φ5 mm 鋼針",
-          "source_reference": "7.9"
-        },
-        "needle_diameter": {
-          "value": "圓錐角 45°",
-          "detail": "鋼針圓錐角為 45°。",
-          "source_reference": "7.9"
+          "source_reference": "7.9",
+          "detail": "用直徑 Φ5 mm 的耐高溫鋼針（如鎢鋼），鋼針圓錐角為 45°。"
         },
         "penetration_speed": {
           "value": "25 ± 5 mm/s",

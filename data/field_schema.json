@@ -839,6 +839,13 @@
           "order": 8,
           "merged_from": [],
           "value_style": "正常操作條件，冷卻系統運作"
+        },
+        {
+          "key": "ignition_detection",
+          "label_zh": "起火偵測",
+          "order": 9,
+          "merged_from": [],
+          "value_style": "火花點火源或氣體監測檢測可燃氣體"
         }
       ]
     },
@@ -1764,6 +1771,13 @@
             "ignition_detection"
           ],
           "value_style": "僅限模塑外殼電池組"
+        },
+        {
+          "key": "operation",
+          "label_zh": "操作方式",
+          "order": 10,
+          "merged_from": [],
+          "value_style": "推回增量 25.4 mm（推力上限 26.7 N）"
         }
       ]
     },
@@ -2512,6 +2526,13 @@
           "order": 11,
           "merged_from": [],
           "value_style": "主動與被動熱管理系統運行條件"
+        },
+        {
+          "key": "operation",
+          "label_zh": "操作方式",
+          "order": 12,
+          "merged_from": [],
+          "value_style": "試驗操作與重測條件"
         }
       ]
     },

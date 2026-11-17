@@ -414,18 +414,13 @@
       ],
       "conditions": {
         "charging_voltage": {
-          "value": "連續通電直到保護電路動作",
+          "value": "超過表 2 上限充電電壓 (4.25 V)",
           "detail": "對單電池或電池模組施加超過表 2 上限充電電壓 (4.25 V) 之電壓，測定充電停止時之電壓（5.8.2、表 2）。",
           "source_reference": "5.8.2"
         },
         "temperature": {
           "value": "20 ± 5 °C",
           "detail": "於周圍溫度 20 ± 5 °C 下實施試驗（5.8.2）。",
-          "source_reference": "5.8.2"
-        },
-        "cycles": {
-          "value": "2 個以上串聯連接構造",
-          "detail": "組電池為 2 個以上單電池或電池模組直列串聯構造時，量測充電保護特性（5.8.2）。",
           "source_reference": "5.8.2"
         },
         "sample_quantity": {
@@ -437,6 +432,11 @@
           "value": "0.2 It A 放電後充滿電",
           "detail": "試驗前先在 20 ± 5 °C 下以 0.2 It A 恆流放電至指定終止電壓。組電池接著在規定溫度下（外部短路試驗為上下限溫度，跌落試驗為室溫）充至製造商指定的滿電狀態。",
           "source_reference": "5.1"
+        },
+        "applicability": {
+          "value": "2 個以上串聯連接構造",
+          "detail": "組電池為 2 個以上單電池或電池模組直列串聯構造時，量測充電保護特性（5.8.2）。",
+          "source_reference": "5.8.2"
         }
       },
       "acceptance_criteria": {

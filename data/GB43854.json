@@ -256,11 +256,6 @@
           "detail": "用直徑 φ5 mm 的耐高溫鋼針（如鎢鋼，針尖的圓錐角為 45°）。直徑 5 mm 至 8 mm 耐高溫鎢鋼針，頂端圓錐角 45° 至 60°，貫穿速度 25 ± 5 mm/s。",
           "source_reference": "6.3.5"
         },
-        "needle_diameter": {
-          "value": "圓錐角 45° (45°～60°)",
-          "detail": "針尖的圓錐角為 45°（頂端圓錐角 45° 至 60°）。",
-          "source_reference": "6.3.5"
-        },
         "penetration_speed": {
           "value": "25 ± 5 mm/s",
           "detail": "以 (25±5) mm/s 的速度。",

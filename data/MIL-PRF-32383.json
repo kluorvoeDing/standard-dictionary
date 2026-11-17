@@ -1324,14 +1324,19 @@
           "source_reference": "4.7.4.9"
         },
         "duration": {
-          "value": "暫態高溫重複 5 次循環",
-          "detail": "暫態切斷步驟重複 5 次循環；永久切斷執行 1 次",
-          "source_reference": "4.7.4.9"
+          "value": "不少於 2 小時",
+          "detail": "高溫（75 ± 5 °C / 95 ± 5 °C）均保溫不少於 2 小時。",
+          "source_reference": "4.7.4.9；4.7.4.10"
         },
         "observation_period": {
           "value": "冷卻後驗證充電與放電電流",
           "detail": "在高溫下嘗試充電與放電，電流必須為零；暫態降溫後依 4.7.2.3 執行容量測試",
           "source_reference": "4.7.4.9；3.7.2.4；3.7.2.5"
+        },
+        "cycles": {
+          "value": "暫態高溫重複 5 次循環",
+          "detail": "暫態切斷步驟重複 5 次循環；永久切斷執行 1 次",
+          "source_reference": "4.7.4.9"
         }
       },
       "acceptance_criteria": {
