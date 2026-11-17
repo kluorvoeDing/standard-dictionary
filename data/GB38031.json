@@ -48,15 +48,18 @@
       "conditions": {
         "soc": {
           "value": "放電終止電壓狀態",
-          "detail": "將試驗對象荷電狀態調整至放電終止電壓狀態。"
+          "detail": "將試驗對象荷電狀態調整至放電終止電壓狀態。",
+          "source_reference": "8.1.2.2"
         },
         "discharge_current": {
           "value": "I1 (1 率放電電流) 恆流放電",
-          "detail": "以 I1 (1 率放電電流) 恆流放電。"
+          "detail": "以 I1 (1 率放電電流) 恆流放電。",
+          "source_reference": "8.1.2.2；4.1"
         },
         "duration": {
           "value": "放電持續 30 分鐘",
-          "detail": "放電持續 30 分鐘。"
+          "detail": "放電持續 30 分鐘。",
+          "source_reference": "8.1.2.2"
         },
         "pre_conditioning": {
           "value": "預處理後，荷電狀態調至放電終止電壓",
@@ -95,15 +98,18 @@
       "conditions": {
         "soc": {
           "value": "標準充電後 (100% SOC)",
-          "detail": "試驗對象按 7.1.1 方法進行標準充電。"
+          "detail": "試驗對象按 7.1.1 方法進行標準充電。",
+          "source_reference": "8.1.3.2；7.1.1"
         },
         "charging_current": {
           "value": "≥ 1 I3 恆流充電",
-          "detail": "以製造商規定且不小於 1 I3 的電流恆流充電。"
+          "detail": "以製造商規定且不小於 1 I3 的電流恆流充電。",
+          "source_reference": "8.1.3.3"
         },
         "termination": {
           "value": "充電終止電壓 1.1 倍 或 115% SOC",
-          "detail": "充電至製造商規定的充電終止電壓的 1.1 倍或 115% SOC 後停止充電。"
+          "detail": "充電至製造商規定的充電終止電壓的 1.1 倍或 115% SOC 後停止充電。",
+          "source_reference": "8.1.3.3"
         },
         "pre_conditioning": {
           "value": "預處理後，按 7.1.1 標準充電",
@@ -142,15 +148,18 @@
       "conditions": {
         "soc": {
           "value": "標準充電後 (100% SOC)",
-          "detail": "試驗對象按 7.1.1 方法進行標準充電。"
+          "detail": "試驗對象按 7.1.1 方法進行標準充電。",
+          "source_reference": "8.1.4.2；7.1.1"
         },
         "external_resistance": {
           "value": "< 5 mΩ",
-          "detail": "外部線路電阻應小於 5 mΩ。"
+          "detail": "外部線路電阻應小於 5 mΩ。",
+          "source_reference": "8.1.4.3"
         },
         "duration": {
           "value": "短路持續 10 分鐘",
-          "detail": "將試驗對象正極端子和負極端子經外部短路 10 分鐘。"
+          "detail": "將試驗對象正極端子和負極端子經外部短路 10 分鐘。",
+          "source_reference": "8.1.4.3"
         },
         "pre_conditioning": {
           "value": "預處理後，按 7.1.1 標準充電",
@@ -189,19 +198,23 @@
       "conditions": {
         "soc": {
           "value": "標準充電後 (100% SOC)",
-          "detail": "試驗對象按 7.1.1 方法進行標準充電。"
+          "detail": "試驗對象按 7.1.1 方法進行標準充電。",
+          "source_reference": "8.1.5.2；7.1.1"
         },
         "heating_rate": {
           "value": "5 °C/min 速率升溫",
-          "detail": "溫度箱按照 5 °C/min 的速率由試驗環境溫度升溫。"
+          "detail": "溫度箱按照 5 °C/min 的速率由試驗環境溫度升溫。",
+          "source_reference": "8.1.5.3"
         },
         "target_temperature": {
           "value": "非鎳氫電芯：130 °C；鎳氫電芯：85 °C",
-          "detail": "對於鎳氫電池單體以外的試驗對象升至 130 °C；對於鎳氫電池單體升至 85 °C。"
+          "detail": "對於鎳氫電池單體以外的試驗對象升至 130 °C；對於鎳氫電池單體升至 85 °C。",
+          "source_reference": "8.1.5.3"
         },
         "duration": {
           "value": "非鎳氫電芯：30 分鐘；鎳氫電芯：2 小時",
-          "detail": "非鎳氫單體保持此溫度 30 分鐘後停止加熱；鎳氫單體保持此溫度 2 小時後停止加熱。"
+          "detail": "非鎳氫單體保持此溫度 30 分鐘後停止加熱；鎳氫單體保持此溫度 2 小時後停止加熱。",
+          "source_reference": "8.1.5.3"
         },
         "pre_conditioning": {
           "value": "預處理後，按 7.1.1 標準充電",
@@ -240,19 +253,23 @@
       "conditions": {
         "soc": {
           "value": "標準充電後 (100% SOC)",
-          "detail": "試驗對象按 7.1.1 方法充電。"
+          "detail": "試驗對象按 7.1.1 方法充電。",
+          "source_reference": "8.1.6.2；7.1.1"
         },
         "high_temperature": {
           "value": "85 °C",
-          "detail": "高溫極值 85 °C，按照表 1 和圖 1 曲線進行調節。"
+          "detail": "高溫極值 85 °C，按照表 1 和圖 1 曲線進行調節。",
+          "source_reference": "8.1.6.3；表 1"
         },
         "low_temperature": {
           "value": "-40 °C",
-          "detail": "低溫極值 -40 °C，按照表 1 和圖 1 曲線進行調節。"
+          "detail": "低溫極值 -40 °C，按照表 1 和圖 1 曲線進行調節。",
+          "source_reference": "8.1.6.3；表 1"
         },
         "cycles": {
           "value": "5 次循環",
-          "detail": "循環次數 5 次。按照表 1 和圖 1 曲線進行調節。"
+          "detail": "循環次數 5 次。按照表 1 和圖 1 曲線進行調節。",
+          "source_reference": "8.1.6.3"
         },
         "pre_conditioning": {
           "value": "預處理後，按 7.1.1 充電",
@@ -291,31 +308,38 @@
       "conditions": {
         "soc": {
           "value": "滿充",
-          "detail": "標準充電後，試驗對象按 7.1.1 方法充電。"
+          "detail": "標準充電後，試驗對象按 7.1.1 方法充電。",
+          "source_reference": "8.1.7.2；7.1.1"
         },
         "force": {
           "value": "100 kN 或 1000 倍質量",
-          "detail": "擠壓力達到 100 kN 或 1000 倍試驗對象質量。"
+          "detail": "擠壓力達到 100 kN 或 1000 倍試驗對象質量。",
+          "source_reference": "8.1.7.3 d)"
         },
         "crush_speed": {
           "value": "≤ 2 mm/s",
-          "detail": "擠壓速度不大於 2 mm/s。"
+          "detail": "擠壓速度不大於 2 mm/s。",
+          "source_reference": "8.1.7.3 c)"
         },
         "apparatus": {
           "value": "半徑 75 mm 半圓柱體",
-          "detail": "半徑 75 mm（R75 mm）的半圓柱體。"
+          "detail": "半徑 75 mm（R75 mm）的半圓柱體。",
+          "source_reference": "8.1.7.3 b)"
         },
         "orientation": {
           "value": "垂直於極板方向或最易受擠壓方向",
-          "detail": "垂直於電芯極板方向施壓，或與電芯在整車佈局上最容易受到擠壓的方向相同。"
+          "detail": "垂直於電芯極板方向施壓，或與電芯在整車佈局上最容易受到擠壓的方向相同。",
+          "source_reference": "8.1.7.3 a)"
         },
         "termination": {
           "value": "達最大力（100 kN 或 1000 倍質量）、電壓達 0 V 或變形量 ≥ 15%（先到者停止）",
-          "detail": "電壓達到 0 V 或變形量達到 15% 或擠壓力達到 100 kN 或 1000 倍試驗對象質量後停止擠壓。"
+          "detail": "電壓達到 0 V 或變形量達到 15% 或擠壓力達到 100 kN 或 1000 倍試驗對象質量後停止擠壓。",
+          "source_reference": "8.1.7.3 d)"
         },
         "duration": {
           "value": "保持 10 分鐘",
-          "detail": "停止擠壓後保持當前位置 10 分鐘。"
+          "detail": "停止擠壓後保持當前位置 10 分鐘。",
+          "source_reference": "8.1.7.3 e)"
         },
         "pre_conditioning": {
           "value": "預處理後，按 7.1.1 充電",
@@ -356,11 +380,13 @@
       "conditions": {
         "applicability": {
           "value": "20% 至 80% SOC 充電時間 ≤ 15 分鐘之快充單體",
-          "detail": "試驗對象為從 20% SOC 充電至 80% SOC 總充電時間不超過 15 分鐘的電池單體。"
+          "detail": "試驗對象為從 20% SOC 充電至 80% SOC 總充電時間不超過 15 分鐘的電池單體。",
+          "source_reference": "8.1.8.1"
         },
         "cycles": {
           "value": "300 次快充循環 (20%～80% SOC)",
-          "detail": "進行 300 次連續快充循環 (20%～80% SOC)，每次充放電間靜置 30 分鐘，循環後需進行 8.1.4 外部短路試驗。"
+          "detail": "進行 300 次連續快充循環 (20%～80% SOC)，每次充放電間靜置 30 分鐘，循環後需進行 8.1.4 外部短路試驗。",
+          "source_reference": "8.1.8.2"
         },
         "pre_conditioning": {
           "value": "完成 7.1.2 預處理",
@@ -401,19 +427,23 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試 (6.1.10)。"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試 (6.1.10)。",
+          "source_reference": "6.1.10"
         },
         "waveform": {
           "value": "隨機振動 12 小時 + 正弦定頻 1～2 小時",
-          "detail": "包含隨機振動測試 12 小時（依重量及安裝位置參考表 2、表 3 的 RMS 值如 0.52 g, 0.57 g, 0.73 g 等），以及正弦定頻振動測試 1～2 小時。"
+          "detail": "每方向依序施加隨機與正弦定頻振動：隨機振動每方向 12 小時，正弦定頻每方向 2 小時（除 M1、N1 類外，依表 2：20 Hz，RMS 0.52 g/0.57 g/0.73 g）或 1 小時（M1、N1 類，依表 3：24 Hz，RMS 0.50 g/0.45 g/0.64 g）。",
+          "source_reference": "8.2.1.2；8.2.1.3；8.2.1.4；表 2；表 3"
         },
         "test_duration": {
           "value": "隨機振動 12 小時；正弦定頻 1～2 小時",
-          "detail": "隨機振動測試 12 小時，正弦定頻振動測試 1～2 小時。"
+          "detail": "每個方向隨機振動測試 12 小時；正弦定頻振動每個方向測試 2 小時（除 M1、N1 類外，表 2）或 1 小時（M1、N1 類，表 3）。",
+          "source_reference": "8.2.1.3；8.2.1.4；表 2；表 3"
         },
         "vibration_rms": {
-          "value": "依安裝位置參考表 2、表 3 (0.52 g, 0.57 g, 0.73 g)",
-          "detail": "依重量及安裝位置參考表 2、表 3 的 RMS 值如 0.52 g, 0.57 g, 0.73 g 等。"
+          "value": "依車型參考表 2 (0.52/0.57/0.73 g) 與表 3 (0.50/0.45/0.64 g)",
+          "detail": "除 M1、N1 類外的車輛依表 2（x/y/z 軸 RMS 分別為 0.52 g、0.57 g、0.73 g，多安裝方向依 RMS 大者；車頂安裝不低於表 2）；M1、N1 類車輛依表 3（x/y/z 軸 RMS 分別為 0.50 g、0.45 g、0.64 g）。",
+          "source_reference": "8.2.1.3；8.2.1.4；表 2；表 3"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
@@ -455,27 +485,33 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。",
+          "source_reference": "6.1.10"
         },
         "waveform": {
           "value": "半正弦衝擊波",
-          "detail": "施加半正弦衝擊波，加速度 7 g，脈衝時間 6 ms，在 ±z 方向各進行 6 次衝擊，共計 12 次。"
+          "detail": "施加半正弦衝擊波，加速度 7 g，脈衝時間 6 ms，在 ±z 方向各進行 6 次衝擊，共計 12 次。",
+          "source_reference": "8.2.2.2；表 4"
         },
         "acceleration_peak": {
           "value": "7 g",
-          "detail": "加速度 7 g。"
+          "detail": "加速度 7 g。",
+          "source_reference": "8.2.2.2；表 4"
         },
         "pulse_duration": {
           "value": "6 ms",
-          "detail": "脈衝時間 6 ms。"
+          "detail": "脈衝時間 6 ms。",
+          "source_reference": "8.2.2.2；表 4"
         },
         "direction": {
           "value": "±z 方向各 6 次",
-          "detail": "在 ±z 方向各進行 6 次衝擊。"
+          "detail": "在 ±z 方向各進行 6 次衝擊。",
+          "source_reference": "8.2.2.2；表 4"
         },
         "shock_count": {
           "value": "12 次 (±z 方向各 6 次)",
-          "detail": "在 ±z 方向各進行 6 次衝擊，共計 12 次。"
+          "detail": "在 ±z 方向各進行 6 次衝擊，共計 12 次。",
+          "source_reference": "8.2.2.2；表 4"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
@@ -517,11 +553,13 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試",
+          "source_reference": "6.1.10"
         },
         "collision_pulse": {
-          "value": "半正弦波脈衝",
-          "detail": "依據車型選擇 Table 6 規定的半正弦波脈衝、加速度峰值與脈衝持續時間進行測試。"
+          "value": "依表 6 及圖 5 脈衝容差範圍",
+          "detail": "依整車整備質量（≤ 3.5 t、> 3.5 t 且 < 7.5 t、≥ 7.5 t）與安裝方向（x/y 軸），給台車施加落在表 6 及圖 5 最大、最小容差允許範圍內的脈衝；存在多個安裝方向時，依加速度大的方向試驗。",
+          "source_reference": "8.2.3.2；表 6；圖 5"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
@@ -563,32 +601,38 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。",
+          "source_reference": "6.1.10"
         },
         "force": {
           "value": "100 kN",
-          "detail": "擠壓力達到 100 kN。"
+          "detail": "擠壓力達到 100 kN。",
+          "source_reference": "8.2.4.2 e)"
         },
         "crush_speed": {
           "value": "≤ 2 mm/s",
-          "detail": "以不大於 2 mm/s 的速度擠壓。"
+          "detail": "以不大於 2 mm/s 的速度擠壓。",
+          "source_reference": "8.2.4.2 d)"
         },
         "apparatus": {
           "value": "半徑 75 mm 半圓柱體",
-          "detail": "使用半圓柱體（半徑 75 mm）。"
+          "detail": "使用半圓柱體（半徑 75 mm）。",
+          "source_reference": "8.2.4.2 a)"
         },
         "termination": {
           "value": "達最大力 100 kN 或變形量達 30%",
-          "detail": "直到擠壓力達到 100 kN 或變形量達到 30% 時停止擠壓。"
+          "detail": "直到擠壓力達到 100 kN 或變形量達到 30% 時停止擠壓。",
+          "source_reference": "8.2.4.2 e)"
         },
         "duration": {
           "value": "保持 10 分鐘",
-          "detail": "達到終止條件後保持 10 分鐘。"
+          "detail": "達到終止條件後保持 10 分鐘。",
+          "source_reference": "8.2.4.2 f)"
         },
         "sample_quantity": {
           "value": "x 方向與 y 方向可分開在兩個試驗對象上執行",
           "detail": "8.2.4.2 b)：擠壓方向為 x 方向和 y 方向，為保護試驗操作安全，可分開在兩個試驗對象上執行測試。原文未規定樣品總數。",
-          "source_reference": "8.2.4"
+          "source_reference": "8.2.4.2 b)"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
@@ -631,15 +675,18 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。",
+          "source_reference": "6.1.10"
         },
         "high_temperature": {
           "value": "最高 60 °C (或更高，依製造商規定)",
-          "detail": "在最高溫度 60 °C（或更高，依製造商規定）及高濕度下進行。"
+          "detail": "在最高溫度 60 °C（或更高，依製造商規定）及高濕度下進行。",
+          "source_reference": "8.2.5.2"
         },
         "cycles": {
           "value": "5 次濕熱循環",
-          "detail": "進行 5 次濕熱循環。"
+          "detail": "進行 5 次濕熱循環。",
+          "source_reference": "8.2.5.2"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
@@ -681,28 +728,33 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。",
+          "source_reference": "6.1.10"
         },
         "liquid": {
           "value": "方式一：3.5% NaCl 水溶液；方式二：水",
-          "detail": "方式一為 3.5% NaCl 水溶液；方式二為水。"
+          "detail": "方式一為 3.5% NaCl 水溶液；方式二為水。",
+          "source_reference": "8.2.6.2"
         },
         "method": {
           "value": "方式一：鹽水浸泡 2 小時；方式二：符合 GB/T 4208-2017 IPX7 要求浸水",
-          "detail": "方式一：3.5% NaCl 水溶液浸泡 2 小時；方式二：符合 GB/T 4208-2017 IPX7 要求。"
+          "detail": "方式一：3.5% NaCl 水溶液浸泡 2 小時；方式二：符合 GB/T 4208-2017 IPX7 要求。",
+          "source_reference": "8.2.6.2"
         },
         "duration": {
-          "value": "方式一：2 小時；方式二：按 IPX7 要求",
-          "detail": "方式一鹽水浸泡 2 小時；方式二符合 GB/T 4208-2017 IPX7 要求。"
+          "value": "方式一：2 小時；方式二：30 分鐘",
+          "detail": "方式一：3.5% 氯化鈉溶液浸泡 2 小時；方式二：符合 GB/T 4208-2017 IPX7（14.2.7）要求，試驗持續時間 30 分鐘。",
+          "source_reference": "8.2.6.2 a)；8.2.6.2 b)"
         },
         "temperature_diff": {
           "value": "溫差 ≤ 5 °C",
-          "detail": "（方式二）浸水時，水溫與試驗對象的溫差不得大於 5 °C。"
+          "detail": "（方式二）浸水時，水溫與試驗對象的溫差不得大於 5 °C。",
+          "source_reference": "8.2.6.2 b)"
         },
         "sample_quantity": {
           "value": "使用通過 8.2.1 振動試驗後的電池包或系統",
           "detail": "8.2.6.1：試驗對象為通過 8.2.1 振動試驗後的電池包或系統，即與振動試驗共用樣品。原文未規定樣品數量。",
-          "source_reference": "8.2.6.1；8.2.1"
+          "source_reference": "8.2.6.1"
         },
         "pre_conditioning": {
           "value": "已完成 8.2.1 振動試驗",
@@ -741,11 +793,13 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。",
+          "source_reference": "6.1.10"
         },
         "fire_exposure": {
           "value": "4 階段：預熱 60 秒 → 直接燃燒 70 秒 → 間接燃燒 60 秒 → 移開火源觀察 2 小時",
-          "detail": "包含：預熱 60 秒 (Preheat)，直接燃燒 70 秒 (Direct flame)，間接燃燒 60 秒 (Indirect flame)，和離開火源觀察 2 小時 (Observation)。"
+          "detail": "包含 4 個階段：預熱 60 秒，直接燃燒 70 秒，間接燃燒 60 秒，以及離開火源觀察 2 小時（或外表溫度降至 45 °C 以下）。",
+          "source_reference": "8.2.7.1.4"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
@@ -755,7 +809,7 @@
         "observation_period": {
           "value": "離開火源後觀察 2 小時，或外表溫度降至 45 °C 以下",
           "detail": "8.2.7.1.4 d)：將油盤或試驗對象移開，在試驗環境溫度下觀察 2 小時，或試驗對象外表溫度降至 45 °C 以下。",
-          "source_reference": "8.2.7.1.4"
+          "source_reference": "8.2.7.1.4 d)"
         }
       },
       "acceptance_criteria": {
@@ -787,11 +841,13 @@
       "conditions": {
         "soc": {
           "value": "外部充電電池包：95% SOC；車輛能源充電：90% SOC",
-          "detail": "外部充電電池包調至 95% SOC；僅通過車輛能源充電的電池包調至 90% SOC。"
+          "detail": "外部充電電池包調至 95% SOC；僅通過車輛能源充電的電池包調至 90% SOC。",
+          "source_reference": "8.2.7.2；C.5.2 b)"
         },
         "temperature": {
           "value": "22 ± 5 °C",
-          "detail": "試驗前需將環境與試驗對象溫度調整至 22 °C ± 5 °C。"
+          "detail": "試驗環境溫度為 0 °C 以上；試驗前需將電池包或系統溫度調整至 22 °C ± 5 °C（附錄 C.5.2 a)）。",
+          "source_reference": "8.2.7.2；C.5.2 a)"
         },
         "pre_conditioning": {
           "value": "預處理後，依 C.5.2 調整溫度與 SOC",
@@ -835,11 +891,13 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試",
+          "source_reference": "6.1.10"
         },
         "shock_params": {
           "value": "-40 °C ~ 60 °C，5 次循環",
-          "detail": "溫度範圍為 -40 °C 到 60 °C，極端溫度轉換時間不超過 30 分鐘，各極端溫度保持 8 小時，共進行 5 次循環。"
+          "detail": "溫度範圍為 -40 °C 到 60 °C，極端溫度轉換時間不超過 30 分鐘，各極端溫度保持 8 小時，共進行 5 次循環。",
+          "source_reference": "8.2.8.2"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
@@ -881,27 +939,33 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。",
+          "source_reference": "6.1.10"
         },
         "salt_solution": {
           "value": "(50 ± 5) g/L (pH 6.5～7.2)",
-          "detail": "使用濃度 (50±5) g/L、pH 6.5～7.2 的鹽溶液。"
+          "detail": "使用濃度 (50±5) g/L、pH 6.5～7.2 的鹽溶液。",
+          "source_reference": "8.2.9.3"
         },
         "temperature": {
           "value": "35 °C",
-          "detail": "在 35 °C 下噴霧 8 小時。"
+          "detail": "在 35 °C 下噴霧 8 小時。",
+          "source_reference": "8.2.9.4"
         },
         "spray_cycle": {
           "value": "噴霧 8 小時，靜置 16 小時",
-          "detail": "在 35 °C 下噴霧 8 小時，然後靜置 16 小時。在一個循環的第 4 個小時和第 5 個小時之間進行低壓上電監控。"
+          "detail": "在 35 °C 下噴霧 8 小時，然後靜置 16 小時。在一個循環的第 4 個小時和第 5 個小時之間進行低壓上電監控。",
+          "source_reference": "8.2.9.4"
         },
         "cycles": {
           "value": "6 次循環",
-          "detail": "共進行 6 個循環。"
+          "detail": "共進行 6 個循環。",
+          "source_reference": "8.2.9.5"
         },
         "operating_state": {
           "value": "低壓上電監控（第 4 至第 5 小時之間）",
-          "detail": "在一個循環的第 4 個小時和第 5 個小時之間進行低壓上電監控。"
+          "detail": "在一個循環的第 4 個小時和第 5 個小時之間進行低壓上電監控。",
+          "source_reference": "8.2.9.4"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
@@ -940,15 +1004,18 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。",
+          "source_reference": "6.1.10"
         },
         "pressure": {
           "value": "61.2 kPa (模擬海拔 4000 m)",
-          "detail": "在 61.2 kPa (模擬海拔 4000 m) 的氣壓下保持 5 小時，然後以不小於 1 I3 的電流放電。"
+          "detail": "在 61.2 kPa (模擬海拔 4000 m) 的氣壓下保持 5 小時，然後以不小於 1 I3 的電流放電。",
+          "source_reference": "8.2.10.2"
         },
         "duration": {
           "value": "保持 5 小時",
-          "detail": "在 61.2 kPa 氣壓下保持 5 小時，然後以不小於 1 I3 的電流放電。"
+          "detail": "在 61.2 kPa 氣壓下保持 5 小時，然後以不小於 1 I3 的電流放電。",
+          "source_reference": "8.2.10.3；8.2.10.4"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
@@ -990,20 +1057,23 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。",
+          "source_reference": "6.1.10"
         },
         "initial_temperature": {
           "value": "20 ± 10 °C",
-          "detail": "試驗環境溫度為 20 °C ± 10 °C。"
+          "detail": "試驗環境溫度為 20 °C ± 10 °C。",
+          "source_reference": "8.2.11.4"
         },
         "termination": {
           "value": "保護動作或發出信號，或溫度變化小於 4 °C/2 小時（溫度穩定 2 小時）",
-          "detail": "以連續上升的溫度加熱。當保護功能自動停止、發出信號，或溫度變化小於 4 °C/2 小時時終止測試。"
+          "detail": "以連續上升的溫度加熱。當保護功能自動停止、發出信號，或溫度變化小於 4 °C/2 小時時終止測試。",
+          "source_reference": "8.2.11.5"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
-          "detail": "6.1.5：所有測試前先做絕緣電阻測試（附錄 B）；7.2.1：電池電子部件或 BCU 處於正常工作狀態；7.2.2.1：先做預處理循環（以不小於 1I3 電流或製造商推薦方法充電、靜置 30 分鐘或製造商規定時間、放電、再靜置 30 分鐘或製造商規定時間，重複不超過 5 次）；6.1.10：除另有規定外，以製造商規定的最高工作荷電狀態測試；8.2.11.2：試驗開始時，影響試驗對象功能且與結果相關的保護設備都應處於正常運行狀態；7.2.2.3：預處理並調至最高工作荷電狀態後，若與新測試項目間隔超過 24 小時，須先補電一次。",
-          "source_reference": "6.1.5；6.1.10；7.2.1；7.2.2"
+          "detail": "6.1.5：所有測試前先做絕緣電阻測試（附錄 B）；7.2.1：電池電子部件或 BCU 處於正常工作狀態；7.2.2.1：先做預處理循環（以不小於 1I3 電流或製造商推薦方法充電、靜置 30 分鐘或製造商規定時間、放電、再靜置 30 分鐘或製造商規定時間，重複不超過 5 次）；6.1.10：除另有規定外，以製造商規定的最高工作荷電狀態測試；8.2.11.2：試驗開始時，除冷卻系統外，影響試驗對象功能且與結果相關的所有保護設備都應處於正常運行狀態；7.2.2.3：預處理並調至最高工作荷電狀態後，若與新測試項目間隔超過 24 小時，須先補電一次。",
+          "source_reference": "6.1.5；6.1.10；7.2.1；7.2.2；8.2.11.2"
         },
         "observation_period": {
           "value": "試驗後觀察 1 小時",
@@ -1039,20 +1109,24 @@
       ],
       "conditions": {
         "soc": {
-          "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "value": "正常工作範圍的中間部分",
+          "detail": "8.2.12.2 b)：按電池系統製造商推薦的正常操作，調整試驗對象的 SOC 到正常工作範圍的中間部分，只要電池系統能正常運行可不需精確調整（取代 6.1.10）。",
+          "source_reference": "8.2.12.2 b)"
         },
         "temperature": {
           "value": "20 ± 10 °C",
-          "detail": "試驗環境溫度為 20 °C ± 10 °C。"
+          "detail": "試驗環境溫度為 20 °C ± 10 °C。",
+          "source_reference": "8.2.12.2 a)"
         },
         "current": {
           "value": "5 秒內升至過流保護觸發值",
-          "detail": "電流在 5 秒內上升至過流保護觸發值。"
+          "detail": "電流在 5 秒內上升至過流保護觸發值。",
+          "source_reference": "8.2.12.2 c)；8.2.12.3 b)"
         },
         "termination": {
           "value": "保護動作或發出信號，或溫度變化小於 4 °C/2 小時（溫度穩定 2 小時）",
-          "detail": "當保護功能自動停止、發出信號，或溫度變化小於 4 °C/2 小時時終止測試。"
+          "detail": "當保護功能自動停止、發出信號，或溫度變化小於 4 °C/2 小時時終止測試。",
+          "source_reference": "8.2.12.4"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，SOC 調至正常工作範圍的中間部分",
@@ -1094,19 +1168,23 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。",
+          "source_reference": "6.1.10"
         },
         "temperature": {
           "value": "20 ± 10 °C",
-          "detail": "試驗環境溫度為 20 °C ± 10 °C。"
+          "detail": "試驗環境溫度為 20 °C ± 10 °C。",
+          "source_reference": "8.2.13.2 a)"
         },
         "external_resistance": {
           "value": "≤ 5 mΩ",
-          "detail": "外部短路電阻不超過 5 mΩ。"
+          "detail": "外部短路電阻不超過 5 mΩ。",
+          "source_reference": "8.2.13.3 b)"
         },
         "termination": {
           "value": "保護觸發或溫度穩定後短路狀態繼續保持 1 小時",
-          "detail": "保護觸發或在溫度穩定後短路狀態繼續保持 1 小時。"
+          "detail": "保護觸發或在溫度穩定後短路狀態繼續保持 1 小時。",
+          "source_reference": "8.2.13.4"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
@@ -1147,16 +1225,19 @@
       ],
       "conditions": {
         "soc": {
-          "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "value": "正常工作範圍的中間部分",
+          "detail": "8.2.14.2 b)：按電池系統製造商推薦的正常操作，調整試驗對象的 SOC 到正常工作範圍的中間部分，只要試驗對象能正常運行可不需精確調整（取代 6.1.10）。",
+          "source_reference": "8.2.14.2 b)"
         },
         "temperature": {
           "value": "20 ± 10 °C",
-          "detail": "試驗環境溫度為 20 °C ± 10 °C。"
+          "detail": "試驗環境溫度為 20 °C ± 10 °C。",
+          "source_reference": "8.2.14.2 a)"
         },
         "termination": {
           "value": "保護動作，或溫度超出最高工作溫度 10 °C，或持續充電 12 小時",
-          "detail": "若未起作用且溫度未超最高工作溫度 10 °C，則持續充電 12 小時；若超出 10 °C 則結束。"
+          "detail": "若未起作用且溫度未超最高工作溫度 10 °C，則持續充電 12 小時；若超出 10 °C 則結束。",
+          "source_reference": "8.2.14.4"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，SOC 調至正常工作範圍的中間部分",
@@ -1197,16 +1278,19 @@
       ],
       "conditions": {
         "soc": {
-          "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "value": "正常工作範圍內較低水平",
+          "detail": "8.2.15.2 b)：按電池系統製造商推薦的正常操作方法，調整試驗對象的 SOC 到正常工作範圍內的較低水平，只要試驗對象能正常運行可不需精確調整（取代 6.1.10）。",
+          "source_reference": "8.2.15.2 b)"
         },
         "temperature": {
           "value": "20 ± 10 °C",
-          "detail": "試驗環境溫度為 20 °C ± 10 °C。"
+          "detail": "試驗環境溫度為 20 °C ± 10 °C。",
+          "source_reference": "8.2.15.2 a)"
         },
         "termination": {
           "value": "保護動作；若未起作用放電至額定電壓 25% 為止",
-          "detail": "若保護功能未起作用，放電至額定電壓的 25% 為止。"
+          "detail": "當試驗對象自動終止或發出終止放電信號時結束；若自動中斷功能未起作用，則繼續放電至額定電壓的 25% 為止；或溫度穩定（2 小時內溫度變化小於 4 °C）。",
+          "source_reference": "8.2.15.4"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，SOC 調至正常工作範圍內較低的水平",
@@ -1248,23 +1332,28 @@
       "conditions": {
         "soc": {
           "value": "最高工作荷電狀態",
-          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。"
+          "detail": "試驗對象均以製造商規定的最高工作荷電狀態進行測試。",
+          "source_reference": "6.1.10"
         },
         "steel_bar": {
           "value": "直徑 30 mm 半球形撞擊頭",
-          "detail": "撞擊頭為直徑 30 mm 的半球形。"
+          "detail": "撞擊頭為直徑 30 mm 的半球形。",
+          "source_reference": "8.2.16.2 a)"
         },
         "impact_mass": {
           "value": "質量 10 kg",
-          "detail": "撞擊頭質量 10 kg。"
+          "detail": "撞擊頭質量 10 kg。",
+          "source_reference": "8.2.16.2 a)"
         },
         "impact_energy": {
           "value": "150 ± 3 J",
-          "detail": "撞擊能量為 150 J ± 3 J。"
+          "detail": "撞擊能量為 150 J ± 3 J。",
+          "source_reference": "8.2.16.2 d)"
         },
         "impact_spots": {
           "value": "涵蓋前中後 3 處脆弱點",
-          "detail": "需對電池底部的 3 個脆弱點進行撞擊測試（涵蓋前部、中部、後部）。"
+          "detail": "需對電池底部的 3 個脆弱點進行撞擊測試（涵蓋前部、中部、後部）。",
+          "source_reference": "8.2.16.2 c)"
         },
         "pre_conditioning": {
           "value": "完成 7.2.2 預處理，調至最高工作 SOC",
@@ -1335,6 +1424,9 @@
       "Tests perfectly aligned across all sources."
     ],
     "total_test_entries": 24,
-    "enrichment": "2026-11-02 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。"
+    "enrichment": "2026-11-02 已逐項對照原文核對試驗程序欄位：有原文依據者改為原文規定並附條款（source_reference），原文未規定者刪除。",
+    "parameter_review": [
+      "2026-11-17：依原文補齊試驗參數（GB38031-8.1.2、GB38031-8.1.3、GB38031-8.1.4、GB38031-8.1.5、GB38031-8.1.6、GB38031-8.1.7、GB38031-8.1.8、GB38031-8.2.1、GB38031-8.2.2、GB38031-8.2.3、GB38031-8.2.4、GB38031-8.2.5、GB38031-8.2.6、GB38031-8.2.7.1、GB38031-8.2.7.2、GB38031-8.2.8、GB38031-8.2.9、GB38031-8.2.10、GB38031-8.2.11、GB38031-8.2.12、GB38031-8.2.13、GB38031-8.2.14、GB38031-8.2.15、GB38031-8.2.16），出處見各欄位 source_reference。"
+    ]
   }
 }
